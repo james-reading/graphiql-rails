@@ -1,5 +1,14 @@
 # graphiql-rails
 
+## 1.10.6
+
+- **BREAKING CHANGE**: Upgrade GraphiQL from 3.8.3 to 5.2.0
+- **BREAKING CHANGE**: Migration from CodeMirror to Monaco Editor
+- **BREAKING CHANGE**: Updated React to 18.3.1
+- Updated prop names: `headerEditorEnabled` -> `isHeadersEditorEnabled`
+- CSS is now bundled inline with JavaScript via webpack
+- Removed separate CSS file dependencies - GraphiQL styles are now imported directly
+
 ## 1.10.5
 
 - Fix: Add `ActionDispatch::Static` middleware even when it's not already present in the app #126

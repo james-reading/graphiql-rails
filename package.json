@@ -1,16 +1,19 @@
 {
   "name": "graphiql-rails-build-pipeline",
-  "devDependencies": {
-    "@graphiql/toolkit": "0.11.1",
-    "graphiql": "3.8.3",
-    "graphql": "16.10.0",
-    "react": "18.0.0",
-    "react-dom": "18.0.0",
-    "webpack": "5.98.0",
-    "webpack-cli": "^6.0.1"
-  },
   "private": true,
+  "dependencies": {
+    "graphiql": "^5.2.0",
+    "graphql": "^16.11.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.4.1",
+    "vite": "^6.3.4",
+    "vite-plugin-monaco-editor": "^1.1.0"
+  },
   "scripts": {
-    "build": "webpack && rm app/assets/javascripts/graphiql/rails/application.js.LICENSE.txt"
+    "dev": "vite",
+    "build": "vite build --minify=false"
   }
 }
