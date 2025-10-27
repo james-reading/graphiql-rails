@@ -1,19 +1,11 @@
-var __defProp = Object.defineProperty;
-var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var __publicField = (obj, key, value) => {
-  __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
-  return value;
-};
 var Et = Object.defineProperty;
 var xe = (e2, t) => {
-  for (var n in t)
-    Et(e2, n, { get: t[n], enumerable: true });
+  for (var n in t) Et(e2, n, { get: t[n], enumerable: true });
 };
 var Ne = {};
 xe(Ne, { languages: () => Qe, options: () => Ke, parsers: () => _e, printers: () => pn });
 var Tt = (e2, t, n, i) => {
-  if (!(e2 && t == null))
-    return t.replaceAll ? t.replaceAll(n, i) : n.global ? t.replace(n, i) : t.split(n).join(i);
+  if (!(e2 && t == null)) return t.replaceAll ? t.replaceAll(n, i) : n.global ? t.replace(n, i) : t.split(n).join(i);
 }, G = Tt;
 var j = "indent";
 var $ = "group";
@@ -36,23 +28,19 @@ var Ot = { type: S, hard: true };
 var k = { type: S }, p = { type: S, soft: true }, f = [Ot, yt];
 function E(e2, t) {
   let n = [];
-  for (let i = 0; i < t.length; i++)
-    i !== 0 && n.push(e2), n.push(t[i]);
+  for (let i = 0; i < t.length; i++) i !== 0 && n.push(e2), n.push(t[i]);
   return n;
 }
 function H(e2) {
   return (t, n, i) => {
     let r = !!(i != null && i.backwards);
-    if (n === false)
-      return false;
+    if (n === false) return false;
     let { length: s } = t, a = n;
     for (; a >= 0 && a < s; ) {
       let u = t.charAt(a);
       if (e2 instanceof RegExp) {
-        if (!e2.test(u))
-          return a;
-      } else if (!e2.includes(u))
-        return a;
+        if (!e2.test(u)) return a;
+      } else if (!e2.includes(u)) return a;
       r ? a-- : a++;
     }
     return a === -1 || a === s ? a : false;
@@ -61,23 +49,18 @@ function H(e2) {
 var J = H(" 	"), ve = H(",; 	"), Le = H(/[^\n\r]/u);
 function It(e2, t, n) {
   let i = !!(n != null && n.backwards);
-  if (t === false)
-    return false;
+  if (t === false) return false;
   let r = e2.charAt(t);
   if (i) {
     if (e2.charAt(t - 1) === "\r" && r === `
-`)
-      return t - 2;
+`) return t - 2;
     if (r === `
-` || r === "\r" || r === "\u2028" || r === "\u2029")
-      return t - 1;
+` || r === "\r" || r === "\u2028" || r === "\u2029") return t - 1;
   } else {
     if (r === "\r" && e2.charAt(t + 1) === `
-`)
-      return t + 2;
+`) return t + 2;
     if (r === `
-` || r === "\r" || r === "\u2028" || r === "\u2029")
-      return t + 1;
+` || r === "\r" || r === "\u2028" || r === "\u2029") return t + 1;
   }
   return t;
 }
@@ -88,12 +71,9 @@ function At(e2, t, n = {}) {
 }
 var be = At;
 function Dt(e2, t) {
-  if (t === false)
-    return false;
+  if (t === false) return false;
   if (e2.charAt(t) === "/" && e2.charAt(t + 1) === "*") {
-    for (let n = t + 2; n < e2.length; ++n)
-      if (e2.charAt(n) === "*" && e2.charAt(n + 1) === "/")
-        return n + 2;
+    for (let n = t + 2; n < e2.length; ++n) if (e2.charAt(n) === "*" && e2.charAt(n + 1) === "/") return n + 2;
   }
   return t;
 }
@@ -104,8 +84,7 @@ function gt(e2, t) {
 var we = gt;
 function kt(e2, t) {
   let n = null, i = t;
-  for (; i !== n; )
-    n = i, i = ve(e2, i), i = Pe(e2, i), i = J(e2, i);
+  for (; i !== n; ) n = i, i = ve(e2, i), i = Pe(e2, i), i = J(e2, i);
   return i = we(e2, i), i = q(e2, i), i !== false && be(e2, i);
 }
 var Fe = kt;
@@ -114,10 +93,9 @@ function St(e2) {
 }
 var pe = St;
 var fe = class extends Error {
+  name = "UnexpectedNodeError";
   constructor(t, n, i = "type") {
-    super(`Unexpected ${n} node ${i}: ${JSON.stringify(t[i])}.`);
-    __publicField(this, "name", "UnexpectedNodeError");
-    this.node = t;
+    super(`Unexpected ${n} node ${i}: ${JSON.stringify(t[i])}.`), this.node = t;
   }
 }, Be = fe;
 var F = null;
@@ -129,8 +107,7 @@ function B(e2) {
   return F = B.prototype = e2 ?? /* @__PURE__ */ Object.create(null), new B();
 }
 var Ct = 10;
-for (let e2 = 0; e2 <= Ct; e2++)
-  B();
+for (let e2 = 0; e2 <= Ct; e2++) B();
 function he(e2) {
   return B(e2);
 }
@@ -138,8 +115,7 @@ function Rt(e2, t = "type") {
   he(e2);
   function n(i) {
     let r = i[t], s = e2[r];
-    if (!Array.isArray(s))
-      throw Object.assign(new Error(`Missing visitor keys for '${r}'.`), { node: i });
+    if (!Array.isArray(s)) throw Object.assign(new Error(`Missing visitor keys for '${r}'.`), { node: i });
     return s;
   }
   return n;
@@ -192,8 +168,7 @@ ${e2}`;
 }
 function Lt(e2, t, n) {
   let { node: i } = e2;
-  if (!i.description)
-    return "";
+  if (!i.description) return "";
   let r = [n("description")];
   return i.kind === "InputValueDefinition" && !i.description.block ? r.push(k) : r.push(f), r;
 }
@@ -293,8 +268,7 @@ function bt(e2, t, n) {
   }
 }
 function x(e2, t, n) {
-  if (n.directives.length === 0)
-    return "";
+  if (n.directives.length === 0) return "";
   let i = E(k, e2.map(t, "directives"));
   return n.kind === "FragmentDefinition" || n.kind === "OperationDefinition" ? y([k, i]) : [" ", y(N([p, i]))];
 }
@@ -309,8 +283,7 @@ function Pt(e2) {
 }
 function wt(e2) {
   let t = e2.node;
-  if (t.kind === "Comment")
-    return "#" + t.value.trimEnd();
+  if (t.kind === "Comment") return "#" + t.value.trimEnd();
   throw new Error("Not a comment: " + JSON.stringify(t));
 }
 function Ft(e2, t, n) {
@@ -342,7 +315,7 @@ function Bt(e2) {
 }
 var Ut = { print: bt, massageAstNode: Je, hasPrettierIgnore: Bt, insertPragma: Xe, printComment: wt, canAttachComment: Pt, getVisitorKeys: Me }, qe = Ut;
 var Qe = [{ name: "GraphQL", type: "data", extensions: [".graphql", ".gql", ".graphqls"], tmScope: "source.graphql", aceMode: "text", parsers: ["graphql"], vscodeLanguageIds: ["graphql"], linguistLanguageId: 139 }];
-var We = { bracketSpacing: { category: "Common", type: "boolean", default: true, description: "Print spaces between brackets.", oppositeDescription: "Do not print spaces between brackets." }, objectWrap: { category: "Common", type: "choice", default: "preserve", description: "How to wrap object literals.", choices: [{ value: "preserve", description: "Keep as multi-line, if there is a newline between the opening brace and first property." }, { value: "collapse", description: "Fit to a single line when possible." }] }, singleQuote: { category: "Common", type: "boolean", default: false, description: "Use single quotes instead of double quotes." }, proseWrap: { category: "Common", type: "choice", default: "preserve", description: "How to wrap prose.", choices: [{ value: "always", description: "Wrap prose if it exceeds the print width." }, { value: "never", description: "Do not wrap prose." }, { value: "preserve", description: "Wrap prose as-is." }] }, bracketSameLine: { category: "Common", type: "boolean", default: false, description: "Put > of opening tags on the last line instead of on a new line." }, singleAttributePerLine: { category: "Common", type: "boolean", default: false, description: "Enforce single attribute per line in HTML, Vue and JSX." } };
+var We = { bracketSpacing: { category: "Common", type: "boolean", default: true, description: "Print spaces between brackets.", oppositeDescription: "Do not print spaces between brackets." } };
 var Mt = { bracketSpacing: We.bracketSpacing }, Ke = Mt;
 var _e = {};
 xe(_e, { graphql: () => ln });
@@ -350,15 +323,13 @@ function ze(e2) {
   return typeof e2 == "object" && e2 !== null;
 }
 function Ze(e2, t) {
-  if (!!!e2)
-    throw new Error(t ?? "Unexpected invariant triggered.");
+  throw new Error("Unexpected invariant triggered.");
 }
 var Vt = /\r\n|[\n\r]/g;
 function M(e2, t) {
   let n = 0, i = 1;
   for (let r of e2.body.matchAll(Vt)) {
-    if (typeof r.index == "number" || Ze(false), r.index >= t)
-      break;
+    if (typeof r.index == "number" || Ze(), r.index >= t) break;
     n = r.index + r[0].length, i += 1;
   }
   return { line: i, column: t + 1 - n };
@@ -371,8 +342,7 @@ function de(e2, t) {
 `, h = i.split(/\r\n|[\n\r]/g), A = h[r];
   if (A.length > 120) {
     let O = Math.floor(l / 80), ae = l % 80, _ = [];
-    for (let v = 0; v < A.length; v += 80)
-      _.push(A.slice(v, v + 80));
+    for (let v = 0; v < A.length; v += 80) _.push(A.slice(v, v + 80));
     return T + et([[`${a} |`, _[0]], ..._.slice(1, O + 1).map((v) => ["|", v]), ["|", "^".padStart(ae)], ["|", _[O + 1]]]);
   }
   return T + et([[`${a - 1} |`, h[r - 1]], [`${a} |`, A], ["|", "^".padStart(l)], [`${a + 1} |`, h[r + 1]]]);
@@ -401,14 +371,10 @@ var Z = class e extends Error {
   }
   toString() {
     let t = this.message;
-    if (this.nodes)
-      for (let n of this.nodes)
-        n.loc && (t += `
+    if (this.nodes) for (let n of this.nodes) n.loc && (t += `
 
 ` + tt(n.loc));
-    else if (this.source && this.locations)
-      for (let n of this.locations)
-        t += `
+    else if (this.source && this.locations) for (let n of this.locations) t += `
 
 ` + de(this.source, n);
     return t;
@@ -459,8 +425,7 @@ function ot(e2) {
 }
 function Gt(e2) {
   let t = 0;
-  for (; t < e2.length && rt(e2.charCodeAt(t)); )
-    ++t;
+  for (; t < e2.length && rt(e2.charCodeAt(t)); ) ++t;
   return t;
 }
 var o;
@@ -480,15 +445,13 @@ var te = class {
   }
   lookahead() {
     let t = this.token;
-    if (t.kind !== o.EOF)
-      do
-        if (t.next)
-          t = t.next;
-        else {
-          let n = jt(this, t.end);
-          t.next = n, n.prev = t, t = n;
-        }
-      while (t.kind === o.COMMENT);
+    if (t.kind !== o.EOF) do
+      if (t.next) t = t.next;
+      else {
+        let n = jt(this, t.end);
+        t.next = n, n.prev = t, t = n;
+      }
+    while (t.kind === o.COMMENT);
     return t;
   }
 };
@@ -509,8 +472,7 @@ function lt(e2) {
 }
 function R(e2, t) {
   let n = e2.source.body.codePointAt(t);
-  if (n === void 0)
-    return o.EOF;
+  if (n === void 0) return o.EOF;
   if (n >= 32 && n <= 126) {
     let i = String.fromCodePoint(n);
     return i === '"' ? `'"'` : `"${i}"`;
@@ -551,8 +513,7 @@ function jt(e2, t) {
       case 41:
         return m(e2, o.PAREN_R, r, r + 1);
       case 46:
-        if (n.charCodeAt(r + 1) === 46 && n.charCodeAt(r + 2) === 46)
-          return m(e2, o.SPREAD, r, r + 3);
+        if (n.charCodeAt(r + 1) === 46 && n.charCodeAt(r + 2) === 46) return m(e2, o.SPREAD, r, r + 3);
         break;
       case 58:
         return m(e2, o.COLON, r, r + 1);
@@ -573,10 +534,8 @@ function jt(e2, t) {
       case 34:
         return n.charCodeAt(r + 1) === 34 && n.charCodeAt(r + 2) === 34 ? Wt(e2, r) : Ht(e2, r);
     }
-    if (b(s) || s === 45)
-      return Xt(e2, r, s);
-    if (me(s))
-      return Kt(e2, r);
+    if (b(s) || s === 45) return Xt(e2, r, s);
+    if (me(s)) return Kt(e2, r);
     throw d(e2.source, r, s === 39 ? `Unexpected single quote character ('), did you mean to use a double quote (")?` : P(s) || ne(n, r) ? `Unexpected character: ${R(e2, r)}.` : `Invalid character: ${R(e2, r)}.`);
   }
   return m(e2, o.EOF, i, i);
@@ -585,56 +544,42 @@ function $t(e2, t) {
   let n = e2.source.body, i = n.length, r = t + 1;
   for (; r < i; ) {
     let s = n.charCodeAt(r);
-    if (s === 10 || s === 13)
-      break;
-    if (P(s))
-      ++r;
-    else if (ne(n, r))
-      r += 2;
-    else
-      break;
+    if (s === 10 || s === 13) break;
+    if (P(s)) ++r;
+    else if (ne(n, r)) r += 2;
+    else break;
   }
   return m(e2, o.COMMENT, t, r, n.slice(t + 1, r));
 }
 function Xt(e2, t, n) {
   let i = e2.source.body, r = t, s = n, a = false;
   if (s === 45 && (s = i.charCodeAt(++r)), s === 48) {
-    if (s = i.charCodeAt(++r), b(s))
-      throw d(e2.source, r, `Invalid number, unexpected digit after 0: ${R(e2, r)}.`);
-  } else
-    r = Ee(e2, r, s), s = i.charCodeAt(r);
-  if (s === 46 && (a = true, s = i.charCodeAt(++r), r = Ee(e2, r, s), s = i.charCodeAt(r)), (s === 69 || s === 101) && (a = true, s = i.charCodeAt(++r), (s === 43 || s === 45) && (s = i.charCodeAt(++r)), r = Ee(e2, r, s), s = i.charCodeAt(r)), s === 46 || me(s))
-    throw d(e2.source, r, `Invalid number, expected digit but got: ${R(e2, r)}.`);
+    if (s = i.charCodeAt(++r), b(s)) throw d(e2.source, r, `Invalid number, unexpected digit after 0: ${R(e2, r)}.`);
+  } else r = Ee(e2, r, s), s = i.charCodeAt(r);
+  if (s === 46 && (a = true, s = i.charCodeAt(++r), r = Ee(e2, r, s), s = i.charCodeAt(r)), (s === 69 || s === 101) && (a = true, s = i.charCodeAt(++r), (s === 43 || s === 45) && (s = i.charCodeAt(++r)), r = Ee(e2, r, s), s = i.charCodeAt(r)), s === 46 || me(s)) throw d(e2.source, r, `Invalid number, expected digit but got: ${R(e2, r)}.`);
   return m(e2, a ? o.FLOAT : o.INT, t, r, i.slice(t, r));
 }
 function Ee(e2, t, n) {
-  if (!b(n))
-    throw d(e2.source, t, `Invalid number, expected digit but got: ${R(e2, t)}.`);
+  if (!b(n)) throw d(e2.source, t, `Invalid number, expected digit but got: ${R(e2, t)}.`);
   let i = e2.source.body, r = t + 1;
-  for (; b(i.charCodeAt(r)); )
-    ++r;
+  for (; b(i.charCodeAt(r)); ) ++r;
   return r;
 }
 function Ht(e2, t) {
   let n = e2.source.body, i = n.length, r = t + 1, s = r, a = "";
   for (; r < i; ) {
     let u = n.charCodeAt(r);
-    if (u === 34)
-      return a += n.slice(s, r), m(e2, o.STRING, t, r + 1, a);
+    if (u === 34) return a += n.slice(s, r), m(e2, o.STRING, t, r + 1, a);
     if (u === 92) {
       a += n.slice(s, r);
       let l = n.charCodeAt(r + 1) === 117 ? n.charCodeAt(r + 2) === 123 ? Jt(e2, r) : qt(e2, r) : Qt(e2, r);
       a += l.value, r += l.size, s = r;
       continue;
     }
-    if (u === 10 || u === 13)
-      break;
-    if (P(u))
-      ++r;
-    else if (ne(n, r))
-      r += 2;
-    else
-      throw d(e2.source, r, `Invalid character within String: ${R(e2, r)}.`);
+    if (u === 10 || u === 13) break;
+    if (P(u)) ++r;
+    else if (ne(n, r)) r += 2;
+    else throw d(e2.source, r, `Invalid character within String: ${R(e2, r)}.`);
   }
   throw d(e2.source, r, "Unterminated string.");
 }
@@ -643,23 +588,19 @@ function Jt(e2, t) {
   for (; r < 12; ) {
     let s = n.charCodeAt(t + r++);
     if (s === 125) {
-      if (r < 5 || !P(i))
-        break;
+      if (r < 5 || !P(i)) break;
       return { value: String.fromCodePoint(i), size: r };
     }
-    if (i = i << 4 | V(s), i < 0)
-      break;
+    if (i = i << 4 | V(s), i < 0) break;
   }
   throw d(e2.source, t, `Invalid Unicode escape sequence: "${n.slice(t, t + r)}".`);
 }
 function qt(e2, t) {
   let n = e2.source.body, i = at(n, t + 2);
-  if (P(i))
-    return { value: String.fromCodePoint(i), size: 6 };
+  if (P(i)) return { value: String.fromCodePoint(i), size: 6 };
   if (ut(i) && n.charCodeAt(t + 6) === 92 && n.charCodeAt(t + 7) === 117) {
     let r = at(n, t + 8);
-    if (lt(r))
-      return { value: String.fromCodePoint(i, r), size: 12 };
+    if (lt(r)) return { value: String.fromCodePoint(i, r), size: 12 };
   }
   throw d(e2.source, t, `Invalid Unicode escape sequence: "${n.slice(t, t + 6)}".`);
 }
@@ -710,12 +651,9 @@ function Wt(e2, t) {
       u += n.slice(a, s), l.push(u), T === 13 && n.charCodeAt(s + 1) === 10 ? s += 2 : ++s, u = "", a = s, r = s;
       continue;
     }
-    if (P(T))
-      ++s;
-    else if (ne(n, s))
-      s += 2;
-    else
-      throw d(e2.source, s, `Invalid character within String: ${R(e2, s)}.`);
+    if (P(T)) ++s;
+    else if (ne(n, s)) s += 2;
+    else throw d(e2.source, s, `Invalid character within String: ${R(e2, s)}.`);
   }
   throw d(e2.source, s, "Unterminated string.");
 }
@@ -723,16 +661,13 @@ function Kt(e2, t) {
   let n = e2.source.body, i = n.length, r = t + 1;
   for (; r < i; ) {
     let s = n.charCodeAt(r);
-    if (st(s))
-      ++r;
-    else
-      break;
+    if (st(s)) ++r;
+    else break;
   }
   return m(e2, o.NAME, t, r, n.slice(t, r));
 }
 function re(e2, t) {
-  if (!!!e2)
-    throw new Error(t);
+  throw new Error(t);
 }
 function ie(e2) {
   return se(e2, []);
@@ -750,17 +685,13 @@ function se(e2, t) {
   }
 }
 function zt(e2, t) {
-  if (e2 === null)
-    return "null";
-  if (t.includes(e2))
-    return "[Circular]";
+  if (e2 === null) return "null";
+  if (t.includes(e2)) return "[Circular]";
   let n = [...t, e2];
   if (Zt(e2)) {
     let i = e2.toJSON();
-    if (i !== e2)
-      return typeof i == "string" ? i : se(i, n);
-  } else if (Array.isArray(e2))
-    return tn(e2, n);
+    if (i !== e2) return typeof i == "string" ? i : se(i, n);
+  } else if (Array.isArray(e2)) return tn(e2, n);
   return en(e2, n);
 }
 function Zt(e2) {
@@ -771,29 +702,24 @@ function en(e2, t) {
   return n.length === 0 ? "{}" : t.length > 2 ? "[" + nn(e2) + "]" : "{ " + n.map(([r, s]) => r + ": " + se(s, t)).join(", ") + " }";
 }
 function tn(e2, t) {
-  if (e2.length === 0)
-    return "[]";
-  if (t.length > 2)
-    return "[Array]";
+  if (e2.length === 0) return "[]";
+  if (t.length > 2) return "[Array]";
   let n = Math.min(10, e2.length), i = e2.length - n, r = [];
-  for (let s = 0; s < n; ++s)
-    r.push(se(e2[s], t));
+  for (let s = 0; s < n; ++s) r.push(se(e2[s], t));
   return i === 1 ? r.push("... 1 more item") : i > 1 && r.push(`... ${i} more items`), "[" + r.join(", ") + "]";
 }
 function nn(e2) {
   let t = Object.prototype.toString.call(e2).replace(/^\[object /, "").replace(/]$/, "");
   if (t === "Object" && typeof e2.constructor == "function") {
     let n = e2.constructor.name;
-    if (typeof n == "string" && n !== "")
-      return n;
+    if (typeof n == "string" && n !== "") return n;
   }
   return t;
 }
 var rn = globalThis.process && true, pt = rn ? function(t, n) {
   return t instanceof n;
 } : function(t, n) {
-  if (t instanceof n)
-    return true;
+  if (t instanceof n) return true;
   if (typeof t == "object" && t !== null) {
     var i;
     let r = n.prototype[Symbol.toStringTag], s = Symbol.toStringTag in t ? t[Symbol.toStringTag] : (i = t.constructor) === null || i === void 0 ? void 0 : i.name;
@@ -846,8 +772,7 @@ var Te = class {
     return this.node(this._lexer.token, { kind: c.DOCUMENT, definitions: this.many(o.SOF, this.parseDefinition, o.EOF) });
   }
   parseDefinition() {
-    if (this.peek(o.BRACE_L))
-      return this.parseOperationDefinition();
+    if (this.peek(o.BRACE_L)) return this.parseOperationDefinition();
     let t = this.peekDescription(), n = t ? this._lexer.lookahead() : this._lexer.token;
     if (n.kind === o.NAME) {
       switch (n.value) {
@@ -868,8 +793,7 @@ var Te = class {
         case "directive":
           return this.parseDirectiveDefinition();
       }
-      if (t)
-        throw d(this._lexer.source, this._lexer.token.start, "Unexpected description, descriptions are supported only on type definitions.");
+      if (t) throw d(this._lexer.source, this._lexer.token.start, "Unexpected description, descriptions are supported only on type definitions.");
       switch (n.value) {
         case "query":
         case "mutation":
@@ -885,8 +809,7 @@ var Te = class {
   }
   parseOperationDefinition() {
     let t = this._lexer.token;
-    if (this.peek(o.BRACE_L))
-      return this.node(t, { kind: c.OPERATION_DEFINITION, operation: C.QUERY, name: void 0, variableDefinitions: [], directives: [], selectionSet: this.parseSelectionSet() });
+    if (this.peek(o.BRACE_L)) return this.node(t, { kind: c.OPERATION_DEFINITION, operation: C.QUERY, name: void 0, variableDefinitions: [], directives: [], selectionSet: this.parseSelectionSet() });
     let n = this.parseOperationType(), i;
     return this.peek(o.NAME) && (i = this.parseName()), this.node(t, { kind: c.OPERATION_DEFINITION, operation: n, name: i, variableDefinitions: this.parseVariableDefinitions(), directives: this.parseDirectives(false), selectionSet: this.parseSelectionSet() });
   }
@@ -944,8 +867,7 @@ var Te = class {
     return this.expectKeyword("fragment"), this._options.allowLegacyFragmentVariables === true ? this.node(t, { kind: c.FRAGMENT_DEFINITION, name: this.parseFragmentName(), variableDefinitions: this.parseVariableDefinitions(), typeCondition: (this.expectKeyword("on"), this.parseNamedType()), directives: this.parseDirectives(false), selectionSet: this.parseSelectionSet() }) : this.node(t, { kind: c.FRAGMENT_DEFINITION, name: this.parseFragmentName(), typeCondition: (this.expectKeyword("on"), this.parseNamedType()), directives: this.parseDirectives(false), selectionSet: this.parseSelectionSet() });
   }
   parseFragmentName() {
-    if (this._lexer.token.value === "on")
-      throw this.unexpected();
+    if (this._lexer.token.value === "on") throw this.unexpected();
     return this.parseName();
   }
   parseValueLiteral(t) {
@@ -974,12 +896,10 @@ var Te = class {
             return this.node(n, { kind: c.ENUM, value: n.value });
         }
       case o.DOLLAR:
-        if (t)
-          if (this.expectToken(o.DOLLAR), this._lexer.token.kind === o.NAME) {
-            let i = this._lexer.token.value;
-            throw d(this._lexer.source, n.start, `Unexpected variable "$${i}" in constant value.`);
-          } else
-            throw this.unexpected(n);
+        if (t) if (this.expectToken(o.DOLLAR), this._lexer.token.kind === o.NAME) {
+          let i = this._lexer.token.value;
+          throw d(this._lexer.source, n.start, `Unexpected variable "$${i}" in constant value.`);
+        } else throw this.unexpected(n);
         return this.parseVariable();
       default:
         throw this.unexpected();
@@ -1006,8 +926,7 @@ var Te = class {
   }
   parseDirectives(t) {
     let n = [];
-    for (; this.peek(o.AT); )
-      n.push(this.parseDirective(t));
+    for (; this.peek(o.AT); ) n.push(this.parseDirective(t));
     return n;
   }
   parseConstDirectives() {
@@ -1022,8 +941,7 @@ var Te = class {
     if (this.expectOptionalToken(o.BRACKET_L)) {
       let i = this.parseTypeReference();
       this.expectToken(o.BRACKET_R), n = this.node(t, { kind: c.LIST_TYPE, type: i });
-    } else
-      n = this.parseNamedType();
+    } else n = this.parseNamedType();
     return this.expectOptionalToken(o.BANG) ? this.node(t, { kind: c.NON_NULL_TYPE, type: n }) : n;
   }
   parseNamedType() {
@@ -1033,8 +951,7 @@ var Te = class {
     return this.peek(o.STRING) || this.peek(o.BLOCK_STRING);
   }
   parseDescription() {
-    if (this.peekDescription())
-      return this.parseStringLiteral();
+    if (this.peekDescription()) return this.parseStringLiteral();
   }
   parseSchemaDefinition() {
     let t = this._lexer.token, n = this.parseDescription();
@@ -1112,8 +1029,7 @@ var Te = class {
     return this.node(t, { kind: c.ENUM_VALUE_DEFINITION, description: n, name: i, directives: r });
   }
   parseEnumValueName() {
-    if (this._lexer.token.value === "true" || this._lexer.token.value === "false" || this._lexer.token.value === "null")
-      throw d(this._lexer.source, this._lexer.token.start, `${oe(this._lexer.token)} is reserved and cannot be used for an enum value.`);
+    if (this._lexer.token.value === "true" || this._lexer.token.value === "false" || this._lexer.token.value === "null") throw d(this._lexer.source, this._lexer.token.start, `${oe(this._lexer.token)} is reserved and cannot be used for an enum value.`);
     return this.parseName();
   }
   parseInputObjectTypeDefinition() {
@@ -1127,79 +1043,71 @@ var Te = class {
   }
   parseTypeSystemExtension() {
     let t = this._lexer.lookahead();
-    if (t.kind === o.NAME)
-      switch (t.value) {
-        case "schema":
-          return this.parseSchemaExtension();
-        case "scalar":
-          return this.parseScalarTypeExtension();
-        case "type":
-          return this.parseObjectTypeExtension();
-        case "interface":
-          return this.parseInterfaceTypeExtension();
-        case "union":
-          return this.parseUnionTypeExtension();
-        case "enum":
-          return this.parseEnumTypeExtension();
-        case "input":
-          return this.parseInputObjectTypeExtension();
-      }
+    if (t.kind === o.NAME) switch (t.value) {
+      case "schema":
+        return this.parseSchemaExtension();
+      case "scalar":
+        return this.parseScalarTypeExtension();
+      case "type":
+        return this.parseObjectTypeExtension();
+      case "interface":
+        return this.parseInterfaceTypeExtension();
+      case "union":
+        return this.parseUnionTypeExtension();
+      case "enum":
+        return this.parseEnumTypeExtension();
+      case "input":
+        return this.parseInputObjectTypeExtension();
+    }
     throw this.unexpected(t);
   }
   parseSchemaExtension() {
     let t = this._lexer.token;
     this.expectKeyword("extend"), this.expectKeyword("schema");
     let n = this.parseConstDirectives(), i = this.optionalMany(o.BRACE_L, this.parseOperationTypeDefinition, o.BRACE_R);
-    if (n.length === 0 && i.length === 0)
-      throw this.unexpected();
+    if (n.length === 0 && i.length === 0) throw this.unexpected();
     return this.node(t, { kind: c.SCHEMA_EXTENSION, directives: n, operationTypes: i });
   }
   parseScalarTypeExtension() {
     let t = this._lexer.token;
     this.expectKeyword("extend"), this.expectKeyword("scalar");
     let n = this.parseName(), i = this.parseConstDirectives();
-    if (i.length === 0)
-      throw this.unexpected();
+    if (i.length === 0) throw this.unexpected();
     return this.node(t, { kind: c.SCALAR_TYPE_EXTENSION, name: n, directives: i });
   }
   parseObjectTypeExtension() {
     let t = this._lexer.token;
     this.expectKeyword("extend"), this.expectKeyword("type");
     let n = this.parseName(), i = this.parseImplementsInterfaces(), r = this.parseConstDirectives(), s = this.parseFieldsDefinition();
-    if (i.length === 0 && r.length === 0 && s.length === 0)
-      throw this.unexpected();
+    if (i.length === 0 && r.length === 0 && s.length === 0) throw this.unexpected();
     return this.node(t, { kind: c.OBJECT_TYPE_EXTENSION, name: n, interfaces: i, directives: r, fields: s });
   }
   parseInterfaceTypeExtension() {
     let t = this._lexer.token;
     this.expectKeyword("extend"), this.expectKeyword("interface");
     let n = this.parseName(), i = this.parseImplementsInterfaces(), r = this.parseConstDirectives(), s = this.parseFieldsDefinition();
-    if (i.length === 0 && r.length === 0 && s.length === 0)
-      throw this.unexpected();
+    if (i.length === 0 && r.length === 0 && s.length === 0) throw this.unexpected();
     return this.node(t, { kind: c.INTERFACE_TYPE_EXTENSION, name: n, interfaces: i, directives: r, fields: s });
   }
   parseUnionTypeExtension() {
     let t = this._lexer.token;
     this.expectKeyword("extend"), this.expectKeyword("union");
     let n = this.parseName(), i = this.parseConstDirectives(), r = this.parseUnionMemberTypes();
-    if (i.length === 0 && r.length === 0)
-      throw this.unexpected();
+    if (i.length === 0 && r.length === 0) throw this.unexpected();
     return this.node(t, { kind: c.UNION_TYPE_EXTENSION, name: n, directives: i, types: r });
   }
   parseEnumTypeExtension() {
     let t = this._lexer.token;
     this.expectKeyword("extend"), this.expectKeyword("enum");
     let n = this.parseName(), i = this.parseConstDirectives(), r = this.parseEnumValuesDefinition();
-    if (i.length === 0 && r.length === 0)
-      throw this.unexpected();
+    if (i.length === 0 && r.length === 0) throw this.unexpected();
     return this.node(t, { kind: c.ENUM_TYPE_EXTENSION, name: n, directives: i, values: r });
   }
   parseInputObjectTypeExtension() {
     let t = this._lexer.token;
     this.expectKeyword("extend"), this.expectKeyword("input");
     let n = this.parseName(), i = this.parseConstDirectives(), r = this.parseInputFieldsDefinition();
-    if (i.length === 0 && r.length === 0)
-      throw this.unexpected();
+    if (i.length === 0 && r.length === 0) throw this.unexpected();
     return this.node(t, { kind: c.INPUT_OBJECT_TYPE_EXTENSION, name: n, directives: i, fields: r });
   }
   parseDirectiveDefinition() {
@@ -1215,8 +1123,7 @@ var Te = class {
   }
   parseDirectiveLocation() {
     let t = this._lexer.token, n = this.parseName();
-    if (Object.prototype.hasOwnProperty.call(ee, n.value))
-      return n;
+    if (Object.prototype.hasOwnProperty.call(ee, n.value)) return n;
     throw this.unexpected(t);
   }
   node(t, n) {
@@ -1227,8 +1134,7 @@ var Te = class {
   }
   expectToken(t) {
     let n = this._lexer.token;
-    if (n.kind === t)
-      return this.advanceLexer(), n;
+    if (n.kind === t) return this.advanceLexer(), n;
     throw d(this._lexer.source, n.start, `Expected ${dt(t)}, found ${oe(n)}.`);
   }
   expectOptionalToken(t) {
@@ -1236,10 +1142,8 @@ var Te = class {
   }
   expectKeyword(t) {
     let n = this._lexer.token;
-    if (n.kind === o.NAME && n.value === t)
-      this.advanceLexer();
-    else
-      throw d(this._lexer.source, n.start, `Expected "${t}", found ${oe(n)}.`);
+    if (n.kind === o.NAME && n.value === t) this.advanceLexer();
+    else throw d(this._lexer.source, n.start, `Expected "${t}", found ${oe(n)}.`);
   }
   expectOptionalKeyword(t) {
     let n = this._lexer.token;
@@ -1252,8 +1156,7 @@ var Te = class {
   any(t, n, i) {
     this.expectToken(t);
     let r = [];
-    for (; !this.expectOptionalToken(i); )
-      r.push(n.call(this));
+    for (; !this.expectOptionalToken(i); ) r.push(n.call(this));
     return r;
   }
   optionalMany(t, n, i) {
@@ -1284,8 +1187,7 @@ var Te = class {
   }
   advanceLexer() {
     let { maxTokens: t } = this._options, n = this._lexer.advance();
-    if (n.kind !== o.EOF && (++this._tokenCounter, t !== void 0 && this._tokenCounter > t))
-      throw d(this._lexer.source, n.start, `Document contains more that ${t} tokens. Parsing aborted.`);
+    if (n.kind !== o.EOF && (++this._tokenCounter, t !== void 0 && this._tokenCounter > t)) throw d(this._lexer.source, n.start, `Document contains more that ${t} tokens. Parsing aborted.`);
   }
 };
 function oe(e2) {
@@ -1302,8 +1204,7 @@ function sn(e2, t) {
 var mt = sn;
 function on(e2) {
   let t = [], { startToken: n, endToken: i } = e2.loc;
-  for (let r = n; r !== i; r = r.next)
-    r.kind === "Comment" && t.push({ ...r, loc: { start: r.start, end: r.end } });
+  for (let r = n; r !== i; r = r.next) r.kind === "Comment" && t.push({ ...r, loc: { start: r.start, end: r.end } });
   return t;
 }
 var an = { allowLegacyFragmentVariables: true };

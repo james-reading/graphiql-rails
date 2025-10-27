@@ -1435,6 +1435,14 @@
 .monaco-editor input:focus-visible {
   outline-color: hsl(var(--color-primary));
 }
+.monaco-editor .overflow-guard {
+  overflow: unset !important;
+}
+.monaco-editor .quick-input-widget {
+  --vscode-widget-border: var(--vscode-editorHoverWidget-border);
+  min-width: min(500px, 70vw) !important;
+  box-shadow: none !important;
+}
 .monaco-hover, .monaco-hover-content {
   width: auto !important;
   max-width: none !important;

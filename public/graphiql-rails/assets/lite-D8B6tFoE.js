@@ -1,22 +1,17 @@
-var __defProp = Object.defineProperty;
-var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var __publicField = (obj, key, value) => {
-  __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
-  return value;
-};
-import { _ as __vitePreload } from "./index-62651a21.js";
-import { E as Emitter, l as languages } from "./toggleHighContrast-8e47a627.js";
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/graphqlMode-CCJksOYE.js","assets/monaco-editor-DnsuBXvo.js","assets/index-DG__pMso.js","assets/index-_4QeOAD2.css","assets/monaco-editor-7c3jN3Td.css"])))=>i.map(i=>d[i]);
+import { _ as __vitePreload } from "./index-DG__pMso.js";
+import { E as Emitter, l as languages } from "./monaco-editor-DnsuBXvo.js";
 class MonacoGraphQLAPI {
+  _onDidChange = new Emitter();
+  _formattingOptions;
+  _modeConfiguration;
+  _diagnosticSettings;
+  _completionSettings;
+  _schemas = null;
+  _schemasById = /* @__PURE__ */ Object.create(null);
+  _languageId;
+  _externalFragmentDefinitions;
   constructor({ languageId, schemas, modeConfiguration, formattingOptions, diagnosticSettings, completionSettings }) {
-    __publicField(this, "_onDidChange", new Emitter());
-    __publicField(this, "_formattingOptions");
-    __publicField(this, "_modeConfiguration");
-    __publicField(this, "_diagnosticSettings");
-    __publicField(this, "_completionSettings");
-    __publicField(this, "_schemas", null);
-    __publicField(this, "_schemasById", /* @__PURE__ */ Object.create(null));
-    __publicField(this, "_languageId");
-    __publicField(this, "_externalFragmentDefinitions");
     this._languageId = languageId;
     if (schemas) {
       this.setSchemaConfig(schemas);
@@ -104,7 +99,7 @@ function create(languageId, config) {
       ...formattingOptions,
       prettierConfig: {
         ...formattingDefaults.prettierConfig,
-        ...formattingOptions == null ? void 0 : formattingOptions.prettierConfig
+        ...formattingOptions?.prettierConfig
       }
     },
     modeConfiguration: {
@@ -157,7 +152,7 @@ function initializeMode(config) {
   return api;
 }
 function getMode() {
-  return __vitePreload(() => import("./graphqlMode-c88b10e1.js"), true ? ["assets/graphqlMode-c88b10e1.js","assets/toggleHighContrast-8e47a627.js","assets/index-62651a21.js","assets/index-9bd5e39a.css","assets/toggleHighContrast-1eabf52f.css"] : void 0);
+  return __vitePreload(() => import("./graphqlMode-CCJksOYE.js"), true ? __vite__mapDeps([0,1,2,3,4]) : void 0);
 }
 export {
   LANGUAGE_ID,

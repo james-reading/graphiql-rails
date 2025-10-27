@@ -1,4 +1,4 @@
-import { x as isNative, E as Emitter, y as Event, z as webWorkerOrigin, U as URI, A as join, B as posix, D as onUnexpectedError, F as isWeb, H as DisposableStore, I as Disposable, J as toDisposable, L as isString, M as isObject, N as localize, P as LinkedList, Q as isMacintosh, R as isLinux, V as Range, W as Position } from "./index-62651a21.js";
+import { i as isNative, E as Emitter, c as Event, U as URI, p as posix, o as onUnexpectedError, d as isWeb, D as DisposableStore, e as Disposable, t as toDisposable, f as isString, h as isObject, l as localize, L as LinkedList, j as isLinux, k as isMacintosh, R as Range, P as Position } from "./index-DG__pMso.js";
 function ensureCodeWindow(targetWindow, fallbackWindowId) {
   const codeWindow = targetWindow;
   if (typeof codeWindow.vscodeWindowId !== "number") {
@@ -46,27 +46,11 @@ if (typeof mainWindow.matchMedia === "function") {
     standalone = matches;
   });
 }
-function isStandalone() {
-  return standalone;
-}
 ({
   clipboard: {
     writeText: isNative || document.queryCommandSupported && document.queryCommandSupported("copy") || !!(navigator && navigator.clipboard && navigator.clipboard.writeText),
     readText: isNative || !!(navigator && navigator.clipboard && navigator.clipboard.readText)
-  },
-  keyboard: (() => {
-    if (isNative || isStandalone()) {
-      return 0;
-    }
-    if (navigator.keyboard || isSafari) {
-      return 1;
-    }
-    return 2;
-  })(),
-  // 'ontouchstart' in window always evaluates to true with typescript's modern typings. This causes `window` to be
-  // `never` later in `window.navigator`. That's why we need the explicit `window as Window` cast
-  touch: "ontouchstart" in mainWindow || navigator.maxTouchPoints > 0,
-  pointerEvents: mainWindow.PointerEvent && ("ontouchstart" in mainWindow || navigator.maxTouchPoints > 0)
+  }
 });
 class RunOnceScheduler {
   constructor(runner, delay) {
@@ -117,8 +101,7 @@ class RunOnceScheduler {
     }
   }
   doRun() {
-    var _a;
-    (_a = this.runner) == null ? void 0 : _a.call(this);
+    this.runner?.();
   }
 }
 var Promises;
@@ -215,8 +198,7 @@ const _AsyncIterableObject = class _AsyncIterableObject {
         } while (true);
       },
       return: async () => {
-        var _a;
-        (_a = this._onReturn) == null ? void 0 : _a.call(this);
+        this._onReturn?.();
         return { done: true, value: void 0 };
       }
     };
@@ -484,20 +466,11 @@ var EXPRESSIONS = /* @__PURE__ */ Object.freeze({
 });
 const NODE_TYPE = {
   element: 1,
-  attribute: 2,
   text: 3,
-  cdataSection: 4,
-  entityReference: 5,
-  // Deprecated
-  entityNode: 6,
   // Deprecated
   progressingInstruction: 7,
   comment: 8,
-  document: 9,
-  documentType: 10,
-  documentFragment: 11,
-  notation: 12
-  // Deprecated
+  document: 9
 };
 const getGlobal = function getGlobal2() {
   return typeof window === "undefined" ? null : window;
@@ -1019,10 +992,8 @@ function createDOMPurify() {
     if (SANITIZE_DOM && (lcName === "id" || lcName === "name") && (value in document2 || value in formElement)) {
       return false;
     }
-    if (ALLOW_DATA_ATTR && !FORBID_ATTR[lcName] && regExpTest(DATA_ATTR2, lcName))
-      ;
-    else if (ALLOW_ARIA_ATTR && regExpTest(ARIA_ATTR2, lcName))
-      ;
+    if (ALLOW_DATA_ATTR && !FORBID_ATTR[lcName] && regExpTest(DATA_ATTR2, lcName)) ;
+    else if (ALLOW_ARIA_ATTR && regExpTest(ARIA_ATTR2, lcName)) ;
     else if (!ALLOWED_ATTR[lcName] || FORBID_ATTR[lcName]) {
       if (
         // First condition does a very basic check if a) it's basically a valid custom element tagname AND
@@ -1031,23 +1002,17 @@ function createDOMPurify() {
         _isBasicCustomElement(lcTag) && (CUSTOM_ELEMENT_HANDLING.tagNameCheck instanceof RegExp && regExpTest(CUSTOM_ELEMENT_HANDLING.tagNameCheck, lcTag) || CUSTOM_ELEMENT_HANDLING.tagNameCheck instanceof Function && CUSTOM_ELEMENT_HANDLING.tagNameCheck(lcTag)) && (CUSTOM_ELEMENT_HANDLING.attributeNameCheck instanceof RegExp && regExpTest(CUSTOM_ELEMENT_HANDLING.attributeNameCheck, lcName) || CUSTOM_ELEMENT_HANDLING.attributeNameCheck instanceof Function && CUSTOM_ELEMENT_HANDLING.attributeNameCheck(lcName)) || // Alternative, second condition checks if it's an `is`-attribute, AND
         // the value passes whatever the user has configured for CUSTOM_ELEMENT_HANDLING.tagNameCheck
         lcName === "is" && CUSTOM_ELEMENT_HANDLING.allowCustomizedBuiltInElements && (CUSTOM_ELEMENT_HANDLING.tagNameCheck instanceof RegExp && regExpTest(CUSTOM_ELEMENT_HANDLING.tagNameCheck, value) || CUSTOM_ELEMENT_HANDLING.tagNameCheck instanceof Function && CUSTOM_ELEMENT_HANDLING.tagNameCheck(value))
-      )
-        ;
+      ) ;
       else {
         return false;
       }
-    } else if (URI_SAFE_ATTRIBUTES[lcName])
-      ;
-    else if (regExpTest(IS_ALLOWED_URI$1, stringReplace(value, ATTR_WHITESPACE2, "")))
-      ;
-    else if ((lcName === "src" || lcName === "xlink:href" || lcName === "href") && lcTag !== "script" && stringIndexOf(value, "data:") === 0 && DATA_URI_TAGS[lcTag])
-      ;
-    else if (ALLOW_UNKNOWN_PROTOCOLS && !regExpTest(IS_SCRIPT_OR_DATA2, stringReplace(value, ATTR_WHITESPACE2, "")))
-      ;
+    } else if (URI_SAFE_ATTRIBUTES[lcName]) ;
+    else if (regExpTest(IS_ALLOWED_URI$1, stringReplace(value, ATTR_WHITESPACE2, ""))) ;
+    else if ((lcName === "src" || lcName === "xlink:href" || lcName === "href") && lcTag !== "script" && stringIndexOf(value, "data:") === 0 && DATA_URI_TAGS[lcTag]) ;
+    else if (ALLOW_UNKNOWN_PROTOCOLS && !regExpTest(IS_SCRIPT_OR_DATA2, stringReplace(value, ATTR_WHITESPACE2, ""))) ;
     else if (value) {
       return false;
-    } else
-      ;
+    } else ;
     return true;
   };
   const _isBasicCustomElement = function _isBasicCustomElement2(tagName) {
@@ -1112,8 +1077,7 @@ function createDOMPurify() {
         continue;
       }
       if (trustedTypesPolicy && typeof trustedTypes === "object" && typeof trustedTypes.getAttributeType === "function") {
-        if (namespaceURI)
-          ;
+        if (namespaceURI) ;
         else {
           switch (trustedTypes.getAttributeType(lcTag, lcName)) {
             case "TrustedHTML": {
@@ -1656,25 +1620,6 @@ _AmbiguousCharacters.cache = new LRUCachedFunction({ getCacheKey: JSON.stringify
 });
 _AmbiguousCharacters._locales = new Lazy(() => Object.keys(_AmbiguousCharacters.ambiguousCharacterData.value).filter((k) => !k.startsWith("_")));
 let AmbiguousCharacters = _AmbiguousCharacters;
-const _InvisibleCharacters = class _InvisibleCharacters {
-  static getRawData() {
-    return JSON.parse("[9,10,11,12,13,32,127,160,173,847,1564,4447,4448,6068,6069,6155,6156,6157,6158,7355,7356,8192,8193,8194,8195,8196,8197,8198,8199,8200,8201,8202,8203,8204,8205,8206,8207,8234,8235,8236,8237,8238,8239,8287,8288,8289,8290,8291,8292,8293,8294,8295,8296,8297,8298,8299,8300,8301,8302,8303,10240,12288,12644,65024,65025,65026,65027,65028,65029,65030,65031,65032,65033,65034,65035,65036,65037,65038,65039,65279,65440,65520,65521,65522,65523,65524,65525,65526,65527,65528,65532,78844,119155,119156,119157,119158,119159,119160,119161,119162,917504,917505,917506,917507,917508,917509,917510,917511,917512,917513,917514,917515,917516,917517,917518,917519,917520,917521,917522,917523,917524,917525,917526,917527,917528,917529,917530,917531,917532,917533,917534,917535,917536,917537,917538,917539,917540,917541,917542,917543,917544,917545,917546,917547,917548,917549,917550,917551,917552,917553,917554,917555,917556,917557,917558,917559,917560,917561,917562,917563,917564,917565,917566,917567,917568,917569,917570,917571,917572,917573,917574,917575,917576,917577,917578,917579,917580,917581,917582,917583,917584,917585,917586,917587,917588,917589,917590,917591,917592,917593,917594,917595,917596,917597,917598,917599,917600,917601,917602,917603,917604,917605,917606,917607,917608,917609,917610,917611,917612,917613,917614,917615,917616,917617,917618,917619,917620,917621,917622,917623,917624,917625,917626,917627,917628,917629,917630,917631,917760,917761,917762,917763,917764,917765,917766,917767,917768,917769,917770,917771,917772,917773,917774,917775,917776,917777,917778,917779,917780,917781,917782,917783,917784,917785,917786,917787,917788,917789,917790,917791,917792,917793,917794,917795,917796,917797,917798,917799,917800,917801,917802,917803,917804,917805,917806,917807,917808,917809,917810,917811,917812,917813,917814,917815,917816,917817,917818,917819,917820,917821,917822,917823,917824,917825,917826,917827,917828,917829,917830,917831,917832,917833,917834,917835,917836,917837,917838,917839,917840,917841,917842,917843,917844,917845,917846,917847,917848,917849,917850,917851,917852,917853,917854,917855,917856,917857,917858,917859,917860,917861,917862,917863,917864,917865,917866,917867,917868,917869,917870,917871,917872,917873,917874,917875,917876,917877,917878,917879,917880,917881,917882,917883,917884,917885,917886,917887,917888,917889,917890,917891,917892,917893,917894,917895,917896,917897,917898,917899,917900,917901,917902,917903,917904,917905,917906,917907,917908,917909,917910,917911,917912,917913,917914,917915,917916,917917,917918,917919,917920,917921,917922,917923,917924,917925,917926,917927,917928,917929,917930,917931,917932,917933,917934,917935,917936,917937,917938,917939,917940,917941,917942,917943,917944,917945,917946,917947,917948,917949,917950,917951,917952,917953,917954,917955,917956,917957,917958,917959,917960,917961,917962,917963,917964,917965,917966,917967,917968,917969,917970,917971,917972,917973,917974,917975,917976,917977,917978,917979,917980,917981,917982,917983,917984,917985,917986,917987,917988,917989,917990,917991,917992,917993,917994,917995,917996,917997,917998,917999]");
-  }
-  static getData() {
-    if (!this._data) {
-      this._data = new Set(_InvisibleCharacters.getRawData());
-    }
-    return this._data;
-  }
-  static isInvisibleCharacter(codePoint) {
-    return _InvisibleCharacters.getData().has(codePoint);
-  }
-  static get codePoints() {
-    return _InvisibleCharacters.getData();
-  }
-};
-_InvisibleCharacters._data = void 0;
-let InvisibleCharacters = _InvisibleCharacters;
 var Schemas;
 (function(Schemas2) {
   Schemas2.inMemory = "inmemory";
@@ -1763,64 +1708,6 @@ class RemoteAuthoritiesImpl {
   }
 }
 const RemoteAuthorities = new RemoteAuthoritiesImpl();
-const VSCODE_AUTHORITY = "vscode-app";
-const _FileAccessImpl = class _FileAccessImpl {
-  /**
-   * Returns a URI to use in contexts where the browser is responsible
-   * for loading (e.g. fetch()) or when used within the DOM.
-   *
-   * **Note:** use `dom.ts#asCSSUrl` whenever the URL is to be used in CSS context.
-   */
-  asBrowserUri(resourcePath) {
-    const uri = this.toUri(resourcePath);
-    return this.uriToBrowserUri(uri);
-  }
-  /**
-   * Returns a URI to use in contexts where the browser is responsible
-   * for loading (e.g. fetch()) or when used within the DOM.
-   *
-   * **Note:** use `dom.ts#asCSSUrl` whenever the URL is to be used in CSS context.
-   */
-  uriToBrowserUri(uri) {
-    if (uri.scheme === Schemas.vscodeRemote) {
-      return RemoteAuthorities.rewrite(uri);
-    }
-    if (
-      // ...only ever for `file` resources
-      uri.scheme === Schemas.file && // ...and we run in native environments
-      (isNative || // ...or web worker extensions on desktop
-      webWorkerOrigin === `${Schemas.vscodeFileResource}://${_FileAccessImpl.FALLBACK_AUTHORITY}`)
-    ) {
-      return uri.with({
-        scheme: Schemas.vscodeFileResource,
-        // We need to provide an authority here so that it can serve
-        // as origin for network and loading matters in chromium.
-        // If the URI is not coming with an authority already, we
-        // add our own
-        authority: uri.authority || _FileAccessImpl.FALLBACK_AUTHORITY,
-        query: null,
-        fragment: null
-      });
-    }
-    return uri;
-  }
-  toUri(uriOrModule, moduleIdToUrl) {
-    if (URI.isUri(uriOrModule)) {
-      return uriOrModule;
-    }
-    if (globalThis._VSCODE_FILE_ROOT) {
-      const rootUriOrPath = globalThis._VSCODE_FILE_ROOT;
-      if (/^\w[\w\d+.-]*:\/\//.test(rootUriOrPath)) {
-        return URI.joinPath(URI.parse(rootUriOrPath, true), uriOrModule);
-      }
-      const modulePath = join(rootUriOrPath, uriOrModule);
-      return URI.file(modulePath);
-    }
-    return URI.parse(moduleIdToUrl.toUrl(uriOrModule));
-  }
-};
-_FileAccessImpl.FALLBACK_AUTHORITY = VSCODE_AUTHORITY;
-let FileAccessImpl = _FileAccessImpl;
 var COI;
 (function(COI2) {
   const coiHeaders = /* @__PURE__ */ new Map([
@@ -1839,7 +1726,7 @@ var COI;
     } else if (URI.isUri(url)) {
       params = new URL(url.toString(true)).searchParams;
     }
-    const value = params == null ? void 0 : params.get(coiSearchParamName);
+    const value = params?.get(coiSearchParamName);
     if (!value) {
       return void 0;
     }
@@ -1859,258 +1746,22 @@ var COI;
   }
   COI2.addSearchParam = addSearchParam;
 })(COI || (COI = {}));
-function hash(obj) {
-  return doHash(obj, 0);
-}
-function doHash(obj, hashVal) {
-  switch (typeof obj) {
-    case "object":
-      if (obj === null) {
-        return numberHash(349, hashVal);
-      } else if (Array.isArray(obj)) {
-        return arrayHash(obj, hashVal);
-      }
-      return objectHash(obj, hashVal);
-    case "string":
-      return stringHash(obj, hashVal);
-    case "boolean":
-      return booleanHash(obj, hashVal);
-    case "number":
-      return numberHash(obj, hashVal);
-    case "undefined":
-      return numberHash(937, hashVal);
-    default:
-      return numberHash(617, hashVal);
-  }
-}
-function numberHash(val, initialHashVal) {
-  return (initialHashVal << 5) - initialHashVal + val | 0;
-}
-function booleanHash(b, initialHashVal) {
-  return numberHash(b ? 433 : 863, initialHashVal);
-}
-function stringHash(s, hashVal) {
-  hashVal = numberHash(149417, hashVal);
-  for (let i = 0, length = s.length; i < length; i++) {
-    hashVal = numberHash(s.charCodeAt(i), hashVal);
-  }
-  return hashVal;
-}
-function arrayHash(arr, initialHashVal) {
-  initialHashVal = numberHash(104579, initialHashVal);
-  return arr.reduce((hashVal, item) => doHash(item, hashVal), initialHashVal);
-}
-function objectHash(obj, initialHashVal) {
-  initialHashVal = numberHash(181387, initialHashVal);
-  return Object.keys(obj).sort().reduce((hashVal, key) => {
-    hashVal = stringHash(key, hashVal);
-    return doHash(obj[key], hashVal);
-  }, initialHashVal);
-}
-function leftRotate(value, bits, totalBits = 32) {
-  const delta = totalBits - bits;
-  const mask = ~((1 << delta) - 1);
-  return (value << bits | (mask & value) >>> delta) >>> 0;
-}
-function fill(dest, index = 0, count = dest.byteLength, value = 0) {
-  for (let i = 0; i < count; i++) {
-    dest[index + i] = value;
-  }
-}
-function leftPad(value, length, char = "0") {
-  while (value.length < length) {
-    value = char + value;
-  }
-  return value;
-}
-function toHexString(bufferOrValue, bitsize = 32) {
-  if (bufferOrValue instanceof ArrayBuffer) {
-    return Array.from(new Uint8Array(bufferOrValue)).map((b) => b.toString(16).padStart(2, "0")).join("");
-  }
-  return leftPad((bufferOrValue >>> 0).toString(16), bitsize / 4);
-}
-const _StringSHA1 = class _StringSHA1 {
-  // 80 * 4 = 320
-  constructor() {
-    this._h0 = 1732584193;
-    this._h1 = 4023233417;
-    this._h2 = 2562383102;
-    this._h3 = 271733878;
-    this._h4 = 3285377520;
-    this._buff = new Uint8Array(
-      64 + 3
-      /* to fit any utf-8 */
-    );
-    this._buffDV = new DataView(this._buff.buffer);
-    this._buffLen = 0;
-    this._totalLen = 0;
-    this._leftoverHighSurrogate = 0;
-    this._finished = false;
-  }
-  update(str) {
-    const strLen = str.length;
-    if (strLen === 0) {
-      return;
-    }
-    const buff = this._buff;
-    let buffLen = this._buffLen;
-    let leftoverHighSurrogate = this._leftoverHighSurrogate;
-    let charCode;
-    let offset;
-    if (leftoverHighSurrogate !== 0) {
-      charCode = leftoverHighSurrogate;
-      offset = -1;
-      leftoverHighSurrogate = 0;
-    } else {
-      charCode = str.charCodeAt(0);
-      offset = 0;
-    }
-    while (true) {
-      let codePoint = charCode;
-      if (isHighSurrogate(charCode)) {
-        if (offset + 1 < strLen) {
-          const nextCharCode = str.charCodeAt(offset + 1);
-          if (isLowSurrogate(nextCharCode)) {
-            offset++;
-            codePoint = computeCodePoint(charCode, nextCharCode);
-          } else {
-            codePoint = 65533;
-          }
-        } else {
-          leftoverHighSurrogate = charCode;
-          break;
-        }
-      } else if (isLowSurrogate(charCode)) {
-        codePoint = 65533;
-      }
-      buffLen = this._push(buff, buffLen, codePoint);
-      offset++;
-      if (offset < strLen) {
-        charCode = str.charCodeAt(offset);
-      } else {
-        break;
-      }
-    }
-    this._buffLen = buffLen;
-    this._leftoverHighSurrogate = leftoverHighSurrogate;
-  }
-  _push(buff, buffLen, codePoint) {
-    if (codePoint < 128) {
-      buff[buffLen++] = codePoint;
-    } else if (codePoint < 2048) {
-      buff[buffLen++] = 192 | (codePoint & 1984) >>> 6;
-      buff[buffLen++] = 128 | (codePoint & 63) >>> 0;
-    } else if (codePoint < 65536) {
-      buff[buffLen++] = 224 | (codePoint & 61440) >>> 12;
-      buff[buffLen++] = 128 | (codePoint & 4032) >>> 6;
-      buff[buffLen++] = 128 | (codePoint & 63) >>> 0;
-    } else {
-      buff[buffLen++] = 240 | (codePoint & 1835008) >>> 18;
-      buff[buffLen++] = 128 | (codePoint & 258048) >>> 12;
-      buff[buffLen++] = 128 | (codePoint & 4032) >>> 6;
-      buff[buffLen++] = 128 | (codePoint & 63) >>> 0;
-    }
-    if (buffLen >= 64) {
-      this._step();
-      buffLen -= 64;
-      this._totalLen += 64;
-      buff[0] = buff[64 + 0];
-      buff[1] = buff[64 + 1];
-      buff[2] = buff[64 + 2];
-    }
-    return buffLen;
-  }
-  digest() {
-    if (!this._finished) {
-      this._finished = true;
-      if (this._leftoverHighSurrogate) {
-        this._leftoverHighSurrogate = 0;
-        this._buffLen = this._push(
-          this._buff,
-          this._buffLen,
-          65533
-          /* SHA1Constant.UNICODE_REPLACEMENT */
-        );
-      }
-      this._totalLen += this._buffLen;
-      this._wrapUp();
-    }
-    return toHexString(this._h0) + toHexString(this._h1) + toHexString(this._h2) + toHexString(this._h3) + toHexString(this._h4);
-  }
-  _wrapUp() {
-    this._buff[this._buffLen++] = 128;
-    fill(this._buff, this._buffLen);
-    if (this._buffLen > 56) {
-      this._step();
-      fill(this._buff);
-    }
-    const ml = 8 * this._totalLen;
-    this._buffDV.setUint32(56, Math.floor(ml / 4294967296), false);
-    this._buffDV.setUint32(60, ml % 4294967296, false);
-    this._step();
-  }
-  _step() {
-    const bigBlock32 = _StringSHA1._bigBlock32;
-    const data = this._buffDV;
-    for (let j = 0; j < 64; j += 4) {
-      bigBlock32.setUint32(j, data.getUint32(j, false), false);
-    }
-    for (let j = 64; j < 320; j += 4) {
-      bigBlock32.setUint32(j, leftRotate(bigBlock32.getUint32(j - 12, false) ^ bigBlock32.getUint32(j - 32, false) ^ bigBlock32.getUint32(j - 56, false) ^ bigBlock32.getUint32(j - 64, false), 1), false);
-    }
-    let a = this._h0;
-    let b = this._h1;
-    let c = this._h2;
-    let d = this._h3;
-    let e = this._h4;
-    let f, k;
-    let temp;
-    for (let j = 0; j < 80; j++) {
-      if (j < 20) {
-        f = b & c | ~b & d;
-        k = 1518500249;
-      } else if (j < 40) {
-        f = b ^ c ^ d;
-        k = 1859775393;
-      } else if (j < 60) {
-        f = b & c | b & d | c & d;
-        k = 2400959708;
-      } else {
-        f = b ^ c ^ d;
-        k = 3395469782;
-      }
-      temp = leftRotate(a, 5) + f + e + k + bigBlock32.getUint32(j * 4, false) & 4294967295;
-      e = d;
-      d = c;
-      c = leftRotate(b, 30);
-      b = a;
-      a = temp;
-    }
-    this._h0 = this._h0 + a & 4294967295;
-    this._h1 = this._h1 + b & 4294967295;
-    this._h2 = this._h2 + c & 4294967295;
-    this._h3 = this._h3 + d & 4294967295;
-    this._h4 = this._h4 + e & 4294967295;
-  }
-};
-_StringSHA1._bigBlock32 = new DataView(new ArrayBuffer(320));
-let StringSHA1 = _StringSHA1;
-const { registerWindow, getWindow, getDocument, getWindows, getWindowsCount, getWindowId, getWindowById, hasWindow, onDidRegisterWindow, onWillUnregisterWindow, onDidUnregisterWindow } = function() {
+const { getWindow } = (function() {
   const windows = /* @__PURE__ */ new Map();
   ensureCodeWindow(mainWindow, 1);
   const mainWindowRegistration = { window: mainWindow, disposables: new DisposableStore() };
   windows.set(mainWindow.vscodeWindowId, mainWindowRegistration);
-  const onDidRegisterWindow2 = new Emitter();
-  const onDidUnregisterWindow2 = new Emitter();
-  const onWillUnregisterWindow2 = new Emitter();
-  function getWindowById2(windowId, fallbackToMain) {
+  const onDidRegisterWindow = new Emitter();
+  const onDidUnregisterWindow = new Emitter();
+  const onWillUnregisterWindow = new Emitter();
+  function getWindowById(windowId, fallbackToMain) {
     const window2 = typeof windowId === "number" ? windows.get(windowId) : void 0;
     return window2 ?? (fallbackToMain ? mainWindowRegistration : void 0);
   }
   return {
-    onDidRegisterWindow: onDidRegisterWindow2.event,
-    onWillUnregisterWindow: onWillUnregisterWindow2.event,
-    onDidUnregisterWindow: onDidUnregisterWindow2.event,
+    onDidRegisterWindow: onDidRegisterWindow.event,
+    onWillUnregisterWindow: onWillUnregisterWindow.event,
+    onDidUnregisterWindow: onDidUnregisterWindow.event,
     registerWindow(window2) {
       if (windows.has(window2.vscodeWindowId)) {
         return Disposable.None;
@@ -2123,12 +1774,12 @@ const { registerWindow, getWindow, getDocument, getWindows, getWindowsCount, get
       windows.set(window2.vscodeWindowId, registeredWindow);
       disposables.add(toDisposable(() => {
         windows.delete(window2.vscodeWindowId);
-        onDidUnregisterWindow2.fire(window2);
+        onDidUnregisterWindow.fire(window2);
       }));
       disposables.add(addDisposableListener(window2, EventType.BEFORE_UNLOAD, () => {
-        onWillUnregisterWindow2.fire(window2);
+        onWillUnregisterWindow.fire(window2);
       }));
-      onDidRegisterWindow2.fire(registeredWindow);
+      onDidRegisterWindow.fire(registeredWindow);
       return disposables;
     },
     getWindows() {
@@ -2143,15 +1794,14 @@ const { registerWindow, getWindow, getDocument, getWindows, getWindowsCount, get
     hasWindow(windowId) {
       return windows.has(windowId);
     },
-    getWindowById: getWindowById2,
+    getWindowById,
     getWindow(e) {
-      var _a;
       const candidateNode = e;
-      if ((_a = candidateNode == null ? void 0 : candidateNode.ownerDocument) == null ? void 0 : _a.defaultView) {
+      if (candidateNode?.ownerDocument?.defaultView) {
         return candidateNode.ownerDocument.defaultView.window;
       }
       const candidateEvent = e;
-      if (candidateEvent == null ? void 0 : candidateEvent.view) {
+      if (candidateEvent?.view) {
         return candidateEvent.view.window;
       }
       return mainWindow;
@@ -2161,7 +1811,7 @@ const { registerWindow, getWindow, getDocument, getWindows, getWindowsCount, get
       return getWindow(candidateNode).document;
     }
   };
-}();
+})();
 class DomListener {
   constructor(node, type, handler, options) {
     this._node = node;
@@ -2219,167 +1869,17 @@ let Dimension = _Dimension;
 function isShadowRoot(node) {
   return node && !!node.host && !!node.mode;
 }
-function isInShadowDOM(domNode) {
-  return !!getShadowRoot(domNode);
-}
 function getShadowRoot(domNode) {
-  var _a;
   while (domNode.parentNode) {
-    if (domNode === ((_a = domNode.ownerDocument) == null ? void 0 : _a.body)) {
+    if (domNode === domNode.ownerDocument?.body) {
       return null;
     }
     domNode = domNode.parentNode;
   }
   return isShadowRoot(domNode) ? domNode : null;
 }
-const globalStylesheets = /* @__PURE__ */ new Map();
-function createStyleSheet(container = mainWindow.document.head, beforeAppend, disposableStore) {
-  const style = document.createElement("style");
-  style.type = "text/css";
-  style.media = "screen";
-  beforeAppend == null ? void 0 : beforeAppend(style);
-  container.appendChild(style);
-  if (disposableStore) {
-    disposableStore.add(toDisposable(() => style.remove()));
-  }
-  if (container === mainWindow.document.head) {
-    const globalStylesheetClones = /* @__PURE__ */ new Set();
-    globalStylesheets.set(style, globalStylesheetClones);
-    for (const { window: targetWindow, disposables } of getWindows()) {
-      if (targetWindow === mainWindow) {
-        continue;
-      }
-      const cloneDisposable = disposables.add(cloneGlobalStyleSheet(style, globalStylesheetClones, targetWindow));
-      disposableStore == null ? void 0 : disposableStore.add(cloneDisposable);
-    }
-  }
-  return style;
-}
-function cloneGlobalStyleSheet(globalStylesheet, globalStylesheetClones, targetWindow) {
-  var _a, _b;
-  const disposables = new DisposableStore();
-  const clone2 = globalStylesheet.cloneNode(true);
-  targetWindow.document.head.appendChild(clone2);
-  disposables.add(toDisposable(() => clone2.remove()));
-  for (const rule of getDynamicStyleSheetRules(globalStylesheet)) {
-    (_b = clone2.sheet) == null ? void 0 : _b.insertRule(rule.cssText, (_a = clone2.sheet) == null ? void 0 : _a.cssRules.length);
-  }
-  disposables.add(sharedMutationObserver.observe(globalStylesheet, disposables, { childList: true })(() => {
-    clone2.textContent = globalStylesheet.textContent;
-  }));
-  globalStylesheetClones.add(clone2);
-  disposables.add(toDisposable(() => globalStylesheetClones.delete(clone2)));
-  return disposables;
-}
-const sharedMutationObserver = new class {
-  constructor() {
-    this.mutationObservers = /* @__PURE__ */ new Map();
-  }
-  observe(target, disposables, options) {
-    let mutationObserversPerTarget = this.mutationObservers.get(target);
-    if (!mutationObserversPerTarget) {
-      mutationObserversPerTarget = /* @__PURE__ */ new Map();
-      this.mutationObservers.set(target, mutationObserversPerTarget);
-    }
-    const optionsHash = hash(options);
-    let mutationObserverPerOptions = mutationObserversPerTarget.get(optionsHash);
-    if (!mutationObserverPerOptions) {
-      const onDidMutate = new Emitter();
-      const observer = new MutationObserver((mutations) => onDidMutate.fire(mutations));
-      observer.observe(target, options);
-      const resolvedMutationObserverPerOptions = mutationObserverPerOptions = {
-        users: 1,
-        observer,
-        onDidMutate: onDidMutate.event
-      };
-      disposables.add(toDisposable(() => {
-        resolvedMutationObserverPerOptions.users -= 1;
-        if (resolvedMutationObserverPerOptions.users === 0) {
-          onDidMutate.dispose();
-          observer.disconnect();
-          mutationObserversPerTarget == null ? void 0 : mutationObserversPerTarget.delete(optionsHash);
-          if ((mutationObserversPerTarget == null ? void 0 : mutationObserversPerTarget.size) === 0) {
-            this.mutationObservers.delete(target);
-          }
-        }
-      }));
-      mutationObserversPerTarget.set(optionsHash, mutationObserverPerOptions);
-    } else {
-      mutationObserverPerOptions.users += 1;
-    }
-    return mutationObserverPerOptions.onDidMutate;
-  }
-}();
-function getDynamicStyleSheetRules(style) {
-  var _a, _b;
-  if ((_a = style == null ? void 0 : style.sheet) == null ? void 0 : _a.rules) {
-    return style.sheet.rules;
-  }
-  if ((_b = style == null ? void 0 : style.sheet) == null ? void 0 : _b.cssRules) {
-    return style.sheet.cssRules;
-  }
-  return [];
-}
 const EventType = {
-  // Mouse
-  CLICK: "click",
-  AUXCLICK: "auxclick",
-  DBLCLICK: "dblclick",
-  MOUSE_UP: "mouseup",
-  MOUSE_DOWN: "mousedown",
-  MOUSE_OVER: "mouseover",
-  MOUSE_MOVE: "mousemove",
-  MOUSE_OUT: "mouseout",
-  MOUSE_ENTER: "mouseenter",
-  MOUSE_LEAVE: "mouseleave",
-  MOUSE_WHEEL: "wheel",
-  POINTER_UP: "pointerup",
-  POINTER_DOWN: "pointerdown",
-  POINTER_MOVE: "pointermove",
-  POINTER_LEAVE: "pointerleave",
-  CONTEXT_MENU: "contextmenu",
-  WHEEL: "wheel",
-  // Keyboard
-  KEY_DOWN: "keydown",
-  KEY_PRESS: "keypress",
-  KEY_UP: "keyup",
-  // HTML Document
-  LOAD: "load",
-  BEFORE_UNLOAD: "beforeunload",
-  UNLOAD: "unload",
-  PAGE_SHOW: "pageshow",
-  PAGE_HIDE: "pagehide",
-  PASTE: "paste",
-  ABORT: "abort",
-  ERROR: "error",
-  RESIZE: "resize",
-  SCROLL: "scroll",
-  FULLSCREEN_CHANGE: "fullscreenchange",
-  WK_FULLSCREEN_CHANGE: "webkitfullscreenchange",
-  // Form
-  SELECT: "select",
-  CHANGE: "change",
-  SUBMIT: "submit",
-  RESET: "reset",
-  FOCUS: "focus",
-  FOCUS_IN: "focusin",
-  FOCUS_OUT: "focusout",
-  BLUR: "blur",
-  INPUT: "input",
-  // Local Storage
-  STORAGE: "storage",
-  // Drag
-  DRAG_START: "dragstart",
-  DRAG: "drag",
-  DRAG_ENTER: "dragenter",
-  DRAG_LEAVE: "dragleave",
-  DRAG_OVER: "dragover",
-  DROP: "drop",
-  DRAG_END: "dragend",
-  // Animation
-  ANIMATION_START: isWebKit ? "webkitAnimationStart" : "animationstart",
-  ANIMATION_END: isWebKit ? "webkitAnimationEnd" : "animationend",
-  ANIMATION_ITERATION: isWebKit ? "webkitAnimationIteration" : "animationiteration"
+  BEFORE_UNLOAD: "beforeunload"
 };
 var Namespace;
 (function(Namespace2) {
@@ -2875,12 +2375,6 @@ class JSONContributionRegistry {
 }
 const jsonContributionRegistry = new JSONContributionRegistry();
 Registry.add(Extensions$1.JSONContribution, jsonContributionRegistry);
-function asCssVariableName(colorIdent) {
-  return `--vscode-${colorIdent.replace(/\./g, "-")}`;
-}
-function asCssVariable(color) {
-  return `var(${asCssVariableName(color)})`;
-}
 function isColorDefaults(value) {
   return value !== null && typeof value === "object" && "light" in value && "dark" in value;
 }
@@ -2924,7 +2418,7 @@ class ColorRegistry {
   }
   resolveDefaultColor(id, theme) {
     const colorDesc = this.colorsById[id];
-    if (colorDesc == null ? void 0 : colorDesc.defaults) {
+    if (colorDesc?.defaults) {
       const colorValue = isColorDefaults(colorDesc.defaults) ? colorDesc.defaults[theme.type] : colorDesc.defaults;
       return resolveColorValue(colorValue, theme);
     }
@@ -2951,20 +2445,19 @@ function registerColor(id, defaults, description, needsTransparency, deprecation
   return colorRegistry.registerColor(id, defaults, description, needsTransparency, deprecationMessage);
 }
 function executeTransform(transform, theme) {
-  var _a, _b, _c, _d;
   switch (transform.op) {
     case 0:
-      return (_a = resolveColorValue(transform.value, theme)) == null ? void 0 : _a.darken(transform.factor);
+      return resolveColorValue(transform.value, theme)?.darken(transform.factor);
     case 1:
-      return (_b = resolveColorValue(transform.value, theme)) == null ? void 0 : _b.lighten(transform.factor);
+      return resolveColorValue(transform.value, theme)?.lighten(transform.factor);
     case 2:
-      return (_c = resolveColorValue(transform.value, theme)) == null ? void 0 : _c.transparent(transform.factor);
+      return resolveColorValue(transform.value, theme)?.transparent(transform.factor);
     case 3: {
       const backgroundColor = resolveColorValue(transform.background, theme);
       if (!backgroundColor) {
         return resolveColorValue(transform.value, theme);
       }
-      return (_d = resolveColorValue(transform.value, theme)) == null ? void 0 : _d.makeOpaque(backgroundColor);
+      return resolveColorValue(transform.value, theme)?.makeOpaque(backgroundColor);
     }
     case 4:
       for (const candidate of transform.values) {
@@ -3297,94 +2790,6 @@ class ClientCoordinates {
   toPageCoordinates(targetWindow) {
     return new PageCoordinates(this.clientX + targetWindow.scrollX, this.clientY + targetWindow.scrollY);
   }
-}
-const _DynamicCssRules = class _DynamicCssRules {
-  constructor(_editor) {
-    this._editor = _editor;
-    this._instanceId = ++_DynamicCssRules._idPool;
-    this._counter = 0;
-    this._rules = /* @__PURE__ */ new Map();
-    this._garbageCollectionScheduler = new RunOnceScheduler(() => this.garbageCollect(), 1e3);
-  }
-  createClassNameRef(options) {
-    const rule = this.getOrCreateRule(options);
-    rule.increaseRefCount();
-    return {
-      className: rule.className,
-      dispose: () => {
-        rule.decreaseRefCount();
-        this._garbageCollectionScheduler.schedule();
-      }
-    };
-  }
-  getOrCreateRule(properties) {
-    const key = this.computeUniqueKey(properties);
-    let existingRule = this._rules.get(key);
-    if (!existingRule) {
-      const counter = this._counter++;
-      existingRule = new RefCountedCssRule(key, `dyn-rule-${this._instanceId}-${counter}`, isInShadowDOM(this._editor.getContainerDomNode()) ? this._editor.getContainerDomNode() : void 0, properties);
-      this._rules.set(key, existingRule);
-    }
-    return existingRule;
-  }
-  computeUniqueKey(properties) {
-    return JSON.stringify(properties);
-  }
-  garbageCollect() {
-    for (const rule of this._rules.values()) {
-      if (!rule.hasReferences()) {
-        this._rules.delete(rule.key);
-        rule.dispose();
-      }
-    }
-  }
-};
-_DynamicCssRules._idPool = 0;
-let DynamicCssRules = _DynamicCssRules;
-class RefCountedCssRule {
-  constructor(key, className, _containerElement, properties) {
-    this.key = key;
-    this.className = className;
-    this.properties = properties;
-    this._referenceCount = 0;
-    this._styleElementDisposables = new DisposableStore();
-    this._styleElement = createStyleSheet(_containerElement, void 0, this._styleElementDisposables);
-    this._styleElement.textContent = this.getCssText(this.className, this.properties);
-  }
-  getCssText(className, properties) {
-    let str = `.${className} {`;
-    for (const prop in properties) {
-      const value = properties[prop];
-      let cssValue;
-      if (typeof value === "object") {
-        cssValue = asCssVariable(value.id);
-      } else {
-        cssValue = value;
-      }
-      const cssPropName = camelToDashes(prop);
-      str += `
-	${cssPropName}: ${cssValue};`;
-    }
-    str += `
-}`;
-    return str;
-  }
-  dispose() {
-    this._styleElementDisposables.dispose();
-    this._styleElement = void 0;
-  }
-  increaseRefCount() {
-    this._referenceCount++;
-  }
-  decreaseRefCount() {
-    this._referenceCount--;
-  }
-  hasReferences() {
-    return this._referenceCount > 0;
-  }
-}
-function camelToDashes(str) {
-  return str.replace(/(^[A-Z])/, ([first]) => first.toLowerCase()).replace(/([A-Z])/g, ([letter]) => `-${letter.toLowerCase()}`);
 }
 class PartFingerprints {
   static write(target, partId) {
@@ -4875,12 +4280,6 @@ function equals(one, other) {
   return true;
 }
 const EDITOR_MODEL_DEFAULTS = {
-  tabSize: 4,
-  indentSize: 4,
-  insertSpaces: true,
-  detectIndentation: true,
-  trimAutoWhitespace: true,
-  largeFileOptimizations: true,
   bracketPairColorizationOptions: {
     enabled: true,
     independentColorPoolPerBracketType: false
@@ -5092,9 +4491,6 @@ class EditorStringOption extends SimpleEditorOption {
 function stringSet(value, defaultValue, allowedValues, renamedValues) {
   if (typeof value !== "string") {
     return defaultValue;
-  }
-  if (renamedValues && value in renamedValues) {
-    return renamedValues[value];
   }
   if (allowedValues.indexOf(value) === -1) {
     return defaultValue;
@@ -7933,7 +7329,7 @@ function register(option) {
   wrappingIndent: register(new WrappingIndentOption()),
   wrappingStrategy: register(new WrappingStrategy())
 });
-const canUseFastRenderedViewLine = function() {
+const canUseFastRenderedViewLine = (function() {
   if (isNative) {
     return true;
   }
@@ -7941,7 +7337,7 @@ const canUseFastRenderedViewLine = function() {
     return false;
   }
   return true;
-}();
+})();
 let monospaceAssumptionsAreValid = true;
 const _ViewLine = class _ViewLine {
   constructor(options) {
@@ -8139,7 +7535,7 @@ class FastRenderedViewLine {
     }
     if (this._cachedWidth === -1) {
       this._cachedWidth = this._getReadingTarget(this.domNode).offsetWidth;
-      context == null ? void 0 : context.markDidDomLayout();
+      context?.markDidDomLayout();
     }
     return this._cachedWidth;
   }
@@ -8248,7 +7644,7 @@ class RenderedViewLine {
     }
     if (this._cachedWidth === -1) {
       this._cachedWidth = this._getReadingTarget(this.domNode).offsetWidth;
-      context == null ? void 0 : context.markDidDomLayout();
+      context?.markDidDomLayout();
     }
     return this._cachedWidth;
   }
@@ -8379,12 +7775,12 @@ class WebKitRenderedViewLine extends RenderedViewLine {
     return output;
   }
 }
-const createRenderedLine = function() {
+const createRenderedLine = (function() {
   if (isWebKit) {
     return createWebKitRenderedLine;
   }
   return createNormalRenderedLine;
-}();
+})();
 function createWebKitRenderedLine(domNode, renderLineInput, characterMapping, containsRTL2, containsForeignElements) {
   return new WebKitRenderedViewLine(domNode, renderLineInput, characterMapping, containsRTL2, containsForeignElements);
 }
@@ -8631,12 +8027,6 @@ var HitTestResult;
   }
   HitTestResult2.createFromDOMInfo = createFromDOMInfo;
 })(HitTestResult || (HitTestResult = {}));
-class PointerHandlerLastRenderData {
-  constructor(lastViewCursorsRenderData, lastTextareaPosition) {
-    this.lastViewCursorsRenderData = lastViewCursorsRenderData;
-    this.lastTextareaPosition = lastTextareaPosition;
-  }
-}
 class MouseTarget {
   static _deduceRage(position, range = null) {
     if (!range && position) {
@@ -9440,6 +8830,5 @@ let CharWidthReader = _CharWidthReader;
 export {
   HitTestContext,
   MouseTarget,
-  MouseTargetFactory,
-  PointerHandlerLastRenderData
+  MouseTargetFactory
 };

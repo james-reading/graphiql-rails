@@ -1,20 +1,15 @@
-var __defProp = Object.defineProperty;
-var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var __publicField = (obj, key, value) => {
-  __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
-  return value;
-};
-import { e as editor, l as languages, U as Uri } from "./toggleHighContrast-8e47a627.js";
-import { a as getStringSchema, C as CompletionItemKind, b as getModelLanguageId, _ as __vitePreload } from "./index-62651a21.js";
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/monaco-editor-DnsuBXvo.js","assets/index-DG__pMso.js","assets/index-_4QeOAD2.css","assets/monaco-editor-7c3jN3Td.css"])))=>i.map(i=>d[i]);
+import { e as editor, U as Uri, l as languages } from "./monaco-editor-DnsuBXvo.js";
+import { a as getStringSchema, b as getModelLanguageId, _ as __vitePreload, C as CompletionItemKind } from "./index-DG__pMso.js";
 const STOP_WHEN_IDLE_FOR = 2 * 60 * 1e3;
 class WorkerManager {
+  _defaults;
+  _idleCheckInterval;
+  _lastUsedTime = 0;
+  _configChangeListener;
+  _worker = null;
+  _client = null;
   constructor(defaults) {
-    __publicField(this, "_defaults");
-    __publicField(this, "_idleCheckInterval");
-    __publicField(this, "_lastUsedTime", 0);
-    __publicField(this, "_configChangeListener");
-    __publicField(this, "_worker", null);
-    __publicField(this, "_client", null);
     this._defaults = defaults;
     this._idleCheckInterval = window.setInterval(() => this._checkIfIdle(), 30 * 1e3);
     this._configChangeListener = this._defaults.onDidChange(() => {
@@ -54,7 +49,7 @@ class WorkerManager {
             languageId,
             formattingOptions,
             languageConfig: {
-              schemas: schemas == null ? void 0 : schemas.map(getStringSchema),
+              schemas: schemas?.map(getStringSchema),
               externalFragmentDefinitions,
               fillLeafsOnComplete: completionSettings.__experimental__fillLeafsOnComplete
             }
@@ -74,23 +69,22 @@ class WorkerManager {
   }
 }
 class DiagnosticsAdapter {
+  defaults;
+  _worker;
+  _disposables = [];
+  _listener = /* @__PURE__ */ Object.create(null);
   constructor(defaults, _worker) {
-    __publicField(this, "defaults");
-    __publicField(this, "_worker");
-    __publicField(this, "_disposables", []);
-    __publicField(this, "_listener", /* @__PURE__ */ Object.create(null));
     this.defaults = defaults;
     this._worker = _worker;
     this._worker = _worker;
     let onChangeTimeout;
     const onModelAdd = (model) => {
-      var _a;
       const modeId = getModelLanguageId(model);
       if (modeId !== this.defaults.languageId) {
         return;
       }
       const modelUri = model.uri.toString();
-      const jsonValidationForModel = (_a = defaults.diagnosticSettings.validateVariablesJSON) == null ? void 0 : _a[modelUri];
+      const jsonValidationForModel = defaults.diagnosticSettings.validateVariablesJSON?.[modelUri];
       onChangeTimeout = setTimeout(() => {
         void this._doValidate(model.uri, modeId, jsonValidationForModel);
       }, 400);
@@ -146,7 +140,6 @@ class DiagnosticsAdapter {
     this._disposables = [];
   }
   async _doValidate(resource, languageId, variablesUris) {
-    var _a;
     const worker = await this._worker(resource);
     if (!worker) {
       return;
@@ -154,7 +147,7 @@ class DiagnosticsAdapter {
     const diagnostics = await worker.doValidation(resource.toString());
     editor.setModelMarkers(editor.getModel(resource), languageId, diagnostics);
     if (variablesUris) {
-      await __vitePreload(() => import("./toggleHighContrast-8e47a627.js").then((n) => n.d), true ? ["assets/toggleHighContrast-8e47a627.js","assets/index-62651a21.js","assets/index-9bd5e39a.css","assets/toggleHighContrast-1eabf52f.css"] : void 0);
+      await __vitePreload(() => import("./monaco-editor-DnsuBXvo.js").then((n) => n.a), true ? __vite__mapDeps([0,1,2,3]) : void 0);
       if (!variablesUris.length) {
         throw new Error("No variables URI strings provided to validate");
       }
@@ -168,7 +161,7 @@ class DiagnosticsAdapter {
         schema: jsonSchema,
         fileMatch: variablesUris
       };
-      const currentSchemas = ((_a = languages.json.jsonDefaults.diagnosticsOptions.schemas) == null ? void 0 : _a.filter((s) => s.uri !== schemaUri)) || [];
+      const currentSchemas = languages.json.jsonDefaults.diagnosticsOptions.schemas?.filter((s) => s.uri !== schemaUri) || [];
       languages.json.jsonDefaults.setDiagnosticsOptions({
         schemaValidation: "error",
         validate: true,
@@ -226,8 +219,8 @@ function toCompletion(entry) {
   return suggestions;
 }
 class CompletionAdapter {
+  _worker;
   constructor(_worker) {
-    __publicField(this, "_worker");
     this._worker = _worker;
     this._worker = _worker;
   }
@@ -249,8 +242,8 @@ class CompletionAdapter {
   }
 }
 class DocumentFormattingAdapter {
+  _worker;
   constructor(_worker) {
-    __publicField(this, "_worker");
     this._worker = _worker;
     this._worker = _worker;
   }
@@ -269,8 +262,8 @@ class DocumentFormattingAdapter {
   }
 }
 class HoverAdapter {
+  _worker;
   constructor(_worker) {
-    __publicField(this, "_worker");
     this._worker = _worker;
   }
   async provideHover(model, position, _token) {
