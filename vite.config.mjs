@@ -1,34 +1,24 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import monacoEditorPlugin from 'vite-plugin-monaco-editor';
+import $monacoEditorPlugin from 'vite-plugin-monaco-editor';
+
+const monacoEditorPlugin = $monacoEditorPlugin.default ?? $monacoEditorPlugin;
 
 export default defineConfig({
   plugins: [
     react(),
-    monacoEditorPlugin.default({
+    monacoEditorPlugin({
       languageWorkers: ['editorWorkerService', 'json'],
       customWorkers: [
         {
           label: 'graphql',
-          entry: 'monaco-graphql/esm/graphql.worker'
-        }
+          entry: 'monaco-graphql/esm/graphql.worker',
+        },
       ],
-      publicPath: 'javascripts/graphiql/rails/'
     }),
   ],
   build: {
-    minify: false,
-    sourcemap: true,
-    rollupOptions: {
-      input: "src/index.jsx",
-      output: {
-        inlineDynamicImports: true,
-        entryFileNames: 'javascripts/graphiql/rails/[name].js',
-        assetFileNames: 'stylesheets/graphiql/rails/[name].[ext]'
-      }
-    },
-    outDir: 'app/assets',
-    emptyOutDir: true
+    outDir: 'public/graphiql-rails',
+    emptyOutDir: true,
   },
-  publicDir: false,
 });

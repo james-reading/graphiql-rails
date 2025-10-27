@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <script>self["MonacoEnvironment"] = (function (paths) {
+          return {
+            globalAPI: false,
+            getWorkerUrl : function (moduleId, label) {
+              var result =  paths[label];
+              if (/^((http:)|(https:)|(file:)|(\/\/))/.test(result)) {
+                var currentUrl = String(window.location);
+                var currentOrigin = currentUrl.substr(0, currentUrl.length - window.location.hash.length - window.location.search.length - window.location.pathname.length);
+                if (result.substring(0, currentOrigin.length) !== currentOrigin) {
+                  var js = '/*' + label + '*/importScripts("' + result + '");';
+                  var blob = new Blob([js], { type: 'application/javascript' });
+                  return URL.createObjectURL(blob);
+                }
+              }
+              return result;
+            }
+          };
+        })({
+  "editorWorkerService": "/monacoeditorwork/editor.worker.bundle.js",
+  "json": "/monacoeditorwork/json.worker.bundle.js",
+  "graphql": "/monacoeditorwork/graphql.worker.bundle.js"
+});</script>
+
+  <meta charset="UTF-8" />
+  <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>__APP_TITLE__</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    #graphiql-container {
+      height: 100dvh;
+    }
+
+    .loading {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+    }
+  </style>
+  <script>
+    window.APP_CONFIG = __APP_CONFIG__;
+  </script>
+  <script type="module" crossorigin src="/assets/index-D9lpwDdi.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-BuuL2DgO.css">
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="graphiql-container">
+    <div class="loading">Loading…</div>
+  </div>
+</body>
+
+</html>

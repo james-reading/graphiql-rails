@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>__APP_TITLE__</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    #graphiql-container {
+      height: 100dvh;
+    }
+
+    .loading {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+    }
+  </style>
+  <script>
+    window.APP_CONFIG = __APP_CONFIG__;
+  </script>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="graphiql-container">
+    <div class="loading">Loading…</div>
+  </div>
+  <script type="module" src="/src/index.jsx"></script>
+</body>
+
+</html>
