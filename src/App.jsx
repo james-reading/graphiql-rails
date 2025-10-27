@@ -2,6 +2,7 @@ import { GraphiQL } from 'graphiql';
 import { createGraphiQLFetcher } from '@graphiql/toolkit'
 import 'graphiql/style.css';
 
+
 const fetcher = createGraphiQLFetcher({
   url: window.APP_CONFIG?.graphql_endpoint_path
 });

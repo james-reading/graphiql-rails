@@ -2,20 +2,20 @@
   "name": "graphiql-rails-build-pipeline",
   "private": true,
   "dependencies": {
-    "@graphiql/toolkit": "^0.11.3",
-    "graphiql": "^5.2.0",
-    "graphql": "^16.11.0",
-    "graphql-ruby-client": "^1.14.8",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "graphiql": "^5.1.1",
+    "graphql": "^16.6.0",
+    "monaco-editor": "^0.37.1",
+    "monaco-graphql": "^1.2.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^5.1.0",
-    "vite": "^7.1.12",
+    "@vitejs/plugin-react": "^4.0.0",
+    "vite": "^4.3.2",
     "vite-plugin-monaco-editor": "^1.1.0"
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build"
+    "build": "vite build --minify=false"
   }
 }
