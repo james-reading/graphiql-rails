@@ -3,21 +3,8 @@ module GraphiQL
     class Engine < ::Rails::Engine
       isolate_namespace GraphiQL::Rails
 
-      if defined?(Sprockets) && Sprockets::VERSION.chr.to_i >= 4
-        initializer 'graphiql.assets.precompile' do |app|
-          app.config.assets.precompile += [
-            "graphiql/rails/index.css",
-            "graphiql/rails/index.js",
-            "graphiql/rails/editor.worker.bundle.js",
-            "graphiql/rails/graphql.worker.bundle.js",
-            "graphiql/rails/json.worker.bundle.js",
-            "graphiql/rails/codicon.tff"
-          ]
-        end
-      elsif !defined?(Propshaft)
-        initializer 'graphiql.assets.public' do |app|
-          app.middleware.use(ActionDispatch::Static, "#{root}/public")
-        end
+      initializer 'graphiql.assets.public' do |app|
+        app.middleware.use(ActionDispatch::Static, "#{root}/public")
       end
     end
   end
