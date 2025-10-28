@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/monaco-editor-BkI_Yqm_.js","assets/monaco-editor-7c3jN3Td.css","assets/lite-Q86Qvekp.js"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/monaco-editor-BfaC9dpY.js","assets/monaco-editor-7c3jN3Td.css","assets/lite-DJc7qXbb.js"])))=>i.map(i=>d[i]);
 var _a, _b;
 function _mergeNamespaces(n2, m2) {
   for (var i2 = 0; i2 < m2.length; i2++) {
@@ -50,6 +50,35 @@ function _mergeNamespaces(n2, m2) {
 })();
 function getDefaultExportFromCjs(x2) {
   return x2 && x2.__esModule && Object.prototype.hasOwnProperty.call(x2, "default") ? x2["default"] : x2;
+}
+function getAugmentedNamespace(n2) {
+  if (Object.prototype.hasOwnProperty.call(n2, "__esModule")) return n2;
+  var f2 = n2.default;
+  if (typeof f2 == "function") {
+    var a3 = function a4() {
+      var isInstance = false;
+      try {
+        isInstance = this instanceof a4;
+      } catch {
+      }
+      if (isInstance) {
+        return Reflect.construct(f2, arguments, this.constructor);
+      }
+      return f2.apply(this, arguments);
+    };
+    a3.prototype = f2.prototype;
+  } else a3 = {};
+  Object.defineProperty(a3, "__esModule", { value: true });
+  Object.keys(n2).forEach(function(k2) {
+    var d2 = Object.getOwnPropertyDescriptor(n2, k2);
+    Object.defineProperty(a3, k2, d2.get ? d2 : {
+      enumerable: true,
+      get: function() {
+        return n2[k2];
+      }
+    });
+  });
+  return a3;
 }
 var jsxRuntime = { exports: {} };
 var reactJsxRuntime_production = {};
@@ -148,8 +177,8 @@ function requireScheduler_production() {
       return first;
     }
     function compare(a3, b2) {
-      var diff = a3.sortIndex - b2.sortIndex;
-      return 0 !== diff ? diff : a3.id - b2.id;
+      var diff2 = a3.sortIndex - b2.sortIndex;
+      return 0 !== diff2 ? diff2 : a3.id - b2.id;
     }
     exports.unstable_now = void 0;
     if ("object" === typeof performance && "function" === typeof performance.now) {
@@ -799,9 +828,9 @@ function requireReact_production() {
   react_production.useState = function(initialState) {
     return ReactSharedInternals.H.useState(initialState);
   };
-  react_production.useSyncExternalStore = function(subscribe, getSnapshot, getServerSnapshot) {
+  react_production.useSyncExternalStore = function(subscribe2, getSnapshot, getServerSnapshot) {
     return ReactSharedInternals.H.useSyncExternalStore(
-      subscribe,
+      subscribe2,
       getSnapshot,
       getServerSnapshot
     );
@@ -4323,7 +4352,7 @@ function requireReactDomClient_production() {
     }
     return [newState, dispatch];
   }
-  function updateSyncExternalStore(subscribe, getSnapshot, getServerSnapshot) {
+  function updateSyncExternalStore(subscribe2, getSnapshot, getServerSnapshot) {
     var fiber = currentlyRenderingFiber, hook = updateWorkInProgressHook(), isHydrating$jscomp$0 = isHydrating;
     if (isHydrating$jscomp$0) {
       if (void 0 === getServerSnapshot) throw Error(formatProdErrorMessage(407));
@@ -4335,8 +4364,8 @@ function requireReactDomClient_production() {
     );
     snapshotChanged && (hook.memoizedState = getServerSnapshot, didReceiveUpdate = true);
     hook = hook.queue;
-    updateEffect(subscribeToStore.bind(null, fiber, hook, subscribe), [
-      subscribe
+    updateEffect(subscribeToStore.bind(null, fiber, hook, subscribe2), [
+      subscribe2
     ]);
     if (hook.getSnapshot !== getSnapshot || snapshotChanged || null !== workInProgressHook && workInProgressHook.memoizedState.tag & 1) {
       fiber.flags |= 2048;
@@ -4368,8 +4397,8 @@ function requireReactDomClient_production() {
     inst.getSnapshot = getSnapshot;
     checkIfSnapshotChanged(inst) && forceStoreRerender(fiber);
   }
-  function subscribeToStore(fiber, inst, subscribe) {
-    return subscribe(function() {
+  function subscribeToStore(fiber, inst, subscribe2) {
+    return subscribe2(function() {
       checkIfSnapshotChanged(inst) && forceStoreRerender(fiber);
     });
   }
@@ -5088,7 +5117,7 @@ function requireReactDomClient_production() {
       mountWorkInProgressHook().memoizedState = stateHook;
       return [false, stateHook];
     },
-    useSyncExternalStore: function(subscribe, getSnapshot, getServerSnapshot) {
+    useSyncExternalStore: function(subscribe2, getSnapshot, getServerSnapshot) {
       var fiber = currentlyRenderingFiber, hook = mountWorkInProgressHook();
       if (isHydrating) {
         if (void 0 === getServerSnapshot)
@@ -5103,8 +5132,8 @@ function requireReactDomClient_production() {
       hook.memoizedState = getServerSnapshot;
       var inst = { value: getServerSnapshot, getSnapshot };
       hook.queue = inst;
-      mountEffect(subscribeToStore.bind(null, fiber, inst, subscribe), [
-        subscribe
+      mountEffect(subscribeToStore.bind(null, fiber, inst, subscribe2), [
+        subscribe2
       ]);
       fiber.flags |= 2048;
       pushSimpleEffect(
@@ -18940,7 +18969,7 @@ const DEFAULT_PRETTIFY_QUERY = async (query) => {
     {
       parsers
     }
-  ] = await Promise.all([__vitePreload(() => import("./standalone-4MMvPysh.js"), true ? [] : void 0), __vitePreload(() => import("./graphql-DIo4cbqa.js"), true ? [] : void 0), __vitePreload(() => import("./graphql-CA_Emtpu.js").then((n2) => n2.g), true ? [] : void 0)]);
+  ] = await Promise.all([__vitePreload(() => import("./standalone-4MMvPysh.js"), true ? [] : void 0), __vitePreload(() => import("./graphql-DIo4cbqa.js"), true ? [] : void 0), __vitePreload(() => import("./graphql-vnqlDcqu.js").then((n2) => n2.g), true ? [] : void 0)]);
   return prettier.format(query, {
     parser: "graphql",
     plugins: [
@@ -19058,11 +19087,11 @@ const createStoreImpl = (createState2) => {
   };
   const getState2 = () => state;
   const getInitialState = () => initialState;
-  const subscribe = (listener) => {
+  const subscribe2 = (listener) => {
     listeners.add(listener);
     return () => listeners.delete(listener);
   };
-  const api = { setState, getState: getState2, getInitialState, subscribe };
+  const api = { setState, getState: getState2, getInitialState, subscribe: subscribe2 };
   const initialState = state = createState2(setState, getState2, api);
   return api;
 };
@@ -19171,7 +19200,7 @@ var __await = function(promise, isYieldStar) {
   return generator = generator.apply(__this, __arguments), it[__knownSymbol("asyncIterator")] = () => it, method("next"), method("throw"), method("return"), it;
 };
 var __forAwait = (obj, it, method) => (it = obj[__knownSymbol("asyncIterator")]) ? it.call(obj) : (obj = obj[__knownSymbol("iterator")](), it = {}, method = (key, fn) => (fn = obj[key]) && (it[key] = (arg) => new Promise((yes, no, done) => (arg = fn.call(obj, arg), done = arg.done, Promise.resolve(arg.value).then((value) => yes({ value, done }), no)))), method("next"), method("return"), it);
-function isPromise(value) {
+function isPromise$1(value) {
   return typeof value == "object" && value !== null && typeof value.then == "function";
 }
 function observableToPromise(observable) {
@@ -19190,7 +19219,7 @@ function observableToPromise(observable) {
 function isObservable(value) {
   return typeof value == "object" && value !== null && "subscribe" in value && typeof value.subscribe == "function";
 }
-function isAsyncIterable$1(input) {
+function isAsyncIterable$2(input) {
   return typeof input == "object" && input !== null && // Some browsers still don't have Symbol.asyncIterator implemented (iOS Safari)
   // That means every custom AsyncIterable must be built using a AsyncGeneratorFunction (async function * () {})
   (input[Symbol.toStringTag] === "AsyncGenerator" || Symbol.asyncIterator in input);
@@ -19202,18 +19231,18 @@ async function asyncIterableToPromise(input) {
 }
 async function fetcherReturnToPromise(fetcherResult) {
   const result = await fetcherResult;
-  return isAsyncIterable$1(result) ? asyncIterableToPromise(result) : isObservable(result) ? observableToPromise(result) : result;
+  return isAsyncIterable$2(result) ? asyncIterableToPromise(result) : isObservable(result) ? observableToPromise(result) : result;
 }
-function devAssert(condition, message) {
+function devAssert$1(condition, message) {
   const booleanCondition = Boolean(condition);
   if (!booleanCondition) {
     throw new Error(message);
   }
 }
-function isObjectLike(value) {
+function isObjectLike$1(value) {
   return typeof value == "object" && value !== null;
 }
-function invariant$1(condition, message) {
+function invariant$2(condition, message) {
   const booleanCondition = Boolean(condition);
   if (!booleanCondition) {
     throw new Error(
@@ -19221,12 +19250,12 @@ function invariant$1(condition, message) {
     );
   }
 }
-const LineRegExp = /\r\n|[\n\r]/g;
-function getLocation(source, position) {
+const LineRegExp$1 = /\r\n|[\n\r]/g;
+function getLocation$1(source, position) {
   let lastLineStart = 0;
   let line = 1;
-  for (const match2 of source.body.matchAll(LineRegExp)) {
-    typeof match2.index === "number" || invariant$1(false);
+  for (const match2 of source.body.matchAll(LineRegExp$1)) {
+    typeof match2.index === "number" || invariant$2(false);
     if (match2.index >= position) {
       break;
     }
@@ -19238,13 +19267,13 @@ function getLocation(source, position) {
     column: position + 1 - lastLineStart
   };
 }
-function printLocation(location2) {
-  return printSourceLocation(
+function printLocation$1(location2) {
+  return printSourceLocation$1(
     location2.source,
-    getLocation(location2.source, location2.start)
+    getLocation$1(location2.source, location2.start)
   );
 }
-function printSourceLocation(source, sourceLocation) {
+function printSourceLocation$1(source, sourceLocation) {
   const firstLineColumnOffset = source.locationOffset.column - 1;
   const body = "".padStart(firstLineColumnOffset) + source.body;
   const lineIndex = sourceLocation.line - 1;
@@ -19263,14 +19292,14 @@ function printSourceLocation(source, sourceLocation) {
     for (let i2 = 0; i2 < locationLine.length; i2 += 80) {
       subLines.push(locationLine.slice(i2, i2 + 80));
     }
-    return locationStr + printPrefixedLines([
+    return locationStr + printPrefixedLines$1([
       [`${lineNum} |`, subLines[0]],
       ...subLines.slice(1, subLineIndex + 1).map((subLine) => ["|", subLine]),
       ["|", "^".padStart(subLineColumnNum)],
       ["|", subLines[subLineIndex + 1]]
     ]);
   }
-  return locationStr + printPrefixedLines([
+  return locationStr + printPrefixedLines$1([
     // Lines specified like this: ["prefix", "string"],
     [`${lineNum - 1} |`, lines[lineIndex - 1]],
     [`${lineNum} |`, locationLine],
@@ -19278,12 +19307,12 @@ function printSourceLocation(source, sourceLocation) {
     [`${lineNum + 1} |`, lines[lineIndex + 1]]
   ]);
 }
-function printPrefixedLines(lines) {
+function printPrefixedLines$1(lines) {
   const existingLines = lines.filter(([_2, line]) => line !== void 0);
   const padLen = Math.max(...existingLines.map(([prefix]) => prefix.length));
   return existingLines.map(([prefix, line]) => prefix.padStart(padLen) + (line ? " " + line : "")).join("\n");
 }
-function toNormalizedOptions(args) {
+function toNormalizedOptions$1(args) {
   const firstArg = args[0];
   if (firstArg == null || "kind" in firstArg || "length" in firstArg) {
     return {
@@ -19297,7 +19326,7 @@ function toNormalizedOptions(args) {
   }
   return firstArg;
 }
-class GraphQLError extends Error {
+let GraphQLError$1 = class GraphQLError extends Error {
   /**
    * An array of `{ line, column }` locations within the source GraphQL document
    * which correspond to this error.
@@ -19338,21 +19367,21 @@ class GraphQLError extends Error {
    */
   constructor(message, ...rawArgs) {
     var _this$nodes, _nodeLocations$, _ref;
-    const { nodes, source, positions, path, originalError, extensions } = toNormalizedOptions(rawArgs);
+    const { nodes, source, positions, path, originalError, extensions } = toNormalizedOptions$1(rawArgs);
     super(message);
     this.name = "GraphQLError";
     this.path = path !== null && path !== void 0 ? path : void 0;
     this.originalError = originalError !== null && originalError !== void 0 ? originalError : void 0;
-    this.nodes = undefinedIfEmpty(
+    this.nodes = undefinedIfEmpty$1(
       Array.isArray(nodes) ? nodes : nodes ? [nodes] : void 0
     );
-    const nodeLocations = undefinedIfEmpty(
+    const nodeLocations = undefinedIfEmpty$1(
       (_this$nodes = this.nodes) === null || _this$nodes === void 0 ? void 0 : _this$nodes.map((node) => node.loc).filter((loc) => loc != null)
     );
     this.source = source !== null && source !== void 0 ? source : nodeLocations === null || nodeLocations === void 0 ? void 0 : (_nodeLocations$ = nodeLocations[0]) === null || _nodeLocations$ === void 0 ? void 0 : _nodeLocations$.source;
     this.positions = positions !== null && positions !== void 0 ? positions : nodeLocations === null || nodeLocations === void 0 ? void 0 : nodeLocations.map((loc) => loc.start);
-    this.locations = positions && source ? positions.map((pos) => getLocation(source, pos)) : nodeLocations === null || nodeLocations === void 0 ? void 0 : nodeLocations.map((loc) => getLocation(loc.source, loc.start));
-    const originalExtensions = isObjectLike(
+    this.locations = positions && source ? positions.map((pos) => getLocation$1(source, pos)) : nodeLocations === null || nodeLocations === void 0 ? void 0 : nodeLocations.map((loc) => getLocation$1(loc.source, loc.start));
+    const originalExtensions = isObjectLike$1(
       originalError === null || originalError === void 0 ? void 0 : originalError.extensions
     ) ? originalError === null || originalError === void 0 ? void 0 : originalError.extensions : void 0;
     this.extensions = (_ref = extensions !== null && extensions !== void 0 ? extensions : originalExtensions) !== null && _ref !== void 0 ? _ref : /* @__PURE__ */ Object.create(null);
@@ -19401,12 +19430,12 @@ class GraphQLError extends Error {
     if (this.nodes) {
       for (const node of this.nodes) {
         if (node.loc) {
-          output += "\n\n" + printLocation(node.loc);
+          output += "\n\n" + printLocation$1(node.loc);
         }
       }
     } else if (this.source && this.locations) {
       for (const location2 of this.locations) {
-        output += "\n\n" + printSourceLocation(this.source, location2);
+        output += "\n\n" + printSourceLocation$1(this.source, location2);
       }
     }
     return output;
@@ -19426,17 +19455,17 @@ class GraphQLError extends Error {
     }
     return formattedError;
   }
-}
-function undefinedIfEmpty(array) {
+};
+function undefinedIfEmpty$1(array) {
   return array === void 0 || array.length === 0 ? void 0 : array;
 }
-function syntaxError(source, position, description) {
-  return new GraphQLError(`Syntax Error: ${description}`, {
+function syntaxError$1(source, position, description) {
+  return new GraphQLError$1(`Syntax Error: ${description}`, {
     source,
     positions: [position]
   });
 }
-let Location$1 = class Location {
+let Location$2 = class Location {
   /**
    * The character offset at which this Node begins.
    */
@@ -19469,7 +19498,7 @@ let Location$1 = class Location {
     };
   }
 };
-let Token$1 = class Token {
+let Token$2 = class Token {
   /**
    * The kind of Token.
    */
@@ -19518,7 +19547,7 @@ let Token$1 = class Token {
     };
   }
 };
-const QueryDocumentKeys = {
+const QueryDocumentKeys$1 = {
   Name: [],
   Document: ["definitions"],
   OperationDefinition: [
@@ -19593,18 +19622,18 @@ const QueryDocumentKeys = {
   EnumTypeExtension: ["name", "directives", "values"],
   InputObjectTypeExtension: ["name", "directives", "fields"]
 };
-const kindValues = new Set(Object.keys(QueryDocumentKeys));
-function isNode$1(maybeNode) {
+const kindValues$1 = new Set(Object.keys(QueryDocumentKeys$1));
+function isNode$2(maybeNode) {
   const maybeKind = maybeNode === null || maybeNode === void 0 ? void 0 : maybeNode.kind;
-  return typeof maybeKind === "string" && kindValues.has(maybeKind);
+  return typeof maybeKind === "string" && kindValues$1.has(maybeKind);
 }
-var OperationTypeNode;
+var OperationTypeNode$1;
 (function(OperationTypeNode2) {
   OperationTypeNode2["QUERY"] = "query";
   OperationTypeNode2["MUTATION"] = "mutation";
   OperationTypeNode2["SUBSCRIPTION"] = "subscription";
-})(OperationTypeNode || (OperationTypeNode = {}));
-var DirectiveLocation;
+})(OperationTypeNode$1 || (OperationTypeNode$1 = {}));
+var DirectiveLocation$1;
 (function(DirectiveLocation2) {
   DirectiveLocation2["QUERY"] = "QUERY";
   DirectiveLocation2["MUTATION"] = "MUTATION";
@@ -19625,8 +19654,8 @@ var DirectiveLocation;
   DirectiveLocation2["ENUM_VALUE"] = "ENUM_VALUE";
   DirectiveLocation2["INPUT_OBJECT"] = "INPUT_OBJECT";
   DirectiveLocation2["INPUT_FIELD_DEFINITION"] = "INPUT_FIELD_DEFINITION";
-})(DirectiveLocation || (DirectiveLocation = {}));
-var Kind;
+})(DirectiveLocation$1 || (DirectiveLocation$1 = {}));
+var Kind$1;
 (function(Kind2) {
   Kind2["NAME"] = "Name";
   Kind2["DOCUMENT"] = "Document";
@@ -19671,24 +19700,24 @@ var Kind;
   Kind2["UNION_TYPE_EXTENSION"] = "UnionTypeExtension";
   Kind2["ENUM_TYPE_EXTENSION"] = "EnumTypeExtension";
   Kind2["INPUT_OBJECT_TYPE_EXTENSION"] = "InputObjectTypeExtension";
-})(Kind || (Kind = {}));
-function isWhiteSpace$2(code2) {
+})(Kind$1 || (Kind$1 = {}));
+function isWhiteSpace$3(code2) {
   return code2 === 9 || code2 === 32;
 }
-function isDigit$2(code2) {
+function isDigit$4(code2) {
   return code2 >= 48 && code2 <= 57;
 }
-function isLetter$1(code2) {
+function isLetter$2(code2) {
   return code2 >= 97 && code2 <= 122 || // A-Z
   code2 >= 65 && code2 <= 90;
 }
-function isNameStart(code2) {
-  return isLetter$1(code2) || code2 === 95;
+function isNameStart$1(code2) {
+  return isLetter$2(code2) || code2 === 95;
 }
-function isNameContinue(code2) {
-  return isLetter$1(code2) || isDigit$2(code2) || code2 === 95;
+function isNameContinue$1(code2) {
+  return isLetter$2(code2) || isDigit$4(code2) || code2 === 95;
 }
-function dedentBlockStringLines(lines) {
+function dedentBlockStringLines$1(lines) {
   var _firstNonEmptyLine2;
   let commonIndent = Number.MAX_SAFE_INTEGER;
   let firstNonEmptyLine = null;
@@ -19696,7 +19725,7 @@ function dedentBlockStringLines(lines) {
   for (let i2 = 0; i2 < lines.length; ++i2) {
     var _firstNonEmptyLine;
     const line = lines[i2];
-    const indent2 = leadingWhitespace(line);
+    const indent2 = leadingWhitespace$1(line);
     if (indent2 === line.length) {
       continue;
     }
@@ -19711,14 +19740,14 @@ function dedentBlockStringLines(lines) {
     lastNonEmptyLine + 1
   );
 }
-function leadingWhitespace(str) {
+function leadingWhitespace$1(str) {
   let i2 = 0;
-  while (i2 < str.length && isWhiteSpace$2(str.charCodeAt(i2))) {
+  while (i2 < str.length && isWhiteSpace$3(str.charCodeAt(i2))) {
     ++i2;
   }
   return i2;
 }
-function isPrintableAsBlockString(value) {
+function isPrintableAsBlockString$1(value) {
   if (value === "") {
     return true;
   }
@@ -19772,11 +19801,11 @@ function isPrintableAsBlockString(value) {
   }
   return true;
 }
-function printBlockString(value, options) {
+function printBlockString$1(value, options) {
   const escapedValue = value.replace(/"""/g, '\\"""');
   const lines = escapedValue.split(/\r\n|[\n\r]/g);
   const isSingleLine = lines.length === 1;
-  const forceLeadingNewLine = lines.length > 1 && lines.slice(1).every((line) => line.length === 0 || isWhiteSpace$2(line.charCodeAt(0)));
+  const forceLeadingNewLine = lines.length > 1 && lines.slice(1).every((line) => line.length === 0 || isWhiteSpace$3(line.charCodeAt(0)));
   const hasTrailingTripleQuotes = escapedValue.endsWith('\\"""');
   const hasTrailingQuote = value.endsWith('"') && !hasTrailingTripleQuotes;
   const hasTrailingSlash = value.endsWith("\\");
@@ -19786,7 +19815,7 @@ function printBlockString(value, options) {
     !isSingleLine || value.length > 70 || forceTrailingNewline || forceLeadingNewLine || hasTrailingTripleQuotes
   );
   let result = "";
-  const skipLeadingNewLine = isSingleLine && isWhiteSpace$2(value.charCodeAt(0));
+  const skipLeadingNewLine = isSingleLine && isWhiteSpace$3(value.charCodeAt(0));
   if (printAsMultipleLines && !skipLeadingNewLine || forceLeadingNewLine) {
     result += "\n";
   }
@@ -19796,7 +19825,7 @@ function printBlockString(value, options) {
   }
   return '"""' + result + '"""';
 }
-var TokenKind;
+var TokenKind$1;
 (function(TokenKind2) {
   TokenKind2["SOF"] = "<SOF>";
   TokenKind2["EOF"] = "<EOF>";
@@ -19820,8 +19849,8 @@ var TokenKind;
   TokenKind2["STRING"] = "String";
   TokenKind2["BLOCK_STRING"] = "BlockString";
   TokenKind2["COMMENT"] = "Comment";
-})(TokenKind || (TokenKind = {}));
-class Lexer {
+})(TokenKind$1 || (TokenKind$1 = {}));
+let Lexer$1 = class Lexer {
   /**
    * The previously focused non-ignored token.
    */
@@ -19835,7 +19864,7 @@ class Lexer {
    * The character offset at which the current line begins.
    */
   constructor(source) {
-    const startOfFileToken = new Token$1(TokenKind.SOF, 0, 0, 0, 0);
+    const startOfFileToken = new Token$2(TokenKind$1.SOF, 0, 0, 0, 0);
     this.source = source;
     this.lastToken = startOfFileToken;
     this.token = startOfFileToken;
@@ -19859,52 +19888,52 @@ class Lexer {
    */
   lookahead() {
     let token = this.token;
-    if (token.kind !== TokenKind.EOF) {
+    if (token.kind !== TokenKind$1.EOF) {
       do {
         if (token.next) {
           token = token.next;
         } else {
-          const nextToken = readNextToken(this, token.end);
+          const nextToken = readNextToken$1(this, token.end);
           token.next = nextToken;
           nextToken.prev = token;
           token = nextToken;
         }
-      } while (token.kind === TokenKind.COMMENT);
+      } while (token.kind === TokenKind$1.COMMENT);
     }
     return token;
   }
+};
+function isPunctuatorTokenKind$1(kind) {
+  return kind === TokenKind$1.BANG || kind === TokenKind$1.DOLLAR || kind === TokenKind$1.AMP || kind === TokenKind$1.PAREN_L || kind === TokenKind$1.PAREN_R || kind === TokenKind$1.SPREAD || kind === TokenKind$1.COLON || kind === TokenKind$1.EQUALS || kind === TokenKind$1.AT || kind === TokenKind$1.BRACKET_L || kind === TokenKind$1.BRACKET_R || kind === TokenKind$1.BRACE_L || kind === TokenKind$1.PIPE || kind === TokenKind$1.BRACE_R;
 }
-function isPunctuatorTokenKind(kind) {
-  return kind === TokenKind.BANG || kind === TokenKind.DOLLAR || kind === TokenKind.AMP || kind === TokenKind.PAREN_L || kind === TokenKind.PAREN_R || kind === TokenKind.SPREAD || kind === TokenKind.COLON || kind === TokenKind.EQUALS || kind === TokenKind.AT || kind === TokenKind.BRACKET_L || kind === TokenKind.BRACKET_R || kind === TokenKind.BRACE_L || kind === TokenKind.PIPE || kind === TokenKind.BRACE_R;
-}
-function isUnicodeScalarValue(code2) {
+function isUnicodeScalarValue$1(code2) {
   return code2 >= 0 && code2 <= 55295 || code2 >= 57344 && code2 <= 1114111;
 }
-function isSupplementaryCodePoint(body, location2) {
-  return isLeadingSurrogate(body.charCodeAt(location2)) && isTrailingSurrogate(body.charCodeAt(location2 + 1));
+function isSupplementaryCodePoint$1(body, location2) {
+  return isLeadingSurrogate$1(body.charCodeAt(location2)) && isTrailingSurrogate$1(body.charCodeAt(location2 + 1));
 }
-function isLeadingSurrogate(code2) {
+function isLeadingSurrogate$1(code2) {
   return code2 >= 55296 && code2 <= 56319;
 }
-function isTrailingSurrogate(code2) {
+function isTrailingSurrogate$1(code2) {
   return code2 >= 56320 && code2 <= 57343;
 }
-function printCodePointAt(lexer, location2) {
+function printCodePointAt$1(lexer, location2) {
   const code2 = lexer.source.body.codePointAt(location2);
   if (code2 === void 0) {
-    return TokenKind.EOF;
+    return TokenKind$1.EOF;
   } else if (code2 >= 32 && code2 <= 126) {
     const char = String.fromCodePoint(code2);
     return char === '"' ? `'"'` : `"${char}"`;
   }
   return "U+" + code2.toString(16).toUpperCase().padStart(4, "0");
 }
-function createToken(lexer, kind, start, end, value) {
+function createToken$1(lexer, kind, start, end, value) {
   const line = lexer.line;
   const col = 1 + start - lexer.lineStart;
-  return new Token$1(kind, start, end, line, col, value);
+  return new Token$2(kind, start, end, line, col, value);
 }
-function readNextToken(lexer, start) {
+function readNextToken$1(lexer, start) {
   const body = lexer.source.body;
   const bodyLength = body.length;
   let position = start;
@@ -19954,7 +19983,7 @@ function readNextToken(lexer, start) {
         continue;
       // Comment
       case 35:
-        return readComment(lexer, position);
+        return readComment$1(lexer, position);
       // Token ::
       //   - Punctuator
       //   - Name
@@ -19964,58 +19993,58 @@ function readNextToken(lexer, start) {
       //
       // Punctuator :: one of ! $ & ( ) ... : = @ [ ] { | }
       case 33:
-        return createToken(lexer, TokenKind.BANG, position, position + 1);
+        return createToken$1(lexer, TokenKind$1.BANG, position, position + 1);
       case 36:
-        return createToken(lexer, TokenKind.DOLLAR, position, position + 1);
+        return createToken$1(lexer, TokenKind$1.DOLLAR, position, position + 1);
       case 38:
-        return createToken(lexer, TokenKind.AMP, position, position + 1);
+        return createToken$1(lexer, TokenKind$1.AMP, position, position + 1);
       case 40:
-        return createToken(lexer, TokenKind.PAREN_L, position, position + 1);
+        return createToken$1(lexer, TokenKind$1.PAREN_L, position, position + 1);
       case 41:
-        return createToken(lexer, TokenKind.PAREN_R, position, position + 1);
+        return createToken$1(lexer, TokenKind$1.PAREN_R, position, position + 1);
       case 46:
         if (body.charCodeAt(position + 1) === 46 && body.charCodeAt(position + 2) === 46) {
-          return createToken(lexer, TokenKind.SPREAD, position, position + 3);
+          return createToken$1(lexer, TokenKind$1.SPREAD, position, position + 3);
         }
         break;
       case 58:
-        return createToken(lexer, TokenKind.COLON, position, position + 1);
+        return createToken$1(lexer, TokenKind$1.COLON, position, position + 1);
       case 61:
-        return createToken(lexer, TokenKind.EQUALS, position, position + 1);
+        return createToken$1(lexer, TokenKind$1.EQUALS, position, position + 1);
       case 64:
-        return createToken(lexer, TokenKind.AT, position, position + 1);
+        return createToken$1(lexer, TokenKind$1.AT, position, position + 1);
       case 91:
-        return createToken(lexer, TokenKind.BRACKET_L, position, position + 1);
+        return createToken$1(lexer, TokenKind$1.BRACKET_L, position, position + 1);
       case 93:
-        return createToken(lexer, TokenKind.BRACKET_R, position, position + 1);
+        return createToken$1(lexer, TokenKind$1.BRACKET_R, position, position + 1);
       case 123:
-        return createToken(lexer, TokenKind.BRACE_L, position, position + 1);
+        return createToken$1(lexer, TokenKind$1.BRACE_L, position, position + 1);
       case 124:
-        return createToken(lexer, TokenKind.PIPE, position, position + 1);
+        return createToken$1(lexer, TokenKind$1.PIPE, position, position + 1);
       case 125:
-        return createToken(lexer, TokenKind.BRACE_R, position, position + 1);
+        return createToken$1(lexer, TokenKind$1.BRACE_R, position, position + 1);
       // StringValue
       case 34:
         if (body.charCodeAt(position + 1) === 34 && body.charCodeAt(position + 2) === 34) {
-          return readBlockString(lexer, position);
+          return readBlockString$1(lexer, position);
         }
-        return readString(lexer, position);
+        return readString$1(lexer, position);
     }
-    if (isDigit$2(code2) || code2 === 45) {
-      return readNumber(lexer, position, code2);
+    if (isDigit$4(code2) || code2 === 45) {
+      return readNumber$1(lexer, position, code2);
     }
-    if (isNameStart(code2)) {
-      return readName(lexer, position);
+    if (isNameStart$1(code2)) {
+      return readName$1(lexer, position);
     }
-    throw syntaxError(
+    throw syntaxError$1(
       lexer.source,
       position,
-      code2 === 39 ? `Unexpected single quote character ('), did you mean to use a double quote (")?` : isUnicodeScalarValue(code2) || isSupplementaryCodePoint(body, position) ? `Unexpected character: ${printCodePointAt(lexer, position)}.` : `Invalid character: ${printCodePointAt(lexer, position)}.`
+      code2 === 39 ? `Unexpected single quote character ('), did you mean to use a double quote (")?` : isUnicodeScalarValue$1(code2) || isSupplementaryCodePoint$1(body, position) ? `Unexpected character: ${printCodePointAt$1(lexer, position)}.` : `Invalid character: ${printCodePointAt$1(lexer, position)}.`
     );
   }
-  return createToken(lexer, TokenKind.EOF, bodyLength, bodyLength);
+  return createToken$1(lexer, TokenKind$1.EOF, bodyLength, bodyLength);
 }
-function readComment(lexer, start) {
+function readComment$1(lexer, start) {
   const body = lexer.source.body;
   const bodyLength = body.length;
   let position = start + 1;
@@ -20024,23 +20053,23 @@ function readComment(lexer, start) {
     if (code2 === 10 || code2 === 13) {
       break;
     }
-    if (isUnicodeScalarValue(code2)) {
+    if (isUnicodeScalarValue$1(code2)) {
       ++position;
-    } else if (isSupplementaryCodePoint(body, position)) {
+    } else if (isSupplementaryCodePoint$1(body, position)) {
       position += 2;
     } else {
       break;
     }
   }
-  return createToken(
+  return createToken$1(
     lexer,
-    TokenKind.COMMENT,
+    TokenKind$1.COMMENT,
     start,
     position,
     body.slice(start + 1, position)
   );
 }
-function readNumber(lexer, start, firstCode) {
+function readNumber$1(lexer, start, firstCode) {
   const body = lexer.source.body;
   let position = start;
   let code2 = firstCode;
@@ -20050,24 +20079,24 @@ function readNumber(lexer, start, firstCode) {
   }
   if (code2 === 48) {
     code2 = body.charCodeAt(++position);
-    if (isDigit$2(code2)) {
-      throw syntaxError(
+    if (isDigit$4(code2)) {
+      throw syntaxError$1(
         lexer.source,
         position,
-        `Invalid number, unexpected digit after 0: ${printCodePointAt(
+        `Invalid number, unexpected digit after 0: ${printCodePointAt$1(
           lexer,
           position
         )}.`
       );
     }
   } else {
-    position = readDigits(lexer, position, code2);
+    position = readDigits$1(lexer, position, code2);
     code2 = body.charCodeAt(position);
   }
   if (code2 === 46) {
     isFloat2 = true;
     code2 = body.charCodeAt(++position);
-    position = readDigits(lexer, position, code2);
+    position = readDigits$1(lexer, position, code2);
     code2 = body.charCodeAt(position);
   }
   if (code2 === 69 || code2 === 101) {
@@ -20076,33 +20105,33 @@ function readNumber(lexer, start, firstCode) {
     if (code2 === 43 || code2 === 45) {
       code2 = body.charCodeAt(++position);
     }
-    position = readDigits(lexer, position, code2);
+    position = readDigits$1(lexer, position, code2);
     code2 = body.charCodeAt(position);
   }
-  if (code2 === 46 || isNameStart(code2)) {
-    throw syntaxError(
+  if (code2 === 46 || isNameStart$1(code2)) {
+    throw syntaxError$1(
       lexer.source,
       position,
-      `Invalid number, expected digit but got: ${printCodePointAt(
+      `Invalid number, expected digit but got: ${printCodePointAt$1(
         lexer,
         position
       )}.`
     );
   }
-  return createToken(
+  return createToken$1(
     lexer,
-    isFloat2 ? TokenKind.FLOAT : TokenKind.INT,
+    isFloat2 ? TokenKind$1.FLOAT : TokenKind$1.INT,
     start,
     position,
     body.slice(start, position)
   );
 }
-function readDigits(lexer, start, firstCode) {
-  if (!isDigit$2(firstCode)) {
-    throw syntaxError(
+function readDigits$1(lexer, start, firstCode) {
+  if (!isDigit$4(firstCode)) {
+    throw syntaxError$1(
       lexer.source,
       start,
-      `Invalid number, expected digit but got: ${printCodePointAt(
+      `Invalid number, expected digit but got: ${printCodePointAt$1(
         lexer,
         start
       )}.`
@@ -20110,12 +20139,12 @@ function readDigits(lexer, start, firstCode) {
   }
   const body = lexer.source.body;
   let position = start + 1;
-  while (isDigit$2(body.charCodeAt(position))) {
+  while (isDigit$4(body.charCodeAt(position))) {
     ++position;
   }
   return position;
 }
-function readString(lexer, start) {
+function readString$1(lexer, start) {
   const body = lexer.source.body;
   const bodyLength = body.length;
   let position = start + 1;
@@ -20125,11 +20154,11 @@ function readString(lexer, start) {
     const code2 = body.charCodeAt(position);
     if (code2 === 34) {
       value += body.slice(chunkStart, position);
-      return createToken(lexer, TokenKind.STRING, start, position + 1, value);
+      return createToken$1(lexer, TokenKind$1.STRING, start, position + 1, value);
     }
     if (code2 === 92) {
       value += body.slice(chunkStart, position);
-      const escape2 = body.charCodeAt(position + 1) === 117 ? body.charCodeAt(position + 2) === 123 ? readEscapedUnicodeVariableWidth(lexer, position) : readEscapedUnicodeFixedWidth(lexer, position) : readEscapedCharacter(lexer, position);
+      const escape2 = body.charCodeAt(position + 1) === 117 ? body.charCodeAt(position + 2) === 123 ? readEscapedUnicodeVariableWidth$1(lexer, position) : readEscapedUnicodeFixedWidth$1(lexer, position) : readEscapedCharacter$1(lexer, position);
       value += escape2.value;
       position += escape2.size;
       chunkStart = position;
@@ -20138,31 +20167,31 @@ function readString(lexer, start) {
     if (code2 === 10 || code2 === 13) {
       break;
     }
-    if (isUnicodeScalarValue(code2)) {
+    if (isUnicodeScalarValue$1(code2)) {
       ++position;
-    } else if (isSupplementaryCodePoint(body, position)) {
+    } else if (isSupplementaryCodePoint$1(body, position)) {
       position += 2;
     } else {
-      throw syntaxError(
+      throw syntaxError$1(
         lexer.source,
         position,
-        `Invalid character within String: ${printCodePointAt(
+        `Invalid character within String: ${printCodePointAt$1(
           lexer,
           position
         )}.`
       );
     }
   }
-  throw syntaxError(lexer.source, position, "Unterminated string.");
+  throw syntaxError$1(lexer.source, position, "Unterminated string.");
 }
-function readEscapedUnicodeVariableWidth(lexer, position) {
+function readEscapedUnicodeVariableWidth$1(lexer, position) {
   const body = lexer.source.body;
   let point = 0;
   let size2 = 3;
   while (size2 < 12) {
     const code2 = body.charCodeAt(position + size2++);
     if (code2 === 125) {
-      if (size2 < 5 || !isUnicodeScalarValue(point)) {
+      if (size2 < 5 || !isUnicodeScalarValue$1(point)) {
         break;
       }
       return {
@@ -20170,12 +20199,12 @@ function readEscapedUnicodeVariableWidth(lexer, position) {
         size: size2
       };
     }
-    point = point << 4 | readHexDigit(code2);
+    point = point << 4 | readHexDigit$1(code2);
     if (point < 0) {
       break;
     }
   }
-  throw syntaxError(
+  throw syntaxError$1(
     lexer.source,
     position,
     `Invalid Unicode escape sequence: "${body.slice(
@@ -20184,19 +20213,19 @@ function readEscapedUnicodeVariableWidth(lexer, position) {
     )}".`
   );
 }
-function readEscapedUnicodeFixedWidth(lexer, position) {
+function readEscapedUnicodeFixedWidth$1(lexer, position) {
   const body = lexer.source.body;
-  const code2 = read16BitHexCode(body, position + 2);
-  if (isUnicodeScalarValue(code2)) {
+  const code2 = read16BitHexCode$1(body, position + 2);
+  if (isUnicodeScalarValue$1(code2)) {
     return {
       value: String.fromCodePoint(code2),
       size: 6
     };
   }
-  if (isLeadingSurrogate(code2)) {
+  if (isLeadingSurrogate$1(code2)) {
     if (body.charCodeAt(position + 6) === 92 && body.charCodeAt(position + 7) === 117) {
-      const trailingCode = read16BitHexCode(body, position + 8);
-      if (isTrailingSurrogate(trailingCode)) {
+      const trailingCode = read16BitHexCode$1(body, position + 8);
+      if (isTrailingSurrogate$1(trailingCode)) {
         return {
           value: String.fromCodePoint(code2, trailingCode),
           size: 12
@@ -20204,19 +20233,19 @@ function readEscapedUnicodeFixedWidth(lexer, position) {
       }
     }
   }
-  throw syntaxError(
+  throw syntaxError$1(
     lexer.source,
     position,
     `Invalid Unicode escape sequence: "${body.slice(position, position + 6)}".`
   );
 }
-function read16BitHexCode(body, position) {
-  return readHexDigit(body.charCodeAt(position)) << 12 | readHexDigit(body.charCodeAt(position + 1)) << 8 | readHexDigit(body.charCodeAt(position + 2)) << 4 | readHexDigit(body.charCodeAt(position + 3));
+function read16BitHexCode$1(body, position) {
+  return readHexDigit$1(body.charCodeAt(position)) << 12 | readHexDigit$1(body.charCodeAt(position + 1)) << 8 | readHexDigit$1(body.charCodeAt(position + 2)) << 4 | readHexDigit$1(body.charCodeAt(position + 3));
 }
-function readHexDigit(code2) {
+function readHexDigit$1(code2) {
   return code2 >= 48 && code2 <= 57 ? code2 - 48 : code2 >= 65 && code2 <= 70 ? code2 - 55 : code2 >= 97 && code2 <= 102 ? code2 - 87 : -1;
 }
-function readEscapedCharacter(lexer, position) {
+function readEscapedCharacter$1(lexer, position) {
   const body = lexer.source.body;
   const code2 = body.charCodeAt(position + 1);
   switch (code2) {
@@ -20261,7 +20290,7 @@ function readEscapedCharacter(lexer, position) {
         size: 2
       };
   }
-  throw syntaxError(
+  throw syntaxError$1(
     lexer.source,
     position,
     `Invalid character escape sequence: "${body.slice(
@@ -20270,7 +20299,7 @@ function readEscapedCharacter(lexer, position) {
     )}".`
   );
 }
-function readBlockString(lexer, start) {
+function readBlockString$1(lexer, start) {
   const body = lexer.source.body;
   const bodyLength = body.length;
   let lineStart = lexer.lineStart;
@@ -20283,13 +20312,13 @@ function readBlockString(lexer, start) {
     if (code2 === 34 && body.charCodeAt(position + 1) === 34 && body.charCodeAt(position + 2) === 34) {
       currentLine += body.slice(chunkStart, position);
       blockLines.push(currentLine);
-      const token = createToken(
+      const token = createToken$1(
         lexer,
-        TokenKind.BLOCK_STRING,
+        TokenKind$1.BLOCK_STRING,
         start,
         position + 3,
         // Return a string of the lines joined with U+000A.
-        dedentBlockStringLines(blockLines).join("\n")
+        dedentBlockStringLines$1(blockLines).join("\n")
       );
       lexer.line += blockLines.length - 1;
       lexer.lineStart = lineStart;
@@ -20314,61 +20343,61 @@ function readBlockString(lexer, start) {
       lineStart = position;
       continue;
     }
-    if (isUnicodeScalarValue(code2)) {
+    if (isUnicodeScalarValue$1(code2)) {
       ++position;
-    } else if (isSupplementaryCodePoint(body, position)) {
+    } else if (isSupplementaryCodePoint$1(body, position)) {
       position += 2;
     } else {
-      throw syntaxError(
+      throw syntaxError$1(
         lexer.source,
         position,
-        `Invalid character within String: ${printCodePointAt(
+        `Invalid character within String: ${printCodePointAt$1(
           lexer,
           position
         )}.`
       );
     }
   }
-  throw syntaxError(lexer.source, position, "Unterminated string.");
+  throw syntaxError$1(lexer.source, position, "Unterminated string.");
 }
-function readName(lexer, start) {
+function readName$1(lexer, start) {
   const body = lexer.source.body;
   const bodyLength = body.length;
   let position = start + 1;
   while (position < bodyLength) {
     const code2 = body.charCodeAt(position);
-    if (isNameContinue(code2)) {
+    if (isNameContinue$1(code2)) {
       ++position;
     } else {
       break;
     }
   }
-  return createToken(
+  return createToken$1(
     lexer,
-    TokenKind.NAME,
+    TokenKind$1.NAME,
     start,
     position,
     body.slice(start, position)
   );
 }
-const MAX_ARRAY_LENGTH = 10;
-const MAX_RECURSIVE_DEPTH = 2;
-function inspect(value) {
-  return formatValue(value, []);
+const MAX_ARRAY_LENGTH$1 = 10;
+const MAX_RECURSIVE_DEPTH$1 = 2;
+function inspect$1(value) {
+  return formatValue$1(value, []);
 }
-function formatValue(value, seenValues) {
+function formatValue$1(value, seenValues) {
   switch (typeof value) {
     case "string":
       return JSON.stringify(value);
     case "function":
       return value.name ? `[function ${value.name}]` : "[function]";
     case "object":
-      return formatObjectValue(value, seenValues);
+      return formatObjectValue$1(value, seenValues);
     default:
       return String(value);
   }
 }
-function formatObjectValue(value, previouslySeenValues) {
+function formatObjectValue$1(value, previouslySeenValues) {
   if (value === null) {
     return "null";
   }
@@ -20376,44 +20405,44 @@ function formatObjectValue(value, previouslySeenValues) {
     return "[Circular]";
   }
   const seenValues = [...previouslySeenValues, value];
-  if (isJSONable(value)) {
+  if (isJSONable$1(value)) {
     const jsonValue = value.toJSON();
     if (jsonValue !== value) {
-      return typeof jsonValue === "string" ? jsonValue : formatValue(jsonValue, seenValues);
+      return typeof jsonValue === "string" ? jsonValue : formatValue$1(jsonValue, seenValues);
     }
   } else if (Array.isArray(value)) {
-    return formatArray(value, seenValues);
+    return formatArray$1(value, seenValues);
   }
-  return formatObject(value, seenValues);
+  return formatObject$1(value, seenValues);
 }
-function isJSONable(value) {
+function isJSONable$1(value) {
   return typeof value.toJSON === "function";
 }
-function formatObject(object, seenValues) {
+function formatObject$1(object, seenValues) {
   const entries = Object.entries(object);
   if (entries.length === 0) {
     return "{}";
   }
-  if (seenValues.length > MAX_RECURSIVE_DEPTH) {
-    return "[" + getObjectTag(object) + "]";
+  if (seenValues.length > MAX_RECURSIVE_DEPTH$1) {
+    return "[" + getObjectTag$1(object) + "]";
   }
   const properties = entries.map(
-    ([key, value]) => key + ": " + formatValue(value, seenValues)
+    ([key, value]) => key + ": " + formatValue$1(value, seenValues)
   );
   return "{ " + properties.join(", ") + " }";
 }
-function formatArray(array, seenValues) {
+function formatArray$1(array, seenValues) {
   if (array.length === 0) {
     return "[]";
   }
-  if (seenValues.length > MAX_RECURSIVE_DEPTH) {
+  if (seenValues.length > MAX_RECURSIVE_DEPTH$1) {
     return "[Array]";
   }
-  const len = Math.min(MAX_ARRAY_LENGTH, array.length);
+  const len = Math.min(MAX_ARRAY_LENGTH$1, array.length);
   const remaining = array.length - len;
   const items = [];
   for (let i2 = 0; i2 < len; ++i2) {
-    items.push(formatValue(array[i2], seenValues));
+    items.push(formatValue$1(array[i2], seenValues));
   }
   if (remaining === 1) {
     items.push("... 1 more item");
@@ -20422,7 +20451,7 @@ function formatArray(array, seenValues) {
   }
   return "[" + items.join(", ") + "]";
 }
-function getObjectTag(object) {
+function getObjectTag$1(object) {
   const tag = Object.prototype.toString.call(object).replace(/^\[object /, "").replace(/]$/, "");
   if (tag === "Object" && typeof object.constructor === "function") {
     const name2 = object.constructor.name;
@@ -20432,12 +20461,12 @@ function getObjectTag(object) {
   }
   return tag;
 }
-const isProduction = globalThis.process && // eslint-disable-next-line no-undef
+const isProduction$1 = globalThis.process && // eslint-disable-next-line no-undef
 true;
-const instanceOf = (
+const instanceOf$1 = (
   /* c8 ignore next 6 */
   // FIXME: https://github.com/graphql/graphql-js/issues/2317
-  isProduction ? function instanceOf2(value, constructor) {
+  isProduction$1 ? function instanceOf2(value, constructor) {
     return value instanceof constructor;
   } : function instanceOf3(value, constructor) {
     if (value instanceof constructor) {
@@ -20451,7 +20480,7 @@ const instanceOf = (
         Symbol.toStringTag in value ? value[Symbol.toStringTag] : (_value$constructor = value.constructor) === null || _value$constructor === void 0 ? void 0 : _value$constructor.name
       );
       if (className === valueClassName) {
-        const stringifiedValue = inspect(value);
+        const stringifiedValue = inspect$1(value);
         throw new Error(`Cannot use ${className} "${stringifiedValue}" from another module or realm.
 
 Ensure that there is only one instance of "graphql" in the node_modules
@@ -20469,20 +20498,20 @@ spurious results.`);
     return false;
   }
 );
-class Source {
+let Source$1 = class Source {
   constructor(body, name2 = "GraphQL request", locationOffset = {
     line: 1,
     column: 1
   }) {
-    typeof body === "string" || devAssert(false, `Body must be a string. Received: ${inspect(body)}.`);
+    typeof body === "string" || devAssert$1(false, `Body must be a string. Received: ${inspect$1(body)}.`);
     this.body = body;
     this.name = name2;
     this.locationOffset = locationOffset;
-    this.locationOffset.line > 0 || devAssert(
+    this.locationOffset.line > 0 || devAssert$1(
       false,
       "line in locationOffset is 1-indexed and must be positive."
     );
-    this.locationOffset.column > 0 || devAssert(
+    this.locationOffset.column > 0 || devAssert$1(
       false,
       "column in locationOffset is 1-indexed and must be positive."
     );
@@ -20490,12 +20519,12 @@ class Source {
   get [Symbol.toStringTag]() {
     return "Source";
   }
+};
+function isSource$1(source) {
+  return instanceOf$1(source, Source$1);
 }
-function isSource(source) {
-  return instanceOf(source, Source);
-}
-function parse$3(source, options) {
-  const parser = new Parser(source, options);
+function parse$4(source, options) {
+  const parser = new Parser$1(source, options);
   const document2 = parser.parseDocument();
   Object.defineProperty(document2, "tokenCount", {
     enumerable: false,
@@ -20503,17 +20532,17 @@ function parse$3(source, options) {
   });
   return document2;
 }
-function parseValue(source, options) {
-  const parser = new Parser(source, options);
-  parser.expectToken(TokenKind.SOF);
+function parseValue$1(source, options) {
+  const parser = new Parser$1(source, options);
+  parser.expectToken(TokenKind$1.SOF);
   const value = parser.parseValueLiteral(false);
-  parser.expectToken(TokenKind.EOF);
+  parser.expectToken(TokenKind$1.EOF);
   return value;
 }
-class Parser {
+let Parser$1 = class Parser {
   constructor(source, options = {}) {
-    const sourceObj = isSource(source) ? source : new Source(source);
-    this._lexer = new Lexer(sourceObj);
+    const sourceObj = isSource$1(source) ? source : new Source$1(source);
+    this._lexer = new Lexer$1(sourceObj);
     this._options = options;
     this._tokenCounter = 0;
   }
@@ -20524,9 +20553,9 @@ class Parser {
    * Converts a name lex token into a name parse node.
    */
   parseName() {
-    const token = this.expectToken(TokenKind.NAME);
+    const token = this.expectToken(TokenKind$1.NAME);
     return this.node(token, {
-      kind: Kind.NAME,
+      kind: Kind$1.NAME,
       value: token.value
     });
   }
@@ -20536,11 +20565,11 @@ class Parser {
    */
   parseDocument() {
     return this.node(this._lexer.token, {
-      kind: Kind.DOCUMENT,
+      kind: Kind$1.DOCUMENT,
       definitions: this.many(
-        TokenKind.SOF,
+        TokenKind$1.SOF,
         this.parseDefinition,
-        TokenKind.EOF
+        TokenKind$1.EOF
       )
     });
   }
@@ -20568,12 +20597,12 @@ class Parser {
    *   - InputObjectTypeDefinition
    */
   parseDefinition() {
-    if (this.peek(TokenKind.BRACE_L)) {
+    if (this.peek(TokenKind$1.BRACE_L)) {
       return this.parseOperationDefinition();
     }
     const hasDescription = this.peekDescription();
     const keywordToken = hasDescription ? this._lexer.lookahead() : this._lexer.token;
-    if (keywordToken.kind === TokenKind.NAME) {
+    if (keywordToken.kind === TokenKind$1.NAME) {
       switch (keywordToken.value) {
         case "schema":
           return this.parseSchemaDefinition();
@@ -20593,7 +20622,7 @@ class Parser {
           return this.parseDirectiveDefinition();
       }
       if (hasDescription) {
-        throw syntaxError(
+        throw syntaxError$1(
           this._lexer.source,
           this._lexer.token.start,
           "Unexpected description, descriptions are supported only on type definitions."
@@ -20620,10 +20649,10 @@ class Parser {
    */
   parseOperationDefinition() {
     const start = this._lexer.token;
-    if (this.peek(TokenKind.BRACE_L)) {
+    if (this.peek(TokenKind$1.BRACE_L)) {
       return this.node(start, {
-        kind: Kind.OPERATION_DEFINITION,
-        operation: OperationTypeNode.QUERY,
+        kind: Kind$1.OPERATION_DEFINITION,
+        operation: OperationTypeNode$1.QUERY,
         name: void 0,
         variableDefinitions: [],
         directives: [],
@@ -20632,11 +20661,11 @@ class Parser {
     }
     const operation = this.parseOperationType();
     let name2;
-    if (this.peek(TokenKind.NAME)) {
+    if (this.peek(TokenKind$1.NAME)) {
       name2 = this.parseName();
     }
     return this.node(start, {
-      kind: Kind.OPERATION_DEFINITION,
+      kind: Kind$1.OPERATION_DEFINITION,
       operation,
       name: name2,
       variableDefinitions: this.parseVariableDefinitions(),
@@ -20648,14 +20677,14 @@ class Parser {
    * OperationType : one of query mutation subscription
    */
   parseOperationType() {
-    const operationToken = this.expectToken(TokenKind.NAME);
+    const operationToken = this.expectToken(TokenKind$1.NAME);
     switch (operationToken.value) {
       case "query":
-        return OperationTypeNode.QUERY;
+        return OperationTypeNode$1.QUERY;
       case "mutation":
-        return OperationTypeNode.MUTATION;
+        return OperationTypeNode$1.MUTATION;
       case "subscription":
-        return OperationTypeNode.SUBSCRIPTION;
+        return OperationTypeNode$1.SUBSCRIPTION;
     }
     throw this.unexpected(operationToken);
   }
@@ -20664,9 +20693,9 @@ class Parser {
    */
   parseVariableDefinitions() {
     return this.optionalMany(
-      TokenKind.PAREN_L,
+      TokenKind$1.PAREN_L,
       this.parseVariableDefinition,
-      TokenKind.PAREN_R
+      TokenKind$1.PAREN_R
     );
   }
   /**
@@ -20674,10 +20703,10 @@ class Parser {
    */
   parseVariableDefinition() {
     return this.node(this._lexer.token, {
-      kind: Kind.VARIABLE_DEFINITION,
+      kind: Kind$1.VARIABLE_DEFINITION,
       variable: this.parseVariable(),
-      type: (this.expectToken(TokenKind.COLON), this.parseTypeReference()),
-      defaultValue: this.expectOptionalToken(TokenKind.EQUALS) ? this.parseConstValueLiteral() : void 0,
+      type: (this.expectToken(TokenKind$1.COLON), this.parseTypeReference()),
+      defaultValue: this.expectOptionalToken(TokenKind$1.EQUALS) ? this.parseConstValueLiteral() : void 0,
       directives: this.parseConstDirectives()
     });
   }
@@ -20686,9 +20715,9 @@ class Parser {
    */
   parseVariable() {
     const start = this._lexer.token;
-    this.expectToken(TokenKind.DOLLAR);
+    this.expectToken(TokenKind$1.DOLLAR);
     return this.node(start, {
-      kind: Kind.VARIABLE,
+      kind: Kind$1.VARIABLE,
       name: this.parseName()
     });
   }
@@ -20699,11 +20728,11 @@ class Parser {
    */
   parseSelectionSet() {
     return this.node(this._lexer.token, {
-      kind: Kind.SELECTION_SET,
+      kind: Kind$1.SELECTION_SET,
       selections: this.many(
-        TokenKind.BRACE_L,
+        TokenKind$1.BRACE_L,
         this.parseSelection,
-        TokenKind.BRACE_R
+        TokenKind$1.BRACE_R
       )
     });
   }
@@ -20714,7 +20743,7 @@ class Parser {
    *   - InlineFragment
    */
   parseSelection() {
-    return this.peek(TokenKind.SPREAD) ? this.parseFragment() : this.parseField();
+    return this.peek(TokenKind$1.SPREAD) ? this.parseFragment() : this.parseField();
   }
   /**
    * Field : Alias? Name Arguments? Directives? SelectionSet?
@@ -20726,19 +20755,19 @@ class Parser {
     const nameOrAlias = this.parseName();
     let alias;
     let name2;
-    if (this.expectOptionalToken(TokenKind.COLON)) {
+    if (this.expectOptionalToken(TokenKind$1.COLON)) {
       alias = nameOrAlias;
       name2 = this.parseName();
     } else {
       name2 = nameOrAlias;
     }
     return this.node(start, {
-      kind: Kind.FIELD,
+      kind: Kind$1.FIELD,
       alias,
       name: name2,
       arguments: this.parseArguments(false),
       directives: this.parseDirectives(false),
-      selectionSet: this.peek(TokenKind.BRACE_L) ? this.parseSelectionSet() : void 0
+      selectionSet: this.peek(TokenKind$1.BRACE_L) ? this.parseSelectionSet() : void 0
     });
   }
   /**
@@ -20746,7 +20775,7 @@ class Parser {
    */
   parseArguments(isConst) {
     const item = isConst ? this.parseConstArgument : this.parseArgument;
-    return this.optionalMany(TokenKind.PAREN_L, item, TokenKind.PAREN_R);
+    return this.optionalMany(TokenKind$1.PAREN_L, item, TokenKind$1.PAREN_R);
   }
   /**
    * Argument[Const] : Name : Value[?Const]
@@ -20754,9 +20783,9 @@ class Parser {
   parseArgument(isConst = false) {
     const start = this._lexer.token;
     const name2 = this.parseName();
-    this.expectToken(TokenKind.COLON);
+    this.expectToken(TokenKind$1.COLON);
     return this.node(start, {
-      kind: Kind.ARGUMENT,
+      kind: Kind$1.ARGUMENT,
       name: name2,
       value: this.parseValueLiteral(isConst)
     });
@@ -20774,17 +20803,17 @@ class Parser {
    */
   parseFragment() {
     const start = this._lexer.token;
-    this.expectToken(TokenKind.SPREAD);
+    this.expectToken(TokenKind$1.SPREAD);
     const hasTypeCondition = this.expectOptionalKeyword("on");
-    if (!hasTypeCondition && this.peek(TokenKind.NAME)) {
+    if (!hasTypeCondition && this.peek(TokenKind$1.NAME)) {
       return this.node(start, {
-        kind: Kind.FRAGMENT_SPREAD,
+        kind: Kind$1.FRAGMENT_SPREAD,
         name: this.parseFragmentName(),
         directives: this.parseDirectives(false)
       });
     }
     return this.node(start, {
-      kind: Kind.INLINE_FRAGMENT,
+      kind: Kind$1.INLINE_FRAGMENT,
       typeCondition: hasTypeCondition ? this.parseNamedType() : void 0,
       directives: this.parseDirectives(false),
       selectionSet: this.parseSelectionSet()
@@ -20801,7 +20830,7 @@ class Parser {
     this.expectKeyword("fragment");
     if (this._options.allowLegacyFragmentVariables === true) {
       return this.node(start, {
-        kind: Kind.FRAGMENT_DEFINITION,
+        kind: Kind$1.FRAGMENT_DEFINITION,
         name: this.parseFragmentName(),
         variableDefinitions: this.parseVariableDefinitions(),
         typeCondition: (this.expectKeyword("on"), this.parseNamedType()),
@@ -20810,7 +20839,7 @@ class Parser {
       });
     }
     return this.node(start, {
-      kind: Kind.FRAGMENT_DEFINITION,
+      kind: Kind$1.FRAGMENT_DEFINITION,
       name: this.parseFragmentName(),
       typeCondition: (this.expectKeyword("on"), this.parseNamedType()),
       directives: this.parseDirectives(false),
@@ -20848,54 +20877,54 @@ class Parser {
   parseValueLiteral(isConst) {
     const token = this._lexer.token;
     switch (token.kind) {
-      case TokenKind.BRACKET_L:
+      case TokenKind$1.BRACKET_L:
         return this.parseList(isConst);
-      case TokenKind.BRACE_L:
+      case TokenKind$1.BRACE_L:
         return this.parseObject(isConst);
-      case TokenKind.INT:
+      case TokenKind$1.INT:
         this.advanceLexer();
         return this.node(token, {
-          kind: Kind.INT,
+          kind: Kind$1.INT,
           value: token.value
         });
-      case TokenKind.FLOAT:
+      case TokenKind$1.FLOAT:
         this.advanceLexer();
         return this.node(token, {
-          kind: Kind.FLOAT,
+          kind: Kind$1.FLOAT,
           value: token.value
         });
-      case TokenKind.STRING:
-      case TokenKind.BLOCK_STRING:
+      case TokenKind$1.STRING:
+      case TokenKind$1.BLOCK_STRING:
         return this.parseStringLiteral();
-      case TokenKind.NAME:
+      case TokenKind$1.NAME:
         this.advanceLexer();
         switch (token.value) {
           case "true":
             return this.node(token, {
-              kind: Kind.BOOLEAN,
+              kind: Kind$1.BOOLEAN,
               value: true
             });
           case "false":
             return this.node(token, {
-              kind: Kind.BOOLEAN,
+              kind: Kind$1.BOOLEAN,
               value: false
             });
           case "null":
             return this.node(token, {
-              kind: Kind.NULL
+              kind: Kind$1.NULL
             });
           default:
             return this.node(token, {
-              kind: Kind.ENUM,
+              kind: Kind$1.ENUM,
               value: token.value
             });
         }
-      case TokenKind.DOLLAR:
+      case TokenKind$1.DOLLAR:
         if (isConst) {
-          this.expectToken(TokenKind.DOLLAR);
-          if (this._lexer.token.kind === TokenKind.NAME) {
+          this.expectToken(TokenKind$1.DOLLAR);
+          if (this._lexer.token.kind === TokenKind$1.NAME) {
             const varName = this._lexer.token.value;
-            throw syntaxError(
+            throw syntaxError$1(
               this._lexer.source,
               token.start,
               `Unexpected variable "$${varName}" in constant value.`
@@ -20916,9 +20945,9 @@ class Parser {
     const token = this._lexer.token;
     this.advanceLexer();
     return this.node(token, {
-      kind: Kind.STRING,
+      kind: Kind$1.STRING,
       value: token.value,
-      block: token.kind === TokenKind.BLOCK_STRING
+      block: token.kind === TokenKind$1.BLOCK_STRING
     });
   }
   /**
@@ -20929,8 +20958,8 @@ class Parser {
   parseList(isConst) {
     const item = () => this.parseValueLiteral(isConst);
     return this.node(this._lexer.token, {
-      kind: Kind.LIST,
-      values: this.any(TokenKind.BRACKET_L, item, TokenKind.BRACKET_R)
+      kind: Kind$1.LIST,
+      values: this.any(TokenKind$1.BRACKET_L, item, TokenKind$1.BRACKET_R)
     });
   }
   /**
@@ -20943,8 +20972,8 @@ class Parser {
   parseObject(isConst) {
     const item = () => this.parseObjectField(isConst);
     return this.node(this._lexer.token, {
-      kind: Kind.OBJECT,
-      fields: this.any(TokenKind.BRACE_L, item, TokenKind.BRACE_R)
+      kind: Kind$1.OBJECT,
+      fields: this.any(TokenKind$1.BRACE_L, item, TokenKind$1.BRACE_R)
     });
   }
   /**
@@ -20953,9 +20982,9 @@ class Parser {
   parseObjectField(isConst) {
     const start = this._lexer.token;
     const name2 = this.parseName();
-    this.expectToken(TokenKind.COLON);
+    this.expectToken(TokenKind$1.COLON);
     return this.node(start, {
-      kind: Kind.OBJECT_FIELD,
+      kind: Kind$1.OBJECT_FIELD,
       name: name2,
       value: this.parseValueLiteral(isConst)
     });
@@ -20966,7 +20995,7 @@ class Parser {
    */
   parseDirectives(isConst) {
     const directives = [];
-    while (this.peek(TokenKind.AT)) {
+    while (this.peek(TokenKind$1.AT)) {
       directives.push(this.parseDirective(isConst));
     }
     return directives;
@@ -20981,9 +21010,9 @@ class Parser {
    */
   parseDirective(isConst) {
     const start = this._lexer.token;
-    this.expectToken(TokenKind.AT);
+    this.expectToken(TokenKind$1.AT);
     return this.node(start, {
-      kind: Kind.DIRECTIVE,
+      kind: Kind$1.DIRECTIVE,
       name: this.parseName(),
       arguments: this.parseArguments(isConst)
     });
@@ -20998,19 +21027,19 @@ class Parser {
   parseTypeReference() {
     const start = this._lexer.token;
     let type2;
-    if (this.expectOptionalToken(TokenKind.BRACKET_L)) {
+    if (this.expectOptionalToken(TokenKind$1.BRACKET_L)) {
       const innerType = this.parseTypeReference();
-      this.expectToken(TokenKind.BRACKET_R);
+      this.expectToken(TokenKind$1.BRACKET_R);
       type2 = this.node(start, {
-        kind: Kind.LIST_TYPE,
+        kind: Kind$1.LIST_TYPE,
         type: innerType
       });
     } else {
       type2 = this.parseNamedType();
     }
-    if (this.expectOptionalToken(TokenKind.BANG)) {
+    if (this.expectOptionalToken(TokenKind$1.BANG)) {
       return this.node(start, {
-        kind: Kind.NON_NULL_TYPE,
+        kind: Kind$1.NON_NULL_TYPE,
         type: type2
       });
     }
@@ -21021,13 +21050,13 @@ class Parser {
    */
   parseNamedType() {
     return this.node(this._lexer.token, {
-      kind: Kind.NAMED_TYPE,
+      kind: Kind$1.NAMED_TYPE,
       name: this.parseName()
     });
   }
   // Implements the parsing rules in the Type Definition section.
   peekDescription() {
-    return this.peek(TokenKind.STRING) || this.peek(TokenKind.BLOCK_STRING);
+    return this.peek(TokenKind$1.STRING) || this.peek(TokenKind$1.BLOCK_STRING);
   }
   /**
    * Description : StringValue
@@ -21048,12 +21077,12 @@ class Parser {
     this.expectKeyword("schema");
     const directives = this.parseConstDirectives();
     const operationTypes = this.many(
-      TokenKind.BRACE_L,
+      TokenKind$1.BRACE_L,
       this.parseOperationTypeDefinition,
-      TokenKind.BRACE_R
+      TokenKind$1.BRACE_R
     );
     return this.node(start, {
-      kind: Kind.SCHEMA_DEFINITION,
+      kind: Kind$1.SCHEMA_DEFINITION,
       description,
       directives,
       operationTypes
@@ -21065,10 +21094,10 @@ class Parser {
   parseOperationTypeDefinition() {
     const start = this._lexer.token;
     const operation = this.parseOperationType();
-    this.expectToken(TokenKind.COLON);
+    this.expectToken(TokenKind$1.COLON);
     const type2 = this.parseNamedType();
     return this.node(start, {
-      kind: Kind.OPERATION_TYPE_DEFINITION,
+      kind: Kind$1.OPERATION_TYPE_DEFINITION,
       operation,
       type: type2
     });
@@ -21083,7 +21112,7 @@ class Parser {
     const name2 = this.parseName();
     const directives = this.parseConstDirectives();
     return this.node(start, {
-      kind: Kind.SCALAR_TYPE_DEFINITION,
+      kind: Kind$1.SCALAR_TYPE_DEFINITION,
       description,
       name: name2,
       directives
@@ -21103,7 +21132,7 @@ class Parser {
     const directives = this.parseConstDirectives();
     const fields = this.parseFieldsDefinition();
     return this.node(start, {
-      kind: Kind.OBJECT_TYPE_DEFINITION,
+      kind: Kind$1.OBJECT_TYPE_DEFINITION,
       description,
       name: name2,
       interfaces,
@@ -21117,7 +21146,7 @@ class Parser {
    *   - ImplementsInterfaces & NamedType
    */
   parseImplementsInterfaces() {
-    return this.expectOptionalKeyword("implements") ? this.delimitedMany(TokenKind.AMP, this.parseNamedType) : [];
+    return this.expectOptionalKeyword("implements") ? this.delimitedMany(TokenKind$1.AMP, this.parseNamedType) : [];
   }
   /**
    * ```
@@ -21126,9 +21155,9 @@ class Parser {
    */
   parseFieldsDefinition() {
     return this.optionalMany(
-      TokenKind.BRACE_L,
+      TokenKind$1.BRACE_L,
       this.parseFieldDefinition,
-      TokenKind.BRACE_R
+      TokenKind$1.BRACE_R
     );
   }
   /**
@@ -21140,11 +21169,11 @@ class Parser {
     const description = this.parseDescription();
     const name2 = this.parseName();
     const args = this.parseArgumentDefs();
-    this.expectToken(TokenKind.COLON);
+    this.expectToken(TokenKind$1.COLON);
     const type2 = this.parseTypeReference();
     const directives = this.parseConstDirectives();
     return this.node(start, {
-      kind: Kind.FIELD_DEFINITION,
+      kind: Kind$1.FIELD_DEFINITION,
       description,
       name: name2,
       arguments: args,
@@ -21157,9 +21186,9 @@ class Parser {
    */
   parseArgumentDefs() {
     return this.optionalMany(
-      TokenKind.PAREN_L,
+      TokenKind$1.PAREN_L,
       this.parseInputValueDef,
-      TokenKind.PAREN_R
+      TokenKind$1.PAREN_R
     );
   }
   /**
@@ -21170,15 +21199,15 @@ class Parser {
     const start = this._lexer.token;
     const description = this.parseDescription();
     const name2 = this.parseName();
-    this.expectToken(TokenKind.COLON);
+    this.expectToken(TokenKind$1.COLON);
     const type2 = this.parseTypeReference();
     let defaultValue;
-    if (this.expectOptionalToken(TokenKind.EQUALS)) {
+    if (this.expectOptionalToken(TokenKind$1.EQUALS)) {
       defaultValue = this.parseConstValueLiteral();
     }
     const directives = this.parseConstDirectives();
     return this.node(start, {
-      kind: Kind.INPUT_VALUE_DEFINITION,
+      kind: Kind$1.INPUT_VALUE_DEFINITION,
       description,
       name: name2,
       type: type2,
@@ -21199,7 +21228,7 @@ class Parser {
     const directives = this.parseConstDirectives();
     const fields = this.parseFieldsDefinition();
     return this.node(start, {
-      kind: Kind.INTERFACE_TYPE_DEFINITION,
+      kind: Kind$1.INTERFACE_TYPE_DEFINITION,
       description,
       name: name2,
       interfaces,
@@ -21219,7 +21248,7 @@ class Parser {
     const directives = this.parseConstDirectives();
     const types = this.parseUnionMemberTypes();
     return this.node(start, {
-      kind: Kind.UNION_TYPE_DEFINITION,
+      kind: Kind$1.UNION_TYPE_DEFINITION,
       description,
       name: name2,
       directives,
@@ -21232,7 +21261,7 @@ class Parser {
    *   - UnionMemberTypes | NamedType
    */
   parseUnionMemberTypes() {
-    return this.expectOptionalToken(TokenKind.EQUALS) ? this.delimitedMany(TokenKind.PIPE, this.parseNamedType) : [];
+    return this.expectOptionalToken(TokenKind$1.EQUALS) ? this.delimitedMany(TokenKind$1.PIPE, this.parseNamedType) : [];
   }
   /**
    * EnumTypeDefinition :
@@ -21246,7 +21275,7 @@ class Parser {
     const directives = this.parseConstDirectives();
     const values = this.parseEnumValuesDefinition();
     return this.node(start, {
-      kind: Kind.ENUM_TYPE_DEFINITION,
+      kind: Kind$1.ENUM_TYPE_DEFINITION,
       description,
       name: name2,
       directives,
@@ -21260,9 +21289,9 @@ class Parser {
    */
   parseEnumValuesDefinition() {
     return this.optionalMany(
-      TokenKind.BRACE_L,
+      TokenKind$1.BRACE_L,
       this.parseEnumValueDefinition,
-      TokenKind.BRACE_R
+      TokenKind$1.BRACE_R
     );
   }
   /**
@@ -21274,7 +21303,7 @@ class Parser {
     const name2 = this.parseEnumValueName();
     const directives = this.parseConstDirectives();
     return this.node(start, {
-      kind: Kind.ENUM_VALUE_DEFINITION,
+      kind: Kind$1.ENUM_VALUE_DEFINITION,
       description,
       name: name2,
       directives
@@ -21285,10 +21314,10 @@ class Parser {
    */
   parseEnumValueName() {
     if (this._lexer.token.value === "true" || this._lexer.token.value === "false" || this._lexer.token.value === "null") {
-      throw syntaxError(
+      throw syntaxError$1(
         this._lexer.source,
         this._lexer.token.start,
-        `${getTokenDesc(
+        `${getTokenDesc$1(
           this._lexer.token
         )} is reserved and cannot be used for an enum value.`
       );
@@ -21307,7 +21336,7 @@ class Parser {
     const directives = this.parseConstDirectives();
     const fields = this.parseInputFieldsDefinition();
     return this.node(start, {
-      kind: Kind.INPUT_OBJECT_TYPE_DEFINITION,
+      kind: Kind$1.INPUT_OBJECT_TYPE_DEFINITION,
       description,
       name: name2,
       directives,
@@ -21321,9 +21350,9 @@ class Parser {
    */
   parseInputFieldsDefinition() {
     return this.optionalMany(
-      TokenKind.BRACE_L,
+      TokenKind$1.BRACE_L,
       this.parseInputValueDef,
-      TokenKind.BRACE_R
+      TokenKind$1.BRACE_R
     );
   }
   /**
@@ -21341,7 +21370,7 @@ class Parser {
    */
   parseTypeSystemExtension() {
     const keywordToken = this._lexer.lookahead();
-    if (keywordToken.kind === TokenKind.NAME) {
+    if (keywordToken.kind === TokenKind$1.NAME) {
       switch (keywordToken.value) {
         case "schema":
           return this.parseSchemaExtension();
@@ -21374,15 +21403,15 @@ class Parser {
     this.expectKeyword("schema");
     const directives = this.parseConstDirectives();
     const operationTypes = this.optionalMany(
-      TokenKind.BRACE_L,
+      TokenKind$1.BRACE_L,
       this.parseOperationTypeDefinition,
-      TokenKind.BRACE_R
+      TokenKind$1.BRACE_R
     );
     if (directives.length === 0 && operationTypes.length === 0) {
       throw this.unexpected();
     }
     return this.node(start, {
-      kind: Kind.SCHEMA_EXTENSION,
+      kind: Kind$1.SCHEMA_EXTENSION,
       directives,
       operationTypes
     });
@@ -21401,7 +21430,7 @@ class Parser {
       throw this.unexpected();
     }
     return this.node(start, {
-      kind: Kind.SCALAR_TYPE_EXTENSION,
+      kind: Kind$1.SCALAR_TYPE_EXTENSION,
       name: name2,
       directives
     });
@@ -21424,7 +21453,7 @@ class Parser {
       throw this.unexpected();
     }
     return this.node(start, {
-      kind: Kind.OBJECT_TYPE_EXTENSION,
+      kind: Kind$1.OBJECT_TYPE_EXTENSION,
       name: name2,
       interfaces,
       directives,
@@ -21449,7 +21478,7 @@ class Parser {
       throw this.unexpected();
     }
     return this.node(start, {
-      kind: Kind.INTERFACE_TYPE_EXTENSION,
+      kind: Kind$1.INTERFACE_TYPE_EXTENSION,
       name: name2,
       interfaces,
       directives,
@@ -21472,7 +21501,7 @@ class Parser {
       throw this.unexpected();
     }
     return this.node(start, {
-      kind: Kind.UNION_TYPE_EXTENSION,
+      kind: Kind$1.UNION_TYPE_EXTENSION,
       name: name2,
       directives,
       types
@@ -21494,7 +21523,7 @@ class Parser {
       throw this.unexpected();
     }
     return this.node(start, {
-      kind: Kind.ENUM_TYPE_EXTENSION,
+      kind: Kind$1.ENUM_TYPE_EXTENSION,
       name: name2,
       directives,
       values
@@ -21516,7 +21545,7 @@ class Parser {
       throw this.unexpected();
     }
     return this.node(start, {
-      kind: Kind.INPUT_OBJECT_TYPE_EXTENSION,
+      kind: Kind$1.INPUT_OBJECT_TYPE_EXTENSION,
       name: name2,
       directives,
       fields
@@ -21532,14 +21561,14 @@ class Parser {
     const start = this._lexer.token;
     const description = this.parseDescription();
     this.expectKeyword("directive");
-    this.expectToken(TokenKind.AT);
+    this.expectToken(TokenKind$1.AT);
     const name2 = this.parseName();
     const args = this.parseArgumentDefs();
     const repeatable = this.expectOptionalKeyword("repeatable");
     this.expectKeyword("on");
     const locations = this.parseDirectiveLocations();
     return this.node(start, {
-      kind: Kind.DIRECTIVE_DEFINITION,
+      kind: Kind$1.DIRECTIVE_DEFINITION,
       description,
       name: name2,
       arguments: args,
@@ -21553,7 +21582,7 @@ class Parser {
    *   - DirectiveLocations | DirectiveLocation
    */
   parseDirectiveLocations() {
-    return this.delimitedMany(TokenKind.PIPE, this.parseDirectiveLocation);
+    return this.delimitedMany(TokenKind$1.PIPE, this.parseDirectiveLocation);
   }
   /*
    * DirectiveLocation :
@@ -21585,7 +21614,7 @@ class Parser {
   parseDirectiveLocation() {
     const start = this._lexer.token;
     const name2 = this.parseName();
-    if (Object.prototype.hasOwnProperty.call(DirectiveLocation, name2.value)) {
+    if (Object.prototype.hasOwnProperty.call(DirectiveLocation$1, name2.value)) {
       return name2;
     }
     throw this.unexpected(start);
@@ -21598,7 +21627,7 @@ class Parser {
    */
   node(startToken, node) {
     if (this._options.noLocation !== true) {
-      node.loc = new Location$1(
+      node.loc = new Location$2(
         startToken,
         this._lexer.lastToken,
         this._lexer.source
@@ -21622,10 +21651,10 @@ class Parser {
       this.advanceLexer();
       return token;
     }
-    throw syntaxError(
+    throw syntaxError$1(
       this._lexer.source,
       token.start,
-      `Expected ${getTokenKindDesc(kind)}, found ${getTokenDesc(token)}.`
+      `Expected ${getTokenKindDesc$1(kind)}, found ${getTokenDesc$1(token)}.`
     );
   }
   /**
@@ -21646,13 +21675,13 @@ class Parser {
    */
   expectKeyword(value) {
     const token = this._lexer.token;
-    if (token.kind === TokenKind.NAME && token.value === value) {
+    if (token.kind === TokenKind$1.NAME && token.value === value) {
       this.advanceLexer();
     } else {
-      throw syntaxError(
+      throw syntaxError$1(
         this._lexer.source,
         token.start,
-        `Expected "${value}", found ${getTokenDesc(token)}.`
+        `Expected "${value}", found ${getTokenDesc$1(token)}.`
       );
     }
   }
@@ -21662,7 +21691,7 @@ class Parser {
    */
   expectOptionalKeyword(value) {
     const token = this._lexer.token;
-    if (token.kind === TokenKind.NAME && token.value === value) {
+    if (token.kind === TokenKind$1.NAME && token.value === value) {
       this.advanceLexer();
       return true;
     }
@@ -21673,10 +21702,10 @@ class Parser {
    */
   unexpected(atToken) {
     const token = atToken !== null && atToken !== void 0 ? atToken : this._lexer.token;
-    return syntaxError(
+    return syntaxError$1(
       this._lexer.source,
       token.start,
-      `Unexpected ${getTokenDesc(token)}.`
+      `Unexpected ${getTokenDesc$1(token)}.`
     );
   }
   /**
@@ -21737,10 +21766,10 @@ class Parser {
   advanceLexer() {
     const { maxTokens } = this._options;
     const token = this._lexer.advance();
-    if (token.kind !== TokenKind.EOF) {
+    if (token.kind !== TokenKind$1.EOF) {
       ++this._tokenCounter;
       if (maxTokens !== void 0 && this._tokenCounter > maxTokens) {
-        throw syntaxError(
+        throw syntaxError$1(
           this._lexer.source,
           token.start,
           `Document contains more that ${maxTokens} tokens. Parsing aborted.`
@@ -21748,16 +21777,16 @@ class Parser {
       }
     }
   }
-}
-function getTokenDesc(token) {
+};
+function getTokenDesc$1(token) {
   const value = token.value;
-  return getTokenKindDesc(token.kind) + (value != null ? ` "${value}"` : "");
+  return getTokenKindDesc$1(token.kind) + (value != null ? ` "${value}"` : "");
 }
-function getTokenKindDesc(kind) {
-  return isPunctuatorTokenKind(kind) ? `"${kind}"` : kind;
+function getTokenKindDesc$1(kind) {
+  return isPunctuatorTokenKind$1(kind) ? `"${kind}"` : kind;
 }
-const MAX_SUGGESTIONS = 5;
-function didYouMean(firstArg, secondArg) {
+const MAX_SUGGESTIONS$1 = 5;
+function didYouMean$1(firstArg, secondArg) {
   const [subMessage, suggestionsArg] = secondArg ? [firstArg, secondArg] : [void 0, firstArg];
   let message = " Did you mean ";
   if (subMessage) {
@@ -21772,53 +21801,53 @@ function didYouMean(firstArg, secondArg) {
     case 2:
       return message + suggestions[0] + " or " + suggestions[1] + "?";
   }
-  const selected = suggestions.slice(0, MAX_SUGGESTIONS);
+  const selected = suggestions.slice(0, MAX_SUGGESTIONS$1);
   const lastItem = selected.pop();
   return message + selected.join(", ") + ", or " + lastItem + "?";
 }
-function identityFunc(x2) {
+function identityFunc$1(x2) {
   return x2;
 }
-function keyMap(list2, keyFn) {
+function keyMap$1(list2, keyFn) {
   const result = /* @__PURE__ */ Object.create(null);
   for (const item of list2) {
     result[keyFn(item)] = item;
   }
   return result;
 }
-function keyValMap(list2, keyFn, valFn) {
+function keyValMap$1(list2, keyFn, valFn) {
   const result = /* @__PURE__ */ Object.create(null);
   for (const item of list2) {
     result[keyFn(item)] = valFn(item);
   }
   return result;
 }
-function mapValue(map2, fn) {
+function mapValue$1(map2, fn) {
   const result = /* @__PURE__ */ Object.create(null);
   for (const key of Object.keys(map2)) {
     result[key] = fn(map2[key], key);
   }
   return result;
 }
-function naturalCompare(aStr, bStr) {
+function naturalCompare$1(aStr, bStr) {
   let aIndex = 0;
   let bIndex = 0;
   while (aIndex < aStr.length && bIndex < bStr.length) {
     let aChar = aStr.charCodeAt(aIndex);
     let bChar = bStr.charCodeAt(bIndex);
-    if (isDigit$1(aChar) && isDigit$1(bChar)) {
+    if (isDigit$3(aChar) && isDigit$3(bChar)) {
       let aNum = 0;
       do {
         ++aIndex;
-        aNum = aNum * 10 + aChar - DIGIT_0;
+        aNum = aNum * 10 + aChar - DIGIT_0$1;
         aChar = aStr.charCodeAt(aIndex);
-      } while (isDigit$1(aChar) && aNum > 0);
+      } while (isDigit$3(aChar) && aNum > 0);
       let bNum = 0;
       do {
         ++bIndex;
-        bNum = bNum * 10 + bChar - DIGIT_0;
+        bNum = bNum * 10 + bChar - DIGIT_0$1;
         bChar = bStr.charCodeAt(bIndex);
-      } while (isDigit$1(bChar) && bNum > 0);
+      } while (isDigit$3(bChar) && bNum > 0);
       if (aNum < bNum) {
         return -1;
       }
@@ -21838,14 +21867,14 @@ function naturalCompare(aStr, bStr) {
   }
   return aStr.length - bStr.length;
 }
-const DIGIT_0 = 48;
-const DIGIT_9 = 57;
-function isDigit$1(code2) {
-  return !isNaN(code2) && DIGIT_0 <= code2 && code2 <= DIGIT_9;
+const DIGIT_0$1 = 48;
+const DIGIT_9$1 = 57;
+function isDigit$3(code2) {
+  return !isNaN(code2) && DIGIT_0$1 <= code2 && code2 <= DIGIT_9$1;
 }
-function suggestionList(input, options) {
+function suggestionList$1(input, options) {
   const optionsByDistance = /* @__PURE__ */ Object.create(null);
-  const lexicalDistance = new LexicalDistance(input);
+  const lexicalDistance = new LexicalDistance$1(input);
   const threshold = Math.floor(input.length * 0.4) + 1;
   for (const option of options) {
     const distance2 = lexicalDistance.measure(option, threshold);
@@ -21855,14 +21884,14 @@ function suggestionList(input, options) {
   }
   return Object.keys(optionsByDistance).sort((a3, b2) => {
     const distanceDiff = optionsByDistance[a3] - optionsByDistance[b2];
-    return distanceDiff !== 0 ? distanceDiff : naturalCompare(a3, b2);
+    return distanceDiff !== 0 ? distanceDiff : naturalCompare$1(a3, b2);
   });
 }
-class LexicalDistance {
+let LexicalDistance$1 = class LexicalDistance {
   constructor(input) {
     this._input = input;
     this._inputLowerCase = input.toLowerCase();
-    this._inputArray = stringToArray(this._inputLowerCase);
+    this._inputArray = stringToArray$1(this._inputLowerCase);
     this._rows = [
       new Array(input.length + 1).fill(0),
       new Array(input.length + 1).fill(0),
@@ -21877,7 +21906,7 @@ class LexicalDistance {
     if (this._inputLowerCase === optionLowerCase) {
       return 1;
     }
-    let a3 = stringToArray(optionLowerCase);
+    let a3 = stringToArray$1(optionLowerCase);
     let b2 = this._inputArray;
     if (a3.length < b2.length) {
       const tmp = a3;
@@ -21923,8 +21952,8 @@ class LexicalDistance {
     const distance2 = rows[aLength % 3][bLength];
     return distance2 <= threshold ? distance2 : void 0;
   }
-}
-function stringToArray(str) {
+};
+function stringToArray$1(str) {
   const strLength = str.length;
   const array = new Array(strLength);
   for (let i2 = 0; i2 < strLength; ++i2) {
@@ -21932,7 +21961,7 @@ function stringToArray(str) {
   }
   return array;
 }
-function toObjMap(obj) {
+function toObjMap$1(obj) {
   if (obj == null) {
     return /* @__PURE__ */ Object.create(null);
   }
@@ -21945,14 +21974,14 @@ function toObjMap(obj) {
   }
   return map2;
 }
-function printString(str) {
-  return `"${str.replace(escapedRegExp, escapedReplacer)}"`;
+function printString$1(str) {
+  return `"${str.replace(escapedRegExp$1, escapedReplacer$1)}"`;
 }
-const escapedRegExp = /[\x00-\x1f\x22\x5c\x7f-\x9f]/g;
-function escapedReplacer(str) {
-  return escapeSequences[str.charCodeAt(0)];
+const escapedRegExp$1 = /[\x00-\x1f\x22\x5c\x7f-\x9f]/g;
+function escapedReplacer$1(str) {
+  return escapeSequences$1[str.charCodeAt(0)];
 }
-const escapeSequences = [
+const escapeSequences$1 = [
   "\\u0000",
   "\\u0001",
   "\\u0002",
@@ -22119,11 +22148,11 @@ const escapeSequences = [
   "\\u009E",
   "\\u009F"
 ];
-const BREAK = Object.freeze({});
-function visit$1(root2, visitor, visitorKeys = QueryDocumentKeys) {
+const BREAK$1 = Object.freeze({});
+function visit$2(root2, visitor, visitorKeys = QueryDocumentKeys$1) {
   const enterLeaveMap = /* @__PURE__ */ new Map();
-  for (const kind of Object.values(Kind)) {
-    enterLeaveMap.set(kind, getEnterLeaveForKind(visitor, kind));
+  for (const kind of Object.values(Kind$1)) {
+    enterLeaveMap.set(kind, getEnterLeaveForKind$1(visitor, kind));
   }
   let stack = void 0;
   let inArray = Array.isArray(root2);
@@ -22179,10 +22208,10 @@ function visit$1(root2, visitor, visitorKeys = QueryDocumentKeys) {
     let result;
     if (!Array.isArray(node)) {
       var _enterLeaveMap$get, _enterLeaveMap$get2;
-      isNode$1(node) || devAssert(false, `Invalid AST Node: ${inspect(node)}.`);
+      isNode$2(node) || devAssert$1(false, `Invalid AST Node: ${inspect$1(node)}.`);
       const visitFn = isLeaving ? (_enterLeaveMap$get = enterLeaveMap.get(node.kind)) === null || _enterLeaveMap$get === void 0 ? void 0 : _enterLeaveMap$get.leave : (_enterLeaveMap$get2 = enterLeaveMap.get(node.kind)) === null || _enterLeaveMap$get2 === void 0 ? void 0 : _enterLeaveMap$get2.enter;
       result = visitFn === null || visitFn === void 0 ? void 0 : visitFn.call(visitor, node, key, parent, path, ancestors);
-      if (result === BREAK) {
+      if (result === BREAK$1) {
         break;
       }
       if (result === false) {
@@ -22193,7 +22222,7 @@ function visit$1(root2, visitor, visitorKeys = QueryDocumentKeys) {
       } else if (result !== void 0) {
         edits.push([key, result]);
         if (!isLeaving) {
-          if (isNode$1(result)) {
+          if (isNode$2(result)) {
             node = result;
           } else {
             path.pop();
@@ -22231,15 +22260,15 @@ function visit$1(root2, visitor, visitorKeys = QueryDocumentKeys) {
   }
   return root2;
 }
-function visitInParallel(visitors) {
+function visitInParallel$1(visitors) {
   const skipping = new Array(visitors.length).fill(null);
   const mergedVisitor = /* @__PURE__ */ Object.create(null);
-  for (const kind of Object.values(Kind)) {
+  for (const kind of Object.values(Kind$1)) {
     let hasVisitor = false;
     const enterList = new Array(visitors.length).fill(void 0);
     const leaveList = new Array(visitors.length).fill(void 0);
     for (let i2 = 0; i2 < visitors.length; ++i2) {
-      const { enter, leave } = getEnterLeaveForKind(visitors[i2], kind);
+      const { enter, leave } = getEnterLeaveForKind$1(visitors[i2], kind);
       hasVisitor || (hasVisitor = enter != null || leave != null);
       enterList[i2] = enter;
       leaveList[i2] = leave;
@@ -22256,8 +22285,8 @@ function visitInParallel(visitors) {
             const result = (_enterList$i = enterList[i2]) === null || _enterList$i === void 0 ? void 0 : _enterList$i.apply(visitors[i2], args);
             if (result === false) {
               skipping[i2] = node;
-            } else if (result === BREAK) {
-              skipping[i2] = BREAK;
+            } else if (result === BREAK$1) {
+              skipping[i2] = BREAK$1;
             } else if (result !== void 0) {
               return result;
             }
@@ -22270,8 +22299,8 @@ function visitInParallel(visitors) {
           if (skipping[i2] === null) {
             var _leaveList$i;
             const result = (_leaveList$i = leaveList[i2]) === null || _leaveList$i === void 0 ? void 0 : _leaveList$i.apply(visitors[i2], args);
-            if (result === BREAK) {
-              skipping[i2] = BREAK;
+            if (result === BREAK$1) {
+              skipping[i2] = BREAK$1;
             } else if (result !== void 0 && result !== false) {
               return result;
             }
@@ -22285,7 +22314,7 @@ function visitInParallel(visitors) {
   }
   return mergedVisitor;
 }
-function getEnterLeaveForKind(visitor, kind) {
+function getEnterLeaveForKind$1(visitor, kind) {
   const kindVisitor = visitor[kind];
   if (typeof kindVisitor === "object") {
     return kindVisitor;
@@ -22300,11 +22329,11 @@ function getEnterLeaveForKind(visitor, kind) {
     leave: visitor.leave
   };
 }
-function print(ast) {
-  return visit$1(ast, printDocASTReducer);
+function print$1(ast) {
+  return visit$2(ast, printDocASTReducer$1);
 }
-const MAX_LINE_LENGTH = 80;
-const printDocASTReducer = {
+const MAX_LINE_LENGTH$1 = 80;
+const printDocASTReducer$1 = {
   Name: {
     leave: (node) => node.value
   },
@@ -22313,16 +22342,16 @@ const printDocASTReducer = {
   },
   // Document
   Document: {
-    leave: (node) => join(node.definitions, "\n\n")
+    leave: (node) => join$1(node.definitions, "\n\n")
   },
   OperationDefinition: {
     leave(node) {
-      const varDefs = wrap("(", join(node.variableDefinitions, ", "), ")");
-      const prefix = join(
+      const varDefs = wrap$1("(", join$1(node.variableDefinitions, ", "), ")");
+      const prefix = join$1(
         [
           node.operation,
-          join([node.name, varDefs]),
-          join(node.directives, " ")
+          join$1([node.name, varDefs]),
+          join$1(node.directives, " ")
         ],
         " "
       );
@@ -22330,19 +22359,19 @@ const printDocASTReducer = {
     }
   },
   VariableDefinition: {
-    leave: ({ variable, type: type2, defaultValue, directives }) => variable + ": " + type2 + wrap(" = ", defaultValue) + wrap(" ", join(directives, " "))
+    leave: ({ variable, type: type2, defaultValue, directives }) => variable + ": " + type2 + wrap$1(" = ", defaultValue) + wrap$1(" ", join$1(directives, " "))
   },
   SelectionSet: {
-    leave: ({ selections }) => block$1(selections)
+    leave: ({ selections }) => block$2(selections)
   },
   Field: {
     leave({ alias, name: name2, arguments: args, directives, selectionSet }) {
-      const prefix = wrap("", alias, ": ") + name2;
-      let argsLine = prefix + wrap("(", join(args, ", "), ")");
-      if (argsLine.length > MAX_LINE_LENGTH) {
-        argsLine = prefix + wrap("(\n", indent(join(args, "\n")), "\n)");
+      const prefix = wrap$1("", alias, ": ") + name2;
+      let argsLine = prefix + wrap$1("(", join$1(args, ", "), ")");
+      if (argsLine.length > MAX_LINE_LENGTH$1) {
+        argsLine = prefix + wrap$1("(\n", indent$1(join$1(args, "\n")), "\n)");
       }
-      return join([argsLine, join(directives, " "), selectionSet], " ");
+      return join$1([argsLine, join$1(directives, " "), selectionSet], " ");
     }
   },
   Argument: {
@@ -22350,14 +22379,14 @@ const printDocASTReducer = {
   },
   // Fragments
   FragmentSpread: {
-    leave: ({ name: name2, directives }) => "..." + name2 + wrap(" ", join(directives, " "))
+    leave: ({ name: name2, directives }) => "..." + name2 + wrap$1(" ", join$1(directives, " "))
   },
   InlineFragment: {
-    leave: ({ typeCondition, directives, selectionSet }) => join(
+    leave: ({ typeCondition, directives, selectionSet }) => join$1(
       [
         "...",
-        wrap("on ", typeCondition),
-        join(directives, " "),
+        wrap$1("on ", typeCondition),
+        join$1(directives, " "),
         selectionSet
       ],
       " "
@@ -22366,7 +22395,7 @@ const printDocASTReducer = {
   FragmentDefinition: {
     leave: ({ name: name2, typeCondition, variableDefinitions, directives, selectionSet }) => (
       // or removed in the future.
-      `fragment ${name2}${wrap("(", join(variableDefinitions, ", "), ")")} on ${typeCondition} ${wrap("", join(directives, " "), " ")}` + selectionSet
+      `fragment ${name2}${wrap$1("(", join$1(variableDefinitions, ", "), ")")} on ${typeCondition} ${wrap$1("", join$1(directives, " "), " ")}` + selectionSet
     )
   },
   // Value
@@ -22377,7 +22406,7 @@ const printDocASTReducer = {
     leave: ({ value }) => value
   },
   StringValue: {
-    leave: ({ value, block: isBlockString }) => isBlockString ? printBlockString(value) : printString(value)
+    leave: ({ value, block: isBlockString }) => isBlockString ? printBlockString$1(value) : printString$1(value)
   },
   BooleanValue: {
     leave: ({ value }) => value ? "true" : "false"
@@ -22389,17 +22418,17 @@ const printDocASTReducer = {
     leave: ({ value }) => value
   },
   ListValue: {
-    leave: ({ values }) => "[" + join(values, ", ") + "]"
+    leave: ({ values }) => "[" + join$1(values, ", ") + "]"
   },
   ObjectValue: {
-    leave: ({ fields }) => "{" + join(fields, ", ") + "}"
+    leave: ({ fields }) => "{" + join$1(fields, ", ") + "}"
   },
   ObjectField: {
     leave: ({ name: name2, value }) => name2 + ": " + value
   },
   // Directive
   Directive: {
-    leave: ({ name: name2, arguments: args }) => "@" + name2 + wrap("(", join(args, ", "), ")")
+    leave: ({ name: name2, arguments: args }) => "@" + name2 + wrap$1("(", join$1(args, ", "), ")")
   },
   // Type
   NamedType: {
@@ -22413,244 +22442,244 @@ const printDocASTReducer = {
   },
   // Type System Definitions
   SchemaDefinition: {
-    leave: ({ description, directives, operationTypes }) => wrap("", description, "\n") + join(["schema", join(directives, " "), block$1(operationTypes)], " ")
+    leave: ({ description, directives, operationTypes }) => wrap$1("", description, "\n") + join$1(["schema", join$1(directives, " "), block$2(operationTypes)], " ")
   },
   OperationTypeDefinition: {
     leave: ({ operation, type: type2 }) => operation + ": " + type2
   },
   ScalarTypeDefinition: {
-    leave: ({ description, name: name2, directives }) => wrap("", description, "\n") + join(["scalar", name2, join(directives, " ")], " ")
+    leave: ({ description, name: name2, directives }) => wrap$1("", description, "\n") + join$1(["scalar", name2, join$1(directives, " ")], " ")
   },
   ObjectTypeDefinition: {
-    leave: ({ description, name: name2, interfaces, directives, fields }) => wrap("", description, "\n") + join(
+    leave: ({ description, name: name2, interfaces, directives, fields }) => wrap$1("", description, "\n") + join$1(
       [
         "type",
         name2,
-        wrap("implements ", join(interfaces, " & ")),
-        join(directives, " "),
-        block$1(fields)
+        wrap$1("implements ", join$1(interfaces, " & ")),
+        join$1(directives, " "),
+        block$2(fields)
       ],
       " "
     )
   },
   FieldDefinition: {
-    leave: ({ description, name: name2, arguments: args, type: type2, directives }) => wrap("", description, "\n") + name2 + (hasMultilineItems(args) ? wrap("(\n", indent(join(args, "\n")), "\n)") : wrap("(", join(args, ", "), ")")) + ": " + type2 + wrap(" ", join(directives, " "))
+    leave: ({ description, name: name2, arguments: args, type: type2, directives }) => wrap$1("", description, "\n") + name2 + (hasMultilineItems$1(args) ? wrap$1("(\n", indent$1(join$1(args, "\n")), "\n)") : wrap$1("(", join$1(args, ", "), ")")) + ": " + type2 + wrap$1(" ", join$1(directives, " "))
   },
   InputValueDefinition: {
-    leave: ({ description, name: name2, type: type2, defaultValue, directives }) => wrap("", description, "\n") + join(
-      [name2 + ": " + type2, wrap("= ", defaultValue), join(directives, " ")],
+    leave: ({ description, name: name2, type: type2, defaultValue, directives }) => wrap$1("", description, "\n") + join$1(
+      [name2 + ": " + type2, wrap$1("= ", defaultValue), join$1(directives, " ")],
       " "
     )
   },
   InterfaceTypeDefinition: {
-    leave: ({ description, name: name2, interfaces, directives, fields }) => wrap("", description, "\n") + join(
+    leave: ({ description, name: name2, interfaces, directives, fields }) => wrap$1("", description, "\n") + join$1(
       [
         "interface",
         name2,
-        wrap("implements ", join(interfaces, " & ")),
-        join(directives, " "),
-        block$1(fields)
+        wrap$1("implements ", join$1(interfaces, " & ")),
+        join$1(directives, " "),
+        block$2(fields)
       ],
       " "
     )
   },
   UnionTypeDefinition: {
-    leave: ({ description, name: name2, directives, types }) => wrap("", description, "\n") + join(
-      ["union", name2, join(directives, " "), wrap("= ", join(types, " | "))],
+    leave: ({ description, name: name2, directives, types }) => wrap$1("", description, "\n") + join$1(
+      ["union", name2, join$1(directives, " "), wrap$1("= ", join$1(types, " | "))],
       " "
     )
   },
   EnumTypeDefinition: {
-    leave: ({ description, name: name2, directives, values }) => wrap("", description, "\n") + join(["enum", name2, join(directives, " "), block$1(values)], " ")
+    leave: ({ description, name: name2, directives, values }) => wrap$1("", description, "\n") + join$1(["enum", name2, join$1(directives, " "), block$2(values)], " ")
   },
   EnumValueDefinition: {
-    leave: ({ description, name: name2, directives }) => wrap("", description, "\n") + join([name2, join(directives, " ")], " ")
+    leave: ({ description, name: name2, directives }) => wrap$1("", description, "\n") + join$1([name2, join$1(directives, " ")], " ")
   },
   InputObjectTypeDefinition: {
-    leave: ({ description, name: name2, directives, fields }) => wrap("", description, "\n") + join(["input", name2, join(directives, " "), block$1(fields)], " ")
+    leave: ({ description, name: name2, directives, fields }) => wrap$1("", description, "\n") + join$1(["input", name2, join$1(directives, " "), block$2(fields)], " ")
   },
   DirectiveDefinition: {
-    leave: ({ description, name: name2, arguments: args, repeatable, locations }) => wrap("", description, "\n") + "directive @" + name2 + (hasMultilineItems(args) ? wrap("(\n", indent(join(args, "\n")), "\n)") : wrap("(", join(args, ", "), ")")) + (repeatable ? " repeatable" : "") + " on " + join(locations, " | ")
+    leave: ({ description, name: name2, arguments: args, repeatable, locations }) => wrap$1("", description, "\n") + "directive @" + name2 + (hasMultilineItems$1(args) ? wrap$1("(\n", indent$1(join$1(args, "\n")), "\n)") : wrap$1("(", join$1(args, ", "), ")")) + (repeatable ? " repeatable" : "") + " on " + join$1(locations, " | ")
   },
   SchemaExtension: {
-    leave: ({ directives, operationTypes }) => join(
-      ["extend schema", join(directives, " "), block$1(operationTypes)],
+    leave: ({ directives, operationTypes }) => join$1(
+      ["extend schema", join$1(directives, " "), block$2(operationTypes)],
       " "
     )
   },
   ScalarTypeExtension: {
-    leave: ({ name: name2, directives }) => join(["extend scalar", name2, join(directives, " ")], " ")
+    leave: ({ name: name2, directives }) => join$1(["extend scalar", name2, join$1(directives, " ")], " ")
   },
   ObjectTypeExtension: {
-    leave: ({ name: name2, interfaces, directives, fields }) => join(
+    leave: ({ name: name2, interfaces, directives, fields }) => join$1(
       [
         "extend type",
         name2,
-        wrap("implements ", join(interfaces, " & ")),
-        join(directives, " "),
-        block$1(fields)
+        wrap$1("implements ", join$1(interfaces, " & ")),
+        join$1(directives, " "),
+        block$2(fields)
       ],
       " "
     )
   },
   InterfaceTypeExtension: {
-    leave: ({ name: name2, interfaces, directives, fields }) => join(
+    leave: ({ name: name2, interfaces, directives, fields }) => join$1(
       [
         "extend interface",
         name2,
-        wrap("implements ", join(interfaces, " & ")),
-        join(directives, " "),
-        block$1(fields)
+        wrap$1("implements ", join$1(interfaces, " & ")),
+        join$1(directives, " "),
+        block$2(fields)
       ],
       " "
     )
   },
   UnionTypeExtension: {
-    leave: ({ name: name2, directives, types }) => join(
+    leave: ({ name: name2, directives, types }) => join$1(
       [
         "extend union",
         name2,
-        join(directives, " "),
-        wrap("= ", join(types, " | "))
+        join$1(directives, " "),
+        wrap$1("= ", join$1(types, " | "))
       ],
       " "
     )
   },
   EnumTypeExtension: {
-    leave: ({ name: name2, directives, values }) => join(["extend enum", name2, join(directives, " "), block$1(values)], " ")
+    leave: ({ name: name2, directives, values }) => join$1(["extend enum", name2, join$1(directives, " "), block$2(values)], " ")
   },
   InputObjectTypeExtension: {
-    leave: ({ name: name2, directives, fields }) => join(["extend input", name2, join(directives, " "), block$1(fields)], " ")
+    leave: ({ name: name2, directives, fields }) => join$1(["extend input", name2, join$1(directives, " "), block$2(fields)], " ")
   }
 };
-function join(maybeArray, separator = "") {
+function join$1(maybeArray, separator = "") {
   var _maybeArray$filter$jo;
   return (_maybeArray$filter$jo = maybeArray === null || maybeArray === void 0 ? void 0 : maybeArray.filter((x2) => x2).join(separator)) !== null && _maybeArray$filter$jo !== void 0 ? _maybeArray$filter$jo : "";
 }
-function block$1(array) {
-  return wrap("{\n", indent(join(array, "\n")), "\n}");
+function block$2(array) {
+  return wrap$1("{\n", indent$1(join$1(array, "\n")), "\n}");
 }
-function wrap(start, maybeString, end = "") {
+function wrap$1(start, maybeString, end = "") {
   return maybeString != null && maybeString !== "" ? start + maybeString + end : "";
 }
-function indent(str) {
-  return wrap("  ", str.replace(/\n/g, "\n  "));
+function indent$1(str) {
+  return wrap$1("  ", str.replace(/\n/g, "\n  "));
 }
-function hasMultilineItems(maybeArray) {
+function hasMultilineItems$1(maybeArray) {
   var _maybeArray$some;
   return (_maybeArray$some = maybeArray === null || maybeArray === void 0 ? void 0 : maybeArray.some((str) => str.includes("\n"))) !== null && _maybeArray$some !== void 0 ? _maybeArray$some : false;
 }
-function valueFromASTUntyped(valueNode, variables) {
+function valueFromASTUntyped$1(valueNode, variables) {
   switch (valueNode.kind) {
-    case Kind.NULL:
+    case Kind$1.NULL:
       return null;
-    case Kind.INT:
+    case Kind$1.INT:
       return parseInt(valueNode.value, 10);
-    case Kind.FLOAT:
+    case Kind$1.FLOAT:
       return parseFloat(valueNode.value);
-    case Kind.STRING:
-    case Kind.ENUM:
-    case Kind.BOOLEAN:
+    case Kind$1.STRING:
+    case Kind$1.ENUM:
+    case Kind$1.BOOLEAN:
       return valueNode.value;
-    case Kind.LIST:
+    case Kind$1.LIST:
       return valueNode.values.map(
-        (node) => valueFromASTUntyped(node, variables)
+        (node) => valueFromASTUntyped$1(node, variables)
       );
-    case Kind.OBJECT:
-      return keyValMap(
+    case Kind$1.OBJECT:
+      return keyValMap$1(
         valueNode.fields,
         (field) => field.name.value,
-        (field) => valueFromASTUntyped(field.value, variables)
+        (field) => valueFromASTUntyped$1(field.value, variables)
       );
-    case Kind.VARIABLE:
+    case Kind$1.VARIABLE:
       return variables === null || variables === void 0 ? void 0 : variables[valueNode.name.value];
   }
 }
-function assertName(name2) {
-  name2 != null || devAssert(false, "Must provide name.");
-  typeof name2 === "string" || devAssert(false, "Expected name to be a string.");
+function assertName$1(name2) {
+  name2 != null || devAssert$1(false, "Must provide name.");
+  typeof name2 === "string" || devAssert$1(false, "Expected name to be a string.");
   if (name2.length === 0) {
-    throw new GraphQLError("Expected name to be a non-empty string.");
+    throw new GraphQLError$1("Expected name to be a non-empty string.");
   }
   for (let i2 = 1; i2 < name2.length; ++i2) {
-    if (!isNameContinue(name2.charCodeAt(i2))) {
-      throw new GraphQLError(
+    if (!isNameContinue$1(name2.charCodeAt(i2))) {
+      throw new GraphQLError$1(
         `Names must only contain [_a-zA-Z0-9] but "${name2}" does not.`
       );
     }
   }
-  if (!isNameStart(name2.charCodeAt(0))) {
-    throw new GraphQLError(
+  if (!isNameStart$1(name2.charCodeAt(0))) {
+    throw new GraphQLError$1(
       `Names must start with [_a-zA-Z] but "${name2}" does not.`
     );
   }
   return name2;
 }
-function assertEnumValueName(name2) {
+function assertEnumValueName$1(name2) {
   if (name2 === "true" || name2 === "false" || name2 === "null") {
-    throw new GraphQLError(`Enum values cannot be named: ${name2}`);
+    throw new GraphQLError$1(`Enum values cannot be named: ${name2}`);
   }
-  return assertName(name2);
+  return assertName$1(name2);
 }
-function isType(type2) {
-  return isScalarType(type2) || isObjectType(type2) || isInterfaceType(type2) || isUnionType(type2) || isEnumType(type2) || isInputObjectType(type2) || isListType(type2) || isNonNullType(type2);
+function isType$1(type2) {
+  return isScalarType$1(type2) || isObjectType$1(type2) || isInterfaceType$1(type2) || isUnionType$1(type2) || isEnumType$1(type2) || isInputObjectType$1(type2) || isListType$1(type2) || isNonNullType$1(type2);
 }
-function isScalarType(type2) {
-  return instanceOf(type2, GraphQLScalarType);
+function isScalarType$1(type2) {
+  return instanceOf$1(type2, GraphQLScalarType$1);
 }
-function isObjectType(type2) {
-  return instanceOf(type2, GraphQLObjectType);
+function isObjectType$1(type2) {
+  return instanceOf$1(type2, GraphQLObjectType$1);
 }
-function assertObjectType(type2) {
-  if (!isObjectType(type2)) {
-    throw new Error(`Expected ${inspect(type2)} to be a GraphQL Object type.`);
+function assertObjectType$1(type2) {
+  if (!isObjectType$1(type2)) {
+    throw new Error(`Expected ${inspect$1(type2)} to be a GraphQL Object type.`);
   }
   return type2;
 }
-function isInterfaceType(type2) {
-  return instanceOf(type2, GraphQLInterfaceType);
+function isInterfaceType$1(type2) {
+  return instanceOf$1(type2, GraphQLInterfaceType$1);
 }
-function assertInterfaceType(type2) {
-  if (!isInterfaceType(type2)) {
+function assertInterfaceType$1(type2) {
+  if (!isInterfaceType$1(type2)) {
     throw new Error(
-      `Expected ${inspect(type2)} to be a GraphQL Interface type.`
+      `Expected ${inspect$1(type2)} to be a GraphQL Interface type.`
     );
   }
   return type2;
 }
-function isUnionType(type2) {
-  return instanceOf(type2, GraphQLUnionType);
+function isUnionType$1(type2) {
+  return instanceOf$1(type2, GraphQLUnionType$1);
 }
-function isEnumType(type2) {
-  return instanceOf(type2, GraphQLEnumType);
+function isEnumType$1(type2) {
+  return instanceOf$1(type2, GraphQLEnumType$1);
 }
-function isInputObjectType(type2) {
-  return instanceOf(type2, GraphQLInputObjectType);
+function isInputObjectType$1(type2) {
+  return instanceOf$1(type2, GraphQLInputObjectType$1);
 }
-function isListType(type2) {
-  return instanceOf(type2, GraphQLList);
+function isListType$1(type2) {
+  return instanceOf$1(type2, GraphQLList$1);
 }
-function isNonNullType(type2) {
-  return instanceOf(type2, GraphQLNonNull);
+function isNonNullType$1(type2) {
+  return instanceOf$1(type2, GraphQLNonNull$1);
 }
-function isInputType(type2) {
-  return isScalarType(type2) || isEnumType(type2) || isInputObjectType(type2) || isWrappingType(type2) && isInputType(type2.ofType);
+function isInputType$1(type2) {
+  return isScalarType$1(type2) || isEnumType$1(type2) || isInputObjectType$1(type2) || isWrappingType$1(type2) && isInputType$1(type2.ofType);
 }
-function isOutputType(type2) {
-  return isScalarType(type2) || isObjectType(type2) || isInterfaceType(type2) || isUnionType(type2) || isEnumType(type2) || isWrappingType(type2) && isOutputType(type2.ofType);
+function isOutputType$1(type2) {
+  return isScalarType$1(type2) || isObjectType$1(type2) || isInterfaceType$1(type2) || isUnionType$1(type2) || isEnumType$1(type2) || isWrappingType$1(type2) && isOutputType$1(type2.ofType);
 }
-function isLeafType(type2) {
-  return isScalarType(type2) || isEnumType(type2);
+function isLeafType$1(type2) {
+  return isScalarType$1(type2) || isEnumType$1(type2);
 }
-function isCompositeType(type2) {
-  return isObjectType(type2) || isInterfaceType(type2) || isUnionType(type2);
+function isCompositeType$1(type2) {
+  return isObjectType$1(type2) || isInterfaceType$1(type2) || isUnionType$1(type2);
 }
-function isAbstractType(type2) {
-  return isInterfaceType(type2) || isUnionType(type2);
+function isAbstractType$1(type2) {
+  return isInterfaceType$1(type2) || isUnionType$1(type2);
 }
-class GraphQLList {
+let GraphQLList$1 = class GraphQLList {
   constructor(ofType) {
-    isType(ofType) || devAssert(false, `Expected ${inspect(ofType)} to be a GraphQL type.`);
+    isType$1(ofType) || devAssert$1(false, `Expected ${inspect$1(ofType)} to be a GraphQL type.`);
     this.ofType = ofType;
   }
   get [Symbol.toStringTag]() {
@@ -22662,12 +22691,12 @@ class GraphQLList {
   toJSON() {
     return this.toString();
   }
-}
-class GraphQLNonNull {
+};
+let GraphQLNonNull$1 = class GraphQLNonNull {
   constructor(ofType) {
-    isNullableType(ofType) || devAssert(
+    isNullableType$1(ofType) || devAssert$1(
       false,
-      `Expected ${inspect(ofType)} to be a GraphQL nullable type.`
+      `Expected ${inspect$1(ofType)} to be a GraphQL nullable type.`
     );
     this.ofType = ofType;
   }
@@ -22680,65 +22709,65 @@ class GraphQLNonNull {
   toJSON() {
     return this.toString();
   }
+};
+function isWrappingType$1(type2) {
+  return isListType$1(type2) || isNonNullType$1(type2);
 }
-function isWrappingType(type2) {
-  return isListType(type2) || isNonNullType(type2);
+function isNullableType$1(type2) {
+  return isType$1(type2) && !isNonNullType$1(type2);
 }
-function isNullableType(type2) {
-  return isType(type2) && !isNonNullType(type2);
-}
-function assertNullableType(type2) {
-  if (!isNullableType(type2)) {
-    throw new Error(`Expected ${inspect(type2)} to be a GraphQL nullable type.`);
+function assertNullableType$1(type2) {
+  if (!isNullableType$1(type2)) {
+    throw new Error(`Expected ${inspect$1(type2)} to be a GraphQL nullable type.`);
   }
   return type2;
 }
-function getNullableType(type2) {
+function getNullableType$1(type2) {
   if (type2) {
-    return isNonNullType(type2) ? type2.ofType : type2;
+    return isNonNullType$1(type2) ? type2.ofType : type2;
   }
 }
-function isNamedType(type2) {
-  return isScalarType(type2) || isObjectType(type2) || isInterfaceType(type2) || isUnionType(type2) || isEnumType(type2) || isInputObjectType(type2);
+function isNamedType$1(type2) {
+  return isScalarType$1(type2) || isObjectType$1(type2) || isInterfaceType$1(type2) || isUnionType$1(type2) || isEnumType$1(type2) || isInputObjectType$1(type2);
 }
-function getNamedType(type2) {
+function getNamedType$1(type2) {
   if (type2) {
     let unwrappedType = type2;
-    while (isWrappingType(unwrappedType)) {
+    while (isWrappingType$1(unwrappedType)) {
       unwrappedType = unwrappedType.ofType;
     }
     return unwrappedType;
   }
 }
-function resolveReadonlyArrayThunk(thunk) {
+function resolveReadonlyArrayThunk$1(thunk) {
   return typeof thunk === "function" ? thunk() : thunk;
 }
-function resolveObjMapThunk(thunk) {
+function resolveObjMapThunk$1(thunk) {
   return typeof thunk === "function" ? thunk() : thunk;
 }
-class GraphQLScalarType {
+let GraphQLScalarType$1 = class GraphQLScalarType {
   constructor(config2) {
     var _config$parseValue, _config$serialize, _config$parseLiteral, _config$extensionASTN;
-    const parseValue2 = (_config$parseValue = config2.parseValue) !== null && _config$parseValue !== void 0 ? _config$parseValue : identityFunc;
-    this.name = assertName(config2.name);
+    const parseValue2 = (_config$parseValue = config2.parseValue) !== null && _config$parseValue !== void 0 ? _config$parseValue : identityFunc$1;
+    this.name = assertName$1(config2.name);
     this.description = config2.description;
     this.specifiedByURL = config2.specifiedByURL;
-    this.serialize = (_config$serialize = config2.serialize) !== null && _config$serialize !== void 0 ? _config$serialize : identityFunc;
+    this.serialize = (_config$serialize = config2.serialize) !== null && _config$serialize !== void 0 ? _config$serialize : identityFunc$1;
     this.parseValue = parseValue2;
-    this.parseLiteral = (_config$parseLiteral = config2.parseLiteral) !== null && _config$parseLiteral !== void 0 ? _config$parseLiteral : (node, variables) => parseValue2(valueFromASTUntyped(node, variables));
-    this.extensions = toObjMap(config2.extensions);
+    this.parseLiteral = (_config$parseLiteral = config2.parseLiteral) !== null && _config$parseLiteral !== void 0 ? _config$parseLiteral : (node, variables) => parseValue2(valueFromASTUntyped$1(node, variables));
+    this.extensions = toObjMap$1(config2.extensions);
     this.astNode = config2.astNode;
     this.extensionASTNodes = (_config$extensionASTN = config2.extensionASTNodes) !== null && _config$extensionASTN !== void 0 ? _config$extensionASTN : [];
-    config2.specifiedByURL == null || typeof config2.specifiedByURL === "string" || devAssert(
+    config2.specifiedByURL == null || typeof config2.specifiedByURL === "string" || devAssert$1(
       false,
-      `${this.name} must provide "specifiedByURL" as a string, but got: ${inspect(config2.specifiedByURL)}.`
+      `${this.name} must provide "specifiedByURL" as a string, but got: ${inspect$1(config2.specifiedByURL)}.`
     );
-    config2.serialize == null || typeof config2.serialize === "function" || devAssert(
+    config2.serialize == null || typeof config2.serialize === "function" || devAssert$1(
       false,
       `${this.name} must provide "serialize" function. If this custom Scalar is also used as an input type, ensure "parseValue" and "parseLiteral" functions are also provided.`
     );
     if (config2.parseLiteral) {
-      typeof config2.parseValue === "function" && typeof config2.parseLiteral === "function" || devAssert(
+      typeof config2.parseValue === "function" && typeof config2.parseLiteral === "function" || devAssert$1(
         false,
         `${this.name} must provide both "parseValue" and "parseLiteral" functions.`
       );
@@ -22766,21 +22795,21 @@ class GraphQLScalarType {
   toJSON() {
     return this.toString();
   }
-}
-class GraphQLObjectType {
+};
+let GraphQLObjectType$1 = class GraphQLObjectType {
   constructor(config2) {
     var _config$extensionASTN2;
-    this.name = assertName(config2.name);
+    this.name = assertName$1(config2.name);
     this.description = config2.description;
     this.isTypeOf = config2.isTypeOf;
-    this.extensions = toObjMap(config2.extensions);
+    this.extensions = toObjMap$1(config2.extensions);
     this.astNode = config2.astNode;
     this.extensionASTNodes = (_config$extensionASTN2 = config2.extensionASTNodes) !== null && _config$extensionASTN2 !== void 0 ? _config$extensionASTN2 : [];
-    this._fields = () => defineFieldMap(config2);
-    this._interfaces = () => defineInterfaces(config2);
-    config2.isTypeOf == null || typeof config2.isTypeOf === "function" || devAssert(
+    this._fields = () => defineFieldMap$1(config2);
+    this._interfaces = () => defineInterfaces$1(config2);
+    config2.isTypeOf == null || typeof config2.isTypeOf === "function" || devAssert$1(
       false,
-      `${this.name} must provide "isTypeOf" as a function, but got: ${inspect(config2.isTypeOf)}.`
+      `${this.name} must provide "isTypeOf" as a function, but got: ${inspect$1(config2.isTypeOf)}.`
     );
   }
   get [Symbol.toStringTag]() {
@@ -22803,7 +22832,7 @@ class GraphQLObjectType {
       name: this.name,
       description: this.description,
       interfaces: this.getInterfaces(),
-      fields: fieldsToFieldsConfig(this.getFields()),
+      fields: fieldsToFieldsConfig$1(this.getFields()),
       isTypeOf: this.isTypeOf,
       extensions: this.extensions,
       astNode: this.astNode,
@@ -22816,71 +22845,71 @@ class GraphQLObjectType {
   toJSON() {
     return this.toString();
   }
-}
-function defineInterfaces(config2) {
+};
+function defineInterfaces$1(config2) {
   var _config$interfaces;
-  const interfaces = resolveReadonlyArrayThunk(
+  const interfaces = resolveReadonlyArrayThunk$1(
     (_config$interfaces = config2.interfaces) !== null && _config$interfaces !== void 0 ? _config$interfaces : []
   );
-  Array.isArray(interfaces) || devAssert(
+  Array.isArray(interfaces) || devAssert$1(
     false,
     `${config2.name} interfaces must be an Array or a function which returns an Array.`
   );
   return interfaces;
 }
-function defineFieldMap(config2) {
-  const fieldMap = resolveObjMapThunk(config2.fields);
-  isPlainObj(fieldMap) || devAssert(
+function defineFieldMap$1(config2) {
+  const fieldMap = resolveObjMapThunk$1(config2.fields);
+  isPlainObj$1(fieldMap) || devAssert$1(
     false,
     `${config2.name} fields must be an object with field names as keys or a function which returns such an object.`
   );
-  return mapValue(fieldMap, (fieldConfig, fieldName) => {
+  return mapValue$1(fieldMap, (fieldConfig, fieldName) => {
     var _fieldConfig$args;
-    isPlainObj(fieldConfig) || devAssert(
+    isPlainObj$1(fieldConfig) || devAssert$1(
       false,
       `${config2.name}.${fieldName} field config must be an object.`
     );
-    fieldConfig.resolve == null || typeof fieldConfig.resolve === "function" || devAssert(
+    fieldConfig.resolve == null || typeof fieldConfig.resolve === "function" || devAssert$1(
       false,
-      `${config2.name}.${fieldName} field resolver must be a function if provided, but got: ${inspect(fieldConfig.resolve)}.`
+      `${config2.name}.${fieldName} field resolver must be a function if provided, but got: ${inspect$1(fieldConfig.resolve)}.`
     );
     const argsConfig = (_fieldConfig$args = fieldConfig.args) !== null && _fieldConfig$args !== void 0 ? _fieldConfig$args : {};
-    isPlainObj(argsConfig) || devAssert(
+    isPlainObj$1(argsConfig) || devAssert$1(
       false,
       `${config2.name}.${fieldName} args must be an object with argument names as keys.`
     );
     return {
-      name: assertName(fieldName),
+      name: assertName$1(fieldName),
       description: fieldConfig.description,
       type: fieldConfig.type,
-      args: defineArguments(argsConfig),
+      args: defineArguments$1(argsConfig),
       resolve: fieldConfig.resolve,
       subscribe: fieldConfig.subscribe,
       deprecationReason: fieldConfig.deprecationReason,
-      extensions: toObjMap(fieldConfig.extensions),
+      extensions: toObjMap$1(fieldConfig.extensions),
       astNode: fieldConfig.astNode
     };
   });
 }
-function defineArguments(config2) {
+function defineArguments$1(config2) {
   return Object.entries(config2).map(([argName, argConfig]) => ({
-    name: assertName(argName),
+    name: assertName$1(argName),
     description: argConfig.description,
     type: argConfig.type,
     defaultValue: argConfig.defaultValue,
     deprecationReason: argConfig.deprecationReason,
-    extensions: toObjMap(argConfig.extensions),
+    extensions: toObjMap$1(argConfig.extensions),
     astNode: argConfig.astNode
   }));
 }
-function isPlainObj(obj) {
-  return isObjectLike(obj) && !Array.isArray(obj);
+function isPlainObj$1(obj) {
+  return isObjectLike$1(obj) && !Array.isArray(obj);
 }
-function fieldsToFieldsConfig(fields) {
-  return mapValue(fields, (field) => ({
+function fieldsToFieldsConfig$1(fields) {
+  return mapValue$1(fields, (field) => ({
     description: field.description,
     type: field.type,
-    args: argsToArgsConfig(field.args),
+    args: argsToArgsConfig$1(field.args),
     resolve: field.resolve,
     subscribe: field.subscribe,
     deprecationReason: field.deprecationReason,
@@ -22888,8 +22917,8 @@ function fieldsToFieldsConfig(fields) {
     astNode: field.astNode
   }));
 }
-function argsToArgsConfig(args) {
-  return keyValMap(
+function argsToArgsConfig$1(args) {
+  return keyValMap$1(
     args,
     (arg) => arg.name,
     (arg) => ({
@@ -22902,23 +22931,23 @@ function argsToArgsConfig(args) {
     })
   );
 }
-function isRequiredArgument(arg) {
-  return isNonNullType(arg.type) && arg.defaultValue === void 0;
+function isRequiredArgument$1(arg) {
+  return isNonNullType$1(arg.type) && arg.defaultValue === void 0;
 }
-class GraphQLInterfaceType {
+let GraphQLInterfaceType$1 = class GraphQLInterfaceType {
   constructor(config2) {
     var _config$extensionASTN3;
-    this.name = assertName(config2.name);
+    this.name = assertName$1(config2.name);
     this.description = config2.description;
     this.resolveType = config2.resolveType;
-    this.extensions = toObjMap(config2.extensions);
+    this.extensions = toObjMap$1(config2.extensions);
     this.astNode = config2.astNode;
     this.extensionASTNodes = (_config$extensionASTN3 = config2.extensionASTNodes) !== null && _config$extensionASTN3 !== void 0 ? _config$extensionASTN3 : [];
-    this._fields = defineFieldMap.bind(void 0, config2);
-    this._interfaces = defineInterfaces.bind(void 0, config2);
-    config2.resolveType == null || typeof config2.resolveType === "function" || devAssert(
+    this._fields = defineFieldMap$1.bind(void 0, config2);
+    this._interfaces = defineInterfaces$1.bind(void 0, config2);
+    config2.resolveType == null || typeof config2.resolveType === "function" || devAssert$1(
       false,
-      `${this.name} must provide "resolveType" as a function, but got: ${inspect(config2.resolveType)}.`
+      `${this.name} must provide "resolveType" as a function, but got: ${inspect$1(config2.resolveType)}.`
     );
   }
   get [Symbol.toStringTag]() {
@@ -22941,7 +22970,7 @@ class GraphQLInterfaceType {
       name: this.name,
       description: this.description,
       interfaces: this.getInterfaces(),
-      fields: fieldsToFieldsConfig(this.getFields()),
+      fields: fieldsToFieldsConfig$1(this.getFields()),
       resolveType: this.resolveType,
       extensions: this.extensions,
       astNode: this.astNode,
@@ -22954,20 +22983,20 @@ class GraphQLInterfaceType {
   toJSON() {
     return this.toString();
   }
-}
-class GraphQLUnionType {
+};
+let GraphQLUnionType$1 = class GraphQLUnionType {
   constructor(config2) {
     var _config$extensionASTN4;
-    this.name = assertName(config2.name);
+    this.name = assertName$1(config2.name);
     this.description = config2.description;
     this.resolveType = config2.resolveType;
-    this.extensions = toObjMap(config2.extensions);
+    this.extensions = toObjMap$1(config2.extensions);
     this.astNode = config2.astNode;
     this.extensionASTNodes = (_config$extensionASTN4 = config2.extensionASTNodes) !== null && _config$extensionASTN4 !== void 0 ? _config$extensionASTN4 : [];
-    this._types = defineTypes.bind(void 0, config2);
-    config2.resolveType == null || typeof config2.resolveType === "function" || devAssert(
+    this._types = defineTypes$1.bind(void 0, config2);
+    config2.resolveType == null || typeof config2.resolveType === "function" || devAssert$1(
       false,
-      `${this.name} must provide "resolveType" as a function, but got: ${inspect(config2.resolveType)}.`
+      `${this.name} must provide "resolveType" as a function, but got: ${inspect$1(config2.resolveType)}.`
     );
   }
   get [Symbol.toStringTag]() {
@@ -22996,25 +23025,25 @@ class GraphQLUnionType {
   toJSON() {
     return this.toString();
   }
-}
-function defineTypes(config2) {
-  const types = resolveReadonlyArrayThunk(config2.types);
-  Array.isArray(types) || devAssert(
+};
+function defineTypes$1(config2) {
+  const types = resolveReadonlyArrayThunk$1(config2.types);
+  Array.isArray(types) || devAssert$1(
     false,
     `Must provide Array of types or a function which returns such an array for Union ${config2.name}.`
   );
   return types;
 }
-class GraphQLEnumType {
+let GraphQLEnumType$1 = class GraphQLEnumType {
   /* <T> */
   constructor(config2) {
     var _config$extensionASTN5;
-    this.name = assertName(config2.name);
+    this.name = assertName$1(config2.name);
     this.description = config2.description;
-    this.extensions = toObjMap(config2.extensions);
+    this.extensions = toObjMap$1(config2.extensions);
     this.astNode = config2.astNode;
     this.extensionASTNodes = (_config$extensionASTN5 = config2.extensionASTNodes) !== null && _config$extensionASTN5 !== void 0 ? _config$extensionASTN5 : [];
-    this._values = typeof config2.values === "function" ? config2.values : defineEnumValues(this.name, config2.values);
+    this._values = typeof config2.values === "function" ? config2.values : defineEnumValues$1(this.name, config2.values);
     this._valueLookup = null;
     this._nameLookup = null;
   }
@@ -23023,13 +23052,13 @@ class GraphQLEnumType {
   }
   getValues() {
     if (typeof this._values === "function") {
-      this._values = defineEnumValues(this.name, this._values());
+      this._values = defineEnumValues$1(this.name, this._values());
     }
     return this._values;
   }
   getValue(name2) {
     if (this._nameLookup === null) {
-      this._nameLookup = keyMap(this.getValues(), (value) => value.name);
+      this._nameLookup = keyMap$1(this.getValues(), (value) => value.name);
     }
     return this._nameLookup[name2];
   }
@@ -23041,32 +23070,32 @@ class GraphQLEnumType {
     }
     const enumValue = this._valueLookup.get(outputValue);
     if (enumValue === void 0) {
-      throw new GraphQLError(
-        `Enum "${this.name}" cannot represent value: ${inspect(outputValue)}`
+      throw new GraphQLError$1(
+        `Enum "${this.name}" cannot represent value: ${inspect$1(outputValue)}`
       );
     }
     return enumValue.name;
   }
   parseValue(inputValue) {
     if (typeof inputValue !== "string") {
-      const valueStr = inspect(inputValue);
-      throw new GraphQLError(
-        `Enum "${this.name}" cannot represent non-string value: ${valueStr}.` + didYouMeanEnumValue(this, valueStr)
+      const valueStr = inspect$1(inputValue);
+      throw new GraphQLError$1(
+        `Enum "${this.name}" cannot represent non-string value: ${valueStr}.` + didYouMeanEnumValue$1(this, valueStr)
       );
     }
     const enumValue = this.getValue(inputValue);
     if (enumValue == null) {
-      throw new GraphQLError(
-        `Value "${inputValue}" does not exist in "${this.name}" enum.` + didYouMeanEnumValue(this, inputValue)
+      throw new GraphQLError$1(
+        `Value "${inputValue}" does not exist in "${this.name}" enum.` + didYouMeanEnumValue$1(this, inputValue)
       );
     }
     return enumValue.value;
   }
   parseLiteral(valueNode, _variables) {
-    if (valueNode.kind !== Kind.ENUM) {
-      const valueStr = print(valueNode);
-      throw new GraphQLError(
-        `Enum "${this.name}" cannot represent non-enum value: ${valueStr}.` + didYouMeanEnumValue(this, valueStr),
+    if (valueNode.kind !== Kind$1.ENUM) {
+      const valueStr = print$1(valueNode);
+      throw new GraphQLError$1(
+        `Enum "${this.name}" cannot represent non-enum value: ${valueStr}.` + didYouMeanEnumValue$1(this, valueStr),
         {
           nodes: valueNode
         }
@@ -23074,9 +23103,9 @@ class GraphQLEnumType {
     }
     const enumValue = this.getValue(valueNode.value);
     if (enumValue == null) {
-      const valueStr = print(valueNode);
-      throw new GraphQLError(
-        `Value "${valueStr}" does not exist in "${this.name}" enum.` + didYouMeanEnumValue(this, valueStr),
+      const valueStr = print$1(valueNode);
+      throw new GraphQLError$1(
+        `Value "${valueStr}" does not exist in "${this.name}" enum.` + didYouMeanEnumValue$1(this, valueStr),
         {
           nodes: valueNode
         }
@@ -23085,7 +23114,7 @@ class GraphQLEnumType {
     return enumValue.value;
   }
   toConfig() {
-    const values = keyValMap(
+    const values = keyValMap$1(
       this.getValues(),
       (value) => value.name,
       (value) => ({
@@ -23111,42 +23140,42 @@ class GraphQLEnumType {
   toJSON() {
     return this.toString();
   }
-}
-function didYouMeanEnumValue(enumType, unknownValueStr) {
+};
+function didYouMeanEnumValue$1(enumType, unknownValueStr) {
   const allNames = enumType.getValues().map((value) => value.name);
-  const suggestedValues = suggestionList(unknownValueStr, allNames);
-  return didYouMean("the enum value", suggestedValues);
+  const suggestedValues = suggestionList$1(unknownValueStr, allNames);
+  return didYouMean$1("the enum value", suggestedValues);
 }
-function defineEnumValues(typeName, valueMap) {
-  isPlainObj(valueMap) || devAssert(
+function defineEnumValues$1(typeName, valueMap) {
+  isPlainObj$1(valueMap) || devAssert$1(
     false,
     `${typeName} values must be an object with value names as keys.`
   );
   return Object.entries(valueMap).map(([valueName, valueConfig]) => {
-    isPlainObj(valueConfig) || devAssert(
+    isPlainObj$1(valueConfig) || devAssert$1(
       false,
-      `${typeName}.${valueName} must refer to an object with a "value" key representing an internal value but got: ${inspect(valueConfig)}.`
+      `${typeName}.${valueName} must refer to an object with a "value" key representing an internal value but got: ${inspect$1(valueConfig)}.`
     );
     return {
-      name: assertEnumValueName(valueName),
+      name: assertEnumValueName$1(valueName),
       description: valueConfig.description,
       value: valueConfig.value !== void 0 ? valueConfig.value : valueName,
       deprecationReason: valueConfig.deprecationReason,
-      extensions: toObjMap(valueConfig.extensions),
+      extensions: toObjMap$1(valueConfig.extensions),
       astNode: valueConfig.astNode
     };
   });
 }
-class GraphQLInputObjectType {
+let GraphQLInputObjectType$1 = class GraphQLInputObjectType {
   constructor(config2) {
     var _config$extensionASTN6, _config$isOneOf;
-    this.name = assertName(config2.name);
+    this.name = assertName$1(config2.name);
     this.description = config2.description;
-    this.extensions = toObjMap(config2.extensions);
+    this.extensions = toObjMap$1(config2.extensions);
     this.astNode = config2.astNode;
     this.extensionASTNodes = (_config$extensionASTN6 = config2.extensionASTNodes) !== null && _config$extensionASTN6 !== void 0 ? _config$extensionASTN6 : [];
     this.isOneOf = (_config$isOneOf = config2.isOneOf) !== null && _config$isOneOf !== void 0 ? _config$isOneOf : false;
-    this._fields = defineInputFieldMap.bind(void 0, config2);
+    this._fields = defineInputFieldMap$1.bind(void 0, config2);
   }
   get [Symbol.toStringTag]() {
     return "GraphQLInputObjectType";
@@ -23158,7 +23187,7 @@ class GraphQLInputObjectType {
     return this._fields;
   }
   toConfig() {
-    const fields = mapValue(this.getFields(), (field) => ({
+    const fields = mapValue$1(this.getFields(), (field) => ({
       description: field.description,
       type: field.type,
       defaultValue: field.defaultValue,
@@ -23182,90 +23211,90 @@ class GraphQLInputObjectType {
   toJSON() {
     return this.toString();
   }
-}
-function defineInputFieldMap(config2) {
-  const fieldMap = resolveObjMapThunk(config2.fields);
-  isPlainObj(fieldMap) || devAssert(
+};
+function defineInputFieldMap$1(config2) {
+  const fieldMap = resolveObjMapThunk$1(config2.fields);
+  isPlainObj$1(fieldMap) || devAssert$1(
     false,
     `${config2.name} fields must be an object with field names as keys or a function which returns such an object.`
   );
-  return mapValue(fieldMap, (fieldConfig, fieldName) => {
-    !("resolve" in fieldConfig) || devAssert(
+  return mapValue$1(fieldMap, (fieldConfig, fieldName) => {
+    !("resolve" in fieldConfig) || devAssert$1(
       false,
       `${config2.name}.${fieldName} field has a resolve property, but Input Types cannot define resolvers.`
     );
     return {
-      name: assertName(fieldName),
+      name: assertName$1(fieldName),
       description: fieldConfig.description,
       type: fieldConfig.type,
       defaultValue: fieldConfig.defaultValue,
       deprecationReason: fieldConfig.deprecationReason,
-      extensions: toObjMap(fieldConfig.extensions),
+      extensions: toObjMap$1(fieldConfig.extensions),
       astNode: fieldConfig.astNode
     };
   });
 }
-function isRequiredInputField(field) {
-  return isNonNullType(field.type) && field.defaultValue === void 0;
+function isRequiredInputField$1(field) {
+  return isNonNullType$1(field.type) && field.defaultValue === void 0;
 }
-function isEqualType(typeA, typeB) {
+function isEqualType$1(typeA, typeB) {
   if (typeA === typeB) {
     return true;
   }
-  if (isNonNullType(typeA) && isNonNullType(typeB)) {
-    return isEqualType(typeA.ofType, typeB.ofType);
+  if (isNonNullType$1(typeA) && isNonNullType$1(typeB)) {
+    return isEqualType$1(typeA.ofType, typeB.ofType);
   }
-  if (isListType(typeA) && isListType(typeB)) {
-    return isEqualType(typeA.ofType, typeB.ofType);
+  if (isListType$1(typeA) && isListType$1(typeB)) {
+    return isEqualType$1(typeA.ofType, typeB.ofType);
   }
   return false;
 }
-function isTypeSubTypeOf(schema, maybeSubType, superType) {
+function isTypeSubTypeOf$1(schema, maybeSubType, superType) {
   if (maybeSubType === superType) {
     return true;
   }
-  if (isNonNullType(superType)) {
-    if (isNonNullType(maybeSubType)) {
-      return isTypeSubTypeOf(schema, maybeSubType.ofType, superType.ofType);
+  if (isNonNullType$1(superType)) {
+    if (isNonNullType$1(maybeSubType)) {
+      return isTypeSubTypeOf$1(schema, maybeSubType.ofType, superType.ofType);
     }
     return false;
   }
-  if (isNonNullType(maybeSubType)) {
-    return isTypeSubTypeOf(schema, maybeSubType.ofType, superType);
+  if (isNonNullType$1(maybeSubType)) {
+    return isTypeSubTypeOf$1(schema, maybeSubType.ofType, superType);
   }
-  if (isListType(superType)) {
-    if (isListType(maybeSubType)) {
-      return isTypeSubTypeOf(schema, maybeSubType.ofType, superType.ofType);
+  if (isListType$1(superType)) {
+    if (isListType$1(maybeSubType)) {
+      return isTypeSubTypeOf$1(schema, maybeSubType.ofType, superType.ofType);
     }
     return false;
   }
-  if (isListType(maybeSubType)) {
+  if (isListType$1(maybeSubType)) {
     return false;
   }
-  return isAbstractType(superType) && (isInterfaceType(maybeSubType) || isObjectType(maybeSubType)) && schema.isSubType(superType, maybeSubType);
+  return isAbstractType$1(superType) && (isInterfaceType$1(maybeSubType) || isObjectType$1(maybeSubType)) && schema.isSubType(superType, maybeSubType);
 }
-function doTypesOverlap(schema, typeA, typeB) {
+function doTypesOverlap$1(schema, typeA, typeB) {
   if (typeA === typeB) {
     return true;
   }
-  if (isAbstractType(typeA)) {
-    if (isAbstractType(typeB)) {
+  if (isAbstractType$1(typeA)) {
+    if (isAbstractType$1(typeB)) {
       return schema.getPossibleTypes(typeA).some((type2) => schema.isSubType(typeB, type2));
     }
     return schema.isSubType(typeA, typeB);
   }
-  if (isAbstractType(typeB)) {
+  if (isAbstractType$1(typeB)) {
     return schema.isSubType(typeB, typeA);
   }
   return false;
 }
-const GRAPHQL_MAX_INT = 2147483647;
-const GRAPHQL_MIN_INT = -2147483648;
-const GraphQLInt = new GraphQLScalarType({
+const GRAPHQL_MAX_INT$1 = 2147483647;
+const GRAPHQL_MIN_INT$1 = -2147483648;
+const GraphQLInt$1 = new GraphQLScalarType$1({
   name: "Int",
   description: "The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1.",
   serialize(outputValue) {
-    const coercedValue = serializeObject(outputValue);
+    const coercedValue = serializeObject$1(outputValue);
     if (typeof coercedValue === "boolean") {
       return coercedValue ? 1 : 0;
     }
@@ -23274,42 +23303,42 @@ const GraphQLInt = new GraphQLScalarType({
       num = Number(coercedValue);
     }
     if (typeof num !== "number" || !Number.isInteger(num)) {
-      throw new GraphQLError(
-        `Int cannot represent non-integer value: ${inspect(coercedValue)}`
+      throw new GraphQLError$1(
+        `Int cannot represent non-integer value: ${inspect$1(coercedValue)}`
       );
     }
-    if (num > GRAPHQL_MAX_INT || num < GRAPHQL_MIN_INT) {
-      throw new GraphQLError(
-        "Int cannot represent non 32-bit signed integer value: " + inspect(coercedValue)
+    if (num > GRAPHQL_MAX_INT$1 || num < GRAPHQL_MIN_INT$1) {
+      throw new GraphQLError$1(
+        "Int cannot represent non 32-bit signed integer value: " + inspect$1(coercedValue)
       );
     }
     return num;
   },
   parseValue(inputValue) {
     if (typeof inputValue !== "number" || !Number.isInteger(inputValue)) {
-      throw new GraphQLError(
-        `Int cannot represent non-integer value: ${inspect(inputValue)}`
+      throw new GraphQLError$1(
+        `Int cannot represent non-integer value: ${inspect$1(inputValue)}`
       );
     }
-    if (inputValue > GRAPHQL_MAX_INT || inputValue < GRAPHQL_MIN_INT) {
-      throw new GraphQLError(
+    if (inputValue > GRAPHQL_MAX_INT$1 || inputValue < GRAPHQL_MIN_INT$1) {
+      throw new GraphQLError$1(
         `Int cannot represent non 32-bit signed integer value: ${inputValue}`
       );
     }
     return inputValue;
   },
   parseLiteral(valueNode) {
-    if (valueNode.kind !== Kind.INT) {
-      throw new GraphQLError(
-        `Int cannot represent non-integer value: ${print(valueNode)}`,
+    if (valueNode.kind !== Kind$1.INT) {
+      throw new GraphQLError$1(
+        `Int cannot represent non-integer value: ${print$1(valueNode)}`,
         {
           nodes: valueNode
         }
       );
     }
     const num = parseInt(valueNode.value, 10);
-    if (num > GRAPHQL_MAX_INT || num < GRAPHQL_MIN_INT) {
-      throw new GraphQLError(
+    if (num > GRAPHQL_MAX_INT$1 || num < GRAPHQL_MIN_INT$1) {
+      throw new GraphQLError$1(
         `Int cannot represent non 32-bit signed integer value: ${valueNode.value}`,
         {
           nodes: valueNode
@@ -23319,11 +23348,11 @@ const GraphQLInt = new GraphQLScalarType({
     return num;
   }
 });
-const GraphQLFloat = new GraphQLScalarType({
+const GraphQLFloat$1 = new GraphQLScalarType$1({
   name: "Float",
   description: "The `Float` scalar type represents signed double-precision fractional values as specified by [IEEE 754](https://en.wikipedia.org/wiki/IEEE_floating_point).",
   serialize(outputValue) {
-    const coercedValue = serializeObject(outputValue);
+    const coercedValue = serializeObject$1(outputValue);
     if (typeof coercedValue === "boolean") {
       return coercedValue ? 1 : 0;
     }
@@ -23332,35 +23361,35 @@ const GraphQLFloat = new GraphQLScalarType({
       num = Number(coercedValue);
     }
     if (typeof num !== "number" || !Number.isFinite(num)) {
-      throw new GraphQLError(
-        `Float cannot represent non numeric value: ${inspect(coercedValue)}`
+      throw new GraphQLError$1(
+        `Float cannot represent non numeric value: ${inspect$1(coercedValue)}`
       );
     }
     return num;
   },
   parseValue(inputValue) {
     if (typeof inputValue !== "number" || !Number.isFinite(inputValue)) {
-      throw new GraphQLError(
-        `Float cannot represent non numeric value: ${inspect(inputValue)}`
+      throw new GraphQLError$1(
+        `Float cannot represent non numeric value: ${inspect$1(inputValue)}`
       );
     }
     return inputValue;
   },
   parseLiteral(valueNode) {
-    if (valueNode.kind !== Kind.FLOAT && valueNode.kind !== Kind.INT) {
-      throw new GraphQLError(
-        `Float cannot represent non numeric value: ${print(valueNode)}`,
+    if (valueNode.kind !== Kind$1.FLOAT && valueNode.kind !== Kind$1.INT) {
+      throw new GraphQLError$1(
+        `Float cannot represent non numeric value: ${print$1(valueNode)}`,
         valueNode
       );
     }
     return parseFloat(valueNode.value);
   }
 });
-const GraphQLString = new GraphQLScalarType({
+const GraphQLString$1 = new GraphQLScalarType$1({
   name: "String",
   description: "The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.",
   serialize(outputValue) {
-    const coercedValue = serializeObject(outputValue);
+    const coercedValue = serializeObject$1(outputValue);
     if (typeof coercedValue === "string") {
       return coercedValue;
     }
@@ -23370,22 +23399,22 @@ const GraphQLString = new GraphQLScalarType({
     if (typeof coercedValue === "number" && Number.isFinite(coercedValue)) {
       return coercedValue.toString();
     }
-    throw new GraphQLError(
-      `String cannot represent value: ${inspect(outputValue)}`
+    throw new GraphQLError$1(
+      `String cannot represent value: ${inspect$1(outputValue)}`
     );
   },
   parseValue(inputValue) {
     if (typeof inputValue !== "string") {
-      throw new GraphQLError(
-        `String cannot represent a non string value: ${inspect(inputValue)}`
+      throw new GraphQLError$1(
+        `String cannot represent a non string value: ${inspect$1(inputValue)}`
       );
     }
     return inputValue;
   },
   parseLiteral(valueNode) {
-    if (valueNode.kind !== Kind.STRING) {
-      throw new GraphQLError(
-        `String cannot represent a non string value: ${print(valueNode)}`,
+    if (valueNode.kind !== Kind$1.STRING) {
+      throw new GraphQLError$1(
+        `String cannot represent a non string value: ${print$1(valueNode)}`,
         {
           nodes: valueNode
         }
@@ -23394,33 +23423,33 @@ const GraphQLString = new GraphQLScalarType({
     return valueNode.value;
   }
 });
-const GraphQLBoolean = new GraphQLScalarType({
+const GraphQLBoolean$1 = new GraphQLScalarType$1({
   name: "Boolean",
   description: "The `Boolean` scalar type represents `true` or `false`.",
   serialize(outputValue) {
-    const coercedValue = serializeObject(outputValue);
+    const coercedValue = serializeObject$1(outputValue);
     if (typeof coercedValue === "boolean") {
       return coercedValue;
     }
     if (Number.isFinite(coercedValue)) {
       return coercedValue !== 0;
     }
-    throw new GraphQLError(
-      `Boolean cannot represent a non boolean value: ${inspect(coercedValue)}`
+    throw new GraphQLError$1(
+      `Boolean cannot represent a non boolean value: ${inspect$1(coercedValue)}`
     );
   },
   parseValue(inputValue) {
     if (typeof inputValue !== "boolean") {
-      throw new GraphQLError(
-        `Boolean cannot represent a non boolean value: ${inspect(inputValue)}`
+      throw new GraphQLError$1(
+        `Boolean cannot represent a non boolean value: ${inspect$1(inputValue)}`
       );
     }
     return inputValue;
   },
   parseLiteral(valueNode) {
-    if (valueNode.kind !== Kind.BOOLEAN) {
-      throw new GraphQLError(
-        `Boolean cannot represent a non boolean value: ${print(valueNode)}`,
+    if (valueNode.kind !== Kind$1.BOOLEAN) {
+      throw new GraphQLError$1(
+        `Boolean cannot represent a non boolean value: ${print$1(valueNode)}`,
         {
           nodes: valueNode
         }
@@ -23429,19 +23458,19 @@ const GraphQLBoolean = new GraphQLScalarType({
     return valueNode.value;
   }
 });
-const GraphQLID = new GraphQLScalarType({
+const GraphQLID$1 = new GraphQLScalarType$1({
   name: "ID",
   description: 'The `ID` scalar type represents a unique identifier, often used to refetch an object or as key for a cache. The ID type appears in a JSON response as a String; however, it is not intended to be human-readable. When expected as an input type, any string (such as `"4"`) or integer (such as `4`) input value will be accepted as an ID.',
   serialize(outputValue) {
-    const coercedValue = serializeObject(outputValue);
+    const coercedValue = serializeObject$1(outputValue);
     if (typeof coercedValue === "string") {
       return coercedValue;
     }
     if (Number.isInteger(coercedValue)) {
       return String(coercedValue);
     }
-    throw new GraphQLError(
-      `ID cannot represent value: ${inspect(outputValue)}`
+    throw new GraphQLError$1(
+      `ID cannot represent value: ${inspect$1(outputValue)}`
     );
   },
   parseValue(inputValue) {
@@ -23451,12 +23480,12 @@ const GraphQLID = new GraphQLScalarType({
     if (typeof inputValue === "number" && Number.isInteger(inputValue)) {
       return inputValue.toString();
     }
-    throw new GraphQLError(`ID cannot represent value: ${inspect(inputValue)}`);
+    throw new GraphQLError$1(`ID cannot represent value: ${inspect$1(inputValue)}`);
   },
   parseLiteral(valueNode) {
-    if (valueNode.kind !== Kind.STRING && valueNode.kind !== Kind.INT) {
-      throw new GraphQLError(
-        "ID cannot represent a non-string and non-integer value: " + print(valueNode),
+    if (valueNode.kind !== Kind$1.STRING && valueNode.kind !== Kind$1.INT) {
+      throw new GraphQLError$1(
+        "ID cannot represent a non-string and non-integer value: " + print$1(valueNode),
         {
           nodes: valueNode
         }
@@ -23465,21 +23494,21 @@ const GraphQLID = new GraphQLScalarType({
     return valueNode.value;
   }
 });
-const specifiedScalarTypes = Object.freeze([
-  GraphQLString,
-  GraphQLInt,
-  GraphQLFloat,
-  GraphQLBoolean,
-  GraphQLID
+const specifiedScalarTypes$1 = Object.freeze([
+  GraphQLString$1,
+  GraphQLInt$1,
+  GraphQLFloat$1,
+  GraphQLBoolean$1,
+  GraphQLID$1
 ]);
-function isSpecifiedScalarType(type2) {
-  return specifiedScalarTypes.some(({ name: name2 }) => type2.name === name2);
+function isSpecifiedScalarType$1(type2) {
+  return specifiedScalarTypes$1.some(({ name: name2 }) => type2.name === name2);
 }
-function serializeObject(outputValue) {
-  if (isObjectLike(outputValue)) {
+function serializeObject$1(outputValue) {
+  if (isObjectLike$1(outputValue)) {
     if (typeof outputValue.valueOf === "function") {
       const valueOfResult = outputValue.valueOf();
-      if (!isObjectLike(valueOfResult)) {
+      if (!isObjectLike$1(valueOfResult)) {
         return valueOfResult;
       }
     }
@@ -23489,25 +23518,25 @@ function serializeObject(outputValue) {
   }
   return outputValue;
 }
-function isDirective(directive) {
-  return instanceOf(directive, GraphQLDirective);
+function isDirective$1(directive) {
+  return instanceOf$1(directive, GraphQLDirective$1);
 }
-class GraphQLDirective {
+let GraphQLDirective$1 = class GraphQLDirective {
   constructor(config2) {
     var _config$isRepeatable, _config$args;
-    this.name = assertName(config2.name);
+    this.name = assertName$1(config2.name);
     this.description = config2.description;
     this.locations = config2.locations;
     this.isRepeatable = (_config$isRepeatable = config2.isRepeatable) !== null && _config$isRepeatable !== void 0 ? _config$isRepeatable : false;
-    this.extensions = toObjMap(config2.extensions);
+    this.extensions = toObjMap$1(config2.extensions);
     this.astNode = config2.astNode;
-    Array.isArray(config2.locations) || devAssert(false, `@${config2.name} locations must be an Array.`);
+    Array.isArray(config2.locations) || devAssert$1(false, `@${config2.name} locations must be an Array.`);
     const args = (_config$args = config2.args) !== null && _config$args !== void 0 ? _config$args : {};
-    isObjectLike(args) && !Array.isArray(args) || devAssert(
+    isObjectLike$1(args) && !Array.isArray(args) || devAssert$1(
       false,
       `@${config2.name} args must be an object with argument names as keys.`
     );
-    this.args = defineArguments(args);
+    this.args = defineArguments$1(args);
   }
   get [Symbol.toStringTag]() {
     return "GraphQLDirective";
@@ -23517,7 +23546,7 @@ class GraphQLDirective {
       name: this.name,
       description: this.description,
       locations: this.locations,
-      args: argsToArgsConfig(this.args),
+      args: argsToArgsConfig$1(this.args),
       isRepeatable: this.isRepeatable,
       extensions: this.extensions,
       astNode: this.astNode
@@ -23529,130 +23558,130 @@ class GraphQLDirective {
   toJSON() {
     return this.toString();
   }
-}
-const GraphQLIncludeDirective = new GraphQLDirective({
+};
+const GraphQLIncludeDirective$1 = new GraphQLDirective$1({
   name: "include",
   description: "Directs the executor to include this field or fragment only when the `if` argument is true.",
   locations: [
-    DirectiveLocation.FIELD,
-    DirectiveLocation.FRAGMENT_SPREAD,
-    DirectiveLocation.INLINE_FRAGMENT
+    DirectiveLocation$1.FIELD,
+    DirectiveLocation$1.FRAGMENT_SPREAD,
+    DirectiveLocation$1.INLINE_FRAGMENT
   ],
   args: {
     if: {
-      type: new GraphQLNonNull(GraphQLBoolean),
+      type: new GraphQLNonNull$1(GraphQLBoolean$1),
       description: "Included when true."
     }
   }
 });
-const GraphQLSkipDirective = new GraphQLDirective({
+const GraphQLSkipDirective$1 = new GraphQLDirective$1({
   name: "skip",
   description: "Directs the executor to skip this field or fragment when the `if` argument is true.",
   locations: [
-    DirectiveLocation.FIELD,
-    DirectiveLocation.FRAGMENT_SPREAD,
-    DirectiveLocation.INLINE_FRAGMENT
+    DirectiveLocation$1.FIELD,
+    DirectiveLocation$1.FRAGMENT_SPREAD,
+    DirectiveLocation$1.INLINE_FRAGMENT
   ],
   args: {
     if: {
-      type: new GraphQLNonNull(GraphQLBoolean),
+      type: new GraphQLNonNull$1(GraphQLBoolean$1),
       description: "Skipped when true."
     }
   }
 });
-const DEFAULT_DEPRECATION_REASON = "No longer supported";
-const GraphQLDeprecatedDirective = new GraphQLDirective({
+const DEFAULT_DEPRECATION_REASON$1 = "No longer supported";
+const GraphQLDeprecatedDirective$1 = new GraphQLDirective$1({
   name: "deprecated",
   description: "Marks an element of a GraphQL schema as no longer supported.",
   locations: [
-    DirectiveLocation.FIELD_DEFINITION,
-    DirectiveLocation.ARGUMENT_DEFINITION,
-    DirectiveLocation.INPUT_FIELD_DEFINITION,
-    DirectiveLocation.ENUM_VALUE
+    DirectiveLocation$1.FIELD_DEFINITION,
+    DirectiveLocation$1.ARGUMENT_DEFINITION,
+    DirectiveLocation$1.INPUT_FIELD_DEFINITION,
+    DirectiveLocation$1.ENUM_VALUE
   ],
   args: {
     reason: {
-      type: GraphQLString,
+      type: GraphQLString$1,
       description: "Explains why this element was deprecated, usually also including a suggestion for how to access supported similar data. Formatted using the Markdown syntax, as specified by [CommonMark](https://commonmark.org/).",
-      defaultValue: DEFAULT_DEPRECATION_REASON
+      defaultValue: DEFAULT_DEPRECATION_REASON$1
     }
   }
 });
-const GraphQLSpecifiedByDirective = new GraphQLDirective({
+const GraphQLSpecifiedByDirective$1 = new GraphQLDirective$1({
   name: "specifiedBy",
   description: "Exposes a URL that specifies the behavior of this scalar.",
-  locations: [DirectiveLocation.SCALAR],
+  locations: [DirectiveLocation$1.SCALAR],
   args: {
     url: {
-      type: new GraphQLNonNull(GraphQLString),
+      type: new GraphQLNonNull$1(GraphQLString$1),
       description: "The URL that specifies the behavior of this scalar."
     }
   }
 });
-const GraphQLOneOfDirective = new GraphQLDirective({
+const GraphQLOneOfDirective$1 = new GraphQLDirective$1({
   name: "oneOf",
   description: "Indicates exactly one field must be supplied and this field must not be `null`.",
-  locations: [DirectiveLocation.INPUT_OBJECT],
+  locations: [DirectiveLocation$1.INPUT_OBJECT],
   args: {}
 });
-const specifiedDirectives = Object.freeze([
-  GraphQLIncludeDirective,
-  GraphQLSkipDirective,
-  GraphQLDeprecatedDirective,
-  GraphQLSpecifiedByDirective,
-  GraphQLOneOfDirective
+const specifiedDirectives$1 = Object.freeze([
+  GraphQLIncludeDirective$1,
+  GraphQLSkipDirective$1,
+  GraphQLDeprecatedDirective$1,
+  GraphQLSpecifiedByDirective$1,
+  GraphQLOneOfDirective$1
 ]);
-function isSpecifiedDirective(directive) {
-  return specifiedDirectives.some(({ name: name2 }) => name2 === directive.name);
+function isSpecifiedDirective$1(directive) {
+  return specifiedDirectives$1.some(({ name: name2 }) => name2 === directive.name);
 }
-function isIterableObject(maybeIterable) {
+function isIterableObject$1(maybeIterable) {
   return typeof maybeIterable === "object" && typeof (maybeIterable === null || maybeIterable === void 0 ? void 0 : maybeIterable[Symbol.iterator]) === "function";
 }
-function astFromValue(value, type2) {
-  if (isNonNullType(type2)) {
-    const astValue = astFromValue(value, type2.ofType);
-    if ((astValue === null || astValue === void 0 ? void 0 : astValue.kind) === Kind.NULL) {
+function astFromValue$1(value, type2) {
+  if (isNonNullType$1(type2)) {
+    const astValue = astFromValue$1(value, type2.ofType);
+    if ((astValue === null || astValue === void 0 ? void 0 : astValue.kind) === Kind$1.NULL) {
       return null;
     }
     return astValue;
   }
   if (value === null) {
     return {
-      kind: Kind.NULL
+      kind: Kind$1.NULL
     };
   }
   if (value === void 0) {
     return null;
   }
-  if (isListType(type2)) {
+  if (isListType$1(type2)) {
     const itemType = type2.ofType;
-    if (isIterableObject(value)) {
+    if (isIterableObject$1(value)) {
       const valuesNodes = [];
       for (const item of value) {
-        const itemNode = astFromValue(item, itemType);
+        const itemNode = astFromValue$1(item, itemType);
         if (itemNode != null) {
           valuesNodes.push(itemNode);
         }
       }
       return {
-        kind: Kind.LIST,
+        kind: Kind$1.LIST,
         values: valuesNodes
       };
     }
-    return astFromValue(value, itemType);
+    return astFromValue$1(value, itemType);
   }
-  if (isInputObjectType(type2)) {
-    if (!isObjectLike(value)) {
+  if (isInputObjectType$1(type2)) {
+    if (!isObjectLike$1(value)) {
       return null;
     }
     const fieldNodes = [];
     for (const field of Object.values(type2.getFields())) {
-      const fieldValue = astFromValue(value[field.name], field.type);
+      const fieldValue = astFromValue$1(value[field.name], field.type);
       if (fieldValue) {
         fieldNodes.push({
-          kind: Kind.OBJECT_FIELD,
+          kind: Kind$1.OBJECT_FIELD,
           name: {
-            kind: Kind.NAME,
+            kind: Kind$1.NAME,
             value: field.name
           },
           value: fieldValue
@@ -23660,122 +23689,122 @@ function astFromValue(value, type2) {
       }
     }
     return {
-      kind: Kind.OBJECT,
+      kind: Kind$1.OBJECT,
       fields: fieldNodes
     };
   }
-  if (isLeafType(type2)) {
+  if (isLeafType$1(type2)) {
     const serialized = type2.serialize(value);
     if (serialized == null) {
       return null;
     }
     if (typeof serialized === "boolean") {
       return {
-        kind: Kind.BOOLEAN,
+        kind: Kind$1.BOOLEAN,
         value: serialized
       };
     }
     if (typeof serialized === "number" && Number.isFinite(serialized)) {
       const stringNum = String(serialized);
-      return integerStringRegExp.test(stringNum) ? {
-        kind: Kind.INT,
+      return integerStringRegExp$1.test(stringNum) ? {
+        kind: Kind$1.INT,
         value: stringNum
       } : {
-        kind: Kind.FLOAT,
+        kind: Kind$1.FLOAT,
         value: stringNum
       };
     }
     if (typeof serialized === "string") {
-      if (isEnumType(type2)) {
+      if (isEnumType$1(type2)) {
         return {
-          kind: Kind.ENUM,
+          kind: Kind$1.ENUM,
           value: serialized
         };
       }
-      if (type2 === GraphQLID && integerStringRegExp.test(serialized)) {
+      if (type2 === GraphQLID$1 && integerStringRegExp$1.test(serialized)) {
         return {
-          kind: Kind.INT,
+          kind: Kind$1.INT,
           value: serialized
         };
       }
       return {
-        kind: Kind.STRING,
+        kind: Kind$1.STRING,
         value: serialized
       };
     }
-    throw new TypeError(`Cannot convert value to AST: ${inspect(serialized)}.`);
+    throw new TypeError(`Cannot convert value to AST: ${inspect$1(serialized)}.`);
   }
-  invariant$1(false, "Unexpected input type: " + inspect(type2));
+  invariant$2(false, "Unexpected input type: " + inspect$1(type2));
 }
-const integerStringRegExp = /^-?(?:0|[1-9][0-9]*)$/;
-const __Schema = new GraphQLObjectType({
+const integerStringRegExp$1 = /^-?(?:0|[1-9][0-9]*)$/;
+const __Schema$1 = new GraphQLObjectType$1({
   name: "__Schema",
   description: "A GraphQL Schema defines the capabilities of a GraphQL server. It exposes all available types and directives on the server, as well as the entry points for query, mutation, and subscription operations.",
   fields: () => ({
     description: {
-      type: GraphQLString,
+      type: GraphQLString$1,
       resolve: (schema) => schema.description
     },
     types: {
       description: "A list of all types supported by this server.",
-      type: new GraphQLNonNull(new GraphQLList(new GraphQLNonNull(__Type))),
+      type: new GraphQLNonNull$1(new GraphQLList$1(new GraphQLNonNull$1(__Type$1))),
       resolve(schema) {
         return Object.values(schema.getTypeMap());
       }
     },
     queryType: {
       description: "The type that query operations will be rooted at.",
-      type: new GraphQLNonNull(__Type),
+      type: new GraphQLNonNull$1(__Type$1),
       resolve: (schema) => schema.getQueryType()
     },
     mutationType: {
       description: "If this server supports mutation, the type that mutation operations will be rooted at.",
-      type: __Type,
+      type: __Type$1,
       resolve: (schema) => schema.getMutationType()
     },
     subscriptionType: {
       description: "If this server support subscription, the type that subscription operations will be rooted at.",
-      type: __Type,
+      type: __Type$1,
       resolve: (schema) => schema.getSubscriptionType()
     },
     directives: {
       description: "A list of all directives supported by this server.",
-      type: new GraphQLNonNull(
-        new GraphQLList(new GraphQLNonNull(__Directive))
+      type: new GraphQLNonNull$1(
+        new GraphQLList$1(new GraphQLNonNull$1(__Directive$1))
       ),
       resolve: (schema) => schema.getDirectives()
     }
   })
 });
-const __Directive = new GraphQLObjectType({
+const __Directive$1 = new GraphQLObjectType$1({
   name: "__Directive",
   description: "A Directive provides a way to describe alternate runtime execution and type validation behavior in a GraphQL document.\n\nIn some cases, you need to provide options to alter GraphQL's execution behavior in ways field arguments will not suffice, such as conditionally including or skipping a field. Directives provide this by describing additional information to the executor.",
   fields: () => ({
     name: {
-      type: new GraphQLNonNull(GraphQLString),
+      type: new GraphQLNonNull$1(GraphQLString$1),
       resolve: (directive) => directive.name
     },
     description: {
-      type: GraphQLString,
+      type: GraphQLString$1,
       resolve: (directive) => directive.description
     },
     isRepeatable: {
-      type: new GraphQLNonNull(GraphQLBoolean),
+      type: new GraphQLNonNull$1(GraphQLBoolean$1),
       resolve: (directive) => directive.isRepeatable
     },
     locations: {
-      type: new GraphQLNonNull(
-        new GraphQLList(new GraphQLNonNull(__DirectiveLocation))
+      type: new GraphQLNonNull$1(
+        new GraphQLList$1(new GraphQLNonNull$1(__DirectiveLocation$1))
       ),
       resolve: (directive) => directive.locations
     },
     args: {
-      type: new GraphQLNonNull(
-        new GraphQLList(new GraphQLNonNull(__InputValue))
+      type: new GraphQLNonNull$1(
+        new GraphQLList$1(new GraphQLNonNull$1(__InputValue$1))
       ),
       args: {
         includeDeprecated: {
-          type: GraphQLBoolean,
+          type: GraphQLBoolean$1,
           defaultValue: false
         }
       },
@@ -23785,231 +23814,231 @@ const __Directive = new GraphQLObjectType({
     }
   })
 });
-const __DirectiveLocation = new GraphQLEnumType({
+const __DirectiveLocation$1 = new GraphQLEnumType$1({
   name: "__DirectiveLocation",
   description: "A Directive can be adjacent to many parts of the GraphQL language, a __DirectiveLocation describes one such possible adjacencies.",
   values: {
     QUERY: {
-      value: DirectiveLocation.QUERY,
+      value: DirectiveLocation$1.QUERY,
       description: "Location adjacent to a query operation."
     },
     MUTATION: {
-      value: DirectiveLocation.MUTATION,
+      value: DirectiveLocation$1.MUTATION,
       description: "Location adjacent to a mutation operation."
     },
     SUBSCRIPTION: {
-      value: DirectiveLocation.SUBSCRIPTION,
+      value: DirectiveLocation$1.SUBSCRIPTION,
       description: "Location adjacent to a subscription operation."
     },
     FIELD: {
-      value: DirectiveLocation.FIELD,
+      value: DirectiveLocation$1.FIELD,
       description: "Location adjacent to a field."
     },
     FRAGMENT_DEFINITION: {
-      value: DirectiveLocation.FRAGMENT_DEFINITION,
+      value: DirectiveLocation$1.FRAGMENT_DEFINITION,
       description: "Location adjacent to a fragment definition."
     },
     FRAGMENT_SPREAD: {
-      value: DirectiveLocation.FRAGMENT_SPREAD,
+      value: DirectiveLocation$1.FRAGMENT_SPREAD,
       description: "Location adjacent to a fragment spread."
     },
     INLINE_FRAGMENT: {
-      value: DirectiveLocation.INLINE_FRAGMENT,
+      value: DirectiveLocation$1.INLINE_FRAGMENT,
       description: "Location adjacent to an inline fragment."
     },
     VARIABLE_DEFINITION: {
-      value: DirectiveLocation.VARIABLE_DEFINITION,
+      value: DirectiveLocation$1.VARIABLE_DEFINITION,
       description: "Location adjacent to a variable definition."
     },
     SCHEMA: {
-      value: DirectiveLocation.SCHEMA,
+      value: DirectiveLocation$1.SCHEMA,
       description: "Location adjacent to a schema definition."
     },
     SCALAR: {
-      value: DirectiveLocation.SCALAR,
+      value: DirectiveLocation$1.SCALAR,
       description: "Location adjacent to a scalar definition."
     },
     OBJECT: {
-      value: DirectiveLocation.OBJECT,
+      value: DirectiveLocation$1.OBJECT,
       description: "Location adjacent to an object type definition."
     },
     FIELD_DEFINITION: {
-      value: DirectiveLocation.FIELD_DEFINITION,
+      value: DirectiveLocation$1.FIELD_DEFINITION,
       description: "Location adjacent to a field definition."
     },
     ARGUMENT_DEFINITION: {
-      value: DirectiveLocation.ARGUMENT_DEFINITION,
+      value: DirectiveLocation$1.ARGUMENT_DEFINITION,
       description: "Location adjacent to an argument definition."
     },
     INTERFACE: {
-      value: DirectiveLocation.INTERFACE,
+      value: DirectiveLocation$1.INTERFACE,
       description: "Location adjacent to an interface definition."
     },
     UNION: {
-      value: DirectiveLocation.UNION,
+      value: DirectiveLocation$1.UNION,
       description: "Location adjacent to a union definition."
     },
     ENUM: {
-      value: DirectiveLocation.ENUM,
+      value: DirectiveLocation$1.ENUM,
       description: "Location adjacent to an enum definition."
     },
     ENUM_VALUE: {
-      value: DirectiveLocation.ENUM_VALUE,
+      value: DirectiveLocation$1.ENUM_VALUE,
       description: "Location adjacent to an enum value definition."
     },
     INPUT_OBJECT: {
-      value: DirectiveLocation.INPUT_OBJECT,
+      value: DirectiveLocation$1.INPUT_OBJECT,
       description: "Location adjacent to an input object type definition."
     },
     INPUT_FIELD_DEFINITION: {
-      value: DirectiveLocation.INPUT_FIELD_DEFINITION,
+      value: DirectiveLocation$1.INPUT_FIELD_DEFINITION,
       description: "Location adjacent to an input object field definition."
     }
   }
 });
-const __Type = new GraphQLObjectType({
+const __Type$1 = new GraphQLObjectType$1({
   name: "__Type",
   description: "The fundamental unit of any GraphQL Schema is the type. There are many kinds of types in GraphQL as represented by the `__TypeKind` enum.\n\nDepending on the kind of a type, certain fields describe information about that type. Scalar types provide no information beyond a name, description and optional `specifiedByURL`, while Enum types provide their values. Object and Interface types provide the fields they describe. Abstract types, Union and Interface, provide the Object types possible at runtime. List and NonNull types compose other types.",
   fields: () => ({
     kind: {
-      type: new GraphQLNonNull(__TypeKind),
+      type: new GraphQLNonNull$1(__TypeKind$1),
       resolve(type2) {
-        if (isScalarType(type2)) {
-          return TypeKind.SCALAR;
+        if (isScalarType$1(type2)) {
+          return TypeKind$1.SCALAR;
         }
-        if (isObjectType(type2)) {
-          return TypeKind.OBJECT;
+        if (isObjectType$1(type2)) {
+          return TypeKind$1.OBJECT;
         }
-        if (isInterfaceType(type2)) {
-          return TypeKind.INTERFACE;
+        if (isInterfaceType$1(type2)) {
+          return TypeKind$1.INTERFACE;
         }
-        if (isUnionType(type2)) {
-          return TypeKind.UNION;
+        if (isUnionType$1(type2)) {
+          return TypeKind$1.UNION;
         }
-        if (isEnumType(type2)) {
-          return TypeKind.ENUM;
+        if (isEnumType$1(type2)) {
+          return TypeKind$1.ENUM;
         }
-        if (isInputObjectType(type2)) {
-          return TypeKind.INPUT_OBJECT;
+        if (isInputObjectType$1(type2)) {
+          return TypeKind$1.INPUT_OBJECT;
         }
-        if (isListType(type2)) {
-          return TypeKind.LIST;
+        if (isListType$1(type2)) {
+          return TypeKind$1.LIST;
         }
-        if (isNonNullType(type2)) {
-          return TypeKind.NON_NULL;
+        if (isNonNullType$1(type2)) {
+          return TypeKind$1.NON_NULL;
         }
-        invariant$1(false, `Unexpected type: "${inspect(type2)}".`);
+        invariant$2(false, `Unexpected type: "${inspect$1(type2)}".`);
       }
     },
     name: {
-      type: GraphQLString,
+      type: GraphQLString$1,
       resolve: (type2) => "name" in type2 ? type2.name : void 0
     },
     description: {
-      type: GraphQLString,
+      type: GraphQLString$1,
       resolve: (type2) => (
         /* c8 ignore next */
         "description" in type2 ? type2.description : void 0
       )
     },
     specifiedByURL: {
-      type: GraphQLString,
+      type: GraphQLString$1,
       resolve: (obj) => "specifiedByURL" in obj ? obj.specifiedByURL : void 0
     },
     fields: {
-      type: new GraphQLList(new GraphQLNonNull(__Field)),
+      type: new GraphQLList$1(new GraphQLNonNull$1(__Field$1)),
       args: {
         includeDeprecated: {
-          type: GraphQLBoolean,
+          type: GraphQLBoolean$1,
           defaultValue: false
         }
       },
       resolve(type2, { includeDeprecated }) {
-        if (isObjectType(type2) || isInterfaceType(type2)) {
+        if (isObjectType$1(type2) || isInterfaceType$1(type2)) {
           const fields = Object.values(type2.getFields());
           return includeDeprecated ? fields : fields.filter((field) => field.deprecationReason == null);
         }
       }
     },
     interfaces: {
-      type: new GraphQLList(new GraphQLNonNull(__Type)),
+      type: new GraphQLList$1(new GraphQLNonNull$1(__Type$1)),
       resolve(type2) {
-        if (isObjectType(type2) || isInterfaceType(type2)) {
+        if (isObjectType$1(type2) || isInterfaceType$1(type2)) {
           return type2.getInterfaces();
         }
       }
     },
     possibleTypes: {
-      type: new GraphQLList(new GraphQLNonNull(__Type)),
+      type: new GraphQLList$1(new GraphQLNonNull$1(__Type$1)),
       resolve(type2, _args, _context, { schema }) {
-        if (isAbstractType(type2)) {
+        if (isAbstractType$1(type2)) {
           return schema.getPossibleTypes(type2);
         }
       }
     },
     enumValues: {
-      type: new GraphQLList(new GraphQLNonNull(__EnumValue)),
+      type: new GraphQLList$1(new GraphQLNonNull$1(__EnumValue$1)),
       args: {
         includeDeprecated: {
-          type: GraphQLBoolean,
+          type: GraphQLBoolean$1,
           defaultValue: false
         }
       },
       resolve(type2, { includeDeprecated }) {
-        if (isEnumType(type2)) {
+        if (isEnumType$1(type2)) {
           const values = type2.getValues();
           return includeDeprecated ? values : values.filter((field) => field.deprecationReason == null);
         }
       }
     },
     inputFields: {
-      type: new GraphQLList(new GraphQLNonNull(__InputValue)),
+      type: new GraphQLList$1(new GraphQLNonNull$1(__InputValue$1)),
       args: {
         includeDeprecated: {
-          type: GraphQLBoolean,
+          type: GraphQLBoolean$1,
           defaultValue: false
         }
       },
       resolve(type2, { includeDeprecated }) {
-        if (isInputObjectType(type2)) {
+        if (isInputObjectType$1(type2)) {
           const values = Object.values(type2.getFields());
           return includeDeprecated ? values : values.filter((field) => field.deprecationReason == null);
         }
       }
     },
     ofType: {
-      type: __Type,
+      type: __Type$1,
       resolve: (type2) => "ofType" in type2 ? type2.ofType : void 0
     },
     isOneOf: {
-      type: GraphQLBoolean,
+      type: GraphQLBoolean$1,
       resolve: (type2) => {
-        if (isInputObjectType(type2)) {
+        if (isInputObjectType$1(type2)) {
           return type2.isOneOf;
         }
       }
     }
   })
 });
-const __Field = new GraphQLObjectType({
+const __Field$1 = new GraphQLObjectType$1({
   name: "__Field",
   description: "Object and Interface types are described by a list of Fields, each of which has a name, potentially a list of arguments, and a return type.",
   fields: () => ({
     name: {
-      type: new GraphQLNonNull(GraphQLString),
+      type: new GraphQLNonNull$1(GraphQLString$1),
       resolve: (field) => field.name
     },
     description: {
-      type: GraphQLString,
+      type: GraphQLString$1,
       resolve: (field) => field.description
     },
     args: {
-      type: new GraphQLNonNull(
-        new GraphQLList(new GraphQLNonNull(__InputValue))
+      type: new GraphQLNonNull$1(
+        new GraphQLList$1(new GraphQLNonNull$1(__InputValue$1))
       ),
       args: {
         includeDeprecated: {
-          type: GraphQLBoolean,
+          type: GraphQLBoolean$1,
           defaultValue: false
         }
       },
@@ -24018,77 +24047,77 @@ const __Field = new GraphQLObjectType({
       }
     },
     type: {
-      type: new GraphQLNonNull(__Type),
+      type: new GraphQLNonNull$1(__Type$1),
       resolve: (field) => field.type
     },
     isDeprecated: {
-      type: new GraphQLNonNull(GraphQLBoolean),
+      type: new GraphQLNonNull$1(GraphQLBoolean$1),
       resolve: (field) => field.deprecationReason != null
     },
     deprecationReason: {
-      type: GraphQLString,
+      type: GraphQLString$1,
       resolve: (field) => field.deprecationReason
     }
   })
 });
-const __InputValue = new GraphQLObjectType({
+const __InputValue$1 = new GraphQLObjectType$1({
   name: "__InputValue",
   description: "Arguments provided to Fields or Directives and the input fields of an InputObject are represented as Input Values which describe their type and optionally a default value.",
   fields: () => ({
     name: {
-      type: new GraphQLNonNull(GraphQLString),
+      type: new GraphQLNonNull$1(GraphQLString$1),
       resolve: (inputValue) => inputValue.name
     },
     description: {
-      type: GraphQLString,
+      type: GraphQLString$1,
       resolve: (inputValue) => inputValue.description
     },
     type: {
-      type: new GraphQLNonNull(__Type),
+      type: new GraphQLNonNull$1(__Type$1),
       resolve: (inputValue) => inputValue.type
     },
     defaultValue: {
-      type: GraphQLString,
+      type: GraphQLString$1,
       description: "A GraphQL-formatted string representing the default value for this input value.",
       resolve(inputValue) {
         const { type: type2, defaultValue } = inputValue;
-        const valueAST = astFromValue(defaultValue, type2);
-        return valueAST ? print(valueAST) : null;
+        const valueAST = astFromValue$1(defaultValue, type2);
+        return valueAST ? print$1(valueAST) : null;
       }
     },
     isDeprecated: {
-      type: new GraphQLNonNull(GraphQLBoolean),
+      type: new GraphQLNonNull$1(GraphQLBoolean$1),
       resolve: (field) => field.deprecationReason != null
     },
     deprecationReason: {
-      type: GraphQLString,
+      type: GraphQLString$1,
       resolve: (obj) => obj.deprecationReason
     }
   })
 });
-const __EnumValue = new GraphQLObjectType({
+const __EnumValue$1 = new GraphQLObjectType$1({
   name: "__EnumValue",
   description: "One possible value for a given Enum. Enum values are unique values, not a placeholder for a string or numeric value. However an Enum value is returned in a JSON response as a string.",
   fields: () => ({
     name: {
-      type: new GraphQLNonNull(GraphQLString),
+      type: new GraphQLNonNull$1(GraphQLString$1),
       resolve: (enumValue) => enumValue.name
     },
     description: {
-      type: GraphQLString,
+      type: GraphQLString$1,
       resolve: (enumValue) => enumValue.description
     },
     isDeprecated: {
-      type: new GraphQLNonNull(GraphQLBoolean),
+      type: new GraphQLNonNull$1(GraphQLBoolean$1),
       resolve: (enumValue) => enumValue.deprecationReason != null
     },
     deprecationReason: {
-      type: GraphQLString,
+      type: GraphQLString$1,
       resolve: (enumValue) => enumValue.deprecationReason
     }
   })
 });
-var TypeKind;
+var TypeKind$1;
 (function(TypeKind2) {
   TypeKind2["SCALAR"] = "SCALAR";
   TypeKind2["OBJECT"] = "OBJECT";
@@ -24098,48 +24127,48 @@ var TypeKind;
   TypeKind2["INPUT_OBJECT"] = "INPUT_OBJECT";
   TypeKind2["LIST"] = "LIST";
   TypeKind2["NON_NULL"] = "NON_NULL";
-})(TypeKind || (TypeKind = {}));
-const __TypeKind = new GraphQLEnumType({
+})(TypeKind$1 || (TypeKind$1 = {}));
+const __TypeKind$1 = new GraphQLEnumType$1({
   name: "__TypeKind",
   description: "An enum describing what kind of type a given `__Type` is.",
   values: {
     SCALAR: {
-      value: TypeKind.SCALAR,
+      value: TypeKind$1.SCALAR,
       description: "Indicates this type is a scalar."
     },
     OBJECT: {
-      value: TypeKind.OBJECT,
+      value: TypeKind$1.OBJECT,
       description: "Indicates this type is an object. `fields` and `interfaces` are valid fields."
     },
     INTERFACE: {
-      value: TypeKind.INTERFACE,
+      value: TypeKind$1.INTERFACE,
       description: "Indicates this type is an interface. `fields`, `interfaces`, and `possibleTypes` are valid fields."
     },
     UNION: {
-      value: TypeKind.UNION,
+      value: TypeKind$1.UNION,
       description: "Indicates this type is a union. `possibleTypes` is a valid field."
     },
     ENUM: {
-      value: TypeKind.ENUM,
+      value: TypeKind$1.ENUM,
       description: "Indicates this type is an enum. `enumValues` is a valid field."
     },
     INPUT_OBJECT: {
-      value: TypeKind.INPUT_OBJECT,
+      value: TypeKind$1.INPUT_OBJECT,
       description: "Indicates this type is an input object. `inputFields` is a valid field."
     },
     LIST: {
-      value: TypeKind.LIST,
+      value: TypeKind$1.LIST,
       description: "Indicates this type is a list. `ofType` is a valid field."
     },
     NON_NULL: {
-      value: TypeKind.NON_NULL,
+      value: TypeKind$1.NON_NULL,
       description: "Indicates this type is a non-null. `ofType` is a valid field."
     }
   }
 });
-const SchemaMetaFieldDef = {
+const SchemaMetaFieldDef$1 = {
   name: "__schema",
-  type: new GraphQLNonNull(__Schema),
+  type: new GraphQLNonNull$1(__Schema$1),
   description: "Access the current type schema of this server.",
   args: [],
   resolve: (_source, _args, _context, { schema }) => schema,
@@ -24147,15 +24176,15 @@ const SchemaMetaFieldDef = {
   extensions: /* @__PURE__ */ Object.create(null),
   astNode: void 0
 };
-const TypeMetaFieldDef = {
+const TypeMetaFieldDef$1 = {
   name: "__type",
-  type: __Type,
+  type: __Type$1,
   description: "Request the type information of a single type.",
   args: [
     {
       name: "name",
       description: void 0,
-      type: new GraphQLNonNull(GraphQLString),
+      type: new GraphQLNonNull$1(GraphQLString$1),
       defaultValue: void 0,
       deprecationReason: void 0,
       extensions: /* @__PURE__ */ Object.create(null),
@@ -24167,9 +24196,9 @@ const TypeMetaFieldDef = {
   extensions: /* @__PURE__ */ Object.create(null),
   astNode: void 0
 };
-const TypeNameMetaFieldDef = {
+const TypeNameMetaFieldDef$1 = {
   name: "__typename",
-  type: new GraphQLNonNull(GraphQLString),
+  type: new GraphQLNonNull$1(GraphQLString$1),
   description: "The name of the current Object type at runtime.",
   args: [],
   resolve: (_source, _args, _context, { parentType }) => parentType.name,
@@ -24177,74 +24206,74 @@ const TypeNameMetaFieldDef = {
   extensions: /* @__PURE__ */ Object.create(null),
   astNode: void 0
 };
-const introspectionTypes = Object.freeze([
-  __Schema,
-  __Directive,
-  __DirectiveLocation,
-  __Type,
-  __Field,
-  __InputValue,
-  __EnumValue,
-  __TypeKind
+const introspectionTypes$1 = Object.freeze([
+  __Schema$1,
+  __Directive$1,
+  __DirectiveLocation$1,
+  __Type$1,
+  __Field$1,
+  __InputValue$1,
+  __EnumValue$1,
+  __TypeKind$1
 ]);
-function isIntrospectionType(type2) {
-  return introspectionTypes.some(({ name: name2 }) => type2.name === name2);
+function isIntrospectionType$1(type2) {
+  return introspectionTypes$1.some(({ name: name2 }) => type2.name === name2);
 }
-function isSchema(schema) {
-  return instanceOf(schema, GraphQLSchema);
+function isSchema$1(schema) {
+  return instanceOf$1(schema, GraphQLSchema$1);
 }
-function assertSchema(schema) {
-  if (!isSchema(schema)) {
-    throw new Error(`Expected ${inspect(schema)} to be a GraphQL schema.`);
+function assertSchema$1(schema) {
+  if (!isSchema$1(schema)) {
+    throw new Error(`Expected ${inspect$1(schema)} to be a GraphQL schema.`);
   }
   return schema;
 }
-class GraphQLSchema {
+let GraphQLSchema$1 = class GraphQLSchema {
   // Used as a cache for validateSchema().
   constructor(config2) {
     var _config$extensionASTN, _config$directives;
     this.__validationErrors = config2.assumeValid === true ? [] : void 0;
-    isObjectLike(config2) || devAssert(false, "Must provide configuration object.");
-    !config2.types || Array.isArray(config2.types) || devAssert(
+    isObjectLike$1(config2) || devAssert$1(false, "Must provide configuration object.");
+    !config2.types || Array.isArray(config2.types) || devAssert$1(
       false,
-      `"types" must be Array if provided but got: ${inspect(config2.types)}.`
+      `"types" must be Array if provided but got: ${inspect$1(config2.types)}.`
     );
-    !config2.directives || Array.isArray(config2.directives) || devAssert(
+    !config2.directives || Array.isArray(config2.directives) || devAssert$1(
       false,
-      `"directives" must be Array if provided but got: ${inspect(config2.directives)}.`
+      `"directives" must be Array if provided but got: ${inspect$1(config2.directives)}.`
     );
     this.description = config2.description;
-    this.extensions = toObjMap(config2.extensions);
+    this.extensions = toObjMap$1(config2.extensions);
     this.astNode = config2.astNode;
     this.extensionASTNodes = (_config$extensionASTN = config2.extensionASTNodes) !== null && _config$extensionASTN !== void 0 ? _config$extensionASTN : [];
     this._queryType = config2.query;
     this._mutationType = config2.mutation;
     this._subscriptionType = config2.subscription;
-    this._directives = (_config$directives = config2.directives) !== null && _config$directives !== void 0 ? _config$directives : specifiedDirectives;
+    this._directives = (_config$directives = config2.directives) !== null && _config$directives !== void 0 ? _config$directives : specifiedDirectives$1;
     const allReferencedTypes = new Set(config2.types);
     if (config2.types != null) {
       for (const type2 of config2.types) {
         allReferencedTypes.delete(type2);
-        collectReferencedTypes(type2, allReferencedTypes);
+        collectReferencedTypes$1(type2, allReferencedTypes);
       }
     }
     if (this._queryType != null) {
-      collectReferencedTypes(this._queryType, allReferencedTypes);
+      collectReferencedTypes$1(this._queryType, allReferencedTypes);
     }
     if (this._mutationType != null) {
-      collectReferencedTypes(this._mutationType, allReferencedTypes);
+      collectReferencedTypes$1(this._mutationType, allReferencedTypes);
     }
     if (this._subscriptionType != null) {
-      collectReferencedTypes(this._subscriptionType, allReferencedTypes);
+      collectReferencedTypes$1(this._subscriptionType, allReferencedTypes);
     }
     for (const directive of this._directives) {
-      if (isDirective(directive)) {
+      if (isDirective$1(directive)) {
         for (const arg of directive.args) {
-          collectReferencedTypes(arg.type, allReferencedTypes);
+          collectReferencedTypes$1(arg.type, allReferencedTypes);
         }
       }
     }
-    collectReferencedTypes(__Schema, allReferencedTypes);
+    collectReferencedTypes$1(__Schema$1, allReferencedTypes);
     this._typeMap = /* @__PURE__ */ Object.create(null);
     this._subTypeMap = /* @__PURE__ */ Object.create(null);
     this._implementationsMap = /* @__PURE__ */ Object.create(null);
@@ -24253,7 +24282,7 @@ class GraphQLSchema {
         continue;
       }
       const typeName = namedType.name;
-      typeName || devAssert(
+      typeName || devAssert$1(
         false,
         "One of the provided types for building the Schema is missing a name."
       );
@@ -24263,9 +24292,9 @@ class GraphQLSchema {
         );
       }
       this._typeMap[typeName] = namedType;
-      if (isInterfaceType(namedType)) {
+      if (isInterfaceType$1(namedType)) {
         for (const iface of namedType.getInterfaces()) {
-          if (isInterfaceType(iface)) {
+          if (isInterfaceType$1(iface)) {
             let implementations = this._implementationsMap[iface.name];
             if (implementations === void 0) {
               implementations = this._implementationsMap[iface.name] = {
@@ -24276,9 +24305,9 @@ class GraphQLSchema {
             implementations.interfaces.push(namedType);
           }
         }
-      } else if (isObjectType(namedType)) {
+      } else if (isObjectType$1(namedType)) {
         for (const iface of namedType.getInterfaces()) {
-          if (isInterfaceType(iface)) {
+          if (isInterfaceType$1(iface)) {
             let implementations = this._implementationsMap[iface.name];
             if (implementations === void 0) {
               implementations = this._implementationsMap[iface.name] = {
@@ -24306,11 +24335,11 @@ class GraphQLSchema {
   }
   getRootType(operation) {
     switch (operation) {
-      case OperationTypeNode.QUERY:
+      case OperationTypeNode$1.QUERY:
         return this.getQueryType();
-      case OperationTypeNode.MUTATION:
+      case OperationTypeNode$1.MUTATION:
         return this.getMutationType();
-      case OperationTypeNode.SUBSCRIPTION:
+      case OperationTypeNode$1.SUBSCRIPTION:
         return this.getSubscriptionType();
     }
   }
@@ -24321,7 +24350,7 @@ class GraphQLSchema {
     return this.getTypeMap()[name2];
   }
   getPossibleTypes(abstractType) {
-    return isUnionType(abstractType) ? abstractType.getTypes() : this.getImplementations(abstractType).objects;
+    return isUnionType$1(abstractType) ? abstractType.getTypes() : this.getImplementations(abstractType).objects;
   }
   getImplementations(interfaceType) {
     const implementations = this._implementationsMap[interfaceType.name];
@@ -24334,7 +24363,7 @@ class GraphQLSchema {
     let map2 = this._subTypeMap[abstractType.name];
     if (map2 === void 0) {
       map2 = /* @__PURE__ */ Object.create(null);
-      if (isUnionType(abstractType)) {
+      if (isUnionType$1(abstractType)) {
         for (const type2 of abstractType.getTypes()) {
           map2[type2.name] = true;
         }
@@ -24371,47 +24400,47 @@ class GraphQLSchema {
       assumeValid: this.__validationErrors !== void 0
     };
   }
-}
-function collectReferencedTypes(type2, typeSet) {
-  const namedType = getNamedType(type2);
+};
+function collectReferencedTypes$1(type2, typeSet) {
+  const namedType = getNamedType$1(type2);
   if (!typeSet.has(namedType)) {
     typeSet.add(namedType);
-    if (isUnionType(namedType)) {
+    if (isUnionType$1(namedType)) {
       for (const memberType of namedType.getTypes()) {
-        collectReferencedTypes(memberType, typeSet);
+        collectReferencedTypes$1(memberType, typeSet);
       }
-    } else if (isObjectType(namedType) || isInterfaceType(namedType)) {
+    } else if (isObjectType$1(namedType) || isInterfaceType$1(namedType)) {
       for (const interfaceType of namedType.getInterfaces()) {
-        collectReferencedTypes(interfaceType, typeSet);
+        collectReferencedTypes$1(interfaceType, typeSet);
       }
       for (const field of Object.values(namedType.getFields())) {
-        collectReferencedTypes(field.type, typeSet);
+        collectReferencedTypes$1(field.type, typeSet);
         for (const arg of field.args) {
-          collectReferencedTypes(arg.type, typeSet);
+          collectReferencedTypes$1(arg.type, typeSet);
         }
       }
-    } else if (isInputObjectType(namedType)) {
+    } else if (isInputObjectType$1(namedType)) {
       for (const field of Object.values(namedType.getFields())) {
-        collectReferencedTypes(field.type, typeSet);
+        collectReferencedTypes$1(field.type, typeSet);
       }
     }
   }
   return typeSet;
 }
-function validateSchema(schema) {
-  assertSchema(schema);
+function validateSchema$1(schema) {
+  assertSchema$1(schema);
   if (schema.__validationErrors) {
     return schema.__validationErrors;
   }
-  const context = new SchemaValidationContext(schema);
-  validateRootTypes(context);
-  validateDirectives(context);
-  validateTypes(context);
+  const context = new SchemaValidationContext$1(schema);
+  validateRootTypes$1(context);
+  validateDirectives$1(context);
+  validateTypes$1(context);
   const errors2 = context.getErrors();
   schema.__validationErrors = errors2;
   return errors2;
 }
-class SchemaValidationContext {
+let SchemaValidationContext$1 = class SchemaValidationContext {
   constructor(schema) {
     this._errors = [];
     this.schema = schema;
@@ -24419,7 +24448,7 @@ class SchemaValidationContext {
   reportError(message, nodes) {
     const _nodes = Array.isArray(nodes) ? nodes.filter(Boolean) : nodes;
     this._errors.push(
-      new GraphQLError(message, {
+      new GraphQLError$1(message, {
         nodes: _nodes
       })
     );
@@ -24427,48 +24456,48 @@ class SchemaValidationContext {
   getErrors() {
     return this._errors;
   }
-}
-function validateRootTypes(context) {
+};
+function validateRootTypes$1(context) {
   const schema = context.schema;
   const queryType = schema.getQueryType();
   if (!queryType) {
     context.reportError("Query root type must be provided.", schema.astNode);
-  } else if (!isObjectType(queryType)) {
+  } else if (!isObjectType$1(queryType)) {
     var _getOperationTypeNode;
     context.reportError(
-      `Query root type must be Object type, it cannot be ${inspect(
+      `Query root type must be Object type, it cannot be ${inspect$1(
         queryType
       )}.`,
-      (_getOperationTypeNode = getOperationTypeNode(
+      (_getOperationTypeNode = getOperationTypeNode$1(
         schema,
-        OperationTypeNode.QUERY
+        OperationTypeNode$1.QUERY
       )) !== null && _getOperationTypeNode !== void 0 ? _getOperationTypeNode : queryType.astNode
     );
   }
   const mutationType = schema.getMutationType();
-  if (mutationType && !isObjectType(mutationType)) {
+  if (mutationType && !isObjectType$1(mutationType)) {
     var _getOperationTypeNode2;
     context.reportError(
-      `Mutation root type must be Object type if provided, it cannot be ${inspect(mutationType)}.`,
-      (_getOperationTypeNode2 = getOperationTypeNode(
+      `Mutation root type must be Object type if provided, it cannot be ${inspect$1(mutationType)}.`,
+      (_getOperationTypeNode2 = getOperationTypeNode$1(
         schema,
-        OperationTypeNode.MUTATION
+        OperationTypeNode$1.MUTATION
       )) !== null && _getOperationTypeNode2 !== void 0 ? _getOperationTypeNode2 : mutationType.astNode
     );
   }
   const subscriptionType = schema.getSubscriptionType();
-  if (subscriptionType && !isObjectType(subscriptionType)) {
+  if (subscriptionType && !isObjectType$1(subscriptionType)) {
     var _getOperationTypeNode3;
     context.reportError(
-      `Subscription root type must be Object type if provided, it cannot be ${inspect(subscriptionType)}.`,
-      (_getOperationTypeNode3 = getOperationTypeNode(
+      `Subscription root type must be Object type if provided, it cannot be ${inspect$1(subscriptionType)}.`,
+      (_getOperationTypeNode3 = getOperationTypeNode$1(
         schema,
-        OperationTypeNode.SUBSCRIPTION
+        OperationTypeNode$1.SUBSCRIPTION
       )) !== null && _getOperationTypeNode3 !== void 0 ? _getOperationTypeNode3 : subscriptionType.astNode
     );
   }
 }
-function getOperationTypeNode(schema, operation) {
+function getOperationTypeNode$1(schema, operation) {
   var _flatMap$find;
   return (_flatMap$find = [schema.astNode, ...schema.extensionASTNodes].flatMap(
     // FIXME: https://github.com/graphql/graphql-js/issues/2203
@@ -24481,16 +24510,16 @@ function getOperationTypeNode(schema, operation) {
     }
   ).find((operationNode) => operationNode.operation === operation)) === null || _flatMap$find === void 0 ? void 0 : _flatMap$find.type;
 }
-function validateDirectives(context) {
+function validateDirectives$1(context) {
   for (const directive of context.schema.getDirectives()) {
-    if (!isDirective(directive)) {
+    if (!isDirective$1(directive)) {
       context.reportError(
-        `Expected directive but got: ${inspect(directive)}.`,
+        `Expected directive but got: ${inspect$1(directive)}.`,
         directive === null || directive === void 0 ? void 0 : directive.astNode
       );
       continue;
     }
-    validateName(context, directive);
+    validateName$1(context, directive);
     if (directive.locations.length === 0) {
       context.reportError(
         `Directive @${directive.name} must include 1 or more locations.`,
@@ -24498,19 +24527,19 @@ function validateDirectives(context) {
       );
     }
     for (const arg of directive.args) {
-      validateName(context, arg);
-      if (!isInputType(arg.type)) {
+      validateName$1(context, arg);
+      if (!isInputType$1(arg.type)) {
         context.reportError(
-          `The type of @${directive.name}(${arg.name}:) must be Input Type but got: ${inspect(arg.type)}.`,
+          `The type of @${directive.name}(${arg.name}:) must be Input Type but got: ${inspect$1(arg.type)}.`,
           arg.astNode
         );
       }
-      if (isRequiredArgument(arg) && arg.deprecationReason != null) {
+      if (isRequiredArgument$1(arg) && arg.deprecationReason != null) {
         var _arg$astNode;
         context.reportError(
           `Required argument @${directive.name}(${arg.name}:) cannot be deprecated.`,
           [
-            getDeprecatedDirectiveNode(arg.astNode),
+            getDeprecatedDirectiveNode$1(arg.astNode),
             (_arg$astNode = arg.astNode) === null || _arg$astNode === void 0 ? void 0 : _arg$astNode.type
           ]
         );
@@ -24518,7 +24547,7 @@ function validateDirectives(context) {
     }
   }
 }
-function validateName(context, node) {
+function validateName$1(context, node) {
   if (node.name.startsWith("__")) {
     context.reportError(
       `Name "${node.name}" must not begin with "__", which is reserved by GraphQL introspection.`,
@@ -24526,37 +24555,37 @@ function validateName(context, node) {
     );
   }
 }
-function validateTypes(context) {
-  const validateInputObjectCircularRefs = createInputObjectCircularRefsValidator(context);
+function validateTypes$1(context) {
+  const validateInputObjectCircularRefs = createInputObjectCircularRefsValidator$1(context);
   const typeMap = context.schema.getTypeMap();
   for (const type2 of Object.values(typeMap)) {
-    if (!isNamedType(type2)) {
+    if (!isNamedType$1(type2)) {
       context.reportError(
-        `Expected GraphQL named type but got: ${inspect(type2)}.`,
+        `Expected GraphQL named type but got: ${inspect$1(type2)}.`,
         type2.astNode
       );
       continue;
     }
-    if (!isIntrospectionType(type2)) {
-      validateName(context, type2);
+    if (!isIntrospectionType$1(type2)) {
+      validateName$1(context, type2);
     }
-    if (isObjectType(type2)) {
-      validateFields(context, type2);
-      validateInterfaces(context, type2);
-    } else if (isInterfaceType(type2)) {
-      validateFields(context, type2);
-      validateInterfaces(context, type2);
-    } else if (isUnionType(type2)) {
-      validateUnionMembers(context, type2);
-    } else if (isEnumType(type2)) {
-      validateEnumValues(context, type2);
-    } else if (isInputObjectType(type2)) {
-      validateInputFields(context, type2);
+    if (isObjectType$1(type2)) {
+      validateFields$1(context, type2);
+      validateInterfaces$1(context, type2);
+    } else if (isInterfaceType$1(type2)) {
+      validateFields$1(context, type2);
+      validateInterfaces$1(context, type2);
+    } else if (isUnionType$1(type2)) {
+      validateUnionMembers$1(context, type2);
+    } else if (isEnumType$1(type2)) {
+      validateEnumValues$1(context, type2);
+    } else if (isInputObjectType$1(type2)) {
+      validateInputFields$1(context, type2);
       validateInputObjectCircularRefs(type2);
     }
   }
 }
-function validateFields(context, type2) {
+function validateFields$1(context, type2) {
   const fields = Object.values(type2.getFields());
   if (fields.length === 0) {
     context.reportError(`Type ${type2.name} must define one or more fields.`, [
@@ -24565,30 +24594,30 @@ function validateFields(context, type2) {
     ]);
   }
   for (const field of fields) {
-    validateName(context, field);
-    if (!isOutputType(field.type)) {
+    validateName$1(context, field);
+    if (!isOutputType$1(field.type)) {
       var _field$astNode;
       context.reportError(
-        `The type of ${type2.name}.${field.name} must be Output Type but got: ${inspect(field.type)}.`,
+        `The type of ${type2.name}.${field.name} must be Output Type but got: ${inspect$1(field.type)}.`,
         (_field$astNode = field.astNode) === null || _field$astNode === void 0 ? void 0 : _field$astNode.type
       );
     }
     for (const arg of field.args) {
       const argName = arg.name;
-      validateName(context, arg);
-      if (!isInputType(arg.type)) {
+      validateName$1(context, arg);
+      if (!isInputType$1(arg.type)) {
         var _arg$astNode2;
         context.reportError(
-          `The type of ${type2.name}.${field.name}(${argName}:) must be Input Type but got: ${inspect(arg.type)}.`,
+          `The type of ${type2.name}.${field.name}(${argName}:) must be Input Type but got: ${inspect$1(arg.type)}.`,
           (_arg$astNode2 = arg.astNode) === null || _arg$astNode2 === void 0 ? void 0 : _arg$astNode2.type
         );
       }
-      if (isRequiredArgument(arg) && arg.deprecationReason != null) {
+      if (isRequiredArgument$1(arg) && arg.deprecationReason != null) {
         var _arg$astNode3;
         context.reportError(
           `Required argument ${type2.name}.${field.name}(${argName}:) cannot be deprecated.`,
           [
-            getDeprecatedDirectiveNode(arg.astNode),
+            getDeprecatedDirectiveNode$1(arg.astNode),
             (_arg$astNode3 = arg.astNode) === null || _arg$astNode3 === void 0 ? void 0 : _arg$astNode3.type
           ]
         );
@@ -24596,36 +24625,36 @@ function validateFields(context, type2) {
     }
   }
 }
-function validateInterfaces(context, type2) {
+function validateInterfaces$1(context, type2) {
   const ifaceTypeNames = /* @__PURE__ */ Object.create(null);
   for (const iface of type2.getInterfaces()) {
-    if (!isInterfaceType(iface)) {
+    if (!isInterfaceType$1(iface)) {
       context.reportError(
-        `Type ${inspect(type2)} must only implement Interface types, it cannot implement ${inspect(iface)}.`,
-        getAllImplementsInterfaceNodes(type2, iface)
+        `Type ${inspect$1(type2)} must only implement Interface types, it cannot implement ${inspect$1(iface)}.`,
+        getAllImplementsInterfaceNodes$1(type2, iface)
       );
       continue;
     }
     if (type2 === iface) {
       context.reportError(
         `Type ${type2.name} cannot implement itself because it would create a circular reference.`,
-        getAllImplementsInterfaceNodes(type2, iface)
+        getAllImplementsInterfaceNodes$1(type2, iface)
       );
       continue;
     }
     if (ifaceTypeNames[iface.name]) {
       context.reportError(
         `Type ${type2.name} can only implement ${iface.name} once.`,
-        getAllImplementsInterfaceNodes(type2, iface)
+        getAllImplementsInterfaceNodes$1(type2, iface)
       );
       continue;
     }
     ifaceTypeNames[iface.name] = true;
-    validateTypeImplementsAncestors(context, type2, iface);
-    validateTypeImplementsInterface(context, type2, iface);
+    validateTypeImplementsAncestors$1(context, type2, iface);
+    validateTypeImplementsInterface$1(context, type2, iface);
   }
 }
-function validateTypeImplementsInterface(context, type2, iface) {
+function validateTypeImplementsInterface$1(context, type2, iface) {
   const typeFieldMap = type2.getFields();
   for (const ifaceField of Object.values(iface.getFields())) {
     const fieldName = ifaceField.name;
@@ -24637,10 +24666,10 @@ function validateTypeImplementsInterface(context, type2, iface) {
       );
       continue;
     }
-    if (!isTypeSubTypeOf(context.schema, typeField.type, ifaceField.type)) {
+    if (!isTypeSubTypeOf$1(context.schema, typeField.type, ifaceField.type)) {
       var _ifaceField$astNode, _typeField$astNode;
       context.reportError(
-        `Interface field ${iface.name}.${fieldName} expects type ${inspect(ifaceField.type)} but ${type2.name}.${fieldName} is type ${inspect(typeField.type)}.`,
+        `Interface field ${iface.name}.${fieldName} expects type ${inspect$1(ifaceField.type)} but ${type2.name}.${fieldName} is type ${inspect$1(typeField.type)}.`,
         [
           (_ifaceField$astNode = ifaceField.astNode) === null || _ifaceField$astNode === void 0 ? void 0 : _ifaceField$astNode.type,
           (_typeField$astNode = typeField.astNode) === null || _typeField$astNode === void 0 ? void 0 : _typeField$astNode.type
@@ -24657,10 +24686,10 @@ function validateTypeImplementsInterface(context, type2, iface) {
         );
         continue;
       }
-      if (!isEqualType(ifaceArg.type, typeArg.type)) {
+      if (!isEqualType$1(ifaceArg.type, typeArg.type)) {
         var _ifaceArg$astNode, _typeArg$astNode;
         context.reportError(
-          `Interface field argument ${iface.name}.${fieldName}(${argName}:) expects type ${inspect(ifaceArg.type)} but ${type2.name}.${fieldName}(${argName}:) is type ${inspect(typeArg.type)}.`,
+          `Interface field argument ${iface.name}.${fieldName}(${argName}:) expects type ${inspect$1(ifaceArg.type)} but ${type2.name}.${fieldName}(${argName}:) is type ${inspect$1(typeArg.type)}.`,
           [
             (_ifaceArg$astNode = ifaceArg.astNode) === null || _ifaceArg$astNode === void 0 ? void 0 : _ifaceArg$astNode.type,
             (_typeArg$astNode = typeArg.astNode) === null || _typeArg$astNode === void 0 ? void 0 : _typeArg$astNode.type
@@ -24671,7 +24700,7 @@ function validateTypeImplementsInterface(context, type2, iface) {
     for (const typeArg of typeField.args) {
       const argName = typeArg.name;
       const ifaceArg = ifaceField.args.find((arg) => arg.name === argName);
-      if (!ifaceArg && isRequiredArgument(typeArg)) {
+      if (!ifaceArg && isRequiredArgument$1(typeArg)) {
         context.reportError(
           `Object field ${type2.name}.${fieldName} includes required argument ${argName} that is missing from the Interface field ${iface.name}.${fieldName}.`,
           [typeArg.astNode, ifaceField.astNode]
@@ -24680,21 +24709,21 @@ function validateTypeImplementsInterface(context, type2, iface) {
     }
   }
 }
-function validateTypeImplementsAncestors(context, type2, iface) {
+function validateTypeImplementsAncestors$1(context, type2, iface) {
   const ifaceInterfaces = type2.getInterfaces();
   for (const transitive of iface.getInterfaces()) {
     if (!ifaceInterfaces.includes(transitive)) {
       context.reportError(
         transitive === type2 ? `Type ${type2.name} cannot implement ${iface.name} because it would create a circular reference.` : `Type ${type2.name} must implement ${transitive.name} because it is implemented by ${iface.name}.`,
         [
-          ...getAllImplementsInterfaceNodes(iface, transitive),
-          ...getAllImplementsInterfaceNodes(type2, iface)
+          ...getAllImplementsInterfaceNodes$1(iface, transitive),
+          ...getAllImplementsInterfaceNodes$1(type2, iface)
         ]
       );
     }
   }
 }
-function validateUnionMembers(context, union) {
+function validateUnionMembers$1(context, union) {
   const memberTypes = union.getTypes();
   if (memberTypes.length === 0) {
     context.reportError(
@@ -24707,20 +24736,20 @@ function validateUnionMembers(context, union) {
     if (includedTypeNames[memberType.name]) {
       context.reportError(
         `Union type ${union.name} can only include type ${memberType.name} once.`,
-        getUnionMemberTypeNodes(union, memberType.name)
+        getUnionMemberTypeNodes$1(union, memberType.name)
       );
       continue;
     }
     includedTypeNames[memberType.name] = true;
-    if (!isObjectType(memberType)) {
+    if (!isObjectType$1(memberType)) {
       context.reportError(
-        `Union type ${union.name} can only include Object types, it cannot include ${inspect(memberType)}.`,
-        getUnionMemberTypeNodes(union, String(memberType))
+        `Union type ${union.name} can only include Object types, it cannot include ${inspect$1(memberType)}.`,
+        getUnionMemberTypeNodes$1(union, String(memberType))
       );
     }
   }
 }
-function validateEnumValues(context, enumType) {
+function validateEnumValues$1(context, enumType) {
   const enumValues = enumType.getValues();
   if (enumValues.length === 0) {
     context.reportError(
@@ -24729,10 +24758,10 @@ function validateEnumValues(context, enumType) {
     );
   }
   for (const enumValue of enumValues) {
-    validateName(context, enumValue);
+    validateName$1(context, enumValue);
   }
 }
-function validateInputFields(context, inputObj) {
+function validateInputFields$1(context, inputObj) {
   const fields = Object.values(inputObj.getFields());
   if (fields.length === 0) {
     context.reportError(
@@ -24741,31 +24770,31 @@ function validateInputFields(context, inputObj) {
     );
   }
   for (const field of fields) {
-    validateName(context, field);
-    if (!isInputType(field.type)) {
+    validateName$1(context, field);
+    if (!isInputType$1(field.type)) {
       var _field$astNode2;
       context.reportError(
-        `The type of ${inputObj.name}.${field.name} must be Input Type but got: ${inspect(field.type)}.`,
+        `The type of ${inputObj.name}.${field.name} must be Input Type but got: ${inspect$1(field.type)}.`,
         (_field$astNode2 = field.astNode) === null || _field$astNode2 === void 0 ? void 0 : _field$astNode2.type
       );
     }
-    if (isRequiredInputField(field) && field.deprecationReason != null) {
+    if (isRequiredInputField$1(field) && field.deprecationReason != null) {
       var _field$astNode3;
       context.reportError(
         `Required input field ${inputObj.name}.${field.name} cannot be deprecated.`,
         [
-          getDeprecatedDirectiveNode(field.astNode),
+          getDeprecatedDirectiveNode$1(field.astNode),
           (_field$astNode3 = field.astNode) === null || _field$astNode3 === void 0 ? void 0 : _field$astNode3.type
         ]
       );
     }
     if (inputObj.isOneOf) {
-      validateOneOfInputObjectField(inputObj, field, context);
+      validateOneOfInputObjectField$1(inputObj, field, context);
     }
   }
 }
-function validateOneOfInputObjectField(type2, field, context) {
-  if (isNonNullType(field.type)) {
+function validateOneOfInputObjectField$1(type2, field, context) {
+  if (isNonNullType$1(field.type)) {
     var _field$astNode4;
     context.reportError(
       `OneOf input field ${type2.name}.${field.name} must be nullable.`,
@@ -24779,7 +24808,7 @@ function validateOneOfInputObjectField(type2, field, context) {
     );
   }
 }
-function createInputObjectCircularRefsValidator(context) {
+function createInputObjectCircularRefsValidator$1(context) {
   const visitedTypes = /* @__PURE__ */ Object.create(null);
   const fieldPath = [];
   const fieldPathIndexByTypeName = /* @__PURE__ */ Object.create(null);
@@ -24792,7 +24821,7 @@ function createInputObjectCircularRefsValidator(context) {
     fieldPathIndexByTypeName[inputObj.name] = fieldPath.length;
     const fields = Object.values(inputObj.getFields());
     for (const field of fields) {
-      if (isNonNullType(field.type) && isInputObjectType(field.type.ofType)) {
+      if (isNonNullType$1(field.type) && isInputObjectType$1(field.type.ofType)) {
         const fieldType = field.type.ofType;
         const cycleIndex = fieldPathIndexByTypeName[fieldType.name];
         fieldPath.push(field);
@@ -24812,7 +24841,7 @@ function createInputObjectCircularRefsValidator(context) {
     fieldPathIndexByTypeName[inputObj.name] = void 0;
   }
 }
-function getAllImplementsInterfaceNodes(type2, iface) {
+function getAllImplementsInterfaceNodes$1(type2, iface) {
   const { astNode, extensionASTNodes } = type2;
   const nodes = astNode != null ? [astNode, ...extensionASTNodes] : extensionASTNodes;
   return nodes.flatMap((typeNode) => {
@@ -24823,7 +24852,7 @@ function getAllImplementsInterfaceNodes(type2, iface) {
     );
   }).filter((ifaceNode) => ifaceNode.name.value === iface.name);
 }
-function getUnionMemberTypeNodes(union, typeName) {
+function getUnionMemberTypeNodes$1(union, typeName) {
   const { astNode, extensionASTNodes } = union;
   const nodes = astNode != null ? [astNode, ...extensionASTNodes] : extensionASTNodes;
   return nodes.flatMap((unionNode) => {
@@ -24834,27 +24863,27 @@ function getUnionMemberTypeNodes(union, typeName) {
     );
   }).filter((typeNode) => typeNode.name.value === typeName);
 }
-function getDeprecatedDirectiveNode(definitionNode) {
+function getDeprecatedDirectiveNode$1(definitionNode) {
   var _definitionNode$direc;
   return definitionNode === null || definitionNode === void 0 ? void 0 : (_definitionNode$direc = definitionNode.directives) === null || _definitionNode$direc === void 0 ? void 0 : _definitionNode$direc.find(
-    (node) => node.name.value === GraphQLDeprecatedDirective.name
+    (node) => node.name.value === GraphQLDeprecatedDirective$1.name
   );
 }
-function typeFromAST(schema, typeNode) {
+function typeFromAST$1(schema, typeNode) {
   switch (typeNode.kind) {
-    case Kind.LIST_TYPE: {
-      const innerType = typeFromAST(schema, typeNode.type);
-      return innerType && new GraphQLList(innerType);
+    case Kind$1.LIST_TYPE: {
+      const innerType = typeFromAST$1(schema, typeNode.type);
+      return innerType && new GraphQLList$1(innerType);
     }
-    case Kind.NON_NULL_TYPE: {
-      const innerType = typeFromAST(schema, typeNode.type);
-      return innerType && new GraphQLNonNull(innerType);
+    case Kind$1.NON_NULL_TYPE: {
+      const innerType = typeFromAST$1(schema, typeNode.type);
+      return innerType && new GraphQLNonNull$1(innerType);
     }
-    case Kind.NAMED_TYPE:
+    case Kind$1.NAMED_TYPE:
       return schema.getType(typeNode.name.value);
   }
 }
-class TypeInfo {
+let TypeInfo$1 = class TypeInfo {
   constructor(schema, initialType, getFieldDefFn) {
     this._schema = schema;
     this._typeStack = [];
@@ -24865,15 +24894,15 @@ class TypeInfo {
     this._directive = null;
     this._argument = null;
     this._enumValue = null;
-    this._getFieldDef = getFieldDefFn !== null && getFieldDefFn !== void 0 ? getFieldDefFn : getFieldDef$1;
+    this._getFieldDef = getFieldDefFn !== null && getFieldDefFn !== void 0 ? getFieldDefFn : getFieldDef$3;
     if (initialType) {
-      if (isInputType(initialType)) {
+      if (isInputType$1(initialType)) {
         this._inputTypeStack.push(initialType);
       }
-      if (isCompositeType(initialType)) {
+      if (isCompositeType$1(initialType)) {
         this._parentTypeStack.push(initialType);
       }
-      if (isOutputType(initialType)) {
+      if (isOutputType$1(initialType)) {
         this._typeStack.push(initialType);
       }
     }
@@ -24923,14 +24952,14 @@ class TypeInfo {
   enter(node) {
     const schema = this._schema;
     switch (node.kind) {
-      case Kind.SELECTION_SET: {
-        const namedType = getNamedType(this.getType());
+      case Kind$1.SELECTION_SET: {
+        const namedType = getNamedType$1(this.getType());
         this._parentTypeStack.push(
-          isCompositeType(namedType) ? namedType : void 0
+          isCompositeType$1(namedType) ? namedType : void 0
         );
         break;
       }
-      case Kind.FIELD: {
+      case Kind$1.FIELD: {
         const parentType = this.getParentType();
         let fieldDef;
         let fieldType;
@@ -24941,32 +24970,32 @@ class TypeInfo {
           }
         }
         this._fieldDefStack.push(fieldDef);
-        this._typeStack.push(isOutputType(fieldType) ? fieldType : void 0);
+        this._typeStack.push(isOutputType$1(fieldType) ? fieldType : void 0);
         break;
       }
-      case Kind.DIRECTIVE:
+      case Kind$1.DIRECTIVE:
         this._directive = schema.getDirective(node.name.value);
         break;
-      case Kind.OPERATION_DEFINITION: {
+      case Kind$1.OPERATION_DEFINITION: {
         const rootType = schema.getRootType(node.operation);
-        this._typeStack.push(isObjectType(rootType) ? rootType : void 0);
+        this._typeStack.push(isObjectType$1(rootType) ? rootType : void 0);
         break;
       }
-      case Kind.INLINE_FRAGMENT:
-      case Kind.FRAGMENT_DEFINITION: {
+      case Kind$1.INLINE_FRAGMENT:
+      case Kind$1.FRAGMENT_DEFINITION: {
         const typeConditionAST = node.typeCondition;
-        const outputType = typeConditionAST ? typeFromAST(schema, typeConditionAST) : getNamedType(this.getType());
-        this._typeStack.push(isOutputType(outputType) ? outputType : void 0);
+        const outputType = typeConditionAST ? typeFromAST$1(schema, typeConditionAST) : getNamedType$1(this.getType());
+        this._typeStack.push(isOutputType$1(outputType) ? outputType : void 0);
         break;
       }
-      case Kind.VARIABLE_DEFINITION: {
-        const inputType = typeFromAST(schema, node.type);
+      case Kind$1.VARIABLE_DEFINITION: {
+        const inputType = typeFromAST$1(schema, node.type);
         this._inputTypeStack.push(
-          isInputType(inputType) ? inputType : void 0
+          isInputType$1(inputType) ? inputType : void 0
         );
         break;
       }
-      case Kind.ARGUMENT: {
+      case Kind$1.ARGUMENT: {
         var _this$getDirective;
         let argDef;
         let argType;
@@ -24981,21 +25010,21 @@ class TypeInfo {
         }
         this._argument = argDef;
         this._defaultValueStack.push(argDef ? argDef.defaultValue : void 0);
-        this._inputTypeStack.push(isInputType(argType) ? argType : void 0);
+        this._inputTypeStack.push(isInputType$1(argType) ? argType : void 0);
         break;
       }
-      case Kind.LIST: {
-        const listType = getNullableType(this.getInputType());
-        const itemType = isListType(listType) ? listType.ofType : listType;
+      case Kind$1.LIST: {
+        const listType = getNullableType$1(this.getInputType());
+        const itemType = isListType$1(listType) ? listType.ofType : listType;
         this._defaultValueStack.push(void 0);
-        this._inputTypeStack.push(isInputType(itemType) ? itemType : void 0);
+        this._inputTypeStack.push(isInputType$1(itemType) ? itemType : void 0);
         break;
       }
-      case Kind.OBJECT_FIELD: {
-        const objectType = getNamedType(this.getInputType());
+      case Kind$1.OBJECT_FIELD: {
+        const objectType = getNamedType$1(this.getInputType());
         let inputFieldType;
         let inputField;
-        if (isInputObjectType(objectType)) {
+        if (isInputObjectType$1(objectType)) {
           inputField = objectType.getFields()[node.name.value];
           if (inputField) {
             inputFieldType = inputField.type;
@@ -25005,14 +25034,14 @@ class TypeInfo {
           inputField ? inputField.defaultValue : void 0
         );
         this._inputTypeStack.push(
-          isInputType(inputFieldType) ? inputFieldType : void 0
+          isInputType$1(inputFieldType) ? inputFieldType : void 0
         );
         break;
       }
-      case Kind.ENUM: {
-        const enumType = getNamedType(this.getInputType());
+      case Kind$1.ENUM: {
+        const enumType = getNamedType$1(this.getInputType());
         let enumValue;
-        if (isEnumType(enumType)) {
+        if (isEnumType$1(enumType)) {
           enumValue = enumType.getValue(node.value);
         }
         this._enumValue = enumValue;
@@ -25022,66 +25051,66 @@ class TypeInfo {
   }
   leave(node) {
     switch (node.kind) {
-      case Kind.SELECTION_SET:
+      case Kind$1.SELECTION_SET:
         this._parentTypeStack.pop();
         break;
-      case Kind.FIELD:
+      case Kind$1.FIELD:
         this._fieldDefStack.pop();
         this._typeStack.pop();
         break;
-      case Kind.DIRECTIVE:
+      case Kind$1.DIRECTIVE:
         this._directive = null;
         break;
-      case Kind.OPERATION_DEFINITION:
-      case Kind.INLINE_FRAGMENT:
-      case Kind.FRAGMENT_DEFINITION:
+      case Kind$1.OPERATION_DEFINITION:
+      case Kind$1.INLINE_FRAGMENT:
+      case Kind$1.FRAGMENT_DEFINITION:
         this._typeStack.pop();
         break;
-      case Kind.VARIABLE_DEFINITION:
+      case Kind$1.VARIABLE_DEFINITION:
         this._inputTypeStack.pop();
         break;
-      case Kind.ARGUMENT:
+      case Kind$1.ARGUMENT:
         this._argument = null;
         this._defaultValueStack.pop();
         this._inputTypeStack.pop();
         break;
-      case Kind.LIST:
-      case Kind.OBJECT_FIELD:
+      case Kind$1.LIST:
+      case Kind$1.OBJECT_FIELD:
         this._defaultValueStack.pop();
         this._inputTypeStack.pop();
         break;
-      case Kind.ENUM:
+      case Kind$1.ENUM:
         this._enumValue = null;
         break;
     }
   }
-}
-function getFieldDef$1(schema, parentType, fieldNode) {
+};
+function getFieldDef$3(schema, parentType, fieldNode) {
   const name2 = fieldNode.name.value;
-  if (name2 === SchemaMetaFieldDef.name && schema.getQueryType() === parentType) {
-    return SchemaMetaFieldDef;
+  if (name2 === SchemaMetaFieldDef$1.name && schema.getQueryType() === parentType) {
+    return SchemaMetaFieldDef$1;
   }
-  if (name2 === TypeMetaFieldDef.name && schema.getQueryType() === parentType) {
-    return TypeMetaFieldDef;
+  if (name2 === TypeMetaFieldDef$1.name && schema.getQueryType() === parentType) {
+    return TypeMetaFieldDef$1;
   }
-  if (name2 === TypeNameMetaFieldDef.name && isCompositeType(parentType)) {
-    return TypeNameMetaFieldDef;
+  if (name2 === TypeNameMetaFieldDef$1.name && isCompositeType$1(parentType)) {
+    return TypeNameMetaFieldDef$1;
   }
-  if (isObjectType(parentType) || isInterfaceType(parentType)) {
+  if (isObjectType$1(parentType) || isInterfaceType$1(parentType)) {
     return parentType.getFields()[name2];
   }
 }
-function visitWithTypeInfo(typeInfo, visitor) {
+function visitWithTypeInfo$1(typeInfo, visitor) {
   return {
     enter(...args) {
       const node = args[0];
       typeInfo.enter(node);
-      const fn = getEnterLeaveForKind(visitor, node.kind).enter;
+      const fn = getEnterLeaveForKind$1(visitor, node.kind).enter;
       if (fn) {
         const result = fn.apply(visitor, args);
         if (result !== void 0) {
           typeInfo.leave(node);
-          if (isNode$1(result)) {
+          if (isNode$2(result)) {
             typeInfo.enter(result);
           }
         }
@@ -25090,7 +25119,7 @@ function visitWithTypeInfo(typeInfo, visitor) {
     },
     leave(...args) {
       const node = args[0];
-      const fn = getEnterLeaveForKind(visitor, node.kind).leave;
+      const fn = getEnterLeaveForKind$1(visitor, node.kind).leave;
       let result;
       if (fn) {
         result = fn.apply(visitor, args);
@@ -25100,29 +25129,29 @@ function visitWithTypeInfo(typeInfo, visitor) {
     }
   };
 }
-function isExecutableDefinitionNode(node) {
-  return node.kind === Kind.OPERATION_DEFINITION || node.kind === Kind.FRAGMENT_DEFINITION;
+function isExecutableDefinitionNode$1(node) {
+  return node.kind === Kind$1.OPERATION_DEFINITION || node.kind === Kind$1.FRAGMENT_DEFINITION;
 }
-function isTypeSystemDefinitionNode(node) {
-  return node.kind === Kind.SCHEMA_DEFINITION || isTypeDefinitionNode(node) || node.kind === Kind.DIRECTIVE_DEFINITION;
+function isTypeSystemDefinitionNode$1(node) {
+  return node.kind === Kind$1.SCHEMA_DEFINITION || isTypeDefinitionNode$1(node) || node.kind === Kind$1.DIRECTIVE_DEFINITION;
 }
-function isTypeDefinitionNode(node) {
-  return node.kind === Kind.SCALAR_TYPE_DEFINITION || node.kind === Kind.OBJECT_TYPE_DEFINITION || node.kind === Kind.INTERFACE_TYPE_DEFINITION || node.kind === Kind.UNION_TYPE_DEFINITION || node.kind === Kind.ENUM_TYPE_DEFINITION || node.kind === Kind.INPUT_OBJECT_TYPE_DEFINITION;
+function isTypeDefinitionNode$1(node) {
+  return node.kind === Kind$1.SCALAR_TYPE_DEFINITION || node.kind === Kind$1.OBJECT_TYPE_DEFINITION || node.kind === Kind$1.INTERFACE_TYPE_DEFINITION || node.kind === Kind$1.UNION_TYPE_DEFINITION || node.kind === Kind$1.ENUM_TYPE_DEFINITION || node.kind === Kind$1.INPUT_OBJECT_TYPE_DEFINITION;
 }
-function isTypeSystemExtensionNode(node) {
-  return node.kind === Kind.SCHEMA_EXTENSION || isTypeExtensionNode(node);
+function isTypeSystemExtensionNode$1(node) {
+  return node.kind === Kind$1.SCHEMA_EXTENSION || isTypeExtensionNode$1(node);
 }
-function isTypeExtensionNode(node) {
-  return node.kind === Kind.SCALAR_TYPE_EXTENSION || node.kind === Kind.OBJECT_TYPE_EXTENSION || node.kind === Kind.INTERFACE_TYPE_EXTENSION || node.kind === Kind.UNION_TYPE_EXTENSION || node.kind === Kind.ENUM_TYPE_EXTENSION || node.kind === Kind.INPUT_OBJECT_TYPE_EXTENSION;
+function isTypeExtensionNode$1(node) {
+  return node.kind === Kind$1.SCALAR_TYPE_EXTENSION || node.kind === Kind$1.OBJECT_TYPE_EXTENSION || node.kind === Kind$1.INTERFACE_TYPE_EXTENSION || node.kind === Kind$1.UNION_TYPE_EXTENSION || node.kind === Kind$1.ENUM_TYPE_EXTENSION || node.kind === Kind$1.INPUT_OBJECT_TYPE_EXTENSION;
 }
-function ExecutableDefinitionsRule(context) {
+function ExecutableDefinitionsRule$1(context) {
   return {
     Document(node) {
       for (const definition of node.definitions) {
-        if (!isExecutableDefinitionNode(definition)) {
-          const defName = definition.kind === Kind.SCHEMA_DEFINITION || definition.kind === Kind.SCHEMA_EXTENSION ? "schema" : '"' + definition.name.value + '"';
+        if (!isExecutableDefinitionNode$1(definition)) {
+          const defName = definition.kind === Kind$1.SCHEMA_DEFINITION || definition.kind === Kind$1.SCHEMA_EXTENSION ? "schema" : '"' + definition.name.value + '"';
           context.reportError(
-            new GraphQLError(`The ${defName} definition is not executable.`, {
+            new GraphQLError$1(`The ${defName} definition is not executable.`, {
               nodes: definition
             })
           );
@@ -25132,7 +25161,7 @@ function ExecutableDefinitionsRule(context) {
     }
   };
 }
-function FieldsOnCorrectTypeRule(context) {
+function FieldsOnCorrectTypeRule$1(context) {
   return {
     Field(node) {
       const type2 = context.getParentType();
@@ -25141,15 +25170,15 @@ function FieldsOnCorrectTypeRule(context) {
         if (!fieldDef) {
           const schema = context.getSchema();
           const fieldName = node.name.value;
-          let suggestion = didYouMean(
+          let suggestion = didYouMean$1(
             "to use an inline fragment on",
-            getSuggestedTypeNames(schema, type2, fieldName)
+            getSuggestedTypeNames$1(schema, type2, fieldName)
           );
           if (suggestion === "") {
-            suggestion = didYouMean(getSuggestedFieldNames(type2, fieldName));
+            suggestion = didYouMean$1(getSuggestedFieldNames$1(type2, fieldName));
           }
           context.reportError(
-            new GraphQLError(
+            new GraphQLError$1(
               `Cannot query field "${fieldName}" on type "${type2.name}".` + suggestion,
               {
                 nodes: node
@@ -25161,8 +25190,8 @@ function FieldsOnCorrectTypeRule(context) {
     }
   };
 }
-function getSuggestedTypeNames(schema, type2, fieldName) {
-  if (!isAbstractType(type2)) {
+function getSuggestedTypeNames$1(schema, type2, fieldName) {
+  if (!isAbstractType$1(type2)) {
     return [];
   }
   const suggestedTypes = /* @__PURE__ */ new Set();
@@ -25187,32 +25216,32 @@ function getSuggestedTypeNames(schema, type2, fieldName) {
     if (usageCountDiff !== 0) {
       return usageCountDiff;
     }
-    if (isInterfaceType(typeA) && schema.isSubType(typeA, typeB)) {
+    if (isInterfaceType$1(typeA) && schema.isSubType(typeA, typeB)) {
       return -1;
     }
-    if (isInterfaceType(typeB) && schema.isSubType(typeB, typeA)) {
+    if (isInterfaceType$1(typeB) && schema.isSubType(typeB, typeA)) {
       return 1;
     }
-    return naturalCompare(typeA.name, typeB.name);
+    return naturalCompare$1(typeA.name, typeB.name);
   }).map((x2) => x2.name);
 }
-function getSuggestedFieldNames(type2, fieldName) {
-  if (isObjectType(type2) || isInterfaceType(type2)) {
+function getSuggestedFieldNames$1(type2, fieldName) {
+  if (isObjectType$1(type2) || isInterfaceType$1(type2)) {
     const possibleFieldNames = Object.keys(type2.getFields());
-    return suggestionList(fieldName, possibleFieldNames);
+    return suggestionList$1(fieldName, possibleFieldNames);
   }
   return [];
 }
-function FragmentsOnCompositeTypesRule(context) {
+function FragmentsOnCompositeTypesRule$1(context) {
   return {
     InlineFragment(node) {
       const typeCondition = node.typeCondition;
       if (typeCondition) {
-        const type2 = typeFromAST(context.getSchema(), typeCondition);
-        if (type2 && !isCompositeType(type2)) {
-          const typeStr = print(typeCondition);
+        const type2 = typeFromAST$1(context.getSchema(), typeCondition);
+        if (type2 && !isCompositeType$1(type2)) {
+          const typeStr = print$1(typeCondition);
           context.reportError(
-            new GraphQLError(
+            new GraphQLError$1(
               `Fragment cannot condition on non composite type "${typeStr}".`,
               {
                 nodes: typeCondition
@@ -25223,11 +25252,11 @@ function FragmentsOnCompositeTypesRule(context) {
       }
     },
     FragmentDefinition(node) {
-      const type2 = typeFromAST(context.getSchema(), node.typeCondition);
-      if (type2 && !isCompositeType(type2)) {
-        const typeStr = print(node.typeCondition);
+      const type2 = typeFromAST$1(context.getSchema(), node.typeCondition);
+      if (type2 && !isCompositeType$1(type2)) {
+        const typeStr = print$1(node.typeCondition);
         context.reportError(
-          new GraphQLError(
+          new GraphQLError$1(
             `Fragment "${node.name.value}" cannot condition on non composite type "${typeStr}".`,
             {
               nodes: node.typeCondition
@@ -25238,10 +25267,10 @@ function FragmentsOnCompositeTypesRule(context) {
     }
   };
 }
-function KnownArgumentNamesRule(context) {
+function KnownArgumentNamesRule$1(context) {
   return {
     // eslint-disable-next-line new-cap
-    ...KnownArgumentNamesOnDirectivesRule(context),
+    ...KnownArgumentNamesOnDirectivesRule$1(context),
     Argument(argNode) {
       const argDef = context.getArgument();
       const fieldDef = context.getFieldDef();
@@ -25249,10 +25278,10 @@ function KnownArgumentNamesRule(context) {
       if (!argDef && fieldDef && parentType) {
         const argName = argNode.name.value;
         const knownArgsNames = fieldDef.args.map((arg) => arg.name);
-        const suggestions = suggestionList(argName, knownArgsNames);
+        const suggestions = suggestionList$1(argName, knownArgsNames);
         context.reportError(
-          new GraphQLError(
-            `Unknown argument "${argName}" on field "${parentType.name}.${fieldDef.name}".` + didYouMean(suggestions),
+          new GraphQLError$1(
+            `Unknown argument "${argName}" on field "${parentType.name}.${fieldDef.name}".` + didYouMean$1(suggestions),
             {
               nodes: argNode
             }
@@ -25262,16 +25291,16 @@ function KnownArgumentNamesRule(context) {
     }
   };
 }
-function KnownArgumentNamesOnDirectivesRule(context) {
+function KnownArgumentNamesOnDirectivesRule$1(context) {
   const directiveArgs = /* @__PURE__ */ Object.create(null);
   const schema = context.getSchema();
-  const definedDirectives = schema ? schema.getDirectives() : specifiedDirectives;
+  const definedDirectives = schema ? schema.getDirectives() : specifiedDirectives$1;
   for (const directive of definedDirectives) {
     directiveArgs[directive.name] = directive.args.map((arg) => arg.name);
   }
   const astDefinitions = context.getDocument().definitions;
   for (const def of astDefinitions) {
-    if (def.kind === Kind.DIRECTIVE_DEFINITION) {
+    if (def.kind === Kind$1.DIRECTIVE_DEFINITION) {
       var _def$arguments;
       const argsNodes = (_def$arguments = def.arguments) !== null && _def$arguments !== void 0 ? _def$arguments : [];
       directiveArgs[def.name.value] = argsNodes.map((arg) => arg.name.value);
@@ -25285,10 +25314,10 @@ function KnownArgumentNamesOnDirectivesRule(context) {
         for (const argNode of directiveNode.arguments) {
           const argName = argNode.name.value;
           if (!knownArgs.includes(argName)) {
-            const suggestions = suggestionList(argName, knownArgs);
+            const suggestions = suggestionList$1(argName, knownArgs);
             context.reportError(
-              new GraphQLError(
-                `Unknown argument "${argName}" on directive "@${directiveName}".` + didYouMean(suggestions),
+              new GraphQLError$1(
+                `Unknown argument "${argName}" on directive "@${directiveName}".` + didYouMean$1(suggestions),
                 {
                   nodes: argNode
                 }
@@ -25301,16 +25330,16 @@ function KnownArgumentNamesOnDirectivesRule(context) {
     }
   };
 }
-function KnownDirectivesRule(context) {
+function KnownDirectivesRule$1(context) {
   const locationsMap = /* @__PURE__ */ Object.create(null);
   const schema = context.getSchema();
-  const definedDirectives = schema ? schema.getDirectives() : specifiedDirectives;
+  const definedDirectives = schema ? schema.getDirectives() : specifiedDirectives$1;
   for (const directive of definedDirectives) {
     locationsMap[directive.name] = directive.locations;
   }
   const astDefinitions = context.getDocument().definitions;
   for (const def of astDefinitions) {
-    if (def.kind === Kind.DIRECTIVE_DEFINITION) {
+    if (def.kind === Kind$1.DIRECTIVE_DEFINITION) {
       locationsMap[def.name.value] = def.locations.map((name2) => name2.value);
     }
   }
@@ -25320,16 +25349,16 @@ function KnownDirectivesRule(context) {
       const locations = locationsMap[name2];
       if (!locations) {
         context.reportError(
-          new GraphQLError(`Unknown directive "@${name2}".`, {
+          new GraphQLError$1(`Unknown directive "@${name2}".`, {
             nodes: node
           })
         );
         return;
       }
-      const candidateLocation = getDirectiveLocationForASTPath(ancestors);
+      const candidateLocation = getDirectiveLocationForASTPath$1(ancestors);
       if (candidateLocation && !locations.includes(candidateLocation)) {
         context.reportError(
-          new GraphQLError(
+          new GraphQLError$1(
             `Directive "@${name2}" may not be used on ${candidateLocation}.`,
             {
               nodes: node
@@ -25340,76 +25369,76 @@ function KnownDirectivesRule(context) {
     }
   };
 }
-function getDirectiveLocationForASTPath(ancestors) {
+function getDirectiveLocationForASTPath$1(ancestors) {
   const appliedTo = ancestors[ancestors.length - 1];
-  "kind" in appliedTo || invariant$1(false);
+  "kind" in appliedTo || invariant$2(false);
   switch (appliedTo.kind) {
-    case Kind.OPERATION_DEFINITION:
-      return getDirectiveLocationForOperation(appliedTo.operation);
-    case Kind.FIELD:
-      return DirectiveLocation.FIELD;
-    case Kind.FRAGMENT_SPREAD:
-      return DirectiveLocation.FRAGMENT_SPREAD;
-    case Kind.INLINE_FRAGMENT:
-      return DirectiveLocation.INLINE_FRAGMENT;
-    case Kind.FRAGMENT_DEFINITION:
-      return DirectiveLocation.FRAGMENT_DEFINITION;
-    case Kind.VARIABLE_DEFINITION:
-      return DirectiveLocation.VARIABLE_DEFINITION;
-    case Kind.SCHEMA_DEFINITION:
-    case Kind.SCHEMA_EXTENSION:
-      return DirectiveLocation.SCHEMA;
-    case Kind.SCALAR_TYPE_DEFINITION:
-    case Kind.SCALAR_TYPE_EXTENSION:
-      return DirectiveLocation.SCALAR;
-    case Kind.OBJECT_TYPE_DEFINITION:
-    case Kind.OBJECT_TYPE_EXTENSION:
-      return DirectiveLocation.OBJECT;
-    case Kind.FIELD_DEFINITION:
-      return DirectiveLocation.FIELD_DEFINITION;
-    case Kind.INTERFACE_TYPE_DEFINITION:
-    case Kind.INTERFACE_TYPE_EXTENSION:
-      return DirectiveLocation.INTERFACE;
-    case Kind.UNION_TYPE_DEFINITION:
-    case Kind.UNION_TYPE_EXTENSION:
-      return DirectiveLocation.UNION;
-    case Kind.ENUM_TYPE_DEFINITION:
-    case Kind.ENUM_TYPE_EXTENSION:
-      return DirectiveLocation.ENUM;
-    case Kind.ENUM_VALUE_DEFINITION:
-      return DirectiveLocation.ENUM_VALUE;
-    case Kind.INPUT_OBJECT_TYPE_DEFINITION:
-    case Kind.INPUT_OBJECT_TYPE_EXTENSION:
-      return DirectiveLocation.INPUT_OBJECT;
-    case Kind.INPUT_VALUE_DEFINITION: {
+    case Kind$1.OPERATION_DEFINITION:
+      return getDirectiveLocationForOperation$1(appliedTo.operation);
+    case Kind$1.FIELD:
+      return DirectiveLocation$1.FIELD;
+    case Kind$1.FRAGMENT_SPREAD:
+      return DirectiveLocation$1.FRAGMENT_SPREAD;
+    case Kind$1.INLINE_FRAGMENT:
+      return DirectiveLocation$1.INLINE_FRAGMENT;
+    case Kind$1.FRAGMENT_DEFINITION:
+      return DirectiveLocation$1.FRAGMENT_DEFINITION;
+    case Kind$1.VARIABLE_DEFINITION:
+      return DirectiveLocation$1.VARIABLE_DEFINITION;
+    case Kind$1.SCHEMA_DEFINITION:
+    case Kind$1.SCHEMA_EXTENSION:
+      return DirectiveLocation$1.SCHEMA;
+    case Kind$1.SCALAR_TYPE_DEFINITION:
+    case Kind$1.SCALAR_TYPE_EXTENSION:
+      return DirectiveLocation$1.SCALAR;
+    case Kind$1.OBJECT_TYPE_DEFINITION:
+    case Kind$1.OBJECT_TYPE_EXTENSION:
+      return DirectiveLocation$1.OBJECT;
+    case Kind$1.FIELD_DEFINITION:
+      return DirectiveLocation$1.FIELD_DEFINITION;
+    case Kind$1.INTERFACE_TYPE_DEFINITION:
+    case Kind$1.INTERFACE_TYPE_EXTENSION:
+      return DirectiveLocation$1.INTERFACE;
+    case Kind$1.UNION_TYPE_DEFINITION:
+    case Kind$1.UNION_TYPE_EXTENSION:
+      return DirectiveLocation$1.UNION;
+    case Kind$1.ENUM_TYPE_DEFINITION:
+    case Kind$1.ENUM_TYPE_EXTENSION:
+      return DirectiveLocation$1.ENUM;
+    case Kind$1.ENUM_VALUE_DEFINITION:
+      return DirectiveLocation$1.ENUM_VALUE;
+    case Kind$1.INPUT_OBJECT_TYPE_DEFINITION:
+    case Kind$1.INPUT_OBJECT_TYPE_EXTENSION:
+      return DirectiveLocation$1.INPUT_OBJECT;
+    case Kind$1.INPUT_VALUE_DEFINITION: {
       const parentNode = ancestors[ancestors.length - 3];
-      "kind" in parentNode || invariant$1(false);
-      return parentNode.kind === Kind.INPUT_OBJECT_TYPE_DEFINITION ? DirectiveLocation.INPUT_FIELD_DEFINITION : DirectiveLocation.ARGUMENT_DEFINITION;
+      "kind" in parentNode || invariant$2(false);
+      return parentNode.kind === Kind$1.INPUT_OBJECT_TYPE_DEFINITION ? DirectiveLocation$1.INPUT_FIELD_DEFINITION : DirectiveLocation$1.ARGUMENT_DEFINITION;
     }
     // Not reachable, all possible types have been considered.
     /* c8 ignore next */
     default:
-      invariant$1(false, "Unexpected kind: " + inspect(appliedTo.kind));
+      invariant$2(false, "Unexpected kind: " + inspect$1(appliedTo.kind));
   }
 }
-function getDirectiveLocationForOperation(operation) {
+function getDirectiveLocationForOperation$1(operation) {
   switch (operation) {
-    case OperationTypeNode.QUERY:
-      return DirectiveLocation.QUERY;
-    case OperationTypeNode.MUTATION:
-      return DirectiveLocation.MUTATION;
-    case OperationTypeNode.SUBSCRIPTION:
-      return DirectiveLocation.SUBSCRIPTION;
+    case OperationTypeNode$1.QUERY:
+      return DirectiveLocation$1.QUERY;
+    case OperationTypeNode$1.MUTATION:
+      return DirectiveLocation$1.MUTATION;
+    case OperationTypeNode$1.SUBSCRIPTION:
+      return DirectiveLocation$1.SUBSCRIPTION;
   }
 }
-function KnownFragmentNamesRule(context) {
+function KnownFragmentNamesRule$1(context) {
   return {
     FragmentSpread(node) {
       const fragmentName = node.name.value;
       const fragment = context.getFragment(fragmentName);
       if (!fragment) {
         context.reportError(
-          new GraphQLError(`Unknown fragment "${fragmentName}".`, {
+          new GraphQLError$1(`Unknown fragment "${fragmentName}".`, {
             nodes: node.name
           })
         );
@@ -25417,12 +25446,12 @@ function KnownFragmentNamesRule(context) {
     }
   };
 }
-function KnownTypeNamesRule(context) {
+function KnownTypeNamesRule$1(context) {
   const schema = context.getSchema();
   const existingTypesMap = schema ? schema.getTypeMap() : /* @__PURE__ */ Object.create(null);
   const definedTypes = /* @__PURE__ */ Object.create(null);
   for (const def of context.getDocument().definitions) {
-    if (isTypeDefinitionNode(def)) {
+    if (isTypeDefinitionNode$1(def)) {
       definedTypes[def.name.value] = true;
     }
   }
@@ -25436,17 +25465,17 @@ function KnownTypeNamesRule(context) {
       if (!existingTypesMap[typeName] && !definedTypes[typeName]) {
         var _ancestors$;
         const definitionNode = (_ancestors$ = ancestors[2]) !== null && _ancestors$ !== void 0 ? _ancestors$ : parent;
-        const isSDL = definitionNode != null && isSDLNode(definitionNode);
-        if (isSDL && standardTypeNames.includes(typeName)) {
+        const isSDL = definitionNode != null && isSDLNode$1(definitionNode);
+        if (isSDL && standardTypeNames$1.includes(typeName)) {
           return;
         }
-        const suggestedTypes = suggestionList(
+        const suggestedTypes = suggestionList$1(
           typeName,
-          isSDL ? standardTypeNames.concat(typeNames) : typeNames
+          isSDL ? standardTypeNames$1.concat(typeNames) : typeNames
         );
         context.reportError(
-          new GraphQLError(
-            `Unknown type "${typeName}".` + didYouMean(suggestedTypes),
+          new GraphQLError$1(
+            `Unknown type "${typeName}".` + didYouMean$1(suggestedTypes),
             {
               nodes: node
             }
@@ -25456,24 +25485,24 @@ function KnownTypeNamesRule(context) {
     }
   };
 }
-const standardTypeNames = [...specifiedScalarTypes, ...introspectionTypes].map(
+const standardTypeNames$1 = [...specifiedScalarTypes$1, ...introspectionTypes$1].map(
   (type2) => type2.name
 );
-function isSDLNode(value) {
-  return "kind" in value && (isTypeSystemDefinitionNode(value) || isTypeSystemExtensionNode(value));
+function isSDLNode$1(value) {
+  return "kind" in value && (isTypeSystemDefinitionNode$1(value) || isTypeSystemExtensionNode$1(value));
 }
-function LoneAnonymousOperationRule(context) {
+function LoneAnonymousOperationRule$1(context) {
   let operationCount = 0;
   return {
     Document(node) {
       operationCount = node.definitions.filter(
-        (definition) => definition.kind === Kind.OPERATION_DEFINITION
+        (definition) => definition.kind === Kind$1.OPERATION_DEFINITION
       ).length;
     },
     OperationDefinition(node) {
       if (!node.name && operationCount > 1) {
         context.reportError(
-          new GraphQLError(
+          new GraphQLError$1(
             "This anonymous operation must be the only defined operation.",
             {
               nodes: node
@@ -25484,7 +25513,7 @@ function LoneAnonymousOperationRule(context) {
     }
   };
 }
-function LoneSchemaDefinitionRule(context) {
+function LoneSchemaDefinitionRule$1(context) {
   var _ref, _ref2, _oldSchema$astNode;
   const oldSchema = context.getSchema();
   const alreadyDefined = (_ref = (_ref2 = (_oldSchema$astNode = oldSchema === null || oldSchema === void 0 ? void 0 : oldSchema.astNode) !== null && _oldSchema$astNode !== void 0 ? _oldSchema$astNode : oldSchema === null || oldSchema === void 0 ? void 0 : oldSchema.getQueryType()) !== null && _ref2 !== void 0 ? _ref2 : oldSchema === null || oldSchema === void 0 ? void 0 : oldSchema.getMutationType()) !== null && _ref !== void 0 ? _ref : oldSchema === null || oldSchema === void 0 ? void 0 : oldSchema.getSubscriptionType();
@@ -25493,7 +25522,7 @@ function LoneSchemaDefinitionRule(context) {
     SchemaDefinition(node) {
       if (alreadyDefined) {
         context.reportError(
-          new GraphQLError(
+          new GraphQLError$1(
             "Cannot define a new schema within a schema extension.",
             {
               nodes: node
@@ -25504,7 +25533,7 @@ function LoneSchemaDefinitionRule(context) {
       }
       if (schemaDefinitionsCount > 0) {
         context.reportError(
-          new GraphQLError("Must provide only one schema definition.", {
+          new GraphQLError$1("Must provide only one schema definition.", {
             nodes: node
           })
         );
@@ -25513,10 +25542,10 @@ function LoneSchemaDefinitionRule(context) {
     }
   };
 }
-const MAX_LISTS_DEPTH = 3;
-function MaxIntrospectionDepthRule(context) {
+const MAX_LISTS_DEPTH$1 = 3;
+function MaxIntrospectionDepthRule$1(context) {
   function checkDepth(node, visitedFragments = /* @__PURE__ */ Object.create(null), depth = 0) {
-    if (node.kind === Kind.FRAGMENT_SPREAD) {
+    if (node.kind === Kind$1.FRAGMENT_SPREAD) {
       const fragmentName = node.name.value;
       if (visitedFragments[fragmentName] === true) {
         return false;
@@ -25532,10 +25561,10 @@ function MaxIntrospectionDepthRule(context) {
         visitedFragments[fragmentName] = void 0;
       }
     }
-    if (node.kind === Kind.FIELD && // check all introspection lists
+    if (node.kind === Kind$1.FIELD && // check all introspection lists
     (node.name.value === "fields" || node.name.value === "interfaces" || node.name.value === "possibleTypes" || node.name.value === "inputFields")) {
       depth++;
-      if (depth >= MAX_LISTS_DEPTH) {
+      if (depth >= MAX_LISTS_DEPTH$1) {
         return true;
       }
     }
@@ -25553,7 +25582,7 @@ function MaxIntrospectionDepthRule(context) {
       if (node.name.value === "__schema" || node.name.value === "__type") {
         if (checkDepth(node)) {
           context.reportError(
-            new GraphQLError("Maximum introspection depth exceeded", {
+            new GraphQLError$1("Maximum introspection depth exceeded", {
               nodes: [node]
             })
           );
@@ -25563,7 +25592,7 @@ function MaxIntrospectionDepthRule(context) {
     }
   };
 }
-function NoFragmentCyclesRule(context) {
+function NoFragmentCyclesRule$1(context) {
   const visitedFrags = /* @__PURE__ */ Object.create(null);
   const spreadPath = [];
   const spreadPathIndexByName = /* @__PURE__ */ Object.create(null);
@@ -25598,7 +25627,7 @@ function NoFragmentCyclesRule(context) {
         const cyclePath = spreadPath.slice(cycleIndex);
         const viaPath = cyclePath.slice(0, -1).map((s2) => '"' + s2.name.value + '"').join(", ");
         context.reportError(
-          new GraphQLError(
+          new GraphQLError$1(
             `Cannot spread fragment "${spreadName}" within itself` + (viaPath !== "" ? ` via ${viaPath}.` : "."),
             {
               nodes: cyclePath
@@ -25611,7 +25640,7 @@ function NoFragmentCyclesRule(context) {
     spreadPathIndexByName[fragmentName] = void 0;
   }
 }
-function NoUndefinedVariablesRule(context) {
+function NoUndefinedVariablesRule$1(context) {
   let variableNameDefined = /* @__PURE__ */ Object.create(null);
   return {
     OperationDefinition: {
@@ -25624,7 +25653,7 @@ function NoUndefinedVariablesRule(context) {
           const varName = node.name.value;
           if (variableNameDefined[varName] !== true) {
             context.reportError(
-              new GraphQLError(
+              new GraphQLError$1(
                 operation.name ? `Variable "$${varName}" is not defined by operation "${operation.name.value}".` : `Variable "$${varName}" is not defined.`,
                 {
                   nodes: [node, operation]
@@ -25640,7 +25669,7 @@ function NoUndefinedVariablesRule(context) {
     }
   };
 }
-function NoUnusedFragmentsRule(context) {
+function NoUnusedFragmentsRule$1(context) {
   const operationDefs = [];
   const fragmentDefs = [];
   return {
@@ -25666,7 +25695,7 @@ function NoUnusedFragmentsRule(context) {
           const fragName = fragmentDef.name.value;
           if (fragmentNameUsed[fragName] !== true) {
             context.reportError(
-              new GraphQLError(`Fragment "${fragName}" is never used.`, {
+              new GraphQLError$1(`Fragment "${fragName}" is never used.`, {
                 nodes: fragmentDef
               })
             );
@@ -25676,7 +25705,7 @@ function NoUnusedFragmentsRule(context) {
     }
   };
 }
-function NoUnusedVariablesRule(context) {
+function NoUnusedVariablesRule$1(context) {
   let variableDefs = [];
   return {
     OperationDefinition: {
@@ -25693,7 +25722,7 @@ function NoUnusedVariablesRule(context) {
           const variableName = variableDef.variable.name.value;
           if (variableNameUsed[variableName] !== true) {
             context.reportError(
-              new GraphQLError(
+              new GraphQLError$1(
                 operation.name ? `Variable "$${variableName}" is never used in operation "${operation.name.value}".` : `Variable "$${variableName}" is never used.`,
                 {
                   nodes: variableDef
@@ -25709,45 +25738,45 @@ function NoUnusedVariablesRule(context) {
     }
   };
 }
-function sortValueNode(valueNode) {
+function sortValueNode$1(valueNode) {
   switch (valueNode.kind) {
-    case Kind.OBJECT:
-      return { ...valueNode, fields: sortFields(valueNode.fields) };
-    case Kind.LIST:
-      return { ...valueNode, values: valueNode.values.map(sortValueNode) };
-    case Kind.INT:
-    case Kind.FLOAT:
-    case Kind.STRING:
-    case Kind.BOOLEAN:
-    case Kind.NULL:
-    case Kind.ENUM:
-    case Kind.VARIABLE:
+    case Kind$1.OBJECT:
+      return { ...valueNode, fields: sortFields$1(valueNode.fields) };
+    case Kind$1.LIST:
+      return { ...valueNode, values: valueNode.values.map(sortValueNode$1) };
+    case Kind$1.INT:
+    case Kind$1.FLOAT:
+    case Kind$1.STRING:
+    case Kind$1.BOOLEAN:
+    case Kind$1.NULL:
+    case Kind$1.ENUM:
+    case Kind$1.VARIABLE:
       return valueNode;
   }
 }
-function sortFields(fields) {
+function sortFields$1(fields) {
   return fields.map((fieldNode) => ({
     ...fieldNode,
-    value: sortValueNode(fieldNode.value)
+    value: sortValueNode$1(fieldNode.value)
   })).sort(
-    (fieldA, fieldB) => naturalCompare(fieldA.name.value, fieldB.name.value)
+    (fieldA, fieldB) => naturalCompare$1(fieldA.name.value, fieldB.name.value)
   );
 }
-function reasonMessage(reason) {
+function reasonMessage$1(reason) {
   if (Array.isArray(reason)) {
     return reason.map(
-      ([responseName, subReason]) => `subfields "${responseName}" conflict because ` + reasonMessage(subReason)
+      ([responseName, subReason]) => `subfields "${responseName}" conflict because ` + reasonMessage$1(subReason)
     ).join(" and ");
   }
   return reason;
 }
-function OverlappingFieldsCanBeMergedRule(context) {
-  const comparedFieldsAndFragmentPairs = new OrderedPairSet();
-  const comparedFragmentPairs = new PairSet();
+function OverlappingFieldsCanBeMergedRule$1(context) {
+  const comparedFieldsAndFragmentPairs = new OrderedPairSet$1();
+  const comparedFragmentPairs = new PairSet$1();
   const cachedFieldsAndFragmentNames = /* @__PURE__ */ new Map();
   return {
     SelectionSet(selectionSet) {
-      const conflicts = findConflictsWithinSelectionSet(
+      const conflicts = findConflictsWithinSelectionSet$1(
         context,
         cachedFieldsAndFragmentNames,
         comparedFieldsAndFragmentPairs,
@@ -25756,9 +25785,9 @@ function OverlappingFieldsCanBeMergedRule(context) {
         selectionSet
       );
       for (const [[responseName, reason], fields1, fields2] of conflicts) {
-        const reasonMsg = reasonMessage(reason);
+        const reasonMsg = reasonMessage$1(reason);
         context.reportError(
-          new GraphQLError(
+          new GraphQLError$1(
             `Fields "${responseName}" conflict because ${reasonMsg}. Use different aliases on the fields to fetch both if this was intentional.`,
             {
               nodes: fields1.concat(fields2)
@@ -25769,15 +25798,15 @@ function OverlappingFieldsCanBeMergedRule(context) {
     }
   };
 }
-function findConflictsWithinSelectionSet(context, cachedFieldsAndFragmentNames, comparedFieldsAndFragmentPairs, comparedFragmentPairs, parentType, selectionSet) {
+function findConflictsWithinSelectionSet$1(context, cachedFieldsAndFragmentNames, comparedFieldsAndFragmentPairs, comparedFragmentPairs, parentType, selectionSet) {
   const conflicts = [];
-  const [fieldMap, fragmentNames] = getFieldsAndFragmentNames(
+  const [fieldMap, fragmentNames] = getFieldsAndFragmentNames$1(
     context,
     cachedFieldsAndFragmentNames,
     parentType,
     selectionSet
   );
-  collectConflictsWithin(
+  collectConflictsWithin$1(
     context,
     conflicts,
     cachedFieldsAndFragmentNames,
@@ -25787,7 +25816,7 @@ function findConflictsWithinSelectionSet(context, cachedFieldsAndFragmentNames, 
   );
   if (fragmentNames.length !== 0) {
     for (let i2 = 0; i2 < fragmentNames.length; i2++) {
-      collectConflictsBetweenFieldsAndFragment(
+      collectConflictsBetweenFieldsAndFragment$1(
         context,
         conflicts,
         cachedFieldsAndFragmentNames,
@@ -25798,7 +25827,7 @@ function findConflictsWithinSelectionSet(context, cachedFieldsAndFragmentNames, 
         fragmentNames[i2]
       );
       for (let j2 = i2 + 1; j2 < fragmentNames.length; j2++) {
-        collectConflictsBetweenFragments(
+        collectConflictsBetweenFragments$1(
           context,
           conflicts,
           cachedFieldsAndFragmentNames,
@@ -25813,7 +25842,7 @@ function findConflictsWithinSelectionSet(context, cachedFieldsAndFragmentNames, 
   }
   return conflicts;
 }
-function collectConflictsBetweenFieldsAndFragment(context, conflicts, cachedFieldsAndFragmentNames, comparedFieldsAndFragmentPairs, comparedFragmentPairs, areMutuallyExclusive, fieldMap, fragmentName) {
+function collectConflictsBetweenFieldsAndFragment$1(context, conflicts, cachedFieldsAndFragmentNames, comparedFieldsAndFragmentPairs, comparedFragmentPairs, areMutuallyExclusive, fieldMap, fragmentName) {
   if (comparedFieldsAndFragmentPairs.has(
     fieldMap,
     fragmentName,
@@ -25830,7 +25859,7 @@ function collectConflictsBetweenFieldsAndFragment(context, conflicts, cachedFiel
   if (!fragment) {
     return;
   }
-  const [fieldMap2, referencedFragmentNames] = getReferencedFieldsAndFragmentNames(
+  const [fieldMap2, referencedFragmentNames] = getReferencedFieldsAndFragmentNames$1(
     context,
     cachedFieldsAndFragmentNames,
     fragment
@@ -25838,7 +25867,7 @@ function collectConflictsBetweenFieldsAndFragment(context, conflicts, cachedFiel
   if (fieldMap === fieldMap2) {
     return;
   }
-  collectConflictsBetween(
+  collectConflictsBetween$1(
     context,
     conflicts,
     cachedFieldsAndFragmentNames,
@@ -25849,7 +25878,7 @@ function collectConflictsBetweenFieldsAndFragment(context, conflicts, cachedFiel
     fieldMap2
   );
   for (const referencedFragmentName of referencedFragmentNames) {
-    collectConflictsBetweenFieldsAndFragment(
+    collectConflictsBetweenFieldsAndFragment$1(
       context,
       conflicts,
       cachedFieldsAndFragmentNames,
@@ -25861,7 +25890,7 @@ function collectConflictsBetweenFieldsAndFragment(context, conflicts, cachedFiel
     );
   }
 }
-function collectConflictsBetweenFragments(context, conflicts, cachedFieldsAndFragmentNames, comparedFieldsAndFragmentPairs, comparedFragmentPairs, areMutuallyExclusive, fragmentName1, fragmentName2) {
+function collectConflictsBetweenFragments$1(context, conflicts, cachedFieldsAndFragmentNames, comparedFieldsAndFragmentPairs, comparedFragmentPairs, areMutuallyExclusive, fragmentName1, fragmentName2) {
   if (fragmentName1 === fragmentName2) {
     return;
   }
@@ -25878,17 +25907,17 @@ function collectConflictsBetweenFragments(context, conflicts, cachedFieldsAndFra
   if (!fragment1 || !fragment2) {
     return;
   }
-  const [fieldMap1, referencedFragmentNames1] = getReferencedFieldsAndFragmentNames(
+  const [fieldMap1, referencedFragmentNames1] = getReferencedFieldsAndFragmentNames$1(
     context,
     cachedFieldsAndFragmentNames,
     fragment1
   );
-  const [fieldMap2, referencedFragmentNames2] = getReferencedFieldsAndFragmentNames(
+  const [fieldMap2, referencedFragmentNames2] = getReferencedFieldsAndFragmentNames$1(
     context,
     cachedFieldsAndFragmentNames,
     fragment2
   );
-  collectConflictsBetween(
+  collectConflictsBetween$1(
     context,
     conflicts,
     cachedFieldsAndFragmentNames,
@@ -25899,7 +25928,7 @@ function collectConflictsBetweenFragments(context, conflicts, cachedFieldsAndFra
     fieldMap2
   );
   for (const referencedFragmentName2 of referencedFragmentNames2) {
-    collectConflictsBetweenFragments(
+    collectConflictsBetweenFragments$1(
       context,
       conflicts,
       cachedFieldsAndFragmentNames,
@@ -25911,7 +25940,7 @@ function collectConflictsBetweenFragments(context, conflicts, cachedFieldsAndFra
     );
   }
   for (const referencedFragmentName1 of referencedFragmentNames1) {
-    collectConflictsBetweenFragments(
+    collectConflictsBetweenFragments$1(
       context,
       conflicts,
       cachedFieldsAndFragmentNames,
@@ -25923,21 +25952,21 @@ function collectConflictsBetweenFragments(context, conflicts, cachedFieldsAndFra
     );
   }
 }
-function findConflictsBetweenSubSelectionSets(context, cachedFieldsAndFragmentNames, comparedFieldsAndFragmentPairs, comparedFragmentPairs, areMutuallyExclusive, parentType1, selectionSet1, parentType2, selectionSet2) {
+function findConflictsBetweenSubSelectionSets$1(context, cachedFieldsAndFragmentNames, comparedFieldsAndFragmentPairs, comparedFragmentPairs, areMutuallyExclusive, parentType1, selectionSet1, parentType2, selectionSet2) {
   const conflicts = [];
-  const [fieldMap1, fragmentNames1] = getFieldsAndFragmentNames(
+  const [fieldMap1, fragmentNames1] = getFieldsAndFragmentNames$1(
     context,
     cachedFieldsAndFragmentNames,
     parentType1,
     selectionSet1
   );
-  const [fieldMap2, fragmentNames2] = getFieldsAndFragmentNames(
+  const [fieldMap2, fragmentNames2] = getFieldsAndFragmentNames$1(
     context,
     cachedFieldsAndFragmentNames,
     parentType2,
     selectionSet2
   );
-  collectConflictsBetween(
+  collectConflictsBetween$1(
     context,
     conflicts,
     cachedFieldsAndFragmentNames,
@@ -25948,7 +25977,7 @@ function findConflictsBetweenSubSelectionSets(context, cachedFieldsAndFragmentNa
     fieldMap2
   );
   for (const fragmentName2 of fragmentNames2) {
-    collectConflictsBetweenFieldsAndFragment(
+    collectConflictsBetweenFieldsAndFragment$1(
       context,
       conflicts,
       cachedFieldsAndFragmentNames,
@@ -25960,7 +25989,7 @@ function findConflictsBetweenSubSelectionSets(context, cachedFieldsAndFragmentNa
     );
   }
   for (const fragmentName1 of fragmentNames1) {
-    collectConflictsBetweenFieldsAndFragment(
+    collectConflictsBetweenFieldsAndFragment$1(
       context,
       conflicts,
       cachedFieldsAndFragmentNames,
@@ -25973,7 +26002,7 @@ function findConflictsBetweenSubSelectionSets(context, cachedFieldsAndFragmentNa
   }
   for (const fragmentName1 of fragmentNames1) {
     for (const fragmentName2 of fragmentNames2) {
-      collectConflictsBetweenFragments(
+      collectConflictsBetweenFragments$1(
         context,
         conflicts,
         cachedFieldsAndFragmentNames,
@@ -25987,12 +26016,12 @@ function findConflictsBetweenSubSelectionSets(context, cachedFieldsAndFragmentNa
   }
   return conflicts;
 }
-function collectConflictsWithin(context, conflicts, cachedFieldsAndFragmentNames, comparedFieldsAndFragmentPairs, comparedFragmentPairs, fieldMap) {
+function collectConflictsWithin$1(context, conflicts, cachedFieldsAndFragmentNames, comparedFieldsAndFragmentPairs, comparedFragmentPairs, fieldMap) {
   for (const [responseName, fields] of Object.entries(fieldMap)) {
     if (fields.length > 1) {
       for (let i2 = 0; i2 < fields.length; i2++) {
         for (let j2 = i2 + 1; j2 < fields.length; j2++) {
-          const conflict = findConflict(
+          const conflict = findConflict$1(
             context,
             cachedFieldsAndFragmentNames,
             comparedFieldsAndFragmentPairs,
@@ -26011,13 +26040,13 @@ function collectConflictsWithin(context, conflicts, cachedFieldsAndFragmentNames
     }
   }
 }
-function collectConflictsBetween(context, conflicts, cachedFieldsAndFragmentNames, comparedFieldsAndFragmentPairs, comparedFragmentPairs, parentFieldsAreMutuallyExclusive, fieldMap1, fieldMap2) {
+function collectConflictsBetween$1(context, conflicts, cachedFieldsAndFragmentNames, comparedFieldsAndFragmentPairs, comparedFragmentPairs, parentFieldsAreMutuallyExclusive, fieldMap1, fieldMap2) {
   for (const [responseName, fields1] of Object.entries(fieldMap1)) {
     const fields2 = fieldMap2[responseName];
     if (fields2) {
       for (const field1 of fields1) {
         for (const field2 of fields2) {
-          const conflict = findConflict(
+          const conflict = findConflict$1(
             context,
             cachedFieldsAndFragmentNames,
             comparedFieldsAndFragmentPairs,
@@ -26035,10 +26064,10 @@ function collectConflictsBetween(context, conflicts, cachedFieldsAndFragmentName
     }
   }
 }
-function findConflict(context, cachedFieldsAndFragmentNames, comparedFieldsAndFragmentPairs, comparedFragmentPairs, parentFieldsAreMutuallyExclusive, responseName, field1, field2) {
+function findConflict$1(context, cachedFieldsAndFragmentNames, comparedFieldsAndFragmentPairs, comparedFragmentPairs, parentFieldsAreMutuallyExclusive, responseName, field1, field2) {
   const [parentType1, node1, def1] = field1;
   const [parentType2, node2, def2] = field2;
-  const areMutuallyExclusive = parentFieldsAreMutuallyExclusive || parentType1 !== parentType2 && isObjectType(parentType1) && isObjectType(parentType2);
+  const areMutuallyExclusive = parentFieldsAreMutuallyExclusive || parentType1 !== parentType2 && isObjectType$1(parentType1) && isObjectType$1(parentType2);
   if (!areMutuallyExclusive) {
     const name1 = node1.name.value;
     const name2 = node2.name.value;
@@ -26049,7 +26078,7 @@ function findConflict(context, cachedFieldsAndFragmentNames, comparedFieldsAndFr
         [node2]
       ];
     }
-    if (!sameArguments(node1, node2)) {
+    if (!sameArguments$1(node1, node2)) {
       return [
         [responseName, "they have differing arguments"],
         [node1],
@@ -26059,11 +26088,11 @@ function findConflict(context, cachedFieldsAndFragmentNames, comparedFieldsAndFr
   }
   const type1 = def1 === null || def1 === void 0 ? void 0 : def1.type;
   const type2 = def2 === null || def2 === void 0 ? void 0 : def2.type;
-  if (type1 && type2 && doTypesConflict(type1, type2)) {
+  if (type1 && type2 && doTypesConflict$1(type1, type2)) {
     return [
       [
         responseName,
-        `they return conflicting types "${inspect(type1)}" and "${inspect(
+        `they return conflicting types "${inspect$1(type1)}" and "${inspect$1(
           type2
         )}"`
       ],
@@ -26074,21 +26103,21 @@ function findConflict(context, cachedFieldsAndFragmentNames, comparedFieldsAndFr
   const selectionSet1 = node1.selectionSet;
   const selectionSet2 = node2.selectionSet;
   if (selectionSet1 && selectionSet2) {
-    const conflicts = findConflictsBetweenSubSelectionSets(
+    const conflicts = findConflictsBetweenSubSelectionSets$1(
       context,
       cachedFieldsAndFragmentNames,
       comparedFieldsAndFragmentPairs,
       comparedFragmentPairs,
       areMutuallyExclusive,
-      getNamedType(type1),
+      getNamedType$1(type1),
       selectionSet1,
-      getNamedType(type2),
+      getNamedType$1(type2),
       selectionSet2
     );
-    return subfieldConflicts(conflicts, responseName, node1, node2);
+    return subfieldConflicts$1(conflicts, responseName, node1, node2);
   }
 }
-function sameArguments(node1, node2) {
+function sameArguments$1(node1, node2) {
   const args1 = node1.arguments;
   const args2 = node2.arguments;
   if (args1 === void 0 || args1.length === 0) {
@@ -26107,38 +26136,38 @@ function sameArguments(node1, node2) {
     if (value2 === void 0) {
       return false;
     }
-    return stringifyValue(value1) === stringifyValue(value2);
+    return stringifyValue$2(value1) === stringifyValue$2(value2);
   });
 }
-function stringifyValue(value) {
-  return print(sortValueNode(value));
+function stringifyValue$2(value) {
+  return print$1(sortValueNode$1(value));
 }
-function doTypesConflict(type1, type2) {
-  if (isListType(type1)) {
-    return isListType(type2) ? doTypesConflict(type1.ofType, type2.ofType) : true;
+function doTypesConflict$1(type1, type2) {
+  if (isListType$1(type1)) {
+    return isListType$1(type2) ? doTypesConflict$1(type1.ofType, type2.ofType) : true;
   }
-  if (isListType(type2)) {
+  if (isListType$1(type2)) {
     return true;
   }
-  if (isNonNullType(type1)) {
-    return isNonNullType(type2) ? doTypesConflict(type1.ofType, type2.ofType) : true;
+  if (isNonNullType$1(type1)) {
+    return isNonNullType$1(type2) ? doTypesConflict$1(type1.ofType, type2.ofType) : true;
   }
-  if (isNonNullType(type2)) {
+  if (isNonNullType$1(type2)) {
     return true;
   }
-  if (isLeafType(type1) || isLeafType(type2)) {
+  if (isLeafType$1(type1) || isLeafType$1(type2)) {
     return type1 !== type2;
   }
   return false;
 }
-function getFieldsAndFragmentNames(context, cachedFieldsAndFragmentNames, parentType, selectionSet) {
+function getFieldsAndFragmentNames$1(context, cachedFieldsAndFragmentNames, parentType, selectionSet) {
   const cached = cachedFieldsAndFragmentNames.get(selectionSet);
   if (cached) {
     return cached;
   }
   const nodeAndDefs = /* @__PURE__ */ Object.create(null);
   const fragmentNames = /* @__PURE__ */ Object.create(null);
-  _collectFieldsAndFragmentNames(
+  _collectFieldsAndFragmentNames$1(
     context,
     parentType,
     selectionSet,
@@ -26149,26 +26178,26 @@ function getFieldsAndFragmentNames(context, cachedFieldsAndFragmentNames, parent
   cachedFieldsAndFragmentNames.set(selectionSet, result);
   return result;
 }
-function getReferencedFieldsAndFragmentNames(context, cachedFieldsAndFragmentNames, fragment) {
+function getReferencedFieldsAndFragmentNames$1(context, cachedFieldsAndFragmentNames, fragment) {
   const cached = cachedFieldsAndFragmentNames.get(fragment.selectionSet);
   if (cached) {
     return cached;
   }
-  const fragmentType = typeFromAST(context.getSchema(), fragment.typeCondition);
-  return getFieldsAndFragmentNames(
+  const fragmentType = typeFromAST$1(context.getSchema(), fragment.typeCondition);
+  return getFieldsAndFragmentNames$1(
     context,
     cachedFieldsAndFragmentNames,
     fragmentType,
     fragment.selectionSet
   );
 }
-function _collectFieldsAndFragmentNames(context, parentType, selectionSet, nodeAndDefs, fragmentNames) {
+function _collectFieldsAndFragmentNames$1(context, parentType, selectionSet, nodeAndDefs, fragmentNames) {
   for (const selection of selectionSet.selections) {
     switch (selection.kind) {
-      case Kind.FIELD: {
+      case Kind$1.FIELD: {
         const fieldName = selection.name.value;
         let fieldDef;
-        if (isObjectType(parentType) || isInterfaceType(parentType)) {
+        if (isObjectType$1(parentType) || isInterfaceType$1(parentType)) {
           fieldDef = parentType.getFields()[fieldName];
         }
         const responseName = selection.alias ? selection.alias.value : fieldName;
@@ -26178,13 +26207,13 @@ function _collectFieldsAndFragmentNames(context, parentType, selectionSet, nodeA
         nodeAndDefs[responseName].push([parentType, selection, fieldDef]);
         break;
       }
-      case Kind.FRAGMENT_SPREAD:
+      case Kind$1.FRAGMENT_SPREAD:
         fragmentNames[selection.name.value] = true;
         break;
-      case Kind.INLINE_FRAGMENT: {
+      case Kind$1.INLINE_FRAGMENT: {
         const typeCondition = selection.typeCondition;
-        const inlineFragmentType = typeCondition ? typeFromAST(context.getSchema(), typeCondition) : parentType;
-        _collectFieldsAndFragmentNames(
+        const inlineFragmentType = typeCondition ? typeFromAST$1(context.getSchema(), typeCondition) : parentType;
+        _collectFieldsAndFragmentNames$1(
           context,
           inlineFragmentType,
           selection.selectionSet,
@@ -26196,7 +26225,7 @@ function _collectFieldsAndFragmentNames(context, parentType, selectionSet, nodeA
     }
   }
 }
-function subfieldConflicts(conflicts, responseName, node1, node2) {
+function subfieldConflicts$1(conflicts, responseName, node1, node2) {
   if (conflicts.length > 0) {
     return [
       [responseName, conflicts.map(([reason]) => reason)],
@@ -26205,7 +26234,7 @@ function subfieldConflicts(conflicts, responseName, node1, node2) {
     ];
   }
 }
-class OrderedPairSet {
+let OrderedPairSet$1 = class OrderedPairSet {
   constructor() {
     this._data = /* @__PURE__ */ new Map();
   }
@@ -26225,10 +26254,10 @@ class OrderedPairSet {
       map2.set(b2, weaklyPresent);
     }
   }
-}
-class PairSet {
+};
+let PairSet$1 = class PairSet {
   constructor() {
-    this._orderedPairSet = new OrderedPairSet();
+    this._orderedPairSet = new OrderedPairSet$1();
   }
   has(a3, b2, weaklyPresent) {
     return a3 < b2 ? this._orderedPairSet.has(a3, b2, weaklyPresent) : this._orderedPairSet.has(b2, a3, weaklyPresent);
@@ -26240,17 +26269,17 @@ class PairSet {
       this._orderedPairSet.add(b2, a3, weaklyPresent);
     }
   }
-}
-function PossibleFragmentSpreadsRule(context) {
+};
+function PossibleFragmentSpreadsRule$1(context) {
   return {
     InlineFragment(node) {
       const fragType = context.getType();
       const parentType = context.getParentType();
-      if (isCompositeType(fragType) && isCompositeType(parentType) && !doTypesOverlap(context.getSchema(), fragType, parentType)) {
-        const parentTypeStr = inspect(parentType);
-        const fragTypeStr = inspect(fragType);
+      if (isCompositeType$1(fragType) && isCompositeType$1(parentType) && !doTypesOverlap$1(context.getSchema(), fragType, parentType)) {
+        const parentTypeStr = inspect$1(parentType);
+        const fragTypeStr = inspect$1(fragType);
         context.reportError(
-          new GraphQLError(
+          new GraphQLError$1(
             `Fragment cannot be spread here as objects of type "${parentTypeStr}" can never be of type "${fragTypeStr}".`,
             {
               nodes: node
@@ -26261,13 +26290,13 @@ function PossibleFragmentSpreadsRule(context) {
     },
     FragmentSpread(node) {
       const fragName = node.name.value;
-      const fragType = getFragmentType(context, fragName);
+      const fragType = getFragmentType$1(context, fragName);
       const parentType = context.getParentType();
-      if (fragType && parentType && !doTypesOverlap(context.getSchema(), fragType, parentType)) {
-        const parentTypeStr = inspect(parentType);
-        const fragTypeStr = inspect(fragType);
+      if (fragType && parentType && !doTypesOverlap$1(context.getSchema(), fragType, parentType)) {
+        const parentTypeStr = inspect$1(parentType);
+        const fragTypeStr = inspect$1(fragType);
         context.reportError(
-          new GraphQLError(
+          new GraphQLError$1(
             `Fragment "${fragName}" cannot be spread here as objects of type "${parentTypeStr}" can never be of type "${fragTypeStr}".`,
             {
               nodes: node
@@ -26278,20 +26307,20 @@ function PossibleFragmentSpreadsRule(context) {
     }
   };
 }
-function getFragmentType(context, name2) {
+function getFragmentType$1(context, name2) {
   const frag = context.getFragment(name2);
   if (frag) {
-    const type2 = typeFromAST(context.getSchema(), frag.typeCondition);
-    if (isCompositeType(type2)) {
+    const type2 = typeFromAST$1(context.getSchema(), frag.typeCondition);
+    if (isCompositeType$1(type2)) {
       return type2;
     }
   }
 }
-function PossibleTypeExtensionsRule(context) {
+function PossibleTypeExtensionsRule$1(context) {
   const schema = context.getSchema();
   const definedTypes = /* @__PURE__ */ Object.create(null);
   for (const def of context.getDocument().definitions) {
-    if (isTypeDefinitionNode(def)) {
+    if (isTypeDefinitionNode$1(def)) {
       definedTypes[def.name.value] = def;
     }
   }
@@ -26309,15 +26338,15 @@ function PossibleTypeExtensionsRule(context) {
     const existingType = schema === null || schema === void 0 ? void 0 : schema.getType(typeName);
     let expectedKind;
     if (defNode) {
-      expectedKind = defKindToExtKind[defNode.kind];
+      expectedKind = defKindToExtKind$1[defNode.kind];
     } else if (existingType) {
-      expectedKind = typeToExtKind(existingType);
+      expectedKind = typeToExtKind$1(existingType);
     }
     if (expectedKind) {
       if (expectedKind !== node.kind) {
-        const kindStr = extensionKindToTypeName(node.kind);
+        const kindStr = extensionKindToTypeName$1(node.kind);
         context.reportError(
-          new GraphQLError(`Cannot extend non-${kindStr} type "${typeName}".`, {
+          new GraphQLError$1(`Cannot extend non-${kindStr} type "${typeName}".`, {
             nodes: defNode ? [defNode, node] : node
           })
         );
@@ -26327,10 +26356,10 @@ function PossibleTypeExtensionsRule(context) {
         ...definedTypes,
         ...schema === null || schema === void 0 ? void 0 : schema.getTypeMap()
       });
-      const suggestedTypes = suggestionList(typeName, allTypeNames);
+      const suggestedTypes = suggestionList$1(typeName, allTypeNames);
       context.reportError(
-        new GraphQLError(
-          `Cannot extend type "${typeName}" because it is not defined.` + didYouMean(suggestedTypes),
+        new GraphQLError$1(
+          `Cannot extend type "${typeName}" because it is not defined.` + didYouMean$1(suggestedTypes),
           {
             nodes: node.name
           }
@@ -26339,59 +26368,59 @@ function PossibleTypeExtensionsRule(context) {
     }
   }
 }
-const defKindToExtKind = {
-  [Kind.SCALAR_TYPE_DEFINITION]: Kind.SCALAR_TYPE_EXTENSION,
-  [Kind.OBJECT_TYPE_DEFINITION]: Kind.OBJECT_TYPE_EXTENSION,
-  [Kind.INTERFACE_TYPE_DEFINITION]: Kind.INTERFACE_TYPE_EXTENSION,
-  [Kind.UNION_TYPE_DEFINITION]: Kind.UNION_TYPE_EXTENSION,
-  [Kind.ENUM_TYPE_DEFINITION]: Kind.ENUM_TYPE_EXTENSION,
-  [Kind.INPUT_OBJECT_TYPE_DEFINITION]: Kind.INPUT_OBJECT_TYPE_EXTENSION
+const defKindToExtKind$1 = {
+  [Kind$1.SCALAR_TYPE_DEFINITION]: Kind$1.SCALAR_TYPE_EXTENSION,
+  [Kind$1.OBJECT_TYPE_DEFINITION]: Kind$1.OBJECT_TYPE_EXTENSION,
+  [Kind$1.INTERFACE_TYPE_DEFINITION]: Kind$1.INTERFACE_TYPE_EXTENSION,
+  [Kind$1.UNION_TYPE_DEFINITION]: Kind$1.UNION_TYPE_EXTENSION,
+  [Kind$1.ENUM_TYPE_DEFINITION]: Kind$1.ENUM_TYPE_EXTENSION,
+  [Kind$1.INPUT_OBJECT_TYPE_DEFINITION]: Kind$1.INPUT_OBJECT_TYPE_EXTENSION
 };
-function typeToExtKind(type2) {
-  if (isScalarType(type2)) {
-    return Kind.SCALAR_TYPE_EXTENSION;
+function typeToExtKind$1(type2) {
+  if (isScalarType$1(type2)) {
+    return Kind$1.SCALAR_TYPE_EXTENSION;
   }
-  if (isObjectType(type2)) {
-    return Kind.OBJECT_TYPE_EXTENSION;
+  if (isObjectType$1(type2)) {
+    return Kind$1.OBJECT_TYPE_EXTENSION;
   }
-  if (isInterfaceType(type2)) {
-    return Kind.INTERFACE_TYPE_EXTENSION;
+  if (isInterfaceType$1(type2)) {
+    return Kind$1.INTERFACE_TYPE_EXTENSION;
   }
-  if (isUnionType(type2)) {
-    return Kind.UNION_TYPE_EXTENSION;
+  if (isUnionType$1(type2)) {
+    return Kind$1.UNION_TYPE_EXTENSION;
   }
-  if (isEnumType(type2)) {
-    return Kind.ENUM_TYPE_EXTENSION;
+  if (isEnumType$1(type2)) {
+    return Kind$1.ENUM_TYPE_EXTENSION;
   }
-  if (isInputObjectType(type2)) {
-    return Kind.INPUT_OBJECT_TYPE_EXTENSION;
+  if (isInputObjectType$1(type2)) {
+    return Kind$1.INPUT_OBJECT_TYPE_EXTENSION;
   }
-  invariant$1(false, "Unexpected type: " + inspect(type2));
+  invariant$2(false, "Unexpected type: " + inspect$1(type2));
 }
-function extensionKindToTypeName(kind) {
+function extensionKindToTypeName$1(kind) {
   switch (kind) {
-    case Kind.SCALAR_TYPE_EXTENSION:
+    case Kind$1.SCALAR_TYPE_EXTENSION:
       return "scalar";
-    case Kind.OBJECT_TYPE_EXTENSION:
+    case Kind$1.OBJECT_TYPE_EXTENSION:
       return "object";
-    case Kind.INTERFACE_TYPE_EXTENSION:
+    case Kind$1.INTERFACE_TYPE_EXTENSION:
       return "interface";
-    case Kind.UNION_TYPE_EXTENSION:
+    case Kind$1.UNION_TYPE_EXTENSION:
       return "union";
-    case Kind.ENUM_TYPE_EXTENSION:
+    case Kind$1.ENUM_TYPE_EXTENSION:
       return "enum";
-    case Kind.INPUT_OBJECT_TYPE_EXTENSION:
+    case Kind$1.INPUT_OBJECT_TYPE_EXTENSION:
       return "input object";
     // Not reachable. All possible types have been considered
     /* c8 ignore next */
     default:
-      invariant$1(false, "Unexpected kind: " + inspect(kind));
+      invariant$2(false, "Unexpected kind: " + inspect$1(kind));
   }
 }
-function ProvidedRequiredArgumentsRule(context) {
+function ProvidedRequiredArgumentsRule$1(context) {
   return {
     // eslint-disable-next-line new-cap
-    ...ProvidedRequiredArgumentsOnDirectivesRule(context),
+    ...ProvidedRequiredArgumentsOnDirectivesRule$1(context),
     Field: {
       // Validate on leave to allow for deeper errors to appear first.
       leave(fieldNode) {
@@ -26406,10 +26435,10 @@ function ProvidedRequiredArgumentsRule(context) {
           (_fieldNode$arguments = fieldNode.arguments) === null || _fieldNode$arguments === void 0 ? void 0 : _fieldNode$arguments.map((arg) => arg.name.value)
         );
         for (const argDef of fieldDef.args) {
-          if (!providedArgs.has(argDef.name) && isRequiredArgument(argDef)) {
-            const argTypeStr = inspect(argDef.type);
+          if (!providedArgs.has(argDef.name) && isRequiredArgument$1(argDef)) {
+            const argTypeStr = inspect$1(argDef.type);
             context.reportError(
-              new GraphQLError(
+              new GraphQLError$1(
                 `Field "${fieldDef.name}" argument "${argDef.name}" of type "${argTypeStr}" is required, but it was not provided.`,
                 {
                   nodes: fieldNode
@@ -26422,24 +26451,24 @@ function ProvidedRequiredArgumentsRule(context) {
     }
   };
 }
-function ProvidedRequiredArgumentsOnDirectivesRule(context) {
+function ProvidedRequiredArgumentsOnDirectivesRule$1(context) {
   var _schema$getDirectives;
   const requiredArgsMap = /* @__PURE__ */ Object.create(null);
   const schema = context.getSchema();
-  const definedDirectives = (_schema$getDirectives = schema === null || schema === void 0 ? void 0 : schema.getDirectives()) !== null && _schema$getDirectives !== void 0 ? _schema$getDirectives : specifiedDirectives;
+  const definedDirectives = (_schema$getDirectives = schema === null || schema === void 0 ? void 0 : schema.getDirectives()) !== null && _schema$getDirectives !== void 0 ? _schema$getDirectives : specifiedDirectives$1;
   for (const directive of definedDirectives) {
-    requiredArgsMap[directive.name] = keyMap(
-      directive.args.filter(isRequiredArgument),
+    requiredArgsMap[directive.name] = keyMap$1(
+      directive.args.filter(isRequiredArgument$1),
       (arg) => arg.name
     );
   }
   const astDefinitions = context.getDocument().definitions;
   for (const def of astDefinitions) {
-    if (def.kind === Kind.DIRECTIVE_DEFINITION) {
+    if (def.kind === Kind$1.DIRECTIVE_DEFINITION) {
       var _def$arguments;
       const argNodes = (_def$arguments = def.arguments) !== null && _def$arguments !== void 0 ? _def$arguments : [];
-      requiredArgsMap[def.name.value] = keyMap(
-        argNodes.filter(isRequiredArgumentNode),
+      requiredArgsMap[def.name.value] = keyMap$1(
+        argNodes.filter(isRequiredArgumentNode$1),
         (arg) => arg.name.value
       );
     }
@@ -26456,9 +26485,9 @@ function ProvidedRequiredArgumentsOnDirectivesRule(context) {
           const argNodeMap = new Set(argNodes.map((arg) => arg.name.value));
           for (const [argName, argDef] of Object.entries(requiredArgs)) {
             if (!argNodeMap.has(argName)) {
-              const argType = isType(argDef.type) ? inspect(argDef.type) : print(argDef.type);
+              const argType = isType$1(argDef.type) ? inspect$1(argDef.type) : print$1(argDef.type);
               context.reportError(
-                new GraphQLError(
+                new GraphQLError$1(
                   `Directive "@${directiveName}" argument "${argName}" of type "${argType}" is required, but it was not provided.`,
                   {
                     nodes: directiveNode
@@ -26472,21 +26501,21 @@ function ProvidedRequiredArgumentsOnDirectivesRule(context) {
     }
   };
 }
-function isRequiredArgumentNode(arg) {
-  return arg.type.kind === Kind.NON_NULL_TYPE && arg.defaultValue == null;
+function isRequiredArgumentNode$1(arg) {
+  return arg.type.kind === Kind$1.NON_NULL_TYPE && arg.defaultValue == null;
 }
-function ScalarLeafsRule(context) {
+function ScalarLeafsRule$1(context) {
   return {
     Field(node) {
       const type2 = context.getType();
       const selectionSet = node.selectionSet;
       if (type2) {
-        if (isLeafType(getNamedType(type2))) {
+        if (isLeafType$1(getNamedType$1(type2))) {
           if (selectionSet) {
             const fieldName = node.name.value;
-            const typeStr = inspect(type2);
+            const typeStr = inspect$1(type2);
             context.reportError(
-              new GraphQLError(
+              new GraphQLError$1(
                 `Field "${fieldName}" must not have a selection since type "${typeStr}" has no subfields.`,
                 {
                   nodes: selectionSet
@@ -26496,9 +26525,9 @@ function ScalarLeafsRule(context) {
           }
         } else if (!selectionSet) {
           const fieldName = node.name.value;
-          const typeStr = inspect(type2);
+          const typeStr = inspect$1(type2);
           context.reportError(
-            new GraphQLError(
+            new GraphQLError$1(
               `Field "${fieldName}" of type "${typeStr}" must have a selection of subfields. Did you mean "${fieldName} { ... }"?`,
               {
                 nodes: node
@@ -26507,9 +26536,9 @@ function ScalarLeafsRule(context) {
           );
         } else if (selectionSet.selections.length === 0) {
           const fieldName = node.name.value;
-          const typeStr = inspect(type2);
+          const typeStr = inspect$1(type2);
           context.reportError(
-            new GraphQLError(
+            new GraphQLError$1(
               `Field "${fieldName}" of type "${typeStr}" must have at least one field selected.`,
               {
                 nodes: node
@@ -26521,42 +26550,42 @@ function ScalarLeafsRule(context) {
     }
   };
 }
-function valueFromAST(valueNode, type2, variables) {
+function valueFromAST$1(valueNode, type2, variables) {
   if (!valueNode) {
     return;
   }
-  if (valueNode.kind === Kind.VARIABLE) {
+  if (valueNode.kind === Kind$1.VARIABLE) {
     const variableName = valueNode.name.value;
     if (variables == null || variables[variableName] === void 0) {
       return;
     }
     const variableValue = variables[variableName];
-    if (variableValue === null && isNonNullType(type2)) {
+    if (variableValue === null && isNonNullType$1(type2)) {
       return;
     }
     return variableValue;
   }
-  if (isNonNullType(type2)) {
-    if (valueNode.kind === Kind.NULL) {
+  if (isNonNullType$1(type2)) {
+    if (valueNode.kind === Kind$1.NULL) {
       return;
     }
-    return valueFromAST(valueNode, type2.ofType, variables);
+    return valueFromAST$1(valueNode, type2.ofType, variables);
   }
-  if (valueNode.kind === Kind.NULL) {
+  if (valueNode.kind === Kind$1.NULL) {
     return null;
   }
-  if (isListType(type2)) {
+  if (isListType$1(type2)) {
     const itemType = type2.ofType;
-    if (valueNode.kind === Kind.LIST) {
+    if (valueNode.kind === Kind$1.LIST) {
       const coercedValues = [];
       for (const itemNode of valueNode.values) {
-        if (isMissingVariable(itemNode, variables)) {
-          if (isNonNullType(itemType)) {
+        if (isMissingVariable$1(itemNode, variables)) {
+          if (isNonNullType$1(itemType)) {
             return;
           }
           coercedValues.push(null);
         } else {
-          const itemValue = valueFromAST(itemNode, itemType, variables);
+          const itemValue = valueFromAST$1(itemNode, itemType, variables);
           if (itemValue === void 0) {
             return;
           }
@@ -26565,29 +26594,29 @@ function valueFromAST(valueNode, type2, variables) {
       }
       return coercedValues;
     }
-    const coercedValue = valueFromAST(valueNode, itemType, variables);
+    const coercedValue = valueFromAST$1(valueNode, itemType, variables);
     if (coercedValue === void 0) {
       return;
     }
     return [coercedValue];
   }
-  if (isInputObjectType(type2)) {
-    if (valueNode.kind !== Kind.OBJECT) {
+  if (isInputObjectType$1(type2)) {
+    if (valueNode.kind !== Kind$1.OBJECT) {
       return;
     }
     const coercedObj = /* @__PURE__ */ Object.create(null);
-    const fieldNodes = keyMap(valueNode.fields, (field) => field.name.value);
+    const fieldNodes = keyMap$1(valueNode.fields, (field) => field.name.value);
     for (const field of Object.values(type2.getFields())) {
       const fieldNode = fieldNodes[field.name];
-      if (!fieldNode || isMissingVariable(fieldNode.value, variables)) {
+      if (!fieldNode || isMissingVariable$1(fieldNode.value, variables)) {
         if (field.defaultValue !== void 0) {
           coercedObj[field.name] = field.defaultValue;
-        } else if (isNonNullType(field.type)) {
+        } else if (isNonNullType$1(field.type)) {
           return;
         }
         continue;
       }
-      const fieldValue = valueFromAST(fieldNode.value, field.type, variables);
+      const fieldValue = valueFromAST$1(fieldNode.value, field.type, variables);
       if (fieldValue === void 0) {
         return;
       }
@@ -26604,7 +26633,7 @@ function valueFromAST(valueNode, type2, variables) {
     }
     return coercedObj;
   }
-  if (isLeafType(type2)) {
+  if (isLeafType$1(type2)) {
     let result;
     try {
       result = type2.parseLiteral(valueNode, variables);
@@ -26616,16 +26645,16 @@ function valueFromAST(valueNode, type2, variables) {
     }
     return result;
   }
-  invariant$1(false, "Unexpected input type: " + inspect(type2));
+  invariant$2(false, "Unexpected input type: " + inspect$1(type2));
 }
-function isMissingVariable(valueNode, variables) {
-  return valueNode.kind === Kind.VARIABLE && (variables == null || variables[valueNode.name.value] === void 0);
+function isMissingVariable$1(valueNode, variables) {
+  return valueNode.kind === Kind$1.VARIABLE && (variables == null || variables[valueNode.name.value] === void 0);
 }
-function getArgumentValues(def, node, variableValues) {
+function getArgumentValues$1(def, node, variableValues) {
   var _node$arguments;
   const coercedValues = {};
   const argumentNodes = (_node$arguments = node.arguments) !== null && _node$arguments !== void 0 ? _node$arguments : [];
-  const argNodeMap = keyMap(argumentNodes, (arg) => arg.name.value);
+  const argNodeMap = keyMap$1(argumentNodes, (arg) => arg.name.value);
   for (const argDef of def.args) {
     const name2 = argDef.name;
     const argType = argDef.type;
@@ -26633,9 +26662,9 @@ function getArgumentValues(def, node, variableValues) {
     if (!argumentNode) {
       if (argDef.defaultValue !== void 0) {
         coercedValues[name2] = argDef.defaultValue;
-      } else if (isNonNullType(argType)) {
-        throw new GraphQLError(
-          `Argument "${name2}" of required type "${inspect(argType)}" was not provided.`,
+      } else if (isNonNullType$1(argType)) {
+        throw new GraphQLError$1(
+          `Argument "${name2}" of required type "${inspect$1(argType)}" was not provided.`,
           {
             nodes: node
           }
@@ -26644,15 +26673,15 @@ function getArgumentValues(def, node, variableValues) {
       continue;
     }
     const valueNode = argumentNode.value;
-    let isNull = valueNode.kind === Kind.NULL;
-    if (valueNode.kind === Kind.VARIABLE) {
+    let isNull = valueNode.kind === Kind$1.NULL;
+    if (valueNode.kind === Kind$1.VARIABLE) {
       const variableName = valueNode.name.value;
-      if (variableValues == null || !hasOwnProperty(variableValues, variableName)) {
+      if (variableValues == null || !hasOwnProperty$1(variableValues, variableName)) {
         if (argDef.defaultValue !== void 0) {
           coercedValues[name2] = argDef.defaultValue;
-        } else if (isNonNullType(argType)) {
-          throw new GraphQLError(
-            `Argument "${name2}" of required type "${inspect(argType)}" was provided the variable "$${variableName}" which was not provided a runtime value.`,
+        } else if (isNonNullType$1(argType)) {
+          throw new GraphQLError$1(
+            `Argument "${name2}" of required type "${inspect$1(argType)}" was provided the variable "$${variableName}" which was not provided a runtime value.`,
             {
               nodes: valueNode
             }
@@ -26662,18 +26691,18 @@ function getArgumentValues(def, node, variableValues) {
       }
       isNull = variableValues[variableName] == null;
     }
-    if (isNull && isNonNullType(argType)) {
-      throw new GraphQLError(
-        `Argument "${name2}" of non-null type "${inspect(argType)}" must not be null.`,
+    if (isNull && isNonNullType$1(argType)) {
+      throw new GraphQLError$1(
+        `Argument "${name2}" of non-null type "${inspect$1(argType)}" must not be null.`,
         {
           nodes: valueNode
         }
       );
     }
-    const coercedValue = valueFromAST(valueNode, argType, variableValues);
+    const coercedValue = valueFromAST$1(valueNode, argType, variableValues);
     if (coercedValue === void 0) {
-      throw new GraphQLError(
-        `Argument "${name2}" has invalid value ${print(valueNode)}.`,
+      throw new GraphQLError$1(
+        `Argument "${name2}" has invalid value ${print$1(valueNode)}.`,
         {
           nodes: valueNode
         }
@@ -26683,21 +26712,21 @@ function getArgumentValues(def, node, variableValues) {
   }
   return coercedValues;
 }
-function getDirectiveValues(directiveDef, node, variableValues) {
+function getDirectiveValues$1(directiveDef, node, variableValues) {
   var _node$directives;
   const directiveNode = (_node$directives = node.directives) === null || _node$directives === void 0 ? void 0 : _node$directives.find(
     (directive) => directive.name.value === directiveDef.name
   );
   if (directiveNode) {
-    return getArgumentValues(directiveDef, directiveNode, variableValues);
+    return getArgumentValues$1(directiveDef, directiveNode, variableValues);
   }
 }
-function hasOwnProperty(obj, prop) {
+function hasOwnProperty$1(obj, prop) {
   return Object.prototype.hasOwnProperty.call(obj, prop);
 }
-function collectFields(schema, fragments, variableValues, runtimeType, selectionSet) {
+function collectFields$1(schema, fragments, variableValues, runtimeType, selectionSet) {
   const fields = /* @__PURE__ */ new Map();
-  collectFieldsImpl(
+  collectFieldsImpl$1(
     schema,
     fragments,
     variableValues,
@@ -26708,14 +26737,14 @@ function collectFields(schema, fragments, variableValues, runtimeType, selection
   );
   return fields;
 }
-function collectFieldsImpl(schema, fragments, variableValues, runtimeType, selectionSet, fields, visitedFragmentNames) {
+function collectFieldsImpl$1(schema, fragments, variableValues, runtimeType, selectionSet, fields, visitedFragmentNames) {
   for (const selection of selectionSet.selections) {
     switch (selection.kind) {
-      case Kind.FIELD: {
-        if (!shouldIncludeNode(variableValues, selection)) {
+      case Kind$1.FIELD: {
+        if (!shouldIncludeNode$1(variableValues, selection)) {
           continue;
         }
-        const name2 = getFieldEntryKey(selection);
+        const name2 = getFieldEntryKey$1(selection);
         const fieldList = fields.get(name2);
         if (fieldList !== void 0) {
           fieldList.push(selection);
@@ -26724,11 +26753,11 @@ function collectFieldsImpl(schema, fragments, variableValues, runtimeType, selec
         }
         break;
       }
-      case Kind.INLINE_FRAGMENT: {
-        if (!shouldIncludeNode(variableValues, selection) || !doesFragmentConditionMatch(schema, selection, runtimeType)) {
+      case Kind$1.INLINE_FRAGMENT: {
+        if (!shouldIncludeNode$1(variableValues, selection) || !doesFragmentConditionMatch$1(schema, selection, runtimeType)) {
           continue;
         }
-        collectFieldsImpl(
+        collectFieldsImpl$1(
           schema,
           fragments,
           variableValues,
@@ -26739,17 +26768,17 @@ function collectFieldsImpl(schema, fragments, variableValues, runtimeType, selec
         );
         break;
       }
-      case Kind.FRAGMENT_SPREAD: {
+      case Kind$1.FRAGMENT_SPREAD: {
         const fragName = selection.name.value;
-        if (visitedFragmentNames.has(fragName) || !shouldIncludeNode(variableValues, selection)) {
+        if (visitedFragmentNames.has(fragName) || !shouldIncludeNode$1(variableValues, selection)) {
           continue;
         }
         visitedFragmentNames.add(fragName);
         const fragment = fragments[fragName];
-        if (!fragment || !doesFragmentConditionMatch(schema, fragment, runtimeType)) {
+        if (!fragment || !doesFragmentConditionMatch$1(schema, fragment, runtimeType)) {
           continue;
         }
-        collectFieldsImpl(
+        collectFieldsImpl$1(
           schema,
           fragments,
           variableValues,
@@ -26763,13 +26792,13 @@ function collectFieldsImpl(schema, fragments, variableValues, runtimeType, selec
     }
   }
 }
-function shouldIncludeNode(variableValues, node) {
-  const skip = getDirectiveValues(GraphQLSkipDirective, node, variableValues);
+function shouldIncludeNode$1(variableValues, node) {
+  const skip = getDirectiveValues$1(GraphQLSkipDirective$1, node, variableValues);
   if ((skip === null || skip === void 0 ? void 0 : skip.if) === true) {
     return false;
   }
-  const include = getDirectiveValues(
-    GraphQLIncludeDirective,
+  const include = getDirectiveValues$1(
+    GraphQLIncludeDirective$1,
     node,
     variableValues
   );
@@ -26778,24 +26807,24 @@ function shouldIncludeNode(variableValues, node) {
   }
   return true;
 }
-function doesFragmentConditionMatch(schema, fragment, type2) {
+function doesFragmentConditionMatch$1(schema, fragment, type2) {
   const typeConditionNode = fragment.typeCondition;
   if (!typeConditionNode) {
     return true;
   }
-  const conditionalType = typeFromAST(schema, typeConditionNode);
+  const conditionalType = typeFromAST$1(schema, typeConditionNode);
   if (conditionalType === type2) {
     return true;
   }
-  if (isAbstractType(conditionalType)) {
+  if (isAbstractType$1(conditionalType)) {
     return schema.isSubType(conditionalType, type2);
   }
   return false;
 }
-function getFieldEntryKey(node) {
+function getFieldEntryKey$1(node) {
   return node.alias ? node.alias.value : node.name.value;
 }
-function SingleFieldSubscriptionsRule(context) {
+function SingleFieldSubscriptionsRule$1(context) {
   return {
     OperationDefinition(node) {
       if (node.operation === "subscription") {
@@ -26807,11 +26836,11 @@ function SingleFieldSubscriptionsRule(context) {
           const document2 = context.getDocument();
           const fragments = /* @__PURE__ */ Object.create(null);
           for (const definition of document2.definitions) {
-            if (definition.kind === Kind.FRAGMENT_DEFINITION) {
+            if (definition.kind === Kind$1.FRAGMENT_DEFINITION) {
               fragments[definition.name.value] = definition;
             }
           }
-          const fields = collectFields(
+          const fields = collectFields$1(
             schema,
             fragments,
             variableValues,
@@ -26823,7 +26852,7 @@ function SingleFieldSubscriptionsRule(context) {
             const extraFieldSelectionLists = fieldSelectionLists.slice(1);
             const extraFieldSelections = extraFieldSelectionLists.flat();
             context.reportError(
-              new GraphQLError(
+              new GraphQLError$1(
                 operationName != null ? `Subscription "${operationName}" must select only one top level field.` : "Anonymous Subscription must select only one top level field.",
                 {
                   nodes: extraFieldSelections
@@ -26836,7 +26865,7 @@ function SingleFieldSubscriptionsRule(context) {
             const fieldName = field.name.value;
             if (fieldName.startsWith("__")) {
               context.reportError(
-                new GraphQLError(
+                new GraphQLError$1(
                   operationName != null ? `Subscription "${operationName}" must not select an introspection top level field.` : "Anonymous Subscription must not select an introspection top level field.",
                   {
                     nodes: fieldNodes
@@ -26850,7 +26879,7 @@ function SingleFieldSubscriptionsRule(context) {
     }
   };
 }
-function groupBy(list2, keyFn) {
+function groupBy$1(list2, keyFn) {
   const result = /* @__PURE__ */ new Map();
   for (const item of list2) {
     const key = keyFn(item);
@@ -26863,7 +26892,7 @@ function groupBy(list2, keyFn) {
   }
   return result;
 }
-function UniqueArgumentDefinitionNamesRule(context) {
+function UniqueArgumentDefinitionNamesRule$1(context) {
   return {
     DirectiveDefinition(directiveNode) {
       var _directiveNode$argume;
@@ -26888,11 +26917,11 @@ function UniqueArgumentDefinitionNamesRule(context) {
     return false;
   }
   function checkArgUniqueness(parentName, argumentNodes) {
-    const seenArgs = groupBy(argumentNodes, (arg) => arg.name.value);
+    const seenArgs = groupBy$1(argumentNodes, (arg) => arg.name.value);
     for (const [argName, argNodes] of seenArgs) {
       if (argNodes.length > 1) {
         context.reportError(
-          new GraphQLError(
+          new GraphQLError$1(
             `Argument "${parentName}(${argName}:)" can only be defined once.`,
             {
               nodes: argNodes.map((node) => node.name)
@@ -26904,7 +26933,7 @@ function UniqueArgumentDefinitionNamesRule(context) {
     return false;
   }
 }
-function UniqueArgumentNamesRule(context) {
+function UniqueArgumentNamesRule$1(context) {
   return {
     Field: checkArgUniqueness,
     Directive: checkArgUniqueness
@@ -26912,11 +26941,11 @@ function UniqueArgumentNamesRule(context) {
   function checkArgUniqueness(parentNode) {
     var _parentNode$arguments;
     const argumentNodes = (_parentNode$arguments = parentNode.arguments) !== null && _parentNode$arguments !== void 0 ? _parentNode$arguments : [];
-    const seenArgs = groupBy(argumentNodes, (arg) => arg.name.value);
+    const seenArgs = groupBy$1(argumentNodes, (arg) => arg.name.value);
     for (const [argName, argNodes] of seenArgs) {
       if (argNodes.length > 1) {
         context.reportError(
-          new GraphQLError(
+          new GraphQLError$1(
             `There can be only one argument named "${argName}".`,
             {
               nodes: argNodes.map((node) => node.name)
@@ -26927,7 +26956,7 @@ function UniqueArgumentNamesRule(context) {
     }
   }
 }
-function UniqueDirectiveNamesRule(context) {
+function UniqueDirectiveNamesRule$1(context) {
   const knownDirectiveNames = /* @__PURE__ */ Object.create(null);
   const schema = context.getSchema();
   return {
@@ -26935,7 +26964,7 @@ function UniqueDirectiveNamesRule(context) {
       const directiveName = node.name.value;
       if (schema !== null && schema !== void 0 && schema.getDirective(directiveName)) {
         context.reportError(
-          new GraphQLError(
+          new GraphQLError$1(
             `Directive "@${directiveName}" already exists in the schema. It cannot be redefined.`,
             {
               nodes: node.name
@@ -26946,7 +26975,7 @@ function UniqueDirectiveNamesRule(context) {
       }
       if (knownDirectiveNames[directiveName]) {
         context.reportError(
-          new GraphQLError(
+          new GraphQLError$1(
             `There can be only one directive named "@${directiveName}".`,
             {
               nodes: [knownDirectiveNames[directiveName], node.name]
@@ -26960,16 +26989,16 @@ function UniqueDirectiveNamesRule(context) {
     }
   };
 }
-function UniqueDirectivesPerLocationRule(context) {
+function UniqueDirectivesPerLocationRule$1(context) {
   const uniqueDirectiveMap = /* @__PURE__ */ Object.create(null);
   const schema = context.getSchema();
-  const definedDirectives = schema ? schema.getDirectives() : specifiedDirectives;
+  const definedDirectives = schema ? schema.getDirectives() : specifiedDirectives$1;
   for (const directive of definedDirectives) {
     uniqueDirectiveMap[directive.name] = !directive.isRepeatable;
   }
   const astDefinitions = context.getDocument().definitions;
   for (const def of astDefinitions) {
-    if (def.kind === Kind.DIRECTIVE_DEFINITION) {
+    if (def.kind === Kind$1.DIRECTIVE_DEFINITION) {
       uniqueDirectiveMap[def.name.value] = !def.repeatable;
     }
   }
@@ -26984,9 +27013,9 @@ function UniqueDirectivesPerLocationRule(context) {
         return;
       }
       let seenDirectives;
-      if (node.kind === Kind.SCHEMA_DEFINITION || node.kind === Kind.SCHEMA_EXTENSION) {
+      if (node.kind === Kind$1.SCHEMA_DEFINITION || node.kind === Kind$1.SCHEMA_EXTENSION) {
         seenDirectives = schemaDirectives;
-      } else if (isTypeDefinitionNode(node) || isTypeExtensionNode(node)) {
+      } else if (isTypeDefinitionNode$1(node) || isTypeExtensionNode$1(node)) {
         const typeName = node.name.value;
         seenDirectives = typeDirectivesMap[typeName];
         if (seenDirectives === void 0) {
@@ -27000,7 +27029,7 @@ function UniqueDirectivesPerLocationRule(context) {
         if (uniqueDirectiveMap[directiveName]) {
           if (seenDirectives[directiveName]) {
             context.reportError(
-              new GraphQLError(
+              new GraphQLError$1(
                 `The directive "@${directiveName}" can only be used once at this location.`,
                 {
                   nodes: [seenDirectives[directiveName], directive]
@@ -27015,7 +27044,7 @@ function UniqueDirectivesPerLocationRule(context) {
     }
   };
 }
-function UniqueEnumValueNamesRule(context) {
+function UniqueEnumValueNamesRule$1(context) {
   const schema = context.getSchema();
   const existingTypeMap = schema ? schema.getTypeMap() : /* @__PURE__ */ Object.create(null);
   const knownValueNames = /* @__PURE__ */ Object.create(null);
@@ -27034,9 +27063,9 @@ function UniqueEnumValueNamesRule(context) {
     for (const valueDef of valueNodes) {
       const valueName = valueDef.name.value;
       const existingType = existingTypeMap[typeName];
-      if (isEnumType(existingType) && existingType.getValue(valueName)) {
+      if (isEnumType$1(existingType) && existingType.getValue(valueName)) {
         context.reportError(
-          new GraphQLError(
+          new GraphQLError$1(
             `Enum value "${typeName}.${valueName}" already exists in the schema. It cannot also be defined in this type extension.`,
             {
               nodes: valueDef.name
@@ -27045,7 +27074,7 @@ function UniqueEnumValueNamesRule(context) {
         );
       } else if (valueNames[valueName]) {
         context.reportError(
-          new GraphQLError(
+          new GraphQLError$1(
             `Enum value "${typeName}.${valueName}" can only be defined once.`,
             {
               nodes: [valueNames[valueName], valueDef.name]
@@ -27059,7 +27088,7 @@ function UniqueEnumValueNamesRule(context) {
     return false;
   }
 }
-function UniqueFieldDefinitionNamesRule(context) {
+function UniqueFieldDefinitionNamesRule$1(context) {
   const schema = context.getSchema();
   const existingTypeMap = schema ? schema.getTypeMap() : /* @__PURE__ */ Object.create(null);
   const knownFieldNames = /* @__PURE__ */ Object.create(null);
@@ -27081,9 +27110,9 @@ function UniqueFieldDefinitionNamesRule(context) {
     const fieldNames = knownFieldNames[typeName];
     for (const fieldDef of fieldNodes) {
       const fieldName = fieldDef.name.value;
-      if (hasField(existingTypeMap[typeName], fieldName)) {
+      if (hasField$1(existingTypeMap[typeName], fieldName)) {
         context.reportError(
-          new GraphQLError(
+          new GraphQLError$1(
             `Field "${typeName}.${fieldName}" already exists in the schema. It cannot also be defined in this type extension.`,
             {
               nodes: fieldDef.name
@@ -27092,7 +27121,7 @@ function UniqueFieldDefinitionNamesRule(context) {
         );
       } else if (fieldNames[fieldName]) {
         context.reportError(
-          new GraphQLError(
+          new GraphQLError$1(
             `Field "${typeName}.${fieldName}" can only be defined once.`,
             {
               nodes: [fieldNames[fieldName], fieldDef.name]
@@ -27106,13 +27135,13 @@ function UniqueFieldDefinitionNamesRule(context) {
     return false;
   }
 }
-function hasField(type2, fieldName) {
-  if (isObjectType(type2) || isInterfaceType(type2) || isInputObjectType(type2)) {
+function hasField$1(type2, fieldName) {
+  if (isObjectType$1(type2) || isInterfaceType$1(type2) || isInputObjectType$1(type2)) {
     return type2.getFields()[fieldName] != null;
   }
   return false;
 }
-function UniqueFragmentNamesRule(context) {
+function UniqueFragmentNamesRule$1(context) {
   const knownFragmentNames = /* @__PURE__ */ Object.create(null);
   return {
     OperationDefinition: () => false,
@@ -27120,7 +27149,7 @@ function UniqueFragmentNamesRule(context) {
       const fragmentName = node.name.value;
       if (knownFragmentNames[fragmentName]) {
         context.reportError(
-          new GraphQLError(
+          new GraphQLError$1(
             `There can be only one fragment named "${fragmentName}".`,
             {
               nodes: [knownFragmentNames[fragmentName], node.name]
@@ -27134,7 +27163,7 @@ function UniqueFragmentNamesRule(context) {
     }
   };
 }
-function UniqueInputFieldNamesRule(context) {
+function UniqueInputFieldNamesRule$1(context) {
   const knownNameStack = [];
   let knownNames = /* @__PURE__ */ Object.create(null);
   return {
@@ -27145,7 +27174,7 @@ function UniqueInputFieldNamesRule(context) {
       },
       leave() {
         const prevKnownNames = knownNameStack.pop();
-        prevKnownNames || invariant$1(false);
+        prevKnownNames || invariant$2(false);
         knownNames = prevKnownNames;
       }
     },
@@ -27153,7 +27182,7 @@ function UniqueInputFieldNamesRule(context) {
       const fieldName = node.name.value;
       if (knownNames[fieldName]) {
         context.reportError(
-          new GraphQLError(
+          new GraphQLError$1(
             `There can be only one input field named "${fieldName}".`,
             {
               nodes: [knownNames[fieldName], node.name]
@@ -27166,7 +27195,7 @@ function UniqueInputFieldNamesRule(context) {
     }
   };
 }
-function UniqueOperationNamesRule(context) {
+function UniqueOperationNamesRule$1(context) {
   const knownOperationNames = /* @__PURE__ */ Object.create(null);
   return {
     OperationDefinition(node) {
@@ -27174,7 +27203,7 @@ function UniqueOperationNamesRule(context) {
       if (operationName) {
         if (knownOperationNames[operationName.value]) {
           context.reportError(
-            new GraphQLError(
+            new GraphQLError$1(
               `There can be only one operation named "${operationName.value}".`,
               {
                 nodes: [
@@ -27193,7 +27222,7 @@ function UniqueOperationNamesRule(context) {
     FragmentDefinition: () => false
   };
 }
-function UniqueOperationTypesRule(context) {
+function UniqueOperationTypesRule$1(context) {
   const schema = context.getSchema();
   const definedOperationTypes = /* @__PURE__ */ Object.create(null);
   const existingOperationTypes = schema ? {
@@ -27213,7 +27242,7 @@ function UniqueOperationTypesRule(context) {
       const alreadyDefinedOperationType = definedOperationTypes[operation];
       if (existingOperationTypes[operation]) {
         context.reportError(
-          new GraphQLError(
+          new GraphQLError$1(
             `Type for ${operation} already defined in the schema. It cannot be redefined.`,
             {
               nodes: operationType
@@ -27222,7 +27251,7 @@ function UniqueOperationTypesRule(context) {
         );
       } else if (alreadyDefinedOperationType) {
         context.reportError(
-          new GraphQLError(
+          new GraphQLError$1(
             `There can be only one ${operation} type in schema.`,
             {
               nodes: [alreadyDefinedOperationType, operationType]
@@ -27236,7 +27265,7 @@ function UniqueOperationTypesRule(context) {
     return false;
   }
 }
-function UniqueTypeNamesRule(context) {
+function UniqueTypeNamesRule$1(context) {
   const knownTypeNames = /* @__PURE__ */ Object.create(null);
   const schema = context.getSchema();
   return {
@@ -27251,7 +27280,7 @@ function UniqueTypeNamesRule(context) {
     const typeName = node.name.value;
     if (schema !== null && schema !== void 0 && schema.getType(typeName)) {
       context.reportError(
-        new GraphQLError(
+        new GraphQLError$1(
           `Type "${typeName}" already exists in the schema. It cannot also be defined in this type definition.`,
           {
             nodes: node.name
@@ -27262,7 +27291,7 @@ function UniqueTypeNamesRule(context) {
     }
     if (knownTypeNames[typeName]) {
       context.reportError(
-        new GraphQLError(`There can be only one type named "${typeName}".`, {
+        new GraphQLError$1(`There can be only one type named "${typeName}".`, {
           nodes: [knownTypeNames[typeName], node.name]
         })
       );
@@ -27272,19 +27301,19 @@ function UniqueTypeNamesRule(context) {
     return false;
   }
 }
-function UniqueVariableNamesRule(context) {
+function UniqueVariableNamesRule$1(context) {
   return {
     OperationDefinition(operationNode) {
       var _operationNode$variab;
       const variableDefinitions = (_operationNode$variab = operationNode.variableDefinitions) !== null && _operationNode$variab !== void 0 ? _operationNode$variab : [];
-      const seenVariableDefinitions = groupBy(
+      const seenVariableDefinitions = groupBy$1(
         variableDefinitions,
         (node) => node.variable.name.value
       );
       for (const [variableName, variableNodes] of seenVariableDefinitions) {
         if (variableNodes.length > 1) {
           context.reportError(
-            new GraphQLError(
+            new GraphQLError$1(
               `There can be only one variable named "$${variableName}".`,
               {
                 nodes: variableNodes.map((node) => node.variable.name)
@@ -27296,7 +27325,7 @@ function UniqueVariableNamesRule(context) {
     }
   };
 }
-function ValuesOfCorrectTypeRule(context) {
+function ValuesOfCorrectTypeRule$1(context) {
   let variableDefinitions = {};
   return {
     OperationDefinition: {
@@ -27308,25 +27337,25 @@ function ValuesOfCorrectTypeRule(context) {
       variableDefinitions[definition.variable.name.value] = definition;
     },
     ListValue(node) {
-      const type2 = getNullableType(context.getParentInputType());
-      if (!isListType(type2)) {
-        isValidValueNode(context, node);
+      const type2 = getNullableType$1(context.getParentInputType());
+      if (!isListType$1(type2)) {
+        isValidValueNode$1(context, node);
         return false;
       }
     },
     ObjectValue(node) {
-      const type2 = getNamedType(context.getInputType());
-      if (!isInputObjectType(type2)) {
-        isValidValueNode(context, node);
+      const type2 = getNamedType$1(context.getInputType());
+      if (!isInputObjectType$1(type2)) {
+        isValidValueNode$1(context, node);
         return false;
       }
-      const fieldNodeMap = keyMap(node.fields, (field) => field.name.value);
+      const fieldNodeMap = keyMap$1(node.fields, (field) => field.name.value);
       for (const fieldDef of Object.values(type2.getFields())) {
         const fieldNode = fieldNodeMap[fieldDef.name];
-        if (!fieldNode && isRequiredInputField(fieldDef)) {
-          const typeStr = inspect(fieldDef.type);
+        if (!fieldNode && isRequiredInputField$1(fieldDef)) {
+          const typeStr = inspect$1(fieldDef.type);
           context.reportError(
-            new GraphQLError(
+            new GraphQLError$1(
               `Field "${type2.name}.${fieldDef.name}" of required type "${typeStr}" was not provided.`,
               {
                 nodes: node
@@ -27336,7 +27365,7 @@ function ValuesOfCorrectTypeRule(context) {
         }
       }
       if (type2.isOneOf) {
-        validateOneOfInputObject(
+        validateOneOfInputObject$1(
           context,
           node,
           type2,
@@ -27346,16 +27375,16 @@ function ValuesOfCorrectTypeRule(context) {
       }
     },
     ObjectField(node) {
-      const parentType = getNamedType(context.getParentInputType());
+      const parentType = getNamedType$1(context.getParentInputType());
       const fieldType = context.getInputType();
-      if (!fieldType && isInputObjectType(parentType)) {
-        const suggestions = suggestionList(
+      if (!fieldType && isInputObjectType$1(parentType)) {
+        const suggestions = suggestionList$1(
           node.name.value,
           Object.keys(parentType.getFields())
         );
         context.reportError(
-          new GraphQLError(
-            `Field "${node.name.value}" is not defined by type "${parentType.name}".` + didYouMean(suggestions),
+          new GraphQLError$1(
+            `Field "${node.name.value}" is not defined by type "${parentType.name}".` + didYouMean$1(suggestions),
             {
               nodes: node
             }
@@ -27365,10 +27394,10 @@ function ValuesOfCorrectTypeRule(context) {
     },
     NullValue(node) {
       const type2 = context.getInputType();
-      if (isNonNullType(type2)) {
+      if (isNonNullType$1(type2)) {
         context.reportError(
-          new GraphQLError(
-            `Expected value of type "${inspect(type2)}", found ${print(node)}.`,
+          new GraphQLError$1(
+            `Expected value of type "${inspect$1(type2)}", found ${print$1(node)}.`,
             {
               nodes: node
             }
@@ -27376,24 +27405,24 @@ function ValuesOfCorrectTypeRule(context) {
         );
       }
     },
-    EnumValue: (node) => isValidValueNode(context, node),
-    IntValue: (node) => isValidValueNode(context, node),
-    FloatValue: (node) => isValidValueNode(context, node),
-    StringValue: (node) => isValidValueNode(context, node),
-    BooleanValue: (node) => isValidValueNode(context, node)
+    EnumValue: (node) => isValidValueNode$1(context, node),
+    IntValue: (node) => isValidValueNode$1(context, node),
+    FloatValue: (node) => isValidValueNode$1(context, node),
+    StringValue: (node) => isValidValueNode$1(context, node),
+    BooleanValue: (node) => isValidValueNode$1(context, node)
   };
 }
-function isValidValueNode(context, node) {
+function isValidValueNode$1(context, node) {
   const locationType = context.getInputType();
   if (!locationType) {
     return;
   }
-  const type2 = getNamedType(locationType);
-  if (!isLeafType(type2)) {
-    const typeStr = inspect(locationType);
+  const type2 = getNamedType$1(locationType);
+  if (!isLeafType$1(type2)) {
+    const typeStr = inspect$1(locationType);
     context.reportError(
-      new GraphQLError(
-        `Expected value of type "${typeStr}", found ${print(node)}.`,
+      new GraphQLError$1(
+        `Expected value of type "${typeStr}", found ${print$1(node)}.`,
         {
           nodes: node
         }
@@ -27408,10 +27437,10 @@ function isValidValueNode(context, node) {
       /* variables */
     );
     if (parseResult === void 0) {
-      const typeStr = inspect(locationType);
+      const typeStr = inspect$1(locationType);
       context.reportError(
-        new GraphQLError(
-          `Expected value of type "${typeStr}", found ${print(node)}.`,
+        new GraphQLError$1(
+          `Expected value of type "${typeStr}", found ${print$1(node)}.`,
           {
             nodes: node
           }
@@ -27419,13 +27448,13 @@ function isValidValueNode(context, node) {
       );
     }
   } catch (error2) {
-    const typeStr = inspect(locationType);
-    if (error2 instanceof GraphQLError) {
+    const typeStr = inspect$1(locationType);
+    if (error2 instanceof GraphQLError$1) {
       context.reportError(error2);
     } else {
       context.reportError(
-        new GraphQLError(
-          `Expected value of type "${typeStr}", found ${print(node)}; ` + error2.message,
+        new GraphQLError$1(
+          `Expected value of type "${typeStr}", found ${print$1(node)}; ` + error2.message,
           {
             nodes: node,
             originalError: error2
@@ -27435,13 +27464,13 @@ function isValidValueNode(context, node) {
     }
   }
 }
-function validateOneOfInputObject(context, node, type2, fieldNodeMap, variableDefinitions) {
+function validateOneOfInputObject$1(context, node, type2, fieldNodeMap, variableDefinitions) {
   var _fieldNodeMap$keys$;
   const keys = Object.keys(fieldNodeMap);
   const isNotExactlyOneField = keys.length !== 1;
   if (isNotExactlyOneField) {
     context.reportError(
-      new GraphQLError(
+      new GraphQLError$1(
         `OneOf Input Object "${type2.name}" must specify exactly one key.`,
         {
           nodes: [node]
@@ -27451,11 +27480,11 @@ function validateOneOfInputObject(context, node, type2, fieldNodeMap, variableDe
     return;
   }
   const value = (_fieldNodeMap$keys$ = fieldNodeMap[keys[0]]) === null || _fieldNodeMap$keys$ === void 0 ? void 0 : _fieldNodeMap$keys$.value;
-  const isNullLiteral = !value || value.kind === Kind.NULL;
-  const isVariable = (value === null || value === void 0 ? void 0 : value.kind) === Kind.VARIABLE;
+  const isNullLiteral = !value || value.kind === Kind$1.NULL;
+  const isVariable = (value === null || value === void 0 ? void 0 : value.kind) === Kind$1.VARIABLE;
   if (isNullLiteral) {
     context.reportError(
-      new GraphQLError(`Field "${type2.name}.${keys[0]}" must be non-null.`, {
+      new GraphQLError$1(`Field "${type2.name}.${keys[0]}" must be non-null.`, {
         nodes: [node]
       })
     );
@@ -27464,10 +27493,10 @@ function validateOneOfInputObject(context, node, type2, fieldNodeMap, variableDe
   if (isVariable) {
     const variableName = value.name.value;
     const definition = variableDefinitions[variableName];
-    const isNullableVariable = definition.type.kind !== Kind.NON_NULL_TYPE;
+    const isNullableVariable = definition.type.kind !== Kind$1.NON_NULL_TYPE;
     if (isNullableVariable) {
       context.reportError(
-        new GraphQLError(
+        new GraphQLError$1(
           `Variable "${variableName}" must be non-nullable to be used for OneOf Input Object "${type2.name}".`,
           {
             nodes: [node]
@@ -27477,15 +27506,15 @@ function validateOneOfInputObject(context, node, type2, fieldNodeMap, variableDe
     }
   }
 }
-function VariablesAreInputTypesRule(context) {
+function VariablesAreInputTypesRule$1(context) {
   return {
     VariableDefinition(node) {
-      const type2 = typeFromAST(context.getSchema(), node.type);
-      if (type2 !== void 0 && !isInputType(type2)) {
+      const type2 = typeFromAST$1(context.getSchema(), node.type);
+      if (type2 !== void 0 && !isInputType$1(type2)) {
         const variableName = node.variable.name.value;
-        const typeName = print(node.type);
+        const typeName = print$1(node.type);
         context.reportError(
-          new GraphQLError(
+          new GraphQLError$1(
             `Variable "$${variableName}" cannot be non-input type "${typeName}".`,
             {
               nodes: node.type
@@ -27496,7 +27525,7 @@ function VariablesAreInputTypesRule(context) {
     }
   };
 }
-function VariablesInAllowedPositionRule(context) {
+function VariablesInAllowedPositionRule$1(context) {
   let varDefMap = /* @__PURE__ */ Object.create(null);
   return {
     OperationDefinition: {
@@ -27510,18 +27539,18 @@ function VariablesInAllowedPositionRule(context) {
           const varDef = varDefMap[varName];
           if (varDef && type2) {
             const schema = context.getSchema();
-            const varType = typeFromAST(schema, varDef.type);
-            if (varType && !allowedVariableUsage(
+            const varType = typeFromAST$1(schema, varDef.type);
+            if (varType && !allowedVariableUsage$1(
               schema,
               varType,
               varDef.defaultValue,
               type2,
               defaultValue
             )) {
-              const varTypeStr = inspect(varType);
-              const typeStr = inspect(type2);
+              const varTypeStr = inspect$1(varType);
+              const typeStr = inspect$1(type2);
               context.reportError(
-                new GraphQLError(
+                new GraphQLError$1(
                   `Variable "$${varName}" of type "${varTypeStr}" used in position expecting type "${typeStr}".`,
                   {
                     nodes: [varDef, node]
@@ -27529,9 +27558,9 @@ function VariablesInAllowedPositionRule(context) {
                 )
               );
             }
-            if (isInputObjectType(parentType) && parentType.isOneOf && isNullableType(varType)) {
+            if (isInputObjectType$1(parentType) && parentType.isOneOf && isNullableType$1(varType)) {
               context.reportError(
-                new GraphQLError(
+                new GraphQLError$1(
                   `Variable "$${varName}" is of type "${varType}" but must be non-nullable to be used for OneOf Input Object "${parentType}".`,
                   {
                     nodes: [varDef, node]
@@ -27548,66 +27577,66 @@ function VariablesInAllowedPositionRule(context) {
     }
   };
 }
-function allowedVariableUsage(schema, varType, varDefaultValue, locationType, locationDefaultValue) {
-  if (isNonNullType(locationType) && !isNonNullType(varType)) {
-    const hasNonNullVariableDefaultValue = varDefaultValue != null && varDefaultValue.kind !== Kind.NULL;
+function allowedVariableUsage$1(schema, varType, varDefaultValue, locationType, locationDefaultValue) {
+  if (isNonNullType$1(locationType) && !isNonNullType$1(varType)) {
+    const hasNonNullVariableDefaultValue = varDefaultValue != null && varDefaultValue.kind !== Kind$1.NULL;
     const hasLocationDefaultValue = locationDefaultValue !== void 0;
     if (!hasNonNullVariableDefaultValue && !hasLocationDefaultValue) {
       return false;
     }
     const nullableLocationType = locationType.ofType;
-    return isTypeSubTypeOf(schema, varType, nullableLocationType);
+    return isTypeSubTypeOf$1(schema, varType, nullableLocationType);
   }
-  return isTypeSubTypeOf(schema, varType, locationType);
+  return isTypeSubTypeOf$1(schema, varType, locationType);
 }
-const recommendedRules = Object.freeze([MaxIntrospectionDepthRule]);
+const recommendedRules$1 = Object.freeze([MaxIntrospectionDepthRule$1]);
 Object.freeze([
-  ExecutableDefinitionsRule,
-  UniqueOperationNamesRule,
-  LoneAnonymousOperationRule,
-  SingleFieldSubscriptionsRule,
-  KnownTypeNamesRule,
-  FragmentsOnCompositeTypesRule,
-  VariablesAreInputTypesRule,
-  ScalarLeafsRule,
-  FieldsOnCorrectTypeRule,
-  UniqueFragmentNamesRule,
-  KnownFragmentNamesRule,
-  NoUnusedFragmentsRule,
-  PossibleFragmentSpreadsRule,
-  NoFragmentCyclesRule,
-  UniqueVariableNamesRule,
-  NoUndefinedVariablesRule,
-  NoUnusedVariablesRule,
-  KnownDirectivesRule,
-  UniqueDirectivesPerLocationRule,
-  KnownArgumentNamesRule,
-  UniqueArgumentNamesRule,
-  ValuesOfCorrectTypeRule,
-  ProvidedRequiredArgumentsRule,
-  VariablesInAllowedPositionRule,
-  OverlappingFieldsCanBeMergedRule,
-  UniqueInputFieldNamesRule,
-  ...recommendedRules
+  ExecutableDefinitionsRule$1,
+  UniqueOperationNamesRule$1,
+  LoneAnonymousOperationRule$1,
+  SingleFieldSubscriptionsRule$1,
+  KnownTypeNamesRule$1,
+  FragmentsOnCompositeTypesRule$1,
+  VariablesAreInputTypesRule$1,
+  ScalarLeafsRule$1,
+  FieldsOnCorrectTypeRule$1,
+  UniqueFragmentNamesRule$1,
+  KnownFragmentNamesRule$1,
+  NoUnusedFragmentsRule$1,
+  PossibleFragmentSpreadsRule$1,
+  NoFragmentCyclesRule$1,
+  UniqueVariableNamesRule$1,
+  NoUndefinedVariablesRule$1,
+  NoUnusedVariablesRule$1,
+  KnownDirectivesRule$1,
+  UniqueDirectivesPerLocationRule$1,
+  KnownArgumentNamesRule$1,
+  UniqueArgumentNamesRule$1,
+  ValuesOfCorrectTypeRule$1,
+  ProvidedRequiredArgumentsRule$1,
+  VariablesInAllowedPositionRule$1,
+  OverlappingFieldsCanBeMergedRule$1,
+  UniqueInputFieldNamesRule$1,
+  ...recommendedRules$1
 ]);
-const specifiedSDLRules = Object.freeze([
-  LoneSchemaDefinitionRule,
-  UniqueOperationTypesRule,
-  UniqueTypeNamesRule,
-  UniqueEnumValueNamesRule,
-  UniqueFieldDefinitionNamesRule,
-  UniqueArgumentDefinitionNamesRule,
-  UniqueDirectiveNamesRule,
-  KnownTypeNamesRule,
-  KnownDirectivesRule,
-  UniqueDirectivesPerLocationRule,
-  PossibleTypeExtensionsRule,
-  KnownArgumentNamesOnDirectivesRule,
-  UniqueArgumentNamesRule,
-  UniqueInputFieldNamesRule,
-  ProvidedRequiredArgumentsOnDirectivesRule
+const specifiedSDLRules$1 = Object.freeze([
+  LoneSchemaDefinitionRule$1,
+  UniqueOperationTypesRule$1,
+  UniqueTypeNamesRule$1,
+  UniqueEnumValueNamesRule$1,
+  UniqueFieldDefinitionNamesRule$1,
+  UniqueArgumentDefinitionNamesRule$1,
+  UniqueDirectiveNamesRule$1,
+  KnownTypeNamesRule$1,
+  KnownDirectivesRule$1,
+  UniqueDirectivesPerLocationRule$1,
+  PossibleTypeExtensionsRule$1,
+  KnownArgumentNamesOnDirectivesRule$1,
+  UniqueArgumentNamesRule$1,
+  UniqueInputFieldNamesRule$1,
+  ProvidedRequiredArgumentsOnDirectivesRule$1
 ]);
-class ASTValidationContext {
+let ASTValidationContext$1 = class ASTValidationContext {
   constructor(ast, onError) {
     this._ast = ast;
     this._fragments = void 0;
@@ -27631,7 +27660,7 @@ class ASTValidationContext {
     } else {
       fragments = /* @__PURE__ */ Object.create(null);
       for (const defNode of this.getDocument().definitions) {
-        if (defNode.kind === Kind.FRAGMENT_DEFINITION) {
+        if (defNode.kind === Kind$1.FRAGMENT_DEFINITION) {
           fragments[defNode.name.value] = defNode;
         }
       }
@@ -27647,7 +27676,7 @@ class ASTValidationContext {
       let set2;
       while (set2 = setsToVisit.pop()) {
         for (const selection of set2.selections) {
-          if (selection.kind === Kind.FRAGMENT_SPREAD) {
+          if (selection.kind === Kind$1.FRAGMENT_SPREAD) {
             spreads.push(selection);
           } else if (selection.selectionSet) {
             setsToVisit.push(selection.selectionSet);
@@ -27682,8 +27711,8 @@ class ASTValidationContext {
     }
     return fragments;
   }
-}
-class SDLValidationContext extends ASTValidationContext {
+};
+let SDLValidationContext$1 = class SDLValidationContext extends ASTValidationContext$1 {
   constructor(ast, schema, onError) {
     super(ast, onError);
     this._schema = schema;
@@ -27694,10 +27723,10 @@ class SDLValidationContext extends ASTValidationContext {
   getSchema() {
     return this._schema;
   }
-}
-function validateSDL(documentAST, schemaToExtend, rules = specifiedSDLRules) {
+};
+function validateSDL$1(documentAST, schemaToExtend, rules = specifiedSDLRules$1) {
   const errors2 = [];
-  const context = new SDLValidationContext(
+  const context = new SDLValidationContext$1(
     documentAST,
     schemaToExtend,
     (error2) => {
@@ -27705,16 +27734,16 @@ function validateSDL(documentAST, schemaToExtend, rules = specifiedSDLRules) {
     }
   );
   const visitors = rules.map((rule) => rule(context));
-  visit$1(documentAST, visitInParallel(visitors));
+  visit$2(documentAST, visitInParallel$1(visitors));
   return errors2;
 }
-function assertValidSDL(documentAST) {
-  const errors2 = validateSDL(documentAST);
+function assertValidSDL$1(documentAST) {
+  const errors2 = validateSDL$1(documentAST);
   if (errors2.length !== 0) {
     throw new Error(errors2.map((error2) => error2.message).join("\n\n"));
   }
 }
-function getIntrospectionQuery(options) {
+function getIntrospectionQuery$1(options) {
   const optionsWithDefault = {
     descriptions: true,
     specifiedByUrl: false,
@@ -27840,20 +27869,20 @@ function getIntrospectionQuery(options) {
     }
   `;
 }
-function buildClientSchema(introspection, options) {
-  isObjectLike(introspection) && isObjectLike(introspection.__schema) || devAssert(
+function buildClientSchema$1(introspection, options) {
+  isObjectLike$1(introspection) && isObjectLike$1(introspection.__schema) || devAssert$1(
     false,
-    `Invalid or incomplete introspection result. Ensure that you are passing "data" property of introspection response and no "errors" was returned alongside: ${inspect(
+    `Invalid or incomplete introspection result. Ensure that you are passing "data" property of introspection response and no "errors" was returned alongside: ${inspect$1(
       introspection
     )}.`
   );
   const schemaIntrospection = introspection.__schema;
-  const typeMap = keyValMap(
+  const typeMap = keyValMap$1(
     schemaIntrospection.types,
     (typeIntrospection) => typeIntrospection.name,
     (typeIntrospection) => buildType(typeIntrospection)
   );
-  for (const stdType of [...specifiedScalarTypes, ...introspectionTypes]) {
+  for (const stdType of [...specifiedScalarTypes$1, ...introspectionTypes$1]) {
     if (typeMap[stdType.name]) {
       typeMap[stdType.name] = stdType;
     }
@@ -27862,7 +27891,7 @@ function buildClientSchema(introspection, options) {
   const mutationType = schemaIntrospection.mutationType ? getObjectType(schemaIntrospection.mutationType) : null;
   const subscriptionType = schemaIntrospection.subscriptionType ? getObjectType(schemaIntrospection.subscriptionType) : null;
   const directives = schemaIntrospection.directives ? schemaIntrospection.directives.map(buildDirective) : [];
-  return new GraphQLSchema({
+  return new GraphQLSchema$1({
     description: schemaIntrospection.description,
     query: queryType,
     mutation: mutationType,
@@ -27872,27 +27901,27 @@ function buildClientSchema(introspection, options) {
     assumeValid: void 0
   });
   function getType(typeRef) {
-    if (typeRef.kind === TypeKind.LIST) {
+    if (typeRef.kind === TypeKind$1.LIST) {
       const itemRef = typeRef.ofType;
       if (!itemRef) {
         throw new Error("Decorated type deeper than introspection query.");
       }
-      return new GraphQLList(getType(itemRef));
+      return new GraphQLList$1(getType(itemRef));
     }
-    if (typeRef.kind === TypeKind.NON_NULL) {
+    if (typeRef.kind === TypeKind$1.NON_NULL) {
       const nullableRef = typeRef.ofType;
       if (!nullableRef) {
         throw new Error("Decorated type deeper than introspection query.");
       }
       const nullableType = getType(nullableRef);
-      return new GraphQLNonNull(assertNullableType(nullableType));
+      return new GraphQLNonNull$1(assertNullableType$1(nullableType));
     }
     return getNamedType2(typeRef);
   }
   function getNamedType2(typeRef) {
     const typeName = typeRef.name;
     if (!typeName) {
-      throw new Error(`Unknown type reference: ${inspect(typeRef)}.`);
+      throw new Error(`Unknown type reference: ${inspect$1(typeRef)}.`);
     }
     const type2 = typeMap[typeName];
     if (!type2) {
@@ -27903,46 +27932,46 @@ function buildClientSchema(introspection, options) {
     return type2;
   }
   function getObjectType(typeRef) {
-    return assertObjectType(getNamedType2(typeRef));
+    return assertObjectType$1(getNamedType2(typeRef));
   }
   function getInterfaceType(typeRef) {
-    return assertInterfaceType(getNamedType2(typeRef));
+    return assertInterfaceType$1(getNamedType2(typeRef));
   }
   function buildType(type2) {
     if (type2 != null && type2.name != null && type2.kind != null) {
       switch (type2.kind) {
-        case TypeKind.SCALAR:
+        case TypeKind$1.SCALAR:
           return buildScalarDef(type2);
-        case TypeKind.OBJECT:
+        case TypeKind$1.OBJECT:
           return buildObjectDef(type2);
-        case TypeKind.INTERFACE:
+        case TypeKind$1.INTERFACE:
           return buildInterfaceDef(type2);
-        case TypeKind.UNION:
+        case TypeKind$1.UNION:
           return buildUnionDef(type2);
-        case TypeKind.ENUM:
+        case TypeKind$1.ENUM:
           return buildEnumDef(type2);
-        case TypeKind.INPUT_OBJECT:
+        case TypeKind$1.INPUT_OBJECT:
           return buildInputObjectDef(type2);
       }
     }
-    const typeStr = inspect(type2);
+    const typeStr = inspect$1(type2);
     throw new Error(
       `Invalid or incomplete introspection result. Ensure that a full introspection query is used in order to build a client schema: ${typeStr}.`
     );
   }
   function buildScalarDef(scalarIntrospection) {
-    return new GraphQLScalarType({
+    return new GraphQLScalarType$1({
       name: scalarIntrospection.name,
       description: scalarIntrospection.description,
       specifiedByURL: scalarIntrospection.specifiedByURL
     });
   }
   function buildImplementationsList(implementingIntrospection) {
-    if (implementingIntrospection.interfaces === null && implementingIntrospection.kind === TypeKind.INTERFACE) {
+    if (implementingIntrospection.interfaces === null && implementingIntrospection.kind === TypeKind$1.INTERFACE) {
       return [];
     }
     if (!implementingIntrospection.interfaces) {
-      const implementingIntrospectionStr = inspect(implementingIntrospection);
+      const implementingIntrospectionStr = inspect$1(implementingIntrospection);
       throw new Error(
         `Introspection result missing interfaces: ${implementingIntrospectionStr}.`
       );
@@ -27950,7 +27979,7 @@ function buildClientSchema(introspection, options) {
     return implementingIntrospection.interfaces.map(getInterfaceType);
   }
   function buildObjectDef(objectIntrospection) {
-    return new GraphQLObjectType({
+    return new GraphQLObjectType$1({
       name: objectIntrospection.name,
       description: objectIntrospection.description,
       interfaces: () => buildImplementationsList(objectIntrospection),
@@ -27958,7 +27987,7 @@ function buildClientSchema(introspection, options) {
     });
   }
   function buildInterfaceDef(interfaceIntrospection) {
-    return new GraphQLInterfaceType({
+    return new GraphQLInterfaceType$1({
       name: interfaceIntrospection.name,
       description: interfaceIntrospection.description,
       interfaces: () => buildImplementationsList(interfaceIntrospection),
@@ -27967,12 +27996,12 @@ function buildClientSchema(introspection, options) {
   }
   function buildUnionDef(unionIntrospection) {
     if (!unionIntrospection.possibleTypes) {
-      const unionIntrospectionStr = inspect(unionIntrospection);
+      const unionIntrospectionStr = inspect$1(unionIntrospection);
       throw new Error(
         `Introspection result missing possibleTypes: ${unionIntrospectionStr}.`
       );
     }
-    return new GraphQLUnionType({
+    return new GraphQLUnionType$1({
       name: unionIntrospection.name,
       description: unionIntrospection.description,
       types: () => unionIntrospection.possibleTypes.map(getObjectType)
@@ -27980,15 +28009,15 @@ function buildClientSchema(introspection, options) {
   }
   function buildEnumDef(enumIntrospection) {
     if (!enumIntrospection.enumValues) {
-      const enumIntrospectionStr = inspect(enumIntrospection);
+      const enumIntrospectionStr = inspect$1(enumIntrospection);
       throw new Error(
         `Introspection result missing enumValues: ${enumIntrospectionStr}.`
       );
     }
-    return new GraphQLEnumType({
+    return new GraphQLEnumType$1({
       name: enumIntrospection.name,
       description: enumIntrospection.description,
-      values: keyValMap(
+      values: keyValMap$1(
         enumIntrospection.enumValues,
         (valueIntrospection) => valueIntrospection.name,
         (valueIntrospection) => ({
@@ -28000,12 +28029,12 @@ function buildClientSchema(introspection, options) {
   }
   function buildInputObjectDef(inputObjectIntrospection) {
     if (!inputObjectIntrospection.inputFields) {
-      const inputObjectIntrospectionStr = inspect(inputObjectIntrospection);
+      const inputObjectIntrospectionStr = inspect$1(inputObjectIntrospection);
       throw new Error(
         `Introspection result missing inputFields: ${inputObjectIntrospectionStr}.`
       );
     }
-    return new GraphQLInputObjectType({
+    return new GraphQLInputObjectType$1({
       name: inputObjectIntrospection.name,
       description: inputObjectIntrospection.description,
       fields: () => buildInputValueDefMap(inputObjectIntrospection.inputFields),
@@ -28015,10 +28044,10 @@ function buildClientSchema(introspection, options) {
   function buildFieldDefMap(typeIntrospection) {
     if (!typeIntrospection.fields) {
       throw new Error(
-        `Introspection result missing fields: ${inspect(typeIntrospection)}.`
+        `Introspection result missing fields: ${inspect$1(typeIntrospection)}.`
       );
     }
-    return keyValMap(
+    return keyValMap$1(
       typeIntrospection.fields,
       (fieldIntrospection) => fieldIntrospection.name,
       buildField
@@ -28026,14 +28055,14 @@ function buildClientSchema(introspection, options) {
   }
   function buildField(fieldIntrospection) {
     const type2 = getType(fieldIntrospection.type);
-    if (!isOutputType(type2)) {
-      const typeStr = inspect(type2);
+    if (!isOutputType$1(type2)) {
+      const typeStr = inspect$1(type2);
       throw new Error(
         `Introspection must provide output type for fields, but received: ${typeStr}.`
       );
     }
     if (!fieldIntrospection.args) {
-      const fieldIntrospectionStr = inspect(fieldIntrospection);
+      const fieldIntrospectionStr = inspect$1(fieldIntrospection);
       throw new Error(
         `Introspection result missing field args: ${fieldIntrospectionStr}.`
       );
@@ -28046,7 +28075,7 @@ function buildClientSchema(introspection, options) {
     };
   }
   function buildInputValueDefMap(inputValueIntrospections) {
-    return keyValMap(
+    return keyValMap$1(
       inputValueIntrospections,
       (inputValue) => inputValue.name,
       buildInputValue
@@ -28054,13 +28083,13 @@ function buildClientSchema(introspection, options) {
   }
   function buildInputValue(inputValueIntrospection) {
     const type2 = getType(inputValueIntrospection.type);
-    if (!isInputType(type2)) {
-      const typeStr = inspect(type2);
+    if (!isInputType$1(type2)) {
+      const typeStr = inspect$1(type2);
       throw new Error(
         `Introspection must provide input type for arguments, but received: ${typeStr}.`
       );
     }
-    const defaultValue = inputValueIntrospection.defaultValue != null ? valueFromAST(parseValue(inputValueIntrospection.defaultValue), type2) : void 0;
+    const defaultValue = inputValueIntrospection.defaultValue != null ? valueFromAST$1(parseValue$1(inputValueIntrospection.defaultValue), type2) : void 0;
     return {
       description: inputValueIntrospection.description,
       type: type2,
@@ -28070,18 +28099,18 @@ function buildClientSchema(introspection, options) {
   }
   function buildDirective(directiveIntrospection) {
     if (!directiveIntrospection.args) {
-      const directiveIntrospectionStr = inspect(directiveIntrospection);
+      const directiveIntrospectionStr = inspect$1(directiveIntrospection);
       throw new Error(
         `Introspection result missing directive args: ${directiveIntrospectionStr}.`
       );
     }
     if (!directiveIntrospection.locations) {
-      const directiveIntrospectionStr = inspect(directiveIntrospection);
+      const directiveIntrospectionStr = inspect$1(directiveIntrospection);
       throw new Error(
         `Introspection result missing directive locations: ${directiveIntrospectionStr}.`
       );
     }
-    return new GraphQLDirective({
+    return new GraphQLDirective$1({
       name: directiveIntrospection.name,
       description: directiveIntrospection.description,
       isRepeatable: directiveIntrospection.isRepeatable,
@@ -28090,7 +28119,7 @@ function buildClientSchema(introspection, options) {
     });
   }
 }
-function extendSchemaImpl(schemaConfig, documentAST, options) {
+function extendSchemaImpl$1(schemaConfig, documentAST, options) {
   var _schemaDef, _schemaDef$descriptio, _schemaDef2, _options$assumeValid;
   const typeDefs = [];
   const typeExtensionsMap = /* @__PURE__ */ Object.create(null);
@@ -28098,17 +28127,17 @@ function extendSchemaImpl(schemaConfig, documentAST, options) {
   let schemaDef;
   const schemaExtensions = [];
   for (const def of documentAST.definitions) {
-    if (def.kind === Kind.SCHEMA_DEFINITION) {
+    if (def.kind === Kind$1.SCHEMA_DEFINITION) {
       schemaDef = def;
-    } else if (def.kind === Kind.SCHEMA_EXTENSION) {
+    } else if (def.kind === Kind$1.SCHEMA_EXTENSION) {
       schemaExtensions.push(def);
-    } else if (isTypeDefinitionNode(def)) {
+    } else if (isTypeDefinitionNode$1(def)) {
       typeDefs.push(def);
-    } else if (isTypeExtensionNode(def)) {
+    } else if (isTypeExtensionNode$1(def)) {
       const extendedTypeName = def.name.value;
       const existingTypeExtensions = typeExtensionsMap[extendedTypeName];
       typeExtensionsMap[extendedTypeName] = existingTypeExtensions ? existingTypeExtensions.concat([def]) : [def];
-    } else if (def.kind === Kind.DIRECTIVE_DEFINITION) {
+    } else if (def.kind === Kind$1.DIRECTIVE_DEFINITION) {
       directiveDefs.push(def);
     }
   }
@@ -28122,7 +28151,7 @@ function extendSchemaImpl(schemaConfig, documentAST, options) {
   for (const typeNode of typeDefs) {
     var _stdTypeMap$name;
     const name2 = typeNode.name.value;
-    typeMap[name2] = (_stdTypeMap$name = stdTypeMap[name2]) !== null && _stdTypeMap$name !== void 0 ? _stdTypeMap$name : buildType(typeNode);
+    typeMap[name2] = (_stdTypeMap$name = stdTypeMap$1[name2]) !== null && _stdTypeMap$name !== void 0 ? _stdTypeMap$name : buildType(typeNode);
   }
   const operationTypes = {
     // Get the extended root operation types.
@@ -28147,11 +28176,11 @@ function extendSchemaImpl(schemaConfig, documentAST, options) {
     assumeValid: (_options$assumeValid = options === null || options === void 0 ? void 0 : options.assumeValid) !== null && _options$assumeValid !== void 0 ? _options$assumeValid : false
   };
   function replaceType(type2) {
-    if (isListType(type2)) {
-      return new GraphQLList(replaceType(type2.ofType));
+    if (isListType$1(type2)) {
+      return new GraphQLList$1(replaceType(type2.ofType));
     }
-    if (isNonNullType(type2)) {
-      return new GraphQLNonNull(replaceType(type2.ofType));
+    if (isNonNullType$1(type2)) {
+      return new GraphQLNonNull$1(replaceType(type2.ofType));
     }
     return replaceNamedType(type2);
   }
@@ -28160,43 +28189,43 @@ function extendSchemaImpl(schemaConfig, documentAST, options) {
   }
   function replaceDirective(directive) {
     const config2 = directive.toConfig();
-    return new GraphQLDirective({
+    return new GraphQLDirective$1({
       ...config2,
-      args: mapValue(config2.args, extendArg)
+      args: mapValue$1(config2.args, extendArg)
     });
   }
   function extendNamedType(type2) {
-    if (isIntrospectionType(type2) || isSpecifiedScalarType(type2)) {
+    if (isIntrospectionType$1(type2) || isSpecifiedScalarType$1(type2)) {
       return type2;
     }
-    if (isScalarType(type2)) {
+    if (isScalarType$1(type2)) {
       return extendScalarType(type2);
     }
-    if (isObjectType(type2)) {
+    if (isObjectType$1(type2)) {
       return extendObjectType(type2);
     }
-    if (isInterfaceType(type2)) {
+    if (isInterfaceType$1(type2)) {
       return extendInterfaceType(type2);
     }
-    if (isUnionType(type2)) {
+    if (isUnionType$1(type2)) {
       return extendUnionType(type2);
     }
-    if (isEnumType(type2)) {
+    if (isEnumType$1(type2)) {
       return extendEnumType(type2);
     }
-    if (isInputObjectType(type2)) {
+    if (isInputObjectType$1(type2)) {
       return extendInputObjectType(type2);
     }
-    invariant$1(false, "Unexpected type: " + inspect(type2));
+    invariant$2(false, "Unexpected type: " + inspect$1(type2));
   }
   function extendInputObjectType(type2) {
     var _typeExtensionsMap$co;
     const config2 = type2.toConfig();
     const extensions = (_typeExtensionsMap$co = typeExtensionsMap[config2.name]) !== null && _typeExtensionsMap$co !== void 0 ? _typeExtensionsMap$co : [];
-    return new GraphQLInputObjectType({
+    return new GraphQLInputObjectType$1({
       ...config2,
       fields: () => ({
-        ...mapValue(config2.fields, (field) => ({
+        ...mapValue$1(config2.fields, (field) => ({
           ...field,
           type: replaceType(field.type)
         })),
@@ -28209,7 +28238,7 @@ function extendSchemaImpl(schemaConfig, documentAST, options) {
     var _typeExtensionsMap$ty;
     const config2 = type2.toConfig();
     const extensions = (_typeExtensionsMap$ty = typeExtensionsMap[type2.name]) !== null && _typeExtensionsMap$ty !== void 0 ? _typeExtensionsMap$ty : [];
-    return new GraphQLEnumType({
+    return new GraphQLEnumType$1({
       ...config2,
       values: { ...config2.values, ...buildEnumValueMap(extensions) },
       extensionASTNodes: config2.extensionASTNodes.concat(extensions)
@@ -28222,9 +28251,9 @@ function extendSchemaImpl(schemaConfig, documentAST, options) {
     let specifiedByURL = config2.specifiedByURL;
     for (const extensionNode of extensions) {
       var _getSpecifiedByURL;
-      specifiedByURL = (_getSpecifiedByURL = getSpecifiedByURL(extensionNode)) !== null && _getSpecifiedByURL !== void 0 ? _getSpecifiedByURL : specifiedByURL;
+      specifiedByURL = (_getSpecifiedByURL = getSpecifiedByURL$1(extensionNode)) !== null && _getSpecifiedByURL !== void 0 ? _getSpecifiedByURL : specifiedByURL;
     }
-    return new GraphQLScalarType({
+    return new GraphQLScalarType$1({
       ...config2,
       specifiedByURL,
       extensionASTNodes: config2.extensionASTNodes.concat(extensions)
@@ -28234,14 +28263,14 @@ function extendSchemaImpl(schemaConfig, documentAST, options) {
     var _typeExtensionsMap$co3;
     const config2 = type2.toConfig();
     const extensions = (_typeExtensionsMap$co3 = typeExtensionsMap[config2.name]) !== null && _typeExtensionsMap$co3 !== void 0 ? _typeExtensionsMap$co3 : [];
-    return new GraphQLObjectType({
+    return new GraphQLObjectType$1({
       ...config2,
       interfaces: () => [
         ...type2.getInterfaces().map(replaceNamedType),
         ...buildInterfaces(extensions)
       ],
       fields: () => ({
-        ...mapValue(config2.fields, extendField),
+        ...mapValue$1(config2.fields, extendField),
         ...buildFieldMap(extensions)
       }),
       extensionASTNodes: config2.extensionASTNodes.concat(extensions)
@@ -28251,14 +28280,14 @@ function extendSchemaImpl(schemaConfig, documentAST, options) {
     var _typeExtensionsMap$co4;
     const config2 = type2.toConfig();
     const extensions = (_typeExtensionsMap$co4 = typeExtensionsMap[config2.name]) !== null && _typeExtensionsMap$co4 !== void 0 ? _typeExtensionsMap$co4 : [];
-    return new GraphQLInterfaceType({
+    return new GraphQLInterfaceType$1({
       ...config2,
       interfaces: () => [
         ...type2.getInterfaces().map(replaceNamedType),
         ...buildInterfaces(extensions)
       ],
       fields: () => ({
-        ...mapValue(config2.fields, extendField),
+        ...mapValue$1(config2.fields, extendField),
         ...buildFieldMap(extensions)
       }),
       extensionASTNodes: config2.extensionASTNodes.concat(extensions)
@@ -28268,7 +28297,7 @@ function extendSchemaImpl(schemaConfig, documentAST, options) {
     var _typeExtensionsMap$co5;
     const config2 = type2.toConfig();
     const extensions = (_typeExtensionsMap$co5 = typeExtensionsMap[config2.name]) !== null && _typeExtensionsMap$co5 !== void 0 ? _typeExtensionsMap$co5 : [];
-    return new GraphQLUnionType({
+    return new GraphQLUnionType$1({
       ...config2,
       types: () => [
         ...type2.getTypes().map(replaceNamedType),
@@ -28281,7 +28310,7 @@ function extendSchemaImpl(schemaConfig, documentAST, options) {
     return {
       ...field,
       type: replaceType(field.type),
-      args: field.args && mapValue(field.args, extendArg)
+      args: field.args && mapValue$1(field.args, extendArg)
     };
   }
   function extendArg(arg) {
@@ -28304,24 +28333,24 @@ function extendSchemaImpl(schemaConfig, documentAST, options) {
   function getNamedType2(node) {
     var _stdTypeMap$name2;
     const name2 = node.name.value;
-    const type2 = (_stdTypeMap$name2 = stdTypeMap[name2]) !== null && _stdTypeMap$name2 !== void 0 ? _stdTypeMap$name2 : typeMap[name2];
+    const type2 = (_stdTypeMap$name2 = stdTypeMap$1[name2]) !== null && _stdTypeMap$name2 !== void 0 ? _stdTypeMap$name2 : typeMap[name2];
     if (type2 === void 0) {
       throw new Error(`Unknown type: "${name2}".`);
     }
     return type2;
   }
   function getWrappedType(node) {
-    if (node.kind === Kind.LIST_TYPE) {
-      return new GraphQLList(getWrappedType(node.type));
+    if (node.kind === Kind$1.LIST_TYPE) {
+      return new GraphQLList$1(getWrappedType(node.type));
     }
-    if (node.kind === Kind.NON_NULL_TYPE) {
-      return new GraphQLNonNull(getWrappedType(node.type));
+    if (node.kind === Kind$1.NON_NULL_TYPE) {
+      return new GraphQLNonNull$1(getWrappedType(node.type));
     }
     return getNamedType2(node);
   }
   function buildDirective(node) {
     var _node$description;
-    return new GraphQLDirective({
+    return new GraphQLDirective$1({
       name: node.name.value,
       description: (_node$description = node.description) === null || _node$description === void 0 ? void 0 : _node$description.value,
       // @ts-expect-error
@@ -28348,7 +28377,7 @@ function extendSchemaImpl(schemaConfig, documentAST, options) {
           type: getWrappedType(field.type),
           description: (_field$description = field.description) === null || _field$description === void 0 ? void 0 : _field$description.value,
           args: buildArgumentMap(field.arguments),
-          deprecationReason: getDeprecationReason(field),
+          deprecationReason: getDeprecationReason$1(field),
           astNode: field
         };
       }
@@ -28367,8 +28396,8 @@ function extendSchemaImpl(schemaConfig, documentAST, options) {
       argConfigMap[arg.name.value] = {
         type: type2,
         description: (_arg$description = arg.description) === null || _arg$description === void 0 ? void 0 : _arg$description.value,
-        defaultValue: valueFromAST(arg.defaultValue, type2),
-        deprecationReason: getDeprecationReason(arg),
+        defaultValue: valueFromAST$1(arg.defaultValue, type2),
+        deprecationReason: getDeprecationReason$1(arg),
         astNode: arg
       };
     }
@@ -28388,8 +28417,8 @@ function extendSchemaImpl(schemaConfig, documentAST, options) {
         inputFieldMap[field.name.value] = {
           type: type2,
           description: (_field$description2 = field.description) === null || _field$description2 === void 0 ? void 0 : _field$description2.value,
-          defaultValue: valueFromAST(field.defaultValue, type2),
-          deprecationReason: getDeprecationReason(field),
+          defaultValue: valueFromAST$1(field.defaultValue, type2),
+          deprecationReason: getDeprecationReason$1(field),
           astNode: field
         };
       }
@@ -28408,7 +28437,7 @@ function extendSchemaImpl(schemaConfig, documentAST, options) {
         var _value$description;
         enumValueMap[value.name.value] = {
           description: (_value$description = value.description) === null || _value$description === void 0 ? void 0 : _value$description.value,
-          deprecationReason: getDeprecationReason(value),
+          deprecationReason: getDeprecationReason$1(value),
           astNode: value
         };
       }
@@ -28444,10 +28473,10 @@ function extendSchemaImpl(schemaConfig, documentAST, options) {
     const name2 = astNode.name.value;
     const extensionASTNodes = (_typeExtensionsMap$na = typeExtensionsMap[name2]) !== null && _typeExtensionsMap$na !== void 0 ? _typeExtensionsMap$na : [];
     switch (astNode.kind) {
-      case Kind.OBJECT_TYPE_DEFINITION: {
+      case Kind$1.OBJECT_TYPE_DEFINITION: {
         var _astNode$description;
         const allNodes = [astNode, ...extensionASTNodes];
-        return new GraphQLObjectType({
+        return new GraphQLObjectType$1({
           name: name2,
           description: (_astNode$description = astNode.description) === null || _astNode$description === void 0 ? void 0 : _astNode$description.value,
           interfaces: () => buildInterfaces(allNodes),
@@ -28456,10 +28485,10 @@ function extendSchemaImpl(schemaConfig, documentAST, options) {
           extensionASTNodes
         });
       }
-      case Kind.INTERFACE_TYPE_DEFINITION: {
+      case Kind$1.INTERFACE_TYPE_DEFINITION: {
         var _astNode$description2;
         const allNodes = [astNode, ...extensionASTNodes];
-        return new GraphQLInterfaceType({
+        return new GraphQLInterfaceType$1({
           name: name2,
           description: (_astNode$description2 = astNode.description) === null || _astNode$description2 === void 0 ? void 0 : _astNode$description2.value,
           interfaces: () => buildInterfaces(allNodes),
@@ -28468,10 +28497,10 @@ function extendSchemaImpl(schemaConfig, documentAST, options) {
           extensionASTNodes
         });
       }
-      case Kind.ENUM_TYPE_DEFINITION: {
+      case Kind$1.ENUM_TYPE_DEFINITION: {
         var _astNode$description3;
         const allNodes = [astNode, ...extensionASTNodes];
-        return new GraphQLEnumType({
+        return new GraphQLEnumType$1({
           name: name2,
           description: (_astNode$description3 = astNode.description) === null || _astNode$description3 === void 0 ? void 0 : _astNode$description3.value,
           values: buildEnumValueMap(allNodes),
@@ -28479,10 +28508,10 @@ function extendSchemaImpl(schemaConfig, documentAST, options) {
           extensionASTNodes
         });
       }
-      case Kind.UNION_TYPE_DEFINITION: {
+      case Kind$1.UNION_TYPE_DEFINITION: {
         var _astNode$description4;
         const allNodes = [astNode, ...extensionASTNodes];
-        return new GraphQLUnionType({
+        return new GraphQLUnionType$1({
           name: name2,
           description: (_astNode$description4 = astNode.description) === null || _astNode$description4 === void 0 ? void 0 : _astNode$description4.value,
           types: () => buildUnionTypes(allNodes),
@@ -28490,50 +28519,50 @@ function extendSchemaImpl(schemaConfig, documentAST, options) {
           extensionASTNodes
         });
       }
-      case Kind.SCALAR_TYPE_DEFINITION: {
+      case Kind$1.SCALAR_TYPE_DEFINITION: {
         var _astNode$description5;
-        return new GraphQLScalarType({
+        return new GraphQLScalarType$1({
           name: name2,
           description: (_astNode$description5 = astNode.description) === null || _astNode$description5 === void 0 ? void 0 : _astNode$description5.value,
-          specifiedByURL: getSpecifiedByURL(astNode),
+          specifiedByURL: getSpecifiedByURL$1(astNode),
           astNode,
           extensionASTNodes
         });
       }
-      case Kind.INPUT_OBJECT_TYPE_DEFINITION: {
+      case Kind$1.INPUT_OBJECT_TYPE_DEFINITION: {
         var _astNode$description6;
         const allNodes = [astNode, ...extensionASTNodes];
-        return new GraphQLInputObjectType({
+        return new GraphQLInputObjectType$1({
           name: name2,
           description: (_astNode$description6 = astNode.description) === null || _astNode$description6 === void 0 ? void 0 : _astNode$description6.value,
           fields: () => buildInputFieldMap(allNodes),
           astNode,
           extensionASTNodes,
-          isOneOf: isOneOf(astNode)
+          isOneOf: isOneOf$1(astNode)
         });
       }
     }
   }
 }
-const stdTypeMap = keyMap(
-  [...specifiedScalarTypes, ...introspectionTypes],
+const stdTypeMap$1 = keyMap$1(
+  [...specifiedScalarTypes$1, ...introspectionTypes$1],
   (type2) => type2.name
 );
-function getDeprecationReason(node) {
-  const deprecated = getDirectiveValues(GraphQLDeprecatedDirective, node);
+function getDeprecationReason$1(node) {
+  const deprecated = getDirectiveValues$1(GraphQLDeprecatedDirective$1, node);
   return deprecated === null || deprecated === void 0 ? void 0 : deprecated.reason;
 }
-function getSpecifiedByURL(node) {
-  const specifiedBy = getDirectiveValues(GraphQLSpecifiedByDirective, node);
+function getSpecifiedByURL$1(node) {
+  const specifiedBy = getDirectiveValues$1(GraphQLSpecifiedByDirective$1, node);
   return specifiedBy === null || specifiedBy === void 0 ? void 0 : specifiedBy.url;
 }
-function isOneOf(node) {
-  return Boolean(getDirectiveValues(GraphQLOneOfDirective, node));
+function isOneOf$1(node) {
+  return Boolean(getDirectiveValues$1(GraphQLOneOfDirective$1, node));
 }
-function buildASTSchema(documentAST, options) {
-  documentAST != null && documentAST.kind === Kind.DOCUMENT || devAssert(false, "Must provide valid Document AST.");
+function buildASTSchema$1(documentAST, options) {
+  documentAST != null && documentAST.kind === Kind$1.DOCUMENT || devAssert$1(false, "Must provide valid Document AST.");
   if ((options === null || options === void 0 ? void 0 : options.assumeValid) !== true && (options === null || options === void 0 ? void 0 : options.assumeValidSDL) !== true) {
-    assertValidSDL(documentAST);
+    assertValidSDL$1(documentAST);
   }
   const emptySchemaConfig = {
     description: void 0,
@@ -28543,7 +28572,7 @@ function buildASTSchema(documentAST, options) {
     extensionASTNodes: [],
     assumeValid: false
   };
-  const config2 = extendSchemaImpl(emptySchemaConfig, documentAST, options);
+  const config2 = extendSchemaImpl$1(emptySchemaConfig, documentAST, options);
   if (config2.astNode == null) {
     for (const type2 of config2.types) {
       switch (type2.name) {
@@ -28565,35 +28594,35 @@ function buildASTSchema(documentAST, options) {
   const directives = [
     ...config2.directives,
     // If specified directives were not explicitly declared, add them.
-    ...specifiedDirectives.filter(
+    ...specifiedDirectives$1.filter(
       (stdDirective) => config2.directives.every(
         (directive) => directive.name !== stdDirective.name
       )
     )
   ];
-  return new GraphQLSchema({ ...config2, directives });
+  return new GraphQLSchema$1({ ...config2, directives });
 }
-function printSchema(schema) {
-  return printFilteredSchema(
+function printSchema$1(schema) {
+  return printFilteredSchema$1(
     schema,
-    (n2) => !isSpecifiedDirective(n2),
-    isDefinedType
+    (n2) => !isSpecifiedDirective$1(n2),
+    isDefinedType$1
   );
 }
-function isDefinedType(type2) {
-  return !isSpecifiedScalarType(type2) && !isIntrospectionType(type2);
+function isDefinedType$1(type2) {
+  return !isSpecifiedScalarType$1(type2) && !isIntrospectionType$1(type2);
 }
-function printFilteredSchema(schema, directiveFilter, typeFilter) {
+function printFilteredSchema$1(schema, directiveFilter, typeFilter) {
   const directives = schema.getDirectives().filter(directiveFilter);
   const types = Object.values(schema.getTypeMap()).filter(typeFilter);
   return [
-    printSchemaDefinition(schema),
-    ...directives.map((directive) => printDirective(directive)),
-    ...types.map((type2) => printType(type2))
+    printSchemaDefinition$1(schema),
+    ...directives.map((directive) => printDirective$1(directive)),
+    ...types.map((type2) => printType$1(type2))
   ].filter(Boolean).join("\n\n");
 }
-function printSchemaDefinition(schema) {
-  if (schema.description == null && isSchemaOfCommonNames(schema)) {
+function printSchemaDefinition$1(schema) {
+  if (schema.description == null && isSchemaOfCommonNames$1(schema)) {
     return;
   }
   const operationTypes = [];
@@ -28609,11 +28638,11 @@ function printSchemaDefinition(schema) {
   if (subscriptionType) {
     operationTypes.push(`  subscription: ${subscriptionType.name}`);
   }
-  return printDescription(schema) + `schema {
+  return printDescription$1(schema) + `schema {
 ${operationTypes.join("\n")}
 }`;
 }
-function isSchemaOfCommonNames(schema) {
+function isSchemaOfCommonNames$1(schema) {
   const queryType = schema.getQueryType();
   if (queryType && queryType.name !== "Query") {
     return false;
@@ -28628,120 +28657,120 @@ function isSchemaOfCommonNames(schema) {
   }
   return true;
 }
-function printType(type2) {
-  if (isScalarType(type2)) {
-    return printScalar(type2);
+function printType$1(type2) {
+  if (isScalarType$1(type2)) {
+    return printScalar$1(type2);
   }
-  if (isObjectType(type2)) {
-    return printObject(type2);
+  if (isObjectType$1(type2)) {
+    return printObject$1(type2);
   }
-  if (isInterfaceType(type2)) {
-    return printInterface(type2);
+  if (isInterfaceType$1(type2)) {
+    return printInterface$1(type2);
   }
-  if (isUnionType(type2)) {
-    return printUnion(type2);
+  if (isUnionType$1(type2)) {
+    return printUnion$1(type2);
   }
-  if (isEnumType(type2)) {
-    return printEnum(type2);
+  if (isEnumType$1(type2)) {
+    return printEnum$1(type2);
   }
-  if (isInputObjectType(type2)) {
-    return printInputObject(type2);
+  if (isInputObjectType$1(type2)) {
+    return printInputObject$1(type2);
   }
-  invariant$1(false, "Unexpected type: " + inspect(type2));
+  invariant$2(false, "Unexpected type: " + inspect$1(type2));
 }
-function printScalar(type2) {
-  return printDescription(type2) + `scalar ${type2.name}` + printSpecifiedByURL(type2);
+function printScalar$1(type2) {
+  return printDescription$1(type2) + `scalar ${type2.name}` + printSpecifiedByURL$1(type2);
 }
-function printImplementedInterfaces(type2) {
+function printImplementedInterfaces$1(type2) {
   const interfaces = type2.getInterfaces();
   return interfaces.length ? " implements " + interfaces.map((i2) => i2.name).join(" & ") : "";
 }
-function printObject(type2) {
-  return printDescription(type2) + `type ${type2.name}` + printImplementedInterfaces(type2) + printFields(type2);
+function printObject$1(type2) {
+  return printDescription$1(type2) + `type ${type2.name}` + printImplementedInterfaces$1(type2) + printFields$1(type2);
 }
-function printInterface(type2) {
-  return printDescription(type2) + `interface ${type2.name}` + printImplementedInterfaces(type2) + printFields(type2);
+function printInterface$1(type2) {
+  return printDescription$1(type2) + `interface ${type2.name}` + printImplementedInterfaces$1(type2) + printFields$1(type2);
 }
-function printUnion(type2) {
+function printUnion$1(type2) {
   const types = type2.getTypes();
   const possibleTypes = types.length ? " = " + types.join(" | ") : "";
-  return printDescription(type2) + "union " + type2.name + possibleTypes;
+  return printDescription$1(type2) + "union " + type2.name + possibleTypes;
 }
-function printEnum(type2) {
+function printEnum$1(type2) {
   const values = type2.getValues().map(
-    (value, i2) => printDescription(value, "  ", !i2) + "  " + value.name + printDeprecated(value.deprecationReason)
+    (value, i2) => printDescription$1(value, "  ", !i2) + "  " + value.name + printDeprecated$1(value.deprecationReason)
   );
-  return printDescription(type2) + `enum ${type2.name}` + printBlock(values);
+  return printDescription$1(type2) + `enum ${type2.name}` + printBlock$1(values);
 }
-function printInputObject(type2) {
+function printInputObject$1(type2) {
   const fields = Object.values(type2.getFields()).map(
-    (f2, i2) => printDescription(f2, "  ", !i2) + "  " + printInputValue(f2)
+    (f2, i2) => printDescription$1(f2, "  ", !i2) + "  " + printInputValue$1(f2)
   );
-  return printDescription(type2) + `input ${type2.name}` + (type2.isOneOf ? " @oneOf" : "") + printBlock(fields);
+  return printDescription$1(type2) + `input ${type2.name}` + (type2.isOneOf ? " @oneOf" : "") + printBlock$1(fields);
 }
-function printFields(type2) {
+function printFields$1(type2) {
   const fields = Object.values(type2.getFields()).map(
-    (f2, i2) => printDescription(f2, "  ", !i2) + "  " + f2.name + printArgs(f2.args, "  ") + ": " + String(f2.type) + printDeprecated(f2.deprecationReason)
+    (f2, i2) => printDescription$1(f2, "  ", !i2) + "  " + f2.name + printArgs$1(f2.args, "  ") + ": " + String(f2.type) + printDeprecated$1(f2.deprecationReason)
   );
-  return printBlock(fields);
+  return printBlock$1(fields);
 }
-function printBlock(items) {
+function printBlock$1(items) {
   return items.length !== 0 ? " {\n" + items.join("\n") + "\n}" : "";
 }
-function printArgs(args, indentation = "") {
+function printArgs$1(args, indentation = "") {
   if (args.length === 0) {
     return "";
   }
   if (args.every((arg) => !arg.description)) {
-    return "(" + args.map(printInputValue).join(", ") + ")";
+    return "(" + args.map(printInputValue$1).join(", ") + ")";
   }
   return "(\n" + args.map(
-    (arg, i2) => printDescription(arg, "  " + indentation, !i2) + "  " + indentation + printInputValue(arg)
+    (arg, i2) => printDescription$1(arg, "  " + indentation, !i2) + "  " + indentation + printInputValue$1(arg)
   ).join("\n") + "\n" + indentation + ")";
 }
-function printInputValue(arg) {
-  const defaultAST = astFromValue(arg.defaultValue, arg.type);
+function printInputValue$1(arg) {
+  const defaultAST = astFromValue$1(arg.defaultValue, arg.type);
   let argDecl = arg.name + ": " + String(arg.type);
   if (defaultAST) {
-    argDecl += ` = ${print(defaultAST)}`;
+    argDecl += ` = ${print$1(defaultAST)}`;
   }
-  return argDecl + printDeprecated(arg.deprecationReason);
+  return argDecl + printDeprecated$1(arg.deprecationReason);
 }
-function printDirective(directive) {
-  return printDescription(directive) + "directive @" + directive.name + printArgs(directive.args) + (directive.isRepeatable ? " repeatable" : "") + " on " + directive.locations.join(" | ");
+function printDirective$1(directive) {
+  return printDescription$1(directive) + "directive @" + directive.name + printArgs$1(directive.args) + (directive.isRepeatable ? " repeatable" : "") + " on " + directive.locations.join(" | ");
 }
-function printDeprecated(reason) {
+function printDeprecated$1(reason) {
   if (reason == null) {
     return "";
   }
-  if (reason !== DEFAULT_DEPRECATION_REASON) {
-    const astValue = print({
-      kind: Kind.STRING,
+  if (reason !== DEFAULT_DEPRECATION_REASON$1) {
+    const astValue = print$1({
+      kind: Kind$1.STRING,
       value: reason
     });
     return ` @deprecated(reason: ${astValue})`;
   }
   return " @deprecated";
 }
-function printSpecifiedByURL(scalar) {
+function printSpecifiedByURL$1(scalar) {
   if (scalar.specifiedByURL == null) {
     return "";
   }
-  const astValue = print({
-    kind: Kind.STRING,
+  const astValue = print$1({
+    kind: Kind$1.STRING,
     value: scalar.specifiedByURL
   });
   return ` @specifiedBy(url: ${astValue})`;
 }
-function printDescription(def, indentation = "", firstInBlock = true) {
+function printDescription$1(def, indentation = "", firstInBlock = true) {
   const { description } = def;
   if (description == null) {
     return "";
   }
-  const blockString = print({
-    kind: Kind.STRING,
+  const blockString = print$1({
+    kind: Kind$1.STRING,
     value: description,
-    block: isPrintableAsBlockString(description)
+    block: isPrintableAsBlockString$1(description)
   });
   const prefix = indentation && !firstInBlock ? "\n" + indentation : indentation;
   return prefix + blockString.replace(/\n/g, "\n" + indentation) + "\n";
@@ -28889,7 +28918,7 @@ const makeAsyncIterableIteratorFromSink = (make) => {
   };
   return asyncIterableIterator;
 };
-function isAsyncIterable(input) {
+function isAsyncIterable$1(input) {
   return typeof input === "object" && input !== null && // The AsyncGenerator check is for Safari on iOS which currently does not have
   // Symbol.asyncIterator implemented
   // That means every custom AsyncIterable must be built using a AsyncGeneratorFunction (async function * () {})
@@ -28898,7 +28927,7 @@ function isAsyncIterable(input) {
 }
 const errorHasCode = (err) => typeof err == "object" && err !== null && "code" in err, isSubscriptionWithName = (document2, name2) => {
   let isSubscription = false;
-  return visit$1(document2, {
+  return visit$2(document2, {
     OperationDefinition(node) {
       var _a3;
       name2 === ((_a3 = node.name) == null ? void 0 : _a3.value) && node.operation === "subscription" && (isSubscription = true);
@@ -28955,7 +28984,7 @@ const createWebsocketsFetcherFromClient = (wsClient) => (graphQLParams) => makeA
     }).then(
       (r2) => e$5(r2, {})
     ));
-    if (!isAsyncIterable(response))
+    if (!isAsyncIterable$1(response))
       return yield response.json();
     try {
       for (var iter = __forAwait(response), more, temp, error2; more = !(temp = yield new __await(iter.next())).done; more = false) {
@@ -29035,7 +29064,7 @@ function formatSingleError(error2) {
 function handleSingleError(error2) {
   return error2 instanceof Error ? formatSingleError(error2) : error2;
 }
-function formatError(error2) {
+function formatError$1(error2) {
   return Array.isArray(error2) ? stringify({
     errors: error2.map((e2) => handleSingleError(e2))
   }) : stringify({ errors: [handleSingleError(error2)] });
@@ -29049,12 +29078,12 @@ function fillLeafs(schema, docString, getDefaultFieldNames) {
     return { insertions, result: docString };
   let ast;
   try {
-    ast = parse$3(docString);
+    ast = parse$4(docString);
   } catch (e2) {
     return { insertions, result: docString };
   }
-  const fieldNameFn = getDefaultFieldNames || defaultGetDefaultFieldNames, typeInfo = new TypeInfo(schema);
-  return visit$1(ast, {
+  const fieldNameFn = getDefaultFieldNames || defaultGetDefaultFieldNames, typeInfo = new TypeInfo$1(schema);
+  return visit$2(ast, {
     leave(node) {
       typeInfo.leave(node);
     },
@@ -29068,7 +29097,7 @@ function fillLeafs(schema, docString, getDefaultFieldNames) {
           const indent2 = getIndentation(docString, node.loc.start);
           insertions.push({
             index: node.loc.end,
-            string: " " + print(selectionSet).replaceAll(`
+            string: " " + print$1(selectionSet).replaceAll(`
 `, `
 ` + indent2)
           });
@@ -29092,23 +29121,23 @@ function defaultGetDefaultFieldNames(type2) {
     return ["node"];
   const leafFieldNames = [];
   for (const fieldName of Object.keys(fields))
-    isLeafType(fields[fieldName].type) && leafFieldNames.push(fieldName);
+    isLeafType$1(fields[fieldName].type) && leafFieldNames.push(fieldName);
   return leafFieldNames;
 }
 function buildSelectionSet(type2, getDefaultFieldNames) {
-  const namedType = getNamedType(type2);
-  if (!type2 || isLeafType(type2))
+  const namedType = getNamedType$1(type2);
+  if (!type2 || isLeafType$1(type2))
     return;
   const fieldNames = getDefaultFieldNames(namedType);
   if (!(!Array.isArray(fieldNames) || fieldNames.length === 0 || !("getFields" in namedType)))
     return {
-      kind: Kind.SELECTION_SET,
+      kind: Kind$1.SELECTION_SET,
       selections: fieldNames.map((fieldName) => {
         const fieldDef = namedType.getFields()[fieldName], fieldType = fieldDef ? fieldDef.type : null;
         return {
-          kind: Kind.FIELD,
+          kind: Kind$1.FIELD,
           name: {
-            kind: Kind.NAME,
+            kind: Kind$1.NAME,
             value: fieldName
           },
           // we can use as here, because we already know that fieldType
@@ -29164,7 +29193,7 @@ function uniqueBy(array, iteratee) {
 }
 function inlineRelevantFragmentSpreads(fragmentDefinitions, selections, selectionSetType) {
   var _a3;
-  const selectionSetTypeName = selectionSetType ? getNamedType(selectionSetType).name : null, outputSelections = [], seenSpreads = [];
+  const selectionSetTypeName = selectionSetType ? getNamedType$1(selectionSetType).name : null, outputSelections = [], seenSpreads = [];
   for (let selection of selections) {
     if (selection.kind === "FragmentSpread") {
       const fragmentName = selection.name.value;
@@ -29177,14 +29206,14 @@ function inlineRelevantFragmentSpreads(fragmentDefinitions, selections, selectio
       if (fragmentDefinition) {
         const { typeCondition, directives, selectionSet } = fragmentDefinition;
         selection = {
-          kind: Kind.INLINE_FRAGMENT,
+          kind: Kind$1.INLINE_FRAGMENT,
           typeCondition,
           directives,
           selectionSet
         };
       }
     }
-    if (selection.kind === Kind.INLINE_FRAGMENT && // Cannot inline if there are directives
+    if (selection.kind === Kind$1.INLINE_FRAGMENT && // Cannot inline if there are directives
     (!selection.directives || ((_a3 = selection.directives) == null ? void 0 : _a3.length) === 0)) {
       const fragmentTypeName = selection.typeCondition ? selection.typeCondition.name.value : null;
       if (!fragmentTypeName || fragmentTypeName === selectionSetTypeName) {
@@ -29203,9 +29232,9 @@ function inlineRelevantFragmentSpreads(fragmentDefinitions, selections, selectio
   return outputSelections;
 }
 function mergeAst(documentAST, schema) {
-  const typeInfo = schema ? new TypeInfo(schema) : null, fragmentDefinitions = /* @__PURE__ */ Object.create(null);
+  const typeInfo = schema ? new TypeInfo$1(schema) : null, fragmentDefinitions = /* @__PURE__ */ Object.create(null);
   for (const definition of documentAST.definitions)
-    definition.kind === Kind.FRAGMENT_DEFINITION && (fragmentDefinitions[definition.name.value] = definition);
+    definition.kind === Kind$1.FRAGMENT_DEFINITION && (fragmentDefinitions[definition.name.value] = definition);
   const flattenVisitors = {
     SelectionSet(node) {
       const selectionSetType = typeInfo ? typeInfo.getParentType() : null;
@@ -29221,11 +29250,11 @@ function mergeAst(documentAST, schema) {
     FragmentDefinition() {
       return null;
     }
-  }, flattenedAST = visit$1(
+  }, flattenedAST = visit$2(
     documentAST,
-    typeInfo ? visitWithTypeInfo(typeInfo, flattenVisitors) : flattenVisitors
+    typeInfo ? visitWithTypeInfo$1(typeInfo, flattenVisitors) : flattenVisitors
   );
-  return visit$1(flattenedAST, {
+  return visit$2(flattenedAST, {
     SelectionSet(node) {
       let { selections } = node;
       return selections = uniqueBy(
@@ -29419,7 +29448,7 @@ let HistoryStore$1 = class HistoryStore {
     if (!query)
       return false;
     try {
-      parse$3(query);
+      parse$4(query);
     } catch (e2) {
       return false;
     }
@@ -29616,7 +29645,7 @@ async function patchFirefox() {
       MouseTargetFactory: MouseTargetFactory2
     } = await import(
       // @ts-expect-error -- no types
-      "./mouseTarget-W7XRu5AE.js"
+      "./mouseTarget-B1DzZCnH.js"
     );
     return {
       MouseTargetFactory: MouseTargetFactory2
@@ -29644,7 +29673,7 @@ const monacoStore = createStore((set2, get) => ({
       }
       const [monaco, {
         initializeMode
-      }] = await Promise.all([__vitePreload(() => import("./monaco-editor-BkI_Yqm_.js").then((n2) => n2.b), true ? __vite__mapDeps([0,1]) : void 0), __vitePreload(() => import("./lite-Q86Qvekp.js"), true ? __vite__mapDeps([2,0,1]) : void 0)]);
+      }] = await Promise.all([__vitePreload(() => import("./monaco-editor-BfaC9dpY.js").then((n2) => n2.b), true ? __vite__mapDeps([0,1]) : void 0), __vitePreload(() => import("./lite-DJc7qXbb.js"), true ? __vite__mapDeps([2,0,1]) : void 0)]);
       globalThis.__MONACO = monaco;
       monaco.languages.json.jsonDefaults.setDiagnosticsOptions(JSON_DIAGNOSTIC_OPTIONS);
       monaco.editor.defineTheme(MONACO_THEME_NAME.dark, MONACO_THEME_DATA.dark);
@@ -29810,15 +29839,15 @@ function createScanner(text2, ignoreTrivia = false) {
       pos++;
     } else {
       pos++;
-      while (pos < text2.length && isDigit(text2.charCodeAt(pos))) {
+      while (pos < text2.length && isDigit$2(text2.charCodeAt(pos))) {
         pos++;
       }
     }
     if (pos < text2.length && text2.charCodeAt(pos) === 46) {
       pos++;
-      if (pos < text2.length && isDigit(text2.charCodeAt(pos))) {
+      if (pos < text2.length && isDigit$2(text2.charCodeAt(pos))) {
         pos++;
-        while (pos < text2.length && isDigit(text2.charCodeAt(pos))) {
+        while (pos < text2.length && isDigit$2(text2.charCodeAt(pos))) {
           pos++;
         }
       } else {
@@ -29832,9 +29861,9 @@ function createScanner(text2, ignoreTrivia = false) {
       if (pos < text2.length && text2.charCodeAt(pos) === 43 || text2.charCodeAt(pos) === 45) {
         pos++;
       }
-      if (pos < text2.length && isDigit(text2.charCodeAt(pos))) {
+      if (pos < text2.length && isDigit$2(text2.charCodeAt(pos))) {
         pos++;
-        while (pos < text2.length && isDigit(text2.charCodeAt(pos))) {
+        while (pos < text2.length && isDigit$2(text2.charCodeAt(pos))) {
           pos++;
         }
         end = pos;
@@ -29929,12 +29958,12 @@ function createScanner(text2, ignoreTrivia = false) {
       return token = 17;
     }
     let code2 = text2.charCodeAt(pos);
-    if (isWhiteSpace$1(code2)) {
+    if (isWhiteSpace$2(code2)) {
       do {
         pos++;
         value += String.fromCharCode(code2);
         code2 = text2.charCodeAt(pos);
-      } while (isWhiteSpace$1(code2));
+      } while (isWhiteSpace$2(code2));
       return token = 15;
     }
     if (isLineBreak(code2)) {
@@ -30021,7 +30050,7 @@ function createScanner(text2, ignoreTrivia = false) {
       case 45:
         value += String.fromCharCode(code2);
         pos++;
-        if (pos === len || !isDigit(text2.charCodeAt(pos))) {
+        if (pos === len || !isDigit$2(text2.charCodeAt(pos))) {
           return token = 16;
         }
       // found a minus, followed by a number so
@@ -30063,7 +30092,7 @@ function createScanner(text2, ignoreTrivia = false) {
     }
   }
   function isUnknownContentCharacter(code2) {
-    if (isWhiteSpace$1(code2) || isLineBreak(code2)) {
+    if (isWhiteSpace$2(code2) || isLineBreak(code2)) {
       return false;
     }
     switch (code2) {
@@ -30099,13 +30128,13 @@ function createScanner(text2, ignoreTrivia = false) {
     getTokenError: () => scanError
   };
 }
-function isWhiteSpace$1(ch) {
+function isWhiteSpace$2(ch) {
   return ch === 32 || ch === 9;
 }
 function isLineBreak(ch) {
   return ch === 10 || ch === 13;
 }
-function isDigit(ch) {
+function isDigit$2(ch) {
   return ch >= 48 && ch <= 57;
 }
 var CharacterCodes;
@@ -30225,7 +30254,7 @@ var ParseOptions;
     allowTrailingComma: false
   };
 })(ParseOptions || (ParseOptions = {}));
-function parse$2(text2, errors2 = [], options = ParseOptions.DEFAULT) {
+function parse$3(text2, errors2 = [], options = ParseOptions.DEFAULT) {
   let currentProperty = null;
   let currentParent = [];
   const previousParents = [];
@@ -30265,10 +30294,10 @@ function parse$2(text2, errors2 = [], options = ParseOptions.DEFAULT) {
       errors2.push({ error: error2, offset: offset2, length });
     }
   };
-  visit(text2, visitor, options);
+  visit$1(text2, visitor, options);
   return currentParent[0];
 }
-function visit(text2, visitor, options = ParseOptions.DEFAULT) {
+function visit$1(text2, visitor, options = ParseOptions.DEFAULT) {
   const _scanner = createScanner(text2, false);
   const _jsonPath = [];
   let suppressedCallbacks = 0;
@@ -30603,7 +30632,7 @@ var SyntaxKind;
   SyntaxKind2[SyntaxKind2["Unknown"] = 16] = "Unknown";
   SyntaxKind2[SyntaxKind2["EOF"] = 17] = "EOF";
 })(SyntaxKind || (SyntaxKind = {}));
-const parse$1 = parse$2;
+const parse$2 = parse$3;
 var ParseErrorCode;
 (function(ParseErrorCode2) {
   ParseErrorCode2[ParseErrorCode2["InvalidSymbol"] = 1] = "InvalidSymbol";
@@ -30670,7 +30699,7 @@ async function formatJSONC(content) {
     {
       parsers
     }
-  ] = await Promise.all([__vitePreload(() => import("./standalone-4MMvPysh.js"), true ? [] : void 0), __vitePreload(() => import("./estree-DC4vYpGp.js"), true ? [] : void 0), __vitePreload(() => import("./babel-B7ly_Xxf.js").then((n2) => n2.b), true ? [] : void 0)]);
+  ] = await Promise.all([__vitePreload(() => import("./standalone-4MMvPysh.js"), true ? [] : void 0), __vitePreload(() => import("./estree-DC4vYpGp.js"), true ? [] : void 0), __vitePreload(() => import("./babel-BdhT5Ayi.js").then((n2) => n2.b), true ? [] : void 0)]);
   return prettier.format(content, {
     parser: "jsonc",
     plugins: [
@@ -30694,7 +30723,7 @@ const formatter = new Intl.ListFormat("en", {
 });
 function parseJSONC(content) {
   const errors2 = [];
-  const parsed = parse$1(content, errors2, {
+  const parsed = parse$2(content, errors2, {
     allowTrailingComma: true,
     allowEmptyContent: true
   });
@@ -31000,7 +31029,7 @@ const createEditorSlice = (initial) => (set2, get) => {
       if (!documentAST || !query) {
         return;
       }
-      queryEditor.setValue(print(mergeAst(documentAST, schema)));
+      queryEditor.setValue(print$1(mergeAst(documentAST, schema)));
     }
   };
   return {
@@ -31076,7 +31105,7 @@ var Range2;
   }
   Range3.is = is;
 })(Range2 || (Range2 = {}));
-var Location2;
+var Location$1;
 (function(Location3) {
   function create2(uri, range) {
     return { uri, range };
@@ -31087,7 +31116,7 @@ var Location2;
     return Is.objectLiteral(candidate) && Range2.is(candidate.range) && (Is.string(candidate.uri) || Is.undefined(candidate.uri));
   }
   Location3.is = is;
-})(Location2 || (Location2 = {}));
+})(Location$1 || (Location$1 = {}));
 var LocationLink;
 (function(LocationLink2) {
   function create2(targetUri, targetRange, targetSelectionRange, originSelectionRange) {
@@ -31193,7 +31222,7 @@ var DiagnosticRelatedInformation;
   DiagnosticRelatedInformation2.create = create2;
   function is(value) {
     let candidate = value;
-    return Is.defined(candidate) && Location2.is(candidate.location) && Is.string(candidate.message);
+    return Is.defined(candidate) && Location$1.is(candidate.location) && Is.string(candidate.message);
   }
   DiagnosticRelatedInformation2.is = is;
 })(DiagnosticRelatedInformation || (DiagnosticRelatedInformation = {}));
@@ -31433,8 +31462,8 @@ var TextDocumentIdentifier;
 })(TextDocumentIdentifier || (TextDocumentIdentifier = {}));
 var VersionedTextDocumentIdentifier;
 (function(VersionedTextDocumentIdentifier2) {
-  function create2(uri, version) {
-    return { uri, version };
+  function create2(uri, version2) {
+    return { uri, version: version2 };
   }
   VersionedTextDocumentIdentifier2.create = create2;
   function is(value) {
@@ -31445,8 +31474,8 @@ var VersionedTextDocumentIdentifier;
 })(VersionedTextDocumentIdentifier || (VersionedTextDocumentIdentifier = {}));
 var OptionalVersionedTextDocumentIdentifier;
 (function(OptionalVersionedTextDocumentIdentifier2) {
-  function create2(uri, version) {
-    return { uri, version };
+  function create2(uri, version2) {
+    return { uri, version: version2 };
   }
   OptionalVersionedTextDocumentIdentifier2.create = create2;
   function is(value) {
@@ -31457,8 +31486,8 @@ var OptionalVersionedTextDocumentIdentifier;
 })(OptionalVersionedTextDocumentIdentifier || (OptionalVersionedTextDocumentIdentifier = {}));
 var TextDocumentItem;
 (function(TextDocumentItem2) {
-  function create2(uri, languageId, version, text2) {
-    return { uri, languageId, version, text: text2 };
+  function create2(uri, languageId, version2, text2) {
+    return { uri, languageId, version: version2, text: text2 };
   }
   TextDocumentItem2.create = create2;
   function is(value) {
@@ -31923,7 +31952,7 @@ var InlayHintLabelPart;
   InlayHintLabelPart2.create = create2;
   function is(value) {
     const candidate = value;
-    return Is.objectLiteral(candidate) && (candidate.tooltip === void 0 || Is.string(candidate.tooltip) || MarkupContent.is(candidate.tooltip)) && (candidate.location === void 0 || Location2.is(candidate.location)) && (candidate.command === void 0 || Command.is(candidate.command));
+    return Is.objectLiteral(candidate) && (candidate.tooltip === void 0 || Is.string(candidate.tooltip) || MarkupContent.is(candidate.tooltip)) && (candidate.location === void 0 || Location$1.is(candidate.location)) && (candidate.command === void 0 || Command.is(candidate.command));
   }
   InlayHintLabelPart2.is = is;
 })(InlayHintLabelPart || (InlayHintLabelPart = {}));
@@ -31993,8 +32022,8 @@ var WorkspaceFolder;
 })(WorkspaceFolder || (WorkspaceFolder = {}));
 var TextDocument;
 (function(TextDocument2) {
-  function create2(uri, languageId, version, content) {
-    return new FullTextDocument(uri, languageId, version, content);
+  function create2(uri, languageId, version2, content) {
+    return new FullTextDocument(uri, languageId, version2, content);
   }
   TextDocument2.create = create2;
   function is(value) {
@@ -32005,11 +32034,11 @@ var TextDocument;
   function applyEdits(document2, edits) {
     let text2 = document2.getText();
     let sortedEdits = mergeSort(edits, (a3, b2) => {
-      let diff = a3.range.start.line - b2.range.start.line;
-      if (diff === 0) {
+      let diff2 = a3.range.start.line - b2.range.start.line;
+      if (diff2 === 0) {
         return a3.range.start.character - b2.range.start.character;
       }
-      return diff;
+      return diff2;
     });
     let lastModifiedOffset = text2.length;
     for (let i2 = sortedEdits.length - 1; i2 >= 0; i2--) {
@@ -32056,10 +32085,10 @@ var TextDocument;
   }
 })(TextDocument || (TextDocument = {}));
 class FullTextDocument {
-  constructor(uri, languageId, version, content) {
+  constructor(uri, languageId, version2, content) {
     this._uri = uri;
     this._languageId = languageId;
-    this._version = version;
+    this._version = version2;
     this._content = content;
     this._lineOffsets = void 0;
   }
@@ -32080,9 +32109,9 @@ class FullTextDocument {
     }
     return this._content;
   }
-  update(event, version) {
+  update(event, version2) {
     this._content = event.text;
-    this._version = version;
+    this._version = version2;
     this._lineOffsets = void 0;
   }
   getLineOffsets() {
@@ -32339,7 +32368,7 @@ const ParseRules = {
       case "subscription":
         return "Subscription";
       case "fragment":
-        return Kind.FRAGMENT_DEFINITION;
+        return Kind$1.FRAGMENT_DEFINITION;
       case "schema":
         return "SchemaDef";
       case "scalar":
@@ -32557,28 +32586,28 @@ const ParseRules = {
   ExtensionDefinition(token) {
     switch (token.value) {
       case "schema":
-        return Kind.SCHEMA_EXTENSION;
+        return Kind$1.SCHEMA_EXTENSION;
       case "scalar":
-        return Kind.SCALAR_TYPE_EXTENSION;
+        return Kind$1.SCALAR_TYPE_EXTENSION;
       case "type":
-        return Kind.OBJECT_TYPE_EXTENSION;
+        return Kind$1.OBJECT_TYPE_EXTENSION;
       case "interface":
-        return Kind.INTERFACE_TYPE_EXTENSION;
+        return Kind$1.INTERFACE_TYPE_EXTENSION;
       case "union":
-        return Kind.UNION_TYPE_EXTENSION;
+        return Kind$1.UNION_TYPE_EXTENSION;
       case "enum":
-        return Kind.ENUM_TYPE_EXTENSION;
+        return Kind$1.ENUM_TYPE_EXTENSION;
       case "input":
-        return Kind.INPUT_OBJECT_TYPE_EXTENSION;
+        return Kind$1.INPUT_OBJECT_TYPE_EXTENSION;
     }
   },
-  [Kind.SCHEMA_EXTENSION]: ["SchemaDef"],
-  [Kind.SCALAR_TYPE_EXTENSION]: ["ScalarDef"],
-  [Kind.OBJECT_TYPE_EXTENSION]: ["ObjectTypeDef"],
-  [Kind.INTERFACE_TYPE_EXTENSION]: ["InterfaceDef"],
-  [Kind.UNION_TYPE_EXTENSION]: ["UnionDef"],
-  [Kind.ENUM_TYPE_EXTENSION]: ["EnumDef"],
-  [Kind.INPUT_OBJECT_TYPE_EXTENSION]: ["InputDef"]
+  [Kind$1.SCHEMA_EXTENSION]: ["SchemaDef"],
+  [Kind$1.SCALAR_TYPE_EXTENSION]: ["ScalarDef"],
+  [Kind$1.OBJECT_TYPE_EXTENSION]: ["ObjectTypeDef"],
+  [Kind$1.INTERFACE_TYPE_EXTENSION]: ["InterfaceDef"],
+  [Kind$1.UNION_TYPE_EXTENSION]: ["UnionDef"],
+  [Kind$1.ENUM_TYPE_EXTENSION]: ["EnumDef"],
+  [Kind$1.INPUT_OBJECT_TYPE_EXTENSION]: ["InputDef"]
 };
 function word(value) {
   return {
@@ -32626,7 +32655,7 @@ function onlineParser(options = {
         needsSeparator: false,
         prevState: null
       };
-      pushRule(options.parseRules, initialState, Kind.DOCUMENT);
+      pushRule(options.parseRules, initialState, Kind$1.DOCUMENT);
       return initialState;
     },
     token(stream, state) {
@@ -32837,28 +32866,28 @@ var GraphQLDocumentMode;
   GraphQLDocumentMode2["UNKNOWN"] = "UNKNOWN";
 })(GraphQLDocumentMode || (GraphQLDocumentMode = {}));
 const TYPE_SYSTEM_KINDS = [
-  Kind.SCHEMA_DEFINITION,
-  Kind.OPERATION_TYPE_DEFINITION,
-  Kind.SCALAR_TYPE_DEFINITION,
-  Kind.OBJECT_TYPE_DEFINITION,
-  Kind.INTERFACE_TYPE_DEFINITION,
-  Kind.UNION_TYPE_DEFINITION,
-  Kind.ENUM_TYPE_DEFINITION,
-  Kind.INPUT_OBJECT_TYPE_DEFINITION,
-  Kind.DIRECTIVE_DEFINITION,
-  Kind.SCHEMA_EXTENSION,
-  Kind.SCALAR_TYPE_EXTENSION,
-  Kind.OBJECT_TYPE_EXTENSION,
-  Kind.INTERFACE_TYPE_EXTENSION,
-  Kind.UNION_TYPE_EXTENSION,
-  Kind.ENUM_TYPE_EXTENSION,
-  Kind.INPUT_OBJECT_TYPE_EXTENSION
+  Kind$1.SCHEMA_DEFINITION,
+  Kind$1.OPERATION_TYPE_DEFINITION,
+  Kind$1.SCALAR_TYPE_DEFINITION,
+  Kind$1.OBJECT_TYPE_DEFINITION,
+  Kind$1.INTERFACE_TYPE_DEFINITION,
+  Kind$1.UNION_TYPE_DEFINITION,
+  Kind$1.ENUM_TYPE_DEFINITION,
+  Kind$1.INPUT_OBJECT_TYPE_DEFINITION,
+  Kind$1.DIRECTIVE_DEFINITION,
+  Kind$1.SCHEMA_EXTENSION,
+  Kind$1.SCALAR_TYPE_EXTENSION,
+  Kind$1.OBJECT_TYPE_EXTENSION,
+  Kind$1.INTERFACE_TYPE_EXTENSION,
+  Kind$1.UNION_TYPE_EXTENSION,
+  Kind$1.ENUM_TYPE_EXTENSION,
+  Kind$1.INPUT_OBJECT_TYPE_EXTENSION
 ];
 const getParsedMode = (sdl) => {
   let mode = GraphQLDocumentMode.UNKNOWN;
   if (sdl) {
     try {
-      visit$1(parse$3(sdl), {
+      visit$2(parse$4(sdl), {
         enter(node) {
           if (node.kind === "Document") {
             mode = GraphQLDocumentMode.EXECUTABLE;
@@ -32866,7 +32895,7 @@ const getParsedMode = (sdl) => {
           }
           if (TYPE_SYSTEM_KINDS.includes(node.kind)) {
             mode = GraphQLDocumentMode.TYPE_SYSTEM;
-            return BREAK;
+            return BREAK$1;
           }
           return false;
         }
@@ -32919,15 +32948,15 @@ function getContextAtPosition(queryText, cursor, schema, contextToken, options) 
     mode
   };
 }
-function getFieldDef(schema, type2, fieldName) {
-  if (fieldName === SchemaMetaFieldDef.name && schema.getQueryType() === type2) {
-    return SchemaMetaFieldDef;
+function getFieldDef$2(schema, type2, fieldName) {
+  if (fieldName === SchemaMetaFieldDef$1.name && schema.getQueryType() === type2) {
+    return SchemaMetaFieldDef$1;
   }
-  if (fieldName === TypeMetaFieldDef.name && schema.getQueryType() === type2) {
-    return TypeMetaFieldDef;
+  if (fieldName === TypeMetaFieldDef$1.name && schema.getQueryType() === type2) {
+    return TypeMetaFieldDef$1;
   }
-  if (fieldName === TypeNameMetaFieldDef.name && isCompositeType(type2)) {
-    return TypeNameMetaFieldDef;
+  if (fieldName === TypeNameMetaFieldDef$1.name && isCompositeType$1(type2)) {
+    return TypeNameMetaFieldDef$1;
   }
   if ("getFields" in type2) {
     return type2.getFields()[fieldName];
@@ -32981,13 +33010,13 @@ function getTypeInfo(schema, tokenState) {
         if (!type2 || !state.name) {
           fieldDef = null;
         } else {
-          fieldDef = parentType ? getFieldDef(schema, parentType, state.name) : null;
+          fieldDef = parentType ? getFieldDef$2(schema, parentType, state.name) : null;
           type2 = fieldDef ? fieldDef.type : null;
         }
         break;
       }
       case RuleKinds.SELECTION_SET:
-        parentType = getNamedType(type2);
+        parentType = getNamedType$1(type2);
         break;
       case RuleKinds.DIRECTIVE:
         directiveDef = state.name ? schema.getDirective(state.name) : null;
@@ -32995,7 +33024,7 @@ function getTypeInfo(schema, tokenState) {
       case RuleKinds.INTERFACE_DEF:
         if (state.name) {
           objectTypeDef = null;
-          interfaceDef = new GraphQLInterfaceType({
+          interfaceDef = new GraphQLInterfaceType$1({
             name: state.name,
             interfaces: [],
             fields: {}
@@ -33005,7 +33034,7 @@ function getTypeInfo(schema, tokenState) {
       case RuleKinds.OBJECT_TYPE_DEF:
         if (state.name) {
           interfaceDef = null;
-          objectTypeDef = new GraphQLObjectType({
+          objectTypeDef = new GraphQLObjectType$1({
             name: state.name,
             interfaces: [],
             fields: {}
@@ -33027,7 +33056,7 @@ function getTypeInfo(schema, tokenState) {
                 argDefs = null;
                 break;
               }
-              const field = parentType ? getFieldDef(schema, parentType, name2) : null;
+              const field = parentType ? getFieldDef$2(schema, parentType, name2) : null;
               if (!field) {
                 argDefs = null;
                 break;
@@ -33060,16 +33089,16 @@ function getTypeInfo(schema, tokenState) {
         type2 = inputType;
         break;
       case RuleKinds.ENUM_VALUE:
-        const enumType = getNamedType(inputType);
-        enumValue = enumType instanceof GraphQLEnumType ? enumType.getValues().find((val) => val.value === state.name) : null;
+        const enumType = getNamedType$1(inputType);
+        enumValue = enumType instanceof GraphQLEnumType$1 ? enumType.getValues().find((val) => val.value === state.name) : null;
         break;
       case RuleKinds.LIST_VALUE:
-        const nullableType = getNullableType(inputType);
-        inputType = nullableType instanceof GraphQLList ? nullableType.ofType : null;
+        const nullableType = getNullableType$1(inputType);
+        inputType = nullableType instanceof GraphQLList$1 ? nullableType.ofType : null;
         break;
       case RuleKinds.OBJECT_VALUE:
-        const objectType = getNamedType(inputType);
-        objectFieldDefs = objectType instanceof GraphQLInputObjectType ? objectType.getFields() : null;
+        const objectType = getNamedType$1(inputType);
+        objectFieldDefs = objectType instanceof GraphQLInputObjectType$1 ? objectType.getFields() : null;
         break;
       case RuleKinds.OBJECT_FIELD:
         const objectField = state.name && objectFieldDefs ? objectFieldDefs[state.name] : null;
@@ -33129,7 +33158,7 @@ const AdditionalRuleKinds = {
   TYPE: "Type",
   VARIABLE: "Variable"
 };
-const RuleKinds = Object.assign(Object.assign({}, Kind), AdditionalRuleKinds);
+const RuleKinds = Object.assign(Object.assign({}, Kind$1), AdditionalRuleKinds);
 var CompletionItemKind$1;
 (function(CompletionItemKind2) {
   CompletionItemKind2.Text = 1;
@@ -33199,7 +33228,7 @@ const getFragmentDependenciesForAST = (parsedOperation, fragmentDefinitions) => 
   }
   const existingFrags = /* @__PURE__ */ new Map();
   const referencedFragNames = /* @__PURE__ */ new Set();
-  visit$1(parsedOperation, {
+  visit$2(parsedOperation, {
     FragmentDefinition(node) {
       existingFrags.set(node.name.value, true);
     },
@@ -33217,7 +33246,7 @@ const getFragmentDependenciesForAST = (parsedOperation, fragmentDefinitions) => 
   }
   const referencedFragments = [];
   for (const ast of asts) {
-    visit$1(ast, {
+    visit$2(ast, {
       FragmentSpread(node) {
         if (!referencedFragNames.has(node.name.value) && fragmentDefinitions.get(node.name.value)) {
           asts.add(nullthrows(fragmentDefinitions.get(node.name.value)));
@@ -33251,11 +33280,11 @@ function collectVariables(schema, documentAST) {
       const { variableDefinitions } = definition;
       if (variableDefinitions) {
         for (const { variable, type: type2 } of variableDefinitions) {
-          const inputType = typeFromAST(schema, type2);
+          const inputType = typeFromAST$1(schema, type2);
           if (inputType) {
             variableToType[variable.name.value] = inputType;
-          } else if (type2.kind === Kind.NAMED_TYPE && type2.name.value === "Float") {
-            variableToType[variable.name.value] = GraphQLFloat;
+          } else if (type2.kind === Kind$1.NAMED_TYPE && type2.name.value === "Float") {
+            variableToType[variable.name.value] = GraphQLFloat$1;
           }
         }
       }
@@ -33266,7 +33295,7 @@ function collectVariables(schema, documentAST) {
 function getOperationASTFacts(documentAST, schema) {
   const variableToType = schema ? collectVariables(schema, documentAST) : void 0;
   const operations = [];
-  visit$1(documentAST, {
+  visit$2(documentAST, {
     OperationDefinition(node) {
       operations.push(node);
     }
@@ -33278,7 +33307,7 @@ function getOperationFacts(schema, documentString) {
     return;
   }
   try {
-    const documentAST = parse$3(documentString);
+    const documentAST = parse$4(documentString);
     return Object.assign(Object.assign({}, getOperationASTFacts(documentAST, schema)), { documentAST });
   } catch (_a3) {
   }
@@ -33716,7 +33745,7 @@ const createExecutionSlice = (initial) => (set2, get) => {
             return;
           }
           const name2 = editor === variableEditor ? "Variables" : "Request headers";
-          setResponse(formatError({
+          setResponse(formatError$1({
             message: `${name2} ${error2.message}`
           }));
         }
@@ -33741,7 +33770,7 @@ const createExecutionSlice = (initial) => (set2, get) => {
         }
         const fragmentDependencies = documentAST ? getFragmentDependenciesForAST(documentAST, externalFragments) : [];
         if (fragmentDependencies.length) {
-          query += "\n" + fragmentDependencies.map((node) => print(node)).join("\n");
+          query += "\n" + fragmentDependencies.map((node) => print$1(node)).join("\n");
         }
         setResponse("");
         set2({
@@ -33791,7 +33820,7 @@ const createExecutionSlice = (initial) => (set2, get) => {
                 set2({
                   isFetching: false
                 });
-                setResponse(formatError(error2));
+                setResponse(formatError$1(error2));
                 set2({
                   subscription: null
                 });
@@ -33806,7 +33835,7 @@ const createExecutionSlice = (initial) => (set2, get) => {
             set2({
               subscription: newSubscription
             });
-          } else if (isAsyncIterable$1(value)) {
+          } else if (isAsyncIterable$2(value)) {
             const newSubscription = {
               unsubscribe: () => {
                 var _a3, _b2;
@@ -33830,7 +33859,7 @@ const createExecutionSlice = (initial) => (set2, get) => {
           set2({
             isFetching: false
           });
-          setResponse(formatError(error2));
+          setResponse(formatError$1(error2));
           set2({
             subscription: null
           });
@@ -34012,7 +34041,7 @@ const createSchemaSlice = (initial) => (set2, get) => ({
             query,
             operationName: introspectionQueryName
           }, fetcherOpts));
-          if (!isPromise(fetch2)) {
+          if (!isPromise$1(fetch2)) {
             throw new TypeError("Fetcher did not return a Promise for introspection.");
           }
           return fetch2;
@@ -34026,7 +34055,7 @@ const createSchemaSlice = (initial) => (set2, get) => ({
         const fetcherOpts = headers ? {
           headers
         } : {};
-        const introspectionQuery = getIntrospectionQuery({
+        const introspectionQuery = getIntrospectionQuery$1({
           inputValueDeprecation,
           schemaDescription
         });
@@ -34050,7 +34079,7 @@ const createSchemaSlice = (initial) => (set2, get) => ({
         if (counter !== get().requestCounter || !introspectionData) {
           return;
         }
-        const newSchema = buildClientSchema(introspectionData);
+        const newSchema = buildClientSchema$1(introspectionData);
         set2({
           schema: newSchema
         });
@@ -34064,7 +34093,7 @@ const createSchemaSlice = (initial) => (set2, get) => ({
         }
         set2({
           isIntrospecting: false,
-          fetchError: formatError(error2)
+          fetchError: formatError$1(error2)
         });
       }
     }
@@ -34513,8 +34542,8 @@ const InnerGraphiQLProvider = (t0) => {
   let t17;
   if ($2[65] !== dangerouslyAssumeSchemaIsValid || $2[66] !== schema) {
     t17 = () => {
-      const newSchema = isSchema(schema) || schema == null ? schema : void 0;
-      const validationErrors = !newSchema || dangerouslyAssumeSchemaIsValid ? [] : validateSchema(newSchema);
+      const newSchema = isSchema$1(schema) || schema == null ? schema : void 0;
+      const validationErrors = !newSchema || dangerouslyAssumeSchemaIsValid ? [] : validateSchema$1(newSchema);
       const store_0 = storeRef.current;
       store_0.setState((t182) => {
         const {
@@ -34523,7 +34552,7 @@ const InnerGraphiQLProvider = (t0) => {
         return {
           requestCounter: requestCounter + 1,
           schema: newSchema,
-          shouldIntrospect: !isSchema(schema) && schema !== null,
+          shouldIntrospect: !isSchema$1(schema) && schema !== null,
           validationErrors
         };
       });
@@ -34603,7 +34632,7 @@ function getExternalFragments(externalFragments) {
         map2.set(fragment.name.value, fragment);
       }
     } else if (typeof externalFragments === "string") {
-      visit$1(parse$3(externalFragments), {
+      visit$2(parse$4(externalFragments), {
         FragmentDefinition(fragment) {
           map2.set(fragment.name.value, fragment);
         }
@@ -35615,7 +35644,7 @@ function isSpace(code2) {
   }
   return false;
 }
-function isWhiteSpace(code2) {
+function isWhiteSpace$1(code2) {
   if (code2 >= 8192 && code2 <= 8202) {
     return true;
   }
@@ -35703,7 +35732,7 @@ const utils = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.definePropert
   isSpace,
   isString: isString$1,
   isValidEntityCode,
-  isWhiteSpace,
+  isWhiteSpace: isWhiteSpace$1,
   lib,
   normalizeReference,
   unescapeAll,
@@ -36173,7 +36202,7 @@ Ruler.prototype.getRules = function(chainName) {
   }
   return this.__cache__[chainName] || [];
 };
-function Token2(type2, tag, nesting) {
+function Token$1(type2, tag, nesting) {
   this.type = type2;
   this.tag = tag;
   this.attrs = null;
@@ -36188,7 +36217,7 @@ function Token2(type2, tag, nesting) {
   this.block = false;
   this.hidden = false;
 }
-Token2.prototype.attrIndex = function attrIndex(name2) {
+Token$1.prototype.attrIndex = function attrIndex(name2) {
   if (!this.attrs) {
     return -1;
   }
@@ -36200,14 +36229,14 @@ Token2.prototype.attrIndex = function attrIndex(name2) {
   }
   return -1;
 };
-Token2.prototype.attrPush = function attrPush(attrData) {
+Token$1.prototype.attrPush = function attrPush(attrData) {
   if (this.attrs) {
     this.attrs.push(attrData);
   } else {
     this.attrs = [attrData];
   }
 };
-Token2.prototype.attrSet = function attrSet(name2, value) {
+Token$1.prototype.attrSet = function attrSet(name2, value) {
   const idx = this.attrIndex(name2);
   const attrData = [name2, value];
   if (idx < 0) {
@@ -36216,7 +36245,7 @@ Token2.prototype.attrSet = function attrSet(name2, value) {
     this.attrs[idx] = attrData;
   }
 };
-Token2.prototype.attrGet = function attrGet(name2) {
+Token$1.prototype.attrGet = function attrGet(name2) {
   const idx = this.attrIndex(name2);
   let value = null;
   if (idx >= 0) {
@@ -36224,7 +36253,7 @@ Token2.prototype.attrGet = function attrGet(name2) {
   }
   return value;
 };
-Token2.prototype.attrJoin = function attrJoin(name2, value) {
+Token$1.prototype.attrJoin = function attrJoin(name2, value) {
   const idx = this.attrIndex(name2);
   if (idx < 0) {
     this.attrPush([name2, value]);
@@ -36239,7 +36268,7 @@ function StateCore(src, md, env2) {
   this.inlineMode = false;
   this.md = md;
 }
-StateCore.prototype.Token = Token2;
+StateCore.prototype.Token = Token$1;
 const NEWLINES_RE = /\r\n?|\n/g;
 const NULL_RE = /\0/g;
 function normalize(state) {
@@ -36248,7 +36277,7 @@ function normalize(state) {
   str = str.replace(NULL_RE, "�");
   state.src = str;
 }
-function block(state) {
+function block$1(state) {
   let token;
   if (state.inlineMode) {
     token = new state.Token("inline", "", 0);
@@ -36483,8 +36512,8 @@ function process_inlines(tokens, state) {
         }
         const isLastPunctChar = isMdAsciiPunct(lastChar) || isPunctChar(String.fromCharCode(lastChar));
         const isNextPunctChar = isMdAsciiPunct(nextChar) || isPunctChar(String.fromCharCode(nextChar));
-        const isLastWhiteSpace = isWhiteSpace(lastChar);
-        const isNextWhiteSpace = isWhiteSpace(nextChar);
+        const isLastWhiteSpace = isWhiteSpace$1(lastChar);
+        const isNextWhiteSpace = isWhiteSpace$1(nextChar);
         if (isNextWhiteSpace) {
           canOpen = false;
         } else if (isNextPunctChar) {
@@ -36602,7 +36631,7 @@ function text_join(state) {
 }
 const _rules$2 = [
   ["normalize", normalize],
-  ["block", block],
+  ["block", block$1],
   ["inline", inline],
   ["linkify", linkify$1],
   ["replacements", replace],
@@ -36681,7 +36710,7 @@ function StateBlock(src, md, env2, tokens) {
   this.lineMax = this.bMarks.length - 1;
 }
 StateBlock.prototype.push = function(type2, tag, nesting) {
-  const token = new Token2(type2, tag, nesting);
+  const token = new Token$1(type2, tag, nesting);
   token.block = true;
   if (nesting < 0) this.level--;
   token.level = this.level;
@@ -36777,7 +36806,7 @@ StateBlock.prototype.getLines = function getLines(begin, end, indent2, keepLastL
   }
   return queue.join("");
 };
-StateBlock.prototype.Token = Token2;
+StateBlock.prototype.Token = Token$1;
 const MAX_AUTOCOMPLETED_CELLS = 65536;
 function getLine(state, line) {
   const pos = state.bMarks[line] + state.tShift[line];
@@ -37966,7 +37995,7 @@ function StateInline(src, md, env2, outTokens) {
   this.linkLevel = 0;
 }
 StateInline.prototype.pushPending = function() {
-  const token = new Token2("text", "", 0);
+  const token = new Token$1("text", "", 0);
   token.content = this.pending;
   token.level = this.pendingLevel;
   this.tokens.push(token);
@@ -37977,7 +38006,7 @@ StateInline.prototype.push = function(type2, tag, nesting) {
   if (this.pending) {
     this.pushPending();
   }
-  const token = new Token2(type2, tag, nesting);
+  const token = new Token$1(type2, tag, nesting);
   let token_meta = null;
   if (nesting < 0) {
     this.level--;
@@ -38007,15 +38036,15 @@ StateInline.prototype.scanDelims = function(start, canSplitWord) {
   const nextChar = pos < max2 ? this.src.charCodeAt(pos) : 32;
   const isLastPunctChar = isMdAsciiPunct(lastChar) || isPunctChar(String.fromCharCode(lastChar));
   const isNextPunctChar = isMdAsciiPunct(nextChar) || isPunctChar(String.fromCharCode(nextChar));
-  const isLastWhiteSpace = isWhiteSpace(lastChar);
-  const isNextWhiteSpace = isWhiteSpace(nextChar);
+  const isLastWhiteSpace = isWhiteSpace$1(lastChar);
+  const isNextWhiteSpace = isWhiteSpace$1(nextChar);
   const left_flanking = !isNextWhiteSpace && (!isNextPunctChar || isLastWhiteSpace || isLastPunctChar);
   const right_flanking = !isLastWhiteSpace && (!isLastPunctChar || isNextWhiteSpace || isNextPunctChar);
   const can_open = left_flanking && (canSplitWord || !right_flanking || isLastPunctChar);
   const can_close = right_flanking && (canSplitWord || !left_flanking || isNextPunctChar);
   return { can_open, can_close, length: count2 };
 };
-StateInline.prototype.Token = Token2;
+StateInline.prototype.Token = Token$1;
 function isTerminatorChar(ch) {
   switch (ch) {
     case 10:
@@ -38674,7 +38703,7 @@ function isLinkOpen(str) {
 function isLinkClose(str) {
   return /^<\/a\s*>/i.test(str);
 }
-function isLetter(ch) {
+function isLetter$1(ch) {
   const lc = ch | 32;
   return lc >= 97 && lc <= 122;
 }
@@ -38688,7 +38717,7 @@ function html_inline(state, silent) {
     return false;
   }
   const ch = state.src.charCodeAt(pos + 1);
-  if (ch !== 33 && ch !== 63 && ch !== 47 && !isLetter(ch)) {
+  if (ch !== 33 && ch !== 63 && ch !== 47 && !isLetter$1(ch)) {
     return false;
   }
   const match2 = state.src.slice(pos).match(HTML_TAG_RE);
@@ -39720,7 +39749,7 @@ const cfg_commonmark = {
     }
   }
 };
-const config = {
+const config$1 = {
   default: cfg_default,
   zero: cfg_zero,
   commonmark: cfg_commonmark
@@ -39790,7 +39819,7 @@ MarkdownIt.prototype.configure = function(presets) {
   const self = this;
   if (isString$1(presets)) {
     const presetName = presets;
-    presets = config[presetName];
+    presets = config$1[presetName];
     if (!presets) {
       throw new Error('Wrong `markdown-it` preset "' + presetName + '", check name');
     }
@@ -41793,7 +41822,7 @@ function hasWindow() {
   return typeof window !== "undefined";
 }
 function getNodeName(node) {
-  if (isNode(node)) {
+  if (isNode$1(node)) {
     return (node.nodeName || "").toLowerCase();
   }
   return "#document";
@@ -41804,9 +41833,9 @@ function getWindow(node) {
 }
 function getDocumentElement(node) {
   var _ref;
-  return (_ref = (isNode(node) ? node.ownerDocument : node.document) || window.document) == null ? void 0 : _ref.documentElement;
+  return (_ref = (isNode$1(node) ? node.ownerDocument : node.document) || window.document) == null ? void 0 : _ref.documentElement;
 }
-function isNode(value) {
+function isNode$1(value) {
   if (!hasWindow()) {
     return false;
   }
@@ -43916,7 +43945,7 @@ var zeroGap = {
   right: 0,
   gap: 0
 };
-var parse = function(x2) {
+var parse$1 = function(x2) {
   return parseInt(x2 || "", 10) || 0;
 };
 var getOffset = function(gapMode) {
@@ -43924,7 +43953,7 @@ var getOffset = function(gapMode) {
   var left = cs[gapMode === "padding" ? "paddingLeft" : "marginLeft"];
   var top = cs[gapMode === "padding" ? "paddingTop" : "marginTop"];
   var right = cs[gapMode === "padding" ? "paddingRight" : "marginRight"];
-  return [parse(left), parse(top), parse(right)];
+  return [parse$1(left), parse$1(top), parse$1(right)];
 };
 var getGapWidth = function(gapMode) {
   if (gapMode === void 0) {
@@ -46989,7 +47018,7 @@ const getStringSchema = (schemaConfig) => {
   if (graphQLSchema) {
     return {
       ...rest,
-      documentString: printSchema(graphQLSchema)
+      documentString: printSchema$1(graphQLSchema)
     };
   }
   if (introspectionJSONString) {
@@ -47011,10 +47040,10 @@ const getStringSchema = (schemaConfig) => {
     };
   }
   if (documentAST) {
-    const schema = buildASTSchema(documentAST, rest.buildSchemaOptions);
+    const schema = buildASTSchema$1(documentAST, rest.buildSchemaOptions);
     return {
       ...rest,
-      documentString: printSchema(schema)
+      documentString: printSchema$1(schema)
     };
   }
   throw new Error("No schema supplied");
@@ -47385,7 +47414,7 @@ const ResponseEditor = (t0) => {
         responseEditor == null ? void 0 : responseEditor.setValue(fetchError);
       }
       if (validationErrors.length) {
-        responseEditor == null ? void 0 : responseEditor.setValue(formatError(validationErrors));
+        responseEditor == null ? void 0 : responseEditor.setValue(formatError$1(validationErrors));
       }
     };
     t3 = [responseEditor, fetchError, validationErrors];
@@ -48153,7 +48182,7 @@ const clamp = (min2, max2, v2) => {
     return min2;
   return v2;
 };
-let invariant = () => {
+let invariant$1 = () => {
 };
 const MotionGlobalConfig = {};
 const isNumericalString = (v2) => /^-?(?:\d+(?:\.\d+)?|\.\d+)$/u.test(v2);
@@ -48268,7 +48297,7 @@ const isValidEasing = (easing) => {
 };
 const easingDefinitionToFunction = (definition) => {
   if (isBezierDefinition(definition)) {
-    invariant(definition.length === 4);
+    invariant$1(definition.length === 4);
     const [x1, y1, x2, y2] = definition;
     return cubicBezier(x1, y1, x2, y2);
   } else if (isValidEasing(definition)) {
@@ -48415,19 +48444,19 @@ function createRenderBatcher(scheduleNextBatch, allowKeepAlive) {
   return { schedule, cancel, state, steps };
 }
 const { schedule: frame, cancel: cancelFrame, state: frameData, steps: frameSteps } = /* @__PURE__ */ createRenderBatcher(typeof requestAnimationFrame !== "undefined" ? requestAnimationFrame : noop2, true);
-let now;
+let now$1;
 function clearTime() {
-  now = void 0;
+  now$1 = void 0;
 }
 const time = {
   now: () => {
-    if (now === void 0) {
+    if (now$1 === void 0) {
       time.set(frameData.isProcessing || MotionGlobalConfig.useManualTiming ? frameData.timestamp : performance.now());
     }
-    return now;
+    return now$1;
   },
   set: (newTime) => {
-    now = newTime;
+    now$1 = newTime;
     queueMicrotask(clearTime);
   }
 };
@@ -49122,7 +49151,7 @@ function createMixers(output, ease2, customMixer) {
 }
 function interpolate(input, output, { clamp: isClamp = true, ease: ease2, mixer } = {}) {
   const inputLength = input.length;
-  invariant(inputLength === output.length);
+  invariant$1(inputLength === output.length);
   if (inputLength === 1)
     return () => output[0];
   if (inputLength === 2 && output[0] === output[1])
@@ -49817,7 +49846,7 @@ class NativeAnimation extends WithPromise {
     this.isPseudoElement = Boolean(pseudoElement);
     this.allowFlatten = allowFlatten;
     this.options = options;
-    invariant(typeof options.type !== "string");
+    invariant$1(typeof options.type !== "string");
     const transition = applyGeneratorOptions(options);
     this.animation = startWaapiAnimation(element, name2, keyframes2, transition, pseudoElement);
     if (transition.autoplay === false) {
@@ -50938,18 +50967,18 @@ const MotionConfigContext = reactExports.createContext({
   isStatic: false,
   reducedMotion: "never"
 });
-function usePresence(subscribe = true) {
+function usePresence(subscribe2 = true) {
   const context = reactExports.useContext(PresenceContext);
   if (context === null)
     return [true, null];
   const { isPresent, onExitComplete, register: register2 } = context;
   const id2 = reactExports.useId();
   reactExports.useEffect(() => {
-    if (subscribe) {
+    if (subscribe2) {
       return register2(id2);
     }
-  }, [subscribe]);
-  const safeToRemove = reactExports.useCallback(() => subscribe && onExitComplete && onExitComplete(id2), [id2, onExitComplete, subscribe]);
+  }, [subscribe2]);
+  const safeToRemove = reactExports.useCallback(() => subscribe2 && onExitComplete && onExitComplete(id2), [id2, onExitComplete, subscribe2]);
   return !isPresent && onExitComplete ? [false, safeToRemove] : [true];
 }
 const LazyContext = reactExports.createContext({ strict: false });
@@ -56082,7 +56111,7 @@ function getEnumValueReference(typeInfo) {
   return {
     kind: "EnumValue",
     value: typeInfo.enumValue || void 0,
-    type: typeInfo.inputType ? getNamedType(typeInfo.inputType) : void 0
+    type: typeInfo.inputType ? getNamedType$1(typeInfo.inputType) : void 0
   };
 }
 function isMetaField(fieldDef) {
@@ -56092,7 +56121,7 @@ const printDefault = (ast) => {
   if (!ast) {
     return "";
   }
-  return print(ast);
+  return print$1(ast);
 };
 const DefaultValue = (t0) => {
   const $2 = distExports.c(12);
@@ -56111,7 +56140,7 @@ const DefaultValue = (t0) => {
   if ($2[0] !== field.defaultValue || $2[1] !== field.type) {
     t6 = Symbol.for("react.early_return_sentinel");
     bb0: {
-      const ast = astFromValue(t1, t2);
+      const ast = astFromValue$1(t1, t2);
       if (!ast) {
         t6 = null;
         break bb0;
@@ -56159,13 +56188,13 @@ const DefaultValue = (t0) => {
   return t8;
 };
 function renderType(type2, renderNamedType) {
-  if (isNonNullType(type2)) {
+  if (isNonNullType$1(type2)) {
     return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
       renderType(type2.ofType, renderNamedType),
       "!"
     ] });
   }
-  if (isListType(type2)) {
+  if (isListType$1(type2)) {
     return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
       "[",
       renderType(type2.ofType, renderNamedType),
@@ -58769,7 +58798,7 @@ function requireUseSyncExternalStoreWithSelector_production() {
     return x2 === y2 && (0 !== x2 || 1 / x2 === 1 / y2) || x2 !== x2 && y2 !== y2;
   }
   var objectIs = "function" === typeof Object.is ? Object.is : is, useSyncExternalStore = React.useSyncExternalStore, useRef = React.useRef, useEffect = React.useEffect, useMemo = React.useMemo, useDebugValue = React.useDebugValue;
-  useSyncExternalStoreWithSelector_production.useSyncExternalStoreWithSelector = function(subscribe, getSnapshot, getServerSnapshot, selector, isEqual) {
+  useSyncExternalStoreWithSelector_production.useSyncExternalStoreWithSelector = function(subscribe2, getSnapshot, getServerSnapshot, selector, isEqual) {
     var instRef = useRef(null);
     if (null === instRef.current) {
       var inst = { hasValue: false, value: null };
@@ -58809,7 +58838,7 @@ function requireUseSyncExternalStoreWithSelector_production() {
       },
       [getSnapshot, getServerSnapshot, selector, isEqual]
     );
-    var value = useSyncExternalStore(subscribe, instRef[0], instRef[1]);
+    var value = useSyncExternalStore(subscribe2, instRef[0], instRef[1]);
     useEffect(
       function() {
         inst.hasValue = true;
@@ -59276,9 +59305,9 @@ function getUserAgent() {
     return uaData.brands.map((_ref) => {
       let {
         brand,
-        version
+        version: version2
       } = _ref;
-      return brand + "/" + version;
+      return brand + "/" + version2;
     }).join(" ");
   }
   return navigator.userAgent;
@@ -60460,7 +60489,7 @@ const Search = () => {
       t52 = $2[15];
     }
     onSelect = t52;
-    t4 = explorerNavStack.length === 1 || isObjectType(navItem.def) || isInterfaceType(navItem.def) || isInputObjectType(navItem.def);
+    t4 = explorerNavStack.length === 1 || isObjectType$1(navItem.def) || isInterfaceType$1(navItem.def) || isInputObjectType$1(navItem.def);
     $2[9] = explorerNavStack;
     $2[10] = push;
     $2[11] = navItem;
@@ -60585,7 +60614,7 @@ function useSearchResults() {
             type: type2
           });
         }
-        if (!isObjectType(type2) && !isInterfaceType(type2) && !isInputObjectType(type2)) {
+        if (!isObjectType$1(type2) && !isInterfaceType$1(type2) && !isInputObjectType$1(type2)) {
           continue;
         }
         const fields = type2.getFields();
@@ -60748,7 +60777,7 @@ const TypeDocumentation = (t0) => {
   } = t0;
   let t1;
   if ($2[0] !== type2) {
-    t1 = isNamedType(type2) ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    t1 = isNamedType$1(type2) ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
       type2.description ? /* @__PURE__ */ jsxRuntimeExports.jsx(MarkdownContent, { type: "description", children: type2.description }) : null,
       /* @__PURE__ */ jsxRuntimeExports.jsx(ImplementsInterfaces, { type: type2 }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(Fields, { type: type2 }),
@@ -60767,7 +60796,7 @@ const ImplementsInterfaces = (t0) => {
   const {
     type: type2
   } = t0;
-  if (!isObjectType(type2)) {
+  if (!isObjectType$1(type2)) {
     return null;
   }
   let t1;
@@ -60806,7 +60835,7 @@ const Fields = (t0) => {
     t1 = $2[0];
   }
   const handleShowDeprecated = t1;
-  if (!isObjectType(type2) && !isInterfaceType(type2) && !isInputObjectType(type2)) {
+  if (!isObjectType$1(type2) && !isInterfaceType$1(type2) && !isInputObjectType$1(type2)) {
     return null;
   }
   let deprecatedFields;
@@ -60965,7 +60994,7 @@ const EnumValues = (t0) => {
     t1 = $2[0];
   }
   const handleShowDeprecated = t1;
-  if (!isEnumType(type2)) {
+  if (!isEnumType$1(type2)) {
     return null;
   }
   let deprecatedValues;
@@ -61066,10 +61095,10 @@ const PossibleTypes = (t0) => {
     type: type2
   } = t0;
   const schema = useGraphiQL(_temp7);
-  if (!schema || !isAbstractType(type2)) {
+  if (!schema || !isAbstractType$1(type2)) {
     return null;
   }
-  const t1 = isInterfaceType(type2) ? "Implementations" : "Possible Types";
+  const t1 = isInterfaceType$1(type2) ? "Implementations" : "Possible Types";
   let t2;
   if ($2[0] !== schema || $2[1] !== type2) {
     t2 = schema.getPossibleTypes(type2).map(_temp8);
@@ -61193,7 +61222,7 @@ const DocExplorer = () => {
               }
               content = t12;
             } else {
-              if (isType(navItem.def)) {
+              if (isType$1(navItem.def)) {
                 let t12;
                 if ($2[15] !== navItem.def) {
                   t12 = /* @__PURE__ */ jsxRuntimeExports.jsx(TypeDocumentation, { type: navItem.def });
@@ -61435,7 +61464,7 @@ const docExplorerStore = createStore((set2, get) => ({
             continue;
           }
           if (item.def) {
-            if (isNamedType(item.def)) {
+            if (isNamedType$1(item.def)) {
               const newType = schema.getType(item.def.name);
               if (newType) {
                 newNavStack.push({
@@ -61448,7 +61477,7 @@ const docExplorerStore = createStore((set2, get) => ({
               }
             } else if (lastEntity === null) {
               break;
-            } else if (isObjectType(lastEntity) || isInputObjectType(lastEntity)) {
+            } else if (isObjectType$1(lastEntity) || isInputObjectType$1(lastEntity)) {
               const field = lastEntity.getFields()[item.name];
               if (field) {
                 newNavStack.push({
@@ -61458,7 +61487,7 @@ const docExplorerStore = createStore((set2, get) => ({
               } else {
                 break;
               }
-            } else if (isScalarType(lastEntity) || isEnumType(lastEntity) || isInterfaceType(lastEntity) || isUnionType(lastEntity)) {
+            } else if (isScalarType$1(lastEntity) || isEnumType$1(lastEntity) || isInterfaceType$1(lastEntity) || isUnionType$1(lastEntity)) {
               break;
             } else {
               const field = lastEntity;
@@ -63085,10 +63114,12621 @@ function _temp2(acc, curr) {
   }
   return acc;
 }
-console.log(window.APP_CONFIG);
-const fetcher = createGraphiQLFetcher({
-  url: window.APP_CONFIG?.graphql_endpoint_path
+var adapters = {
+  logger: typeof console !== "undefined" ? console : void 0,
+  WebSocket: typeof WebSocket !== "undefined" ? WebSocket : void 0
+};
+var logger = {
+  log(...messages) {
+    if (this.enabled) {
+      messages.push(Date.now());
+      adapters.logger.log("[ActionCable]", ...messages);
+    }
+  }
+};
+const now = () => (/* @__PURE__ */ new Date()).getTime();
+const secondsSince = (time2) => (now() - time2) / 1e3;
+class ConnectionMonitor {
+  constructor(connection) {
+    this.visibilityDidChange = this.visibilityDidChange.bind(this);
+    this.connection = connection;
+    this.reconnectAttempts = 0;
+  }
+  start() {
+    if (!this.isRunning()) {
+      this.startedAt = now();
+      delete this.stoppedAt;
+      this.startPolling();
+      addEventListener("visibilitychange", this.visibilityDidChange);
+      logger.log(`ConnectionMonitor started. stale threshold = ${this.constructor.staleThreshold} s`);
+    }
+  }
+  stop() {
+    if (this.isRunning()) {
+      this.stoppedAt = now();
+      this.stopPolling();
+      removeEventListener("visibilitychange", this.visibilityDidChange);
+      logger.log("ConnectionMonitor stopped");
+    }
+  }
+  isRunning() {
+    return this.startedAt && !this.stoppedAt;
+  }
+  recordMessage() {
+    this.pingedAt = now();
+  }
+  recordConnect() {
+    this.reconnectAttempts = 0;
+    delete this.disconnectedAt;
+    logger.log("ConnectionMonitor recorded connect");
+  }
+  recordDisconnect() {
+    this.disconnectedAt = now();
+    logger.log("ConnectionMonitor recorded disconnect");
+  }
+  startPolling() {
+    this.stopPolling();
+    this.poll();
+  }
+  stopPolling() {
+    clearTimeout(this.pollTimeout);
+  }
+  poll() {
+    this.pollTimeout = setTimeout((() => {
+      this.reconnectIfStale();
+      this.poll();
+    }), this.getPollInterval());
+  }
+  getPollInterval() {
+    const { staleThreshold, reconnectionBackoffRate } = this.constructor;
+    const backoff = Math.pow(1 + reconnectionBackoffRate, Math.min(this.reconnectAttempts, 10));
+    const jitterMax = this.reconnectAttempts === 0 ? 1 : reconnectionBackoffRate;
+    const jitter = jitterMax * Math.random();
+    return staleThreshold * 1e3 * backoff * (1 + jitter);
+  }
+  reconnectIfStale() {
+    if (this.connectionIsStale()) {
+      logger.log(`ConnectionMonitor detected stale connection. reconnectAttempts = ${this.reconnectAttempts}, time stale = ${secondsSince(this.refreshedAt)} s, stale threshold = ${this.constructor.staleThreshold} s`);
+      this.reconnectAttempts++;
+      if (this.disconnectedRecently()) {
+        logger.log(`ConnectionMonitor skipping reopening recent disconnect. time disconnected = ${secondsSince(this.disconnectedAt)} s`);
+      } else {
+        logger.log("ConnectionMonitor reopening");
+        this.connection.reopen();
+      }
+    }
+  }
+  get refreshedAt() {
+    return this.pingedAt ? this.pingedAt : this.startedAt;
+  }
+  connectionIsStale() {
+    return secondsSince(this.refreshedAt) > this.constructor.staleThreshold;
+  }
+  disconnectedRecently() {
+    return this.disconnectedAt && secondsSince(this.disconnectedAt) < this.constructor.staleThreshold;
+  }
+  visibilityDidChange() {
+    if (document.visibilityState === "visible") {
+      setTimeout((() => {
+        if (this.connectionIsStale() || !this.connection.isOpen()) {
+          logger.log(`ConnectionMonitor reopening stale connection on visibilitychange. visibilityState = ${document.visibilityState}`);
+          this.connection.reopen();
+        }
+      }), 200);
+    }
+  }
+}
+ConnectionMonitor.staleThreshold = 6;
+ConnectionMonitor.reconnectionBackoffRate = 0.15;
+var INTERNAL = {
+  message_types: {
+    welcome: "welcome",
+    disconnect: "disconnect",
+    ping: "ping",
+    confirmation: "confirm_subscription",
+    rejection: "reject_subscription"
+  },
+  default_mount_path: "/cable",
+  protocols: ["actioncable-v1-json", "actioncable-unsupported"]
+};
+const { message_types, protocols } = INTERNAL;
+const supportedProtocols = protocols.slice(0, protocols.length - 1);
+const indexOf = [].indexOf;
+class Connection {
+  constructor(consumer) {
+    this.open = this.open.bind(this);
+    this.consumer = consumer;
+    this.subscriptions = this.consumer.subscriptions;
+    this.monitor = new ConnectionMonitor(this);
+    this.disconnected = true;
+  }
+  send(data) {
+    if (this.isOpen()) {
+      this.webSocket.send(JSON.stringify(data));
+      return true;
+    } else {
+      return false;
+    }
+  }
+  open() {
+    if (this.isActive()) {
+      logger.log(`Attempted to open WebSocket, but existing socket is ${this.getState()}`);
+      return false;
+    } else {
+      const socketProtocols = [...protocols, ...this.consumer.subprotocols || []];
+      logger.log(`Opening WebSocket, current state is ${this.getState()}, subprotocols: ${socketProtocols}`);
+      if (this.webSocket) {
+        this.uninstallEventHandlers();
+      }
+      this.webSocket = new adapters.WebSocket(this.consumer.url, socketProtocols);
+      this.installEventHandlers();
+      this.monitor.start();
+      return true;
+    }
+  }
+  close({ allowReconnect } = {
+    allowReconnect: true
+  }) {
+    if (!allowReconnect) {
+      this.monitor.stop();
+    }
+    if (this.isOpen()) {
+      return this.webSocket.close();
+    }
+  }
+  reopen() {
+    logger.log(`Reopening WebSocket, current state is ${this.getState()}`);
+    if (this.isActive()) {
+      try {
+        return this.close();
+      } catch (error2) {
+        logger.log("Failed to reopen WebSocket", error2);
+      } finally {
+        logger.log(`Reopening WebSocket in ${this.constructor.reopenDelay}ms`);
+        setTimeout(this.open, this.constructor.reopenDelay);
+      }
+    } else {
+      return this.open();
+    }
+  }
+  getProtocol() {
+    if (this.webSocket) {
+      return this.webSocket.protocol;
+    }
+  }
+  isOpen() {
+    return this.isState("open");
+  }
+  isActive() {
+    return this.isState("open", "connecting");
+  }
+  triedToReconnect() {
+    return this.monitor.reconnectAttempts > 0;
+  }
+  isProtocolSupported() {
+    return indexOf.call(supportedProtocols, this.getProtocol()) >= 0;
+  }
+  isState(...states) {
+    return indexOf.call(states, this.getState()) >= 0;
+  }
+  getState() {
+    if (this.webSocket) {
+      for (let state in adapters.WebSocket) {
+        if (adapters.WebSocket[state] === this.webSocket.readyState) {
+          return state.toLowerCase();
+        }
+      }
+    }
+    return null;
+  }
+  installEventHandlers() {
+    for (let eventName in this.events) {
+      const handler = this.events[eventName].bind(this);
+      this.webSocket[`on${eventName}`] = handler;
+    }
+  }
+  uninstallEventHandlers() {
+    for (let eventName in this.events) {
+      this.webSocket[`on${eventName}`] = function() {
+      };
+    }
+  }
+}
+Connection.reopenDelay = 500;
+Connection.prototype.events = {
+  message(event) {
+    if (!this.isProtocolSupported()) {
+      return;
+    }
+    const { identifier, message, reason, reconnect, type: type2 } = JSON.parse(event.data);
+    this.monitor.recordMessage();
+    switch (type2) {
+      case message_types.welcome:
+        if (this.triedToReconnect()) {
+          this.reconnectAttempted = true;
+        }
+        this.monitor.recordConnect();
+        return this.subscriptions.reload();
+      case message_types.disconnect:
+        logger.log(`Disconnecting. Reason: ${reason}`);
+        return this.close({
+          allowReconnect: reconnect
+        });
+      case message_types.ping:
+        return null;
+      case message_types.confirmation:
+        this.subscriptions.confirmSubscription(identifier);
+        if (this.reconnectAttempted) {
+          this.reconnectAttempted = false;
+          return this.subscriptions.notify(identifier, "connected", {
+            reconnected: true
+          });
+        } else {
+          return this.subscriptions.notify(identifier, "connected", {
+            reconnected: false
+          });
+        }
+      case message_types.rejection:
+        return this.subscriptions.reject(identifier);
+      default:
+        return this.subscriptions.notify(identifier, "received", message);
+    }
+  },
+  open() {
+    logger.log(`WebSocket onopen event, using '${this.getProtocol()}' subprotocol`);
+    this.disconnected = false;
+    if (!this.isProtocolSupported()) {
+      logger.log("Protocol is unsupported. Stopping monitor and disconnecting.");
+      return this.close({
+        allowReconnect: false
+      });
+    }
+  },
+  close(event) {
+    logger.log("WebSocket onclose event");
+    if (this.disconnected) {
+      return;
+    }
+    this.disconnected = true;
+    this.monitor.recordDisconnect();
+    return this.subscriptions.notifyAll("disconnected", {
+      willAttemptReconnect: this.monitor.isRunning()
+    });
+  },
+  error() {
+    logger.log("WebSocket onerror event");
+  }
+};
+const extend = function(object, properties) {
+  if (properties != null) {
+    for (let key in properties) {
+      const value = properties[key];
+      object[key] = value;
+    }
+  }
+  return object;
+};
+class Subscription {
+  constructor(consumer, params = {}, mixin) {
+    this.consumer = consumer;
+    this.identifier = JSON.stringify(params);
+    extend(this, mixin);
+  }
+  perform(action, data = {}) {
+    data.action = action;
+    return this.send(data);
+  }
+  send(data) {
+    return this.consumer.send({
+      command: "message",
+      identifier: this.identifier,
+      data: JSON.stringify(data)
+    });
+  }
+  unsubscribe() {
+    return this.consumer.subscriptions.remove(this);
+  }
+}
+class SubscriptionGuarantor {
+  constructor(subscriptions) {
+    this.subscriptions = subscriptions;
+    this.pendingSubscriptions = [];
+  }
+  guarantee(subscription) {
+    if (this.pendingSubscriptions.indexOf(subscription) == -1) {
+      logger.log(`SubscriptionGuarantor guaranteeing ${subscription.identifier}`);
+      this.pendingSubscriptions.push(subscription);
+    } else {
+      logger.log(`SubscriptionGuarantor already guaranteeing ${subscription.identifier}`);
+    }
+    this.startGuaranteeing();
+  }
+  forget(subscription) {
+    logger.log(`SubscriptionGuarantor forgetting ${subscription.identifier}`);
+    this.pendingSubscriptions = this.pendingSubscriptions.filter(((s2) => s2 !== subscription));
+  }
+  startGuaranteeing() {
+    this.stopGuaranteeing();
+    this.retrySubscribing();
+  }
+  stopGuaranteeing() {
+    clearTimeout(this.retryTimeout);
+  }
+  retrySubscribing() {
+    this.retryTimeout = setTimeout((() => {
+      if (this.subscriptions && typeof this.subscriptions.subscribe === "function") {
+        this.pendingSubscriptions.map(((subscription) => {
+          logger.log(`SubscriptionGuarantor resubscribing ${subscription.identifier}`);
+          this.subscriptions.subscribe(subscription);
+        }));
+      }
+    }), 500);
+  }
+}
+class Subscriptions {
+  constructor(consumer) {
+    this.consumer = consumer;
+    this.guarantor = new SubscriptionGuarantor(this);
+    this.subscriptions = [];
+  }
+  create(channelName, mixin) {
+    const channel = channelName;
+    const params = typeof channel === "object" ? channel : {
+      channel
+    };
+    const subscription = new Subscription(this.consumer, params, mixin);
+    return this.add(subscription);
+  }
+  add(subscription) {
+    this.subscriptions.push(subscription);
+    this.consumer.ensureActiveConnection();
+    this.notify(subscription, "initialized");
+    this.subscribe(subscription);
+    return subscription;
+  }
+  remove(subscription) {
+    this.forget(subscription);
+    if (!this.findAll(subscription.identifier).length) {
+      this.sendCommand(subscription, "unsubscribe");
+    }
+    return subscription;
+  }
+  reject(identifier) {
+    return this.findAll(identifier).map(((subscription) => {
+      this.forget(subscription);
+      this.notify(subscription, "rejected");
+      return subscription;
+    }));
+  }
+  forget(subscription) {
+    this.guarantor.forget(subscription);
+    this.subscriptions = this.subscriptions.filter(((s2) => s2 !== subscription));
+    return subscription;
+  }
+  findAll(identifier) {
+    return this.subscriptions.filter(((s2) => s2.identifier === identifier));
+  }
+  reload() {
+    return this.subscriptions.map(((subscription) => this.subscribe(subscription)));
+  }
+  notifyAll(callbackName, ...args) {
+    return this.subscriptions.map(((subscription) => this.notify(subscription, callbackName, ...args)));
+  }
+  notify(subscription, callbackName, ...args) {
+    let subscriptions;
+    if (typeof subscription === "string") {
+      subscriptions = this.findAll(subscription);
+    } else {
+      subscriptions = [subscription];
+    }
+    return subscriptions.map(((subscription2) => typeof subscription2[callbackName] === "function" ? subscription2[callbackName](...args) : void 0));
+  }
+  subscribe(subscription) {
+    if (this.sendCommand(subscription, "subscribe")) {
+      this.guarantor.guarantee(subscription);
+    }
+  }
+  confirmSubscription(identifier) {
+    logger.log(`Subscription confirmed ${identifier}`);
+    this.findAll(identifier).map(((subscription) => this.guarantor.forget(subscription)));
+  }
+  sendCommand(subscription, command) {
+    const { identifier } = subscription;
+    return this.consumer.send({
+      command,
+      identifier
+    });
+  }
+}
+class Consumer {
+  constructor(url) {
+    this._url = url;
+    this.subscriptions = new Subscriptions(this);
+    this.connection = new Connection(this);
+    this.subprotocols = [];
+  }
+  get url() {
+    return createWebSocketURL(this._url);
+  }
+  send(data) {
+    return this.connection.send(data);
+  }
+  connect() {
+    return this.connection.open();
+  }
+  disconnect() {
+    return this.connection.close({
+      allowReconnect: false
+    });
+  }
+  ensureActiveConnection() {
+    if (!this.connection.isActive()) {
+      return this.connection.open();
+    }
+  }
+  addSubProtocol(subprotocol) {
+    this.subprotocols = [...this.subprotocols, subprotocol];
+  }
+}
+function createWebSocketURL(url) {
+  if (typeof url === "function") {
+    url = url();
+  }
+  if (url && !/^wss?:/i.test(url)) {
+    const a3 = document.createElement("a");
+    a3.href = url;
+    a3.href = a3.href;
+    a3.protocol = a3.protocol.replace("http", "ws");
+    return a3.href;
+  } else {
+    return url;
+  }
+}
+function createConsumer(url = getConfig("url") || INTERNAL.default_mount_path) {
+  return new Consumer(url);
+}
+function getConfig(name2) {
+  const element = document.head.querySelector(`meta[name='action-cable-${name2}']`);
+  if (element) {
+    return element.getAttribute("content");
+  }
+}
+var createActionCableFetcher$1 = {};
+const version = "16.11.0";
+const versionInfo = Object.freeze({
+  major: 16,
+  minor: 11,
+  patch: 0,
+  preReleaseTag: null
 });
+function devAssert(condition, message) {
+  const booleanCondition = Boolean(condition);
+  if (!booleanCondition) {
+    throw new Error(message);
+  }
+}
+function isPromise(value) {
+  return typeof (value === null || value === void 0 ? void 0 : value.then) === "function";
+}
+function isObjectLike(value) {
+  return typeof value == "object" && value !== null;
+}
+function invariant(condition, message) {
+  const booleanCondition = Boolean(condition);
+  if (!booleanCondition) {
+    throw new Error(
+      message != null ? message : "Unexpected invariant triggered."
+    );
+  }
+}
+const LineRegExp = /\r\n|[\n\r]/g;
+function getLocation(source, position) {
+  let lastLineStart = 0;
+  let line = 1;
+  for (const match2 of source.body.matchAll(LineRegExp)) {
+    typeof match2.index === "number" || invariant(false);
+    if (match2.index >= position) {
+      break;
+    }
+    lastLineStart = match2.index + match2[0].length;
+    line += 1;
+  }
+  return {
+    line,
+    column: position + 1 - lastLineStart
+  };
+}
+function printLocation(location2) {
+  return printSourceLocation(
+    location2.source,
+    getLocation(location2.source, location2.start)
+  );
+}
+function printSourceLocation(source, sourceLocation) {
+  const firstLineColumnOffset = source.locationOffset.column - 1;
+  const body = "".padStart(firstLineColumnOffset) + source.body;
+  const lineIndex = sourceLocation.line - 1;
+  const lineOffset = source.locationOffset.line - 1;
+  const lineNum = sourceLocation.line + lineOffset;
+  const columnOffset = sourceLocation.line === 1 ? firstLineColumnOffset : 0;
+  const columnNum = sourceLocation.column + columnOffset;
+  const locationStr = `${source.name}:${lineNum}:${columnNum}
+`;
+  const lines = body.split(/\r\n|[\n\r]/g);
+  const locationLine = lines[lineIndex];
+  if (locationLine.length > 120) {
+    const subLineIndex = Math.floor(columnNum / 80);
+    const subLineColumnNum = columnNum % 80;
+    const subLines = [];
+    for (let i2 = 0; i2 < locationLine.length; i2 += 80) {
+      subLines.push(locationLine.slice(i2, i2 + 80));
+    }
+    return locationStr + printPrefixedLines([
+      [`${lineNum} |`, subLines[0]],
+      ...subLines.slice(1, subLineIndex + 1).map((subLine) => ["|", subLine]),
+      ["|", "^".padStart(subLineColumnNum)],
+      ["|", subLines[subLineIndex + 1]]
+    ]);
+  }
+  return locationStr + printPrefixedLines([
+    // Lines specified like this: ["prefix", "string"],
+    [`${lineNum - 1} |`, lines[lineIndex - 1]],
+    [`${lineNum} |`, locationLine],
+    ["|", "^".padStart(columnNum)],
+    [`${lineNum + 1} |`, lines[lineIndex + 1]]
+  ]);
+}
+function printPrefixedLines(lines) {
+  const existingLines = lines.filter(([_2, line]) => line !== void 0);
+  const padLen = Math.max(...existingLines.map(([prefix]) => prefix.length));
+  return existingLines.map(([prefix, line]) => prefix.padStart(padLen) + (line ? " " + line : "")).join("\n");
+}
+function toNormalizedOptions(args) {
+  const firstArg = args[0];
+  if (firstArg == null || "kind" in firstArg || "length" in firstArg) {
+    return {
+      nodes: firstArg,
+      source: args[1],
+      positions: args[2],
+      path: args[3],
+      originalError: args[4],
+      extensions: args[5]
+    };
+  }
+  return firstArg;
+}
+class GraphQLError2 extends Error {
+  /**
+   * An array of `{ line, column }` locations within the source GraphQL document
+   * which correspond to this error.
+   *
+   * Errors during validation often contain multiple locations, for example to
+   * point out two things with the same name. Errors during execution include a
+   * single location, the field which produced the error.
+   *
+   * Enumerable, and appears in the result of JSON.stringify().
+   */
+  /**
+   * An array describing the JSON-path into the execution response which
+   * corresponds to this error. Only included for errors during execution.
+   *
+   * Enumerable, and appears in the result of JSON.stringify().
+   */
+  /**
+   * An array of GraphQL AST Nodes corresponding to this error.
+   */
+  /**
+   * The source GraphQL document for the first location of this error.
+   *
+   * Note that if this Error represents more than one node, the source may not
+   * represent nodes after the first node.
+   */
+  /**
+   * An array of character offsets within the source GraphQL document
+   * which correspond to this error.
+   */
+  /**
+   * The original error thrown from a field resolver during execution.
+   */
+  /**
+   * Extension fields to add to the formatted error.
+   */
+  /**
+   * @deprecated Please use the `GraphQLErrorOptions` constructor overload instead.
+   */
+  constructor(message, ...rawArgs) {
+    var _this$nodes, _nodeLocations$, _ref;
+    const { nodes, source, positions, path, originalError, extensions } = toNormalizedOptions(rawArgs);
+    super(message);
+    this.name = "GraphQLError";
+    this.path = path !== null && path !== void 0 ? path : void 0;
+    this.originalError = originalError !== null && originalError !== void 0 ? originalError : void 0;
+    this.nodes = undefinedIfEmpty(
+      Array.isArray(nodes) ? nodes : nodes ? [nodes] : void 0
+    );
+    const nodeLocations = undefinedIfEmpty(
+      (_this$nodes = this.nodes) === null || _this$nodes === void 0 ? void 0 : _this$nodes.map((node) => node.loc).filter((loc) => loc != null)
+    );
+    this.source = source !== null && source !== void 0 ? source : nodeLocations === null || nodeLocations === void 0 ? void 0 : (_nodeLocations$ = nodeLocations[0]) === null || _nodeLocations$ === void 0 ? void 0 : _nodeLocations$.source;
+    this.positions = positions !== null && positions !== void 0 ? positions : nodeLocations === null || nodeLocations === void 0 ? void 0 : nodeLocations.map((loc) => loc.start);
+    this.locations = positions && source ? positions.map((pos) => getLocation(source, pos)) : nodeLocations === null || nodeLocations === void 0 ? void 0 : nodeLocations.map((loc) => getLocation(loc.source, loc.start));
+    const originalExtensions = isObjectLike(
+      originalError === null || originalError === void 0 ? void 0 : originalError.extensions
+    ) ? originalError === null || originalError === void 0 ? void 0 : originalError.extensions : void 0;
+    this.extensions = (_ref = extensions !== null && extensions !== void 0 ? extensions : originalExtensions) !== null && _ref !== void 0 ? _ref : /* @__PURE__ */ Object.create(null);
+    Object.defineProperties(this, {
+      message: {
+        writable: true,
+        enumerable: true
+      },
+      name: {
+        enumerable: false
+      },
+      nodes: {
+        enumerable: false
+      },
+      source: {
+        enumerable: false
+      },
+      positions: {
+        enumerable: false
+      },
+      originalError: {
+        enumerable: false
+      }
+    });
+    if (originalError !== null && originalError !== void 0 && originalError.stack) {
+      Object.defineProperty(this, "stack", {
+        value: originalError.stack,
+        writable: true,
+        configurable: true
+      });
+    } else if (Error.captureStackTrace) {
+      Error.captureStackTrace(this, GraphQLError2);
+    } else {
+      Object.defineProperty(this, "stack", {
+        value: Error().stack,
+        writable: true,
+        configurable: true
+      });
+    }
+  }
+  get [Symbol.toStringTag]() {
+    return "GraphQLError";
+  }
+  toString() {
+    let output = this.message;
+    if (this.nodes) {
+      for (const node of this.nodes) {
+        if (node.loc) {
+          output += "\n\n" + printLocation(node.loc);
+        }
+      }
+    } else if (this.source && this.locations) {
+      for (const location2 of this.locations) {
+        output += "\n\n" + printSourceLocation(this.source, location2);
+      }
+    }
+    return output;
+  }
+  toJSON() {
+    const formattedError = {
+      message: this.message
+    };
+    if (this.locations != null) {
+      formattedError.locations = this.locations;
+    }
+    if (this.path != null) {
+      formattedError.path = this.path;
+    }
+    if (this.extensions != null && Object.keys(this.extensions).length > 0) {
+      formattedError.extensions = this.extensions;
+    }
+    return formattedError;
+  }
+}
+function undefinedIfEmpty(array) {
+  return array === void 0 || array.length === 0 ? void 0 : array;
+}
+function printError(error2) {
+  return error2.toString();
+}
+function formatError(error2) {
+  return error2.toJSON();
+}
+function syntaxError(source, position, description) {
+  return new GraphQLError2(`Syntax Error: ${description}`, {
+    source,
+    positions: [position]
+  });
+}
+class Location2 {
+  /**
+   * The character offset at which this Node begins.
+   */
+  /**
+   * The character offset at which this Node ends.
+   */
+  /**
+   * The Token at which this Node begins.
+   */
+  /**
+   * The Token at which this Node ends.
+   */
+  /**
+   * The Source document the AST represents.
+   */
+  constructor(startToken, endToken, source) {
+    this.start = startToken.start;
+    this.end = endToken.end;
+    this.startToken = startToken;
+    this.endToken = endToken;
+    this.source = source;
+  }
+  get [Symbol.toStringTag]() {
+    return "Location";
+  }
+  toJSON() {
+    return {
+      start: this.start,
+      end: this.end
+    };
+  }
+}
+class Token2 {
+  /**
+   * The kind of Token.
+   */
+  /**
+   * The character offset at which this Node begins.
+   */
+  /**
+   * The character offset at which this Node ends.
+   */
+  /**
+   * The 1-indexed line number on which this Token appears.
+   */
+  /**
+   * The 1-indexed column number at which this Token begins.
+   */
+  /**
+   * For non-punctuation tokens, represents the interpreted value of the token.
+   *
+   * Note: is undefined for punctuation tokens, but typed as string for
+   * convenience in the parser.
+   */
+  /**
+   * Tokens exist as nodes in a double-linked-list amongst all tokens
+   * including ignored tokens. <SOF> is always the first node and <EOF>
+   * the last.
+   */
+  constructor(kind, start, end, line, column, value) {
+    this.kind = kind;
+    this.start = start;
+    this.end = end;
+    this.line = line;
+    this.column = column;
+    this.value = value;
+    this.prev = null;
+    this.next = null;
+  }
+  get [Symbol.toStringTag]() {
+    return "Token";
+  }
+  toJSON() {
+    return {
+      kind: this.kind,
+      value: this.value,
+      line: this.line,
+      column: this.column
+    };
+  }
+}
+const QueryDocumentKeys = {
+  Name: [],
+  Document: ["definitions"],
+  OperationDefinition: [
+    "name",
+    "variableDefinitions",
+    "directives",
+    "selectionSet"
+  ],
+  VariableDefinition: ["variable", "type", "defaultValue", "directives"],
+  Variable: ["name"],
+  SelectionSet: ["selections"],
+  Field: ["alias", "name", "arguments", "directives", "selectionSet"],
+  Argument: ["name", "value"],
+  FragmentSpread: ["name", "directives"],
+  InlineFragment: ["typeCondition", "directives", "selectionSet"],
+  FragmentDefinition: [
+    "name",
+    // Note: fragment variable definitions are deprecated and will removed in v17.0.0
+    "variableDefinitions",
+    "typeCondition",
+    "directives",
+    "selectionSet"
+  ],
+  IntValue: [],
+  FloatValue: [],
+  StringValue: [],
+  BooleanValue: [],
+  NullValue: [],
+  EnumValue: [],
+  ListValue: ["values"],
+  ObjectValue: ["fields"],
+  ObjectField: ["name", "value"],
+  Directive: ["name", "arguments"],
+  NamedType: ["name"],
+  ListType: ["type"],
+  NonNullType: ["type"],
+  SchemaDefinition: ["description", "directives", "operationTypes"],
+  OperationTypeDefinition: ["type"],
+  ScalarTypeDefinition: ["description", "name", "directives"],
+  ObjectTypeDefinition: [
+    "description",
+    "name",
+    "interfaces",
+    "directives",
+    "fields"
+  ],
+  FieldDefinition: ["description", "name", "arguments", "type", "directives"],
+  InputValueDefinition: [
+    "description",
+    "name",
+    "type",
+    "defaultValue",
+    "directives"
+  ],
+  InterfaceTypeDefinition: [
+    "description",
+    "name",
+    "interfaces",
+    "directives",
+    "fields"
+  ],
+  UnionTypeDefinition: ["description", "name", "directives", "types"],
+  EnumTypeDefinition: ["description", "name", "directives", "values"],
+  EnumValueDefinition: ["description", "name", "directives"],
+  InputObjectTypeDefinition: ["description", "name", "directives", "fields"],
+  DirectiveDefinition: ["description", "name", "arguments", "locations"],
+  SchemaExtension: ["directives", "operationTypes"],
+  ScalarTypeExtension: ["name", "directives"],
+  ObjectTypeExtension: ["name", "interfaces", "directives", "fields"],
+  InterfaceTypeExtension: ["name", "interfaces", "directives", "fields"],
+  UnionTypeExtension: ["name", "directives", "types"],
+  EnumTypeExtension: ["name", "directives", "values"],
+  InputObjectTypeExtension: ["name", "directives", "fields"]
+};
+const kindValues = new Set(Object.keys(QueryDocumentKeys));
+function isNode(maybeNode) {
+  const maybeKind = maybeNode === null || maybeNode === void 0 ? void 0 : maybeNode.kind;
+  return typeof maybeKind === "string" && kindValues.has(maybeKind);
+}
+var OperationTypeNode;
+(function(OperationTypeNode2) {
+  OperationTypeNode2["QUERY"] = "query";
+  OperationTypeNode2["MUTATION"] = "mutation";
+  OperationTypeNode2["SUBSCRIPTION"] = "subscription";
+})(OperationTypeNode || (OperationTypeNode = {}));
+var DirectiveLocation;
+(function(DirectiveLocation2) {
+  DirectiveLocation2["QUERY"] = "QUERY";
+  DirectiveLocation2["MUTATION"] = "MUTATION";
+  DirectiveLocation2["SUBSCRIPTION"] = "SUBSCRIPTION";
+  DirectiveLocation2["FIELD"] = "FIELD";
+  DirectiveLocation2["FRAGMENT_DEFINITION"] = "FRAGMENT_DEFINITION";
+  DirectiveLocation2["FRAGMENT_SPREAD"] = "FRAGMENT_SPREAD";
+  DirectiveLocation2["INLINE_FRAGMENT"] = "INLINE_FRAGMENT";
+  DirectiveLocation2["VARIABLE_DEFINITION"] = "VARIABLE_DEFINITION";
+  DirectiveLocation2["SCHEMA"] = "SCHEMA";
+  DirectiveLocation2["SCALAR"] = "SCALAR";
+  DirectiveLocation2["OBJECT"] = "OBJECT";
+  DirectiveLocation2["FIELD_DEFINITION"] = "FIELD_DEFINITION";
+  DirectiveLocation2["ARGUMENT_DEFINITION"] = "ARGUMENT_DEFINITION";
+  DirectiveLocation2["INTERFACE"] = "INTERFACE";
+  DirectiveLocation2["UNION"] = "UNION";
+  DirectiveLocation2["ENUM"] = "ENUM";
+  DirectiveLocation2["ENUM_VALUE"] = "ENUM_VALUE";
+  DirectiveLocation2["INPUT_OBJECT"] = "INPUT_OBJECT";
+  DirectiveLocation2["INPUT_FIELD_DEFINITION"] = "INPUT_FIELD_DEFINITION";
+})(DirectiveLocation || (DirectiveLocation = {}));
+var Kind;
+(function(Kind2) {
+  Kind2["NAME"] = "Name";
+  Kind2["DOCUMENT"] = "Document";
+  Kind2["OPERATION_DEFINITION"] = "OperationDefinition";
+  Kind2["VARIABLE_DEFINITION"] = "VariableDefinition";
+  Kind2["SELECTION_SET"] = "SelectionSet";
+  Kind2["FIELD"] = "Field";
+  Kind2["ARGUMENT"] = "Argument";
+  Kind2["FRAGMENT_SPREAD"] = "FragmentSpread";
+  Kind2["INLINE_FRAGMENT"] = "InlineFragment";
+  Kind2["FRAGMENT_DEFINITION"] = "FragmentDefinition";
+  Kind2["VARIABLE"] = "Variable";
+  Kind2["INT"] = "IntValue";
+  Kind2["FLOAT"] = "FloatValue";
+  Kind2["STRING"] = "StringValue";
+  Kind2["BOOLEAN"] = "BooleanValue";
+  Kind2["NULL"] = "NullValue";
+  Kind2["ENUM"] = "EnumValue";
+  Kind2["LIST"] = "ListValue";
+  Kind2["OBJECT"] = "ObjectValue";
+  Kind2["OBJECT_FIELD"] = "ObjectField";
+  Kind2["DIRECTIVE"] = "Directive";
+  Kind2["NAMED_TYPE"] = "NamedType";
+  Kind2["LIST_TYPE"] = "ListType";
+  Kind2["NON_NULL_TYPE"] = "NonNullType";
+  Kind2["SCHEMA_DEFINITION"] = "SchemaDefinition";
+  Kind2["OPERATION_TYPE_DEFINITION"] = "OperationTypeDefinition";
+  Kind2["SCALAR_TYPE_DEFINITION"] = "ScalarTypeDefinition";
+  Kind2["OBJECT_TYPE_DEFINITION"] = "ObjectTypeDefinition";
+  Kind2["FIELD_DEFINITION"] = "FieldDefinition";
+  Kind2["INPUT_VALUE_DEFINITION"] = "InputValueDefinition";
+  Kind2["INTERFACE_TYPE_DEFINITION"] = "InterfaceTypeDefinition";
+  Kind2["UNION_TYPE_DEFINITION"] = "UnionTypeDefinition";
+  Kind2["ENUM_TYPE_DEFINITION"] = "EnumTypeDefinition";
+  Kind2["ENUM_VALUE_DEFINITION"] = "EnumValueDefinition";
+  Kind2["INPUT_OBJECT_TYPE_DEFINITION"] = "InputObjectTypeDefinition";
+  Kind2["DIRECTIVE_DEFINITION"] = "DirectiveDefinition";
+  Kind2["SCHEMA_EXTENSION"] = "SchemaExtension";
+  Kind2["SCALAR_TYPE_EXTENSION"] = "ScalarTypeExtension";
+  Kind2["OBJECT_TYPE_EXTENSION"] = "ObjectTypeExtension";
+  Kind2["INTERFACE_TYPE_EXTENSION"] = "InterfaceTypeExtension";
+  Kind2["UNION_TYPE_EXTENSION"] = "UnionTypeExtension";
+  Kind2["ENUM_TYPE_EXTENSION"] = "EnumTypeExtension";
+  Kind2["INPUT_OBJECT_TYPE_EXTENSION"] = "InputObjectTypeExtension";
+})(Kind || (Kind = {}));
+function isWhiteSpace(code2) {
+  return code2 === 9 || code2 === 32;
+}
+function isDigit$1(code2) {
+  return code2 >= 48 && code2 <= 57;
+}
+function isLetter(code2) {
+  return code2 >= 97 && code2 <= 122 || // A-Z
+  code2 >= 65 && code2 <= 90;
+}
+function isNameStart(code2) {
+  return isLetter(code2) || code2 === 95;
+}
+function isNameContinue(code2) {
+  return isLetter(code2) || isDigit$1(code2) || code2 === 95;
+}
+function dedentBlockStringLines(lines) {
+  var _firstNonEmptyLine2;
+  let commonIndent = Number.MAX_SAFE_INTEGER;
+  let firstNonEmptyLine = null;
+  let lastNonEmptyLine = -1;
+  for (let i2 = 0; i2 < lines.length; ++i2) {
+    var _firstNonEmptyLine;
+    const line = lines[i2];
+    const indent2 = leadingWhitespace(line);
+    if (indent2 === line.length) {
+      continue;
+    }
+    firstNonEmptyLine = (_firstNonEmptyLine = firstNonEmptyLine) !== null && _firstNonEmptyLine !== void 0 ? _firstNonEmptyLine : i2;
+    lastNonEmptyLine = i2;
+    if (i2 !== 0 && indent2 < commonIndent) {
+      commonIndent = indent2;
+    }
+  }
+  return lines.map((line, i2) => i2 === 0 ? line : line.slice(commonIndent)).slice(
+    (_firstNonEmptyLine2 = firstNonEmptyLine) !== null && _firstNonEmptyLine2 !== void 0 ? _firstNonEmptyLine2 : 0,
+    lastNonEmptyLine + 1
+  );
+}
+function leadingWhitespace(str) {
+  let i2 = 0;
+  while (i2 < str.length && isWhiteSpace(str.charCodeAt(i2))) {
+    ++i2;
+  }
+  return i2;
+}
+function isPrintableAsBlockString(value) {
+  if (value === "") {
+    return true;
+  }
+  let isEmptyLine = true;
+  let hasIndent = false;
+  let hasCommonIndent = true;
+  let seenNonEmptyLine = false;
+  for (let i2 = 0; i2 < value.length; ++i2) {
+    switch (value.codePointAt(i2)) {
+      case 0:
+      case 1:
+      case 2:
+      case 3:
+      case 4:
+      case 5:
+      case 6:
+      case 7:
+      case 8:
+      case 11:
+      case 12:
+      case 14:
+      case 15:
+        return false;
+      // Has non-printable characters
+      case 13:
+        return false;
+      // Has \r or \r\n which will be replaced as \n
+      case 10:
+        if (isEmptyLine && !seenNonEmptyLine) {
+          return false;
+        }
+        seenNonEmptyLine = true;
+        isEmptyLine = true;
+        hasIndent = false;
+        break;
+      case 9:
+      //   \t
+      case 32:
+        hasIndent || (hasIndent = isEmptyLine);
+        break;
+      default:
+        hasCommonIndent && (hasCommonIndent = hasIndent);
+        isEmptyLine = false;
+    }
+  }
+  if (isEmptyLine) {
+    return false;
+  }
+  if (hasCommonIndent && seenNonEmptyLine) {
+    return false;
+  }
+  return true;
+}
+function printBlockString(value, options) {
+  const escapedValue = value.replace(/"""/g, '\\"""');
+  const lines = escapedValue.split(/\r\n|[\n\r]/g);
+  const isSingleLine = lines.length === 1;
+  const forceLeadingNewLine = lines.length > 1 && lines.slice(1).every((line) => line.length === 0 || isWhiteSpace(line.charCodeAt(0)));
+  const hasTrailingTripleQuotes = escapedValue.endsWith('\\"""');
+  const hasTrailingQuote = value.endsWith('"') && !hasTrailingTripleQuotes;
+  const hasTrailingSlash = value.endsWith("\\");
+  const forceTrailingNewline = hasTrailingQuote || hasTrailingSlash;
+  const printAsMultipleLines = !(options !== null && options !== void 0 && options.minimize) && // add leading and trailing new lines only if it improves readability
+  (!isSingleLine || value.length > 70 || forceTrailingNewline || forceLeadingNewLine || hasTrailingTripleQuotes);
+  let result = "";
+  const skipLeadingNewLine = isSingleLine && isWhiteSpace(value.charCodeAt(0));
+  if (printAsMultipleLines && !skipLeadingNewLine || forceLeadingNewLine) {
+    result += "\n";
+  }
+  result += escapedValue;
+  if (printAsMultipleLines || forceTrailingNewline) {
+    result += "\n";
+  }
+  return '"""' + result + '"""';
+}
+var TokenKind;
+(function(TokenKind2) {
+  TokenKind2["SOF"] = "<SOF>";
+  TokenKind2["EOF"] = "<EOF>";
+  TokenKind2["BANG"] = "!";
+  TokenKind2["DOLLAR"] = "$";
+  TokenKind2["AMP"] = "&";
+  TokenKind2["PAREN_L"] = "(";
+  TokenKind2["PAREN_R"] = ")";
+  TokenKind2["SPREAD"] = "...";
+  TokenKind2["COLON"] = ":";
+  TokenKind2["EQUALS"] = "=";
+  TokenKind2["AT"] = "@";
+  TokenKind2["BRACKET_L"] = "[";
+  TokenKind2["BRACKET_R"] = "]";
+  TokenKind2["BRACE_L"] = "{";
+  TokenKind2["PIPE"] = "|";
+  TokenKind2["BRACE_R"] = "}";
+  TokenKind2["NAME"] = "Name";
+  TokenKind2["INT"] = "Int";
+  TokenKind2["FLOAT"] = "Float";
+  TokenKind2["STRING"] = "String";
+  TokenKind2["BLOCK_STRING"] = "BlockString";
+  TokenKind2["COMMENT"] = "Comment";
+})(TokenKind || (TokenKind = {}));
+class Lexer2 {
+  /**
+   * The previously focused non-ignored token.
+   */
+  /**
+   * The currently focused non-ignored token.
+   */
+  /**
+   * The (1-indexed) line containing the current token.
+   */
+  /**
+   * The character offset at which the current line begins.
+   */
+  constructor(source) {
+    const startOfFileToken = new Token2(TokenKind.SOF, 0, 0, 0, 0);
+    this.source = source;
+    this.lastToken = startOfFileToken;
+    this.token = startOfFileToken;
+    this.line = 1;
+    this.lineStart = 0;
+  }
+  get [Symbol.toStringTag]() {
+    return "Lexer";
+  }
+  /**
+   * Advances the token stream to the next non-ignored token.
+   */
+  advance() {
+    this.lastToken = this.token;
+    const token = this.token = this.lookahead();
+    return token;
+  }
+  /**
+   * Looks ahead and returns the next non-ignored token, but does not change
+   * the state of Lexer.
+   */
+  lookahead() {
+    let token = this.token;
+    if (token.kind !== TokenKind.EOF) {
+      do {
+        if (token.next) {
+          token = token.next;
+        } else {
+          const nextToken = readNextToken(this, token.end);
+          token.next = nextToken;
+          nextToken.prev = token;
+          token = nextToken;
+        }
+      } while (token.kind === TokenKind.COMMENT);
+    }
+    return token;
+  }
+}
+function isPunctuatorTokenKind(kind) {
+  return kind === TokenKind.BANG || kind === TokenKind.DOLLAR || kind === TokenKind.AMP || kind === TokenKind.PAREN_L || kind === TokenKind.PAREN_R || kind === TokenKind.SPREAD || kind === TokenKind.COLON || kind === TokenKind.EQUALS || kind === TokenKind.AT || kind === TokenKind.BRACKET_L || kind === TokenKind.BRACKET_R || kind === TokenKind.BRACE_L || kind === TokenKind.PIPE || kind === TokenKind.BRACE_R;
+}
+function isUnicodeScalarValue(code2) {
+  return code2 >= 0 && code2 <= 55295 || code2 >= 57344 && code2 <= 1114111;
+}
+function isSupplementaryCodePoint(body, location2) {
+  return isLeadingSurrogate(body.charCodeAt(location2)) && isTrailingSurrogate(body.charCodeAt(location2 + 1));
+}
+function isLeadingSurrogate(code2) {
+  return code2 >= 55296 && code2 <= 56319;
+}
+function isTrailingSurrogate(code2) {
+  return code2 >= 56320 && code2 <= 57343;
+}
+function printCodePointAt(lexer, location2) {
+  const code2 = lexer.source.body.codePointAt(location2);
+  if (code2 === void 0) {
+    return TokenKind.EOF;
+  } else if (code2 >= 32 && code2 <= 126) {
+    const char = String.fromCodePoint(code2);
+    return char === '"' ? `'"'` : `"${char}"`;
+  }
+  return "U+" + code2.toString(16).toUpperCase().padStart(4, "0");
+}
+function createToken(lexer, kind, start, end, value) {
+  const line = lexer.line;
+  const col = 1 + start - lexer.lineStart;
+  return new Token2(kind, start, end, line, col, value);
+}
+function readNextToken(lexer, start) {
+  const body = lexer.source.body;
+  const bodyLength = body.length;
+  let position = start;
+  while (position < bodyLength) {
+    const code2 = body.charCodeAt(position);
+    switch (code2) {
+      // Ignored ::
+      //   - UnicodeBOM
+      //   - WhiteSpace
+      //   - LineTerminator
+      //   - Comment
+      //   - Comma
+      //
+      // UnicodeBOM :: "Byte Order Mark (U+FEFF)"
+      //
+      // WhiteSpace ::
+      //   - "Horizontal Tab (U+0009)"
+      //   - "Space (U+0020)"
+      //
+      // Comma :: ,
+      case 65279:
+      // <BOM>
+      case 9:
+      // \t
+      case 32:
+      // <space>
+      case 44:
+        ++position;
+        continue;
+      // LineTerminator ::
+      //   - "New Line (U+000A)"
+      //   - "Carriage Return (U+000D)" [lookahead != "New Line (U+000A)"]
+      //   - "Carriage Return (U+000D)" "New Line (U+000A)"
+      case 10:
+        ++position;
+        ++lexer.line;
+        lexer.lineStart = position;
+        continue;
+      case 13:
+        if (body.charCodeAt(position + 1) === 10) {
+          position += 2;
+        } else {
+          ++position;
+        }
+        ++lexer.line;
+        lexer.lineStart = position;
+        continue;
+      // Comment
+      case 35:
+        return readComment(lexer, position);
+      // Token ::
+      //   - Punctuator
+      //   - Name
+      //   - IntValue
+      //   - FloatValue
+      //   - StringValue
+      //
+      // Punctuator :: one of ! $ & ( ) ... : = @ [ ] { | }
+      case 33:
+        return createToken(lexer, TokenKind.BANG, position, position + 1);
+      case 36:
+        return createToken(lexer, TokenKind.DOLLAR, position, position + 1);
+      case 38:
+        return createToken(lexer, TokenKind.AMP, position, position + 1);
+      case 40:
+        return createToken(lexer, TokenKind.PAREN_L, position, position + 1);
+      case 41:
+        return createToken(lexer, TokenKind.PAREN_R, position, position + 1);
+      case 46:
+        if (body.charCodeAt(position + 1) === 46 && body.charCodeAt(position + 2) === 46) {
+          return createToken(lexer, TokenKind.SPREAD, position, position + 3);
+        }
+        break;
+      case 58:
+        return createToken(lexer, TokenKind.COLON, position, position + 1);
+      case 61:
+        return createToken(lexer, TokenKind.EQUALS, position, position + 1);
+      case 64:
+        return createToken(lexer, TokenKind.AT, position, position + 1);
+      case 91:
+        return createToken(lexer, TokenKind.BRACKET_L, position, position + 1);
+      case 93:
+        return createToken(lexer, TokenKind.BRACKET_R, position, position + 1);
+      case 123:
+        return createToken(lexer, TokenKind.BRACE_L, position, position + 1);
+      case 124:
+        return createToken(lexer, TokenKind.PIPE, position, position + 1);
+      case 125:
+        return createToken(lexer, TokenKind.BRACE_R, position, position + 1);
+      // StringValue
+      case 34:
+        if (body.charCodeAt(position + 1) === 34 && body.charCodeAt(position + 2) === 34) {
+          return readBlockString(lexer, position);
+        }
+        return readString(lexer, position);
+    }
+    if (isDigit$1(code2) || code2 === 45) {
+      return readNumber(lexer, position, code2);
+    }
+    if (isNameStart(code2)) {
+      return readName(lexer, position);
+    }
+    throw syntaxError(
+      lexer.source,
+      position,
+      code2 === 39 ? `Unexpected single quote character ('), did you mean to use a double quote (")?` : isUnicodeScalarValue(code2) || isSupplementaryCodePoint(body, position) ? `Unexpected character: ${printCodePointAt(lexer, position)}.` : `Invalid character: ${printCodePointAt(lexer, position)}.`
+    );
+  }
+  return createToken(lexer, TokenKind.EOF, bodyLength, bodyLength);
+}
+function readComment(lexer, start) {
+  const body = lexer.source.body;
+  const bodyLength = body.length;
+  let position = start + 1;
+  while (position < bodyLength) {
+    const code2 = body.charCodeAt(position);
+    if (code2 === 10 || code2 === 13) {
+      break;
+    }
+    if (isUnicodeScalarValue(code2)) {
+      ++position;
+    } else if (isSupplementaryCodePoint(body, position)) {
+      position += 2;
+    } else {
+      break;
+    }
+  }
+  return createToken(
+    lexer,
+    TokenKind.COMMENT,
+    start,
+    position,
+    body.slice(start + 1, position)
+  );
+}
+function readNumber(lexer, start, firstCode) {
+  const body = lexer.source.body;
+  let position = start;
+  let code2 = firstCode;
+  let isFloat2 = false;
+  if (code2 === 45) {
+    code2 = body.charCodeAt(++position);
+  }
+  if (code2 === 48) {
+    code2 = body.charCodeAt(++position);
+    if (isDigit$1(code2)) {
+      throw syntaxError(
+        lexer.source,
+        position,
+        `Invalid number, unexpected digit after 0: ${printCodePointAt(
+          lexer,
+          position
+        )}.`
+      );
+    }
+  } else {
+    position = readDigits(lexer, position, code2);
+    code2 = body.charCodeAt(position);
+  }
+  if (code2 === 46) {
+    isFloat2 = true;
+    code2 = body.charCodeAt(++position);
+    position = readDigits(lexer, position, code2);
+    code2 = body.charCodeAt(position);
+  }
+  if (code2 === 69 || code2 === 101) {
+    isFloat2 = true;
+    code2 = body.charCodeAt(++position);
+    if (code2 === 43 || code2 === 45) {
+      code2 = body.charCodeAt(++position);
+    }
+    position = readDigits(lexer, position, code2);
+    code2 = body.charCodeAt(position);
+  }
+  if (code2 === 46 || isNameStart(code2)) {
+    throw syntaxError(
+      lexer.source,
+      position,
+      `Invalid number, expected digit but got: ${printCodePointAt(
+        lexer,
+        position
+      )}.`
+    );
+  }
+  return createToken(
+    lexer,
+    isFloat2 ? TokenKind.FLOAT : TokenKind.INT,
+    start,
+    position,
+    body.slice(start, position)
+  );
+}
+function readDigits(lexer, start, firstCode) {
+  if (!isDigit$1(firstCode)) {
+    throw syntaxError(
+      lexer.source,
+      start,
+      `Invalid number, expected digit but got: ${printCodePointAt(
+        lexer,
+        start
+      )}.`
+    );
+  }
+  const body = lexer.source.body;
+  let position = start + 1;
+  while (isDigit$1(body.charCodeAt(position))) {
+    ++position;
+  }
+  return position;
+}
+function readString(lexer, start) {
+  const body = lexer.source.body;
+  const bodyLength = body.length;
+  let position = start + 1;
+  let chunkStart = position;
+  let value = "";
+  while (position < bodyLength) {
+    const code2 = body.charCodeAt(position);
+    if (code2 === 34) {
+      value += body.slice(chunkStart, position);
+      return createToken(lexer, TokenKind.STRING, start, position + 1, value);
+    }
+    if (code2 === 92) {
+      value += body.slice(chunkStart, position);
+      const escape2 = body.charCodeAt(position + 1) === 117 ? body.charCodeAt(position + 2) === 123 ? readEscapedUnicodeVariableWidth(lexer, position) : readEscapedUnicodeFixedWidth(lexer, position) : readEscapedCharacter(lexer, position);
+      value += escape2.value;
+      position += escape2.size;
+      chunkStart = position;
+      continue;
+    }
+    if (code2 === 10 || code2 === 13) {
+      break;
+    }
+    if (isUnicodeScalarValue(code2)) {
+      ++position;
+    } else if (isSupplementaryCodePoint(body, position)) {
+      position += 2;
+    } else {
+      throw syntaxError(
+        lexer.source,
+        position,
+        `Invalid character within String: ${printCodePointAt(
+          lexer,
+          position
+        )}.`
+      );
+    }
+  }
+  throw syntaxError(lexer.source, position, "Unterminated string.");
+}
+function readEscapedUnicodeVariableWidth(lexer, position) {
+  const body = lexer.source.body;
+  let point = 0;
+  let size2 = 3;
+  while (size2 < 12) {
+    const code2 = body.charCodeAt(position + size2++);
+    if (code2 === 125) {
+      if (size2 < 5 || !isUnicodeScalarValue(point)) {
+        break;
+      }
+      return {
+        value: String.fromCodePoint(point),
+        size: size2
+      };
+    }
+    point = point << 4 | readHexDigit(code2);
+    if (point < 0) {
+      break;
+    }
+  }
+  throw syntaxError(
+    lexer.source,
+    position,
+    `Invalid Unicode escape sequence: "${body.slice(
+      position,
+      position + size2
+    )}".`
+  );
+}
+function readEscapedUnicodeFixedWidth(lexer, position) {
+  const body = lexer.source.body;
+  const code2 = read16BitHexCode(body, position + 2);
+  if (isUnicodeScalarValue(code2)) {
+    return {
+      value: String.fromCodePoint(code2),
+      size: 6
+    };
+  }
+  if (isLeadingSurrogate(code2)) {
+    if (body.charCodeAt(position + 6) === 92 && body.charCodeAt(position + 7) === 117) {
+      const trailingCode = read16BitHexCode(body, position + 8);
+      if (isTrailingSurrogate(trailingCode)) {
+        return {
+          value: String.fromCodePoint(code2, trailingCode),
+          size: 12
+        };
+      }
+    }
+  }
+  throw syntaxError(
+    lexer.source,
+    position,
+    `Invalid Unicode escape sequence: "${body.slice(position, position + 6)}".`
+  );
+}
+function read16BitHexCode(body, position) {
+  return readHexDigit(body.charCodeAt(position)) << 12 | readHexDigit(body.charCodeAt(position + 1)) << 8 | readHexDigit(body.charCodeAt(position + 2)) << 4 | readHexDigit(body.charCodeAt(position + 3));
+}
+function readHexDigit(code2) {
+  return code2 >= 48 && code2 <= 57 ? code2 - 48 : code2 >= 65 && code2 <= 70 ? code2 - 55 : code2 >= 97 && code2 <= 102 ? code2 - 87 : -1;
+}
+function readEscapedCharacter(lexer, position) {
+  const body = lexer.source.body;
+  const code2 = body.charCodeAt(position + 1);
+  switch (code2) {
+    case 34:
+      return {
+        value: '"',
+        size: 2
+      };
+    case 92:
+      return {
+        value: "\\",
+        size: 2
+      };
+    case 47:
+      return {
+        value: "/",
+        size: 2
+      };
+    case 98:
+      return {
+        value: "\b",
+        size: 2
+      };
+    case 102:
+      return {
+        value: "\f",
+        size: 2
+      };
+    case 110:
+      return {
+        value: "\n",
+        size: 2
+      };
+    case 114:
+      return {
+        value: "\r",
+        size: 2
+      };
+    case 116:
+      return {
+        value: "	",
+        size: 2
+      };
+  }
+  throw syntaxError(
+    lexer.source,
+    position,
+    `Invalid character escape sequence: "${body.slice(
+      position,
+      position + 2
+    )}".`
+  );
+}
+function readBlockString(lexer, start) {
+  const body = lexer.source.body;
+  const bodyLength = body.length;
+  let lineStart = lexer.lineStart;
+  let position = start + 3;
+  let chunkStart = position;
+  let currentLine = "";
+  const blockLines = [];
+  while (position < bodyLength) {
+    const code2 = body.charCodeAt(position);
+    if (code2 === 34 && body.charCodeAt(position + 1) === 34 && body.charCodeAt(position + 2) === 34) {
+      currentLine += body.slice(chunkStart, position);
+      blockLines.push(currentLine);
+      const token = createToken(
+        lexer,
+        TokenKind.BLOCK_STRING,
+        start,
+        position + 3,
+        // Return a string of the lines joined with U+000A.
+        dedentBlockStringLines(blockLines).join("\n")
+      );
+      lexer.line += blockLines.length - 1;
+      lexer.lineStart = lineStart;
+      return token;
+    }
+    if (code2 === 92 && body.charCodeAt(position + 1) === 34 && body.charCodeAt(position + 2) === 34 && body.charCodeAt(position + 3) === 34) {
+      currentLine += body.slice(chunkStart, position);
+      chunkStart = position + 1;
+      position += 4;
+      continue;
+    }
+    if (code2 === 10 || code2 === 13) {
+      currentLine += body.slice(chunkStart, position);
+      blockLines.push(currentLine);
+      if (code2 === 13 && body.charCodeAt(position + 1) === 10) {
+        position += 2;
+      } else {
+        ++position;
+      }
+      currentLine = "";
+      chunkStart = position;
+      lineStart = position;
+      continue;
+    }
+    if (isUnicodeScalarValue(code2)) {
+      ++position;
+    } else if (isSupplementaryCodePoint(body, position)) {
+      position += 2;
+    } else {
+      throw syntaxError(
+        lexer.source,
+        position,
+        `Invalid character within String: ${printCodePointAt(
+          lexer,
+          position
+        )}.`
+      );
+    }
+  }
+  throw syntaxError(lexer.source, position, "Unterminated string.");
+}
+function readName(lexer, start) {
+  const body = lexer.source.body;
+  const bodyLength = body.length;
+  let position = start + 1;
+  while (position < bodyLength) {
+    const code2 = body.charCodeAt(position);
+    if (isNameContinue(code2)) {
+      ++position;
+    } else {
+      break;
+    }
+  }
+  return createToken(
+    lexer,
+    TokenKind.NAME,
+    start,
+    position,
+    body.slice(start, position)
+  );
+}
+const MAX_ARRAY_LENGTH = 10;
+const MAX_RECURSIVE_DEPTH = 2;
+function inspect(value) {
+  return formatValue(value, []);
+}
+function formatValue(value, seenValues) {
+  switch (typeof value) {
+    case "string":
+      return JSON.stringify(value);
+    case "function":
+      return value.name ? `[function ${value.name}]` : "[function]";
+    case "object":
+      return formatObjectValue(value, seenValues);
+    default:
+      return String(value);
+  }
+}
+function formatObjectValue(value, previouslySeenValues) {
+  if (value === null) {
+    return "null";
+  }
+  if (previouslySeenValues.includes(value)) {
+    return "[Circular]";
+  }
+  const seenValues = [...previouslySeenValues, value];
+  if (isJSONable(value)) {
+    const jsonValue = value.toJSON();
+    if (jsonValue !== value) {
+      return typeof jsonValue === "string" ? jsonValue : formatValue(jsonValue, seenValues);
+    }
+  } else if (Array.isArray(value)) {
+    return formatArray(value, seenValues);
+  }
+  return formatObject(value, seenValues);
+}
+function isJSONable(value) {
+  return typeof value.toJSON === "function";
+}
+function formatObject(object, seenValues) {
+  const entries = Object.entries(object);
+  if (entries.length === 0) {
+    return "{}";
+  }
+  if (seenValues.length > MAX_RECURSIVE_DEPTH) {
+    return "[" + getObjectTag(object) + "]";
+  }
+  const properties = entries.map(
+    ([key, value]) => key + ": " + formatValue(value, seenValues)
+  );
+  return "{ " + properties.join(", ") + " }";
+}
+function formatArray(array, seenValues) {
+  if (array.length === 0) {
+    return "[]";
+  }
+  if (seenValues.length > MAX_RECURSIVE_DEPTH) {
+    return "[Array]";
+  }
+  const len = Math.min(MAX_ARRAY_LENGTH, array.length);
+  const remaining = array.length - len;
+  const items = [];
+  for (let i2 = 0; i2 < len; ++i2) {
+    items.push(formatValue(array[i2], seenValues));
+  }
+  if (remaining === 1) {
+    items.push("... 1 more item");
+  } else if (remaining > 1) {
+    items.push(`... ${remaining} more items`);
+  }
+  return "[" + items.join(", ") + "]";
+}
+function getObjectTag(object) {
+  const tag = Object.prototype.toString.call(object).replace(/^\[object /, "").replace(/]$/, "");
+  if (tag === "Object" && typeof object.constructor === "function") {
+    const name2 = object.constructor.name;
+    if (typeof name2 === "string" && name2 !== "") {
+      return name2;
+    }
+  }
+  return tag;
+}
+const isProduction = globalThis.process && // eslint-disable-next-line no-undef
+true;
+const instanceOf = (
+  /* c8 ignore next 6 */
+  // FIXME: https://github.com/graphql/graphql-js/issues/2317
+  isProduction ? function instanceOf22(value, constructor) {
+    return value instanceof constructor;
+  } : function instanceOf32(value, constructor) {
+    if (value instanceof constructor) {
+      return true;
+    }
+    if (typeof value === "object" && value !== null) {
+      var _value$constructor;
+      const className = constructor.prototype[Symbol.toStringTag];
+      const valueClassName = (
+        // We still need to support constructor's name to detect conflicts with older versions of this library.
+        Symbol.toStringTag in value ? value[Symbol.toStringTag] : (_value$constructor = value.constructor) === null || _value$constructor === void 0 ? void 0 : _value$constructor.name
+      );
+      if (className === valueClassName) {
+        const stringifiedValue = inspect(value);
+        throw new Error(`Cannot use ${className} "${stringifiedValue}" from another module or realm.
+
+Ensure that there is only one instance of "graphql" in the node_modules
+directory. If different versions of "graphql" are the dependencies of other
+relied on modules, use "resolutions" to ensure only one version is installed.
+
+https://yarnpkg.com/en/docs/selective-version-resolutions
+
+Duplicate "graphql" modules cannot be used at the same time since different
+versions may have different capabilities and behavior. The data from one
+version used in the function from another could produce confusing and
+spurious results.`);
+      }
+    }
+    return false;
+  }
+);
+class Source2 {
+  constructor(body, name2 = "GraphQL request", locationOffset = {
+    line: 1,
+    column: 1
+  }) {
+    typeof body === "string" || devAssert(false, `Body must be a string. Received: ${inspect(body)}.`);
+    this.body = body;
+    this.name = name2;
+    this.locationOffset = locationOffset;
+    this.locationOffset.line > 0 || devAssert(
+      false,
+      "line in locationOffset is 1-indexed and must be positive."
+    );
+    this.locationOffset.column > 0 || devAssert(
+      false,
+      "column in locationOffset is 1-indexed and must be positive."
+    );
+  }
+  get [Symbol.toStringTag]() {
+    return "Source";
+  }
+}
+function isSource(source) {
+  return instanceOf(source, Source2);
+}
+function parse(source, options) {
+  const parser = new Parser2(source, options);
+  const document2 = parser.parseDocument();
+  Object.defineProperty(document2, "tokenCount", {
+    enumerable: false,
+    value: parser.tokenCount
+  });
+  return document2;
+}
+function parseValue(source, options) {
+  const parser = new Parser2(source, options);
+  parser.expectToken(TokenKind.SOF);
+  const value = parser.parseValueLiteral(false);
+  parser.expectToken(TokenKind.EOF);
+  return value;
+}
+function parseConstValue(source, options) {
+  const parser = new Parser2(source, options);
+  parser.expectToken(TokenKind.SOF);
+  const value = parser.parseConstValueLiteral();
+  parser.expectToken(TokenKind.EOF);
+  return value;
+}
+function parseType(source, options) {
+  const parser = new Parser2(source, options);
+  parser.expectToken(TokenKind.SOF);
+  const type2 = parser.parseTypeReference();
+  parser.expectToken(TokenKind.EOF);
+  return type2;
+}
+class Parser2 {
+  constructor(source, options = {}) {
+    const sourceObj = isSource(source) ? source : new Source2(source);
+    this._lexer = new Lexer2(sourceObj);
+    this._options = options;
+    this._tokenCounter = 0;
+  }
+  get tokenCount() {
+    return this._tokenCounter;
+  }
+  /**
+   * Converts a name lex token into a name parse node.
+   */
+  parseName() {
+    const token = this.expectToken(TokenKind.NAME);
+    return this.node(token, {
+      kind: Kind.NAME,
+      value: token.value
+    });
+  }
+  // Implements the parsing rules in the Document section.
+  /**
+   * Document : Definition+
+   */
+  parseDocument() {
+    return this.node(this._lexer.token, {
+      kind: Kind.DOCUMENT,
+      definitions: this.many(
+        TokenKind.SOF,
+        this.parseDefinition,
+        TokenKind.EOF
+      )
+    });
+  }
+  /**
+   * Definition :
+   *   - ExecutableDefinition
+   *   - TypeSystemDefinition
+   *   - TypeSystemExtension
+   *
+   * ExecutableDefinition :
+   *   - OperationDefinition
+   *   - FragmentDefinition
+   *
+   * TypeSystemDefinition :
+   *   - SchemaDefinition
+   *   - TypeDefinition
+   *   - DirectiveDefinition
+   *
+   * TypeDefinition :
+   *   - ScalarTypeDefinition
+   *   - ObjectTypeDefinition
+   *   - InterfaceTypeDefinition
+   *   - UnionTypeDefinition
+   *   - EnumTypeDefinition
+   *   - InputObjectTypeDefinition
+   */
+  parseDefinition() {
+    if (this.peek(TokenKind.BRACE_L)) {
+      return this.parseOperationDefinition();
+    }
+    const hasDescription = this.peekDescription();
+    const keywordToken = hasDescription ? this._lexer.lookahead() : this._lexer.token;
+    if (keywordToken.kind === TokenKind.NAME) {
+      switch (keywordToken.value) {
+        case "schema":
+          return this.parseSchemaDefinition();
+        case "scalar":
+          return this.parseScalarTypeDefinition();
+        case "type":
+          return this.parseObjectTypeDefinition();
+        case "interface":
+          return this.parseInterfaceTypeDefinition();
+        case "union":
+          return this.parseUnionTypeDefinition();
+        case "enum":
+          return this.parseEnumTypeDefinition();
+        case "input":
+          return this.parseInputObjectTypeDefinition();
+        case "directive":
+          return this.parseDirectiveDefinition();
+      }
+      if (hasDescription) {
+        throw syntaxError(
+          this._lexer.source,
+          this._lexer.token.start,
+          "Unexpected description, descriptions are supported only on type definitions."
+        );
+      }
+      switch (keywordToken.value) {
+        case "query":
+        case "mutation":
+        case "subscription":
+          return this.parseOperationDefinition();
+        case "fragment":
+          return this.parseFragmentDefinition();
+        case "extend":
+          return this.parseTypeSystemExtension();
+      }
+    }
+    throw this.unexpected(keywordToken);
+  }
+  // Implements the parsing rules in the Operations section.
+  /**
+   * OperationDefinition :
+   *  - SelectionSet
+   *  - OperationType Name? VariableDefinitions? Directives? SelectionSet
+   */
+  parseOperationDefinition() {
+    const start = this._lexer.token;
+    if (this.peek(TokenKind.BRACE_L)) {
+      return this.node(start, {
+        kind: Kind.OPERATION_DEFINITION,
+        operation: OperationTypeNode.QUERY,
+        name: void 0,
+        variableDefinitions: [],
+        directives: [],
+        selectionSet: this.parseSelectionSet()
+      });
+    }
+    const operation = this.parseOperationType();
+    let name2;
+    if (this.peek(TokenKind.NAME)) {
+      name2 = this.parseName();
+    }
+    return this.node(start, {
+      kind: Kind.OPERATION_DEFINITION,
+      operation,
+      name: name2,
+      variableDefinitions: this.parseVariableDefinitions(),
+      directives: this.parseDirectives(false),
+      selectionSet: this.parseSelectionSet()
+    });
+  }
+  /**
+   * OperationType : one of query mutation subscription
+   */
+  parseOperationType() {
+    const operationToken = this.expectToken(TokenKind.NAME);
+    switch (operationToken.value) {
+      case "query":
+        return OperationTypeNode.QUERY;
+      case "mutation":
+        return OperationTypeNode.MUTATION;
+      case "subscription":
+        return OperationTypeNode.SUBSCRIPTION;
+    }
+    throw this.unexpected(operationToken);
+  }
+  /**
+   * VariableDefinitions : ( VariableDefinition+ )
+   */
+  parseVariableDefinitions() {
+    return this.optionalMany(
+      TokenKind.PAREN_L,
+      this.parseVariableDefinition,
+      TokenKind.PAREN_R
+    );
+  }
+  /**
+   * VariableDefinition : Variable : Type DefaultValue? Directives[Const]?
+   */
+  parseVariableDefinition() {
+    return this.node(this._lexer.token, {
+      kind: Kind.VARIABLE_DEFINITION,
+      variable: this.parseVariable(),
+      type: (this.expectToken(TokenKind.COLON), this.parseTypeReference()),
+      defaultValue: this.expectOptionalToken(TokenKind.EQUALS) ? this.parseConstValueLiteral() : void 0,
+      directives: this.parseConstDirectives()
+    });
+  }
+  /**
+   * Variable : $ Name
+   */
+  parseVariable() {
+    const start = this._lexer.token;
+    this.expectToken(TokenKind.DOLLAR);
+    return this.node(start, {
+      kind: Kind.VARIABLE,
+      name: this.parseName()
+    });
+  }
+  /**
+   * ```
+   * SelectionSet : { Selection+ }
+   * ```
+   */
+  parseSelectionSet() {
+    return this.node(this._lexer.token, {
+      kind: Kind.SELECTION_SET,
+      selections: this.many(
+        TokenKind.BRACE_L,
+        this.parseSelection,
+        TokenKind.BRACE_R
+      )
+    });
+  }
+  /**
+   * Selection :
+   *   - Field
+   *   - FragmentSpread
+   *   - InlineFragment
+   */
+  parseSelection() {
+    return this.peek(TokenKind.SPREAD) ? this.parseFragment() : this.parseField();
+  }
+  /**
+   * Field : Alias? Name Arguments? Directives? SelectionSet?
+   *
+   * Alias : Name :
+   */
+  parseField() {
+    const start = this._lexer.token;
+    const nameOrAlias = this.parseName();
+    let alias;
+    let name2;
+    if (this.expectOptionalToken(TokenKind.COLON)) {
+      alias = nameOrAlias;
+      name2 = this.parseName();
+    } else {
+      name2 = nameOrAlias;
+    }
+    return this.node(start, {
+      kind: Kind.FIELD,
+      alias,
+      name: name2,
+      arguments: this.parseArguments(false),
+      directives: this.parseDirectives(false),
+      selectionSet: this.peek(TokenKind.BRACE_L) ? this.parseSelectionSet() : void 0
+    });
+  }
+  /**
+   * Arguments[Const] : ( Argument[?Const]+ )
+   */
+  parseArguments(isConst) {
+    const item = isConst ? this.parseConstArgument : this.parseArgument;
+    return this.optionalMany(TokenKind.PAREN_L, item, TokenKind.PAREN_R);
+  }
+  /**
+   * Argument[Const] : Name : Value[?Const]
+   */
+  parseArgument(isConst = false) {
+    const start = this._lexer.token;
+    const name2 = this.parseName();
+    this.expectToken(TokenKind.COLON);
+    return this.node(start, {
+      kind: Kind.ARGUMENT,
+      name: name2,
+      value: this.parseValueLiteral(isConst)
+    });
+  }
+  parseConstArgument() {
+    return this.parseArgument(true);
+  }
+  // Implements the parsing rules in the Fragments section.
+  /**
+   * Corresponds to both FragmentSpread and InlineFragment in the spec.
+   *
+   * FragmentSpread : ... FragmentName Directives?
+   *
+   * InlineFragment : ... TypeCondition? Directives? SelectionSet
+   */
+  parseFragment() {
+    const start = this._lexer.token;
+    this.expectToken(TokenKind.SPREAD);
+    const hasTypeCondition = this.expectOptionalKeyword("on");
+    if (!hasTypeCondition && this.peek(TokenKind.NAME)) {
+      return this.node(start, {
+        kind: Kind.FRAGMENT_SPREAD,
+        name: this.parseFragmentName(),
+        directives: this.parseDirectives(false)
+      });
+    }
+    return this.node(start, {
+      kind: Kind.INLINE_FRAGMENT,
+      typeCondition: hasTypeCondition ? this.parseNamedType() : void 0,
+      directives: this.parseDirectives(false),
+      selectionSet: this.parseSelectionSet()
+    });
+  }
+  /**
+   * FragmentDefinition :
+   *   - fragment FragmentName on TypeCondition Directives? SelectionSet
+   *
+   * TypeCondition : NamedType
+   */
+  parseFragmentDefinition() {
+    const start = this._lexer.token;
+    this.expectKeyword("fragment");
+    if (this._options.allowLegacyFragmentVariables === true) {
+      return this.node(start, {
+        kind: Kind.FRAGMENT_DEFINITION,
+        name: this.parseFragmentName(),
+        variableDefinitions: this.parseVariableDefinitions(),
+        typeCondition: (this.expectKeyword("on"), this.parseNamedType()),
+        directives: this.parseDirectives(false),
+        selectionSet: this.parseSelectionSet()
+      });
+    }
+    return this.node(start, {
+      kind: Kind.FRAGMENT_DEFINITION,
+      name: this.parseFragmentName(),
+      typeCondition: (this.expectKeyword("on"), this.parseNamedType()),
+      directives: this.parseDirectives(false),
+      selectionSet: this.parseSelectionSet()
+    });
+  }
+  /**
+   * FragmentName : Name but not `on`
+   */
+  parseFragmentName() {
+    if (this._lexer.token.value === "on") {
+      throw this.unexpected();
+    }
+    return this.parseName();
+  }
+  // Implements the parsing rules in the Values section.
+  /**
+   * Value[Const] :
+   *   - [~Const] Variable
+   *   - IntValue
+   *   - FloatValue
+   *   - StringValue
+   *   - BooleanValue
+   *   - NullValue
+   *   - EnumValue
+   *   - ListValue[?Const]
+   *   - ObjectValue[?Const]
+   *
+   * BooleanValue : one of `true` `false`
+   *
+   * NullValue : `null`
+   *
+   * EnumValue : Name but not `true`, `false` or `null`
+   */
+  parseValueLiteral(isConst) {
+    const token = this._lexer.token;
+    switch (token.kind) {
+      case TokenKind.BRACKET_L:
+        return this.parseList(isConst);
+      case TokenKind.BRACE_L:
+        return this.parseObject(isConst);
+      case TokenKind.INT:
+        this.advanceLexer();
+        return this.node(token, {
+          kind: Kind.INT,
+          value: token.value
+        });
+      case TokenKind.FLOAT:
+        this.advanceLexer();
+        return this.node(token, {
+          kind: Kind.FLOAT,
+          value: token.value
+        });
+      case TokenKind.STRING:
+      case TokenKind.BLOCK_STRING:
+        return this.parseStringLiteral();
+      case TokenKind.NAME:
+        this.advanceLexer();
+        switch (token.value) {
+          case "true":
+            return this.node(token, {
+              kind: Kind.BOOLEAN,
+              value: true
+            });
+          case "false":
+            return this.node(token, {
+              kind: Kind.BOOLEAN,
+              value: false
+            });
+          case "null":
+            return this.node(token, {
+              kind: Kind.NULL
+            });
+          default:
+            return this.node(token, {
+              kind: Kind.ENUM,
+              value: token.value
+            });
+        }
+      case TokenKind.DOLLAR:
+        if (isConst) {
+          this.expectToken(TokenKind.DOLLAR);
+          if (this._lexer.token.kind === TokenKind.NAME) {
+            const varName = this._lexer.token.value;
+            throw syntaxError(
+              this._lexer.source,
+              token.start,
+              `Unexpected variable "$${varName}" in constant value.`
+            );
+          } else {
+            throw this.unexpected(token);
+          }
+        }
+        return this.parseVariable();
+      default:
+        throw this.unexpected();
+    }
+  }
+  parseConstValueLiteral() {
+    return this.parseValueLiteral(true);
+  }
+  parseStringLiteral() {
+    const token = this._lexer.token;
+    this.advanceLexer();
+    return this.node(token, {
+      kind: Kind.STRING,
+      value: token.value,
+      block: token.kind === TokenKind.BLOCK_STRING
+    });
+  }
+  /**
+   * ListValue[Const] :
+   *   - [ ]
+   *   - [ Value[?Const]+ ]
+   */
+  parseList(isConst) {
+    const item = () => this.parseValueLiteral(isConst);
+    return this.node(this._lexer.token, {
+      kind: Kind.LIST,
+      values: this.any(TokenKind.BRACKET_L, item, TokenKind.BRACKET_R)
+    });
+  }
+  /**
+   * ```
+   * ObjectValue[Const] :
+   *   - { }
+   *   - { ObjectField[?Const]+ }
+   * ```
+   */
+  parseObject(isConst) {
+    const item = () => this.parseObjectField(isConst);
+    return this.node(this._lexer.token, {
+      kind: Kind.OBJECT,
+      fields: this.any(TokenKind.BRACE_L, item, TokenKind.BRACE_R)
+    });
+  }
+  /**
+   * ObjectField[Const] : Name : Value[?Const]
+   */
+  parseObjectField(isConst) {
+    const start = this._lexer.token;
+    const name2 = this.parseName();
+    this.expectToken(TokenKind.COLON);
+    return this.node(start, {
+      kind: Kind.OBJECT_FIELD,
+      name: name2,
+      value: this.parseValueLiteral(isConst)
+    });
+  }
+  // Implements the parsing rules in the Directives section.
+  /**
+   * Directives[Const] : Directive[?Const]+
+   */
+  parseDirectives(isConst) {
+    const directives = [];
+    while (this.peek(TokenKind.AT)) {
+      directives.push(this.parseDirective(isConst));
+    }
+    return directives;
+  }
+  parseConstDirectives() {
+    return this.parseDirectives(true);
+  }
+  /**
+   * ```
+   * Directive[Const] : @ Name Arguments[?Const]?
+   * ```
+   */
+  parseDirective(isConst) {
+    const start = this._lexer.token;
+    this.expectToken(TokenKind.AT);
+    return this.node(start, {
+      kind: Kind.DIRECTIVE,
+      name: this.parseName(),
+      arguments: this.parseArguments(isConst)
+    });
+  }
+  // Implements the parsing rules in the Types section.
+  /**
+   * Type :
+   *   - NamedType
+   *   - ListType
+   *   - NonNullType
+   */
+  parseTypeReference() {
+    const start = this._lexer.token;
+    let type2;
+    if (this.expectOptionalToken(TokenKind.BRACKET_L)) {
+      const innerType = this.parseTypeReference();
+      this.expectToken(TokenKind.BRACKET_R);
+      type2 = this.node(start, {
+        kind: Kind.LIST_TYPE,
+        type: innerType
+      });
+    } else {
+      type2 = this.parseNamedType();
+    }
+    if (this.expectOptionalToken(TokenKind.BANG)) {
+      return this.node(start, {
+        kind: Kind.NON_NULL_TYPE,
+        type: type2
+      });
+    }
+    return type2;
+  }
+  /**
+   * NamedType : Name
+   */
+  parseNamedType() {
+    return this.node(this._lexer.token, {
+      kind: Kind.NAMED_TYPE,
+      name: this.parseName()
+    });
+  }
+  // Implements the parsing rules in the Type Definition section.
+  peekDescription() {
+    return this.peek(TokenKind.STRING) || this.peek(TokenKind.BLOCK_STRING);
+  }
+  /**
+   * Description : StringValue
+   */
+  parseDescription() {
+    if (this.peekDescription()) {
+      return this.parseStringLiteral();
+    }
+  }
+  /**
+   * ```
+   * SchemaDefinition : Description? schema Directives[Const]? { OperationTypeDefinition+ }
+   * ```
+   */
+  parseSchemaDefinition() {
+    const start = this._lexer.token;
+    const description = this.parseDescription();
+    this.expectKeyword("schema");
+    const directives = this.parseConstDirectives();
+    const operationTypes = this.many(
+      TokenKind.BRACE_L,
+      this.parseOperationTypeDefinition,
+      TokenKind.BRACE_R
+    );
+    return this.node(start, {
+      kind: Kind.SCHEMA_DEFINITION,
+      description,
+      directives,
+      operationTypes
+    });
+  }
+  /**
+   * OperationTypeDefinition : OperationType : NamedType
+   */
+  parseOperationTypeDefinition() {
+    const start = this._lexer.token;
+    const operation = this.parseOperationType();
+    this.expectToken(TokenKind.COLON);
+    const type2 = this.parseNamedType();
+    return this.node(start, {
+      kind: Kind.OPERATION_TYPE_DEFINITION,
+      operation,
+      type: type2
+    });
+  }
+  /**
+   * ScalarTypeDefinition : Description? scalar Name Directives[Const]?
+   */
+  parseScalarTypeDefinition() {
+    const start = this._lexer.token;
+    const description = this.parseDescription();
+    this.expectKeyword("scalar");
+    const name2 = this.parseName();
+    const directives = this.parseConstDirectives();
+    return this.node(start, {
+      kind: Kind.SCALAR_TYPE_DEFINITION,
+      description,
+      name: name2,
+      directives
+    });
+  }
+  /**
+   * ObjectTypeDefinition :
+   *   Description?
+   *   type Name ImplementsInterfaces? Directives[Const]? FieldsDefinition?
+   */
+  parseObjectTypeDefinition() {
+    const start = this._lexer.token;
+    const description = this.parseDescription();
+    this.expectKeyword("type");
+    const name2 = this.parseName();
+    const interfaces = this.parseImplementsInterfaces();
+    const directives = this.parseConstDirectives();
+    const fields = this.parseFieldsDefinition();
+    return this.node(start, {
+      kind: Kind.OBJECT_TYPE_DEFINITION,
+      description,
+      name: name2,
+      interfaces,
+      directives,
+      fields
+    });
+  }
+  /**
+   * ImplementsInterfaces :
+   *   - implements `&`? NamedType
+   *   - ImplementsInterfaces & NamedType
+   */
+  parseImplementsInterfaces() {
+    return this.expectOptionalKeyword("implements") ? this.delimitedMany(TokenKind.AMP, this.parseNamedType) : [];
+  }
+  /**
+   * ```
+   * FieldsDefinition : { FieldDefinition+ }
+   * ```
+   */
+  parseFieldsDefinition() {
+    return this.optionalMany(
+      TokenKind.BRACE_L,
+      this.parseFieldDefinition,
+      TokenKind.BRACE_R
+    );
+  }
+  /**
+   * FieldDefinition :
+   *   - Description? Name ArgumentsDefinition? : Type Directives[Const]?
+   */
+  parseFieldDefinition() {
+    const start = this._lexer.token;
+    const description = this.parseDescription();
+    const name2 = this.parseName();
+    const args = this.parseArgumentDefs();
+    this.expectToken(TokenKind.COLON);
+    const type2 = this.parseTypeReference();
+    const directives = this.parseConstDirectives();
+    return this.node(start, {
+      kind: Kind.FIELD_DEFINITION,
+      description,
+      name: name2,
+      arguments: args,
+      type: type2,
+      directives
+    });
+  }
+  /**
+   * ArgumentsDefinition : ( InputValueDefinition+ )
+   */
+  parseArgumentDefs() {
+    return this.optionalMany(
+      TokenKind.PAREN_L,
+      this.parseInputValueDef,
+      TokenKind.PAREN_R
+    );
+  }
+  /**
+   * InputValueDefinition :
+   *   - Description? Name : Type DefaultValue? Directives[Const]?
+   */
+  parseInputValueDef() {
+    const start = this._lexer.token;
+    const description = this.parseDescription();
+    const name2 = this.parseName();
+    this.expectToken(TokenKind.COLON);
+    const type2 = this.parseTypeReference();
+    let defaultValue;
+    if (this.expectOptionalToken(TokenKind.EQUALS)) {
+      defaultValue = this.parseConstValueLiteral();
+    }
+    const directives = this.parseConstDirectives();
+    return this.node(start, {
+      kind: Kind.INPUT_VALUE_DEFINITION,
+      description,
+      name: name2,
+      type: type2,
+      defaultValue,
+      directives
+    });
+  }
+  /**
+   * InterfaceTypeDefinition :
+   *   - Description? interface Name Directives[Const]? FieldsDefinition?
+   */
+  parseInterfaceTypeDefinition() {
+    const start = this._lexer.token;
+    const description = this.parseDescription();
+    this.expectKeyword("interface");
+    const name2 = this.parseName();
+    const interfaces = this.parseImplementsInterfaces();
+    const directives = this.parseConstDirectives();
+    const fields = this.parseFieldsDefinition();
+    return this.node(start, {
+      kind: Kind.INTERFACE_TYPE_DEFINITION,
+      description,
+      name: name2,
+      interfaces,
+      directives,
+      fields
+    });
+  }
+  /**
+   * UnionTypeDefinition :
+   *   - Description? union Name Directives[Const]? UnionMemberTypes?
+   */
+  parseUnionTypeDefinition() {
+    const start = this._lexer.token;
+    const description = this.parseDescription();
+    this.expectKeyword("union");
+    const name2 = this.parseName();
+    const directives = this.parseConstDirectives();
+    const types = this.parseUnionMemberTypes();
+    return this.node(start, {
+      kind: Kind.UNION_TYPE_DEFINITION,
+      description,
+      name: name2,
+      directives,
+      types
+    });
+  }
+  /**
+   * UnionMemberTypes :
+   *   - = `|`? NamedType
+   *   - UnionMemberTypes | NamedType
+   */
+  parseUnionMemberTypes() {
+    return this.expectOptionalToken(TokenKind.EQUALS) ? this.delimitedMany(TokenKind.PIPE, this.parseNamedType) : [];
+  }
+  /**
+   * EnumTypeDefinition :
+   *   - Description? enum Name Directives[Const]? EnumValuesDefinition?
+   */
+  parseEnumTypeDefinition() {
+    const start = this._lexer.token;
+    const description = this.parseDescription();
+    this.expectKeyword("enum");
+    const name2 = this.parseName();
+    const directives = this.parseConstDirectives();
+    const values = this.parseEnumValuesDefinition();
+    return this.node(start, {
+      kind: Kind.ENUM_TYPE_DEFINITION,
+      description,
+      name: name2,
+      directives,
+      values
+    });
+  }
+  /**
+   * ```
+   * EnumValuesDefinition : { EnumValueDefinition+ }
+   * ```
+   */
+  parseEnumValuesDefinition() {
+    return this.optionalMany(
+      TokenKind.BRACE_L,
+      this.parseEnumValueDefinition,
+      TokenKind.BRACE_R
+    );
+  }
+  /**
+   * EnumValueDefinition : Description? EnumValue Directives[Const]?
+   */
+  parseEnumValueDefinition() {
+    const start = this._lexer.token;
+    const description = this.parseDescription();
+    const name2 = this.parseEnumValueName();
+    const directives = this.parseConstDirectives();
+    return this.node(start, {
+      kind: Kind.ENUM_VALUE_DEFINITION,
+      description,
+      name: name2,
+      directives
+    });
+  }
+  /**
+   * EnumValue : Name but not `true`, `false` or `null`
+   */
+  parseEnumValueName() {
+    if (this._lexer.token.value === "true" || this._lexer.token.value === "false" || this._lexer.token.value === "null") {
+      throw syntaxError(
+        this._lexer.source,
+        this._lexer.token.start,
+        `${getTokenDesc(
+          this._lexer.token
+        )} is reserved and cannot be used for an enum value.`
+      );
+    }
+    return this.parseName();
+  }
+  /**
+   * InputObjectTypeDefinition :
+   *   - Description? input Name Directives[Const]? InputFieldsDefinition?
+   */
+  parseInputObjectTypeDefinition() {
+    const start = this._lexer.token;
+    const description = this.parseDescription();
+    this.expectKeyword("input");
+    const name2 = this.parseName();
+    const directives = this.parseConstDirectives();
+    const fields = this.parseInputFieldsDefinition();
+    return this.node(start, {
+      kind: Kind.INPUT_OBJECT_TYPE_DEFINITION,
+      description,
+      name: name2,
+      directives,
+      fields
+    });
+  }
+  /**
+   * ```
+   * InputFieldsDefinition : { InputValueDefinition+ }
+   * ```
+   */
+  parseInputFieldsDefinition() {
+    return this.optionalMany(
+      TokenKind.BRACE_L,
+      this.parseInputValueDef,
+      TokenKind.BRACE_R
+    );
+  }
+  /**
+   * TypeSystemExtension :
+   *   - SchemaExtension
+   *   - TypeExtension
+   *
+   * TypeExtension :
+   *   - ScalarTypeExtension
+   *   - ObjectTypeExtension
+   *   - InterfaceTypeExtension
+   *   - UnionTypeExtension
+   *   - EnumTypeExtension
+   *   - InputObjectTypeDefinition
+   */
+  parseTypeSystemExtension() {
+    const keywordToken = this._lexer.lookahead();
+    if (keywordToken.kind === TokenKind.NAME) {
+      switch (keywordToken.value) {
+        case "schema":
+          return this.parseSchemaExtension();
+        case "scalar":
+          return this.parseScalarTypeExtension();
+        case "type":
+          return this.parseObjectTypeExtension();
+        case "interface":
+          return this.parseInterfaceTypeExtension();
+        case "union":
+          return this.parseUnionTypeExtension();
+        case "enum":
+          return this.parseEnumTypeExtension();
+        case "input":
+          return this.parseInputObjectTypeExtension();
+      }
+    }
+    throw this.unexpected(keywordToken);
+  }
+  /**
+   * ```
+   * SchemaExtension :
+   *  - extend schema Directives[Const]? { OperationTypeDefinition+ }
+   *  - extend schema Directives[Const]
+   * ```
+   */
+  parseSchemaExtension() {
+    const start = this._lexer.token;
+    this.expectKeyword("extend");
+    this.expectKeyword("schema");
+    const directives = this.parseConstDirectives();
+    const operationTypes = this.optionalMany(
+      TokenKind.BRACE_L,
+      this.parseOperationTypeDefinition,
+      TokenKind.BRACE_R
+    );
+    if (directives.length === 0 && operationTypes.length === 0) {
+      throw this.unexpected();
+    }
+    return this.node(start, {
+      kind: Kind.SCHEMA_EXTENSION,
+      directives,
+      operationTypes
+    });
+  }
+  /**
+   * ScalarTypeExtension :
+   *   - extend scalar Name Directives[Const]
+   */
+  parseScalarTypeExtension() {
+    const start = this._lexer.token;
+    this.expectKeyword("extend");
+    this.expectKeyword("scalar");
+    const name2 = this.parseName();
+    const directives = this.parseConstDirectives();
+    if (directives.length === 0) {
+      throw this.unexpected();
+    }
+    return this.node(start, {
+      kind: Kind.SCALAR_TYPE_EXTENSION,
+      name: name2,
+      directives
+    });
+  }
+  /**
+   * ObjectTypeExtension :
+   *  - extend type Name ImplementsInterfaces? Directives[Const]? FieldsDefinition
+   *  - extend type Name ImplementsInterfaces? Directives[Const]
+   *  - extend type Name ImplementsInterfaces
+   */
+  parseObjectTypeExtension() {
+    const start = this._lexer.token;
+    this.expectKeyword("extend");
+    this.expectKeyword("type");
+    const name2 = this.parseName();
+    const interfaces = this.parseImplementsInterfaces();
+    const directives = this.parseConstDirectives();
+    const fields = this.parseFieldsDefinition();
+    if (interfaces.length === 0 && directives.length === 0 && fields.length === 0) {
+      throw this.unexpected();
+    }
+    return this.node(start, {
+      kind: Kind.OBJECT_TYPE_EXTENSION,
+      name: name2,
+      interfaces,
+      directives,
+      fields
+    });
+  }
+  /**
+   * InterfaceTypeExtension :
+   *  - extend interface Name ImplementsInterfaces? Directives[Const]? FieldsDefinition
+   *  - extend interface Name ImplementsInterfaces? Directives[Const]
+   *  - extend interface Name ImplementsInterfaces
+   */
+  parseInterfaceTypeExtension() {
+    const start = this._lexer.token;
+    this.expectKeyword("extend");
+    this.expectKeyword("interface");
+    const name2 = this.parseName();
+    const interfaces = this.parseImplementsInterfaces();
+    const directives = this.parseConstDirectives();
+    const fields = this.parseFieldsDefinition();
+    if (interfaces.length === 0 && directives.length === 0 && fields.length === 0) {
+      throw this.unexpected();
+    }
+    return this.node(start, {
+      kind: Kind.INTERFACE_TYPE_EXTENSION,
+      name: name2,
+      interfaces,
+      directives,
+      fields
+    });
+  }
+  /**
+   * UnionTypeExtension :
+   *   - extend union Name Directives[Const]? UnionMemberTypes
+   *   - extend union Name Directives[Const]
+   */
+  parseUnionTypeExtension() {
+    const start = this._lexer.token;
+    this.expectKeyword("extend");
+    this.expectKeyword("union");
+    const name2 = this.parseName();
+    const directives = this.parseConstDirectives();
+    const types = this.parseUnionMemberTypes();
+    if (directives.length === 0 && types.length === 0) {
+      throw this.unexpected();
+    }
+    return this.node(start, {
+      kind: Kind.UNION_TYPE_EXTENSION,
+      name: name2,
+      directives,
+      types
+    });
+  }
+  /**
+   * EnumTypeExtension :
+   *   - extend enum Name Directives[Const]? EnumValuesDefinition
+   *   - extend enum Name Directives[Const]
+   */
+  parseEnumTypeExtension() {
+    const start = this._lexer.token;
+    this.expectKeyword("extend");
+    this.expectKeyword("enum");
+    const name2 = this.parseName();
+    const directives = this.parseConstDirectives();
+    const values = this.parseEnumValuesDefinition();
+    if (directives.length === 0 && values.length === 0) {
+      throw this.unexpected();
+    }
+    return this.node(start, {
+      kind: Kind.ENUM_TYPE_EXTENSION,
+      name: name2,
+      directives,
+      values
+    });
+  }
+  /**
+   * InputObjectTypeExtension :
+   *   - extend input Name Directives[Const]? InputFieldsDefinition
+   *   - extend input Name Directives[Const]
+   */
+  parseInputObjectTypeExtension() {
+    const start = this._lexer.token;
+    this.expectKeyword("extend");
+    this.expectKeyword("input");
+    const name2 = this.parseName();
+    const directives = this.parseConstDirectives();
+    const fields = this.parseInputFieldsDefinition();
+    if (directives.length === 0 && fields.length === 0) {
+      throw this.unexpected();
+    }
+    return this.node(start, {
+      kind: Kind.INPUT_OBJECT_TYPE_EXTENSION,
+      name: name2,
+      directives,
+      fields
+    });
+  }
+  /**
+   * ```
+   * DirectiveDefinition :
+   *   - Description? directive @ Name ArgumentsDefinition? `repeatable`? on DirectiveLocations
+   * ```
+   */
+  parseDirectiveDefinition() {
+    const start = this._lexer.token;
+    const description = this.parseDescription();
+    this.expectKeyword("directive");
+    this.expectToken(TokenKind.AT);
+    const name2 = this.parseName();
+    const args = this.parseArgumentDefs();
+    const repeatable = this.expectOptionalKeyword("repeatable");
+    this.expectKeyword("on");
+    const locations = this.parseDirectiveLocations();
+    return this.node(start, {
+      kind: Kind.DIRECTIVE_DEFINITION,
+      description,
+      name: name2,
+      arguments: args,
+      repeatable,
+      locations
+    });
+  }
+  /**
+   * DirectiveLocations :
+   *   - `|`? DirectiveLocation
+   *   - DirectiveLocations | DirectiveLocation
+   */
+  parseDirectiveLocations() {
+    return this.delimitedMany(TokenKind.PIPE, this.parseDirectiveLocation);
+  }
+  /*
+   * DirectiveLocation :
+   *   - ExecutableDirectiveLocation
+   *   - TypeSystemDirectiveLocation
+   *
+   * ExecutableDirectiveLocation : one of
+   *   `QUERY`
+   *   `MUTATION`
+   *   `SUBSCRIPTION`
+   *   `FIELD`
+   *   `FRAGMENT_DEFINITION`
+   *   `FRAGMENT_SPREAD`
+   *   `INLINE_FRAGMENT`
+   *
+   * TypeSystemDirectiveLocation : one of
+   *   `SCHEMA`
+   *   `SCALAR`
+   *   `OBJECT`
+   *   `FIELD_DEFINITION`
+   *   `ARGUMENT_DEFINITION`
+   *   `INTERFACE`
+   *   `UNION`
+   *   `ENUM`
+   *   `ENUM_VALUE`
+   *   `INPUT_OBJECT`
+   *   `INPUT_FIELD_DEFINITION`
+   */
+  parseDirectiveLocation() {
+    const start = this._lexer.token;
+    const name2 = this.parseName();
+    if (Object.prototype.hasOwnProperty.call(DirectiveLocation, name2.value)) {
+      return name2;
+    }
+    throw this.unexpected(start);
+  }
+  // Core parsing utility functions
+  /**
+   * Returns a node that, if configured to do so, sets a "loc" field as a
+   * location object, used to identify the place in the source that created a
+   * given parsed object.
+   */
+  node(startToken, node) {
+    if (this._options.noLocation !== true) {
+      node.loc = new Location2(
+        startToken,
+        this._lexer.lastToken,
+        this._lexer.source
+      );
+    }
+    return node;
+  }
+  /**
+   * Determines if the next token is of a given kind
+   */
+  peek(kind) {
+    return this._lexer.token.kind === kind;
+  }
+  /**
+   * If the next token is of the given kind, return that token after advancing the lexer.
+   * Otherwise, do not change the parser state and throw an error.
+   */
+  expectToken(kind) {
+    const token = this._lexer.token;
+    if (token.kind === kind) {
+      this.advanceLexer();
+      return token;
+    }
+    throw syntaxError(
+      this._lexer.source,
+      token.start,
+      `Expected ${getTokenKindDesc(kind)}, found ${getTokenDesc(token)}.`
+    );
+  }
+  /**
+   * If the next token is of the given kind, return "true" after advancing the lexer.
+   * Otherwise, do not change the parser state and return "false".
+   */
+  expectOptionalToken(kind) {
+    const token = this._lexer.token;
+    if (token.kind === kind) {
+      this.advanceLexer();
+      return true;
+    }
+    return false;
+  }
+  /**
+   * If the next token is a given keyword, advance the lexer.
+   * Otherwise, do not change the parser state and throw an error.
+   */
+  expectKeyword(value) {
+    const token = this._lexer.token;
+    if (token.kind === TokenKind.NAME && token.value === value) {
+      this.advanceLexer();
+    } else {
+      throw syntaxError(
+        this._lexer.source,
+        token.start,
+        `Expected "${value}", found ${getTokenDesc(token)}.`
+      );
+    }
+  }
+  /**
+   * If the next token is a given keyword, return "true" after advancing the lexer.
+   * Otherwise, do not change the parser state and return "false".
+   */
+  expectOptionalKeyword(value) {
+    const token = this._lexer.token;
+    if (token.kind === TokenKind.NAME && token.value === value) {
+      this.advanceLexer();
+      return true;
+    }
+    return false;
+  }
+  /**
+   * Helper function for creating an error when an unexpected lexed token is encountered.
+   */
+  unexpected(atToken) {
+    const token = atToken !== null && atToken !== void 0 ? atToken : this._lexer.token;
+    return syntaxError(
+      this._lexer.source,
+      token.start,
+      `Unexpected ${getTokenDesc(token)}.`
+    );
+  }
+  /**
+   * Returns a possibly empty list of parse nodes, determined by the parseFn.
+   * This list begins with a lex token of openKind and ends with a lex token of closeKind.
+   * Advances the parser to the next lex token after the closing token.
+   */
+  any(openKind, parseFn, closeKind) {
+    this.expectToken(openKind);
+    const nodes = [];
+    while (!this.expectOptionalToken(closeKind)) {
+      nodes.push(parseFn.call(this));
+    }
+    return nodes;
+  }
+  /**
+   * Returns a list of parse nodes, determined by the parseFn.
+   * It can be empty only if open token is missing otherwise it will always return non-empty list
+   * that begins with a lex token of openKind and ends with a lex token of closeKind.
+   * Advances the parser to the next lex token after the closing token.
+   */
+  optionalMany(openKind, parseFn, closeKind) {
+    if (this.expectOptionalToken(openKind)) {
+      const nodes = [];
+      do {
+        nodes.push(parseFn.call(this));
+      } while (!this.expectOptionalToken(closeKind));
+      return nodes;
+    }
+    return [];
+  }
+  /**
+   * Returns a non-empty list of parse nodes, determined by the parseFn.
+   * This list begins with a lex token of openKind and ends with a lex token of closeKind.
+   * Advances the parser to the next lex token after the closing token.
+   */
+  many(openKind, parseFn, closeKind) {
+    this.expectToken(openKind);
+    const nodes = [];
+    do {
+      nodes.push(parseFn.call(this));
+    } while (!this.expectOptionalToken(closeKind));
+    return nodes;
+  }
+  /**
+   * Returns a non-empty list of parse nodes, determined by the parseFn.
+   * This list may begin with a lex token of delimiterKind followed by items separated by lex tokens of tokenKind.
+   * Advances the parser to the next lex token after last item in the list.
+   */
+  delimitedMany(delimiterKind, parseFn) {
+    this.expectOptionalToken(delimiterKind);
+    const nodes = [];
+    do {
+      nodes.push(parseFn.call(this));
+    } while (this.expectOptionalToken(delimiterKind));
+    return nodes;
+  }
+  advanceLexer() {
+    const { maxTokens } = this._options;
+    const token = this._lexer.advance();
+    if (token.kind !== TokenKind.EOF) {
+      ++this._tokenCounter;
+      if (maxTokens !== void 0 && this._tokenCounter > maxTokens) {
+        throw syntaxError(
+          this._lexer.source,
+          token.start,
+          `Document contains more that ${maxTokens} tokens. Parsing aborted.`
+        );
+      }
+    }
+  }
+}
+function getTokenDesc(token) {
+  const value = token.value;
+  return getTokenKindDesc(token.kind) + (value != null ? ` "${value}"` : "");
+}
+function getTokenKindDesc(kind) {
+  return isPunctuatorTokenKind(kind) ? `"${kind}"` : kind;
+}
+const MAX_SUGGESTIONS = 5;
+function didYouMean(firstArg, secondArg) {
+  const [subMessage, suggestionsArg] = secondArg ? [firstArg, secondArg] : [void 0, firstArg];
+  let message = " Did you mean ";
+  if (subMessage) {
+    message += subMessage + " ";
+  }
+  const suggestions = suggestionsArg.map((x2) => `"${x2}"`);
+  switch (suggestions.length) {
+    case 0:
+      return "";
+    case 1:
+      return message + suggestions[0] + "?";
+    case 2:
+      return message + suggestions[0] + " or " + suggestions[1] + "?";
+  }
+  const selected = suggestions.slice(0, MAX_SUGGESTIONS);
+  const lastItem = selected.pop();
+  return message + selected.join(", ") + ", or " + lastItem + "?";
+}
+function identityFunc(x2) {
+  return x2;
+}
+function keyMap(list2, keyFn) {
+  const result = /* @__PURE__ */ Object.create(null);
+  for (const item of list2) {
+    result[keyFn(item)] = item;
+  }
+  return result;
+}
+function keyValMap(list2, keyFn, valFn) {
+  const result = /* @__PURE__ */ Object.create(null);
+  for (const item of list2) {
+    result[keyFn(item)] = valFn(item);
+  }
+  return result;
+}
+function mapValue(map2, fn) {
+  const result = /* @__PURE__ */ Object.create(null);
+  for (const key of Object.keys(map2)) {
+    result[key] = fn(map2[key], key);
+  }
+  return result;
+}
+function naturalCompare(aStr, bStr) {
+  let aIndex = 0;
+  let bIndex = 0;
+  while (aIndex < aStr.length && bIndex < bStr.length) {
+    let aChar = aStr.charCodeAt(aIndex);
+    let bChar = bStr.charCodeAt(bIndex);
+    if (isDigit(aChar) && isDigit(bChar)) {
+      let aNum = 0;
+      do {
+        ++aIndex;
+        aNum = aNum * 10 + aChar - DIGIT_0;
+        aChar = aStr.charCodeAt(aIndex);
+      } while (isDigit(aChar) && aNum > 0);
+      let bNum = 0;
+      do {
+        ++bIndex;
+        bNum = bNum * 10 + bChar - DIGIT_0;
+        bChar = bStr.charCodeAt(bIndex);
+      } while (isDigit(bChar) && bNum > 0);
+      if (aNum < bNum) {
+        return -1;
+      }
+      if (aNum > bNum) {
+        return 1;
+      }
+    } else {
+      if (aChar < bChar) {
+        return -1;
+      }
+      if (aChar > bChar) {
+        return 1;
+      }
+      ++aIndex;
+      ++bIndex;
+    }
+  }
+  return aStr.length - bStr.length;
+}
+const DIGIT_0 = 48;
+const DIGIT_9 = 57;
+function isDigit(code2) {
+  return !isNaN(code2) && DIGIT_0 <= code2 && code2 <= DIGIT_9;
+}
+function suggestionList(input, options) {
+  const optionsByDistance = /* @__PURE__ */ Object.create(null);
+  const lexicalDistance = new LexicalDistance2(input);
+  const threshold = Math.floor(input.length * 0.4) + 1;
+  for (const option of options) {
+    const distance2 = lexicalDistance.measure(option, threshold);
+    if (distance2 !== void 0) {
+      optionsByDistance[option] = distance2;
+    }
+  }
+  return Object.keys(optionsByDistance).sort((a3, b2) => {
+    const distanceDiff = optionsByDistance[a3] - optionsByDistance[b2];
+    return distanceDiff !== 0 ? distanceDiff : naturalCompare(a3, b2);
+  });
+}
+class LexicalDistance2 {
+  constructor(input) {
+    this._input = input;
+    this._inputLowerCase = input.toLowerCase();
+    this._inputArray = stringToArray(this._inputLowerCase);
+    this._rows = [
+      new Array(input.length + 1).fill(0),
+      new Array(input.length + 1).fill(0),
+      new Array(input.length + 1).fill(0)
+    ];
+  }
+  measure(option, threshold) {
+    if (this._input === option) {
+      return 0;
+    }
+    const optionLowerCase = option.toLowerCase();
+    if (this._inputLowerCase === optionLowerCase) {
+      return 1;
+    }
+    let a3 = stringToArray(optionLowerCase);
+    let b2 = this._inputArray;
+    if (a3.length < b2.length) {
+      const tmp = a3;
+      a3 = b2;
+      b2 = tmp;
+    }
+    const aLength = a3.length;
+    const bLength = b2.length;
+    if (aLength - bLength > threshold) {
+      return void 0;
+    }
+    const rows = this._rows;
+    for (let j2 = 0; j2 <= bLength; j2++) {
+      rows[0][j2] = j2;
+    }
+    for (let i2 = 1; i2 <= aLength; i2++) {
+      const upRow = rows[(i2 - 1) % 3];
+      const currentRow = rows[i2 % 3];
+      let smallestCell = currentRow[0] = i2;
+      for (let j2 = 1; j2 <= bLength; j2++) {
+        const cost = a3[i2 - 1] === b2[j2 - 1] ? 0 : 1;
+        let currentCell = Math.min(
+          upRow[j2] + 1,
+          // delete
+          currentRow[j2 - 1] + 1,
+          // insert
+          upRow[j2 - 1] + cost
+          // substitute
+        );
+        if (i2 > 1 && j2 > 1 && a3[i2 - 1] === b2[j2 - 2] && a3[i2 - 2] === b2[j2 - 1]) {
+          const doubleDiagonalCell = rows[(i2 - 2) % 3][j2 - 2];
+          currentCell = Math.min(currentCell, doubleDiagonalCell + 1);
+        }
+        if (currentCell < smallestCell) {
+          smallestCell = currentCell;
+        }
+        currentRow[j2] = currentCell;
+      }
+      if (smallestCell > threshold) {
+        return void 0;
+      }
+    }
+    const distance2 = rows[aLength % 3][bLength];
+    return distance2 <= threshold ? distance2 : void 0;
+  }
+}
+function stringToArray(str) {
+  const strLength = str.length;
+  const array = new Array(strLength);
+  for (let i2 = 0; i2 < strLength; ++i2) {
+    array[i2] = str.charCodeAt(i2);
+  }
+  return array;
+}
+function toObjMap(obj) {
+  if (obj == null) {
+    return /* @__PURE__ */ Object.create(null);
+  }
+  if (Object.getPrototypeOf(obj) === null) {
+    return obj;
+  }
+  const map2 = /* @__PURE__ */ Object.create(null);
+  for (const [key, value] of Object.entries(obj)) {
+    map2[key] = value;
+  }
+  return map2;
+}
+function printString(str) {
+  return `"${str.replace(escapedRegExp, escapedReplacer)}"`;
+}
+const escapedRegExp = /[\x00-\x1f\x22\x5c\x7f-\x9f]/g;
+function escapedReplacer(str) {
+  return escapeSequences[str.charCodeAt(0)];
+}
+const escapeSequences = [
+  "\\u0000",
+  "\\u0001",
+  "\\u0002",
+  "\\u0003",
+  "\\u0004",
+  "\\u0005",
+  "\\u0006",
+  "\\u0007",
+  "\\b",
+  "\\t",
+  "\\n",
+  "\\u000B",
+  "\\f",
+  "\\r",
+  "\\u000E",
+  "\\u000F",
+  "\\u0010",
+  "\\u0011",
+  "\\u0012",
+  "\\u0013",
+  "\\u0014",
+  "\\u0015",
+  "\\u0016",
+  "\\u0017",
+  "\\u0018",
+  "\\u0019",
+  "\\u001A",
+  "\\u001B",
+  "\\u001C",
+  "\\u001D",
+  "\\u001E",
+  "\\u001F",
+  "",
+  "",
+  '\\"',
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  // 2F
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  // 3F
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  // 4F
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "\\\\",
+  "",
+  "",
+  "",
+  // 5F
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  // 6F
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "\\u007F",
+  "\\u0080",
+  "\\u0081",
+  "\\u0082",
+  "\\u0083",
+  "\\u0084",
+  "\\u0085",
+  "\\u0086",
+  "\\u0087",
+  "\\u0088",
+  "\\u0089",
+  "\\u008A",
+  "\\u008B",
+  "\\u008C",
+  "\\u008D",
+  "\\u008E",
+  "\\u008F",
+  "\\u0090",
+  "\\u0091",
+  "\\u0092",
+  "\\u0093",
+  "\\u0094",
+  "\\u0095",
+  "\\u0096",
+  "\\u0097",
+  "\\u0098",
+  "\\u0099",
+  "\\u009A",
+  "\\u009B",
+  "\\u009C",
+  "\\u009D",
+  "\\u009E",
+  "\\u009F"
+];
+const BREAK = Object.freeze({});
+function visit(root2, visitor, visitorKeys = QueryDocumentKeys) {
+  const enterLeaveMap = /* @__PURE__ */ new Map();
+  for (const kind of Object.values(Kind)) {
+    enterLeaveMap.set(kind, getEnterLeaveForKind(visitor, kind));
+  }
+  let stack = void 0;
+  let inArray = Array.isArray(root2);
+  let keys = [root2];
+  let index2 = -1;
+  let edits = [];
+  let node = root2;
+  let key = void 0;
+  let parent = void 0;
+  const path = [];
+  const ancestors = [];
+  do {
+    index2++;
+    const isLeaving = index2 === keys.length;
+    const isEdited = isLeaving && edits.length !== 0;
+    if (isLeaving) {
+      key = ancestors.length === 0 ? void 0 : path[path.length - 1];
+      node = parent;
+      parent = ancestors.pop();
+      if (isEdited) {
+        if (inArray) {
+          node = node.slice();
+          let editOffset = 0;
+          for (const [editKey, editValue] of edits) {
+            const arrayKey = editKey - editOffset;
+            if (editValue === null) {
+              node.splice(arrayKey, 1);
+              editOffset++;
+            } else {
+              node[arrayKey] = editValue;
+            }
+          }
+        } else {
+          node = { ...node };
+          for (const [editKey, editValue] of edits) {
+            node[editKey] = editValue;
+          }
+        }
+      }
+      index2 = stack.index;
+      keys = stack.keys;
+      edits = stack.edits;
+      inArray = stack.inArray;
+      stack = stack.prev;
+    } else if (parent) {
+      key = inArray ? index2 : keys[index2];
+      node = parent[key];
+      if (node === null || node === void 0) {
+        continue;
+      }
+      path.push(key);
+    }
+    let result;
+    if (!Array.isArray(node)) {
+      var _enterLeaveMap$get, _enterLeaveMap$get2;
+      isNode(node) || devAssert(false, `Invalid AST Node: ${inspect(node)}.`);
+      const visitFn = isLeaving ? (_enterLeaveMap$get = enterLeaveMap.get(node.kind)) === null || _enterLeaveMap$get === void 0 ? void 0 : _enterLeaveMap$get.leave : (_enterLeaveMap$get2 = enterLeaveMap.get(node.kind)) === null || _enterLeaveMap$get2 === void 0 ? void 0 : _enterLeaveMap$get2.enter;
+      result = visitFn === null || visitFn === void 0 ? void 0 : visitFn.call(visitor, node, key, parent, path, ancestors);
+      if (result === BREAK) {
+        break;
+      }
+      if (result === false) {
+        if (!isLeaving) {
+          path.pop();
+          continue;
+        }
+      } else if (result !== void 0) {
+        edits.push([key, result]);
+        if (!isLeaving) {
+          if (isNode(result)) {
+            node = result;
+          } else {
+            path.pop();
+            continue;
+          }
+        }
+      }
+    }
+    if (result === void 0 && isEdited) {
+      edits.push([key, node]);
+    }
+    if (isLeaving) {
+      path.pop();
+    } else {
+      var _node$kind;
+      stack = {
+        inArray,
+        index: index2,
+        keys,
+        edits,
+        prev: stack
+      };
+      inArray = Array.isArray(node);
+      keys = inArray ? node : (_node$kind = visitorKeys[node.kind]) !== null && _node$kind !== void 0 ? _node$kind : [];
+      index2 = -1;
+      edits = [];
+      if (parent) {
+        ancestors.push(parent);
+      }
+      parent = node;
+    }
+  } while (stack !== void 0);
+  if (edits.length !== 0) {
+    return edits[edits.length - 1][1];
+  }
+  return root2;
+}
+function visitInParallel(visitors) {
+  const skipping = new Array(visitors.length).fill(null);
+  const mergedVisitor = /* @__PURE__ */ Object.create(null);
+  for (const kind of Object.values(Kind)) {
+    let hasVisitor = false;
+    const enterList = new Array(visitors.length).fill(void 0);
+    const leaveList = new Array(visitors.length).fill(void 0);
+    for (let i2 = 0; i2 < visitors.length; ++i2) {
+      const { enter, leave } = getEnterLeaveForKind(visitors[i2], kind);
+      hasVisitor || (hasVisitor = enter != null || leave != null);
+      enterList[i2] = enter;
+      leaveList[i2] = leave;
+    }
+    if (!hasVisitor) {
+      continue;
+    }
+    const mergedEnterLeave = {
+      enter(...args) {
+        const node = args[0];
+        for (let i2 = 0; i2 < visitors.length; i2++) {
+          if (skipping[i2] === null) {
+            var _enterList$i;
+            const result = (_enterList$i = enterList[i2]) === null || _enterList$i === void 0 ? void 0 : _enterList$i.apply(visitors[i2], args);
+            if (result === false) {
+              skipping[i2] = node;
+            } else if (result === BREAK) {
+              skipping[i2] = BREAK;
+            } else if (result !== void 0) {
+              return result;
+            }
+          }
+        }
+      },
+      leave(...args) {
+        const node = args[0];
+        for (let i2 = 0; i2 < visitors.length; i2++) {
+          if (skipping[i2] === null) {
+            var _leaveList$i;
+            const result = (_leaveList$i = leaveList[i2]) === null || _leaveList$i === void 0 ? void 0 : _leaveList$i.apply(visitors[i2], args);
+            if (result === BREAK) {
+              skipping[i2] = BREAK;
+            } else if (result !== void 0 && result !== false) {
+              return result;
+            }
+          } else if (skipping[i2] === node) {
+            skipping[i2] = null;
+          }
+        }
+      }
+    };
+    mergedVisitor[kind] = mergedEnterLeave;
+  }
+  return mergedVisitor;
+}
+function getEnterLeaveForKind(visitor, kind) {
+  const kindVisitor = visitor[kind];
+  if (typeof kindVisitor === "object") {
+    return kindVisitor;
+  } else if (typeof kindVisitor === "function") {
+    return {
+      enter: kindVisitor,
+      leave: void 0
+    };
+  }
+  return {
+    enter: visitor.enter,
+    leave: visitor.leave
+  };
+}
+function getVisitFn(visitor, kind, isLeaving) {
+  const { enter, leave } = getEnterLeaveForKind(visitor, kind);
+  return isLeaving ? leave : enter;
+}
+function print(ast) {
+  return visit(ast, printDocASTReducer);
+}
+const MAX_LINE_LENGTH = 80;
+const printDocASTReducer = {
+  Name: {
+    leave: (node) => node.value
+  },
+  Variable: {
+    leave: (node) => "$" + node.name
+  },
+  // Document
+  Document: {
+    leave: (node) => join(node.definitions, "\n\n")
+  },
+  OperationDefinition: {
+    leave(node) {
+      const varDefs = wrap("(", join(node.variableDefinitions, ", "), ")");
+      const prefix = join(
+        [
+          node.operation,
+          join([node.name, varDefs]),
+          join(node.directives, " ")
+        ],
+        " "
+      );
+      return (prefix === "query" ? "" : prefix + " ") + node.selectionSet;
+    }
+  },
+  VariableDefinition: {
+    leave: ({ variable, type: type2, defaultValue, directives }) => variable + ": " + type2 + wrap(" = ", defaultValue) + wrap(" ", join(directives, " "))
+  },
+  SelectionSet: {
+    leave: ({ selections }) => block(selections)
+  },
+  Field: {
+    leave({ alias, name: name2, arguments: args, directives, selectionSet }) {
+      const prefix = wrap("", alias, ": ") + name2;
+      let argsLine = prefix + wrap("(", join(args, ", "), ")");
+      if (argsLine.length > MAX_LINE_LENGTH) {
+        argsLine = prefix + wrap("(\n", indent(join(args, "\n")), "\n)");
+      }
+      return join([argsLine, join(directives, " "), selectionSet], " ");
+    }
+  },
+  Argument: {
+    leave: ({ name: name2, value }) => name2 + ": " + value
+  },
+  // Fragments
+  FragmentSpread: {
+    leave: ({ name: name2, directives }) => "..." + name2 + wrap(" ", join(directives, " "))
+  },
+  InlineFragment: {
+    leave: ({ typeCondition, directives, selectionSet }) => join(
+      [
+        "...",
+        wrap("on ", typeCondition),
+        join(directives, " "),
+        selectionSet
+      ],
+      " "
+    )
+  },
+  FragmentDefinition: {
+    leave: ({ name: name2, typeCondition, variableDefinitions, directives, selectionSet }) => (
+      // or removed in the future.
+      `fragment ${name2}${wrap("(", join(variableDefinitions, ", "), ")")} on ${typeCondition} ${wrap("", join(directives, " "), " ")}` + selectionSet
+    )
+  },
+  // Value
+  IntValue: {
+    leave: ({ value }) => value
+  },
+  FloatValue: {
+    leave: ({ value }) => value
+  },
+  StringValue: {
+    leave: ({ value, block: isBlockString }) => isBlockString ? printBlockString(value) : printString(value)
+  },
+  BooleanValue: {
+    leave: ({ value }) => value ? "true" : "false"
+  },
+  NullValue: {
+    leave: () => "null"
+  },
+  EnumValue: {
+    leave: ({ value }) => value
+  },
+  ListValue: {
+    leave: ({ values }) => "[" + join(values, ", ") + "]"
+  },
+  ObjectValue: {
+    leave: ({ fields }) => "{" + join(fields, ", ") + "}"
+  },
+  ObjectField: {
+    leave: ({ name: name2, value }) => name2 + ": " + value
+  },
+  // Directive
+  Directive: {
+    leave: ({ name: name2, arguments: args }) => "@" + name2 + wrap("(", join(args, ", "), ")")
+  },
+  // Type
+  NamedType: {
+    leave: ({ name: name2 }) => name2
+  },
+  ListType: {
+    leave: ({ type: type2 }) => "[" + type2 + "]"
+  },
+  NonNullType: {
+    leave: ({ type: type2 }) => type2 + "!"
+  },
+  // Type System Definitions
+  SchemaDefinition: {
+    leave: ({ description, directives, operationTypes }) => wrap("", description, "\n") + join(["schema", join(directives, " "), block(operationTypes)], " ")
+  },
+  OperationTypeDefinition: {
+    leave: ({ operation, type: type2 }) => operation + ": " + type2
+  },
+  ScalarTypeDefinition: {
+    leave: ({ description, name: name2, directives }) => wrap("", description, "\n") + join(["scalar", name2, join(directives, " ")], " ")
+  },
+  ObjectTypeDefinition: {
+    leave: ({ description, name: name2, interfaces, directives, fields }) => wrap("", description, "\n") + join(
+      [
+        "type",
+        name2,
+        wrap("implements ", join(interfaces, " & ")),
+        join(directives, " "),
+        block(fields)
+      ],
+      " "
+    )
+  },
+  FieldDefinition: {
+    leave: ({ description, name: name2, arguments: args, type: type2, directives }) => wrap("", description, "\n") + name2 + (hasMultilineItems(args) ? wrap("(\n", indent(join(args, "\n")), "\n)") : wrap("(", join(args, ", "), ")")) + ": " + type2 + wrap(" ", join(directives, " "))
+  },
+  InputValueDefinition: {
+    leave: ({ description, name: name2, type: type2, defaultValue, directives }) => wrap("", description, "\n") + join(
+      [name2 + ": " + type2, wrap("= ", defaultValue), join(directives, " ")],
+      " "
+    )
+  },
+  InterfaceTypeDefinition: {
+    leave: ({ description, name: name2, interfaces, directives, fields }) => wrap("", description, "\n") + join(
+      [
+        "interface",
+        name2,
+        wrap("implements ", join(interfaces, " & ")),
+        join(directives, " "),
+        block(fields)
+      ],
+      " "
+    )
+  },
+  UnionTypeDefinition: {
+    leave: ({ description, name: name2, directives, types }) => wrap("", description, "\n") + join(
+      ["union", name2, join(directives, " "), wrap("= ", join(types, " | "))],
+      " "
+    )
+  },
+  EnumTypeDefinition: {
+    leave: ({ description, name: name2, directives, values }) => wrap("", description, "\n") + join(["enum", name2, join(directives, " "), block(values)], " ")
+  },
+  EnumValueDefinition: {
+    leave: ({ description, name: name2, directives }) => wrap("", description, "\n") + join([name2, join(directives, " ")], " ")
+  },
+  InputObjectTypeDefinition: {
+    leave: ({ description, name: name2, directives, fields }) => wrap("", description, "\n") + join(["input", name2, join(directives, " "), block(fields)], " ")
+  },
+  DirectiveDefinition: {
+    leave: ({ description, name: name2, arguments: args, repeatable, locations }) => wrap("", description, "\n") + "directive @" + name2 + (hasMultilineItems(args) ? wrap("(\n", indent(join(args, "\n")), "\n)") : wrap("(", join(args, ", "), ")")) + (repeatable ? " repeatable" : "") + " on " + join(locations, " | ")
+  },
+  SchemaExtension: {
+    leave: ({ directives, operationTypes }) => join(
+      ["extend schema", join(directives, " "), block(operationTypes)],
+      " "
+    )
+  },
+  ScalarTypeExtension: {
+    leave: ({ name: name2, directives }) => join(["extend scalar", name2, join(directives, " ")], " ")
+  },
+  ObjectTypeExtension: {
+    leave: ({ name: name2, interfaces, directives, fields }) => join(
+      [
+        "extend type",
+        name2,
+        wrap("implements ", join(interfaces, " & ")),
+        join(directives, " "),
+        block(fields)
+      ],
+      " "
+    )
+  },
+  InterfaceTypeExtension: {
+    leave: ({ name: name2, interfaces, directives, fields }) => join(
+      [
+        "extend interface",
+        name2,
+        wrap("implements ", join(interfaces, " & ")),
+        join(directives, " "),
+        block(fields)
+      ],
+      " "
+    )
+  },
+  UnionTypeExtension: {
+    leave: ({ name: name2, directives, types }) => join(
+      [
+        "extend union",
+        name2,
+        join(directives, " "),
+        wrap("= ", join(types, " | "))
+      ],
+      " "
+    )
+  },
+  EnumTypeExtension: {
+    leave: ({ name: name2, directives, values }) => join(["extend enum", name2, join(directives, " "), block(values)], " ")
+  },
+  InputObjectTypeExtension: {
+    leave: ({ name: name2, directives, fields }) => join(["extend input", name2, join(directives, " "), block(fields)], " ")
+  }
+};
+function join(maybeArray, separator = "") {
+  var _maybeArray$filter$jo;
+  return (_maybeArray$filter$jo = maybeArray === null || maybeArray === void 0 ? void 0 : maybeArray.filter((x2) => x2).join(separator)) !== null && _maybeArray$filter$jo !== void 0 ? _maybeArray$filter$jo : "";
+}
+function block(array) {
+  return wrap("{\n", indent(join(array, "\n")), "\n}");
+}
+function wrap(start, maybeString, end = "") {
+  return maybeString != null && maybeString !== "" ? start + maybeString + end : "";
+}
+function indent(str) {
+  return wrap("  ", str.replace(/\n/g, "\n  "));
+}
+function hasMultilineItems(maybeArray) {
+  var _maybeArray$some;
+  return (_maybeArray$some = maybeArray === null || maybeArray === void 0 ? void 0 : maybeArray.some((str) => str.includes("\n"))) !== null && _maybeArray$some !== void 0 ? _maybeArray$some : false;
+}
+function valueFromASTUntyped(valueNode, variables) {
+  switch (valueNode.kind) {
+    case Kind.NULL:
+      return null;
+    case Kind.INT:
+      return parseInt(valueNode.value, 10);
+    case Kind.FLOAT:
+      return parseFloat(valueNode.value);
+    case Kind.STRING:
+    case Kind.ENUM:
+    case Kind.BOOLEAN:
+      return valueNode.value;
+    case Kind.LIST:
+      return valueNode.values.map(
+        (node) => valueFromASTUntyped(node, variables)
+      );
+    case Kind.OBJECT:
+      return keyValMap(
+        valueNode.fields,
+        (field) => field.name.value,
+        (field) => valueFromASTUntyped(field.value, variables)
+      );
+    case Kind.VARIABLE:
+      return variables === null || variables === void 0 ? void 0 : variables[valueNode.name.value];
+  }
+}
+function assertName(name2) {
+  name2 != null || devAssert(false, "Must provide name.");
+  typeof name2 === "string" || devAssert(false, "Expected name to be a string.");
+  if (name2.length === 0) {
+    throw new GraphQLError2("Expected name to be a non-empty string.");
+  }
+  for (let i2 = 1; i2 < name2.length; ++i2) {
+    if (!isNameContinue(name2.charCodeAt(i2))) {
+      throw new GraphQLError2(
+        `Names must only contain [_a-zA-Z0-9] but "${name2}" does not.`
+      );
+    }
+  }
+  if (!isNameStart(name2.charCodeAt(0))) {
+    throw new GraphQLError2(
+      `Names must start with [_a-zA-Z] but "${name2}" does not.`
+    );
+  }
+  return name2;
+}
+function assertEnumValueName(name2) {
+  if (name2 === "true" || name2 === "false" || name2 === "null") {
+    throw new GraphQLError2(`Enum values cannot be named: ${name2}`);
+  }
+  return assertName(name2);
+}
+function isType(type2) {
+  return isScalarType(type2) || isObjectType(type2) || isInterfaceType(type2) || isUnionType(type2) || isEnumType(type2) || isInputObjectType(type2) || isListType(type2) || isNonNullType(type2);
+}
+function assertType(type2) {
+  if (!isType(type2)) {
+    throw new Error(`Expected ${inspect(type2)} to be a GraphQL type.`);
+  }
+  return type2;
+}
+function isScalarType(type2) {
+  return instanceOf(type2, GraphQLScalarType2);
+}
+function assertScalarType(type2) {
+  if (!isScalarType(type2)) {
+    throw new Error(`Expected ${inspect(type2)} to be a GraphQL Scalar type.`);
+  }
+  return type2;
+}
+function isObjectType(type2) {
+  return instanceOf(type2, GraphQLObjectType2);
+}
+function assertObjectType(type2) {
+  if (!isObjectType(type2)) {
+    throw new Error(`Expected ${inspect(type2)} to be a GraphQL Object type.`);
+  }
+  return type2;
+}
+function isInterfaceType(type2) {
+  return instanceOf(type2, GraphQLInterfaceType2);
+}
+function assertInterfaceType(type2) {
+  if (!isInterfaceType(type2)) {
+    throw new Error(
+      `Expected ${inspect(type2)} to be a GraphQL Interface type.`
+    );
+  }
+  return type2;
+}
+function isUnionType(type2) {
+  return instanceOf(type2, GraphQLUnionType2);
+}
+function assertUnionType(type2) {
+  if (!isUnionType(type2)) {
+    throw new Error(`Expected ${inspect(type2)} to be a GraphQL Union type.`);
+  }
+  return type2;
+}
+function isEnumType(type2) {
+  return instanceOf(type2, GraphQLEnumType2);
+}
+function assertEnumType(type2) {
+  if (!isEnumType(type2)) {
+    throw new Error(`Expected ${inspect(type2)} to be a GraphQL Enum type.`);
+  }
+  return type2;
+}
+function isInputObjectType(type2) {
+  return instanceOf(type2, GraphQLInputObjectType2);
+}
+function assertInputObjectType(type2) {
+  if (!isInputObjectType(type2)) {
+    throw new Error(
+      `Expected ${inspect(type2)} to be a GraphQL Input Object type.`
+    );
+  }
+  return type2;
+}
+function isListType(type2) {
+  return instanceOf(type2, GraphQLList2);
+}
+function assertListType(type2) {
+  if (!isListType(type2)) {
+    throw new Error(`Expected ${inspect(type2)} to be a GraphQL List type.`);
+  }
+  return type2;
+}
+function isNonNullType(type2) {
+  return instanceOf(type2, GraphQLNonNull2);
+}
+function assertNonNullType(type2) {
+  if (!isNonNullType(type2)) {
+    throw new Error(`Expected ${inspect(type2)} to be a GraphQL Non-Null type.`);
+  }
+  return type2;
+}
+function isInputType(type2) {
+  return isScalarType(type2) || isEnumType(type2) || isInputObjectType(type2) || isWrappingType(type2) && isInputType(type2.ofType);
+}
+function assertInputType(type2) {
+  if (!isInputType(type2)) {
+    throw new Error(`Expected ${inspect(type2)} to be a GraphQL input type.`);
+  }
+  return type2;
+}
+function isOutputType(type2) {
+  return isScalarType(type2) || isObjectType(type2) || isInterfaceType(type2) || isUnionType(type2) || isEnumType(type2) || isWrappingType(type2) && isOutputType(type2.ofType);
+}
+function assertOutputType(type2) {
+  if (!isOutputType(type2)) {
+    throw new Error(`Expected ${inspect(type2)} to be a GraphQL output type.`);
+  }
+  return type2;
+}
+function isLeafType(type2) {
+  return isScalarType(type2) || isEnumType(type2);
+}
+function assertLeafType(type2) {
+  if (!isLeafType(type2)) {
+    throw new Error(`Expected ${inspect(type2)} to be a GraphQL leaf type.`);
+  }
+  return type2;
+}
+function isCompositeType(type2) {
+  return isObjectType(type2) || isInterfaceType(type2) || isUnionType(type2);
+}
+function assertCompositeType(type2) {
+  if (!isCompositeType(type2)) {
+    throw new Error(
+      `Expected ${inspect(type2)} to be a GraphQL composite type.`
+    );
+  }
+  return type2;
+}
+function isAbstractType(type2) {
+  return isInterfaceType(type2) || isUnionType(type2);
+}
+function assertAbstractType(type2) {
+  if (!isAbstractType(type2)) {
+    throw new Error(`Expected ${inspect(type2)} to be a GraphQL abstract type.`);
+  }
+  return type2;
+}
+class GraphQLList2 {
+  constructor(ofType) {
+    isType(ofType) || devAssert(false, `Expected ${inspect(ofType)} to be a GraphQL type.`);
+    this.ofType = ofType;
+  }
+  get [Symbol.toStringTag]() {
+    return "GraphQLList";
+  }
+  toString() {
+    return "[" + String(this.ofType) + "]";
+  }
+  toJSON() {
+    return this.toString();
+  }
+}
+class GraphQLNonNull2 {
+  constructor(ofType) {
+    isNullableType(ofType) || devAssert(
+      false,
+      `Expected ${inspect(ofType)} to be a GraphQL nullable type.`
+    );
+    this.ofType = ofType;
+  }
+  get [Symbol.toStringTag]() {
+    return "GraphQLNonNull";
+  }
+  toString() {
+    return String(this.ofType) + "!";
+  }
+  toJSON() {
+    return this.toString();
+  }
+}
+function isWrappingType(type2) {
+  return isListType(type2) || isNonNullType(type2);
+}
+function assertWrappingType(type2) {
+  if (!isWrappingType(type2)) {
+    throw new Error(`Expected ${inspect(type2)} to be a GraphQL wrapping type.`);
+  }
+  return type2;
+}
+function isNullableType(type2) {
+  return isType(type2) && !isNonNullType(type2);
+}
+function assertNullableType(type2) {
+  if (!isNullableType(type2)) {
+    throw new Error(`Expected ${inspect(type2)} to be a GraphQL nullable type.`);
+  }
+  return type2;
+}
+function getNullableType(type2) {
+  if (type2) {
+    return isNonNullType(type2) ? type2.ofType : type2;
+  }
+}
+function isNamedType(type2) {
+  return isScalarType(type2) || isObjectType(type2) || isInterfaceType(type2) || isUnionType(type2) || isEnumType(type2) || isInputObjectType(type2);
+}
+function assertNamedType(type2) {
+  if (!isNamedType(type2)) {
+    throw new Error(`Expected ${inspect(type2)} to be a GraphQL named type.`);
+  }
+  return type2;
+}
+function getNamedType(type2) {
+  if (type2) {
+    let unwrappedType = type2;
+    while (isWrappingType(unwrappedType)) {
+      unwrappedType = unwrappedType.ofType;
+    }
+    return unwrappedType;
+  }
+}
+function resolveReadonlyArrayThunk(thunk) {
+  return typeof thunk === "function" ? thunk() : thunk;
+}
+function resolveObjMapThunk(thunk) {
+  return typeof thunk === "function" ? thunk() : thunk;
+}
+class GraphQLScalarType2 {
+  constructor(config2) {
+    var _config$parseValue, _config$serialize, _config$parseLiteral, _config$extensionASTN;
+    const parseValue2 = (_config$parseValue = config2.parseValue) !== null && _config$parseValue !== void 0 ? _config$parseValue : identityFunc;
+    this.name = assertName(config2.name);
+    this.description = config2.description;
+    this.specifiedByURL = config2.specifiedByURL;
+    this.serialize = (_config$serialize = config2.serialize) !== null && _config$serialize !== void 0 ? _config$serialize : identityFunc;
+    this.parseValue = parseValue2;
+    this.parseLiteral = (_config$parseLiteral = config2.parseLiteral) !== null && _config$parseLiteral !== void 0 ? _config$parseLiteral : (node, variables) => parseValue2(valueFromASTUntyped(node, variables));
+    this.extensions = toObjMap(config2.extensions);
+    this.astNode = config2.astNode;
+    this.extensionASTNodes = (_config$extensionASTN = config2.extensionASTNodes) !== null && _config$extensionASTN !== void 0 ? _config$extensionASTN : [];
+    config2.specifiedByURL == null || typeof config2.specifiedByURL === "string" || devAssert(
+      false,
+      `${this.name} must provide "specifiedByURL" as a string, but got: ${inspect(config2.specifiedByURL)}.`
+    );
+    config2.serialize == null || typeof config2.serialize === "function" || devAssert(
+      false,
+      `${this.name} must provide "serialize" function. If this custom Scalar is also used as an input type, ensure "parseValue" and "parseLiteral" functions are also provided.`
+    );
+    if (config2.parseLiteral) {
+      typeof config2.parseValue === "function" && typeof config2.parseLiteral === "function" || devAssert(
+        false,
+        `${this.name} must provide both "parseValue" and "parseLiteral" functions.`
+      );
+    }
+  }
+  get [Symbol.toStringTag]() {
+    return "GraphQLScalarType";
+  }
+  toConfig() {
+    return {
+      name: this.name,
+      description: this.description,
+      specifiedByURL: this.specifiedByURL,
+      serialize: this.serialize,
+      parseValue: this.parseValue,
+      parseLiteral: this.parseLiteral,
+      extensions: this.extensions,
+      astNode: this.astNode,
+      extensionASTNodes: this.extensionASTNodes
+    };
+  }
+  toString() {
+    return this.name;
+  }
+  toJSON() {
+    return this.toString();
+  }
+}
+class GraphQLObjectType2 {
+  constructor(config2) {
+    var _config$extensionASTN2;
+    this.name = assertName(config2.name);
+    this.description = config2.description;
+    this.isTypeOf = config2.isTypeOf;
+    this.extensions = toObjMap(config2.extensions);
+    this.astNode = config2.astNode;
+    this.extensionASTNodes = (_config$extensionASTN2 = config2.extensionASTNodes) !== null && _config$extensionASTN2 !== void 0 ? _config$extensionASTN2 : [];
+    this._fields = () => defineFieldMap(config2);
+    this._interfaces = () => defineInterfaces(config2);
+    config2.isTypeOf == null || typeof config2.isTypeOf === "function" || devAssert(
+      false,
+      `${this.name} must provide "isTypeOf" as a function, but got: ${inspect(config2.isTypeOf)}.`
+    );
+  }
+  get [Symbol.toStringTag]() {
+    return "GraphQLObjectType";
+  }
+  getFields() {
+    if (typeof this._fields === "function") {
+      this._fields = this._fields();
+    }
+    return this._fields;
+  }
+  getInterfaces() {
+    if (typeof this._interfaces === "function") {
+      this._interfaces = this._interfaces();
+    }
+    return this._interfaces;
+  }
+  toConfig() {
+    return {
+      name: this.name,
+      description: this.description,
+      interfaces: this.getInterfaces(),
+      fields: fieldsToFieldsConfig(this.getFields()),
+      isTypeOf: this.isTypeOf,
+      extensions: this.extensions,
+      astNode: this.astNode,
+      extensionASTNodes: this.extensionASTNodes
+    };
+  }
+  toString() {
+    return this.name;
+  }
+  toJSON() {
+    return this.toString();
+  }
+}
+function defineInterfaces(config2) {
+  var _config$interfaces;
+  const interfaces = resolveReadonlyArrayThunk(
+    (_config$interfaces = config2.interfaces) !== null && _config$interfaces !== void 0 ? _config$interfaces : []
+  );
+  Array.isArray(interfaces) || devAssert(
+    false,
+    `${config2.name} interfaces must be an Array or a function which returns an Array.`
+  );
+  return interfaces;
+}
+function defineFieldMap(config2) {
+  const fieldMap = resolveObjMapThunk(config2.fields);
+  isPlainObj(fieldMap) || devAssert(
+    false,
+    `${config2.name} fields must be an object with field names as keys or a function which returns such an object.`
+  );
+  return mapValue(fieldMap, (fieldConfig, fieldName) => {
+    var _fieldConfig$args;
+    isPlainObj(fieldConfig) || devAssert(
+      false,
+      `${config2.name}.${fieldName} field config must be an object.`
+    );
+    fieldConfig.resolve == null || typeof fieldConfig.resolve === "function" || devAssert(
+      false,
+      `${config2.name}.${fieldName} field resolver must be a function if provided, but got: ${inspect(fieldConfig.resolve)}.`
+    );
+    const argsConfig = (_fieldConfig$args = fieldConfig.args) !== null && _fieldConfig$args !== void 0 ? _fieldConfig$args : {};
+    isPlainObj(argsConfig) || devAssert(
+      false,
+      `${config2.name}.${fieldName} args must be an object with argument names as keys.`
+    );
+    return {
+      name: assertName(fieldName),
+      description: fieldConfig.description,
+      type: fieldConfig.type,
+      args: defineArguments(argsConfig),
+      resolve: fieldConfig.resolve,
+      subscribe: fieldConfig.subscribe,
+      deprecationReason: fieldConfig.deprecationReason,
+      extensions: toObjMap(fieldConfig.extensions),
+      astNode: fieldConfig.astNode
+    };
+  });
+}
+function defineArguments(config2) {
+  return Object.entries(config2).map(([argName, argConfig]) => ({
+    name: assertName(argName),
+    description: argConfig.description,
+    type: argConfig.type,
+    defaultValue: argConfig.defaultValue,
+    deprecationReason: argConfig.deprecationReason,
+    extensions: toObjMap(argConfig.extensions),
+    astNode: argConfig.astNode
+  }));
+}
+function isPlainObj(obj) {
+  return isObjectLike(obj) && !Array.isArray(obj);
+}
+function fieldsToFieldsConfig(fields) {
+  return mapValue(fields, (field) => ({
+    description: field.description,
+    type: field.type,
+    args: argsToArgsConfig(field.args),
+    resolve: field.resolve,
+    subscribe: field.subscribe,
+    deprecationReason: field.deprecationReason,
+    extensions: field.extensions,
+    astNode: field.astNode
+  }));
+}
+function argsToArgsConfig(args) {
+  return keyValMap(
+    args,
+    (arg) => arg.name,
+    (arg) => ({
+      description: arg.description,
+      type: arg.type,
+      defaultValue: arg.defaultValue,
+      deprecationReason: arg.deprecationReason,
+      extensions: arg.extensions,
+      astNode: arg.astNode
+    })
+  );
+}
+function isRequiredArgument(arg) {
+  return isNonNullType(arg.type) && arg.defaultValue === void 0;
+}
+class GraphQLInterfaceType2 {
+  constructor(config2) {
+    var _config$extensionASTN3;
+    this.name = assertName(config2.name);
+    this.description = config2.description;
+    this.resolveType = config2.resolveType;
+    this.extensions = toObjMap(config2.extensions);
+    this.astNode = config2.astNode;
+    this.extensionASTNodes = (_config$extensionASTN3 = config2.extensionASTNodes) !== null && _config$extensionASTN3 !== void 0 ? _config$extensionASTN3 : [];
+    this._fields = defineFieldMap.bind(void 0, config2);
+    this._interfaces = defineInterfaces.bind(void 0, config2);
+    config2.resolveType == null || typeof config2.resolveType === "function" || devAssert(
+      false,
+      `${this.name} must provide "resolveType" as a function, but got: ${inspect(config2.resolveType)}.`
+    );
+  }
+  get [Symbol.toStringTag]() {
+    return "GraphQLInterfaceType";
+  }
+  getFields() {
+    if (typeof this._fields === "function") {
+      this._fields = this._fields();
+    }
+    return this._fields;
+  }
+  getInterfaces() {
+    if (typeof this._interfaces === "function") {
+      this._interfaces = this._interfaces();
+    }
+    return this._interfaces;
+  }
+  toConfig() {
+    return {
+      name: this.name,
+      description: this.description,
+      interfaces: this.getInterfaces(),
+      fields: fieldsToFieldsConfig(this.getFields()),
+      resolveType: this.resolveType,
+      extensions: this.extensions,
+      astNode: this.astNode,
+      extensionASTNodes: this.extensionASTNodes
+    };
+  }
+  toString() {
+    return this.name;
+  }
+  toJSON() {
+    return this.toString();
+  }
+}
+class GraphQLUnionType2 {
+  constructor(config2) {
+    var _config$extensionASTN4;
+    this.name = assertName(config2.name);
+    this.description = config2.description;
+    this.resolveType = config2.resolveType;
+    this.extensions = toObjMap(config2.extensions);
+    this.astNode = config2.astNode;
+    this.extensionASTNodes = (_config$extensionASTN4 = config2.extensionASTNodes) !== null && _config$extensionASTN4 !== void 0 ? _config$extensionASTN4 : [];
+    this._types = defineTypes.bind(void 0, config2);
+    config2.resolveType == null || typeof config2.resolveType === "function" || devAssert(
+      false,
+      `${this.name} must provide "resolveType" as a function, but got: ${inspect(config2.resolveType)}.`
+    );
+  }
+  get [Symbol.toStringTag]() {
+    return "GraphQLUnionType";
+  }
+  getTypes() {
+    if (typeof this._types === "function") {
+      this._types = this._types();
+    }
+    return this._types;
+  }
+  toConfig() {
+    return {
+      name: this.name,
+      description: this.description,
+      types: this.getTypes(),
+      resolveType: this.resolveType,
+      extensions: this.extensions,
+      astNode: this.astNode,
+      extensionASTNodes: this.extensionASTNodes
+    };
+  }
+  toString() {
+    return this.name;
+  }
+  toJSON() {
+    return this.toString();
+  }
+}
+function defineTypes(config2) {
+  const types = resolveReadonlyArrayThunk(config2.types);
+  Array.isArray(types) || devAssert(
+    false,
+    `Must provide Array of types or a function which returns such an array for Union ${config2.name}.`
+  );
+  return types;
+}
+class GraphQLEnumType2 {
+  /* <T> */
+  constructor(config2) {
+    var _config$extensionASTN5;
+    this.name = assertName(config2.name);
+    this.description = config2.description;
+    this.extensions = toObjMap(config2.extensions);
+    this.astNode = config2.astNode;
+    this.extensionASTNodes = (_config$extensionASTN5 = config2.extensionASTNodes) !== null && _config$extensionASTN5 !== void 0 ? _config$extensionASTN5 : [];
+    this._values = typeof config2.values === "function" ? config2.values : defineEnumValues(this.name, config2.values);
+    this._valueLookup = null;
+    this._nameLookup = null;
+  }
+  get [Symbol.toStringTag]() {
+    return "GraphQLEnumType";
+  }
+  getValues() {
+    if (typeof this._values === "function") {
+      this._values = defineEnumValues(this.name, this._values());
+    }
+    return this._values;
+  }
+  getValue(name2) {
+    if (this._nameLookup === null) {
+      this._nameLookup = keyMap(this.getValues(), (value) => value.name);
+    }
+    return this._nameLookup[name2];
+  }
+  serialize(outputValue) {
+    if (this._valueLookup === null) {
+      this._valueLookup = new Map(
+        this.getValues().map((enumValue2) => [enumValue2.value, enumValue2])
+      );
+    }
+    const enumValue = this._valueLookup.get(outputValue);
+    if (enumValue === void 0) {
+      throw new GraphQLError2(
+        `Enum "${this.name}" cannot represent value: ${inspect(outputValue)}`
+      );
+    }
+    return enumValue.name;
+  }
+  parseValue(inputValue) {
+    if (typeof inputValue !== "string") {
+      const valueStr = inspect(inputValue);
+      throw new GraphQLError2(
+        `Enum "${this.name}" cannot represent non-string value: ${valueStr}.` + didYouMeanEnumValue(this, valueStr)
+      );
+    }
+    const enumValue = this.getValue(inputValue);
+    if (enumValue == null) {
+      throw new GraphQLError2(
+        `Value "${inputValue}" does not exist in "${this.name}" enum.` + didYouMeanEnumValue(this, inputValue)
+      );
+    }
+    return enumValue.value;
+  }
+  parseLiteral(valueNode, _variables) {
+    if (valueNode.kind !== Kind.ENUM) {
+      const valueStr = print(valueNode);
+      throw new GraphQLError2(
+        `Enum "${this.name}" cannot represent non-enum value: ${valueStr}.` + didYouMeanEnumValue(this, valueStr),
+        {
+          nodes: valueNode
+        }
+      );
+    }
+    const enumValue = this.getValue(valueNode.value);
+    if (enumValue == null) {
+      const valueStr = print(valueNode);
+      throw new GraphQLError2(
+        `Value "${valueStr}" does not exist in "${this.name}" enum.` + didYouMeanEnumValue(this, valueStr),
+        {
+          nodes: valueNode
+        }
+      );
+    }
+    return enumValue.value;
+  }
+  toConfig() {
+    const values = keyValMap(
+      this.getValues(),
+      (value) => value.name,
+      (value) => ({
+        description: value.description,
+        value: value.value,
+        deprecationReason: value.deprecationReason,
+        extensions: value.extensions,
+        astNode: value.astNode
+      })
+    );
+    return {
+      name: this.name,
+      description: this.description,
+      values,
+      extensions: this.extensions,
+      astNode: this.astNode,
+      extensionASTNodes: this.extensionASTNodes
+    };
+  }
+  toString() {
+    return this.name;
+  }
+  toJSON() {
+    return this.toString();
+  }
+}
+function didYouMeanEnumValue(enumType, unknownValueStr) {
+  const allNames = enumType.getValues().map((value) => value.name);
+  const suggestedValues = suggestionList(unknownValueStr, allNames);
+  return didYouMean("the enum value", suggestedValues);
+}
+function defineEnumValues(typeName, valueMap) {
+  isPlainObj(valueMap) || devAssert(
+    false,
+    `${typeName} values must be an object with value names as keys.`
+  );
+  return Object.entries(valueMap).map(([valueName, valueConfig]) => {
+    isPlainObj(valueConfig) || devAssert(
+      false,
+      `${typeName}.${valueName} must refer to an object with a "value" key representing an internal value but got: ${inspect(valueConfig)}.`
+    );
+    return {
+      name: assertEnumValueName(valueName),
+      description: valueConfig.description,
+      value: valueConfig.value !== void 0 ? valueConfig.value : valueName,
+      deprecationReason: valueConfig.deprecationReason,
+      extensions: toObjMap(valueConfig.extensions),
+      astNode: valueConfig.astNode
+    };
+  });
+}
+class GraphQLInputObjectType2 {
+  constructor(config2) {
+    var _config$extensionASTN6, _config$isOneOf;
+    this.name = assertName(config2.name);
+    this.description = config2.description;
+    this.extensions = toObjMap(config2.extensions);
+    this.astNode = config2.astNode;
+    this.extensionASTNodes = (_config$extensionASTN6 = config2.extensionASTNodes) !== null && _config$extensionASTN6 !== void 0 ? _config$extensionASTN6 : [];
+    this.isOneOf = (_config$isOneOf = config2.isOneOf) !== null && _config$isOneOf !== void 0 ? _config$isOneOf : false;
+    this._fields = defineInputFieldMap.bind(void 0, config2);
+  }
+  get [Symbol.toStringTag]() {
+    return "GraphQLInputObjectType";
+  }
+  getFields() {
+    if (typeof this._fields === "function") {
+      this._fields = this._fields();
+    }
+    return this._fields;
+  }
+  toConfig() {
+    const fields = mapValue(this.getFields(), (field) => ({
+      description: field.description,
+      type: field.type,
+      defaultValue: field.defaultValue,
+      deprecationReason: field.deprecationReason,
+      extensions: field.extensions,
+      astNode: field.astNode
+    }));
+    return {
+      name: this.name,
+      description: this.description,
+      fields,
+      extensions: this.extensions,
+      astNode: this.astNode,
+      extensionASTNodes: this.extensionASTNodes,
+      isOneOf: this.isOneOf
+    };
+  }
+  toString() {
+    return this.name;
+  }
+  toJSON() {
+    return this.toString();
+  }
+}
+function defineInputFieldMap(config2) {
+  const fieldMap = resolveObjMapThunk(config2.fields);
+  isPlainObj(fieldMap) || devAssert(
+    false,
+    `${config2.name} fields must be an object with field names as keys or a function which returns such an object.`
+  );
+  return mapValue(fieldMap, (fieldConfig, fieldName) => {
+    !("resolve" in fieldConfig) || devAssert(
+      false,
+      `${config2.name}.${fieldName} field has a resolve property, but Input Types cannot define resolvers.`
+    );
+    return {
+      name: assertName(fieldName),
+      description: fieldConfig.description,
+      type: fieldConfig.type,
+      defaultValue: fieldConfig.defaultValue,
+      deprecationReason: fieldConfig.deprecationReason,
+      extensions: toObjMap(fieldConfig.extensions),
+      astNode: fieldConfig.astNode
+    };
+  });
+}
+function isRequiredInputField(field) {
+  return isNonNullType(field.type) && field.defaultValue === void 0;
+}
+function isEqualType(typeA, typeB) {
+  if (typeA === typeB) {
+    return true;
+  }
+  if (isNonNullType(typeA) && isNonNullType(typeB)) {
+    return isEqualType(typeA.ofType, typeB.ofType);
+  }
+  if (isListType(typeA) && isListType(typeB)) {
+    return isEqualType(typeA.ofType, typeB.ofType);
+  }
+  return false;
+}
+function isTypeSubTypeOf(schema, maybeSubType, superType) {
+  if (maybeSubType === superType) {
+    return true;
+  }
+  if (isNonNullType(superType)) {
+    if (isNonNullType(maybeSubType)) {
+      return isTypeSubTypeOf(schema, maybeSubType.ofType, superType.ofType);
+    }
+    return false;
+  }
+  if (isNonNullType(maybeSubType)) {
+    return isTypeSubTypeOf(schema, maybeSubType.ofType, superType);
+  }
+  if (isListType(superType)) {
+    if (isListType(maybeSubType)) {
+      return isTypeSubTypeOf(schema, maybeSubType.ofType, superType.ofType);
+    }
+    return false;
+  }
+  if (isListType(maybeSubType)) {
+    return false;
+  }
+  return isAbstractType(superType) && (isInterfaceType(maybeSubType) || isObjectType(maybeSubType)) && schema.isSubType(superType, maybeSubType);
+}
+function doTypesOverlap(schema, typeA, typeB) {
+  if (typeA === typeB) {
+    return true;
+  }
+  if (isAbstractType(typeA)) {
+    if (isAbstractType(typeB)) {
+      return schema.getPossibleTypes(typeA).some((type2) => schema.isSubType(typeB, type2));
+    }
+    return schema.isSubType(typeA, typeB);
+  }
+  if (isAbstractType(typeB)) {
+    return schema.isSubType(typeB, typeA);
+  }
+  return false;
+}
+const GRAPHQL_MAX_INT = 2147483647;
+const GRAPHQL_MIN_INT = -2147483648;
+const GraphQLInt = new GraphQLScalarType2({
+  name: "Int",
+  description: "The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1.",
+  serialize(outputValue) {
+    const coercedValue = serializeObject(outputValue);
+    if (typeof coercedValue === "boolean") {
+      return coercedValue ? 1 : 0;
+    }
+    let num = coercedValue;
+    if (typeof coercedValue === "string" && coercedValue !== "") {
+      num = Number(coercedValue);
+    }
+    if (typeof num !== "number" || !Number.isInteger(num)) {
+      throw new GraphQLError2(
+        `Int cannot represent non-integer value: ${inspect(coercedValue)}`
+      );
+    }
+    if (num > GRAPHQL_MAX_INT || num < GRAPHQL_MIN_INT) {
+      throw new GraphQLError2(
+        "Int cannot represent non 32-bit signed integer value: " + inspect(coercedValue)
+      );
+    }
+    return num;
+  },
+  parseValue(inputValue) {
+    if (typeof inputValue !== "number" || !Number.isInteger(inputValue)) {
+      throw new GraphQLError2(
+        `Int cannot represent non-integer value: ${inspect(inputValue)}`
+      );
+    }
+    if (inputValue > GRAPHQL_MAX_INT || inputValue < GRAPHQL_MIN_INT) {
+      throw new GraphQLError2(
+        `Int cannot represent non 32-bit signed integer value: ${inputValue}`
+      );
+    }
+    return inputValue;
+  },
+  parseLiteral(valueNode) {
+    if (valueNode.kind !== Kind.INT) {
+      throw new GraphQLError2(
+        `Int cannot represent non-integer value: ${print(valueNode)}`,
+        {
+          nodes: valueNode
+        }
+      );
+    }
+    const num = parseInt(valueNode.value, 10);
+    if (num > GRAPHQL_MAX_INT || num < GRAPHQL_MIN_INT) {
+      throw new GraphQLError2(
+        `Int cannot represent non 32-bit signed integer value: ${valueNode.value}`,
+        {
+          nodes: valueNode
+        }
+      );
+    }
+    return num;
+  }
+});
+const GraphQLFloat = new GraphQLScalarType2({
+  name: "Float",
+  description: "The `Float` scalar type represents signed double-precision fractional values as specified by [IEEE 754](https://en.wikipedia.org/wiki/IEEE_floating_point).",
+  serialize(outputValue) {
+    const coercedValue = serializeObject(outputValue);
+    if (typeof coercedValue === "boolean") {
+      return coercedValue ? 1 : 0;
+    }
+    let num = coercedValue;
+    if (typeof coercedValue === "string" && coercedValue !== "") {
+      num = Number(coercedValue);
+    }
+    if (typeof num !== "number" || !Number.isFinite(num)) {
+      throw new GraphQLError2(
+        `Float cannot represent non numeric value: ${inspect(coercedValue)}`
+      );
+    }
+    return num;
+  },
+  parseValue(inputValue) {
+    if (typeof inputValue !== "number" || !Number.isFinite(inputValue)) {
+      throw new GraphQLError2(
+        `Float cannot represent non numeric value: ${inspect(inputValue)}`
+      );
+    }
+    return inputValue;
+  },
+  parseLiteral(valueNode) {
+    if (valueNode.kind !== Kind.FLOAT && valueNode.kind !== Kind.INT) {
+      throw new GraphQLError2(
+        `Float cannot represent non numeric value: ${print(valueNode)}`,
+        valueNode
+      );
+    }
+    return parseFloat(valueNode.value);
+  }
+});
+const GraphQLString = new GraphQLScalarType2({
+  name: "String",
+  description: "The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.",
+  serialize(outputValue) {
+    const coercedValue = serializeObject(outputValue);
+    if (typeof coercedValue === "string") {
+      return coercedValue;
+    }
+    if (typeof coercedValue === "boolean") {
+      return coercedValue ? "true" : "false";
+    }
+    if (typeof coercedValue === "number" && Number.isFinite(coercedValue)) {
+      return coercedValue.toString();
+    }
+    throw new GraphQLError2(
+      `String cannot represent value: ${inspect(outputValue)}`
+    );
+  },
+  parseValue(inputValue) {
+    if (typeof inputValue !== "string") {
+      throw new GraphQLError2(
+        `String cannot represent a non string value: ${inspect(inputValue)}`
+      );
+    }
+    return inputValue;
+  },
+  parseLiteral(valueNode) {
+    if (valueNode.kind !== Kind.STRING) {
+      throw new GraphQLError2(
+        `String cannot represent a non string value: ${print(valueNode)}`,
+        {
+          nodes: valueNode
+        }
+      );
+    }
+    return valueNode.value;
+  }
+});
+const GraphQLBoolean = new GraphQLScalarType2({
+  name: "Boolean",
+  description: "The `Boolean` scalar type represents `true` or `false`.",
+  serialize(outputValue) {
+    const coercedValue = serializeObject(outputValue);
+    if (typeof coercedValue === "boolean") {
+      return coercedValue;
+    }
+    if (Number.isFinite(coercedValue)) {
+      return coercedValue !== 0;
+    }
+    throw new GraphQLError2(
+      `Boolean cannot represent a non boolean value: ${inspect(coercedValue)}`
+    );
+  },
+  parseValue(inputValue) {
+    if (typeof inputValue !== "boolean") {
+      throw new GraphQLError2(
+        `Boolean cannot represent a non boolean value: ${inspect(inputValue)}`
+      );
+    }
+    return inputValue;
+  },
+  parseLiteral(valueNode) {
+    if (valueNode.kind !== Kind.BOOLEAN) {
+      throw new GraphQLError2(
+        `Boolean cannot represent a non boolean value: ${print(valueNode)}`,
+        {
+          nodes: valueNode
+        }
+      );
+    }
+    return valueNode.value;
+  }
+});
+const GraphQLID = new GraphQLScalarType2({
+  name: "ID",
+  description: 'The `ID` scalar type represents a unique identifier, often used to refetch an object or as key for a cache. The ID type appears in a JSON response as a String; however, it is not intended to be human-readable. When expected as an input type, any string (such as `"4"`) or integer (such as `4`) input value will be accepted as an ID.',
+  serialize(outputValue) {
+    const coercedValue = serializeObject(outputValue);
+    if (typeof coercedValue === "string") {
+      return coercedValue;
+    }
+    if (Number.isInteger(coercedValue)) {
+      return String(coercedValue);
+    }
+    throw new GraphQLError2(
+      `ID cannot represent value: ${inspect(outputValue)}`
+    );
+  },
+  parseValue(inputValue) {
+    if (typeof inputValue === "string") {
+      return inputValue;
+    }
+    if (typeof inputValue === "number" && Number.isInteger(inputValue)) {
+      return inputValue.toString();
+    }
+    throw new GraphQLError2(`ID cannot represent value: ${inspect(inputValue)}`);
+  },
+  parseLiteral(valueNode) {
+    if (valueNode.kind !== Kind.STRING && valueNode.kind !== Kind.INT) {
+      throw new GraphQLError2(
+        "ID cannot represent a non-string and non-integer value: " + print(valueNode),
+        {
+          nodes: valueNode
+        }
+      );
+    }
+    return valueNode.value;
+  }
+});
+const specifiedScalarTypes = Object.freeze([
+  GraphQLString,
+  GraphQLInt,
+  GraphQLFloat,
+  GraphQLBoolean,
+  GraphQLID
+]);
+function isSpecifiedScalarType(type2) {
+  return specifiedScalarTypes.some(({ name: name2 }) => type2.name === name2);
+}
+function serializeObject(outputValue) {
+  if (isObjectLike(outputValue)) {
+    if (typeof outputValue.valueOf === "function") {
+      const valueOfResult = outputValue.valueOf();
+      if (!isObjectLike(valueOfResult)) {
+        return valueOfResult;
+      }
+    }
+    if (typeof outputValue.toJSON === "function") {
+      return outputValue.toJSON();
+    }
+  }
+  return outputValue;
+}
+function isDirective(directive) {
+  return instanceOf(directive, GraphQLDirective2);
+}
+function assertDirective(directive) {
+  if (!isDirective(directive)) {
+    throw new Error(
+      `Expected ${inspect(directive)} to be a GraphQL directive.`
+    );
+  }
+  return directive;
+}
+class GraphQLDirective2 {
+  constructor(config2) {
+    var _config$isRepeatable, _config$args;
+    this.name = assertName(config2.name);
+    this.description = config2.description;
+    this.locations = config2.locations;
+    this.isRepeatable = (_config$isRepeatable = config2.isRepeatable) !== null && _config$isRepeatable !== void 0 ? _config$isRepeatable : false;
+    this.extensions = toObjMap(config2.extensions);
+    this.astNode = config2.astNode;
+    Array.isArray(config2.locations) || devAssert(false, `@${config2.name} locations must be an Array.`);
+    const args = (_config$args = config2.args) !== null && _config$args !== void 0 ? _config$args : {};
+    isObjectLike(args) && !Array.isArray(args) || devAssert(
+      false,
+      `@${config2.name} args must be an object with argument names as keys.`
+    );
+    this.args = defineArguments(args);
+  }
+  get [Symbol.toStringTag]() {
+    return "GraphQLDirective";
+  }
+  toConfig() {
+    return {
+      name: this.name,
+      description: this.description,
+      locations: this.locations,
+      args: argsToArgsConfig(this.args),
+      isRepeatable: this.isRepeatable,
+      extensions: this.extensions,
+      astNode: this.astNode
+    };
+  }
+  toString() {
+    return "@" + this.name;
+  }
+  toJSON() {
+    return this.toString();
+  }
+}
+const GraphQLIncludeDirective = new GraphQLDirective2({
+  name: "include",
+  description: "Directs the executor to include this field or fragment only when the `if` argument is true.",
+  locations: [
+    DirectiveLocation.FIELD,
+    DirectiveLocation.FRAGMENT_SPREAD,
+    DirectiveLocation.INLINE_FRAGMENT
+  ],
+  args: {
+    if: {
+      type: new GraphQLNonNull2(GraphQLBoolean),
+      description: "Included when true."
+    }
+  }
+});
+const GraphQLSkipDirective = new GraphQLDirective2({
+  name: "skip",
+  description: "Directs the executor to skip this field or fragment when the `if` argument is true.",
+  locations: [
+    DirectiveLocation.FIELD,
+    DirectiveLocation.FRAGMENT_SPREAD,
+    DirectiveLocation.INLINE_FRAGMENT
+  ],
+  args: {
+    if: {
+      type: new GraphQLNonNull2(GraphQLBoolean),
+      description: "Skipped when true."
+    }
+  }
+});
+const DEFAULT_DEPRECATION_REASON = "No longer supported";
+const GraphQLDeprecatedDirective = new GraphQLDirective2({
+  name: "deprecated",
+  description: "Marks an element of a GraphQL schema as no longer supported.",
+  locations: [
+    DirectiveLocation.FIELD_DEFINITION,
+    DirectiveLocation.ARGUMENT_DEFINITION,
+    DirectiveLocation.INPUT_FIELD_DEFINITION,
+    DirectiveLocation.ENUM_VALUE
+  ],
+  args: {
+    reason: {
+      type: GraphQLString,
+      description: "Explains why this element was deprecated, usually also including a suggestion for how to access supported similar data. Formatted using the Markdown syntax, as specified by [CommonMark](https://commonmark.org/).",
+      defaultValue: DEFAULT_DEPRECATION_REASON
+    }
+  }
+});
+const GraphQLSpecifiedByDirective = new GraphQLDirective2({
+  name: "specifiedBy",
+  description: "Exposes a URL that specifies the behavior of this scalar.",
+  locations: [DirectiveLocation.SCALAR],
+  args: {
+    url: {
+      type: new GraphQLNonNull2(GraphQLString),
+      description: "The URL that specifies the behavior of this scalar."
+    }
+  }
+});
+const GraphQLOneOfDirective = new GraphQLDirective2({
+  name: "oneOf",
+  description: "Indicates exactly one field must be supplied and this field must not be `null`.",
+  locations: [DirectiveLocation.INPUT_OBJECT],
+  args: {}
+});
+const specifiedDirectives = Object.freeze([
+  GraphQLIncludeDirective,
+  GraphQLSkipDirective,
+  GraphQLDeprecatedDirective,
+  GraphQLSpecifiedByDirective,
+  GraphQLOneOfDirective
+]);
+function isSpecifiedDirective(directive) {
+  return specifiedDirectives.some(({ name: name2 }) => name2 === directive.name);
+}
+function isIterableObject(maybeIterable) {
+  return typeof maybeIterable === "object" && typeof (maybeIterable === null || maybeIterable === void 0 ? void 0 : maybeIterable[Symbol.iterator]) === "function";
+}
+function astFromValue(value, type2) {
+  if (isNonNullType(type2)) {
+    const astValue = astFromValue(value, type2.ofType);
+    if ((astValue === null || astValue === void 0 ? void 0 : astValue.kind) === Kind.NULL) {
+      return null;
+    }
+    return astValue;
+  }
+  if (value === null) {
+    return {
+      kind: Kind.NULL
+    };
+  }
+  if (value === void 0) {
+    return null;
+  }
+  if (isListType(type2)) {
+    const itemType = type2.ofType;
+    if (isIterableObject(value)) {
+      const valuesNodes = [];
+      for (const item of value) {
+        const itemNode = astFromValue(item, itemType);
+        if (itemNode != null) {
+          valuesNodes.push(itemNode);
+        }
+      }
+      return {
+        kind: Kind.LIST,
+        values: valuesNodes
+      };
+    }
+    return astFromValue(value, itemType);
+  }
+  if (isInputObjectType(type2)) {
+    if (!isObjectLike(value)) {
+      return null;
+    }
+    const fieldNodes = [];
+    for (const field of Object.values(type2.getFields())) {
+      const fieldValue = astFromValue(value[field.name], field.type);
+      if (fieldValue) {
+        fieldNodes.push({
+          kind: Kind.OBJECT_FIELD,
+          name: {
+            kind: Kind.NAME,
+            value: field.name
+          },
+          value: fieldValue
+        });
+      }
+    }
+    return {
+      kind: Kind.OBJECT,
+      fields: fieldNodes
+    };
+  }
+  if (isLeafType(type2)) {
+    const serialized = type2.serialize(value);
+    if (serialized == null) {
+      return null;
+    }
+    if (typeof serialized === "boolean") {
+      return {
+        kind: Kind.BOOLEAN,
+        value: serialized
+      };
+    }
+    if (typeof serialized === "number" && Number.isFinite(serialized)) {
+      const stringNum = String(serialized);
+      return integerStringRegExp.test(stringNum) ? {
+        kind: Kind.INT,
+        value: stringNum
+      } : {
+        kind: Kind.FLOAT,
+        value: stringNum
+      };
+    }
+    if (typeof serialized === "string") {
+      if (isEnumType(type2)) {
+        return {
+          kind: Kind.ENUM,
+          value: serialized
+        };
+      }
+      if (type2 === GraphQLID && integerStringRegExp.test(serialized)) {
+        return {
+          kind: Kind.INT,
+          value: serialized
+        };
+      }
+      return {
+        kind: Kind.STRING,
+        value: serialized
+      };
+    }
+    throw new TypeError(`Cannot convert value to AST: ${inspect(serialized)}.`);
+  }
+  invariant(false, "Unexpected input type: " + inspect(type2));
+}
+const integerStringRegExp = /^-?(?:0|[1-9][0-9]*)$/;
+const __Schema = new GraphQLObjectType2({
+  name: "__Schema",
+  description: "A GraphQL Schema defines the capabilities of a GraphQL server. It exposes all available types and directives on the server, as well as the entry points for query, mutation, and subscription operations.",
+  fields: () => ({
+    description: {
+      type: GraphQLString,
+      resolve: (schema) => schema.description
+    },
+    types: {
+      description: "A list of all types supported by this server.",
+      type: new GraphQLNonNull2(new GraphQLList2(new GraphQLNonNull2(__Type))),
+      resolve(schema) {
+        return Object.values(schema.getTypeMap());
+      }
+    },
+    queryType: {
+      description: "The type that query operations will be rooted at.",
+      type: new GraphQLNonNull2(__Type),
+      resolve: (schema) => schema.getQueryType()
+    },
+    mutationType: {
+      description: "If this server supports mutation, the type that mutation operations will be rooted at.",
+      type: __Type,
+      resolve: (schema) => schema.getMutationType()
+    },
+    subscriptionType: {
+      description: "If this server support subscription, the type that subscription operations will be rooted at.",
+      type: __Type,
+      resolve: (schema) => schema.getSubscriptionType()
+    },
+    directives: {
+      description: "A list of all directives supported by this server.",
+      type: new GraphQLNonNull2(
+        new GraphQLList2(new GraphQLNonNull2(__Directive))
+      ),
+      resolve: (schema) => schema.getDirectives()
+    }
+  })
+});
+const __Directive = new GraphQLObjectType2({
+  name: "__Directive",
+  description: "A Directive provides a way to describe alternate runtime execution and type validation behavior in a GraphQL document.\n\nIn some cases, you need to provide options to alter GraphQL's execution behavior in ways field arguments will not suffice, such as conditionally including or skipping a field. Directives provide this by describing additional information to the executor.",
+  fields: () => ({
+    name: {
+      type: new GraphQLNonNull2(GraphQLString),
+      resolve: (directive) => directive.name
+    },
+    description: {
+      type: GraphQLString,
+      resolve: (directive) => directive.description
+    },
+    isRepeatable: {
+      type: new GraphQLNonNull2(GraphQLBoolean),
+      resolve: (directive) => directive.isRepeatable
+    },
+    locations: {
+      type: new GraphQLNonNull2(
+        new GraphQLList2(new GraphQLNonNull2(__DirectiveLocation))
+      ),
+      resolve: (directive) => directive.locations
+    },
+    args: {
+      type: new GraphQLNonNull2(
+        new GraphQLList2(new GraphQLNonNull2(__InputValue))
+      ),
+      args: {
+        includeDeprecated: {
+          type: GraphQLBoolean,
+          defaultValue: false
+        }
+      },
+      resolve(field, { includeDeprecated }) {
+        return includeDeprecated ? field.args : field.args.filter((arg) => arg.deprecationReason == null);
+      }
+    }
+  })
+});
+const __DirectiveLocation = new GraphQLEnumType2({
+  name: "__DirectiveLocation",
+  description: "A Directive can be adjacent to many parts of the GraphQL language, a __DirectiveLocation describes one such possible adjacencies.",
+  values: {
+    QUERY: {
+      value: DirectiveLocation.QUERY,
+      description: "Location adjacent to a query operation."
+    },
+    MUTATION: {
+      value: DirectiveLocation.MUTATION,
+      description: "Location adjacent to a mutation operation."
+    },
+    SUBSCRIPTION: {
+      value: DirectiveLocation.SUBSCRIPTION,
+      description: "Location adjacent to a subscription operation."
+    },
+    FIELD: {
+      value: DirectiveLocation.FIELD,
+      description: "Location adjacent to a field."
+    },
+    FRAGMENT_DEFINITION: {
+      value: DirectiveLocation.FRAGMENT_DEFINITION,
+      description: "Location adjacent to a fragment definition."
+    },
+    FRAGMENT_SPREAD: {
+      value: DirectiveLocation.FRAGMENT_SPREAD,
+      description: "Location adjacent to a fragment spread."
+    },
+    INLINE_FRAGMENT: {
+      value: DirectiveLocation.INLINE_FRAGMENT,
+      description: "Location adjacent to an inline fragment."
+    },
+    VARIABLE_DEFINITION: {
+      value: DirectiveLocation.VARIABLE_DEFINITION,
+      description: "Location adjacent to a variable definition."
+    },
+    SCHEMA: {
+      value: DirectiveLocation.SCHEMA,
+      description: "Location adjacent to a schema definition."
+    },
+    SCALAR: {
+      value: DirectiveLocation.SCALAR,
+      description: "Location adjacent to a scalar definition."
+    },
+    OBJECT: {
+      value: DirectiveLocation.OBJECT,
+      description: "Location adjacent to an object type definition."
+    },
+    FIELD_DEFINITION: {
+      value: DirectiveLocation.FIELD_DEFINITION,
+      description: "Location adjacent to a field definition."
+    },
+    ARGUMENT_DEFINITION: {
+      value: DirectiveLocation.ARGUMENT_DEFINITION,
+      description: "Location adjacent to an argument definition."
+    },
+    INTERFACE: {
+      value: DirectiveLocation.INTERFACE,
+      description: "Location adjacent to an interface definition."
+    },
+    UNION: {
+      value: DirectiveLocation.UNION,
+      description: "Location adjacent to a union definition."
+    },
+    ENUM: {
+      value: DirectiveLocation.ENUM,
+      description: "Location adjacent to an enum definition."
+    },
+    ENUM_VALUE: {
+      value: DirectiveLocation.ENUM_VALUE,
+      description: "Location adjacent to an enum value definition."
+    },
+    INPUT_OBJECT: {
+      value: DirectiveLocation.INPUT_OBJECT,
+      description: "Location adjacent to an input object type definition."
+    },
+    INPUT_FIELD_DEFINITION: {
+      value: DirectiveLocation.INPUT_FIELD_DEFINITION,
+      description: "Location adjacent to an input object field definition."
+    }
+  }
+});
+const __Type = new GraphQLObjectType2({
+  name: "__Type",
+  description: "The fundamental unit of any GraphQL Schema is the type. There are many kinds of types in GraphQL as represented by the `__TypeKind` enum.\n\nDepending on the kind of a type, certain fields describe information about that type. Scalar types provide no information beyond a name, description and optional `specifiedByURL`, while Enum types provide their values. Object and Interface types provide the fields they describe. Abstract types, Union and Interface, provide the Object types possible at runtime. List and NonNull types compose other types.",
+  fields: () => ({
+    kind: {
+      type: new GraphQLNonNull2(__TypeKind),
+      resolve(type2) {
+        if (isScalarType(type2)) {
+          return TypeKind.SCALAR;
+        }
+        if (isObjectType(type2)) {
+          return TypeKind.OBJECT;
+        }
+        if (isInterfaceType(type2)) {
+          return TypeKind.INTERFACE;
+        }
+        if (isUnionType(type2)) {
+          return TypeKind.UNION;
+        }
+        if (isEnumType(type2)) {
+          return TypeKind.ENUM;
+        }
+        if (isInputObjectType(type2)) {
+          return TypeKind.INPUT_OBJECT;
+        }
+        if (isListType(type2)) {
+          return TypeKind.LIST;
+        }
+        if (isNonNullType(type2)) {
+          return TypeKind.NON_NULL;
+        }
+        invariant(false, `Unexpected type: "${inspect(type2)}".`);
+      }
+    },
+    name: {
+      type: GraphQLString,
+      resolve: (type2) => "name" in type2 ? type2.name : void 0
+    },
+    description: {
+      type: GraphQLString,
+      resolve: (type2) => (
+        /* c8 ignore next */
+        "description" in type2 ? type2.description : void 0
+      )
+    },
+    specifiedByURL: {
+      type: GraphQLString,
+      resolve: (obj) => "specifiedByURL" in obj ? obj.specifiedByURL : void 0
+    },
+    fields: {
+      type: new GraphQLList2(new GraphQLNonNull2(__Field)),
+      args: {
+        includeDeprecated: {
+          type: GraphQLBoolean,
+          defaultValue: false
+        }
+      },
+      resolve(type2, { includeDeprecated }) {
+        if (isObjectType(type2) || isInterfaceType(type2)) {
+          const fields = Object.values(type2.getFields());
+          return includeDeprecated ? fields : fields.filter((field) => field.deprecationReason == null);
+        }
+      }
+    },
+    interfaces: {
+      type: new GraphQLList2(new GraphQLNonNull2(__Type)),
+      resolve(type2) {
+        if (isObjectType(type2) || isInterfaceType(type2)) {
+          return type2.getInterfaces();
+        }
+      }
+    },
+    possibleTypes: {
+      type: new GraphQLList2(new GraphQLNonNull2(__Type)),
+      resolve(type2, _args, _context, { schema }) {
+        if (isAbstractType(type2)) {
+          return schema.getPossibleTypes(type2);
+        }
+      }
+    },
+    enumValues: {
+      type: new GraphQLList2(new GraphQLNonNull2(__EnumValue)),
+      args: {
+        includeDeprecated: {
+          type: GraphQLBoolean,
+          defaultValue: false
+        }
+      },
+      resolve(type2, { includeDeprecated }) {
+        if (isEnumType(type2)) {
+          const values = type2.getValues();
+          return includeDeprecated ? values : values.filter((field) => field.deprecationReason == null);
+        }
+      }
+    },
+    inputFields: {
+      type: new GraphQLList2(new GraphQLNonNull2(__InputValue)),
+      args: {
+        includeDeprecated: {
+          type: GraphQLBoolean,
+          defaultValue: false
+        }
+      },
+      resolve(type2, { includeDeprecated }) {
+        if (isInputObjectType(type2)) {
+          const values = Object.values(type2.getFields());
+          return includeDeprecated ? values : values.filter((field) => field.deprecationReason == null);
+        }
+      }
+    },
+    ofType: {
+      type: __Type,
+      resolve: (type2) => "ofType" in type2 ? type2.ofType : void 0
+    },
+    isOneOf: {
+      type: GraphQLBoolean,
+      resolve: (type2) => {
+        if (isInputObjectType(type2)) {
+          return type2.isOneOf;
+        }
+      }
+    }
+  })
+});
+const __Field = new GraphQLObjectType2({
+  name: "__Field",
+  description: "Object and Interface types are described by a list of Fields, each of which has a name, potentially a list of arguments, and a return type.",
+  fields: () => ({
+    name: {
+      type: new GraphQLNonNull2(GraphQLString),
+      resolve: (field) => field.name
+    },
+    description: {
+      type: GraphQLString,
+      resolve: (field) => field.description
+    },
+    args: {
+      type: new GraphQLNonNull2(
+        new GraphQLList2(new GraphQLNonNull2(__InputValue))
+      ),
+      args: {
+        includeDeprecated: {
+          type: GraphQLBoolean,
+          defaultValue: false
+        }
+      },
+      resolve(field, { includeDeprecated }) {
+        return includeDeprecated ? field.args : field.args.filter((arg) => arg.deprecationReason == null);
+      }
+    },
+    type: {
+      type: new GraphQLNonNull2(__Type),
+      resolve: (field) => field.type
+    },
+    isDeprecated: {
+      type: new GraphQLNonNull2(GraphQLBoolean),
+      resolve: (field) => field.deprecationReason != null
+    },
+    deprecationReason: {
+      type: GraphQLString,
+      resolve: (field) => field.deprecationReason
+    }
+  })
+});
+const __InputValue = new GraphQLObjectType2({
+  name: "__InputValue",
+  description: "Arguments provided to Fields or Directives and the input fields of an InputObject are represented as Input Values which describe their type and optionally a default value.",
+  fields: () => ({
+    name: {
+      type: new GraphQLNonNull2(GraphQLString),
+      resolve: (inputValue) => inputValue.name
+    },
+    description: {
+      type: GraphQLString,
+      resolve: (inputValue) => inputValue.description
+    },
+    type: {
+      type: new GraphQLNonNull2(__Type),
+      resolve: (inputValue) => inputValue.type
+    },
+    defaultValue: {
+      type: GraphQLString,
+      description: "A GraphQL-formatted string representing the default value for this input value.",
+      resolve(inputValue) {
+        const { type: type2, defaultValue } = inputValue;
+        const valueAST = astFromValue(defaultValue, type2);
+        return valueAST ? print(valueAST) : null;
+      }
+    },
+    isDeprecated: {
+      type: new GraphQLNonNull2(GraphQLBoolean),
+      resolve: (field) => field.deprecationReason != null
+    },
+    deprecationReason: {
+      type: GraphQLString,
+      resolve: (obj) => obj.deprecationReason
+    }
+  })
+});
+const __EnumValue = new GraphQLObjectType2({
+  name: "__EnumValue",
+  description: "One possible value for a given Enum. Enum values are unique values, not a placeholder for a string or numeric value. However an Enum value is returned in a JSON response as a string.",
+  fields: () => ({
+    name: {
+      type: new GraphQLNonNull2(GraphQLString),
+      resolve: (enumValue) => enumValue.name
+    },
+    description: {
+      type: GraphQLString,
+      resolve: (enumValue) => enumValue.description
+    },
+    isDeprecated: {
+      type: new GraphQLNonNull2(GraphQLBoolean),
+      resolve: (enumValue) => enumValue.deprecationReason != null
+    },
+    deprecationReason: {
+      type: GraphQLString,
+      resolve: (enumValue) => enumValue.deprecationReason
+    }
+  })
+});
+var TypeKind;
+(function(TypeKind2) {
+  TypeKind2["SCALAR"] = "SCALAR";
+  TypeKind2["OBJECT"] = "OBJECT";
+  TypeKind2["INTERFACE"] = "INTERFACE";
+  TypeKind2["UNION"] = "UNION";
+  TypeKind2["ENUM"] = "ENUM";
+  TypeKind2["INPUT_OBJECT"] = "INPUT_OBJECT";
+  TypeKind2["LIST"] = "LIST";
+  TypeKind2["NON_NULL"] = "NON_NULL";
+})(TypeKind || (TypeKind = {}));
+const __TypeKind = new GraphQLEnumType2({
+  name: "__TypeKind",
+  description: "An enum describing what kind of type a given `__Type` is.",
+  values: {
+    SCALAR: {
+      value: TypeKind.SCALAR,
+      description: "Indicates this type is a scalar."
+    },
+    OBJECT: {
+      value: TypeKind.OBJECT,
+      description: "Indicates this type is an object. `fields` and `interfaces` are valid fields."
+    },
+    INTERFACE: {
+      value: TypeKind.INTERFACE,
+      description: "Indicates this type is an interface. `fields`, `interfaces`, and `possibleTypes` are valid fields."
+    },
+    UNION: {
+      value: TypeKind.UNION,
+      description: "Indicates this type is a union. `possibleTypes` is a valid field."
+    },
+    ENUM: {
+      value: TypeKind.ENUM,
+      description: "Indicates this type is an enum. `enumValues` is a valid field."
+    },
+    INPUT_OBJECT: {
+      value: TypeKind.INPUT_OBJECT,
+      description: "Indicates this type is an input object. `inputFields` is a valid field."
+    },
+    LIST: {
+      value: TypeKind.LIST,
+      description: "Indicates this type is a list. `ofType` is a valid field."
+    },
+    NON_NULL: {
+      value: TypeKind.NON_NULL,
+      description: "Indicates this type is a non-null. `ofType` is a valid field."
+    }
+  }
+});
+const SchemaMetaFieldDef = {
+  name: "__schema",
+  type: new GraphQLNonNull2(__Schema),
+  description: "Access the current type schema of this server.",
+  args: [],
+  resolve: (_source, _args, _context, { schema }) => schema,
+  deprecationReason: void 0,
+  extensions: /* @__PURE__ */ Object.create(null),
+  astNode: void 0
+};
+const TypeMetaFieldDef = {
+  name: "__type",
+  type: __Type,
+  description: "Request the type information of a single type.",
+  args: [
+    {
+      name: "name",
+      description: void 0,
+      type: new GraphQLNonNull2(GraphQLString),
+      defaultValue: void 0,
+      deprecationReason: void 0,
+      extensions: /* @__PURE__ */ Object.create(null),
+      astNode: void 0
+    }
+  ],
+  resolve: (_source, { name: name2 }, _context, { schema }) => schema.getType(name2),
+  deprecationReason: void 0,
+  extensions: /* @__PURE__ */ Object.create(null),
+  astNode: void 0
+};
+const TypeNameMetaFieldDef = {
+  name: "__typename",
+  type: new GraphQLNonNull2(GraphQLString),
+  description: "The name of the current Object type at runtime.",
+  args: [],
+  resolve: (_source, _args, _context, { parentType }) => parentType.name,
+  deprecationReason: void 0,
+  extensions: /* @__PURE__ */ Object.create(null),
+  astNode: void 0
+};
+const introspectionTypes = Object.freeze([
+  __Schema,
+  __Directive,
+  __DirectiveLocation,
+  __Type,
+  __Field,
+  __InputValue,
+  __EnumValue,
+  __TypeKind
+]);
+function isIntrospectionType(type2) {
+  return introspectionTypes.some(({ name: name2 }) => type2.name === name2);
+}
+function isSchema(schema) {
+  return instanceOf(schema, GraphQLSchema2);
+}
+function assertSchema(schema) {
+  if (!isSchema(schema)) {
+    throw new Error(`Expected ${inspect(schema)} to be a GraphQL schema.`);
+  }
+  return schema;
+}
+class GraphQLSchema2 {
+  // Used as a cache for validateSchema().
+  constructor(config2) {
+    var _config$extensionASTN, _config$directives;
+    this.__validationErrors = config2.assumeValid === true ? [] : void 0;
+    isObjectLike(config2) || devAssert(false, "Must provide configuration object.");
+    !config2.types || Array.isArray(config2.types) || devAssert(
+      false,
+      `"types" must be Array if provided but got: ${inspect(config2.types)}.`
+    );
+    !config2.directives || Array.isArray(config2.directives) || devAssert(
+      false,
+      `"directives" must be Array if provided but got: ${inspect(config2.directives)}.`
+    );
+    this.description = config2.description;
+    this.extensions = toObjMap(config2.extensions);
+    this.astNode = config2.astNode;
+    this.extensionASTNodes = (_config$extensionASTN = config2.extensionASTNodes) !== null && _config$extensionASTN !== void 0 ? _config$extensionASTN : [];
+    this._queryType = config2.query;
+    this._mutationType = config2.mutation;
+    this._subscriptionType = config2.subscription;
+    this._directives = (_config$directives = config2.directives) !== null && _config$directives !== void 0 ? _config$directives : specifiedDirectives;
+    const allReferencedTypes = new Set(config2.types);
+    if (config2.types != null) {
+      for (const type2 of config2.types) {
+        allReferencedTypes.delete(type2);
+        collectReferencedTypes(type2, allReferencedTypes);
+      }
+    }
+    if (this._queryType != null) {
+      collectReferencedTypes(this._queryType, allReferencedTypes);
+    }
+    if (this._mutationType != null) {
+      collectReferencedTypes(this._mutationType, allReferencedTypes);
+    }
+    if (this._subscriptionType != null) {
+      collectReferencedTypes(this._subscriptionType, allReferencedTypes);
+    }
+    for (const directive of this._directives) {
+      if (isDirective(directive)) {
+        for (const arg of directive.args) {
+          collectReferencedTypes(arg.type, allReferencedTypes);
+        }
+      }
+    }
+    collectReferencedTypes(__Schema, allReferencedTypes);
+    this._typeMap = /* @__PURE__ */ Object.create(null);
+    this._subTypeMap = /* @__PURE__ */ Object.create(null);
+    this._implementationsMap = /* @__PURE__ */ Object.create(null);
+    for (const namedType of allReferencedTypes) {
+      if (namedType == null) {
+        continue;
+      }
+      const typeName = namedType.name;
+      typeName || devAssert(
+        false,
+        "One of the provided types for building the Schema is missing a name."
+      );
+      if (this._typeMap[typeName] !== void 0) {
+        throw new Error(
+          `Schema must contain uniquely named types but contains multiple types named "${typeName}".`
+        );
+      }
+      this._typeMap[typeName] = namedType;
+      if (isInterfaceType(namedType)) {
+        for (const iface of namedType.getInterfaces()) {
+          if (isInterfaceType(iface)) {
+            let implementations = this._implementationsMap[iface.name];
+            if (implementations === void 0) {
+              implementations = this._implementationsMap[iface.name] = {
+                objects: [],
+                interfaces: []
+              };
+            }
+            implementations.interfaces.push(namedType);
+          }
+        }
+      } else if (isObjectType(namedType)) {
+        for (const iface of namedType.getInterfaces()) {
+          if (isInterfaceType(iface)) {
+            let implementations = this._implementationsMap[iface.name];
+            if (implementations === void 0) {
+              implementations = this._implementationsMap[iface.name] = {
+                objects: [],
+                interfaces: []
+              };
+            }
+            implementations.objects.push(namedType);
+          }
+        }
+      }
+    }
+  }
+  get [Symbol.toStringTag]() {
+    return "GraphQLSchema";
+  }
+  getQueryType() {
+    return this._queryType;
+  }
+  getMutationType() {
+    return this._mutationType;
+  }
+  getSubscriptionType() {
+    return this._subscriptionType;
+  }
+  getRootType(operation) {
+    switch (operation) {
+      case OperationTypeNode.QUERY:
+        return this.getQueryType();
+      case OperationTypeNode.MUTATION:
+        return this.getMutationType();
+      case OperationTypeNode.SUBSCRIPTION:
+        return this.getSubscriptionType();
+    }
+  }
+  getTypeMap() {
+    return this._typeMap;
+  }
+  getType(name2) {
+    return this.getTypeMap()[name2];
+  }
+  getPossibleTypes(abstractType) {
+    return isUnionType(abstractType) ? abstractType.getTypes() : this.getImplementations(abstractType).objects;
+  }
+  getImplementations(interfaceType) {
+    const implementations = this._implementationsMap[interfaceType.name];
+    return implementations !== null && implementations !== void 0 ? implementations : {
+      objects: [],
+      interfaces: []
+    };
+  }
+  isSubType(abstractType, maybeSubType) {
+    let map2 = this._subTypeMap[abstractType.name];
+    if (map2 === void 0) {
+      map2 = /* @__PURE__ */ Object.create(null);
+      if (isUnionType(abstractType)) {
+        for (const type2 of abstractType.getTypes()) {
+          map2[type2.name] = true;
+        }
+      } else {
+        const implementations = this.getImplementations(abstractType);
+        for (const type2 of implementations.objects) {
+          map2[type2.name] = true;
+        }
+        for (const type2 of implementations.interfaces) {
+          map2[type2.name] = true;
+        }
+      }
+      this._subTypeMap[abstractType.name] = map2;
+    }
+    return map2[maybeSubType.name] !== void 0;
+  }
+  getDirectives() {
+    return this._directives;
+  }
+  getDirective(name2) {
+    return this.getDirectives().find((directive) => directive.name === name2);
+  }
+  toConfig() {
+    return {
+      description: this.description,
+      query: this.getQueryType(),
+      mutation: this.getMutationType(),
+      subscription: this.getSubscriptionType(),
+      types: Object.values(this.getTypeMap()),
+      directives: this.getDirectives(),
+      extensions: this.extensions,
+      astNode: this.astNode,
+      extensionASTNodes: this.extensionASTNodes,
+      assumeValid: this.__validationErrors !== void 0
+    };
+  }
+}
+function collectReferencedTypes(type2, typeSet) {
+  const namedType = getNamedType(type2);
+  if (!typeSet.has(namedType)) {
+    typeSet.add(namedType);
+    if (isUnionType(namedType)) {
+      for (const memberType of namedType.getTypes()) {
+        collectReferencedTypes(memberType, typeSet);
+      }
+    } else if (isObjectType(namedType) || isInterfaceType(namedType)) {
+      for (const interfaceType of namedType.getInterfaces()) {
+        collectReferencedTypes(interfaceType, typeSet);
+      }
+      for (const field of Object.values(namedType.getFields())) {
+        collectReferencedTypes(field.type, typeSet);
+        for (const arg of field.args) {
+          collectReferencedTypes(arg.type, typeSet);
+        }
+      }
+    } else if (isInputObjectType(namedType)) {
+      for (const field of Object.values(namedType.getFields())) {
+        collectReferencedTypes(field.type, typeSet);
+      }
+    }
+  }
+  return typeSet;
+}
+function validateSchema(schema) {
+  assertSchema(schema);
+  if (schema.__validationErrors) {
+    return schema.__validationErrors;
+  }
+  const context = new SchemaValidationContext2(schema);
+  validateRootTypes(context);
+  validateDirectives(context);
+  validateTypes(context);
+  const errors2 = context.getErrors();
+  schema.__validationErrors = errors2;
+  return errors2;
+}
+function assertValidSchema(schema) {
+  const errors2 = validateSchema(schema);
+  if (errors2.length !== 0) {
+    throw new Error(errors2.map((error2) => error2.message).join("\n\n"));
+  }
+}
+class SchemaValidationContext2 {
+  constructor(schema) {
+    this._errors = [];
+    this.schema = schema;
+  }
+  reportError(message, nodes) {
+    const _nodes = Array.isArray(nodes) ? nodes.filter(Boolean) : nodes;
+    this._errors.push(
+      new GraphQLError2(message, {
+        nodes: _nodes
+      })
+    );
+  }
+  getErrors() {
+    return this._errors;
+  }
+}
+function validateRootTypes(context) {
+  const schema = context.schema;
+  const queryType = schema.getQueryType();
+  if (!queryType) {
+    context.reportError("Query root type must be provided.", schema.astNode);
+  } else if (!isObjectType(queryType)) {
+    var _getOperationTypeNode;
+    context.reportError(
+      `Query root type must be Object type, it cannot be ${inspect(
+        queryType
+      )}.`,
+      (_getOperationTypeNode = getOperationTypeNode(
+        schema,
+        OperationTypeNode.QUERY
+      )) !== null && _getOperationTypeNode !== void 0 ? _getOperationTypeNode : queryType.astNode
+    );
+  }
+  const mutationType = schema.getMutationType();
+  if (mutationType && !isObjectType(mutationType)) {
+    var _getOperationTypeNode2;
+    context.reportError(
+      `Mutation root type must be Object type if provided, it cannot be ${inspect(mutationType)}.`,
+      (_getOperationTypeNode2 = getOperationTypeNode(
+        schema,
+        OperationTypeNode.MUTATION
+      )) !== null && _getOperationTypeNode2 !== void 0 ? _getOperationTypeNode2 : mutationType.astNode
+    );
+  }
+  const subscriptionType = schema.getSubscriptionType();
+  if (subscriptionType && !isObjectType(subscriptionType)) {
+    var _getOperationTypeNode3;
+    context.reportError(
+      `Subscription root type must be Object type if provided, it cannot be ${inspect(subscriptionType)}.`,
+      (_getOperationTypeNode3 = getOperationTypeNode(
+        schema,
+        OperationTypeNode.SUBSCRIPTION
+      )) !== null && _getOperationTypeNode3 !== void 0 ? _getOperationTypeNode3 : subscriptionType.astNode
+    );
+  }
+}
+function getOperationTypeNode(schema, operation) {
+  var _flatMap$find;
+  return (_flatMap$find = [schema.astNode, ...schema.extensionASTNodes].flatMap(
+    // FIXME: https://github.com/graphql/graphql-js/issues/2203
+    (schemaNode) => {
+      var _schemaNode$operation;
+      return (
+        /* c8 ignore next */
+        (_schemaNode$operation = schemaNode === null || schemaNode === void 0 ? void 0 : schemaNode.operationTypes) !== null && _schemaNode$operation !== void 0 ? _schemaNode$operation : []
+      );
+    }
+  ).find((operationNode) => operationNode.operation === operation)) === null || _flatMap$find === void 0 ? void 0 : _flatMap$find.type;
+}
+function validateDirectives(context) {
+  for (const directive of context.schema.getDirectives()) {
+    if (!isDirective(directive)) {
+      context.reportError(
+        `Expected directive but got: ${inspect(directive)}.`,
+        directive === null || directive === void 0 ? void 0 : directive.astNode
+      );
+      continue;
+    }
+    validateName(context, directive);
+    if (directive.locations.length === 0) {
+      context.reportError(
+        `Directive @${directive.name} must include 1 or more locations.`,
+        directive.astNode
+      );
+    }
+    for (const arg of directive.args) {
+      validateName(context, arg);
+      if (!isInputType(arg.type)) {
+        context.reportError(
+          `The type of @${directive.name}(${arg.name}:) must be Input Type but got: ${inspect(arg.type)}.`,
+          arg.astNode
+        );
+      }
+      if (isRequiredArgument(arg) && arg.deprecationReason != null) {
+        var _arg$astNode;
+        context.reportError(
+          `Required argument @${directive.name}(${arg.name}:) cannot be deprecated.`,
+          [
+            getDeprecatedDirectiveNode(arg.astNode),
+            (_arg$astNode = arg.astNode) === null || _arg$astNode === void 0 ? void 0 : _arg$astNode.type
+          ]
+        );
+      }
+    }
+  }
+}
+function validateName(context, node) {
+  if (node.name.startsWith("__")) {
+    context.reportError(
+      `Name "${node.name}" must not begin with "__", which is reserved by GraphQL introspection.`,
+      node.astNode
+    );
+  }
+}
+function validateTypes(context) {
+  const validateInputObjectCircularRefs = createInputObjectCircularRefsValidator(context);
+  const typeMap = context.schema.getTypeMap();
+  for (const type2 of Object.values(typeMap)) {
+    if (!isNamedType(type2)) {
+      context.reportError(
+        `Expected GraphQL named type but got: ${inspect(type2)}.`,
+        type2.astNode
+      );
+      continue;
+    }
+    if (!isIntrospectionType(type2)) {
+      validateName(context, type2);
+    }
+    if (isObjectType(type2)) {
+      validateFields(context, type2);
+      validateInterfaces(context, type2);
+    } else if (isInterfaceType(type2)) {
+      validateFields(context, type2);
+      validateInterfaces(context, type2);
+    } else if (isUnionType(type2)) {
+      validateUnionMembers(context, type2);
+    } else if (isEnumType(type2)) {
+      validateEnumValues(context, type2);
+    } else if (isInputObjectType(type2)) {
+      validateInputFields(context, type2);
+      validateInputObjectCircularRefs(type2);
+    }
+  }
+}
+function validateFields(context, type2) {
+  const fields = Object.values(type2.getFields());
+  if (fields.length === 0) {
+    context.reportError(`Type ${type2.name} must define one or more fields.`, [
+      type2.astNode,
+      ...type2.extensionASTNodes
+    ]);
+  }
+  for (const field of fields) {
+    validateName(context, field);
+    if (!isOutputType(field.type)) {
+      var _field$astNode;
+      context.reportError(
+        `The type of ${type2.name}.${field.name} must be Output Type but got: ${inspect(field.type)}.`,
+        (_field$astNode = field.astNode) === null || _field$astNode === void 0 ? void 0 : _field$astNode.type
+      );
+    }
+    for (const arg of field.args) {
+      const argName = arg.name;
+      validateName(context, arg);
+      if (!isInputType(arg.type)) {
+        var _arg$astNode2;
+        context.reportError(
+          `The type of ${type2.name}.${field.name}(${argName}:) must be Input Type but got: ${inspect(arg.type)}.`,
+          (_arg$astNode2 = arg.astNode) === null || _arg$astNode2 === void 0 ? void 0 : _arg$astNode2.type
+        );
+      }
+      if (isRequiredArgument(arg) && arg.deprecationReason != null) {
+        var _arg$astNode3;
+        context.reportError(
+          `Required argument ${type2.name}.${field.name}(${argName}:) cannot be deprecated.`,
+          [
+            getDeprecatedDirectiveNode(arg.astNode),
+            (_arg$astNode3 = arg.astNode) === null || _arg$astNode3 === void 0 ? void 0 : _arg$astNode3.type
+          ]
+        );
+      }
+    }
+  }
+}
+function validateInterfaces(context, type2) {
+  const ifaceTypeNames = /* @__PURE__ */ Object.create(null);
+  for (const iface of type2.getInterfaces()) {
+    if (!isInterfaceType(iface)) {
+      context.reportError(
+        `Type ${inspect(type2)} must only implement Interface types, it cannot implement ${inspect(iface)}.`,
+        getAllImplementsInterfaceNodes(type2, iface)
+      );
+      continue;
+    }
+    if (type2 === iface) {
+      context.reportError(
+        `Type ${type2.name} cannot implement itself because it would create a circular reference.`,
+        getAllImplementsInterfaceNodes(type2, iface)
+      );
+      continue;
+    }
+    if (ifaceTypeNames[iface.name]) {
+      context.reportError(
+        `Type ${type2.name} can only implement ${iface.name} once.`,
+        getAllImplementsInterfaceNodes(type2, iface)
+      );
+      continue;
+    }
+    ifaceTypeNames[iface.name] = true;
+    validateTypeImplementsAncestors(context, type2, iface);
+    validateTypeImplementsInterface(context, type2, iface);
+  }
+}
+function validateTypeImplementsInterface(context, type2, iface) {
+  const typeFieldMap = type2.getFields();
+  for (const ifaceField of Object.values(iface.getFields())) {
+    const fieldName = ifaceField.name;
+    const typeField = typeFieldMap[fieldName];
+    if (!typeField) {
+      context.reportError(
+        `Interface field ${iface.name}.${fieldName} expected but ${type2.name} does not provide it.`,
+        [ifaceField.astNode, type2.astNode, ...type2.extensionASTNodes]
+      );
+      continue;
+    }
+    if (!isTypeSubTypeOf(context.schema, typeField.type, ifaceField.type)) {
+      var _ifaceField$astNode, _typeField$astNode;
+      context.reportError(
+        `Interface field ${iface.name}.${fieldName} expects type ${inspect(ifaceField.type)} but ${type2.name}.${fieldName} is type ${inspect(typeField.type)}.`,
+        [
+          (_ifaceField$astNode = ifaceField.astNode) === null || _ifaceField$astNode === void 0 ? void 0 : _ifaceField$astNode.type,
+          (_typeField$astNode = typeField.astNode) === null || _typeField$astNode === void 0 ? void 0 : _typeField$astNode.type
+        ]
+      );
+    }
+    for (const ifaceArg of ifaceField.args) {
+      const argName = ifaceArg.name;
+      const typeArg = typeField.args.find((arg) => arg.name === argName);
+      if (!typeArg) {
+        context.reportError(
+          `Interface field argument ${iface.name}.${fieldName}(${argName}:) expected but ${type2.name}.${fieldName} does not provide it.`,
+          [ifaceArg.astNode, typeField.astNode]
+        );
+        continue;
+      }
+      if (!isEqualType(ifaceArg.type, typeArg.type)) {
+        var _ifaceArg$astNode, _typeArg$astNode;
+        context.reportError(
+          `Interface field argument ${iface.name}.${fieldName}(${argName}:) expects type ${inspect(ifaceArg.type)} but ${type2.name}.${fieldName}(${argName}:) is type ${inspect(typeArg.type)}.`,
+          [
+            (_ifaceArg$astNode = ifaceArg.astNode) === null || _ifaceArg$astNode === void 0 ? void 0 : _ifaceArg$astNode.type,
+            (_typeArg$astNode = typeArg.astNode) === null || _typeArg$astNode === void 0 ? void 0 : _typeArg$astNode.type
+          ]
+        );
+      }
+    }
+    for (const typeArg of typeField.args) {
+      const argName = typeArg.name;
+      const ifaceArg = ifaceField.args.find((arg) => arg.name === argName);
+      if (!ifaceArg && isRequiredArgument(typeArg)) {
+        context.reportError(
+          `Object field ${type2.name}.${fieldName} includes required argument ${argName} that is missing from the Interface field ${iface.name}.${fieldName}.`,
+          [typeArg.astNode, ifaceField.astNode]
+        );
+      }
+    }
+  }
+}
+function validateTypeImplementsAncestors(context, type2, iface) {
+  const ifaceInterfaces = type2.getInterfaces();
+  for (const transitive of iface.getInterfaces()) {
+    if (!ifaceInterfaces.includes(transitive)) {
+      context.reportError(
+        transitive === type2 ? `Type ${type2.name} cannot implement ${iface.name} because it would create a circular reference.` : `Type ${type2.name} must implement ${transitive.name} because it is implemented by ${iface.name}.`,
+        [
+          ...getAllImplementsInterfaceNodes(iface, transitive),
+          ...getAllImplementsInterfaceNodes(type2, iface)
+        ]
+      );
+    }
+  }
+}
+function validateUnionMembers(context, union) {
+  const memberTypes = union.getTypes();
+  if (memberTypes.length === 0) {
+    context.reportError(
+      `Union type ${union.name} must define one or more member types.`,
+      [union.astNode, ...union.extensionASTNodes]
+    );
+  }
+  const includedTypeNames = /* @__PURE__ */ Object.create(null);
+  for (const memberType of memberTypes) {
+    if (includedTypeNames[memberType.name]) {
+      context.reportError(
+        `Union type ${union.name} can only include type ${memberType.name} once.`,
+        getUnionMemberTypeNodes(union, memberType.name)
+      );
+      continue;
+    }
+    includedTypeNames[memberType.name] = true;
+    if (!isObjectType(memberType)) {
+      context.reportError(
+        `Union type ${union.name} can only include Object types, it cannot include ${inspect(memberType)}.`,
+        getUnionMemberTypeNodes(union, String(memberType))
+      );
+    }
+  }
+}
+function validateEnumValues(context, enumType) {
+  const enumValues = enumType.getValues();
+  if (enumValues.length === 0) {
+    context.reportError(
+      `Enum type ${enumType.name} must define one or more values.`,
+      [enumType.astNode, ...enumType.extensionASTNodes]
+    );
+  }
+  for (const enumValue of enumValues) {
+    validateName(context, enumValue);
+  }
+}
+function validateInputFields(context, inputObj) {
+  const fields = Object.values(inputObj.getFields());
+  if (fields.length === 0) {
+    context.reportError(
+      `Input Object type ${inputObj.name} must define one or more fields.`,
+      [inputObj.astNode, ...inputObj.extensionASTNodes]
+    );
+  }
+  for (const field of fields) {
+    validateName(context, field);
+    if (!isInputType(field.type)) {
+      var _field$astNode2;
+      context.reportError(
+        `The type of ${inputObj.name}.${field.name} must be Input Type but got: ${inspect(field.type)}.`,
+        (_field$astNode2 = field.astNode) === null || _field$astNode2 === void 0 ? void 0 : _field$astNode2.type
+      );
+    }
+    if (isRequiredInputField(field) && field.deprecationReason != null) {
+      var _field$astNode3;
+      context.reportError(
+        `Required input field ${inputObj.name}.${field.name} cannot be deprecated.`,
+        [
+          getDeprecatedDirectiveNode(field.astNode),
+          (_field$astNode3 = field.astNode) === null || _field$astNode3 === void 0 ? void 0 : _field$astNode3.type
+        ]
+      );
+    }
+    if (inputObj.isOneOf) {
+      validateOneOfInputObjectField(inputObj, field, context);
+    }
+  }
+}
+function validateOneOfInputObjectField(type2, field, context) {
+  if (isNonNullType(field.type)) {
+    var _field$astNode4;
+    context.reportError(
+      `OneOf input field ${type2.name}.${field.name} must be nullable.`,
+      (_field$astNode4 = field.astNode) === null || _field$astNode4 === void 0 ? void 0 : _field$astNode4.type
+    );
+  }
+  if (field.defaultValue !== void 0) {
+    context.reportError(
+      `OneOf input field ${type2.name}.${field.name} cannot have a default value.`,
+      field.astNode
+    );
+  }
+}
+function createInputObjectCircularRefsValidator(context) {
+  const visitedTypes = /* @__PURE__ */ Object.create(null);
+  const fieldPath = [];
+  const fieldPathIndexByTypeName = /* @__PURE__ */ Object.create(null);
+  return detectCycleRecursive;
+  function detectCycleRecursive(inputObj) {
+    if (visitedTypes[inputObj.name]) {
+      return;
+    }
+    visitedTypes[inputObj.name] = true;
+    fieldPathIndexByTypeName[inputObj.name] = fieldPath.length;
+    const fields = Object.values(inputObj.getFields());
+    for (const field of fields) {
+      if (isNonNullType(field.type) && isInputObjectType(field.type.ofType)) {
+        const fieldType = field.type.ofType;
+        const cycleIndex = fieldPathIndexByTypeName[fieldType.name];
+        fieldPath.push(field);
+        if (cycleIndex === void 0) {
+          detectCycleRecursive(fieldType);
+        } else {
+          const cyclePath = fieldPath.slice(cycleIndex);
+          const pathStr = cyclePath.map((fieldObj) => fieldObj.name).join(".");
+          context.reportError(
+            `Cannot reference Input Object "${fieldType.name}" within itself through a series of non-null fields: "${pathStr}".`,
+            cyclePath.map((fieldObj) => fieldObj.astNode)
+          );
+        }
+        fieldPath.pop();
+      }
+    }
+    fieldPathIndexByTypeName[inputObj.name] = void 0;
+  }
+}
+function getAllImplementsInterfaceNodes(type2, iface) {
+  const { astNode, extensionASTNodes } = type2;
+  const nodes = astNode != null ? [astNode, ...extensionASTNodes] : extensionASTNodes;
+  return nodes.flatMap((typeNode) => {
+    var _typeNode$interfaces;
+    return (
+      /* c8 ignore next */
+      (_typeNode$interfaces = typeNode.interfaces) !== null && _typeNode$interfaces !== void 0 ? _typeNode$interfaces : []
+    );
+  }).filter((ifaceNode) => ifaceNode.name.value === iface.name);
+}
+function getUnionMemberTypeNodes(union, typeName) {
+  const { astNode, extensionASTNodes } = union;
+  const nodes = astNode != null ? [astNode, ...extensionASTNodes] : extensionASTNodes;
+  return nodes.flatMap((unionNode) => {
+    var _unionNode$types;
+    return (
+      /* c8 ignore next */
+      (_unionNode$types = unionNode.types) !== null && _unionNode$types !== void 0 ? _unionNode$types : []
+    );
+  }).filter((typeNode) => typeNode.name.value === typeName);
+}
+function getDeprecatedDirectiveNode(definitionNode) {
+  var _definitionNode$direc;
+  return definitionNode === null || definitionNode === void 0 ? void 0 : (_definitionNode$direc = definitionNode.directives) === null || _definitionNode$direc === void 0 ? void 0 : _definitionNode$direc.find(
+    (node) => node.name.value === GraphQLDeprecatedDirective.name
+  );
+}
+function typeFromAST(schema, typeNode) {
+  switch (typeNode.kind) {
+    case Kind.LIST_TYPE: {
+      const innerType = typeFromAST(schema, typeNode.type);
+      return innerType && new GraphQLList2(innerType);
+    }
+    case Kind.NON_NULL_TYPE: {
+      const innerType = typeFromAST(schema, typeNode.type);
+      return innerType && new GraphQLNonNull2(innerType);
+    }
+    case Kind.NAMED_TYPE:
+      return schema.getType(typeNode.name.value);
+  }
+}
+class TypeInfo2 {
+  constructor(schema, initialType, getFieldDefFn) {
+    this._schema = schema;
+    this._typeStack = [];
+    this._parentTypeStack = [];
+    this._inputTypeStack = [];
+    this._fieldDefStack = [];
+    this._defaultValueStack = [];
+    this._directive = null;
+    this._argument = null;
+    this._enumValue = null;
+    this._getFieldDef = getFieldDefFn !== null && getFieldDefFn !== void 0 ? getFieldDefFn : getFieldDef$1;
+    if (initialType) {
+      if (isInputType(initialType)) {
+        this._inputTypeStack.push(initialType);
+      }
+      if (isCompositeType(initialType)) {
+        this._parentTypeStack.push(initialType);
+      }
+      if (isOutputType(initialType)) {
+        this._typeStack.push(initialType);
+      }
+    }
+  }
+  get [Symbol.toStringTag]() {
+    return "TypeInfo";
+  }
+  getType() {
+    if (this._typeStack.length > 0) {
+      return this._typeStack[this._typeStack.length - 1];
+    }
+  }
+  getParentType() {
+    if (this._parentTypeStack.length > 0) {
+      return this._parentTypeStack[this._parentTypeStack.length - 1];
+    }
+  }
+  getInputType() {
+    if (this._inputTypeStack.length > 0) {
+      return this._inputTypeStack[this._inputTypeStack.length - 1];
+    }
+  }
+  getParentInputType() {
+    if (this._inputTypeStack.length > 1) {
+      return this._inputTypeStack[this._inputTypeStack.length - 2];
+    }
+  }
+  getFieldDef() {
+    if (this._fieldDefStack.length > 0) {
+      return this._fieldDefStack[this._fieldDefStack.length - 1];
+    }
+  }
+  getDefaultValue() {
+    if (this._defaultValueStack.length > 0) {
+      return this._defaultValueStack[this._defaultValueStack.length - 1];
+    }
+  }
+  getDirective() {
+    return this._directive;
+  }
+  getArgument() {
+    return this._argument;
+  }
+  getEnumValue() {
+    return this._enumValue;
+  }
+  enter(node) {
+    const schema = this._schema;
+    switch (node.kind) {
+      case Kind.SELECTION_SET: {
+        const namedType = getNamedType(this.getType());
+        this._parentTypeStack.push(
+          isCompositeType(namedType) ? namedType : void 0
+        );
+        break;
+      }
+      case Kind.FIELD: {
+        const parentType = this.getParentType();
+        let fieldDef;
+        let fieldType;
+        if (parentType) {
+          fieldDef = this._getFieldDef(schema, parentType, node);
+          if (fieldDef) {
+            fieldType = fieldDef.type;
+          }
+        }
+        this._fieldDefStack.push(fieldDef);
+        this._typeStack.push(isOutputType(fieldType) ? fieldType : void 0);
+        break;
+      }
+      case Kind.DIRECTIVE:
+        this._directive = schema.getDirective(node.name.value);
+        break;
+      case Kind.OPERATION_DEFINITION: {
+        const rootType = schema.getRootType(node.operation);
+        this._typeStack.push(isObjectType(rootType) ? rootType : void 0);
+        break;
+      }
+      case Kind.INLINE_FRAGMENT:
+      case Kind.FRAGMENT_DEFINITION: {
+        const typeConditionAST = node.typeCondition;
+        const outputType = typeConditionAST ? typeFromAST(schema, typeConditionAST) : getNamedType(this.getType());
+        this._typeStack.push(isOutputType(outputType) ? outputType : void 0);
+        break;
+      }
+      case Kind.VARIABLE_DEFINITION: {
+        const inputType = typeFromAST(schema, node.type);
+        this._inputTypeStack.push(
+          isInputType(inputType) ? inputType : void 0
+        );
+        break;
+      }
+      case Kind.ARGUMENT: {
+        var _this$getDirective;
+        let argDef;
+        let argType;
+        const fieldOrDirective = (_this$getDirective = this.getDirective()) !== null && _this$getDirective !== void 0 ? _this$getDirective : this.getFieldDef();
+        if (fieldOrDirective) {
+          argDef = fieldOrDirective.args.find(
+            (arg) => arg.name === node.name.value
+          );
+          if (argDef) {
+            argType = argDef.type;
+          }
+        }
+        this._argument = argDef;
+        this._defaultValueStack.push(argDef ? argDef.defaultValue : void 0);
+        this._inputTypeStack.push(isInputType(argType) ? argType : void 0);
+        break;
+      }
+      case Kind.LIST: {
+        const listType = getNullableType(this.getInputType());
+        const itemType = isListType(listType) ? listType.ofType : listType;
+        this._defaultValueStack.push(void 0);
+        this._inputTypeStack.push(isInputType(itemType) ? itemType : void 0);
+        break;
+      }
+      case Kind.OBJECT_FIELD: {
+        const objectType = getNamedType(this.getInputType());
+        let inputFieldType;
+        let inputField;
+        if (isInputObjectType(objectType)) {
+          inputField = objectType.getFields()[node.name.value];
+          if (inputField) {
+            inputFieldType = inputField.type;
+          }
+        }
+        this._defaultValueStack.push(
+          inputField ? inputField.defaultValue : void 0
+        );
+        this._inputTypeStack.push(
+          isInputType(inputFieldType) ? inputFieldType : void 0
+        );
+        break;
+      }
+      case Kind.ENUM: {
+        const enumType = getNamedType(this.getInputType());
+        let enumValue;
+        if (isEnumType(enumType)) {
+          enumValue = enumType.getValue(node.value);
+        }
+        this._enumValue = enumValue;
+        break;
+      }
+    }
+  }
+  leave(node) {
+    switch (node.kind) {
+      case Kind.SELECTION_SET:
+        this._parentTypeStack.pop();
+        break;
+      case Kind.FIELD:
+        this._fieldDefStack.pop();
+        this._typeStack.pop();
+        break;
+      case Kind.DIRECTIVE:
+        this._directive = null;
+        break;
+      case Kind.OPERATION_DEFINITION:
+      case Kind.INLINE_FRAGMENT:
+      case Kind.FRAGMENT_DEFINITION:
+        this._typeStack.pop();
+        break;
+      case Kind.VARIABLE_DEFINITION:
+        this._inputTypeStack.pop();
+        break;
+      case Kind.ARGUMENT:
+        this._argument = null;
+        this._defaultValueStack.pop();
+        this._inputTypeStack.pop();
+        break;
+      case Kind.LIST:
+      case Kind.OBJECT_FIELD:
+        this._defaultValueStack.pop();
+        this._inputTypeStack.pop();
+        break;
+      case Kind.ENUM:
+        this._enumValue = null;
+        break;
+    }
+  }
+}
+function getFieldDef$1(schema, parentType, fieldNode) {
+  const name2 = fieldNode.name.value;
+  if (name2 === SchemaMetaFieldDef.name && schema.getQueryType() === parentType) {
+    return SchemaMetaFieldDef;
+  }
+  if (name2 === TypeMetaFieldDef.name && schema.getQueryType() === parentType) {
+    return TypeMetaFieldDef;
+  }
+  if (name2 === TypeNameMetaFieldDef.name && isCompositeType(parentType)) {
+    return TypeNameMetaFieldDef;
+  }
+  if (isObjectType(parentType) || isInterfaceType(parentType)) {
+    return parentType.getFields()[name2];
+  }
+}
+function visitWithTypeInfo(typeInfo, visitor) {
+  return {
+    enter(...args) {
+      const node = args[0];
+      typeInfo.enter(node);
+      const fn = getEnterLeaveForKind(visitor, node.kind).enter;
+      if (fn) {
+        const result = fn.apply(visitor, args);
+        if (result !== void 0) {
+          typeInfo.leave(node);
+          if (isNode(result)) {
+            typeInfo.enter(result);
+          }
+        }
+        return result;
+      }
+    },
+    leave(...args) {
+      const node = args[0];
+      const fn = getEnterLeaveForKind(visitor, node.kind).leave;
+      let result;
+      if (fn) {
+        result = fn.apply(visitor, args);
+      }
+      typeInfo.leave(node);
+      return result;
+    }
+  };
+}
+function isDefinitionNode(node) {
+  return isExecutableDefinitionNode(node) || isTypeSystemDefinitionNode(node) || isTypeSystemExtensionNode(node);
+}
+function isExecutableDefinitionNode(node) {
+  return node.kind === Kind.OPERATION_DEFINITION || node.kind === Kind.FRAGMENT_DEFINITION;
+}
+function isSelectionNode(node) {
+  return node.kind === Kind.FIELD || node.kind === Kind.FRAGMENT_SPREAD || node.kind === Kind.INLINE_FRAGMENT;
+}
+function isValueNode(node) {
+  return node.kind === Kind.VARIABLE || node.kind === Kind.INT || node.kind === Kind.FLOAT || node.kind === Kind.STRING || node.kind === Kind.BOOLEAN || node.kind === Kind.NULL || node.kind === Kind.ENUM || node.kind === Kind.LIST || node.kind === Kind.OBJECT;
+}
+function isConstValueNode(node) {
+  return isValueNode(node) && (node.kind === Kind.LIST ? node.values.some(isConstValueNode) : node.kind === Kind.OBJECT ? node.fields.some((field) => isConstValueNode(field.value)) : node.kind !== Kind.VARIABLE);
+}
+function isTypeNode(node) {
+  return node.kind === Kind.NAMED_TYPE || node.kind === Kind.LIST_TYPE || node.kind === Kind.NON_NULL_TYPE;
+}
+function isTypeSystemDefinitionNode(node) {
+  return node.kind === Kind.SCHEMA_DEFINITION || isTypeDefinitionNode(node) || node.kind === Kind.DIRECTIVE_DEFINITION;
+}
+function isTypeDefinitionNode(node) {
+  return node.kind === Kind.SCALAR_TYPE_DEFINITION || node.kind === Kind.OBJECT_TYPE_DEFINITION || node.kind === Kind.INTERFACE_TYPE_DEFINITION || node.kind === Kind.UNION_TYPE_DEFINITION || node.kind === Kind.ENUM_TYPE_DEFINITION || node.kind === Kind.INPUT_OBJECT_TYPE_DEFINITION;
+}
+function isTypeSystemExtensionNode(node) {
+  return node.kind === Kind.SCHEMA_EXTENSION || isTypeExtensionNode(node);
+}
+function isTypeExtensionNode(node) {
+  return node.kind === Kind.SCALAR_TYPE_EXTENSION || node.kind === Kind.OBJECT_TYPE_EXTENSION || node.kind === Kind.INTERFACE_TYPE_EXTENSION || node.kind === Kind.UNION_TYPE_EXTENSION || node.kind === Kind.ENUM_TYPE_EXTENSION || node.kind === Kind.INPUT_OBJECT_TYPE_EXTENSION;
+}
+function ExecutableDefinitionsRule(context) {
+  return {
+    Document(node) {
+      for (const definition of node.definitions) {
+        if (!isExecutableDefinitionNode(definition)) {
+          const defName = definition.kind === Kind.SCHEMA_DEFINITION || definition.kind === Kind.SCHEMA_EXTENSION ? "schema" : '"' + definition.name.value + '"';
+          context.reportError(
+            new GraphQLError2(`The ${defName} definition is not executable.`, {
+              nodes: definition
+            })
+          );
+        }
+      }
+      return false;
+    }
+  };
+}
+function FieldsOnCorrectTypeRule(context) {
+  return {
+    Field(node) {
+      const type2 = context.getParentType();
+      if (type2) {
+        const fieldDef = context.getFieldDef();
+        if (!fieldDef) {
+          const schema = context.getSchema();
+          const fieldName = node.name.value;
+          let suggestion = didYouMean(
+            "to use an inline fragment on",
+            getSuggestedTypeNames(schema, type2, fieldName)
+          );
+          if (suggestion === "") {
+            suggestion = didYouMean(getSuggestedFieldNames(type2, fieldName));
+          }
+          context.reportError(
+            new GraphQLError2(
+              `Cannot query field "${fieldName}" on type "${type2.name}".` + suggestion,
+              {
+                nodes: node
+              }
+            )
+          );
+        }
+      }
+    }
+  };
+}
+function getSuggestedTypeNames(schema, type2, fieldName) {
+  if (!isAbstractType(type2)) {
+    return [];
+  }
+  const suggestedTypes = /* @__PURE__ */ new Set();
+  const usageCount = /* @__PURE__ */ Object.create(null);
+  for (const possibleType of schema.getPossibleTypes(type2)) {
+    if (!possibleType.getFields()[fieldName]) {
+      continue;
+    }
+    suggestedTypes.add(possibleType);
+    usageCount[possibleType.name] = 1;
+    for (const possibleInterface of possibleType.getInterfaces()) {
+      var _usageCount$possibleI;
+      if (!possibleInterface.getFields()[fieldName]) {
+        continue;
+      }
+      suggestedTypes.add(possibleInterface);
+      usageCount[possibleInterface.name] = ((_usageCount$possibleI = usageCount[possibleInterface.name]) !== null && _usageCount$possibleI !== void 0 ? _usageCount$possibleI : 0) + 1;
+    }
+  }
+  return [...suggestedTypes].sort((typeA, typeB) => {
+    const usageCountDiff = usageCount[typeB.name] - usageCount[typeA.name];
+    if (usageCountDiff !== 0) {
+      return usageCountDiff;
+    }
+    if (isInterfaceType(typeA) && schema.isSubType(typeA, typeB)) {
+      return -1;
+    }
+    if (isInterfaceType(typeB) && schema.isSubType(typeB, typeA)) {
+      return 1;
+    }
+    return naturalCompare(typeA.name, typeB.name);
+  }).map((x2) => x2.name);
+}
+function getSuggestedFieldNames(type2, fieldName) {
+  if (isObjectType(type2) || isInterfaceType(type2)) {
+    const possibleFieldNames = Object.keys(type2.getFields());
+    return suggestionList(fieldName, possibleFieldNames);
+  }
+  return [];
+}
+function FragmentsOnCompositeTypesRule(context) {
+  return {
+    InlineFragment(node) {
+      const typeCondition = node.typeCondition;
+      if (typeCondition) {
+        const type2 = typeFromAST(context.getSchema(), typeCondition);
+        if (type2 && !isCompositeType(type2)) {
+          const typeStr = print(typeCondition);
+          context.reportError(
+            new GraphQLError2(
+              `Fragment cannot condition on non composite type "${typeStr}".`,
+              {
+                nodes: typeCondition
+              }
+            )
+          );
+        }
+      }
+    },
+    FragmentDefinition(node) {
+      const type2 = typeFromAST(context.getSchema(), node.typeCondition);
+      if (type2 && !isCompositeType(type2)) {
+        const typeStr = print(node.typeCondition);
+        context.reportError(
+          new GraphQLError2(
+            `Fragment "${node.name.value}" cannot condition on non composite type "${typeStr}".`,
+            {
+              nodes: node.typeCondition
+            }
+          )
+        );
+      }
+    }
+  };
+}
+function KnownArgumentNamesRule(context) {
+  return {
+    // eslint-disable-next-line new-cap
+    ...KnownArgumentNamesOnDirectivesRule(context),
+    Argument(argNode) {
+      const argDef = context.getArgument();
+      const fieldDef = context.getFieldDef();
+      const parentType = context.getParentType();
+      if (!argDef && fieldDef && parentType) {
+        const argName = argNode.name.value;
+        const knownArgsNames = fieldDef.args.map((arg) => arg.name);
+        const suggestions = suggestionList(argName, knownArgsNames);
+        context.reportError(
+          new GraphQLError2(
+            `Unknown argument "${argName}" on field "${parentType.name}.${fieldDef.name}".` + didYouMean(suggestions),
+            {
+              nodes: argNode
+            }
+          )
+        );
+      }
+    }
+  };
+}
+function KnownArgumentNamesOnDirectivesRule(context) {
+  const directiveArgs = /* @__PURE__ */ Object.create(null);
+  const schema = context.getSchema();
+  const definedDirectives = schema ? schema.getDirectives() : specifiedDirectives;
+  for (const directive of definedDirectives) {
+    directiveArgs[directive.name] = directive.args.map((arg) => arg.name);
+  }
+  const astDefinitions = context.getDocument().definitions;
+  for (const def of astDefinitions) {
+    if (def.kind === Kind.DIRECTIVE_DEFINITION) {
+      var _def$arguments;
+      const argsNodes = (_def$arguments = def.arguments) !== null && _def$arguments !== void 0 ? _def$arguments : [];
+      directiveArgs[def.name.value] = argsNodes.map((arg) => arg.name.value);
+    }
+  }
+  return {
+    Directive(directiveNode) {
+      const directiveName = directiveNode.name.value;
+      const knownArgs = directiveArgs[directiveName];
+      if (directiveNode.arguments && knownArgs) {
+        for (const argNode of directiveNode.arguments) {
+          const argName = argNode.name.value;
+          if (!knownArgs.includes(argName)) {
+            const suggestions = suggestionList(argName, knownArgs);
+            context.reportError(
+              new GraphQLError2(
+                `Unknown argument "${argName}" on directive "@${directiveName}".` + didYouMean(suggestions),
+                {
+                  nodes: argNode
+                }
+              )
+            );
+          }
+        }
+      }
+      return false;
+    }
+  };
+}
+function KnownDirectivesRule(context) {
+  const locationsMap = /* @__PURE__ */ Object.create(null);
+  const schema = context.getSchema();
+  const definedDirectives = schema ? schema.getDirectives() : specifiedDirectives;
+  for (const directive of definedDirectives) {
+    locationsMap[directive.name] = directive.locations;
+  }
+  const astDefinitions = context.getDocument().definitions;
+  for (const def of astDefinitions) {
+    if (def.kind === Kind.DIRECTIVE_DEFINITION) {
+      locationsMap[def.name.value] = def.locations.map((name2) => name2.value);
+    }
+  }
+  return {
+    Directive(node, _key, _parent, _path, ancestors) {
+      const name2 = node.name.value;
+      const locations = locationsMap[name2];
+      if (!locations) {
+        context.reportError(
+          new GraphQLError2(`Unknown directive "@${name2}".`, {
+            nodes: node
+          })
+        );
+        return;
+      }
+      const candidateLocation = getDirectiveLocationForASTPath(ancestors);
+      if (candidateLocation && !locations.includes(candidateLocation)) {
+        context.reportError(
+          new GraphQLError2(
+            `Directive "@${name2}" may not be used on ${candidateLocation}.`,
+            {
+              nodes: node
+            }
+          )
+        );
+      }
+    }
+  };
+}
+function getDirectiveLocationForASTPath(ancestors) {
+  const appliedTo = ancestors[ancestors.length - 1];
+  "kind" in appliedTo || invariant(false);
+  switch (appliedTo.kind) {
+    case Kind.OPERATION_DEFINITION:
+      return getDirectiveLocationForOperation(appliedTo.operation);
+    case Kind.FIELD:
+      return DirectiveLocation.FIELD;
+    case Kind.FRAGMENT_SPREAD:
+      return DirectiveLocation.FRAGMENT_SPREAD;
+    case Kind.INLINE_FRAGMENT:
+      return DirectiveLocation.INLINE_FRAGMENT;
+    case Kind.FRAGMENT_DEFINITION:
+      return DirectiveLocation.FRAGMENT_DEFINITION;
+    case Kind.VARIABLE_DEFINITION:
+      return DirectiveLocation.VARIABLE_DEFINITION;
+    case Kind.SCHEMA_DEFINITION:
+    case Kind.SCHEMA_EXTENSION:
+      return DirectiveLocation.SCHEMA;
+    case Kind.SCALAR_TYPE_DEFINITION:
+    case Kind.SCALAR_TYPE_EXTENSION:
+      return DirectiveLocation.SCALAR;
+    case Kind.OBJECT_TYPE_DEFINITION:
+    case Kind.OBJECT_TYPE_EXTENSION:
+      return DirectiveLocation.OBJECT;
+    case Kind.FIELD_DEFINITION:
+      return DirectiveLocation.FIELD_DEFINITION;
+    case Kind.INTERFACE_TYPE_DEFINITION:
+    case Kind.INTERFACE_TYPE_EXTENSION:
+      return DirectiveLocation.INTERFACE;
+    case Kind.UNION_TYPE_DEFINITION:
+    case Kind.UNION_TYPE_EXTENSION:
+      return DirectiveLocation.UNION;
+    case Kind.ENUM_TYPE_DEFINITION:
+    case Kind.ENUM_TYPE_EXTENSION:
+      return DirectiveLocation.ENUM;
+    case Kind.ENUM_VALUE_DEFINITION:
+      return DirectiveLocation.ENUM_VALUE;
+    case Kind.INPUT_OBJECT_TYPE_DEFINITION:
+    case Kind.INPUT_OBJECT_TYPE_EXTENSION:
+      return DirectiveLocation.INPUT_OBJECT;
+    case Kind.INPUT_VALUE_DEFINITION: {
+      const parentNode = ancestors[ancestors.length - 3];
+      "kind" in parentNode || invariant(false);
+      return parentNode.kind === Kind.INPUT_OBJECT_TYPE_DEFINITION ? DirectiveLocation.INPUT_FIELD_DEFINITION : DirectiveLocation.ARGUMENT_DEFINITION;
+    }
+    // Not reachable, all possible types have been considered.
+    /* c8 ignore next */
+    default:
+      invariant(false, "Unexpected kind: " + inspect(appliedTo.kind));
+  }
+}
+function getDirectiveLocationForOperation(operation) {
+  switch (operation) {
+    case OperationTypeNode.QUERY:
+      return DirectiveLocation.QUERY;
+    case OperationTypeNode.MUTATION:
+      return DirectiveLocation.MUTATION;
+    case OperationTypeNode.SUBSCRIPTION:
+      return DirectiveLocation.SUBSCRIPTION;
+  }
+}
+function KnownFragmentNamesRule(context) {
+  return {
+    FragmentSpread(node) {
+      const fragmentName = node.name.value;
+      const fragment = context.getFragment(fragmentName);
+      if (!fragment) {
+        context.reportError(
+          new GraphQLError2(`Unknown fragment "${fragmentName}".`, {
+            nodes: node.name
+          })
+        );
+      }
+    }
+  };
+}
+function KnownTypeNamesRule(context) {
+  const schema = context.getSchema();
+  const existingTypesMap = schema ? schema.getTypeMap() : /* @__PURE__ */ Object.create(null);
+  const definedTypes = /* @__PURE__ */ Object.create(null);
+  for (const def of context.getDocument().definitions) {
+    if (isTypeDefinitionNode(def)) {
+      definedTypes[def.name.value] = true;
+    }
+  }
+  const typeNames = [
+    ...Object.keys(existingTypesMap),
+    ...Object.keys(definedTypes)
+  ];
+  return {
+    NamedType(node, _1, parent, _2, ancestors) {
+      const typeName = node.name.value;
+      if (!existingTypesMap[typeName] && !definedTypes[typeName]) {
+        var _ancestors$;
+        const definitionNode = (_ancestors$ = ancestors[2]) !== null && _ancestors$ !== void 0 ? _ancestors$ : parent;
+        const isSDL = definitionNode != null && isSDLNode(definitionNode);
+        if (isSDL && standardTypeNames.includes(typeName)) {
+          return;
+        }
+        const suggestedTypes = suggestionList(
+          typeName,
+          isSDL ? standardTypeNames.concat(typeNames) : typeNames
+        );
+        context.reportError(
+          new GraphQLError2(
+            `Unknown type "${typeName}".` + didYouMean(suggestedTypes),
+            {
+              nodes: node
+            }
+          )
+        );
+      }
+    }
+  };
+}
+const standardTypeNames = [...specifiedScalarTypes, ...introspectionTypes].map(
+  (type2) => type2.name
+);
+function isSDLNode(value) {
+  return "kind" in value && (isTypeSystemDefinitionNode(value) || isTypeSystemExtensionNode(value));
+}
+function LoneAnonymousOperationRule(context) {
+  let operationCount = 0;
+  return {
+    Document(node) {
+      operationCount = node.definitions.filter(
+        (definition) => definition.kind === Kind.OPERATION_DEFINITION
+      ).length;
+    },
+    OperationDefinition(node) {
+      if (!node.name && operationCount > 1) {
+        context.reportError(
+          new GraphQLError2(
+            "This anonymous operation must be the only defined operation.",
+            {
+              nodes: node
+            }
+          )
+        );
+      }
+    }
+  };
+}
+function LoneSchemaDefinitionRule(context) {
+  var _ref, _ref2, _oldSchema$astNode;
+  const oldSchema = context.getSchema();
+  const alreadyDefined = (_ref = (_ref2 = (_oldSchema$astNode = oldSchema === null || oldSchema === void 0 ? void 0 : oldSchema.astNode) !== null && _oldSchema$astNode !== void 0 ? _oldSchema$astNode : oldSchema === null || oldSchema === void 0 ? void 0 : oldSchema.getQueryType()) !== null && _ref2 !== void 0 ? _ref2 : oldSchema === null || oldSchema === void 0 ? void 0 : oldSchema.getMutationType()) !== null && _ref !== void 0 ? _ref : oldSchema === null || oldSchema === void 0 ? void 0 : oldSchema.getSubscriptionType();
+  let schemaDefinitionsCount = 0;
+  return {
+    SchemaDefinition(node) {
+      if (alreadyDefined) {
+        context.reportError(
+          new GraphQLError2(
+            "Cannot define a new schema within a schema extension.",
+            {
+              nodes: node
+            }
+          )
+        );
+        return;
+      }
+      if (schemaDefinitionsCount > 0) {
+        context.reportError(
+          new GraphQLError2("Must provide only one schema definition.", {
+            nodes: node
+          })
+        );
+      }
+      ++schemaDefinitionsCount;
+    }
+  };
+}
+const MAX_LISTS_DEPTH = 3;
+function MaxIntrospectionDepthRule(context) {
+  function checkDepth(node, visitedFragments = /* @__PURE__ */ Object.create(null), depth = 0) {
+    if (node.kind === Kind.FRAGMENT_SPREAD) {
+      const fragmentName = node.name.value;
+      if (visitedFragments[fragmentName] === true) {
+        return false;
+      }
+      const fragment = context.getFragment(fragmentName);
+      if (!fragment) {
+        return false;
+      }
+      try {
+        visitedFragments[fragmentName] = true;
+        return checkDepth(fragment, visitedFragments, depth);
+      } finally {
+        visitedFragments[fragmentName] = void 0;
+      }
+    }
+    if (node.kind === Kind.FIELD && // check all introspection lists
+    (node.name.value === "fields" || node.name.value === "interfaces" || node.name.value === "possibleTypes" || node.name.value === "inputFields")) {
+      depth++;
+      if (depth >= MAX_LISTS_DEPTH) {
+        return true;
+      }
+    }
+    if ("selectionSet" in node && node.selectionSet) {
+      for (const child of node.selectionSet.selections) {
+        if (checkDepth(child, visitedFragments, depth)) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+  return {
+    Field(node) {
+      if (node.name.value === "__schema" || node.name.value === "__type") {
+        if (checkDepth(node)) {
+          context.reportError(
+            new GraphQLError2("Maximum introspection depth exceeded", {
+              nodes: [node]
+            })
+          );
+          return false;
+        }
+      }
+    }
+  };
+}
+function NoFragmentCyclesRule(context) {
+  const visitedFrags = /* @__PURE__ */ Object.create(null);
+  const spreadPath = [];
+  const spreadPathIndexByName = /* @__PURE__ */ Object.create(null);
+  return {
+    OperationDefinition: () => false,
+    FragmentDefinition(node) {
+      detectCycleRecursive(node);
+      return false;
+    }
+  };
+  function detectCycleRecursive(fragment) {
+    if (visitedFrags[fragment.name.value]) {
+      return;
+    }
+    const fragmentName = fragment.name.value;
+    visitedFrags[fragmentName] = true;
+    const spreadNodes = context.getFragmentSpreads(fragment.selectionSet);
+    if (spreadNodes.length === 0) {
+      return;
+    }
+    spreadPathIndexByName[fragmentName] = spreadPath.length;
+    for (const spreadNode of spreadNodes) {
+      const spreadName = spreadNode.name.value;
+      const cycleIndex = spreadPathIndexByName[spreadName];
+      spreadPath.push(spreadNode);
+      if (cycleIndex === void 0) {
+        const spreadFragment = context.getFragment(spreadName);
+        if (spreadFragment) {
+          detectCycleRecursive(spreadFragment);
+        }
+      } else {
+        const cyclePath = spreadPath.slice(cycleIndex);
+        const viaPath = cyclePath.slice(0, -1).map((s2) => '"' + s2.name.value + '"').join(", ");
+        context.reportError(
+          new GraphQLError2(
+            `Cannot spread fragment "${spreadName}" within itself` + (viaPath !== "" ? ` via ${viaPath}.` : "."),
+            {
+              nodes: cyclePath
+            }
+          )
+        );
+      }
+      spreadPath.pop();
+    }
+    spreadPathIndexByName[fragmentName] = void 0;
+  }
+}
+function NoUndefinedVariablesRule(context) {
+  let variableNameDefined = /* @__PURE__ */ Object.create(null);
+  return {
+    OperationDefinition: {
+      enter() {
+        variableNameDefined = /* @__PURE__ */ Object.create(null);
+      },
+      leave(operation) {
+        const usages = context.getRecursiveVariableUsages(operation);
+        for (const { node } of usages) {
+          const varName = node.name.value;
+          if (variableNameDefined[varName] !== true) {
+            context.reportError(
+              new GraphQLError2(
+                operation.name ? `Variable "$${varName}" is not defined by operation "${operation.name.value}".` : `Variable "$${varName}" is not defined.`,
+                {
+                  nodes: [node, operation]
+                }
+              )
+            );
+          }
+        }
+      }
+    },
+    VariableDefinition(node) {
+      variableNameDefined[node.variable.name.value] = true;
+    }
+  };
+}
+function NoUnusedFragmentsRule(context) {
+  const operationDefs = [];
+  const fragmentDefs = [];
+  return {
+    OperationDefinition(node) {
+      operationDefs.push(node);
+      return false;
+    },
+    FragmentDefinition(node) {
+      fragmentDefs.push(node);
+      return false;
+    },
+    Document: {
+      leave() {
+        const fragmentNameUsed = /* @__PURE__ */ Object.create(null);
+        for (const operation of operationDefs) {
+          for (const fragment of context.getRecursivelyReferencedFragments(
+            operation
+          )) {
+            fragmentNameUsed[fragment.name.value] = true;
+          }
+        }
+        for (const fragmentDef of fragmentDefs) {
+          const fragName = fragmentDef.name.value;
+          if (fragmentNameUsed[fragName] !== true) {
+            context.reportError(
+              new GraphQLError2(`Fragment "${fragName}" is never used.`, {
+                nodes: fragmentDef
+              })
+            );
+          }
+        }
+      }
+    }
+  };
+}
+function NoUnusedVariablesRule(context) {
+  let variableDefs = [];
+  return {
+    OperationDefinition: {
+      enter() {
+        variableDefs = [];
+      },
+      leave(operation) {
+        const variableNameUsed = /* @__PURE__ */ Object.create(null);
+        const usages = context.getRecursiveVariableUsages(operation);
+        for (const { node } of usages) {
+          variableNameUsed[node.name.value] = true;
+        }
+        for (const variableDef of variableDefs) {
+          const variableName = variableDef.variable.name.value;
+          if (variableNameUsed[variableName] !== true) {
+            context.reportError(
+              new GraphQLError2(
+                operation.name ? `Variable "$${variableName}" is never used in operation "${operation.name.value}".` : `Variable "$${variableName}" is never used.`,
+                {
+                  nodes: variableDef
+                }
+              )
+            );
+          }
+        }
+      }
+    },
+    VariableDefinition(def) {
+      variableDefs.push(def);
+    }
+  };
+}
+function sortValueNode(valueNode) {
+  switch (valueNode.kind) {
+    case Kind.OBJECT:
+      return { ...valueNode, fields: sortFields(valueNode.fields) };
+    case Kind.LIST:
+      return { ...valueNode, values: valueNode.values.map(sortValueNode) };
+    case Kind.INT:
+    case Kind.FLOAT:
+    case Kind.STRING:
+    case Kind.BOOLEAN:
+    case Kind.NULL:
+    case Kind.ENUM:
+    case Kind.VARIABLE:
+      return valueNode;
+  }
+}
+function sortFields(fields) {
+  return fields.map((fieldNode) => ({
+    ...fieldNode,
+    value: sortValueNode(fieldNode.value)
+  })).sort(
+    (fieldA, fieldB) => naturalCompare(fieldA.name.value, fieldB.name.value)
+  );
+}
+function reasonMessage(reason) {
+  if (Array.isArray(reason)) {
+    return reason.map(
+      ([responseName, subReason]) => `subfields "${responseName}" conflict because ` + reasonMessage(subReason)
+    ).join(" and ");
+  }
+  return reason;
+}
+function OverlappingFieldsCanBeMergedRule(context) {
+  const comparedFieldsAndFragmentPairs = new OrderedPairSet2();
+  const comparedFragmentPairs = new PairSet2();
+  const cachedFieldsAndFragmentNames = /* @__PURE__ */ new Map();
+  return {
+    SelectionSet(selectionSet) {
+      const conflicts = findConflictsWithinSelectionSet(
+        context,
+        cachedFieldsAndFragmentNames,
+        comparedFieldsAndFragmentPairs,
+        comparedFragmentPairs,
+        context.getParentType(),
+        selectionSet
+      );
+      for (const [[responseName, reason], fields1, fields2] of conflicts) {
+        const reasonMsg = reasonMessage(reason);
+        context.reportError(
+          new GraphQLError2(
+            `Fields "${responseName}" conflict because ${reasonMsg}. Use different aliases on the fields to fetch both if this was intentional.`,
+            {
+              nodes: fields1.concat(fields2)
+            }
+          )
+        );
+      }
+    }
+  };
+}
+function findConflictsWithinSelectionSet(context, cachedFieldsAndFragmentNames, comparedFieldsAndFragmentPairs, comparedFragmentPairs, parentType, selectionSet) {
+  const conflicts = [];
+  const [fieldMap, fragmentNames] = getFieldsAndFragmentNames(
+    context,
+    cachedFieldsAndFragmentNames,
+    parentType,
+    selectionSet
+  );
+  collectConflictsWithin(
+    context,
+    conflicts,
+    cachedFieldsAndFragmentNames,
+    comparedFieldsAndFragmentPairs,
+    comparedFragmentPairs,
+    fieldMap
+  );
+  if (fragmentNames.length !== 0) {
+    for (let i2 = 0; i2 < fragmentNames.length; i2++) {
+      collectConflictsBetweenFieldsAndFragment(
+        context,
+        conflicts,
+        cachedFieldsAndFragmentNames,
+        comparedFieldsAndFragmentPairs,
+        comparedFragmentPairs,
+        false,
+        fieldMap,
+        fragmentNames[i2]
+      );
+      for (let j2 = i2 + 1; j2 < fragmentNames.length; j2++) {
+        collectConflictsBetweenFragments(
+          context,
+          conflicts,
+          cachedFieldsAndFragmentNames,
+          comparedFieldsAndFragmentPairs,
+          comparedFragmentPairs,
+          false,
+          fragmentNames[i2],
+          fragmentNames[j2]
+        );
+      }
+    }
+  }
+  return conflicts;
+}
+function collectConflictsBetweenFieldsAndFragment(context, conflicts, cachedFieldsAndFragmentNames, comparedFieldsAndFragmentPairs, comparedFragmentPairs, areMutuallyExclusive, fieldMap, fragmentName) {
+  if (comparedFieldsAndFragmentPairs.has(
+    fieldMap,
+    fragmentName,
+    areMutuallyExclusive
+  )) {
+    return;
+  }
+  comparedFieldsAndFragmentPairs.add(
+    fieldMap,
+    fragmentName,
+    areMutuallyExclusive
+  );
+  const fragment = context.getFragment(fragmentName);
+  if (!fragment) {
+    return;
+  }
+  const [fieldMap2, referencedFragmentNames] = getReferencedFieldsAndFragmentNames(
+    context,
+    cachedFieldsAndFragmentNames,
+    fragment
+  );
+  if (fieldMap === fieldMap2) {
+    return;
+  }
+  collectConflictsBetween(
+    context,
+    conflicts,
+    cachedFieldsAndFragmentNames,
+    comparedFieldsAndFragmentPairs,
+    comparedFragmentPairs,
+    areMutuallyExclusive,
+    fieldMap,
+    fieldMap2
+  );
+  for (const referencedFragmentName of referencedFragmentNames) {
+    collectConflictsBetweenFieldsAndFragment(
+      context,
+      conflicts,
+      cachedFieldsAndFragmentNames,
+      comparedFieldsAndFragmentPairs,
+      comparedFragmentPairs,
+      areMutuallyExclusive,
+      fieldMap,
+      referencedFragmentName
+    );
+  }
+}
+function collectConflictsBetweenFragments(context, conflicts, cachedFieldsAndFragmentNames, comparedFieldsAndFragmentPairs, comparedFragmentPairs, areMutuallyExclusive, fragmentName1, fragmentName2) {
+  if (fragmentName1 === fragmentName2) {
+    return;
+  }
+  if (comparedFragmentPairs.has(
+    fragmentName1,
+    fragmentName2,
+    areMutuallyExclusive
+  )) {
+    return;
+  }
+  comparedFragmentPairs.add(fragmentName1, fragmentName2, areMutuallyExclusive);
+  const fragment1 = context.getFragment(fragmentName1);
+  const fragment2 = context.getFragment(fragmentName2);
+  if (!fragment1 || !fragment2) {
+    return;
+  }
+  const [fieldMap1, referencedFragmentNames1] = getReferencedFieldsAndFragmentNames(
+    context,
+    cachedFieldsAndFragmentNames,
+    fragment1
+  );
+  const [fieldMap2, referencedFragmentNames2] = getReferencedFieldsAndFragmentNames(
+    context,
+    cachedFieldsAndFragmentNames,
+    fragment2
+  );
+  collectConflictsBetween(
+    context,
+    conflicts,
+    cachedFieldsAndFragmentNames,
+    comparedFieldsAndFragmentPairs,
+    comparedFragmentPairs,
+    areMutuallyExclusive,
+    fieldMap1,
+    fieldMap2
+  );
+  for (const referencedFragmentName2 of referencedFragmentNames2) {
+    collectConflictsBetweenFragments(
+      context,
+      conflicts,
+      cachedFieldsAndFragmentNames,
+      comparedFieldsAndFragmentPairs,
+      comparedFragmentPairs,
+      areMutuallyExclusive,
+      fragmentName1,
+      referencedFragmentName2
+    );
+  }
+  for (const referencedFragmentName1 of referencedFragmentNames1) {
+    collectConflictsBetweenFragments(
+      context,
+      conflicts,
+      cachedFieldsAndFragmentNames,
+      comparedFieldsAndFragmentPairs,
+      comparedFragmentPairs,
+      areMutuallyExclusive,
+      referencedFragmentName1,
+      fragmentName2
+    );
+  }
+}
+function findConflictsBetweenSubSelectionSets(context, cachedFieldsAndFragmentNames, comparedFieldsAndFragmentPairs, comparedFragmentPairs, areMutuallyExclusive, parentType1, selectionSet1, parentType2, selectionSet2) {
+  const conflicts = [];
+  const [fieldMap1, fragmentNames1] = getFieldsAndFragmentNames(
+    context,
+    cachedFieldsAndFragmentNames,
+    parentType1,
+    selectionSet1
+  );
+  const [fieldMap2, fragmentNames2] = getFieldsAndFragmentNames(
+    context,
+    cachedFieldsAndFragmentNames,
+    parentType2,
+    selectionSet2
+  );
+  collectConflictsBetween(
+    context,
+    conflicts,
+    cachedFieldsAndFragmentNames,
+    comparedFieldsAndFragmentPairs,
+    comparedFragmentPairs,
+    areMutuallyExclusive,
+    fieldMap1,
+    fieldMap2
+  );
+  for (const fragmentName2 of fragmentNames2) {
+    collectConflictsBetweenFieldsAndFragment(
+      context,
+      conflicts,
+      cachedFieldsAndFragmentNames,
+      comparedFieldsAndFragmentPairs,
+      comparedFragmentPairs,
+      areMutuallyExclusive,
+      fieldMap1,
+      fragmentName2
+    );
+  }
+  for (const fragmentName1 of fragmentNames1) {
+    collectConflictsBetweenFieldsAndFragment(
+      context,
+      conflicts,
+      cachedFieldsAndFragmentNames,
+      comparedFieldsAndFragmentPairs,
+      comparedFragmentPairs,
+      areMutuallyExclusive,
+      fieldMap2,
+      fragmentName1
+    );
+  }
+  for (const fragmentName1 of fragmentNames1) {
+    for (const fragmentName2 of fragmentNames2) {
+      collectConflictsBetweenFragments(
+        context,
+        conflicts,
+        cachedFieldsAndFragmentNames,
+        comparedFieldsAndFragmentPairs,
+        comparedFragmentPairs,
+        areMutuallyExclusive,
+        fragmentName1,
+        fragmentName2
+      );
+    }
+  }
+  return conflicts;
+}
+function collectConflictsWithin(context, conflicts, cachedFieldsAndFragmentNames, comparedFieldsAndFragmentPairs, comparedFragmentPairs, fieldMap) {
+  for (const [responseName, fields] of Object.entries(fieldMap)) {
+    if (fields.length > 1) {
+      for (let i2 = 0; i2 < fields.length; i2++) {
+        for (let j2 = i2 + 1; j2 < fields.length; j2++) {
+          const conflict = findConflict(
+            context,
+            cachedFieldsAndFragmentNames,
+            comparedFieldsAndFragmentPairs,
+            comparedFragmentPairs,
+            false,
+            // within one collection is never mutually exclusive
+            responseName,
+            fields[i2],
+            fields[j2]
+          );
+          if (conflict) {
+            conflicts.push(conflict);
+          }
+        }
+      }
+    }
+  }
+}
+function collectConflictsBetween(context, conflicts, cachedFieldsAndFragmentNames, comparedFieldsAndFragmentPairs, comparedFragmentPairs, parentFieldsAreMutuallyExclusive, fieldMap1, fieldMap2) {
+  for (const [responseName, fields1] of Object.entries(fieldMap1)) {
+    const fields2 = fieldMap2[responseName];
+    if (fields2) {
+      for (const field1 of fields1) {
+        for (const field2 of fields2) {
+          const conflict = findConflict(
+            context,
+            cachedFieldsAndFragmentNames,
+            comparedFieldsAndFragmentPairs,
+            comparedFragmentPairs,
+            parentFieldsAreMutuallyExclusive,
+            responseName,
+            field1,
+            field2
+          );
+          if (conflict) {
+            conflicts.push(conflict);
+          }
+        }
+      }
+    }
+  }
+}
+function findConflict(context, cachedFieldsAndFragmentNames, comparedFieldsAndFragmentPairs, comparedFragmentPairs, parentFieldsAreMutuallyExclusive, responseName, field1, field2) {
+  const [parentType1, node1, def1] = field1;
+  const [parentType2, node2, def2] = field2;
+  const areMutuallyExclusive = parentFieldsAreMutuallyExclusive || parentType1 !== parentType2 && isObjectType(parentType1) && isObjectType(parentType2);
+  if (!areMutuallyExclusive) {
+    const name1 = node1.name.value;
+    const name2 = node2.name.value;
+    if (name1 !== name2) {
+      return [
+        [responseName, `"${name1}" and "${name2}" are different fields`],
+        [node1],
+        [node2]
+      ];
+    }
+    if (!sameArguments(node1, node2)) {
+      return [
+        [responseName, "they have differing arguments"],
+        [node1],
+        [node2]
+      ];
+    }
+  }
+  const type1 = def1 === null || def1 === void 0 ? void 0 : def1.type;
+  const type2 = def2 === null || def2 === void 0 ? void 0 : def2.type;
+  if (type1 && type2 && doTypesConflict(type1, type2)) {
+    return [
+      [
+        responseName,
+        `they return conflicting types "${inspect(type1)}" and "${inspect(
+          type2
+        )}"`
+      ],
+      [node1],
+      [node2]
+    ];
+  }
+  const selectionSet1 = node1.selectionSet;
+  const selectionSet2 = node2.selectionSet;
+  if (selectionSet1 && selectionSet2) {
+    const conflicts = findConflictsBetweenSubSelectionSets(
+      context,
+      cachedFieldsAndFragmentNames,
+      comparedFieldsAndFragmentPairs,
+      comparedFragmentPairs,
+      areMutuallyExclusive,
+      getNamedType(type1),
+      selectionSet1,
+      getNamedType(type2),
+      selectionSet2
+    );
+    return subfieldConflicts(conflicts, responseName, node1, node2);
+  }
+}
+function sameArguments(node1, node2) {
+  const args1 = node1.arguments;
+  const args2 = node2.arguments;
+  if (args1 === void 0 || args1.length === 0) {
+    return args2 === void 0 || args2.length === 0;
+  }
+  if (args2 === void 0 || args2.length === 0) {
+    return false;
+  }
+  if (args1.length !== args2.length) {
+    return false;
+  }
+  const values2 = new Map(args2.map(({ name: name2, value }) => [name2.value, value]));
+  return args1.every((arg1) => {
+    const value1 = arg1.value;
+    const value2 = values2.get(arg1.name.value);
+    if (value2 === void 0) {
+      return false;
+    }
+    return stringifyValue$1(value1) === stringifyValue$1(value2);
+  });
+}
+function stringifyValue$1(value) {
+  return print(sortValueNode(value));
+}
+function doTypesConflict(type1, type2) {
+  if (isListType(type1)) {
+    return isListType(type2) ? doTypesConflict(type1.ofType, type2.ofType) : true;
+  }
+  if (isListType(type2)) {
+    return true;
+  }
+  if (isNonNullType(type1)) {
+    return isNonNullType(type2) ? doTypesConflict(type1.ofType, type2.ofType) : true;
+  }
+  if (isNonNullType(type2)) {
+    return true;
+  }
+  if (isLeafType(type1) || isLeafType(type2)) {
+    return type1 !== type2;
+  }
+  return false;
+}
+function getFieldsAndFragmentNames(context, cachedFieldsAndFragmentNames, parentType, selectionSet) {
+  const cached = cachedFieldsAndFragmentNames.get(selectionSet);
+  if (cached) {
+    return cached;
+  }
+  const nodeAndDefs = /* @__PURE__ */ Object.create(null);
+  const fragmentNames = /* @__PURE__ */ Object.create(null);
+  _collectFieldsAndFragmentNames(
+    context,
+    parentType,
+    selectionSet,
+    nodeAndDefs,
+    fragmentNames
+  );
+  const result = [nodeAndDefs, Object.keys(fragmentNames)];
+  cachedFieldsAndFragmentNames.set(selectionSet, result);
+  return result;
+}
+function getReferencedFieldsAndFragmentNames(context, cachedFieldsAndFragmentNames, fragment) {
+  const cached = cachedFieldsAndFragmentNames.get(fragment.selectionSet);
+  if (cached) {
+    return cached;
+  }
+  const fragmentType = typeFromAST(context.getSchema(), fragment.typeCondition);
+  return getFieldsAndFragmentNames(
+    context,
+    cachedFieldsAndFragmentNames,
+    fragmentType,
+    fragment.selectionSet
+  );
+}
+function _collectFieldsAndFragmentNames(context, parentType, selectionSet, nodeAndDefs, fragmentNames) {
+  for (const selection of selectionSet.selections) {
+    switch (selection.kind) {
+      case Kind.FIELD: {
+        const fieldName = selection.name.value;
+        let fieldDef;
+        if (isObjectType(parentType) || isInterfaceType(parentType)) {
+          fieldDef = parentType.getFields()[fieldName];
+        }
+        const responseName = selection.alias ? selection.alias.value : fieldName;
+        if (!nodeAndDefs[responseName]) {
+          nodeAndDefs[responseName] = [];
+        }
+        nodeAndDefs[responseName].push([parentType, selection, fieldDef]);
+        break;
+      }
+      case Kind.FRAGMENT_SPREAD:
+        fragmentNames[selection.name.value] = true;
+        break;
+      case Kind.INLINE_FRAGMENT: {
+        const typeCondition = selection.typeCondition;
+        const inlineFragmentType = typeCondition ? typeFromAST(context.getSchema(), typeCondition) : parentType;
+        _collectFieldsAndFragmentNames(
+          context,
+          inlineFragmentType,
+          selection.selectionSet,
+          nodeAndDefs,
+          fragmentNames
+        );
+        break;
+      }
+    }
+  }
+}
+function subfieldConflicts(conflicts, responseName, node1, node2) {
+  if (conflicts.length > 0) {
+    return [
+      [responseName, conflicts.map(([reason]) => reason)],
+      [node1, ...conflicts.map(([, fields1]) => fields1).flat()],
+      [node2, ...conflicts.map(([, , fields2]) => fields2).flat()]
+    ];
+  }
+}
+class OrderedPairSet2 {
+  constructor() {
+    this._data = /* @__PURE__ */ new Map();
+  }
+  has(a3, b2, weaklyPresent) {
+    var _this$_data$get;
+    const result = (_this$_data$get = this._data.get(a3)) === null || _this$_data$get === void 0 ? void 0 : _this$_data$get.get(b2);
+    if (result === void 0) {
+      return false;
+    }
+    return weaklyPresent ? true : weaklyPresent === result;
+  }
+  add(a3, b2, weaklyPresent) {
+    const map2 = this._data.get(a3);
+    if (map2 === void 0) {
+      this._data.set(a3, /* @__PURE__ */ new Map([[b2, weaklyPresent]]));
+    } else {
+      map2.set(b2, weaklyPresent);
+    }
+  }
+}
+class PairSet2 {
+  constructor() {
+    this._orderedPairSet = new OrderedPairSet2();
+  }
+  has(a3, b2, weaklyPresent) {
+    return a3 < b2 ? this._orderedPairSet.has(a3, b2, weaklyPresent) : this._orderedPairSet.has(b2, a3, weaklyPresent);
+  }
+  add(a3, b2, weaklyPresent) {
+    if (a3 < b2) {
+      this._orderedPairSet.add(a3, b2, weaklyPresent);
+    } else {
+      this._orderedPairSet.add(b2, a3, weaklyPresent);
+    }
+  }
+}
+function PossibleFragmentSpreadsRule(context) {
+  return {
+    InlineFragment(node) {
+      const fragType = context.getType();
+      const parentType = context.getParentType();
+      if (isCompositeType(fragType) && isCompositeType(parentType) && !doTypesOverlap(context.getSchema(), fragType, parentType)) {
+        const parentTypeStr = inspect(parentType);
+        const fragTypeStr = inspect(fragType);
+        context.reportError(
+          new GraphQLError2(
+            `Fragment cannot be spread here as objects of type "${parentTypeStr}" can never be of type "${fragTypeStr}".`,
+            {
+              nodes: node
+            }
+          )
+        );
+      }
+    },
+    FragmentSpread(node) {
+      const fragName = node.name.value;
+      const fragType = getFragmentType(context, fragName);
+      const parentType = context.getParentType();
+      if (fragType && parentType && !doTypesOverlap(context.getSchema(), fragType, parentType)) {
+        const parentTypeStr = inspect(parentType);
+        const fragTypeStr = inspect(fragType);
+        context.reportError(
+          new GraphQLError2(
+            `Fragment "${fragName}" cannot be spread here as objects of type "${parentTypeStr}" can never be of type "${fragTypeStr}".`,
+            {
+              nodes: node
+            }
+          )
+        );
+      }
+    }
+  };
+}
+function getFragmentType(context, name2) {
+  const frag = context.getFragment(name2);
+  if (frag) {
+    const type2 = typeFromAST(context.getSchema(), frag.typeCondition);
+    if (isCompositeType(type2)) {
+      return type2;
+    }
+  }
+}
+function PossibleTypeExtensionsRule(context) {
+  const schema = context.getSchema();
+  const definedTypes = /* @__PURE__ */ Object.create(null);
+  for (const def of context.getDocument().definitions) {
+    if (isTypeDefinitionNode(def)) {
+      definedTypes[def.name.value] = def;
+    }
+  }
+  return {
+    ScalarTypeExtension: checkExtension,
+    ObjectTypeExtension: checkExtension,
+    InterfaceTypeExtension: checkExtension,
+    UnionTypeExtension: checkExtension,
+    EnumTypeExtension: checkExtension,
+    InputObjectTypeExtension: checkExtension
+  };
+  function checkExtension(node) {
+    const typeName = node.name.value;
+    const defNode = definedTypes[typeName];
+    const existingType = schema === null || schema === void 0 ? void 0 : schema.getType(typeName);
+    let expectedKind;
+    if (defNode) {
+      expectedKind = defKindToExtKind[defNode.kind];
+    } else if (existingType) {
+      expectedKind = typeToExtKind(existingType);
+    }
+    if (expectedKind) {
+      if (expectedKind !== node.kind) {
+        const kindStr = extensionKindToTypeName(node.kind);
+        context.reportError(
+          new GraphQLError2(`Cannot extend non-${kindStr} type "${typeName}".`, {
+            nodes: defNode ? [defNode, node] : node
+          })
+        );
+      }
+    } else {
+      const allTypeNames = Object.keys({
+        ...definedTypes,
+        ...schema === null || schema === void 0 ? void 0 : schema.getTypeMap()
+      });
+      const suggestedTypes = suggestionList(typeName, allTypeNames);
+      context.reportError(
+        new GraphQLError2(
+          `Cannot extend type "${typeName}" because it is not defined.` + didYouMean(suggestedTypes),
+          {
+            nodes: node.name
+          }
+        )
+      );
+    }
+  }
+}
+const defKindToExtKind = {
+  [Kind.SCALAR_TYPE_DEFINITION]: Kind.SCALAR_TYPE_EXTENSION,
+  [Kind.OBJECT_TYPE_DEFINITION]: Kind.OBJECT_TYPE_EXTENSION,
+  [Kind.INTERFACE_TYPE_DEFINITION]: Kind.INTERFACE_TYPE_EXTENSION,
+  [Kind.UNION_TYPE_DEFINITION]: Kind.UNION_TYPE_EXTENSION,
+  [Kind.ENUM_TYPE_DEFINITION]: Kind.ENUM_TYPE_EXTENSION,
+  [Kind.INPUT_OBJECT_TYPE_DEFINITION]: Kind.INPUT_OBJECT_TYPE_EXTENSION
+};
+function typeToExtKind(type2) {
+  if (isScalarType(type2)) {
+    return Kind.SCALAR_TYPE_EXTENSION;
+  }
+  if (isObjectType(type2)) {
+    return Kind.OBJECT_TYPE_EXTENSION;
+  }
+  if (isInterfaceType(type2)) {
+    return Kind.INTERFACE_TYPE_EXTENSION;
+  }
+  if (isUnionType(type2)) {
+    return Kind.UNION_TYPE_EXTENSION;
+  }
+  if (isEnumType(type2)) {
+    return Kind.ENUM_TYPE_EXTENSION;
+  }
+  if (isInputObjectType(type2)) {
+    return Kind.INPUT_OBJECT_TYPE_EXTENSION;
+  }
+  invariant(false, "Unexpected type: " + inspect(type2));
+}
+function extensionKindToTypeName(kind) {
+  switch (kind) {
+    case Kind.SCALAR_TYPE_EXTENSION:
+      return "scalar";
+    case Kind.OBJECT_TYPE_EXTENSION:
+      return "object";
+    case Kind.INTERFACE_TYPE_EXTENSION:
+      return "interface";
+    case Kind.UNION_TYPE_EXTENSION:
+      return "union";
+    case Kind.ENUM_TYPE_EXTENSION:
+      return "enum";
+    case Kind.INPUT_OBJECT_TYPE_EXTENSION:
+      return "input object";
+    // Not reachable. All possible types have been considered
+    /* c8 ignore next */
+    default:
+      invariant(false, "Unexpected kind: " + inspect(kind));
+  }
+}
+function ProvidedRequiredArgumentsRule(context) {
+  return {
+    // eslint-disable-next-line new-cap
+    ...ProvidedRequiredArgumentsOnDirectivesRule(context),
+    Field: {
+      // Validate on leave to allow for deeper errors to appear first.
+      leave(fieldNode) {
+        var _fieldNode$arguments;
+        const fieldDef = context.getFieldDef();
+        if (!fieldDef) {
+          return false;
+        }
+        const providedArgs = new Set(
+          // FIXME: https://github.com/graphql/graphql-js/issues/2203
+          /* c8 ignore next */
+          (_fieldNode$arguments = fieldNode.arguments) === null || _fieldNode$arguments === void 0 ? void 0 : _fieldNode$arguments.map((arg) => arg.name.value)
+        );
+        for (const argDef of fieldDef.args) {
+          if (!providedArgs.has(argDef.name) && isRequiredArgument(argDef)) {
+            const argTypeStr = inspect(argDef.type);
+            context.reportError(
+              new GraphQLError2(
+                `Field "${fieldDef.name}" argument "${argDef.name}" of type "${argTypeStr}" is required, but it was not provided.`,
+                {
+                  nodes: fieldNode
+                }
+              )
+            );
+          }
+        }
+      }
+    }
+  };
+}
+function ProvidedRequiredArgumentsOnDirectivesRule(context) {
+  var _schema$getDirectives;
+  const requiredArgsMap = /* @__PURE__ */ Object.create(null);
+  const schema = context.getSchema();
+  const definedDirectives = (_schema$getDirectives = schema === null || schema === void 0 ? void 0 : schema.getDirectives()) !== null && _schema$getDirectives !== void 0 ? _schema$getDirectives : specifiedDirectives;
+  for (const directive of definedDirectives) {
+    requiredArgsMap[directive.name] = keyMap(
+      directive.args.filter(isRequiredArgument),
+      (arg) => arg.name
+    );
+  }
+  const astDefinitions = context.getDocument().definitions;
+  for (const def of astDefinitions) {
+    if (def.kind === Kind.DIRECTIVE_DEFINITION) {
+      var _def$arguments;
+      const argNodes = (_def$arguments = def.arguments) !== null && _def$arguments !== void 0 ? _def$arguments : [];
+      requiredArgsMap[def.name.value] = keyMap(
+        argNodes.filter(isRequiredArgumentNode),
+        (arg) => arg.name.value
+      );
+    }
+  }
+  return {
+    Directive: {
+      // Validate on leave to allow for deeper errors to appear first.
+      leave(directiveNode) {
+        const directiveName = directiveNode.name.value;
+        const requiredArgs = requiredArgsMap[directiveName];
+        if (requiredArgs) {
+          var _directiveNode$argume;
+          const argNodes = (_directiveNode$argume = directiveNode.arguments) !== null && _directiveNode$argume !== void 0 ? _directiveNode$argume : [];
+          const argNodeMap = new Set(argNodes.map((arg) => arg.name.value));
+          for (const [argName, argDef] of Object.entries(requiredArgs)) {
+            if (!argNodeMap.has(argName)) {
+              const argType = isType(argDef.type) ? inspect(argDef.type) : print(argDef.type);
+              context.reportError(
+                new GraphQLError2(
+                  `Directive "@${directiveName}" argument "${argName}" of type "${argType}" is required, but it was not provided.`,
+                  {
+                    nodes: directiveNode
+                  }
+                )
+              );
+            }
+          }
+        }
+      }
+    }
+  };
+}
+function isRequiredArgumentNode(arg) {
+  return arg.type.kind === Kind.NON_NULL_TYPE && arg.defaultValue == null;
+}
+function ScalarLeafsRule(context) {
+  return {
+    Field(node) {
+      const type2 = context.getType();
+      const selectionSet = node.selectionSet;
+      if (type2) {
+        if (isLeafType(getNamedType(type2))) {
+          if (selectionSet) {
+            const fieldName = node.name.value;
+            const typeStr = inspect(type2);
+            context.reportError(
+              new GraphQLError2(
+                `Field "${fieldName}" must not have a selection since type "${typeStr}" has no subfields.`,
+                {
+                  nodes: selectionSet
+                }
+              )
+            );
+          }
+        } else if (!selectionSet) {
+          const fieldName = node.name.value;
+          const typeStr = inspect(type2);
+          context.reportError(
+            new GraphQLError2(
+              `Field "${fieldName}" of type "${typeStr}" must have a selection of subfields. Did you mean "${fieldName} { ... }"?`,
+              {
+                nodes: node
+              }
+            )
+          );
+        } else if (selectionSet.selections.length === 0) {
+          const fieldName = node.name.value;
+          const typeStr = inspect(type2);
+          context.reportError(
+            new GraphQLError2(
+              `Field "${fieldName}" of type "${typeStr}" must have at least one field selected.`,
+              {
+                nodes: node
+              }
+            )
+          );
+        }
+      }
+    }
+  };
+}
+function printPathArray(path) {
+  return path.map(
+    (key) => typeof key === "number" ? "[" + key.toString() + "]" : "." + key
+  ).join("");
+}
+function addPath(prev, key, typename) {
+  return {
+    prev,
+    key,
+    typename
+  };
+}
+function pathToArray(path) {
+  const flattened = [];
+  let curr = path;
+  while (curr) {
+    flattened.push(curr.key);
+    curr = curr.prev;
+  }
+  return flattened.reverse();
+}
+function coerceInputValue(inputValue, type2, onError = defaultOnError) {
+  return coerceInputValueImpl(inputValue, type2, onError, void 0);
+}
+function defaultOnError(path, invalidValue, error2) {
+  let errorPrefix = "Invalid value " + inspect(invalidValue);
+  if (path.length > 0) {
+    errorPrefix += ` at "value${printPathArray(path)}"`;
+  }
+  error2.message = errorPrefix + ": " + error2.message;
+  throw error2;
+}
+function coerceInputValueImpl(inputValue, type2, onError, path) {
+  if (isNonNullType(type2)) {
+    if (inputValue != null) {
+      return coerceInputValueImpl(inputValue, type2.ofType, onError, path);
+    }
+    onError(
+      pathToArray(path),
+      inputValue,
+      new GraphQLError2(
+        `Expected non-nullable type "${inspect(type2)}" not to be null.`
+      )
+    );
+    return;
+  }
+  if (inputValue == null) {
+    return null;
+  }
+  if (isListType(type2)) {
+    const itemType = type2.ofType;
+    if (isIterableObject(inputValue)) {
+      return Array.from(inputValue, (itemValue, index2) => {
+        const itemPath = addPath(path, index2, void 0);
+        return coerceInputValueImpl(itemValue, itemType, onError, itemPath);
+      });
+    }
+    return [coerceInputValueImpl(inputValue, itemType, onError, path)];
+  }
+  if (isInputObjectType(type2)) {
+    if (!isObjectLike(inputValue) || Array.isArray(inputValue)) {
+      onError(
+        pathToArray(path),
+        inputValue,
+        new GraphQLError2(`Expected type "${type2.name}" to be an object.`)
+      );
+      return;
+    }
+    const coercedValue = {};
+    const fieldDefs = type2.getFields();
+    for (const field of Object.values(fieldDefs)) {
+      const fieldValue = inputValue[field.name];
+      if (fieldValue === void 0) {
+        if (field.defaultValue !== void 0) {
+          coercedValue[field.name] = field.defaultValue;
+        } else if (isNonNullType(field.type)) {
+          const typeStr = inspect(field.type);
+          onError(
+            pathToArray(path),
+            inputValue,
+            new GraphQLError2(
+              `Field "${field.name}" of required type "${typeStr}" was not provided.`
+            )
+          );
+        }
+        continue;
+      }
+      coercedValue[field.name] = coerceInputValueImpl(
+        fieldValue,
+        field.type,
+        onError,
+        addPath(path, field.name, type2.name)
+      );
+    }
+    for (const fieldName of Object.keys(inputValue)) {
+      if (!fieldDefs[fieldName]) {
+        const suggestions = suggestionList(
+          fieldName,
+          Object.keys(type2.getFields())
+        );
+        onError(
+          pathToArray(path),
+          inputValue,
+          new GraphQLError2(
+            `Field "${fieldName}" is not defined by type "${type2.name}".` + didYouMean(suggestions)
+          )
+        );
+      }
+    }
+    if (type2.isOneOf) {
+      const keys = Object.keys(coercedValue);
+      if (keys.length !== 1) {
+        onError(
+          pathToArray(path),
+          inputValue,
+          new GraphQLError2(
+            `Exactly one key must be specified for OneOf type "${type2.name}".`
+          )
+        );
+      }
+      const key = keys[0];
+      const value = coercedValue[key];
+      if (value === null) {
+        onError(
+          pathToArray(path).concat(key),
+          value,
+          new GraphQLError2(`Field "${key}" must be non-null.`)
+        );
+      }
+    }
+    return coercedValue;
+  }
+  if (isLeafType(type2)) {
+    let parseResult;
+    try {
+      parseResult = type2.parseValue(inputValue);
+    } catch (error2) {
+      if (error2 instanceof GraphQLError2) {
+        onError(pathToArray(path), inputValue, error2);
+      } else {
+        onError(
+          pathToArray(path),
+          inputValue,
+          new GraphQLError2(`Expected type "${type2.name}". ` + error2.message, {
+            originalError: error2
+          })
+        );
+      }
+      return;
+    }
+    if (parseResult === void 0) {
+      onError(
+        pathToArray(path),
+        inputValue,
+        new GraphQLError2(`Expected type "${type2.name}".`)
+      );
+    }
+    return parseResult;
+  }
+  invariant(false, "Unexpected input type: " + inspect(type2));
+}
+function valueFromAST(valueNode, type2, variables) {
+  if (!valueNode) {
+    return;
+  }
+  if (valueNode.kind === Kind.VARIABLE) {
+    const variableName = valueNode.name.value;
+    if (variables == null || variables[variableName] === void 0) {
+      return;
+    }
+    const variableValue = variables[variableName];
+    if (variableValue === null && isNonNullType(type2)) {
+      return;
+    }
+    return variableValue;
+  }
+  if (isNonNullType(type2)) {
+    if (valueNode.kind === Kind.NULL) {
+      return;
+    }
+    return valueFromAST(valueNode, type2.ofType, variables);
+  }
+  if (valueNode.kind === Kind.NULL) {
+    return null;
+  }
+  if (isListType(type2)) {
+    const itemType = type2.ofType;
+    if (valueNode.kind === Kind.LIST) {
+      const coercedValues = [];
+      for (const itemNode of valueNode.values) {
+        if (isMissingVariable(itemNode, variables)) {
+          if (isNonNullType(itemType)) {
+            return;
+          }
+          coercedValues.push(null);
+        } else {
+          const itemValue = valueFromAST(itemNode, itemType, variables);
+          if (itemValue === void 0) {
+            return;
+          }
+          coercedValues.push(itemValue);
+        }
+      }
+      return coercedValues;
+    }
+    const coercedValue = valueFromAST(valueNode, itemType, variables);
+    if (coercedValue === void 0) {
+      return;
+    }
+    return [coercedValue];
+  }
+  if (isInputObjectType(type2)) {
+    if (valueNode.kind !== Kind.OBJECT) {
+      return;
+    }
+    const coercedObj = /* @__PURE__ */ Object.create(null);
+    const fieldNodes = keyMap(valueNode.fields, (field) => field.name.value);
+    for (const field of Object.values(type2.getFields())) {
+      const fieldNode = fieldNodes[field.name];
+      if (!fieldNode || isMissingVariable(fieldNode.value, variables)) {
+        if (field.defaultValue !== void 0) {
+          coercedObj[field.name] = field.defaultValue;
+        } else if (isNonNullType(field.type)) {
+          return;
+        }
+        continue;
+      }
+      const fieldValue = valueFromAST(fieldNode.value, field.type, variables);
+      if (fieldValue === void 0) {
+        return;
+      }
+      coercedObj[field.name] = fieldValue;
+    }
+    if (type2.isOneOf) {
+      const keys = Object.keys(coercedObj);
+      if (keys.length !== 1) {
+        return;
+      }
+      if (coercedObj[keys[0]] === null) {
+        return;
+      }
+    }
+    return coercedObj;
+  }
+  if (isLeafType(type2)) {
+    let result;
+    try {
+      result = type2.parseLiteral(valueNode, variables);
+    } catch (_error) {
+      return;
+    }
+    if (result === void 0) {
+      return;
+    }
+    return result;
+  }
+  invariant(false, "Unexpected input type: " + inspect(type2));
+}
+function isMissingVariable(valueNode, variables) {
+  return valueNode.kind === Kind.VARIABLE && (variables == null || variables[valueNode.name.value] === void 0);
+}
+function getVariableValues(schema, varDefNodes, inputs, options) {
+  const errors2 = [];
+  const maxErrors = options === null || options === void 0 ? void 0 : options.maxErrors;
+  try {
+    const coerced = coerceVariableValues(
+      schema,
+      varDefNodes,
+      inputs,
+      (error2) => {
+        if (maxErrors != null && errors2.length >= maxErrors) {
+          throw new GraphQLError2(
+            "Too many errors processing variables, error limit reached. Execution aborted."
+          );
+        }
+        errors2.push(error2);
+      }
+    );
+    if (errors2.length === 0) {
+      return {
+        coerced
+      };
+    }
+  } catch (error2) {
+    errors2.push(error2);
+  }
+  return {
+    errors: errors2
+  };
+}
+function coerceVariableValues(schema, varDefNodes, inputs, onError) {
+  const coercedValues = {};
+  for (const varDefNode of varDefNodes) {
+    const varName = varDefNode.variable.name.value;
+    const varType = typeFromAST(schema, varDefNode.type);
+    if (!isInputType(varType)) {
+      const varTypeStr = print(varDefNode.type);
+      onError(
+        new GraphQLError2(
+          `Variable "$${varName}" expected value of type "${varTypeStr}" which cannot be used as an input type.`,
+          {
+            nodes: varDefNode.type
+          }
+        )
+      );
+      continue;
+    }
+    if (!hasOwnProperty(inputs, varName)) {
+      if (varDefNode.defaultValue) {
+        coercedValues[varName] = valueFromAST(varDefNode.defaultValue, varType);
+      } else if (isNonNullType(varType)) {
+        const varTypeStr = inspect(varType);
+        onError(
+          new GraphQLError2(
+            `Variable "$${varName}" of required type "${varTypeStr}" was not provided.`,
+            {
+              nodes: varDefNode
+            }
+          )
+        );
+      }
+      continue;
+    }
+    const value = inputs[varName];
+    if (value === null && isNonNullType(varType)) {
+      const varTypeStr = inspect(varType);
+      onError(
+        new GraphQLError2(
+          `Variable "$${varName}" of non-null type "${varTypeStr}" must not be null.`,
+          {
+            nodes: varDefNode
+          }
+        )
+      );
+      continue;
+    }
+    coercedValues[varName] = coerceInputValue(
+      value,
+      varType,
+      (path, invalidValue, error2) => {
+        let prefix = `Variable "$${varName}" got invalid value ` + inspect(invalidValue);
+        if (path.length > 0) {
+          prefix += ` at "${varName}${printPathArray(path)}"`;
+        }
+        onError(
+          new GraphQLError2(prefix + "; " + error2.message, {
+            nodes: varDefNode,
+            originalError: error2
+          })
+        );
+      }
+    );
+  }
+  return coercedValues;
+}
+function getArgumentValues(def, node, variableValues) {
+  var _node$arguments;
+  const coercedValues = {};
+  const argumentNodes = (_node$arguments = node.arguments) !== null && _node$arguments !== void 0 ? _node$arguments : [];
+  const argNodeMap = keyMap(argumentNodes, (arg) => arg.name.value);
+  for (const argDef of def.args) {
+    const name2 = argDef.name;
+    const argType = argDef.type;
+    const argumentNode = argNodeMap[name2];
+    if (!argumentNode) {
+      if (argDef.defaultValue !== void 0) {
+        coercedValues[name2] = argDef.defaultValue;
+      } else if (isNonNullType(argType)) {
+        throw new GraphQLError2(
+          `Argument "${name2}" of required type "${inspect(argType)}" was not provided.`,
+          {
+            nodes: node
+          }
+        );
+      }
+      continue;
+    }
+    const valueNode = argumentNode.value;
+    let isNull = valueNode.kind === Kind.NULL;
+    if (valueNode.kind === Kind.VARIABLE) {
+      const variableName = valueNode.name.value;
+      if (variableValues == null || !hasOwnProperty(variableValues, variableName)) {
+        if (argDef.defaultValue !== void 0) {
+          coercedValues[name2] = argDef.defaultValue;
+        } else if (isNonNullType(argType)) {
+          throw new GraphQLError2(
+            `Argument "${name2}" of required type "${inspect(argType)}" was provided the variable "$${variableName}" which was not provided a runtime value.`,
+            {
+              nodes: valueNode
+            }
+          );
+        }
+        continue;
+      }
+      isNull = variableValues[variableName] == null;
+    }
+    if (isNull && isNonNullType(argType)) {
+      throw new GraphQLError2(
+        `Argument "${name2}" of non-null type "${inspect(argType)}" must not be null.`,
+        {
+          nodes: valueNode
+        }
+      );
+    }
+    const coercedValue = valueFromAST(valueNode, argType, variableValues);
+    if (coercedValue === void 0) {
+      throw new GraphQLError2(
+        `Argument "${name2}" has invalid value ${print(valueNode)}.`,
+        {
+          nodes: valueNode
+        }
+      );
+    }
+    coercedValues[name2] = coercedValue;
+  }
+  return coercedValues;
+}
+function getDirectiveValues(directiveDef, node, variableValues) {
+  var _node$directives;
+  const directiveNode = (_node$directives = node.directives) === null || _node$directives === void 0 ? void 0 : _node$directives.find(
+    (directive) => directive.name.value === directiveDef.name
+  );
+  if (directiveNode) {
+    return getArgumentValues(directiveDef, directiveNode, variableValues);
+  }
+}
+function hasOwnProperty(obj, prop) {
+  return Object.prototype.hasOwnProperty.call(obj, prop);
+}
+function collectFields(schema, fragments, variableValues, runtimeType, selectionSet) {
+  const fields = /* @__PURE__ */ new Map();
+  collectFieldsImpl(
+    schema,
+    fragments,
+    variableValues,
+    runtimeType,
+    selectionSet,
+    fields,
+    /* @__PURE__ */ new Set()
+  );
+  return fields;
+}
+function collectSubfields$1(schema, fragments, variableValues, returnType, fieldNodes) {
+  const subFieldNodes = /* @__PURE__ */ new Map();
+  const visitedFragmentNames = /* @__PURE__ */ new Set();
+  for (const node of fieldNodes) {
+    if (node.selectionSet) {
+      collectFieldsImpl(
+        schema,
+        fragments,
+        variableValues,
+        returnType,
+        node.selectionSet,
+        subFieldNodes,
+        visitedFragmentNames
+      );
+    }
+  }
+  return subFieldNodes;
+}
+function collectFieldsImpl(schema, fragments, variableValues, runtimeType, selectionSet, fields, visitedFragmentNames) {
+  for (const selection of selectionSet.selections) {
+    switch (selection.kind) {
+      case Kind.FIELD: {
+        if (!shouldIncludeNode(variableValues, selection)) {
+          continue;
+        }
+        const name2 = getFieldEntryKey(selection);
+        const fieldList = fields.get(name2);
+        if (fieldList !== void 0) {
+          fieldList.push(selection);
+        } else {
+          fields.set(name2, [selection]);
+        }
+        break;
+      }
+      case Kind.INLINE_FRAGMENT: {
+        if (!shouldIncludeNode(variableValues, selection) || !doesFragmentConditionMatch(schema, selection, runtimeType)) {
+          continue;
+        }
+        collectFieldsImpl(
+          schema,
+          fragments,
+          variableValues,
+          runtimeType,
+          selection.selectionSet,
+          fields,
+          visitedFragmentNames
+        );
+        break;
+      }
+      case Kind.FRAGMENT_SPREAD: {
+        const fragName = selection.name.value;
+        if (visitedFragmentNames.has(fragName) || !shouldIncludeNode(variableValues, selection)) {
+          continue;
+        }
+        visitedFragmentNames.add(fragName);
+        const fragment = fragments[fragName];
+        if (!fragment || !doesFragmentConditionMatch(schema, fragment, runtimeType)) {
+          continue;
+        }
+        collectFieldsImpl(
+          schema,
+          fragments,
+          variableValues,
+          runtimeType,
+          fragment.selectionSet,
+          fields,
+          visitedFragmentNames
+        );
+        break;
+      }
+    }
+  }
+}
+function shouldIncludeNode(variableValues, node) {
+  const skip = getDirectiveValues(GraphQLSkipDirective, node, variableValues);
+  if ((skip === null || skip === void 0 ? void 0 : skip.if) === true) {
+    return false;
+  }
+  const include = getDirectiveValues(
+    GraphQLIncludeDirective,
+    node,
+    variableValues
+  );
+  if ((include === null || include === void 0 ? void 0 : include.if) === false) {
+    return false;
+  }
+  return true;
+}
+function doesFragmentConditionMatch(schema, fragment, type2) {
+  const typeConditionNode = fragment.typeCondition;
+  if (!typeConditionNode) {
+    return true;
+  }
+  const conditionalType = typeFromAST(schema, typeConditionNode);
+  if (conditionalType === type2) {
+    return true;
+  }
+  if (isAbstractType(conditionalType)) {
+    return schema.isSubType(conditionalType, type2);
+  }
+  return false;
+}
+function getFieldEntryKey(node) {
+  return node.alias ? node.alias.value : node.name.value;
+}
+function SingleFieldSubscriptionsRule(context) {
+  return {
+    OperationDefinition(node) {
+      if (node.operation === "subscription") {
+        const schema = context.getSchema();
+        const subscriptionType = schema.getSubscriptionType();
+        if (subscriptionType) {
+          const operationName = node.name ? node.name.value : null;
+          const variableValues = /* @__PURE__ */ Object.create(null);
+          const document2 = context.getDocument();
+          const fragments = /* @__PURE__ */ Object.create(null);
+          for (const definition of document2.definitions) {
+            if (definition.kind === Kind.FRAGMENT_DEFINITION) {
+              fragments[definition.name.value] = definition;
+            }
+          }
+          const fields = collectFields(
+            schema,
+            fragments,
+            variableValues,
+            subscriptionType,
+            node.selectionSet
+          );
+          if (fields.size > 1) {
+            const fieldSelectionLists = [...fields.values()];
+            const extraFieldSelectionLists = fieldSelectionLists.slice(1);
+            const extraFieldSelections = extraFieldSelectionLists.flat();
+            context.reportError(
+              new GraphQLError2(
+                operationName != null ? `Subscription "${operationName}" must select only one top level field.` : "Anonymous Subscription must select only one top level field.",
+                {
+                  nodes: extraFieldSelections
+                }
+              )
+            );
+          }
+          for (const fieldNodes of fields.values()) {
+            const field = fieldNodes[0];
+            const fieldName = field.name.value;
+            if (fieldName.startsWith("__")) {
+              context.reportError(
+                new GraphQLError2(
+                  operationName != null ? `Subscription "${operationName}" must not select an introspection top level field.` : "Anonymous Subscription must not select an introspection top level field.",
+                  {
+                    nodes: fieldNodes
+                  }
+                )
+              );
+            }
+          }
+        }
+      }
+    }
+  };
+}
+function groupBy(list2, keyFn) {
+  const result = /* @__PURE__ */ new Map();
+  for (const item of list2) {
+    const key = keyFn(item);
+    const group = result.get(key);
+    if (group === void 0) {
+      result.set(key, [item]);
+    } else {
+      group.push(item);
+    }
+  }
+  return result;
+}
+function UniqueArgumentDefinitionNamesRule(context) {
+  return {
+    DirectiveDefinition(directiveNode) {
+      var _directiveNode$argume;
+      const argumentNodes = (_directiveNode$argume = directiveNode.arguments) !== null && _directiveNode$argume !== void 0 ? _directiveNode$argume : [];
+      return checkArgUniqueness(`@${directiveNode.name.value}`, argumentNodes);
+    },
+    InterfaceTypeDefinition: checkArgUniquenessPerField,
+    InterfaceTypeExtension: checkArgUniquenessPerField,
+    ObjectTypeDefinition: checkArgUniquenessPerField,
+    ObjectTypeExtension: checkArgUniquenessPerField
+  };
+  function checkArgUniquenessPerField(typeNode) {
+    var _typeNode$fields;
+    const typeName = typeNode.name.value;
+    const fieldNodes = (_typeNode$fields = typeNode.fields) !== null && _typeNode$fields !== void 0 ? _typeNode$fields : [];
+    for (const fieldDef of fieldNodes) {
+      var _fieldDef$arguments;
+      const fieldName = fieldDef.name.value;
+      const argumentNodes = (_fieldDef$arguments = fieldDef.arguments) !== null && _fieldDef$arguments !== void 0 ? _fieldDef$arguments : [];
+      checkArgUniqueness(`${typeName}.${fieldName}`, argumentNodes);
+    }
+    return false;
+  }
+  function checkArgUniqueness(parentName, argumentNodes) {
+    const seenArgs = groupBy(argumentNodes, (arg) => arg.name.value);
+    for (const [argName, argNodes] of seenArgs) {
+      if (argNodes.length > 1) {
+        context.reportError(
+          new GraphQLError2(
+            `Argument "${parentName}(${argName}:)" can only be defined once.`,
+            {
+              nodes: argNodes.map((node) => node.name)
+            }
+          )
+        );
+      }
+    }
+    return false;
+  }
+}
+function UniqueArgumentNamesRule(context) {
+  return {
+    Field: checkArgUniqueness,
+    Directive: checkArgUniqueness
+  };
+  function checkArgUniqueness(parentNode) {
+    var _parentNode$arguments;
+    const argumentNodes = (_parentNode$arguments = parentNode.arguments) !== null && _parentNode$arguments !== void 0 ? _parentNode$arguments : [];
+    const seenArgs = groupBy(argumentNodes, (arg) => arg.name.value);
+    for (const [argName, argNodes] of seenArgs) {
+      if (argNodes.length > 1) {
+        context.reportError(
+          new GraphQLError2(
+            `There can be only one argument named "${argName}".`,
+            {
+              nodes: argNodes.map((node) => node.name)
+            }
+          )
+        );
+      }
+    }
+  }
+}
+function UniqueDirectiveNamesRule(context) {
+  const knownDirectiveNames = /* @__PURE__ */ Object.create(null);
+  const schema = context.getSchema();
+  return {
+    DirectiveDefinition(node) {
+      const directiveName = node.name.value;
+      if (schema !== null && schema !== void 0 && schema.getDirective(directiveName)) {
+        context.reportError(
+          new GraphQLError2(
+            `Directive "@${directiveName}" already exists in the schema. It cannot be redefined.`,
+            {
+              nodes: node.name
+            }
+          )
+        );
+        return;
+      }
+      if (knownDirectiveNames[directiveName]) {
+        context.reportError(
+          new GraphQLError2(
+            `There can be only one directive named "@${directiveName}".`,
+            {
+              nodes: [knownDirectiveNames[directiveName], node.name]
+            }
+          )
+        );
+      } else {
+        knownDirectiveNames[directiveName] = node.name;
+      }
+      return false;
+    }
+  };
+}
+function UniqueDirectivesPerLocationRule(context) {
+  const uniqueDirectiveMap = /* @__PURE__ */ Object.create(null);
+  const schema = context.getSchema();
+  const definedDirectives = schema ? schema.getDirectives() : specifiedDirectives;
+  for (const directive of definedDirectives) {
+    uniqueDirectiveMap[directive.name] = !directive.isRepeatable;
+  }
+  const astDefinitions = context.getDocument().definitions;
+  for (const def of astDefinitions) {
+    if (def.kind === Kind.DIRECTIVE_DEFINITION) {
+      uniqueDirectiveMap[def.name.value] = !def.repeatable;
+    }
+  }
+  const schemaDirectives = /* @__PURE__ */ Object.create(null);
+  const typeDirectivesMap = /* @__PURE__ */ Object.create(null);
+  return {
+    // Many different AST nodes may contain directives. Rather than listing
+    // them all, just listen for entering any node, and check to see if it
+    // defines any directives.
+    enter(node) {
+      if (!("directives" in node) || !node.directives) {
+        return;
+      }
+      let seenDirectives;
+      if (node.kind === Kind.SCHEMA_DEFINITION || node.kind === Kind.SCHEMA_EXTENSION) {
+        seenDirectives = schemaDirectives;
+      } else if (isTypeDefinitionNode(node) || isTypeExtensionNode(node)) {
+        const typeName = node.name.value;
+        seenDirectives = typeDirectivesMap[typeName];
+        if (seenDirectives === void 0) {
+          typeDirectivesMap[typeName] = seenDirectives = /* @__PURE__ */ Object.create(null);
+        }
+      } else {
+        seenDirectives = /* @__PURE__ */ Object.create(null);
+      }
+      for (const directive of node.directives) {
+        const directiveName = directive.name.value;
+        if (uniqueDirectiveMap[directiveName]) {
+          if (seenDirectives[directiveName]) {
+            context.reportError(
+              new GraphQLError2(
+                `The directive "@${directiveName}" can only be used once at this location.`,
+                {
+                  nodes: [seenDirectives[directiveName], directive]
+                }
+              )
+            );
+          } else {
+            seenDirectives[directiveName] = directive;
+          }
+        }
+      }
+    }
+  };
+}
+function UniqueEnumValueNamesRule(context) {
+  const schema = context.getSchema();
+  const existingTypeMap = schema ? schema.getTypeMap() : /* @__PURE__ */ Object.create(null);
+  const knownValueNames = /* @__PURE__ */ Object.create(null);
+  return {
+    EnumTypeDefinition: checkValueUniqueness,
+    EnumTypeExtension: checkValueUniqueness
+  };
+  function checkValueUniqueness(node) {
+    var _node$values;
+    const typeName = node.name.value;
+    if (!knownValueNames[typeName]) {
+      knownValueNames[typeName] = /* @__PURE__ */ Object.create(null);
+    }
+    const valueNodes = (_node$values = node.values) !== null && _node$values !== void 0 ? _node$values : [];
+    const valueNames = knownValueNames[typeName];
+    for (const valueDef of valueNodes) {
+      const valueName = valueDef.name.value;
+      const existingType = existingTypeMap[typeName];
+      if (isEnumType(existingType) && existingType.getValue(valueName)) {
+        context.reportError(
+          new GraphQLError2(
+            `Enum value "${typeName}.${valueName}" already exists in the schema. It cannot also be defined in this type extension.`,
+            {
+              nodes: valueDef.name
+            }
+          )
+        );
+      } else if (valueNames[valueName]) {
+        context.reportError(
+          new GraphQLError2(
+            `Enum value "${typeName}.${valueName}" can only be defined once.`,
+            {
+              nodes: [valueNames[valueName], valueDef.name]
+            }
+          )
+        );
+      } else {
+        valueNames[valueName] = valueDef.name;
+      }
+    }
+    return false;
+  }
+}
+function UniqueFieldDefinitionNamesRule(context) {
+  const schema = context.getSchema();
+  const existingTypeMap = schema ? schema.getTypeMap() : /* @__PURE__ */ Object.create(null);
+  const knownFieldNames = /* @__PURE__ */ Object.create(null);
+  return {
+    InputObjectTypeDefinition: checkFieldUniqueness,
+    InputObjectTypeExtension: checkFieldUniqueness,
+    InterfaceTypeDefinition: checkFieldUniqueness,
+    InterfaceTypeExtension: checkFieldUniqueness,
+    ObjectTypeDefinition: checkFieldUniqueness,
+    ObjectTypeExtension: checkFieldUniqueness
+  };
+  function checkFieldUniqueness(node) {
+    var _node$fields;
+    const typeName = node.name.value;
+    if (!knownFieldNames[typeName]) {
+      knownFieldNames[typeName] = /* @__PURE__ */ Object.create(null);
+    }
+    const fieldNodes = (_node$fields = node.fields) !== null && _node$fields !== void 0 ? _node$fields : [];
+    const fieldNames = knownFieldNames[typeName];
+    for (const fieldDef of fieldNodes) {
+      const fieldName = fieldDef.name.value;
+      if (hasField(existingTypeMap[typeName], fieldName)) {
+        context.reportError(
+          new GraphQLError2(
+            `Field "${typeName}.${fieldName}" already exists in the schema. It cannot also be defined in this type extension.`,
+            {
+              nodes: fieldDef.name
+            }
+          )
+        );
+      } else if (fieldNames[fieldName]) {
+        context.reportError(
+          new GraphQLError2(
+            `Field "${typeName}.${fieldName}" can only be defined once.`,
+            {
+              nodes: [fieldNames[fieldName], fieldDef.name]
+            }
+          )
+        );
+      } else {
+        fieldNames[fieldName] = fieldDef.name;
+      }
+    }
+    return false;
+  }
+}
+function hasField(type2, fieldName) {
+  if (isObjectType(type2) || isInterfaceType(type2) || isInputObjectType(type2)) {
+    return type2.getFields()[fieldName] != null;
+  }
+  return false;
+}
+function UniqueFragmentNamesRule(context) {
+  const knownFragmentNames = /* @__PURE__ */ Object.create(null);
+  return {
+    OperationDefinition: () => false,
+    FragmentDefinition(node) {
+      const fragmentName = node.name.value;
+      if (knownFragmentNames[fragmentName]) {
+        context.reportError(
+          new GraphQLError2(
+            `There can be only one fragment named "${fragmentName}".`,
+            {
+              nodes: [knownFragmentNames[fragmentName], node.name]
+            }
+          )
+        );
+      } else {
+        knownFragmentNames[fragmentName] = node.name;
+      }
+      return false;
+    }
+  };
+}
+function UniqueInputFieldNamesRule(context) {
+  const knownNameStack = [];
+  let knownNames = /* @__PURE__ */ Object.create(null);
+  return {
+    ObjectValue: {
+      enter() {
+        knownNameStack.push(knownNames);
+        knownNames = /* @__PURE__ */ Object.create(null);
+      },
+      leave() {
+        const prevKnownNames = knownNameStack.pop();
+        prevKnownNames || invariant(false);
+        knownNames = prevKnownNames;
+      }
+    },
+    ObjectField(node) {
+      const fieldName = node.name.value;
+      if (knownNames[fieldName]) {
+        context.reportError(
+          new GraphQLError2(
+            `There can be only one input field named "${fieldName}".`,
+            {
+              nodes: [knownNames[fieldName], node.name]
+            }
+          )
+        );
+      } else {
+        knownNames[fieldName] = node.name;
+      }
+    }
+  };
+}
+function UniqueOperationNamesRule(context) {
+  const knownOperationNames = /* @__PURE__ */ Object.create(null);
+  return {
+    OperationDefinition(node) {
+      const operationName = node.name;
+      if (operationName) {
+        if (knownOperationNames[operationName.value]) {
+          context.reportError(
+            new GraphQLError2(
+              `There can be only one operation named "${operationName.value}".`,
+              {
+                nodes: [
+                  knownOperationNames[operationName.value],
+                  operationName
+                ]
+              }
+            )
+          );
+        } else {
+          knownOperationNames[operationName.value] = operationName;
+        }
+      }
+      return false;
+    },
+    FragmentDefinition: () => false
+  };
+}
+function UniqueOperationTypesRule(context) {
+  const schema = context.getSchema();
+  const definedOperationTypes = /* @__PURE__ */ Object.create(null);
+  const existingOperationTypes = schema ? {
+    query: schema.getQueryType(),
+    mutation: schema.getMutationType(),
+    subscription: schema.getSubscriptionType()
+  } : {};
+  return {
+    SchemaDefinition: checkOperationTypes,
+    SchemaExtension: checkOperationTypes
+  };
+  function checkOperationTypes(node) {
+    var _node$operationTypes;
+    const operationTypesNodes = (_node$operationTypes = node.operationTypes) !== null && _node$operationTypes !== void 0 ? _node$operationTypes : [];
+    for (const operationType of operationTypesNodes) {
+      const operation = operationType.operation;
+      const alreadyDefinedOperationType = definedOperationTypes[operation];
+      if (existingOperationTypes[operation]) {
+        context.reportError(
+          new GraphQLError2(
+            `Type for ${operation} already defined in the schema. It cannot be redefined.`,
+            {
+              nodes: operationType
+            }
+          )
+        );
+      } else if (alreadyDefinedOperationType) {
+        context.reportError(
+          new GraphQLError2(
+            `There can be only one ${operation} type in schema.`,
+            {
+              nodes: [alreadyDefinedOperationType, operationType]
+            }
+          )
+        );
+      } else {
+        definedOperationTypes[operation] = operationType;
+      }
+    }
+    return false;
+  }
+}
+function UniqueTypeNamesRule(context) {
+  const knownTypeNames = /* @__PURE__ */ Object.create(null);
+  const schema = context.getSchema();
+  return {
+    ScalarTypeDefinition: checkTypeName,
+    ObjectTypeDefinition: checkTypeName,
+    InterfaceTypeDefinition: checkTypeName,
+    UnionTypeDefinition: checkTypeName,
+    EnumTypeDefinition: checkTypeName,
+    InputObjectTypeDefinition: checkTypeName
+  };
+  function checkTypeName(node) {
+    const typeName = node.name.value;
+    if (schema !== null && schema !== void 0 && schema.getType(typeName)) {
+      context.reportError(
+        new GraphQLError2(
+          `Type "${typeName}" already exists in the schema. It cannot also be defined in this type definition.`,
+          {
+            nodes: node.name
+          }
+        )
+      );
+      return;
+    }
+    if (knownTypeNames[typeName]) {
+      context.reportError(
+        new GraphQLError2(`There can be only one type named "${typeName}".`, {
+          nodes: [knownTypeNames[typeName], node.name]
+        })
+      );
+    } else {
+      knownTypeNames[typeName] = node.name;
+    }
+    return false;
+  }
+}
+function UniqueVariableNamesRule(context) {
+  return {
+    OperationDefinition(operationNode) {
+      var _operationNode$variab;
+      const variableDefinitions = (_operationNode$variab = operationNode.variableDefinitions) !== null && _operationNode$variab !== void 0 ? _operationNode$variab : [];
+      const seenVariableDefinitions = groupBy(
+        variableDefinitions,
+        (node) => node.variable.name.value
+      );
+      for (const [variableName, variableNodes] of seenVariableDefinitions) {
+        if (variableNodes.length > 1) {
+          context.reportError(
+            new GraphQLError2(
+              `There can be only one variable named "$${variableName}".`,
+              {
+                nodes: variableNodes.map((node) => node.variable.name)
+              }
+            )
+          );
+        }
+      }
+    }
+  };
+}
+function ValuesOfCorrectTypeRule(context) {
+  let variableDefinitions = {};
+  return {
+    OperationDefinition: {
+      enter() {
+        variableDefinitions = {};
+      }
+    },
+    VariableDefinition(definition) {
+      variableDefinitions[definition.variable.name.value] = definition;
+    },
+    ListValue(node) {
+      const type2 = getNullableType(context.getParentInputType());
+      if (!isListType(type2)) {
+        isValidValueNode(context, node);
+        return false;
+      }
+    },
+    ObjectValue(node) {
+      const type2 = getNamedType(context.getInputType());
+      if (!isInputObjectType(type2)) {
+        isValidValueNode(context, node);
+        return false;
+      }
+      const fieldNodeMap = keyMap(node.fields, (field) => field.name.value);
+      for (const fieldDef of Object.values(type2.getFields())) {
+        const fieldNode = fieldNodeMap[fieldDef.name];
+        if (!fieldNode && isRequiredInputField(fieldDef)) {
+          const typeStr = inspect(fieldDef.type);
+          context.reportError(
+            new GraphQLError2(
+              `Field "${type2.name}.${fieldDef.name}" of required type "${typeStr}" was not provided.`,
+              {
+                nodes: node
+              }
+            )
+          );
+        }
+      }
+      if (type2.isOneOf) {
+        validateOneOfInputObject(
+          context,
+          node,
+          type2,
+          fieldNodeMap,
+          variableDefinitions
+        );
+      }
+    },
+    ObjectField(node) {
+      const parentType = getNamedType(context.getParentInputType());
+      const fieldType = context.getInputType();
+      if (!fieldType && isInputObjectType(parentType)) {
+        const suggestions = suggestionList(
+          node.name.value,
+          Object.keys(parentType.getFields())
+        );
+        context.reportError(
+          new GraphQLError2(
+            `Field "${node.name.value}" is not defined by type "${parentType.name}".` + didYouMean(suggestions),
+            {
+              nodes: node
+            }
+          )
+        );
+      }
+    },
+    NullValue(node) {
+      const type2 = context.getInputType();
+      if (isNonNullType(type2)) {
+        context.reportError(
+          new GraphQLError2(
+            `Expected value of type "${inspect(type2)}", found ${print(node)}.`,
+            {
+              nodes: node
+            }
+          )
+        );
+      }
+    },
+    EnumValue: (node) => isValidValueNode(context, node),
+    IntValue: (node) => isValidValueNode(context, node),
+    FloatValue: (node) => isValidValueNode(context, node),
+    StringValue: (node) => isValidValueNode(context, node),
+    BooleanValue: (node) => isValidValueNode(context, node)
+  };
+}
+function isValidValueNode(context, node) {
+  const locationType = context.getInputType();
+  if (!locationType) {
+    return;
+  }
+  const type2 = getNamedType(locationType);
+  if (!isLeafType(type2)) {
+    const typeStr = inspect(locationType);
+    context.reportError(
+      new GraphQLError2(
+        `Expected value of type "${typeStr}", found ${print(node)}.`,
+        {
+          nodes: node
+        }
+      )
+    );
+    return;
+  }
+  try {
+    const parseResult = type2.parseLiteral(
+      node,
+      void 0
+      /* variables */
+    );
+    if (parseResult === void 0) {
+      const typeStr = inspect(locationType);
+      context.reportError(
+        new GraphQLError2(
+          `Expected value of type "${typeStr}", found ${print(node)}.`,
+          {
+            nodes: node
+          }
+        )
+      );
+    }
+  } catch (error2) {
+    const typeStr = inspect(locationType);
+    if (error2 instanceof GraphQLError2) {
+      context.reportError(error2);
+    } else {
+      context.reportError(
+        new GraphQLError2(
+          `Expected value of type "${typeStr}", found ${print(node)}; ` + error2.message,
+          {
+            nodes: node,
+            originalError: error2
+          }
+        )
+      );
+    }
+  }
+}
+function validateOneOfInputObject(context, node, type2, fieldNodeMap, variableDefinitions) {
+  var _fieldNodeMap$keys$;
+  const keys = Object.keys(fieldNodeMap);
+  const isNotExactlyOneField = keys.length !== 1;
+  if (isNotExactlyOneField) {
+    context.reportError(
+      new GraphQLError2(
+        `OneOf Input Object "${type2.name}" must specify exactly one key.`,
+        {
+          nodes: [node]
+        }
+      )
+    );
+    return;
+  }
+  const value = (_fieldNodeMap$keys$ = fieldNodeMap[keys[0]]) === null || _fieldNodeMap$keys$ === void 0 ? void 0 : _fieldNodeMap$keys$.value;
+  const isNullLiteral = !value || value.kind === Kind.NULL;
+  const isVariable = (value === null || value === void 0 ? void 0 : value.kind) === Kind.VARIABLE;
+  if (isNullLiteral) {
+    context.reportError(
+      new GraphQLError2(`Field "${type2.name}.${keys[0]}" must be non-null.`, {
+        nodes: [node]
+      })
+    );
+    return;
+  }
+  if (isVariable) {
+    const variableName = value.name.value;
+    const definition = variableDefinitions[variableName];
+    const isNullableVariable = definition.type.kind !== Kind.NON_NULL_TYPE;
+    if (isNullableVariable) {
+      context.reportError(
+        new GraphQLError2(
+          `Variable "${variableName}" must be non-nullable to be used for OneOf Input Object "${type2.name}".`,
+          {
+            nodes: [node]
+          }
+        )
+      );
+    }
+  }
+}
+function VariablesAreInputTypesRule(context) {
+  return {
+    VariableDefinition(node) {
+      const type2 = typeFromAST(context.getSchema(), node.type);
+      if (type2 !== void 0 && !isInputType(type2)) {
+        const variableName = node.variable.name.value;
+        const typeName = print(node.type);
+        context.reportError(
+          new GraphQLError2(
+            `Variable "$${variableName}" cannot be non-input type "${typeName}".`,
+            {
+              nodes: node.type
+            }
+          )
+        );
+      }
+    }
+  };
+}
+function VariablesInAllowedPositionRule(context) {
+  let varDefMap = /* @__PURE__ */ Object.create(null);
+  return {
+    OperationDefinition: {
+      enter() {
+        varDefMap = /* @__PURE__ */ Object.create(null);
+      },
+      leave(operation) {
+        const usages = context.getRecursiveVariableUsages(operation);
+        for (const { node, type: type2, defaultValue, parentType } of usages) {
+          const varName = node.name.value;
+          const varDef = varDefMap[varName];
+          if (varDef && type2) {
+            const schema = context.getSchema();
+            const varType = typeFromAST(schema, varDef.type);
+            if (varType && !allowedVariableUsage(
+              schema,
+              varType,
+              varDef.defaultValue,
+              type2,
+              defaultValue
+            )) {
+              const varTypeStr = inspect(varType);
+              const typeStr = inspect(type2);
+              context.reportError(
+                new GraphQLError2(
+                  `Variable "$${varName}" of type "${varTypeStr}" used in position expecting type "${typeStr}".`,
+                  {
+                    nodes: [varDef, node]
+                  }
+                )
+              );
+            }
+            if (isInputObjectType(parentType) && parentType.isOneOf && isNullableType(varType)) {
+              context.reportError(
+                new GraphQLError2(
+                  `Variable "$${varName}" is of type "${varType}" but must be non-nullable to be used for OneOf Input Object "${parentType}".`,
+                  {
+                    nodes: [varDef, node]
+                  }
+                )
+              );
+            }
+          }
+        }
+      }
+    },
+    VariableDefinition(node) {
+      varDefMap[node.variable.name.value] = node;
+    }
+  };
+}
+function allowedVariableUsage(schema, varType, varDefaultValue, locationType, locationDefaultValue) {
+  if (isNonNullType(locationType) && !isNonNullType(varType)) {
+    const hasNonNullVariableDefaultValue = varDefaultValue != null && varDefaultValue.kind !== Kind.NULL;
+    const hasLocationDefaultValue = locationDefaultValue !== void 0;
+    if (!hasNonNullVariableDefaultValue && !hasLocationDefaultValue) {
+      return false;
+    }
+    const nullableLocationType = locationType.ofType;
+    return isTypeSubTypeOf(schema, varType, nullableLocationType);
+  }
+  return isTypeSubTypeOf(schema, varType, locationType);
+}
+const recommendedRules = Object.freeze([MaxIntrospectionDepthRule]);
+const specifiedRules = Object.freeze([
+  ExecutableDefinitionsRule,
+  UniqueOperationNamesRule,
+  LoneAnonymousOperationRule,
+  SingleFieldSubscriptionsRule,
+  KnownTypeNamesRule,
+  FragmentsOnCompositeTypesRule,
+  VariablesAreInputTypesRule,
+  ScalarLeafsRule,
+  FieldsOnCorrectTypeRule,
+  UniqueFragmentNamesRule,
+  KnownFragmentNamesRule,
+  NoUnusedFragmentsRule,
+  PossibleFragmentSpreadsRule,
+  NoFragmentCyclesRule,
+  UniqueVariableNamesRule,
+  NoUndefinedVariablesRule,
+  NoUnusedVariablesRule,
+  KnownDirectivesRule,
+  UniqueDirectivesPerLocationRule,
+  KnownArgumentNamesRule,
+  UniqueArgumentNamesRule,
+  ValuesOfCorrectTypeRule,
+  ProvidedRequiredArgumentsRule,
+  VariablesInAllowedPositionRule,
+  OverlappingFieldsCanBeMergedRule,
+  UniqueInputFieldNamesRule,
+  ...recommendedRules
+]);
+const specifiedSDLRules = Object.freeze([
+  LoneSchemaDefinitionRule,
+  UniqueOperationTypesRule,
+  UniqueTypeNamesRule,
+  UniqueEnumValueNamesRule,
+  UniqueFieldDefinitionNamesRule,
+  UniqueArgumentDefinitionNamesRule,
+  UniqueDirectiveNamesRule,
+  KnownTypeNamesRule,
+  KnownDirectivesRule,
+  UniqueDirectivesPerLocationRule,
+  PossibleTypeExtensionsRule,
+  KnownArgumentNamesOnDirectivesRule,
+  UniqueArgumentNamesRule,
+  UniqueInputFieldNamesRule,
+  ProvidedRequiredArgumentsOnDirectivesRule
+]);
+class ASTValidationContext2 {
+  constructor(ast, onError) {
+    this._ast = ast;
+    this._fragments = void 0;
+    this._fragmentSpreads = /* @__PURE__ */ new Map();
+    this._recursivelyReferencedFragments = /* @__PURE__ */ new Map();
+    this._onError = onError;
+  }
+  get [Symbol.toStringTag]() {
+    return "ASTValidationContext";
+  }
+  reportError(error2) {
+    this._onError(error2);
+  }
+  getDocument() {
+    return this._ast;
+  }
+  getFragment(name2) {
+    let fragments;
+    if (this._fragments) {
+      fragments = this._fragments;
+    } else {
+      fragments = /* @__PURE__ */ Object.create(null);
+      for (const defNode of this.getDocument().definitions) {
+        if (defNode.kind === Kind.FRAGMENT_DEFINITION) {
+          fragments[defNode.name.value] = defNode;
+        }
+      }
+      this._fragments = fragments;
+    }
+    return fragments[name2];
+  }
+  getFragmentSpreads(node) {
+    let spreads = this._fragmentSpreads.get(node);
+    if (!spreads) {
+      spreads = [];
+      const setsToVisit = [node];
+      let set2;
+      while (set2 = setsToVisit.pop()) {
+        for (const selection of set2.selections) {
+          if (selection.kind === Kind.FRAGMENT_SPREAD) {
+            spreads.push(selection);
+          } else if (selection.selectionSet) {
+            setsToVisit.push(selection.selectionSet);
+          }
+        }
+      }
+      this._fragmentSpreads.set(node, spreads);
+    }
+    return spreads;
+  }
+  getRecursivelyReferencedFragments(operation) {
+    let fragments = this._recursivelyReferencedFragments.get(operation);
+    if (!fragments) {
+      fragments = [];
+      const collectedNames = /* @__PURE__ */ Object.create(null);
+      const nodesToVisit = [operation.selectionSet];
+      let node;
+      while (node = nodesToVisit.pop()) {
+        for (const spread of this.getFragmentSpreads(node)) {
+          const fragName = spread.name.value;
+          if (collectedNames[fragName] !== true) {
+            collectedNames[fragName] = true;
+            const fragment = this.getFragment(fragName);
+            if (fragment) {
+              fragments.push(fragment);
+              nodesToVisit.push(fragment.selectionSet);
+            }
+          }
+        }
+      }
+      this._recursivelyReferencedFragments.set(operation, fragments);
+    }
+    return fragments;
+  }
+}
+class SDLValidationContext2 extends ASTValidationContext2 {
+  constructor(ast, schema, onError) {
+    super(ast, onError);
+    this._schema = schema;
+  }
+  get [Symbol.toStringTag]() {
+    return "SDLValidationContext";
+  }
+  getSchema() {
+    return this._schema;
+  }
+}
+class ValidationContext extends ASTValidationContext2 {
+  constructor(schema, ast, typeInfo, onError) {
+    super(ast, onError);
+    this._schema = schema;
+    this._typeInfo = typeInfo;
+    this._variableUsages = /* @__PURE__ */ new Map();
+    this._recursiveVariableUsages = /* @__PURE__ */ new Map();
+  }
+  get [Symbol.toStringTag]() {
+    return "ValidationContext";
+  }
+  getSchema() {
+    return this._schema;
+  }
+  getVariableUsages(node) {
+    let usages = this._variableUsages.get(node);
+    if (!usages) {
+      const newUsages = [];
+      const typeInfo = new TypeInfo2(this._schema);
+      visit(
+        node,
+        visitWithTypeInfo(typeInfo, {
+          VariableDefinition: () => false,
+          Variable(variable) {
+            newUsages.push({
+              node: variable,
+              type: typeInfo.getInputType(),
+              defaultValue: typeInfo.getDefaultValue(),
+              parentType: typeInfo.getParentInputType()
+            });
+          }
+        })
+      );
+      usages = newUsages;
+      this._variableUsages.set(node, usages);
+    }
+    return usages;
+  }
+  getRecursiveVariableUsages(operation) {
+    let usages = this._recursiveVariableUsages.get(operation);
+    if (!usages) {
+      usages = this.getVariableUsages(operation);
+      for (const frag of this.getRecursivelyReferencedFragments(operation)) {
+        usages = usages.concat(this.getVariableUsages(frag));
+      }
+      this._recursiveVariableUsages.set(operation, usages);
+    }
+    return usages;
+  }
+  getType() {
+    return this._typeInfo.getType();
+  }
+  getParentType() {
+    return this._typeInfo.getParentType();
+  }
+  getInputType() {
+    return this._typeInfo.getInputType();
+  }
+  getParentInputType() {
+    return this._typeInfo.getParentInputType();
+  }
+  getFieldDef() {
+    return this._typeInfo.getFieldDef();
+  }
+  getDirective() {
+    return this._typeInfo.getDirective();
+  }
+  getArgument() {
+    return this._typeInfo.getArgument();
+  }
+  getEnumValue() {
+    return this._typeInfo.getEnumValue();
+  }
+}
+function validate(schema, documentAST, rules = specifiedRules, options, typeInfo = new TypeInfo2(schema)) {
+  var _options$maxErrors;
+  const maxErrors = (_options$maxErrors = options === null || options === void 0 ? void 0 : options.maxErrors) !== null && _options$maxErrors !== void 0 ? _options$maxErrors : 100;
+  documentAST || devAssert(false, "Must provide document.");
+  assertValidSchema(schema);
+  const abortObj = Object.freeze({});
+  const errors2 = [];
+  const context = new ValidationContext(
+    schema,
+    documentAST,
+    typeInfo,
+    (error2) => {
+      if (errors2.length >= maxErrors) {
+        errors2.push(
+          new GraphQLError2(
+            "Too many validation errors, error limit reached. Validation aborted."
+          )
+        );
+        throw abortObj;
+      }
+      errors2.push(error2);
+    }
+  );
+  const visitor = visitInParallel(rules.map((rule) => rule(context)));
+  try {
+    visit(documentAST, visitWithTypeInfo(typeInfo, visitor));
+  } catch (e2) {
+    if (e2 !== abortObj) {
+      throw e2;
+    }
+  }
+  return errors2;
+}
+function validateSDL(documentAST, schemaToExtend, rules = specifiedSDLRules) {
+  const errors2 = [];
+  const context = new SDLValidationContext2(
+    documentAST,
+    schemaToExtend,
+    (error2) => {
+      errors2.push(error2);
+    }
+  );
+  const visitors = rules.map((rule) => rule(context));
+  visit(documentAST, visitInParallel(visitors));
+  return errors2;
+}
+function assertValidSDL(documentAST) {
+  const errors2 = validateSDL(documentAST);
+  if (errors2.length !== 0) {
+    throw new Error(errors2.map((error2) => error2.message).join("\n\n"));
+  }
+}
+function assertValidSDLExtension(documentAST, schema) {
+  const errors2 = validateSDL(documentAST, schema);
+  if (errors2.length !== 0) {
+    throw new Error(errors2.map((error2) => error2.message).join("\n\n"));
+  }
+}
+function memoize3(fn) {
+  let cache0;
+  return function memoized(a1, a22, a3) {
+    if (cache0 === void 0) {
+      cache0 = /* @__PURE__ */ new WeakMap();
+    }
+    let cache1 = cache0.get(a1);
+    if (cache1 === void 0) {
+      cache1 = /* @__PURE__ */ new WeakMap();
+      cache0.set(a1, cache1);
+    }
+    let cache2 = cache1.get(a22);
+    if (cache2 === void 0) {
+      cache2 = /* @__PURE__ */ new WeakMap();
+      cache1.set(a22, cache2);
+    }
+    let fnResult = cache2.get(a3);
+    if (fnResult === void 0) {
+      fnResult = fn(a1, a22, a3);
+      cache2.set(a3, fnResult);
+    }
+    return fnResult;
+  };
+}
+function promiseForObject(object) {
+  return Promise.all(Object.values(object)).then((resolvedValues) => {
+    const resolvedObject = /* @__PURE__ */ Object.create(null);
+    for (const [i2, key] of Object.keys(object).entries()) {
+      resolvedObject[key] = resolvedValues[i2];
+    }
+    return resolvedObject;
+  });
+}
+function promiseReduce(values, callbackFn, initialValue) {
+  let accumulator = initialValue;
+  for (const value of values) {
+    accumulator = isPromise(accumulator) ? accumulator.then((resolved) => callbackFn(resolved, value)) : callbackFn(accumulator, value);
+  }
+  return accumulator;
+}
+function toError(thrownValue) {
+  return thrownValue instanceof Error ? thrownValue : new NonErrorThrown(thrownValue);
+}
+class NonErrorThrown extends Error {
+  constructor(thrownValue) {
+    super("Unexpected error value: " + inspect(thrownValue));
+    this.name = "NonErrorThrown";
+    this.thrownValue = thrownValue;
+  }
+}
+function locatedError(rawOriginalError, nodes, path) {
+  var _nodes;
+  const originalError = toError(rawOriginalError);
+  if (isLocatedGraphQLError(originalError)) {
+    return originalError;
+  }
+  return new GraphQLError2(originalError.message, {
+    nodes: (_nodes = originalError.nodes) !== null && _nodes !== void 0 ? _nodes : nodes,
+    source: originalError.source,
+    positions: originalError.positions,
+    path,
+    originalError
+  });
+}
+function isLocatedGraphQLError(error2) {
+  return Array.isArray(error2.path);
+}
+const collectSubfields = memoize3(
+  (exeContext, returnType, fieldNodes) => collectSubfields$1(
+    exeContext.schema,
+    exeContext.fragments,
+    exeContext.variableValues,
+    returnType,
+    fieldNodes
+  )
+);
+function execute(args) {
+  arguments.length < 2 || devAssert(
+    false,
+    "graphql@16 dropped long-deprecated support for positional arguments, please pass an object instead."
+  );
+  const { schema, document: document2, variableValues, rootValue } = args;
+  assertValidExecutionArguments(schema, document2, variableValues);
+  const exeContext = buildExecutionContext(args);
+  if (!("schema" in exeContext)) {
+    return {
+      errors: exeContext
+    };
+  }
+  try {
+    const { operation } = exeContext;
+    const result = executeOperation(exeContext, operation, rootValue);
+    if (isPromise(result)) {
+      return result.then(
+        (data) => buildResponse(data, exeContext.errors),
+        (error2) => {
+          exeContext.errors.push(error2);
+          return buildResponse(null, exeContext.errors);
+        }
+      );
+    }
+    return buildResponse(result, exeContext.errors);
+  } catch (error2) {
+    exeContext.errors.push(error2);
+    return buildResponse(null, exeContext.errors);
+  }
+}
+function executeSync(args) {
+  const result = execute(args);
+  if (isPromise(result)) {
+    throw new Error("GraphQL execution failed to complete synchronously.");
+  }
+  return result;
+}
+function buildResponse(data, errors2) {
+  return errors2.length === 0 ? {
+    data
+  } : {
+    errors: errors2,
+    data
+  };
+}
+function assertValidExecutionArguments(schema, document2, rawVariableValues) {
+  document2 || devAssert(false, "Must provide document.");
+  assertValidSchema(schema);
+  rawVariableValues == null || isObjectLike(rawVariableValues) || devAssert(
+    false,
+    "Variables must be provided as an Object where each property is a variable value. Perhaps look to see if an unparsed JSON string was provided."
+  );
+}
+function buildExecutionContext(args) {
+  var _definition$name, _operation$variableDe, _options$maxCoercionE;
+  const {
+    schema,
+    document: document2,
+    rootValue,
+    contextValue,
+    variableValues: rawVariableValues,
+    operationName,
+    fieldResolver,
+    typeResolver,
+    subscribeFieldResolver,
+    options
+  } = args;
+  let operation;
+  const fragments = /* @__PURE__ */ Object.create(null);
+  for (const definition of document2.definitions) {
+    switch (definition.kind) {
+      case Kind.OPERATION_DEFINITION:
+        if (operationName == null) {
+          if (operation !== void 0) {
+            return [
+              new GraphQLError2(
+                "Must provide operation name if query contains multiple operations."
+              )
+            ];
+          }
+          operation = definition;
+        } else if (((_definition$name = definition.name) === null || _definition$name === void 0 ? void 0 : _definition$name.value) === operationName) {
+          operation = definition;
+        }
+        break;
+      case Kind.FRAGMENT_DEFINITION:
+        fragments[definition.name.value] = definition;
+        break;
+    }
+  }
+  if (!operation) {
+    if (operationName != null) {
+      return [new GraphQLError2(`Unknown operation named "${operationName}".`)];
+    }
+    return [new GraphQLError2("Must provide an operation.")];
+  }
+  const variableDefinitions = (_operation$variableDe = operation.variableDefinitions) !== null && _operation$variableDe !== void 0 ? _operation$variableDe : [];
+  const coercedVariableValues = getVariableValues(
+    schema,
+    variableDefinitions,
+    rawVariableValues !== null && rawVariableValues !== void 0 ? rawVariableValues : {},
+    {
+      maxErrors: (_options$maxCoercionE = options === null || options === void 0 ? void 0 : options.maxCoercionErrors) !== null && _options$maxCoercionE !== void 0 ? _options$maxCoercionE : 50
+    }
+  );
+  if (coercedVariableValues.errors) {
+    return coercedVariableValues.errors;
+  }
+  return {
+    schema,
+    fragments,
+    rootValue,
+    contextValue,
+    operation,
+    variableValues: coercedVariableValues.coerced,
+    fieldResolver: fieldResolver !== null && fieldResolver !== void 0 ? fieldResolver : defaultFieldResolver,
+    typeResolver: typeResolver !== null && typeResolver !== void 0 ? typeResolver : defaultTypeResolver,
+    subscribeFieldResolver: subscribeFieldResolver !== null && subscribeFieldResolver !== void 0 ? subscribeFieldResolver : defaultFieldResolver,
+    errors: []
+  };
+}
+function executeOperation(exeContext, operation, rootValue) {
+  const rootType = exeContext.schema.getRootType(operation.operation);
+  if (rootType == null) {
+    throw new GraphQLError2(
+      `Schema is not configured to execute ${operation.operation} operation.`,
+      {
+        nodes: operation
+      }
+    );
+  }
+  const rootFields = collectFields(
+    exeContext.schema,
+    exeContext.fragments,
+    exeContext.variableValues,
+    rootType,
+    operation.selectionSet
+  );
+  const path = void 0;
+  switch (operation.operation) {
+    case OperationTypeNode.QUERY:
+      return executeFields(exeContext, rootType, rootValue, path, rootFields);
+    case OperationTypeNode.MUTATION:
+      return executeFieldsSerially(
+        exeContext,
+        rootType,
+        rootValue,
+        path,
+        rootFields
+      );
+    case OperationTypeNode.SUBSCRIPTION:
+      return executeFields(exeContext, rootType, rootValue, path, rootFields);
+  }
+}
+function executeFieldsSerially(exeContext, parentType, sourceValue, path, fields) {
+  return promiseReduce(
+    fields.entries(),
+    (results, [responseName, fieldNodes]) => {
+      const fieldPath = addPath(path, responseName, parentType.name);
+      const result = executeField(
+        exeContext,
+        parentType,
+        sourceValue,
+        fieldNodes,
+        fieldPath
+      );
+      if (result === void 0) {
+        return results;
+      }
+      if (isPromise(result)) {
+        return result.then((resolvedResult) => {
+          results[responseName] = resolvedResult;
+          return results;
+        });
+      }
+      results[responseName] = result;
+      return results;
+    },
+    /* @__PURE__ */ Object.create(null)
+  );
+}
+function executeFields(exeContext, parentType, sourceValue, path, fields) {
+  const results = /* @__PURE__ */ Object.create(null);
+  let containsPromise = false;
+  try {
+    for (const [responseName, fieldNodes] of fields.entries()) {
+      const fieldPath = addPath(path, responseName, parentType.name);
+      const result = executeField(
+        exeContext,
+        parentType,
+        sourceValue,
+        fieldNodes,
+        fieldPath
+      );
+      if (result !== void 0) {
+        results[responseName] = result;
+        if (isPromise(result)) {
+          containsPromise = true;
+        }
+      }
+    }
+  } catch (error2) {
+    if (containsPromise) {
+      return promiseForObject(results).finally(() => {
+        throw error2;
+      });
+    }
+    throw error2;
+  }
+  if (!containsPromise) {
+    return results;
+  }
+  return promiseForObject(results);
+}
+function executeField(exeContext, parentType, source, fieldNodes, path) {
+  var _fieldDef$resolve;
+  const fieldDef = getFieldDef(exeContext.schema, parentType, fieldNodes[0]);
+  if (!fieldDef) {
+    return;
+  }
+  const returnType = fieldDef.type;
+  const resolveFn = (_fieldDef$resolve = fieldDef.resolve) !== null && _fieldDef$resolve !== void 0 ? _fieldDef$resolve : exeContext.fieldResolver;
+  const info = buildResolveInfo(
+    exeContext,
+    fieldDef,
+    fieldNodes,
+    parentType,
+    path
+  );
+  try {
+    const args = getArgumentValues(
+      fieldDef,
+      fieldNodes[0],
+      exeContext.variableValues
+    );
+    const contextValue = exeContext.contextValue;
+    const result = resolveFn(source, args, contextValue, info);
+    let completed;
+    if (isPromise(result)) {
+      completed = result.then(
+        (resolved) => completeValue(exeContext, returnType, fieldNodes, info, path, resolved)
+      );
+    } else {
+      completed = completeValue(
+        exeContext,
+        returnType,
+        fieldNodes,
+        info,
+        path,
+        result
+      );
+    }
+    if (isPromise(completed)) {
+      return completed.then(void 0, (rawError) => {
+        const error2 = locatedError(rawError, fieldNodes, pathToArray(path));
+        return handleFieldError(error2, returnType, exeContext);
+      });
+    }
+    return completed;
+  } catch (rawError) {
+    const error2 = locatedError(rawError, fieldNodes, pathToArray(path));
+    return handleFieldError(error2, returnType, exeContext);
+  }
+}
+function buildResolveInfo(exeContext, fieldDef, fieldNodes, parentType, path) {
+  return {
+    fieldName: fieldDef.name,
+    fieldNodes,
+    returnType: fieldDef.type,
+    parentType,
+    path,
+    schema: exeContext.schema,
+    fragments: exeContext.fragments,
+    rootValue: exeContext.rootValue,
+    operation: exeContext.operation,
+    variableValues: exeContext.variableValues
+  };
+}
+function handleFieldError(error2, returnType, exeContext) {
+  if (isNonNullType(returnType)) {
+    throw error2;
+  }
+  exeContext.errors.push(error2);
+  return null;
+}
+function completeValue(exeContext, returnType, fieldNodes, info, path, result) {
+  if (result instanceof Error) {
+    throw result;
+  }
+  if (isNonNullType(returnType)) {
+    const completed = completeValue(
+      exeContext,
+      returnType.ofType,
+      fieldNodes,
+      info,
+      path,
+      result
+    );
+    if (completed === null) {
+      throw new Error(
+        `Cannot return null for non-nullable field ${info.parentType.name}.${info.fieldName}.`
+      );
+    }
+    return completed;
+  }
+  if (result == null) {
+    return null;
+  }
+  if (isListType(returnType)) {
+    return completeListValue(
+      exeContext,
+      returnType,
+      fieldNodes,
+      info,
+      path,
+      result
+    );
+  }
+  if (isLeafType(returnType)) {
+    return completeLeafValue(returnType, result);
+  }
+  if (isAbstractType(returnType)) {
+    return completeAbstractValue(
+      exeContext,
+      returnType,
+      fieldNodes,
+      info,
+      path,
+      result
+    );
+  }
+  if (isObjectType(returnType)) {
+    return completeObjectValue(
+      exeContext,
+      returnType,
+      fieldNodes,
+      info,
+      path,
+      result
+    );
+  }
+  invariant(
+    false,
+    "Cannot complete value of unexpected output type: " + inspect(returnType)
+  );
+}
+function completeListValue(exeContext, returnType, fieldNodes, info, path, result) {
+  if (!isIterableObject(result)) {
+    throw new GraphQLError2(
+      `Expected Iterable, but did not find one for field "${info.parentType.name}.${info.fieldName}".`
+    );
+  }
+  const itemType = returnType.ofType;
+  let containsPromise = false;
+  const completedResults = Array.from(result, (item, index2) => {
+    const itemPath = addPath(path, index2, void 0);
+    try {
+      let completedItem;
+      if (isPromise(item)) {
+        completedItem = item.then(
+          (resolved) => completeValue(
+            exeContext,
+            itemType,
+            fieldNodes,
+            info,
+            itemPath,
+            resolved
+          )
+        );
+      } else {
+        completedItem = completeValue(
+          exeContext,
+          itemType,
+          fieldNodes,
+          info,
+          itemPath,
+          item
+        );
+      }
+      if (isPromise(completedItem)) {
+        containsPromise = true;
+        return completedItem.then(void 0, (rawError) => {
+          const error2 = locatedError(
+            rawError,
+            fieldNodes,
+            pathToArray(itemPath)
+          );
+          return handleFieldError(error2, itemType, exeContext);
+        });
+      }
+      return completedItem;
+    } catch (rawError) {
+      const error2 = locatedError(rawError, fieldNodes, pathToArray(itemPath));
+      return handleFieldError(error2, itemType, exeContext);
+    }
+  });
+  return containsPromise ? Promise.all(completedResults) : completedResults;
+}
+function completeLeafValue(returnType, result) {
+  const serializedResult = returnType.serialize(result);
+  if (serializedResult == null) {
+    throw new Error(
+      `Expected \`${inspect(returnType)}.serialize(${inspect(result)})\` to return non-nullable value, returned: ${inspect(serializedResult)}`
+    );
+  }
+  return serializedResult;
+}
+function completeAbstractValue(exeContext, returnType, fieldNodes, info, path, result) {
+  var _returnType$resolveTy;
+  const resolveTypeFn = (_returnType$resolveTy = returnType.resolveType) !== null && _returnType$resolveTy !== void 0 ? _returnType$resolveTy : exeContext.typeResolver;
+  const contextValue = exeContext.contextValue;
+  const runtimeType = resolveTypeFn(result, contextValue, info, returnType);
+  if (isPromise(runtimeType)) {
+    return runtimeType.then(
+      (resolvedRuntimeType) => completeObjectValue(
+        exeContext,
+        ensureValidRuntimeType(
+          resolvedRuntimeType,
+          exeContext,
+          returnType,
+          fieldNodes,
+          info,
+          result
+        ),
+        fieldNodes,
+        info,
+        path,
+        result
+      )
+    );
+  }
+  return completeObjectValue(
+    exeContext,
+    ensureValidRuntimeType(
+      runtimeType,
+      exeContext,
+      returnType,
+      fieldNodes,
+      info,
+      result
+    ),
+    fieldNodes,
+    info,
+    path,
+    result
+  );
+}
+function ensureValidRuntimeType(runtimeTypeName, exeContext, returnType, fieldNodes, info, result) {
+  if (runtimeTypeName == null) {
+    throw new GraphQLError2(
+      `Abstract type "${returnType.name}" must resolve to an Object type at runtime for field "${info.parentType.name}.${info.fieldName}". Either the "${returnType.name}" type should provide a "resolveType" function or each possible type should provide an "isTypeOf" function.`,
+      fieldNodes
+    );
+  }
+  if (isObjectType(runtimeTypeName)) {
+    throw new GraphQLError2(
+      "Support for returning GraphQLObjectType from resolveType was removed in graphql-js@16.0.0 please return type name instead."
+    );
+  }
+  if (typeof runtimeTypeName !== "string") {
+    throw new GraphQLError2(
+      `Abstract type "${returnType.name}" must resolve to an Object type at runtime for field "${info.parentType.name}.${info.fieldName}" with value ${inspect(result)}, received "${inspect(runtimeTypeName)}".`
+    );
+  }
+  const runtimeType = exeContext.schema.getType(runtimeTypeName);
+  if (runtimeType == null) {
+    throw new GraphQLError2(
+      `Abstract type "${returnType.name}" was resolved to a type "${runtimeTypeName}" that does not exist inside the schema.`,
+      {
+        nodes: fieldNodes
+      }
+    );
+  }
+  if (!isObjectType(runtimeType)) {
+    throw new GraphQLError2(
+      `Abstract type "${returnType.name}" was resolved to a non-object type "${runtimeTypeName}".`,
+      {
+        nodes: fieldNodes
+      }
+    );
+  }
+  if (!exeContext.schema.isSubType(returnType, runtimeType)) {
+    throw new GraphQLError2(
+      `Runtime Object type "${runtimeType.name}" is not a possible type for "${returnType.name}".`,
+      {
+        nodes: fieldNodes
+      }
+    );
+  }
+  return runtimeType;
+}
+function completeObjectValue(exeContext, returnType, fieldNodes, info, path, result) {
+  const subFieldNodes = collectSubfields(exeContext, returnType, fieldNodes);
+  if (returnType.isTypeOf) {
+    const isTypeOf = returnType.isTypeOf(result, exeContext.contextValue, info);
+    if (isPromise(isTypeOf)) {
+      return isTypeOf.then((resolvedIsTypeOf) => {
+        if (!resolvedIsTypeOf) {
+          throw invalidReturnTypeError(returnType, result, fieldNodes);
+        }
+        return executeFields(
+          exeContext,
+          returnType,
+          result,
+          path,
+          subFieldNodes
+        );
+      });
+    }
+    if (!isTypeOf) {
+      throw invalidReturnTypeError(returnType, result, fieldNodes);
+    }
+  }
+  return executeFields(exeContext, returnType, result, path, subFieldNodes);
+}
+function invalidReturnTypeError(returnType, result, fieldNodes) {
+  return new GraphQLError2(
+    `Expected value of type "${returnType.name}" but got: ${inspect(result)}.`,
+    {
+      nodes: fieldNodes
+    }
+  );
+}
+const defaultTypeResolver = function(value, contextValue, info, abstractType) {
+  if (isObjectLike(value) && typeof value.__typename === "string") {
+    return value.__typename;
+  }
+  const possibleTypes = info.schema.getPossibleTypes(abstractType);
+  const promisedIsTypeOfResults = [];
+  for (let i2 = 0; i2 < possibleTypes.length; i2++) {
+    const type2 = possibleTypes[i2];
+    if (type2.isTypeOf) {
+      const isTypeOfResult = type2.isTypeOf(value, contextValue, info);
+      if (isPromise(isTypeOfResult)) {
+        promisedIsTypeOfResults[i2] = isTypeOfResult;
+      } else if (isTypeOfResult) {
+        return type2.name;
+      }
+    }
+  }
+  if (promisedIsTypeOfResults.length) {
+    return Promise.all(promisedIsTypeOfResults).then((isTypeOfResults) => {
+      for (let i2 = 0; i2 < isTypeOfResults.length; i2++) {
+        if (isTypeOfResults[i2]) {
+          return possibleTypes[i2].name;
+        }
+      }
+    });
+  }
+};
+const defaultFieldResolver = function(source, args, contextValue, info) {
+  if (isObjectLike(source) || typeof source === "function") {
+    const property = source[info.fieldName];
+    if (typeof property === "function") {
+      return source[info.fieldName](args, contextValue, info);
+    }
+    return property;
+  }
+};
+function getFieldDef(schema, parentType, fieldNode) {
+  const fieldName = fieldNode.name.value;
+  if (fieldName === SchemaMetaFieldDef.name && schema.getQueryType() === parentType) {
+    return SchemaMetaFieldDef;
+  } else if (fieldName === TypeMetaFieldDef.name && schema.getQueryType() === parentType) {
+    return TypeMetaFieldDef;
+  } else if (fieldName === TypeNameMetaFieldDef.name) {
+    return TypeNameMetaFieldDef;
+  }
+  return parentType.getFields()[fieldName];
+}
+function graphql$1(args) {
+  return new Promise((resolve) => resolve(graphqlImpl(args)));
+}
+function graphqlSync(args) {
+  const result = graphqlImpl(args);
+  if (isPromise(result)) {
+    throw new Error("GraphQL execution failed to complete synchronously.");
+  }
+  return result;
+}
+function graphqlImpl(args) {
+  arguments.length < 2 || devAssert(
+    false,
+    "graphql@16 dropped long-deprecated support for positional arguments, please pass an object instead."
+  );
+  const {
+    schema,
+    source,
+    rootValue,
+    contextValue,
+    variableValues,
+    operationName,
+    fieldResolver,
+    typeResolver
+  } = args;
+  const schemaValidationErrors = validateSchema(schema);
+  if (schemaValidationErrors.length > 0) {
+    return {
+      errors: schemaValidationErrors
+    };
+  }
+  let document2;
+  try {
+    document2 = parse(source);
+  } catch (syntaxError2) {
+    return {
+      errors: [syntaxError2]
+    };
+  }
+  const validationErrors = validate(schema, document2);
+  if (validationErrors.length > 0) {
+    return {
+      errors: validationErrors
+    };
+  }
+  return execute({
+    schema,
+    document: document2,
+    rootValue,
+    contextValue,
+    variableValues,
+    operationName,
+    fieldResolver,
+    typeResolver
+  });
+}
+function isAsyncIterable(maybeAsyncIterable) {
+  return typeof (maybeAsyncIterable === null || maybeAsyncIterable === void 0 ? void 0 : maybeAsyncIterable[Symbol.asyncIterator]) === "function";
+}
+function mapAsyncIterator(iterable, callback) {
+  const iterator = iterable[Symbol.asyncIterator]();
+  async function mapResult(result) {
+    if (result.done) {
+      return result;
+    }
+    try {
+      return {
+        value: await callback(result.value),
+        done: false
+      };
+    } catch (error2) {
+      if (typeof iterator.return === "function") {
+        try {
+          await iterator.return();
+        } catch (_e) {
+        }
+      }
+      throw error2;
+    }
+  }
+  return {
+    async next() {
+      return mapResult(await iterator.next());
+    },
+    async return() {
+      return typeof iterator.return === "function" ? mapResult(await iterator.return()) : {
+        value: void 0,
+        done: true
+      };
+    },
+    async throw(error2) {
+      if (typeof iterator.throw === "function") {
+        return mapResult(await iterator.throw(error2));
+      }
+      throw error2;
+    },
+    [Symbol.asyncIterator]() {
+      return this;
+    }
+  };
+}
+async function subscribe(args) {
+  arguments.length < 2 || devAssert(
+    false,
+    "graphql@16 dropped long-deprecated support for positional arguments, please pass an object instead."
+  );
+  const resultOrStream = await createSourceEventStream(args);
+  if (!isAsyncIterable(resultOrStream)) {
+    return resultOrStream;
+  }
+  const mapSourceToResponse = (payload) => execute({ ...args, rootValue: payload });
+  return mapAsyncIterator(resultOrStream, mapSourceToResponse);
+}
+function toNormalizedArgs(args) {
+  const firstArg = args[0];
+  if (firstArg && "document" in firstArg) {
+    return firstArg;
+  }
+  return {
+    schema: firstArg,
+    // FIXME: when underlying TS bug fixed, see https://github.com/microsoft/TypeScript/issues/31613
+    document: args[1],
+    rootValue: args[2],
+    contextValue: args[3],
+    variableValues: args[4],
+    operationName: args[5],
+    subscribeFieldResolver: args[6]
+  };
+}
+async function createSourceEventStream(...rawArgs) {
+  const args = toNormalizedArgs(rawArgs);
+  const { schema, document: document2, variableValues } = args;
+  assertValidExecutionArguments(schema, document2, variableValues);
+  const exeContext = buildExecutionContext(args);
+  if (!("schema" in exeContext)) {
+    return {
+      errors: exeContext
+    };
+  }
+  try {
+    const eventStream = await executeSubscription(exeContext);
+    if (!isAsyncIterable(eventStream)) {
+      throw new Error(
+        `Subscription field must return Async Iterable. Received: ${inspect(eventStream)}.`
+      );
+    }
+    return eventStream;
+  } catch (error2) {
+    if (error2 instanceof GraphQLError2) {
+      return {
+        errors: [error2]
+      };
+    }
+    throw error2;
+  }
+}
+async function executeSubscription(exeContext) {
+  const { schema, fragments, operation, variableValues, rootValue } = exeContext;
+  const rootType = schema.getSubscriptionType();
+  if (rootType == null) {
+    throw new GraphQLError2(
+      "Schema is not configured to execute subscription operation.",
+      {
+        nodes: operation
+      }
+    );
+  }
+  const rootFields = collectFields(
+    schema,
+    fragments,
+    variableValues,
+    rootType,
+    operation.selectionSet
+  );
+  const [responseName, fieldNodes] = [...rootFields.entries()][0];
+  const fieldDef = getFieldDef(schema, rootType, fieldNodes[0]);
+  if (!fieldDef) {
+    const fieldName = fieldNodes[0].name.value;
+    throw new GraphQLError2(
+      `The subscription field "${fieldName}" is not defined.`,
+      {
+        nodes: fieldNodes
+      }
+    );
+  }
+  const path = addPath(void 0, responseName, rootType.name);
+  const info = buildResolveInfo(
+    exeContext,
+    fieldDef,
+    fieldNodes,
+    rootType,
+    path
+  );
+  try {
+    var _fieldDef$subscribe;
+    const args = getArgumentValues(fieldDef, fieldNodes[0], variableValues);
+    const contextValue = exeContext.contextValue;
+    const resolveFn = (_fieldDef$subscribe = fieldDef.subscribe) !== null && _fieldDef$subscribe !== void 0 ? _fieldDef$subscribe : exeContext.subscribeFieldResolver;
+    const eventStream = await resolveFn(rootValue, args, contextValue, info);
+    if (eventStream instanceof Error) {
+      throw eventStream;
+    }
+    return eventStream;
+  } catch (error2) {
+    throw locatedError(error2, fieldNodes, pathToArray(path));
+  }
+}
+function NoDeprecatedCustomRule(context) {
+  return {
+    Field(node) {
+      const fieldDef = context.getFieldDef();
+      const deprecationReason = fieldDef === null || fieldDef === void 0 ? void 0 : fieldDef.deprecationReason;
+      if (fieldDef && deprecationReason != null) {
+        const parentType = context.getParentType();
+        parentType != null || invariant(false);
+        context.reportError(
+          new GraphQLError2(
+            `The field ${parentType.name}.${fieldDef.name} is deprecated. ${deprecationReason}`,
+            {
+              nodes: node
+            }
+          )
+        );
+      }
+    },
+    Argument(node) {
+      const argDef = context.getArgument();
+      const deprecationReason = argDef === null || argDef === void 0 ? void 0 : argDef.deprecationReason;
+      if (argDef && deprecationReason != null) {
+        const directiveDef = context.getDirective();
+        if (directiveDef != null) {
+          context.reportError(
+            new GraphQLError2(
+              `Directive "@${directiveDef.name}" argument "${argDef.name}" is deprecated. ${deprecationReason}`,
+              {
+                nodes: node
+              }
+            )
+          );
+        } else {
+          const parentType = context.getParentType();
+          const fieldDef = context.getFieldDef();
+          parentType != null && fieldDef != null || invariant(false);
+          context.reportError(
+            new GraphQLError2(
+              `Field "${parentType.name}.${fieldDef.name}" argument "${argDef.name}" is deprecated. ${deprecationReason}`,
+              {
+                nodes: node
+              }
+            )
+          );
+        }
+      }
+    },
+    ObjectField(node) {
+      const inputObjectDef = getNamedType(context.getParentInputType());
+      if (isInputObjectType(inputObjectDef)) {
+        const inputFieldDef = inputObjectDef.getFields()[node.name.value];
+        const deprecationReason = inputFieldDef === null || inputFieldDef === void 0 ? void 0 : inputFieldDef.deprecationReason;
+        if (deprecationReason != null) {
+          context.reportError(
+            new GraphQLError2(
+              `The input field ${inputObjectDef.name}.${inputFieldDef.name} is deprecated. ${deprecationReason}`,
+              {
+                nodes: node
+              }
+            )
+          );
+        }
+      }
+    },
+    EnumValue(node) {
+      const enumValueDef = context.getEnumValue();
+      const deprecationReason = enumValueDef === null || enumValueDef === void 0 ? void 0 : enumValueDef.deprecationReason;
+      if (enumValueDef && deprecationReason != null) {
+        const enumTypeDef = getNamedType(context.getInputType());
+        enumTypeDef != null || invariant(false);
+        context.reportError(
+          new GraphQLError2(
+            `The enum value "${enumTypeDef.name}.${enumValueDef.name}" is deprecated. ${deprecationReason}`,
+            {
+              nodes: node
+            }
+          )
+        );
+      }
+    }
+  };
+}
+function NoSchemaIntrospectionCustomRule(context) {
+  return {
+    Field(node) {
+      const type2 = getNamedType(context.getType());
+      if (type2 && isIntrospectionType(type2)) {
+        context.reportError(
+          new GraphQLError2(
+            `GraphQL introspection has been disabled, but the requested query contained the field "${node.name.value}".`,
+            {
+              nodes: node
+            }
+          )
+        );
+      }
+    }
+  };
+}
+function getIntrospectionQuery(options) {
+  const optionsWithDefault = {
+    descriptions: true,
+    specifiedByUrl: false,
+    directiveIsRepeatable: false,
+    schemaDescription: false,
+    inputValueDeprecation: false,
+    oneOf: false,
+    ...options
+  };
+  const descriptions = optionsWithDefault.descriptions ? "description" : "";
+  const specifiedByUrl = optionsWithDefault.specifiedByUrl ? "specifiedByURL" : "";
+  const directiveIsRepeatable = optionsWithDefault.directiveIsRepeatable ? "isRepeatable" : "";
+  const schemaDescription = optionsWithDefault.schemaDescription ? descriptions : "";
+  function inputDeprecation(str) {
+    return optionsWithDefault.inputValueDeprecation ? str : "";
+  }
+  const oneOf = optionsWithDefault.oneOf ? "isOneOf" : "";
+  return `
+    query IntrospectionQuery {
+      __schema {
+        ${schemaDescription}
+        queryType { name kind }
+        mutationType { name kind }
+        subscriptionType { name kind }
+        types {
+          ...FullType
+        }
+        directives {
+          name
+          ${descriptions}
+          ${directiveIsRepeatable}
+          locations
+          args${inputDeprecation("(includeDeprecated: true)")} {
+            ...InputValue
+          }
+        }
+      }
+    }
+
+    fragment FullType on __Type {
+      kind
+      name
+      ${descriptions}
+      ${specifiedByUrl}
+      ${oneOf}
+      fields(includeDeprecated: true) {
+        name
+        ${descriptions}
+        args${inputDeprecation("(includeDeprecated: true)")} {
+          ...InputValue
+        }
+        type {
+          ...TypeRef
+        }
+        isDeprecated
+        deprecationReason
+      }
+      inputFields${inputDeprecation("(includeDeprecated: true)")} {
+        ...InputValue
+      }
+      interfaces {
+        ...TypeRef
+      }
+      enumValues(includeDeprecated: true) {
+        name
+        ${descriptions}
+        isDeprecated
+        deprecationReason
+      }
+      possibleTypes {
+        ...TypeRef
+      }
+    }
+
+    fragment InputValue on __InputValue {
+      name
+      ${descriptions}
+      type { ...TypeRef }
+      defaultValue
+      ${inputDeprecation("isDeprecated")}
+      ${inputDeprecation("deprecationReason")}
+    }
+
+    fragment TypeRef on __Type {
+      kind
+      name
+      ofType {
+        kind
+        name
+        ofType {
+          kind
+          name
+          ofType {
+            kind
+            name
+            ofType {
+              kind
+              name
+              ofType {
+                kind
+                name
+                ofType {
+                  kind
+                  name
+                  ofType {
+                    kind
+                    name
+                    ofType {
+                      kind
+                      name
+                      ofType {
+                        kind
+                        name
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `;
+}
+function getOperationAST(documentAST, operationName) {
+  let operation = null;
+  for (const definition of documentAST.definitions) {
+    if (definition.kind === Kind.OPERATION_DEFINITION) {
+      var _definition$name;
+      if (operationName == null) {
+        if (operation) {
+          return null;
+        }
+        operation = definition;
+      } else if (((_definition$name = definition.name) === null || _definition$name === void 0 ? void 0 : _definition$name.value) === operationName) {
+        return definition;
+      }
+    }
+  }
+  return operation;
+}
+function getOperationRootType(schema, operation) {
+  if (operation.operation === "query") {
+    const queryType = schema.getQueryType();
+    if (!queryType) {
+      throw new GraphQLError2(
+        "Schema does not define the required query root type.",
+        {
+          nodes: operation
+        }
+      );
+    }
+    return queryType;
+  }
+  if (operation.operation === "mutation") {
+    const mutationType = schema.getMutationType();
+    if (!mutationType) {
+      throw new GraphQLError2("Schema is not configured for mutations.", {
+        nodes: operation
+      });
+    }
+    return mutationType;
+  }
+  if (operation.operation === "subscription") {
+    const subscriptionType = schema.getSubscriptionType();
+    if (!subscriptionType) {
+      throw new GraphQLError2("Schema is not configured for subscriptions.", {
+        nodes: operation
+      });
+    }
+    return subscriptionType;
+  }
+  throw new GraphQLError2(
+    "Can only have query, mutation and subscription operations.",
+    {
+      nodes: operation
+    }
+  );
+}
+function introspectionFromSchema(schema, options) {
+  const optionsWithDefaults = {
+    specifiedByUrl: true,
+    directiveIsRepeatable: true,
+    schemaDescription: true,
+    inputValueDeprecation: true,
+    oneOf: true,
+    ...options
+  };
+  const document2 = parse(getIntrospectionQuery(optionsWithDefaults));
+  const result = executeSync({
+    schema,
+    document: document2
+  });
+  !result.errors && result.data || invariant(false);
+  return result.data;
+}
+function buildClientSchema(introspection, options) {
+  isObjectLike(introspection) && isObjectLike(introspection.__schema) || devAssert(
+    false,
+    `Invalid or incomplete introspection result. Ensure that you are passing "data" property of introspection response and no "errors" was returned alongside: ${inspect(
+      introspection
+    )}.`
+  );
+  const schemaIntrospection = introspection.__schema;
+  const typeMap = keyValMap(
+    schemaIntrospection.types,
+    (typeIntrospection) => typeIntrospection.name,
+    (typeIntrospection) => buildType(typeIntrospection)
+  );
+  for (const stdType of [...specifiedScalarTypes, ...introspectionTypes]) {
+    if (typeMap[stdType.name]) {
+      typeMap[stdType.name] = stdType;
+    }
+  }
+  const queryType = schemaIntrospection.queryType ? getObjectType(schemaIntrospection.queryType) : null;
+  const mutationType = schemaIntrospection.mutationType ? getObjectType(schemaIntrospection.mutationType) : null;
+  const subscriptionType = schemaIntrospection.subscriptionType ? getObjectType(schemaIntrospection.subscriptionType) : null;
+  const directives = schemaIntrospection.directives ? schemaIntrospection.directives.map(buildDirective) : [];
+  return new GraphQLSchema2({
+    description: schemaIntrospection.description,
+    query: queryType,
+    mutation: mutationType,
+    subscription: subscriptionType,
+    types: Object.values(typeMap),
+    directives,
+    assumeValid: options === null || options === void 0 ? void 0 : options.assumeValid
+  });
+  function getType(typeRef) {
+    if (typeRef.kind === TypeKind.LIST) {
+      const itemRef = typeRef.ofType;
+      if (!itemRef) {
+        throw new Error("Decorated type deeper than introspection query.");
+      }
+      return new GraphQLList2(getType(itemRef));
+    }
+    if (typeRef.kind === TypeKind.NON_NULL) {
+      const nullableRef = typeRef.ofType;
+      if (!nullableRef) {
+        throw new Error("Decorated type deeper than introspection query.");
+      }
+      const nullableType = getType(nullableRef);
+      return new GraphQLNonNull2(assertNullableType(nullableType));
+    }
+    return getNamedType2(typeRef);
+  }
+  function getNamedType2(typeRef) {
+    const typeName = typeRef.name;
+    if (!typeName) {
+      throw new Error(`Unknown type reference: ${inspect(typeRef)}.`);
+    }
+    const type2 = typeMap[typeName];
+    if (!type2) {
+      throw new Error(
+        `Invalid or incomplete schema, unknown type: ${typeName}. Ensure that a full introspection query is used in order to build a client schema.`
+      );
+    }
+    return type2;
+  }
+  function getObjectType(typeRef) {
+    return assertObjectType(getNamedType2(typeRef));
+  }
+  function getInterfaceType(typeRef) {
+    return assertInterfaceType(getNamedType2(typeRef));
+  }
+  function buildType(type2) {
+    if (type2 != null && type2.name != null && type2.kind != null) {
+      switch (type2.kind) {
+        case TypeKind.SCALAR:
+          return buildScalarDef(type2);
+        case TypeKind.OBJECT:
+          return buildObjectDef(type2);
+        case TypeKind.INTERFACE:
+          return buildInterfaceDef(type2);
+        case TypeKind.UNION:
+          return buildUnionDef(type2);
+        case TypeKind.ENUM:
+          return buildEnumDef(type2);
+        case TypeKind.INPUT_OBJECT:
+          return buildInputObjectDef(type2);
+      }
+    }
+    const typeStr = inspect(type2);
+    throw new Error(
+      `Invalid or incomplete introspection result. Ensure that a full introspection query is used in order to build a client schema: ${typeStr}.`
+    );
+  }
+  function buildScalarDef(scalarIntrospection) {
+    return new GraphQLScalarType2({
+      name: scalarIntrospection.name,
+      description: scalarIntrospection.description,
+      specifiedByURL: scalarIntrospection.specifiedByURL
+    });
+  }
+  function buildImplementationsList(implementingIntrospection) {
+    if (implementingIntrospection.interfaces === null && implementingIntrospection.kind === TypeKind.INTERFACE) {
+      return [];
+    }
+    if (!implementingIntrospection.interfaces) {
+      const implementingIntrospectionStr = inspect(implementingIntrospection);
+      throw new Error(
+        `Introspection result missing interfaces: ${implementingIntrospectionStr}.`
+      );
+    }
+    return implementingIntrospection.interfaces.map(getInterfaceType);
+  }
+  function buildObjectDef(objectIntrospection) {
+    return new GraphQLObjectType2({
+      name: objectIntrospection.name,
+      description: objectIntrospection.description,
+      interfaces: () => buildImplementationsList(objectIntrospection),
+      fields: () => buildFieldDefMap(objectIntrospection)
+    });
+  }
+  function buildInterfaceDef(interfaceIntrospection) {
+    return new GraphQLInterfaceType2({
+      name: interfaceIntrospection.name,
+      description: interfaceIntrospection.description,
+      interfaces: () => buildImplementationsList(interfaceIntrospection),
+      fields: () => buildFieldDefMap(interfaceIntrospection)
+    });
+  }
+  function buildUnionDef(unionIntrospection) {
+    if (!unionIntrospection.possibleTypes) {
+      const unionIntrospectionStr = inspect(unionIntrospection);
+      throw new Error(
+        `Introspection result missing possibleTypes: ${unionIntrospectionStr}.`
+      );
+    }
+    return new GraphQLUnionType2({
+      name: unionIntrospection.name,
+      description: unionIntrospection.description,
+      types: () => unionIntrospection.possibleTypes.map(getObjectType)
+    });
+  }
+  function buildEnumDef(enumIntrospection) {
+    if (!enumIntrospection.enumValues) {
+      const enumIntrospectionStr = inspect(enumIntrospection);
+      throw new Error(
+        `Introspection result missing enumValues: ${enumIntrospectionStr}.`
+      );
+    }
+    return new GraphQLEnumType2({
+      name: enumIntrospection.name,
+      description: enumIntrospection.description,
+      values: keyValMap(
+        enumIntrospection.enumValues,
+        (valueIntrospection) => valueIntrospection.name,
+        (valueIntrospection) => ({
+          description: valueIntrospection.description,
+          deprecationReason: valueIntrospection.deprecationReason
+        })
+      )
+    });
+  }
+  function buildInputObjectDef(inputObjectIntrospection) {
+    if (!inputObjectIntrospection.inputFields) {
+      const inputObjectIntrospectionStr = inspect(inputObjectIntrospection);
+      throw new Error(
+        `Introspection result missing inputFields: ${inputObjectIntrospectionStr}.`
+      );
+    }
+    return new GraphQLInputObjectType2({
+      name: inputObjectIntrospection.name,
+      description: inputObjectIntrospection.description,
+      fields: () => buildInputValueDefMap(inputObjectIntrospection.inputFields),
+      isOneOf: inputObjectIntrospection.isOneOf
+    });
+  }
+  function buildFieldDefMap(typeIntrospection) {
+    if (!typeIntrospection.fields) {
+      throw new Error(
+        `Introspection result missing fields: ${inspect(typeIntrospection)}.`
+      );
+    }
+    return keyValMap(
+      typeIntrospection.fields,
+      (fieldIntrospection) => fieldIntrospection.name,
+      buildField
+    );
+  }
+  function buildField(fieldIntrospection) {
+    const type2 = getType(fieldIntrospection.type);
+    if (!isOutputType(type2)) {
+      const typeStr = inspect(type2);
+      throw new Error(
+        `Introspection must provide output type for fields, but received: ${typeStr}.`
+      );
+    }
+    if (!fieldIntrospection.args) {
+      const fieldIntrospectionStr = inspect(fieldIntrospection);
+      throw new Error(
+        `Introspection result missing field args: ${fieldIntrospectionStr}.`
+      );
+    }
+    return {
+      description: fieldIntrospection.description,
+      deprecationReason: fieldIntrospection.deprecationReason,
+      type: type2,
+      args: buildInputValueDefMap(fieldIntrospection.args)
+    };
+  }
+  function buildInputValueDefMap(inputValueIntrospections) {
+    return keyValMap(
+      inputValueIntrospections,
+      (inputValue) => inputValue.name,
+      buildInputValue
+    );
+  }
+  function buildInputValue(inputValueIntrospection) {
+    const type2 = getType(inputValueIntrospection.type);
+    if (!isInputType(type2)) {
+      const typeStr = inspect(type2);
+      throw new Error(
+        `Introspection must provide input type for arguments, but received: ${typeStr}.`
+      );
+    }
+    const defaultValue = inputValueIntrospection.defaultValue != null ? valueFromAST(parseValue(inputValueIntrospection.defaultValue), type2) : void 0;
+    return {
+      description: inputValueIntrospection.description,
+      type: type2,
+      defaultValue,
+      deprecationReason: inputValueIntrospection.deprecationReason
+    };
+  }
+  function buildDirective(directiveIntrospection) {
+    if (!directiveIntrospection.args) {
+      const directiveIntrospectionStr = inspect(directiveIntrospection);
+      throw new Error(
+        `Introspection result missing directive args: ${directiveIntrospectionStr}.`
+      );
+    }
+    if (!directiveIntrospection.locations) {
+      const directiveIntrospectionStr = inspect(directiveIntrospection);
+      throw new Error(
+        `Introspection result missing directive locations: ${directiveIntrospectionStr}.`
+      );
+    }
+    return new GraphQLDirective2({
+      name: directiveIntrospection.name,
+      description: directiveIntrospection.description,
+      isRepeatable: directiveIntrospection.isRepeatable,
+      locations: directiveIntrospection.locations.slice(),
+      args: buildInputValueDefMap(directiveIntrospection.args)
+    });
+  }
+}
+function extendSchema(schema, documentAST, options) {
+  assertSchema(schema);
+  documentAST != null && documentAST.kind === Kind.DOCUMENT || devAssert(false, "Must provide valid Document AST.");
+  if ((options === null || options === void 0 ? void 0 : options.assumeValid) !== true && (options === null || options === void 0 ? void 0 : options.assumeValidSDL) !== true) {
+    assertValidSDLExtension(documentAST, schema);
+  }
+  const schemaConfig = schema.toConfig();
+  const extendedConfig = extendSchemaImpl(schemaConfig, documentAST, options);
+  return schemaConfig === extendedConfig ? schema : new GraphQLSchema2(extendedConfig);
+}
+function extendSchemaImpl(schemaConfig, documentAST, options) {
+  var _schemaDef, _schemaDef$descriptio, _schemaDef2, _options$assumeValid;
+  const typeDefs = [];
+  const typeExtensionsMap = /* @__PURE__ */ Object.create(null);
+  const directiveDefs = [];
+  let schemaDef;
+  const schemaExtensions = [];
+  for (const def of documentAST.definitions) {
+    if (def.kind === Kind.SCHEMA_DEFINITION) {
+      schemaDef = def;
+    } else if (def.kind === Kind.SCHEMA_EXTENSION) {
+      schemaExtensions.push(def);
+    } else if (isTypeDefinitionNode(def)) {
+      typeDefs.push(def);
+    } else if (isTypeExtensionNode(def)) {
+      const extendedTypeName = def.name.value;
+      const existingTypeExtensions = typeExtensionsMap[extendedTypeName];
+      typeExtensionsMap[extendedTypeName] = existingTypeExtensions ? existingTypeExtensions.concat([def]) : [def];
+    } else if (def.kind === Kind.DIRECTIVE_DEFINITION) {
+      directiveDefs.push(def);
+    }
+  }
+  if (Object.keys(typeExtensionsMap).length === 0 && typeDefs.length === 0 && directiveDefs.length === 0 && schemaExtensions.length === 0 && schemaDef == null) {
+    return schemaConfig;
+  }
+  const typeMap = /* @__PURE__ */ Object.create(null);
+  for (const existingType of schemaConfig.types) {
+    typeMap[existingType.name] = extendNamedType(existingType);
+  }
+  for (const typeNode of typeDefs) {
+    var _stdTypeMap$name;
+    const name2 = typeNode.name.value;
+    typeMap[name2] = (_stdTypeMap$name = stdTypeMap[name2]) !== null && _stdTypeMap$name !== void 0 ? _stdTypeMap$name : buildType(typeNode);
+  }
+  const operationTypes = {
+    // Get the extended root operation types.
+    query: schemaConfig.query && replaceNamedType(schemaConfig.query),
+    mutation: schemaConfig.mutation && replaceNamedType(schemaConfig.mutation),
+    subscription: schemaConfig.subscription && replaceNamedType(schemaConfig.subscription),
+    // Then, incorporate schema definition and all schema extensions.
+    ...schemaDef && getOperationTypes([schemaDef]),
+    ...getOperationTypes(schemaExtensions)
+  };
+  return {
+    description: (_schemaDef = schemaDef) === null || _schemaDef === void 0 ? void 0 : (_schemaDef$descriptio = _schemaDef.description) === null || _schemaDef$descriptio === void 0 ? void 0 : _schemaDef$descriptio.value,
+    ...operationTypes,
+    types: Object.values(typeMap),
+    directives: [
+      ...schemaConfig.directives.map(replaceDirective),
+      ...directiveDefs.map(buildDirective)
+    ],
+    extensions: /* @__PURE__ */ Object.create(null),
+    astNode: (_schemaDef2 = schemaDef) !== null && _schemaDef2 !== void 0 ? _schemaDef2 : schemaConfig.astNode,
+    extensionASTNodes: schemaConfig.extensionASTNodes.concat(schemaExtensions),
+    assumeValid: (_options$assumeValid = options === null || options === void 0 ? void 0 : options.assumeValid) !== null && _options$assumeValid !== void 0 ? _options$assumeValid : false
+  };
+  function replaceType(type2) {
+    if (isListType(type2)) {
+      return new GraphQLList2(replaceType(type2.ofType));
+    }
+    if (isNonNullType(type2)) {
+      return new GraphQLNonNull2(replaceType(type2.ofType));
+    }
+    return replaceNamedType(type2);
+  }
+  function replaceNamedType(type2) {
+    return typeMap[type2.name];
+  }
+  function replaceDirective(directive) {
+    const config2 = directive.toConfig();
+    return new GraphQLDirective2({
+      ...config2,
+      args: mapValue(config2.args, extendArg)
+    });
+  }
+  function extendNamedType(type2) {
+    if (isIntrospectionType(type2) || isSpecifiedScalarType(type2)) {
+      return type2;
+    }
+    if (isScalarType(type2)) {
+      return extendScalarType(type2);
+    }
+    if (isObjectType(type2)) {
+      return extendObjectType(type2);
+    }
+    if (isInterfaceType(type2)) {
+      return extendInterfaceType(type2);
+    }
+    if (isUnionType(type2)) {
+      return extendUnionType(type2);
+    }
+    if (isEnumType(type2)) {
+      return extendEnumType(type2);
+    }
+    if (isInputObjectType(type2)) {
+      return extendInputObjectType(type2);
+    }
+    invariant(false, "Unexpected type: " + inspect(type2));
+  }
+  function extendInputObjectType(type2) {
+    var _typeExtensionsMap$co;
+    const config2 = type2.toConfig();
+    const extensions = (_typeExtensionsMap$co = typeExtensionsMap[config2.name]) !== null && _typeExtensionsMap$co !== void 0 ? _typeExtensionsMap$co : [];
+    return new GraphQLInputObjectType2({
+      ...config2,
+      fields: () => ({
+        ...mapValue(config2.fields, (field) => ({
+          ...field,
+          type: replaceType(field.type)
+        })),
+        ...buildInputFieldMap(extensions)
+      }),
+      extensionASTNodes: config2.extensionASTNodes.concat(extensions)
+    });
+  }
+  function extendEnumType(type2) {
+    var _typeExtensionsMap$ty;
+    const config2 = type2.toConfig();
+    const extensions = (_typeExtensionsMap$ty = typeExtensionsMap[type2.name]) !== null && _typeExtensionsMap$ty !== void 0 ? _typeExtensionsMap$ty : [];
+    return new GraphQLEnumType2({
+      ...config2,
+      values: { ...config2.values, ...buildEnumValueMap(extensions) },
+      extensionASTNodes: config2.extensionASTNodes.concat(extensions)
+    });
+  }
+  function extendScalarType(type2) {
+    var _typeExtensionsMap$co2;
+    const config2 = type2.toConfig();
+    const extensions = (_typeExtensionsMap$co2 = typeExtensionsMap[config2.name]) !== null && _typeExtensionsMap$co2 !== void 0 ? _typeExtensionsMap$co2 : [];
+    let specifiedByURL = config2.specifiedByURL;
+    for (const extensionNode of extensions) {
+      var _getSpecifiedByURL;
+      specifiedByURL = (_getSpecifiedByURL = getSpecifiedByURL(extensionNode)) !== null && _getSpecifiedByURL !== void 0 ? _getSpecifiedByURL : specifiedByURL;
+    }
+    return new GraphQLScalarType2({
+      ...config2,
+      specifiedByURL,
+      extensionASTNodes: config2.extensionASTNodes.concat(extensions)
+    });
+  }
+  function extendObjectType(type2) {
+    var _typeExtensionsMap$co3;
+    const config2 = type2.toConfig();
+    const extensions = (_typeExtensionsMap$co3 = typeExtensionsMap[config2.name]) !== null && _typeExtensionsMap$co3 !== void 0 ? _typeExtensionsMap$co3 : [];
+    return new GraphQLObjectType2({
+      ...config2,
+      interfaces: () => [
+        ...type2.getInterfaces().map(replaceNamedType),
+        ...buildInterfaces(extensions)
+      ],
+      fields: () => ({
+        ...mapValue(config2.fields, extendField),
+        ...buildFieldMap(extensions)
+      }),
+      extensionASTNodes: config2.extensionASTNodes.concat(extensions)
+    });
+  }
+  function extendInterfaceType(type2) {
+    var _typeExtensionsMap$co4;
+    const config2 = type2.toConfig();
+    const extensions = (_typeExtensionsMap$co4 = typeExtensionsMap[config2.name]) !== null && _typeExtensionsMap$co4 !== void 0 ? _typeExtensionsMap$co4 : [];
+    return new GraphQLInterfaceType2({
+      ...config2,
+      interfaces: () => [
+        ...type2.getInterfaces().map(replaceNamedType),
+        ...buildInterfaces(extensions)
+      ],
+      fields: () => ({
+        ...mapValue(config2.fields, extendField),
+        ...buildFieldMap(extensions)
+      }),
+      extensionASTNodes: config2.extensionASTNodes.concat(extensions)
+    });
+  }
+  function extendUnionType(type2) {
+    var _typeExtensionsMap$co5;
+    const config2 = type2.toConfig();
+    const extensions = (_typeExtensionsMap$co5 = typeExtensionsMap[config2.name]) !== null && _typeExtensionsMap$co5 !== void 0 ? _typeExtensionsMap$co5 : [];
+    return new GraphQLUnionType2({
+      ...config2,
+      types: () => [
+        ...type2.getTypes().map(replaceNamedType),
+        ...buildUnionTypes(extensions)
+      ],
+      extensionASTNodes: config2.extensionASTNodes.concat(extensions)
+    });
+  }
+  function extendField(field) {
+    return {
+      ...field,
+      type: replaceType(field.type),
+      args: field.args && mapValue(field.args, extendArg)
+    };
+  }
+  function extendArg(arg) {
+    return { ...arg, type: replaceType(arg.type) };
+  }
+  function getOperationTypes(nodes) {
+    const opTypes = {};
+    for (const node of nodes) {
+      var _node$operationTypes;
+      const operationTypesNodes = (
+        /* c8 ignore next */
+        (_node$operationTypes = node.operationTypes) !== null && _node$operationTypes !== void 0 ? _node$operationTypes : []
+      );
+      for (const operationType of operationTypesNodes) {
+        opTypes[operationType.operation] = getNamedType2(operationType.type);
+      }
+    }
+    return opTypes;
+  }
+  function getNamedType2(node) {
+    var _stdTypeMap$name2;
+    const name2 = node.name.value;
+    const type2 = (_stdTypeMap$name2 = stdTypeMap[name2]) !== null && _stdTypeMap$name2 !== void 0 ? _stdTypeMap$name2 : typeMap[name2];
+    if (type2 === void 0) {
+      throw new Error(`Unknown type: "${name2}".`);
+    }
+    return type2;
+  }
+  function getWrappedType(node) {
+    if (node.kind === Kind.LIST_TYPE) {
+      return new GraphQLList2(getWrappedType(node.type));
+    }
+    if (node.kind === Kind.NON_NULL_TYPE) {
+      return new GraphQLNonNull2(getWrappedType(node.type));
+    }
+    return getNamedType2(node);
+  }
+  function buildDirective(node) {
+    var _node$description;
+    return new GraphQLDirective2({
+      name: node.name.value,
+      description: (_node$description = node.description) === null || _node$description === void 0 ? void 0 : _node$description.value,
+      // @ts-expect-error
+      locations: node.locations.map(({ value }) => value),
+      isRepeatable: node.repeatable,
+      args: buildArgumentMap(node.arguments),
+      astNode: node
+    });
+  }
+  function buildFieldMap(nodes) {
+    const fieldConfigMap = /* @__PURE__ */ Object.create(null);
+    for (const node of nodes) {
+      var _node$fields;
+      const nodeFields = (
+        /* c8 ignore next */
+        (_node$fields = node.fields) !== null && _node$fields !== void 0 ? _node$fields : []
+      );
+      for (const field of nodeFields) {
+        var _field$description;
+        fieldConfigMap[field.name.value] = {
+          // Note: While this could make assertions to get the correctly typed
+          // value, that would throw immediately while type system validation
+          // with validateSchema() will produce more actionable results.
+          type: getWrappedType(field.type),
+          description: (_field$description = field.description) === null || _field$description === void 0 ? void 0 : _field$description.value,
+          args: buildArgumentMap(field.arguments),
+          deprecationReason: getDeprecationReason(field),
+          astNode: field
+        };
+      }
+    }
+    return fieldConfigMap;
+  }
+  function buildArgumentMap(args) {
+    const argsNodes = (
+      /* c8 ignore next */
+      args !== null && args !== void 0 ? args : []
+    );
+    const argConfigMap = /* @__PURE__ */ Object.create(null);
+    for (const arg of argsNodes) {
+      var _arg$description;
+      const type2 = getWrappedType(arg.type);
+      argConfigMap[arg.name.value] = {
+        type: type2,
+        description: (_arg$description = arg.description) === null || _arg$description === void 0 ? void 0 : _arg$description.value,
+        defaultValue: valueFromAST(arg.defaultValue, type2),
+        deprecationReason: getDeprecationReason(arg),
+        astNode: arg
+      };
+    }
+    return argConfigMap;
+  }
+  function buildInputFieldMap(nodes) {
+    const inputFieldMap = /* @__PURE__ */ Object.create(null);
+    for (const node of nodes) {
+      var _node$fields2;
+      const fieldsNodes = (
+        /* c8 ignore next */
+        (_node$fields2 = node.fields) !== null && _node$fields2 !== void 0 ? _node$fields2 : []
+      );
+      for (const field of fieldsNodes) {
+        var _field$description2;
+        const type2 = getWrappedType(field.type);
+        inputFieldMap[field.name.value] = {
+          type: type2,
+          description: (_field$description2 = field.description) === null || _field$description2 === void 0 ? void 0 : _field$description2.value,
+          defaultValue: valueFromAST(field.defaultValue, type2),
+          deprecationReason: getDeprecationReason(field),
+          astNode: field
+        };
+      }
+    }
+    return inputFieldMap;
+  }
+  function buildEnumValueMap(nodes) {
+    const enumValueMap = /* @__PURE__ */ Object.create(null);
+    for (const node of nodes) {
+      var _node$values;
+      const valuesNodes = (
+        /* c8 ignore next */
+        (_node$values = node.values) !== null && _node$values !== void 0 ? _node$values : []
+      );
+      for (const value of valuesNodes) {
+        var _value$description;
+        enumValueMap[value.name.value] = {
+          description: (_value$description = value.description) === null || _value$description === void 0 ? void 0 : _value$description.value,
+          deprecationReason: getDeprecationReason(value),
+          astNode: value
+        };
+      }
+    }
+    return enumValueMap;
+  }
+  function buildInterfaces(nodes) {
+    return nodes.flatMap(
+      // FIXME: https://github.com/graphql/graphql-js/issues/2203
+      (node) => {
+        var _node$interfaces$map, _node$interfaces;
+        return (
+          /* c8 ignore next */
+          (_node$interfaces$map = (_node$interfaces = node.interfaces) === null || _node$interfaces === void 0 ? void 0 : _node$interfaces.map(getNamedType2)) !== null && _node$interfaces$map !== void 0 ? _node$interfaces$map : []
+        );
+      }
+    );
+  }
+  function buildUnionTypes(nodes) {
+    return nodes.flatMap(
+      // FIXME: https://github.com/graphql/graphql-js/issues/2203
+      (node) => {
+        var _node$types$map, _node$types;
+        return (
+          /* c8 ignore next */
+          (_node$types$map = (_node$types = node.types) === null || _node$types === void 0 ? void 0 : _node$types.map(getNamedType2)) !== null && _node$types$map !== void 0 ? _node$types$map : []
+        );
+      }
+    );
+  }
+  function buildType(astNode) {
+    var _typeExtensionsMap$na;
+    const name2 = astNode.name.value;
+    const extensionASTNodes = (_typeExtensionsMap$na = typeExtensionsMap[name2]) !== null && _typeExtensionsMap$na !== void 0 ? _typeExtensionsMap$na : [];
+    switch (astNode.kind) {
+      case Kind.OBJECT_TYPE_DEFINITION: {
+        var _astNode$description;
+        const allNodes = [astNode, ...extensionASTNodes];
+        return new GraphQLObjectType2({
+          name: name2,
+          description: (_astNode$description = astNode.description) === null || _astNode$description === void 0 ? void 0 : _astNode$description.value,
+          interfaces: () => buildInterfaces(allNodes),
+          fields: () => buildFieldMap(allNodes),
+          astNode,
+          extensionASTNodes
+        });
+      }
+      case Kind.INTERFACE_TYPE_DEFINITION: {
+        var _astNode$description2;
+        const allNodes = [astNode, ...extensionASTNodes];
+        return new GraphQLInterfaceType2({
+          name: name2,
+          description: (_astNode$description2 = astNode.description) === null || _astNode$description2 === void 0 ? void 0 : _astNode$description2.value,
+          interfaces: () => buildInterfaces(allNodes),
+          fields: () => buildFieldMap(allNodes),
+          astNode,
+          extensionASTNodes
+        });
+      }
+      case Kind.ENUM_TYPE_DEFINITION: {
+        var _astNode$description3;
+        const allNodes = [astNode, ...extensionASTNodes];
+        return new GraphQLEnumType2({
+          name: name2,
+          description: (_astNode$description3 = astNode.description) === null || _astNode$description3 === void 0 ? void 0 : _astNode$description3.value,
+          values: buildEnumValueMap(allNodes),
+          astNode,
+          extensionASTNodes
+        });
+      }
+      case Kind.UNION_TYPE_DEFINITION: {
+        var _astNode$description4;
+        const allNodes = [astNode, ...extensionASTNodes];
+        return new GraphQLUnionType2({
+          name: name2,
+          description: (_astNode$description4 = astNode.description) === null || _astNode$description4 === void 0 ? void 0 : _astNode$description4.value,
+          types: () => buildUnionTypes(allNodes),
+          astNode,
+          extensionASTNodes
+        });
+      }
+      case Kind.SCALAR_TYPE_DEFINITION: {
+        var _astNode$description5;
+        return new GraphQLScalarType2({
+          name: name2,
+          description: (_astNode$description5 = astNode.description) === null || _astNode$description5 === void 0 ? void 0 : _astNode$description5.value,
+          specifiedByURL: getSpecifiedByURL(astNode),
+          astNode,
+          extensionASTNodes
+        });
+      }
+      case Kind.INPUT_OBJECT_TYPE_DEFINITION: {
+        var _astNode$description6;
+        const allNodes = [astNode, ...extensionASTNodes];
+        return new GraphQLInputObjectType2({
+          name: name2,
+          description: (_astNode$description6 = astNode.description) === null || _astNode$description6 === void 0 ? void 0 : _astNode$description6.value,
+          fields: () => buildInputFieldMap(allNodes),
+          astNode,
+          extensionASTNodes,
+          isOneOf: isOneOf(astNode)
+        });
+      }
+    }
+  }
+}
+const stdTypeMap = keyMap(
+  [...specifiedScalarTypes, ...introspectionTypes],
+  (type2) => type2.name
+);
+function getDeprecationReason(node) {
+  const deprecated = getDirectiveValues(GraphQLDeprecatedDirective, node);
+  return deprecated === null || deprecated === void 0 ? void 0 : deprecated.reason;
+}
+function getSpecifiedByURL(node) {
+  const specifiedBy = getDirectiveValues(GraphQLSpecifiedByDirective, node);
+  return specifiedBy === null || specifiedBy === void 0 ? void 0 : specifiedBy.url;
+}
+function isOneOf(node) {
+  return Boolean(getDirectiveValues(GraphQLOneOfDirective, node));
+}
+function buildASTSchema(documentAST, options) {
+  documentAST != null && documentAST.kind === Kind.DOCUMENT || devAssert(false, "Must provide valid Document AST.");
+  if ((options === null || options === void 0 ? void 0 : options.assumeValid) !== true && (options === null || options === void 0 ? void 0 : options.assumeValidSDL) !== true) {
+    assertValidSDL(documentAST);
+  }
+  const emptySchemaConfig = {
+    description: void 0,
+    types: [],
+    directives: [],
+    extensions: /* @__PURE__ */ Object.create(null),
+    extensionASTNodes: [],
+    assumeValid: false
+  };
+  const config2 = extendSchemaImpl(emptySchemaConfig, documentAST, options);
+  if (config2.astNode == null) {
+    for (const type2 of config2.types) {
+      switch (type2.name) {
+        // Note: While this could make early assertions to get the correctly
+        // typed values below, that would throw immediately while type system
+        // validation with validateSchema() will produce more actionable results.
+        case "Query":
+          config2.query = type2;
+          break;
+        case "Mutation":
+          config2.mutation = type2;
+          break;
+        case "Subscription":
+          config2.subscription = type2;
+          break;
+      }
+    }
+  }
+  const directives = [
+    ...config2.directives,
+    // If specified directives were not explicitly declared, add them.
+    ...specifiedDirectives.filter(
+      (stdDirective) => config2.directives.every(
+        (directive) => directive.name !== stdDirective.name
+      )
+    )
+  ];
+  return new GraphQLSchema2({ ...config2, directives });
+}
+function buildSchema(source, options) {
+  const document2 = parse(source, {
+    noLocation: options === null || options === void 0 ? void 0 : options.noLocation,
+    allowLegacyFragmentVariables: options === null || options === void 0 ? void 0 : options.allowLegacyFragmentVariables
+  });
+  return buildASTSchema(document2, {
+    assumeValidSDL: options === null || options === void 0 ? void 0 : options.assumeValidSDL,
+    assumeValid: options === null || options === void 0 ? void 0 : options.assumeValid
+  });
+}
+function lexicographicSortSchema(schema) {
+  const schemaConfig = schema.toConfig();
+  const typeMap = keyValMap(
+    sortByName(schemaConfig.types),
+    (type2) => type2.name,
+    sortNamedType
+  );
+  return new GraphQLSchema2({
+    ...schemaConfig,
+    types: Object.values(typeMap),
+    directives: sortByName(schemaConfig.directives).map(sortDirective),
+    query: replaceMaybeType(schemaConfig.query),
+    mutation: replaceMaybeType(schemaConfig.mutation),
+    subscription: replaceMaybeType(schemaConfig.subscription)
+  });
+  function replaceType(type2) {
+    if (isListType(type2)) {
+      return new GraphQLList2(replaceType(type2.ofType));
+    } else if (isNonNullType(type2)) {
+      return new GraphQLNonNull2(replaceType(type2.ofType));
+    }
+    return replaceNamedType(type2);
+  }
+  function replaceNamedType(type2) {
+    return typeMap[type2.name];
+  }
+  function replaceMaybeType(maybeType) {
+    return maybeType && replaceNamedType(maybeType);
+  }
+  function sortDirective(directive) {
+    const config2 = directive.toConfig();
+    return new GraphQLDirective2({
+      ...config2,
+      locations: sortBy(config2.locations, (x2) => x2),
+      args: sortArgs(config2.args)
+    });
+  }
+  function sortArgs(args) {
+    return sortObjMap(args, (arg) => ({ ...arg, type: replaceType(arg.type) }));
+  }
+  function sortFields2(fieldsMap) {
+    return sortObjMap(fieldsMap, (field) => ({
+      ...field,
+      type: replaceType(field.type),
+      args: field.args && sortArgs(field.args)
+    }));
+  }
+  function sortInputFields(fieldsMap) {
+    return sortObjMap(fieldsMap, (field) => ({
+      ...field,
+      type: replaceType(field.type)
+    }));
+  }
+  function sortTypes(array) {
+    return sortByName(array).map(replaceNamedType);
+  }
+  function sortNamedType(type2) {
+    if (isScalarType(type2) || isIntrospectionType(type2)) {
+      return type2;
+    }
+    if (isObjectType(type2)) {
+      const config2 = type2.toConfig();
+      return new GraphQLObjectType2({
+        ...config2,
+        interfaces: () => sortTypes(config2.interfaces),
+        fields: () => sortFields2(config2.fields)
+      });
+    }
+    if (isInterfaceType(type2)) {
+      const config2 = type2.toConfig();
+      return new GraphQLInterfaceType2({
+        ...config2,
+        interfaces: () => sortTypes(config2.interfaces),
+        fields: () => sortFields2(config2.fields)
+      });
+    }
+    if (isUnionType(type2)) {
+      const config2 = type2.toConfig();
+      return new GraphQLUnionType2({
+        ...config2,
+        types: () => sortTypes(config2.types)
+      });
+    }
+    if (isEnumType(type2)) {
+      const config2 = type2.toConfig();
+      return new GraphQLEnumType2({
+        ...config2,
+        values: sortObjMap(config2.values, (value) => value)
+      });
+    }
+    if (isInputObjectType(type2)) {
+      const config2 = type2.toConfig();
+      return new GraphQLInputObjectType2({
+        ...config2,
+        fields: () => sortInputFields(config2.fields)
+      });
+    }
+    invariant(false, "Unexpected type: " + inspect(type2));
+  }
+}
+function sortObjMap(map2, sortValueFn) {
+  const sortedMap = /* @__PURE__ */ Object.create(null);
+  for (const key of Object.keys(map2).sort(naturalCompare)) {
+    sortedMap[key] = sortValueFn(map2[key]);
+  }
+  return sortedMap;
+}
+function sortByName(array) {
+  return sortBy(array, (obj) => obj.name);
+}
+function sortBy(array, mapToKey) {
+  return array.slice().sort((obj1, obj2) => {
+    const key1 = mapToKey(obj1);
+    const key2 = mapToKey(obj2);
+    return naturalCompare(key1, key2);
+  });
+}
+function printSchema(schema) {
+  return printFilteredSchema(
+    schema,
+    (n2) => !isSpecifiedDirective(n2),
+    isDefinedType
+  );
+}
+function printIntrospectionSchema(schema) {
+  return printFilteredSchema(schema, isSpecifiedDirective, isIntrospectionType);
+}
+function isDefinedType(type2) {
+  return !isSpecifiedScalarType(type2) && !isIntrospectionType(type2);
+}
+function printFilteredSchema(schema, directiveFilter, typeFilter) {
+  const directives = schema.getDirectives().filter(directiveFilter);
+  const types = Object.values(schema.getTypeMap()).filter(typeFilter);
+  return [
+    printSchemaDefinition(schema),
+    ...directives.map((directive) => printDirective(directive)),
+    ...types.map((type2) => printType(type2))
+  ].filter(Boolean).join("\n\n");
+}
+function printSchemaDefinition(schema) {
+  if (schema.description == null && isSchemaOfCommonNames(schema)) {
+    return;
+  }
+  const operationTypes = [];
+  const queryType = schema.getQueryType();
+  if (queryType) {
+    operationTypes.push(`  query: ${queryType.name}`);
+  }
+  const mutationType = schema.getMutationType();
+  if (mutationType) {
+    operationTypes.push(`  mutation: ${mutationType.name}`);
+  }
+  const subscriptionType = schema.getSubscriptionType();
+  if (subscriptionType) {
+    operationTypes.push(`  subscription: ${subscriptionType.name}`);
+  }
+  return printDescription(schema) + `schema {
+${operationTypes.join("\n")}
+}`;
+}
+function isSchemaOfCommonNames(schema) {
+  const queryType = schema.getQueryType();
+  if (queryType && queryType.name !== "Query") {
+    return false;
+  }
+  const mutationType = schema.getMutationType();
+  if (mutationType && mutationType.name !== "Mutation") {
+    return false;
+  }
+  const subscriptionType = schema.getSubscriptionType();
+  if (subscriptionType && subscriptionType.name !== "Subscription") {
+    return false;
+  }
+  return true;
+}
+function printType(type2) {
+  if (isScalarType(type2)) {
+    return printScalar(type2);
+  }
+  if (isObjectType(type2)) {
+    return printObject(type2);
+  }
+  if (isInterfaceType(type2)) {
+    return printInterface(type2);
+  }
+  if (isUnionType(type2)) {
+    return printUnion(type2);
+  }
+  if (isEnumType(type2)) {
+    return printEnum(type2);
+  }
+  if (isInputObjectType(type2)) {
+    return printInputObject(type2);
+  }
+  invariant(false, "Unexpected type: " + inspect(type2));
+}
+function printScalar(type2) {
+  return printDescription(type2) + `scalar ${type2.name}` + printSpecifiedByURL(type2);
+}
+function printImplementedInterfaces(type2) {
+  const interfaces = type2.getInterfaces();
+  return interfaces.length ? " implements " + interfaces.map((i2) => i2.name).join(" & ") : "";
+}
+function printObject(type2) {
+  return printDescription(type2) + `type ${type2.name}` + printImplementedInterfaces(type2) + printFields(type2);
+}
+function printInterface(type2) {
+  return printDescription(type2) + `interface ${type2.name}` + printImplementedInterfaces(type2) + printFields(type2);
+}
+function printUnion(type2) {
+  const types = type2.getTypes();
+  const possibleTypes = types.length ? " = " + types.join(" | ") : "";
+  return printDescription(type2) + "union " + type2.name + possibleTypes;
+}
+function printEnum(type2) {
+  const values = type2.getValues().map(
+    (value, i2) => printDescription(value, "  ", !i2) + "  " + value.name + printDeprecated(value.deprecationReason)
+  );
+  return printDescription(type2) + `enum ${type2.name}` + printBlock(values);
+}
+function printInputObject(type2) {
+  const fields = Object.values(type2.getFields()).map(
+    (f2, i2) => printDescription(f2, "  ", !i2) + "  " + printInputValue(f2)
+  );
+  return printDescription(type2) + `input ${type2.name}` + (type2.isOneOf ? " @oneOf" : "") + printBlock(fields);
+}
+function printFields(type2) {
+  const fields = Object.values(type2.getFields()).map(
+    (f2, i2) => printDescription(f2, "  ", !i2) + "  " + f2.name + printArgs(f2.args, "  ") + ": " + String(f2.type) + printDeprecated(f2.deprecationReason)
+  );
+  return printBlock(fields);
+}
+function printBlock(items) {
+  return items.length !== 0 ? " {\n" + items.join("\n") + "\n}" : "";
+}
+function printArgs(args, indentation = "") {
+  if (args.length === 0) {
+    return "";
+  }
+  if (args.every((arg) => !arg.description)) {
+    return "(" + args.map(printInputValue).join(", ") + ")";
+  }
+  return "(\n" + args.map(
+    (arg, i2) => printDescription(arg, "  " + indentation, !i2) + "  " + indentation + printInputValue(arg)
+  ).join("\n") + "\n" + indentation + ")";
+}
+function printInputValue(arg) {
+  const defaultAST = astFromValue(arg.defaultValue, arg.type);
+  let argDecl = arg.name + ": " + String(arg.type);
+  if (defaultAST) {
+    argDecl += ` = ${print(defaultAST)}`;
+  }
+  return argDecl + printDeprecated(arg.deprecationReason);
+}
+function printDirective(directive) {
+  return printDescription(directive) + "directive @" + directive.name + printArgs(directive.args) + (directive.isRepeatable ? " repeatable" : "") + " on " + directive.locations.join(" | ");
+}
+function printDeprecated(reason) {
+  if (reason == null) {
+    return "";
+  }
+  if (reason !== DEFAULT_DEPRECATION_REASON) {
+    const astValue = print({
+      kind: Kind.STRING,
+      value: reason
+    });
+    return ` @deprecated(reason: ${astValue})`;
+  }
+  return " @deprecated";
+}
+function printSpecifiedByURL(scalar) {
+  if (scalar.specifiedByURL == null) {
+    return "";
+  }
+  const astValue = print({
+    kind: Kind.STRING,
+    value: scalar.specifiedByURL
+  });
+  return ` @specifiedBy(url: ${astValue})`;
+}
+function printDescription(def, indentation = "", firstInBlock = true) {
+  const { description } = def;
+  if (description == null) {
+    return "";
+  }
+  const blockString = print({
+    kind: Kind.STRING,
+    value: description,
+    block: isPrintableAsBlockString(description)
+  });
+  const prefix = indentation && !firstInBlock ? "\n" + indentation : indentation;
+  return prefix + blockString.replace(/\n/g, "\n" + indentation) + "\n";
+}
+function concatAST(documents) {
+  const definitions = [];
+  for (const doc of documents) {
+    definitions.push(...doc.definitions);
+  }
+  return {
+    kind: Kind.DOCUMENT,
+    definitions
+  };
+}
+function separateOperations(documentAST) {
+  const operations = [];
+  const depGraph = /* @__PURE__ */ Object.create(null);
+  for (const definitionNode of documentAST.definitions) {
+    switch (definitionNode.kind) {
+      case Kind.OPERATION_DEFINITION:
+        operations.push(definitionNode);
+        break;
+      case Kind.FRAGMENT_DEFINITION:
+        depGraph[definitionNode.name.value] = collectDependencies(
+          definitionNode.selectionSet
+        );
+        break;
+    }
+  }
+  const separatedDocumentASTs = /* @__PURE__ */ Object.create(null);
+  for (const operation of operations) {
+    const dependencies = /* @__PURE__ */ new Set();
+    for (const fragmentName of collectDependencies(operation.selectionSet)) {
+      collectTransitiveDependencies(dependencies, depGraph, fragmentName);
+    }
+    const operationName = operation.name ? operation.name.value : "";
+    separatedDocumentASTs[operationName] = {
+      kind: Kind.DOCUMENT,
+      definitions: documentAST.definitions.filter(
+        (node) => node === operation || node.kind === Kind.FRAGMENT_DEFINITION && dependencies.has(node.name.value)
+      )
+    };
+  }
+  return separatedDocumentASTs;
+}
+function collectTransitiveDependencies(collected, depGraph, fromName) {
+  if (!collected.has(fromName)) {
+    collected.add(fromName);
+    const immediateDeps = depGraph[fromName];
+    if (immediateDeps !== void 0) {
+      for (const toName of immediateDeps) {
+        collectTransitiveDependencies(collected, depGraph, toName);
+      }
+    }
+  }
+}
+function collectDependencies(selectionSet) {
+  const dependencies = [];
+  visit(selectionSet, {
+    FragmentSpread(node) {
+      dependencies.push(node.name.value);
+    }
+  });
+  return dependencies;
+}
+function stripIgnoredCharacters(source) {
+  const sourceObj = isSource(source) ? source : new Source2(source);
+  const body = sourceObj.body;
+  const lexer = new Lexer2(sourceObj);
+  let strippedBody = "";
+  let wasLastAddedTokenNonPunctuator = false;
+  while (lexer.advance().kind !== TokenKind.EOF) {
+    const currentToken = lexer.token;
+    const tokenKind = currentToken.kind;
+    const isNonPunctuator = !isPunctuatorTokenKind(currentToken.kind);
+    if (wasLastAddedTokenNonPunctuator) {
+      if (isNonPunctuator || currentToken.kind === TokenKind.SPREAD) {
+        strippedBody += " ";
+      }
+    }
+    const tokenBody = body.slice(currentToken.start, currentToken.end);
+    if (tokenKind === TokenKind.BLOCK_STRING) {
+      strippedBody += printBlockString(currentToken.value, {
+        minimize: true
+      });
+    } else {
+      strippedBody += tokenBody;
+    }
+    wasLastAddedTokenNonPunctuator = isNonPunctuator;
+  }
+  return strippedBody;
+}
+function assertValidName(name2) {
+  const error2 = isValidNameError(name2);
+  if (error2) {
+    throw error2;
+  }
+  return name2;
+}
+function isValidNameError(name2) {
+  typeof name2 === "string" || devAssert(false, "Expected name to be a string.");
+  if (name2.startsWith("__")) {
+    return new GraphQLError2(
+      `Name "${name2}" must not begin with "__", which is reserved by GraphQL introspection.`
+    );
+  }
+  try {
+    assertName(name2);
+  } catch (error2) {
+    return error2;
+  }
+}
+var BreakingChangeType;
+(function(BreakingChangeType2) {
+  BreakingChangeType2["TYPE_REMOVED"] = "TYPE_REMOVED";
+  BreakingChangeType2["TYPE_CHANGED_KIND"] = "TYPE_CHANGED_KIND";
+  BreakingChangeType2["TYPE_REMOVED_FROM_UNION"] = "TYPE_REMOVED_FROM_UNION";
+  BreakingChangeType2["VALUE_REMOVED_FROM_ENUM"] = "VALUE_REMOVED_FROM_ENUM";
+  BreakingChangeType2["REQUIRED_INPUT_FIELD_ADDED"] = "REQUIRED_INPUT_FIELD_ADDED";
+  BreakingChangeType2["IMPLEMENTED_INTERFACE_REMOVED"] = "IMPLEMENTED_INTERFACE_REMOVED";
+  BreakingChangeType2["FIELD_REMOVED"] = "FIELD_REMOVED";
+  BreakingChangeType2["FIELD_CHANGED_KIND"] = "FIELD_CHANGED_KIND";
+  BreakingChangeType2["REQUIRED_ARG_ADDED"] = "REQUIRED_ARG_ADDED";
+  BreakingChangeType2["ARG_REMOVED"] = "ARG_REMOVED";
+  BreakingChangeType2["ARG_CHANGED_KIND"] = "ARG_CHANGED_KIND";
+  BreakingChangeType2["DIRECTIVE_REMOVED"] = "DIRECTIVE_REMOVED";
+  BreakingChangeType2["DIRECTIVE_ARG_REMOVED"] = "DIRECTIVE_ARG_REMOVED";
+  BreakingChangeType2["REQUIRED_DIRECTIVE_ARG_ADDED"] = "REQUIRED_DIRECTIVE_ARG_ADDED";
+  BreakingChangeType2["DIRECTIVE_REPEATABLE_REMOVED"] = "DIRECTIVE_REPEATABLE_REMOVED";
+  BreakingChangeType2["DIRECTIVE_LOCATION_REMOVED"] = "DIRECTIVE_LOCATION_REMOVED";
+})(BreakingChangeType || (BreakingChangeType = {}));
+var DangerousChangeType;
+(function(DangerousChangeType2) {
+  DangerousChangeType2["VALUE_ADDED_TO_ENUM"] = "VALUE_ADDED_TO_ENUM";
+  DangerousChangeType2["TYPE_ADDED_TO_UNION"] = "TYPE_ADDED_TO_UNION";
+  DangerousChangeType2["OPTIONAL_INPUT_FIELD_ADDED"] = "OPTIONAL_INPUT_FIELD_ADDED";
+  DangerousChangeType2["OPTIONAL_ARG_ADDED"] = "OPTIONAL_ARG_ADDED";
+  DangerousChangeType2["IMPLEMENTED_INTERFACE_ADDED"] = "IMPLEMENTED_INTERFACE_ADDED";
+  DangerousChangeType2["ARG_DEFAULT_VALUE_CHANGE"] = "ARG_DEFAULT_VALUE_CHANGE";
+})(DangerousChangeType || (DangerousChangeType = {}));
+function findBreakingChanges(oldSchema, newSchema) {
+  return findSchemaChanges(oldSchema, newSchema).filter(
+    (change) => change.type in BreakingChangeType
+  );
+}
+function findDangerousChanges(oldSchema, newSchema) {
+  return findSchemaChanges(oldSchema, newSchema).filter(
+    (change) => change.type in DangerousChangeType
+  );
+}
+function findSchemaChanges(oldSchema, newSchema) {
+  return [
+    ...findTypeChanges(oldSchema, newSchema),
+    ...findDirectiveChanges(oldSchema, newSchema)
+  ];
+}
+function findDirectiveChanges(oldSchema, newSchema) {
+  const schemaChanges = [];
+  const directivesDiff = diff(
+    oldSchema.getDirectives(),
+    newSchema.getDirectives()
+  );
+  for (const oldDirective of directivesDiff.removed) {
+    schemaChanges.push({
+      type: BreakingChangeType.DIRECTIVE_REMOVED,
+      description: `${oldDirective.name} was removed.`
+    });
+  }
+  for (const [oldDirective, newDirective] of directivesDiff.persisted) {
+    const argsDiff = diff(oldDirective.args, newDirective.args);
+    for (const newArg of argsDiff.added) {
+      if (isRequiredArgument(newArg)) {
+        schemaChanges.push({
+          type: BreakingChangeType.REQUIRED_DIRECTIVE_ARG_ADDED,
+          description: `A required arg ${newArg.name} on directive ${oldDirective.name} was added.`
+        });
+      }
+    }
+    for (const oldArg of argsDiff.removed) {
+      schemaChanges.push({
+        type: BreakingChangeType.DIRECTIVE_ARG_REMOVED,
+        description: `${oldArg.name} was removed from ${oldDirective.name}.`
+      });
+    }
+    if (oldDirective.isRepeatable && !newDirective.isRepeatable) {
+      schemaChanges.push({
+        type: BreakingChangeType.DIRECTIVE_REPEATABLE_REMOVED,
+        description: `Repeatable flag was removed from ${oldDirective.name}.`
+      });
+    }
+    for (const location2 of oldDirective.locations) {
+      if (!newDirective.locations.includes(location2)) {
+        schemaChanges.push({
+          type: BreakingChangeType.DIRECTIVE_LOCATION_REMOVED,
+          description: `${location2} was removed from ${oldDirective.name}.`
+        });
+      }
+    }
+  }
+  return schemaChanges;
+}
+function findTypeChanges(oldSchema, newSchema) {
+  const schemaChanges = [];
+  const typesDiff = diff(
+    Object.values(oldSchema.getTypeMap()),
+    Object.values(newSchema.getTypeMap())
+  );
+  for (const oldType of typesDiff.removed) {
+    schemaChanges.push({
+      type: BreakingChangeType.TYPE_REMOVED,
+      description: isSpecifiedScalarType(oldType) ? `Standard scalar ${oldType.name} was removed because it is not referenced anymore.` : `${oldType.name} was removed.`
+    });
+  }
+  for (const [oldType, newType] of typesDiff.persisted) {
+    if (isEnumType(oldType) && isEnumType(newType)) {
+      schemaChanges.push(...findEnumTypeChanges(oldType, newType));
+    } else if (isUnionType(oldType) && isUnionType(newType)) {
+      schemaChanges.push(...findUnionTypeChanges(oldType, newType));
+    } else if (isInputObjectType(oldType) && isInputObjectType(newType)) {
+      schemaChanges.push(...findInputObjectTypeChanges(oldType, newType));
+    } else if (isObjectType(oldType) && isObjectType(newType)) {
+      schemaChanges.push(
+        ...findFieldChanges(oldType, newType),
+        ...findImplementedInterfacesChanges(oldType, newType)
+      );
+    } else if (isInterfaceType(oldType) && isInterfaceType(newType)) {
+      schemaChanges.push(
+        ...findFieldChanges(oldType, newType),
+        ...findImplementedInterfacesChanges(oldType, newType)
+      );
+    } else if (oldType.constructor !== newType.constructor) {
+      schemaChanges.push({
+        type: BreakingChangeType.TYPE_CHANGED_KIND,
+        description: `${oldType.name} changed from ${typeKindName(oldType)} to ${typeKindName(newType)}.`
+      });
+    }
+  }
+  return schemaChanges;
+}
+function findInputObjectTypeChanges(oldType, newType) {
+  const schemaChanges = [];
+  const fieldsDiff = diff(
+    Object.values(oldType.getFields()),
+    Object.values(newType.getFields())
+  );
+  for (const newField of fieldsDiff.added) {
+    if (isRequiredInputField(newField)) {
+      schemaChanges.push({
+        type: BreakingChangeType.REQUIRED_INPUT_FIELD_ADDED,
+        description: `A required field ${newField.name} on input type ${oldType.name} was added.`
+      });
+    } else {
+      schemaChanges.push({
+        type: DangerousChangeType.OPTIONAL_INPUT_FIELD_ADDED,
+        description: `An optional field ${newField.name} on input type ${oldType.name} was added.`
+      });
+    }
+  }
+  for (const oldField of fieldsDiff.removed) {
+    schemaChanges.push({
+      type: BreakingChangeType.FIELD_REMOVED,
+      description: `${oldType.name}.${oldField.name} was removed.`
+    });
+  }
+  for (const [oldField, newField] of fieldsDiff.persisted) {
+    const isSafe = isChangeSafeForInputObjectFieldOrFieldArg(
+      oldField.type,
+      newField.type
+    );
+    if (!isSafe) {
+      schemaChanges.push({
+        type: BreakingChangeType.FIELD_CHANGED_KIND,
+        description: `${oldType.name}.${oldField.name} changed type from ${String(oldField.type)} to ${String(newField.type)}.`
+      });
+    }
+  }
+  return schemaChanges;
+}
+function findUnionTypeChanges(oldType, newType) {
+  const schemaChanges = [];
+  const possibleTypesDiff = diff(oldType.getTypes(), newType.getTypes());
+  for (const newPossibleType of possibleTypesDiff.added) {
+    schemaChanges.push({
+      type: DangerousChangeType.TYPE_ADDED_TO_UNION,
+      description: `${newPossibleType.name} was added to union type ${oldType.name}.`
+    });
+  }
+  for (const oldPossibleType of possibleTypesDiff.removed) {
+    schemaChanges.push({
+      type: BreakingChangeType.TYPE_REMOVED_FROM_UNION,
+      description: `${oldPossibleType.name} was removed from union type ${oldType.name}.`
+    });
+  }
+  return schemaChanges;
+}
+function findEnumTypeChanges(oldType, newType) {
+  const schemaChanges = [];
+  const valuesDiff = diff(oldType.getValues(), newType.getValues());
+  for (const newValue of valuesDiff.added) {
+    schemaChanges.push({
+      type: DangerousChangeType.VALUE_ADDED_TO_ENUM,
+      description: `${newValue.name} was added to enum type ${oldType.name}.`
+    });
+  }
+  for (const oldValue of valuesDiff.removed) {
+    schemaChanges.push({
+      type: BreakingChangeType.VALUE_REMOVED_FROM_ENUM,
+      description: `${oldValue.name} was removed from enum type ${oldType.name}.`
+    });
+  }
+  return schemaChanges;
+}
+function findImplementedInterfacesChanges(oldType, newType) {
+  const schemaChanges = [];
+  const interfacesDiff = diff(oldType.getInterfaces(), newType.getInterfaces());
+  for (const newInterface of interfacesDiff.added) {
+    schemaChanges.push({
+      type: DangerousChangeType.IMPLEMENTED_INTERFACE_ADDED,
+      description: `${newInterface.name} added to interfaces implemented by ${oldType.name}.`
+    });
+  }
+  for (const oldInterface of interfacesDiff.removed) {
+    schemaChanges.push({
+      type: BreakingChangeType.IMPLEMENTED_INTERFACE_REMOVED,
+      description: `${oldType.name} no longer implements interface ${oldInterface.name}.`
+    });
+  }
+  return schemaChanges;
+}
+function findFieldChanges(oldType, newType) {
+  const schemaChanges = [];
+  const fieldsDiff = diff(
+    Object.values(oldType.getFields()),
+    Object.values(newType.getFields())
+  );
+  for (const oldField of fieldsDiff.removed) {
+    schemaChanges.push({
+      type: BreakingChangeType.FIELD_REMOVED,
+      description: `${oldType.name}.${oldField.name} was removed.`
+    });
+  }
+  for (const [oldField, newField] of fieldsDiff.persisted) {
+    schemaChanges.push(...findArgChanges(oldType, oldField, newField));
+    const isSafe = isChangeSafeForObjectOrInterfaceField(
+      oldField.type,
+      newField.type
+    );
+    if (!isSafe) {
+      schemaChanges.push({
+        type: BreakingChangeType.FIELD_CHANGED_KIND,
+        description: `${oldType.name}.${oldField.name} changed type from ${String(oldField.type)} to ${String(newField.type)}.`
+      });
+    }
+  }
+  return schemaChanges;
+}
+function findArgChanges(oldType, oldField, newField) {
+  const schemaChanges = [];
+  const argsDiff = diff(oldField.args, newField.args);
+  for (const oldArg of argsDiff.removed) {
+    schemaChanges.push({
+      type: BreakingChangeType.ARG_REMOVED,
+      description: `${oldType.name}.${oldField.name} arg ${oldArg.name} was removed.`
+    });
+  }
+  for (const [oldArg, newArg] of argsDiff.persisted) {
+    const isSafe = isChangeSafeForInputObjectFieldOrFieldArg(
+      oldArg.type,
+      newArg.type
+    );
+    if (!isSafe) {
+      schemaChanges.push({
+        type: BreakingChangeType.ARG_CHANGED_KIND,
+        description: `${oldType.name}.${oldField.name} arg ${oldArg.name} has changed type from ${String(oldArg.type)} to ${String(newArg.type)}.`
+      });
+    } else if (oldArg.defaultValue !== void 0) {
+      if (newArg.defaultValue === void 0) {
+        schemaChanges.push({
+          type: DangerousChangeType.ARG_DEFAULT_VALUE_CHANGE,
+          description: `${oldType.name}.${oldField.name} arg ${oldArg.name} defaultValue was removed.`
+        });
+      } else {
+        const oldValueStr = stringifyValue(oldArg.defaultValue, oldArg.type);
+        const newValueStr = stringifyValue(newArg.defaultValue, newArg.type);
+        if (oldValueStr !== newValueStr) {
+          schemaChanges.push({
+            type: DangerousChangeType.ARG_DEFAULT_VALUE_CHANGE,
+            description: `${oldType.name}.${oldField.name} arg ${oldArg.name} has changed defaultValue from ${oldValueStr} to ${newValueStr}.`
+          });
+        }
+      }
+    }
+  }
+  for (const newArg of argsDiff.added) {
+    if (isRequiredArgument(newArg)) {
+      schemaChanges.push({
+        type: BreakingChangeType.REQUIRED_ARG_ADDED,
+        description: `A required arg ${newArg.name} on ${oldType.name}.${oldField.name} was added.`
+      });
+    } else {
+      schemaChanges.push({
+        type: DangerousChangeType.OPTIONAL_ARG_ADDED,
+        description: `An optional arg ${newArg.name} on ${oldType.name}.${oldField.name} was added.`
+      });
+    }
+  }
+  return schemaChanges;
+}
+function isChangeSafeForObjectOrInterfaceField(oldType, newType) {
+  if (isListType(oldType)) {
+    return (
+      // if they're both lists, make sure the underlying types are compatible
+      isListType(newType) && isChangeSafeForObjectOrInterfaceField(
+        oldType.ofType,
+        newType.ofType
+      ) || // moving from nullable to non-null of the same underlying type is safe
+      isNonNullType(newType) && isChangeSafeForObjectOrInterfaceField(oldType, newType.ofType)
+    );
+  }
+  if (isNonNullType(oldType)) {
+    return isNonNullType(newType) && isChangeSafeForObjectOrInterfaceField(oldType.ofType, newType.ofType);
+  }
+  return (
+    // if they're both named types, see if their names are equivalent
+    isNamedType(newType) && oldType.name === newType.name || // moving from nullable to non-null of the same underlying type is safe
+    isNonNullType(newType) && isChangeSafeForObjectOrInterfaceField(oldType, newType.ofType)
+  );
+}
+function isChangeSafeForInputObjectFieldOrFieldArg(oldType, newType) {
+  if (isListType(oldType)) {
+    return isListType(newType) && isChangeSafeForInputObjectFieldOrFieldArg(oldType.ofType, newType.ofType);
+  }
+  if (isNonNullType(oldType)) {
+    return (
+      // if they're both non-null, make sure the underlying types are
+      // compatible
+      isNonNullType(newType) && isChangeSafeForInputObjectFieldOrFieldArg(
+        oldType.ofType,
+        newType.ofType
+      ) || // moving from non-null to nullable of the same underlying type is safe
+      !isNonNullType(newType) && isChangeSafeForInputObjectFieldOrFieldArg(oldType.ofType, newType)
+    );
+  }
+  return isNamedType(newType) && oldType.name === newType.name;
+}
+function typeKindName(type2) {
+  if (isScalarType(type2)) {
+    return "a Scalar type";
+  }
+  if (isObjectType(type2)) {
+    return "an Object type";
+  }
+  if (isInterfaceType(type2)) {
+    return "an Interface type";
+  }
+  if (isUnionType(type2)) {
+    return "a Union type";
+  }
+  if (isEnumType(type2)) {
+    return "an Enum type";
+  }
+  if (isInputObjectType(type2)) {
+    return "an Input type";
+  }
+  invariant(false, "Unexpected type: " + inspect(type2));
+}
+function stringifyValue(value, type2) {
+  const ast = astFromValue(value, type2);
+  ast != null || invariant(false);
+  return print(sortValueNode(ast));
+}
+function diff(oldArray, newArray) {
+  const added = [];
+  const removed = [];
+  const persisted = [];
+  const oldMap = keyMap(oldArray, ({ name: name2 }) => name2);
+  const newMap = keyMap(newArray, ({ name: name2 }) => name2);
+  for (const oldItem of oldArray) {
+    const newItem = newMap[oldItem.name];
+    if (newItem === void 0) {
+      removed.push(oldItem);
+    } else {
+      persisted.push([oldItem, newItem]);
+    }
+  }
+  for (const newItem of newArray) {
+    if (oldMap[newItem.name] === void 0) {
+      added.push(newItem);
+    }
+  }
+  return {
+    added,
+    persisted,
+    removed
+  };
+}
+const graphql = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  BREAK,
+  get BreakingChangeType() {
+    return BreakingChangeType;
+  },
+  DEFAULT_DEPRECATION_REASON,
+  get DangerousChangeType() {
+    return DangerousChangeType;
+  },
+  get DirectiveLocation() {
+    return DirectiveLocation;
+  },
+  ExecutableDefinitionsRule,
+  FieldsOnCorrectTypeRule,
+  FragmentsOnCompositeTypesRule,
+  GRAPHQL_MAX_INT,
+  GRAPHQL_MIN_INT,
+  GraphQLBoolean,
+  GraphQLDeprecatedDirective,
+  GraphQLDirective: GraphQLDirective2,
+  GraphQLEnumType: GraphQLEnumType2,
+  GraphQLError: GraphQLError2,
+  GraphQLFloat,
+  GraphQLID,
+  GraphQLIncludeDirective,
+  GraphQLInputObjectType: GraphQLInputObjectType2,
+  GraphQLInt,
+  GraphQLInterfaceType: GraphQLInterfaceType2,
+  GraphQLList: GraphQLList2,
+  GraphQLNonNull: GraphQLNonNull2,
+  GraphQLObjectType: GraphQLObjectType2,
+  GraphQLOneOfDirective,
+  GraphQLScalarType: GraphQLScalarType2,
+  GraphQLSchema: GraphQLSchema2,
+  GraphQLSkipDirective,
+  GraphQLSpecifiedByDirective,
+  GraphQLString,
+  GraphQLUnionType: GraphQLUnionType2,
+  get Kind() {
+    return Kind;
+  },
+  KnownArgumentNamesRule,
+  KnownDirectivesRule,
+  KnownFragmentNamesRule,
+  KnownTypeNamesRule,
+  Lexer: Lexer2,
+  Location: Location2,
+  LoneAnonymousOperationRule,
+  LoneSchemaDefinitionRule,
+  MaxIntrospectionDepthRule,
+  NoDeprecatedCustomRule,
+  NoFragmentCyclesRule,
+  NoSchemaIntrospectionCustomRule,
+  NoUndefinedVariablesRule,
+  NoUnusedFragmentsRule,
+  NoUnusedVariablesRule,
+  get OperationTypeNode() {
+    return OperationTypeNode;
+  },
+  OverlappingFieldsCanBeMergedRule,
+  PossibleFragmentSpreadsRule,
+  PossibleTypeExtensionsRule,
+  ProvidedRequiredArgumentsRule,
+  ScalarLeafsRule,
+  SchemaMetaFieldDef,
+  SingleFieldSubscriptionsRule,
+  Source: Source2,
+  Token: Token2,
+  get TokenKind() {
+    return TokenKind;
+  },
+  TypeInfo: TypeInfo2,
+  get TypeKind() {
+    return TypeKind;
+  },
+  TypeMetaFieldDef,
+  TypeNameMetaFieldDef,
+  UniqueArgumentDefinitionNamesRule,
+  UniqueArgumentNamesRule,
+  UniqueDirectiveNamesRule,
+  UniqueDirectivesPerLocationRule,
+  UniqueEnumValueNamesRule,
+  UniqueFieldDefinitionNamesRule,
+  UniqueFragmentNamesRule,
+  UniqueInputFieldNamesRule,
+  UniqueOperationNamesRule,
+  UniqueOperationTypesRule,
+  UniqueTypeNamesRule,
+  UniqueVariableNamesRule,
+  ValidationContext,
+  ValuesOfCorrectTypeRule,
+  VariablesAreInputTypesRule,
+  VariablesInAllowedPositionRule,
+  __Directive,
+  __DirectiveLocation,
+  __EnumValue,
+  __Field,
+  __InputValue,
+  __Schema,
+  __Type,
+  __TypeKind,
+  assertAbstractType,
+  assertCompositeType,
+  assertDirective,
+  assertEnumType,
+  assertEnumValueName,
+  assertInputObjectType,
+  assertInputType,
+  assertInterfaceType,
+  assertLeafType,
+  assertListType,
+  assertName,
+  assertNamedType,
+  assertNonNullType,
+  assertNullableType,
+  assertObjectType,
+  assertOutputType,
+  assertScalarType,
+  assertSchema,
+  assertType,
+  assertUnionType,
+  assertValidName,
+  assertValidSchema,
+  assertWrappingType,
+  astFromValue,
+  buildASTSchema,
+  buildClientSchema,
+  buildSchema,
+  coerceInputValue,
+  concatAST,
+  createSourceEventStream,
+  defaultFieldResolver,
+  defaultTypeResolver,
+  doTypesOverlap,
+  execute,
+  executeSync,
+  extendSchema,
+  findBreakingChanges,
+  findDangerousChanges,
+  formatError,
+  getArgumentValues,
+  getDirectiveValues,
+  getEnterLeaveForKind,
+  getIntrospectionQuery,
+  getLocation,
+  getNamedType,
+  getNullableType,
+  getOperationAST,
+  getOperationRootType,
+  getVariableValues,
+  getVisitFn,
+  graphql: graphql$1,
+  graphqlSync,
+  introspectionFromSchema,
+  introspectionTypes,
+  isAbstractType,
+  isCompositeType,
+  isConstValueNode,
+  isDefinitionNode,
+  isDirective,
+  isEnumType,
+  isEqualType,
+  isExecutableDefinitionNode,
+  isInputObjectType,
+  isInputType,
+  isInterfaceType,
+  isIntrospectionType,
+  isLeafType,
+  isListType,
+  isNamedType,
+  isNonNullType,
+  isNullableType,
+  isObjectType,
+  isOutputType,
+  isRequiredArgument,
+  isRequiredInputField,
+  isScalarType,
+  isSchema,
+  isSelectionNode,
+  isSpecifiedDirective,
+  isSpecifiedScalarType,
+  isType,
+  isTypeDefinitionNode,
+  isTypeExtensionNode,
+  isTypeNode,
+  isTypeSubTypeOf,
+  isTypeSystemDefinitionNode,
+  isTypeSystemExtensionNode,
+  isUnionType,
+  isValidNameError,
+  isValueNode,
+  isWrappingType,
+  lexicographicSortSchema,
+  locatedError,
+  parse,
+  parseConstValue,
+  parseType,
+  parseValue,
+  print,
+  printError,
+  printIntrospectionSchema,
+  printLocation,
+  printSchema,
+  printSourceLocation,
+  printType,
+  recommendedRules,
+  resolveObjMapThunk,
+  resolveReadonlyArrayThunk,
+  responsePathAsArray: pathToArray,
+  separateOperations,
+  specifiedDirectives,
+  specifiedRules,
+  specifiedScalarTypes,
+  stripIgnoredCharacters,
+  subscribe,
+  syntaxError,
+  typeFromAST,
+  validate,
+  validateSchema,
+  valueFromAST,
+  valueFromASTUntyped,
+  version,
+  versionInfo,
+  visit,
+  visitInParallel,
+  visitWithTypeInfo
+}, Symbol.toStringTag, { value: "Module" }));
+const require$$0 = /* @__PURE__ */ getAugmentedNamespace(graphql);
+var hasRequiredCreateActionCableFetcher;
+function requireCreateActionCableFetcher() {
+  if (hasRequiredCreateActionCableFetcher) return createActionCableFetcher$1;
+  hasRequiredCreateActionCableFetcher = 1;
+  var __asyncValues = createActionCableFetcher$1 && createActionCableFetcher$1.__asyncValues || function(o4) {
+    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+    var m2 = o4[Symbol.asyncIterator], i2;
+    return m2 ? m2.call(o4) : (o4 = typeof __values === "function" ? __values(o4) : o4[Symbol.iterator](), i2 = {}, verb("next"), verb("throw"), verb("return"), i2[Symbol.asyncIterator] = function() {
+      return this;
+    }, i2);
+    function verb(n2) {
+      i2[n2] = o4[n2] && function(v2) {
+        return new Promise(function(resolve, reject) {
+          v2 = o4[n2](v2), settle(resolve, reject, v2.done, v2.value);
+        });
+      };
+    }
+    function settle(resolve, reject, d2, v2) {
+      Promise.resolve(v2).then(function(v3) {
+        resolve({ value: v3, done: d2 });
+      }, reject);
+    }
+  };
+  var __await2 = createActionCableFetcher$1 && createActionCableFetcher$1.__await || function(v2) {
+    return this instanceof __await2 ? (this.v = v2, this) : new __await2(v2);
+  };
+  var __asyncGenerator2 = createActionCableFetcher$1 && createActionCableFetcher$1.__asyncGenerator || function(thisArg, _arguments, generator) {
+    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+    var g2 = generator.apply(thisArg, _arguments || []), i2, q2 = [];
+    return i2 = {}, verb("next"), verb("throw"), verb("return", awaitReturn), i2[Symbol.asyncIterator] = function() {
+      return this;
+    }, i2;
+    function awaitReturn(f2) {
+      return function(v2) {
+        return Promise.resolve(v2).then(f2, reject);
+      };
+    }
+    function verb(n2, f2) {
+      if (g2[n2]) {
+        i2[n2] = function(v2) {
+          return new Promise(function(a3, b2) {
+            q2.push([n2, v2, a3, b2]) > 1 || resume(n2, v2);
+          });
+        };
+        if (f2) i2[n2] = f2(i2[n2]);
+      }
+    }
+    function resume(n2, v2) {
+      try {
+        step(g2[n2](v2));
+      } catch (e2) {
+        settle(q2[0][3], e2);
+      }
+    }
+    function step(r2) {
+      r2.value instanceof __await2 ? Promise.resolve(r2.value.v).then(fulfill, reject) : settle(q2[0][2], r2);
+    }
+    function fulfill(value) {
+      resume("next", value);
+    }
+    function reject(value) {
+      resume("throw", value);
+    }
+    function settle(f2, v2) {
+      if (f2(v2), q2.shift(), q2.length) resume(q2[0][0], q2[0][1]);
+    }
+  };
+  Object.defineProperty(createActionCableFetcher$1, "__esModule", { value: true });
+  const graphql_1 = require$$0;
+  function createActionCableFetcher2(options) {
+    let currentChannel = null;
+    const consumer = options.consumer;
+    const url = options.url || "/graphql";
+    const channelName = options.channelName || "GraphqlChannel";
+    const subscriptionFetcher = function(graphqlParams, fetcherOpts) {
+      return __asyncGenerator2(this, arguments, function* () {
+        var _a3, e_1, _b2, _c;
+        let isSubscription = false;
+        let nextPromiseResolve = null;
+        fetcherOpts.documentAST && (0, graphql_1.visit)(fetcherOpts.documentAST, {
+          OperationDefinition(node) {
+            var _a4;
+            if (graphqlParams.operationName === ((_a4 = node.name) === null || _a4 === void 0 ? void 0 : _a4.value) && node.operation === "subscription") {
+              isSubscription = true;
+            }
+          }
+        });
+        if (isSubscription) {
+          currentChannel === null || currentChannel === void 0 ? void 0 : currentChannel.unsubscribe();
+          currentChannel = consumer.subscriptions.create(channelName, {
+            connected: function() {
+              currentChannel === null || currentChannel === void 0 ? void 0 : currentChannel.perform("execute", {
+                query: graphqlParams.query,
+                operationName: graphqlParams.operationName,
+                variables: graphqlParams.variables
+              });
+            },
+            received: function(data) {
+              if (nextPromiseResolve) {
+                nextPromiseResolve({ value: data.result, done: false });
+              }
+            }
+          });
+          var iterator = {
+            [Symbol.asyncIterator]() {
+              return {
+                next() {
+                  return new Promise((resolve, _reject) => {
+                    nextPromiseResolve = resolve;
+                  });
+                },
+                return() {
+                  if (currentChannel) {
+                    currentChannel.unsubscribe();
+                    currentChannel = null;
+                  }
+                  return Promise.resolve({ value: null, done: true });
+                }
+              };
+            }
+          };
+          try {
+            for (var _d = true, iterator_1 = __asyncValues(iterator), iterator_1_1; iterator_1_1 = yield __await2(iterator_1.next()), _a3 = iterator_1_1.done, !_a3; _d = true) {
+              _c = iterator_1_1.value;
+              _d = false;
+              const payload = _c;
+              yield yield __await2(payload);
+            }
+          } catch (e_1_1) {
+            e_1 = { error: e_1_1 };
+          } finally {
+            try {
+              if (!_d && !_a3 && (_b2 = iterator_1.return)) yield __await2(_b2.call(iterator_1));
+            } finally {
+              if (e_1) throw e_1.error;
+            }
+          }
+        } else {
+          const fetchFn = options.fetch || window.fetch;
+          yield yield __await2(fetchFn(url, Object.assign({ method: "POST", body: JSON.stringify({
+            query: graphqlParams.query,
+            operationName: graphqlParams.operationName,
+            variables: graphqlParams.variables
+          }), headers: {
+            "content-type": "application/json"
+          } }, options.fetchOptions)).then((r2) => r2.json()));
+          return yield __await2(void 0);
+        }
+      });
+    };
+    return subscriptionFetcher;
+  }
+  createActionCableFetcher$1.default = createActionCableFetcher2;
+  return createActionCableFetcher$1;
+}
+var createActionCableFetcherExports = requireCreateActionCableFetcher();
+const createActionCableFetcher = /* @__PURE__ */ getDefaultExportFromCjs(createActionCableFetcherExports);
+const config = window.APP_CONFIG || {};
+console.log("GraphiQL-Rails Config:", config);
+let fetcher;
+if (config.action_cable_path) {
+  const actionCable = createConsumer(config.action_cable_path);
+  fetcher = createActionCableFetcher({
+    consumer: actionCable,
+    url: config.graphql_endpoint_path,
+    channelName: config.action_cable_channel_name
+  });
+} else {
+  fetcher = createGraphiQLFetcher({
+    url: config.graphql_endpoint_path
+  });
+}
 function getUrlParams() {
   const params = new URLSearchParams(window.location.search);
   return {
@@ -63121,20 +75761,22 @@ function onEditVariables(newVariables) {
 function App() {
   const graphiqlProps = {
     fetcher,
-    defaultQuery: window.APP_CONFIG?.initial_query,
-    defaultHeaders: JSON.stringify(window.APP_CONFIG?.headers, null, 2),
-    isHeadersEditorEnabled: window.APP_CONFIG?.header_editor_enabled,
-    inputValueDeprecation: window.APP_CONFIG?.input_value_deprecation,
-    shouldPersistHeaders: window.APP_CONFIG?.should_persist_headers
+    defaultQuery: config.initial_query,
+    defaultHeaders: JSON.stringify(config.headers, null, 2),
+    isHeadersEditorEnabled: config.header_editor_enabled,
+    inputValueDeprecation: config.input_value_deprecation,
+    shouldPersistHeaders: config.should_persist_headers
   };
-  if (window.APP_CONFIG?.query_params) {
+  if (config.query_params) {
     const urlParams = getUrlParams();
-    graphiqlProps.initialQuery = urlParams.query;
-    graphiqlProps.initialVariables = urlParams.variables;
-    graphiqlProps.onEditQuery = onEditQuery;
-    graphiqlProps.onEditVariables = onEditVariables;
+    Object.assign(graphiqlProps, {
+      initialQuery: urlParams.query,
+      initialVariables: urlParams.variables,
+      onEditQuery,
+      onEditVariables
+    });
   }
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(GraphiQL, { ...graphiqlProps, children: /* @__PURE__ */ jsxRuntimeExports.jsx(GraphiQL.Logo, { children: window.APP_CONFIG?.logo || void 0 }) });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GraphiQL, { ...graphiqlProps, children: /* @__PURE__ */ jsxRuntimeExports.jsx(GraphiQL.Logo, { children: config.logo || void 0 }) });
 }
 const root = clientExports.createRoot(document.getElementById("graphiql-container"));
 root.render(/* @__PURE__ */ jsxRuntimeExports.jsx(App, {}));

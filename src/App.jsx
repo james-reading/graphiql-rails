@@ -1,13 +1,28 @@
 import { GraphiQL } from 'graphiql';
 import { createGraphiQLFetcher } from '@graphiql/toolkit'
+import { createConsumer } from "@rails/actioncable"
+import createActionCableFetcher from 'graphql-ruby-client/subscriptions/createActionCableFetcher';
 import 'graphiql/style.css';
 
-console.log(window.APP_CONFIG);
 
+const config = window.APP_CONFIG || {};
 
-const fetcher = createGraphiQLFetcher({
-  url: window.APP_CONFIG?.graphql_endpoint_path
-});
+console.log("GraphiQL-Rails Config:", config);
+
+let fetcher;
+if (config.action_cable_path) {
+  const actionCable = createConsumer(config.action_cable_path);
+
+  fetcher = createActionCableFetcher({
+    consumer: actionCable,
+    url: config.graphql_endpoint_path,
+    channelName: config.action_cable_channel_name
+  });
+} else {
+  fetcher = createGraphiQLFetcher({
+    url: config.graphql_endpoint_path
+  });
+}
 
 function getUrlParams() {
   const params = new URLSearchParams(window.location.search);
@@ -49,24 +64,27 @@ function onEditVariables(newVariables) {
 function App() {
   const graphiqlProps = {
     fetcher,
-    defaultQuery: window.APP_CONFIG?.initial_query,
-    defaultHeaders: JSON.stringify(window.APP_CONFIG?.headers, null, 2),
-    isHeadersEditorEnabled: window.APP_CONFIG?.header_editor_enabled,
-    inputValueDeprecation: window.APP_CONFIG?.input_value_deprecation,
-    shouldPersistHeaders: window.APP_CONFIG?.should_persist_headers,
+    defaultQuery: config.initial_query,
+    defaultHeaders: JSON.stringify(config.headers, null, 2),
+    isHeadersEditorEnabled: config.header_editor_enabled,
+    inputValueDeprecation: config.input_value_deprecation,
+    shouldPersistHeaders: config.should_persist_headers,
   };
 
-  if (window.APP_CONFIG?.query_params) {
+  if (config.query_params) {
     const urlParams = getUrlParams();
-    graphiqlProps.initialQuery = urlParams.query;
-    graphiqlProps.initialVariables = urlParams.variables;
-    graphiqlProps.onEditQuery = onEditQuery;
-    graphiqlProps.onEditVariables = onEditVariables;
+
+    Object.assign(graphiqlProps, {
+      initialQuery: urlParams.query,
+      initialVariables: urlParams.variables,
+      onEditQuery: onEditQuery,
+      onEditVariables: onEditVariables
+    });
   }
 
   return <GraphiQL {...graphiqlProps}>
     <GraphiQL.Logo>
-      {window.APP_CONFIG?.logo || undefined}
+      {config.logo || undefined}
     </GraphiQL.Logo>
   </GraphiQL>;
 }

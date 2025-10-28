@@ -19,7 +19,9 @@ module GraphiQL
           query_params: GraphiQL::Rails.config.query_params,
           header_editor_enabled: GraphiQL::Rails.config.header_editor_enabled,
           input_value_deprecation: GraphiQL::Rails.config.input_value_deprecation,
-          should_persist_headers: GraphiQL::Rails.config.should_persist_headers
+          should_persist_headers: GraphiQL::Rails.config.should_persist_headers,
+          action_cable_path: GraphiQL::Rails.config.action_cable_path,
+          action_cable_channel_name: GraphiQL::Rails.config.action_cable_channel_name
         }
       end
     end

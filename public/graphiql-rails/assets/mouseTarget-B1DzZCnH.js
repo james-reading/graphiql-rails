@@ -1,4 +1,4 @@
-import { i as isNative, E as Emitter, c as Event, U as URI, p as posix, o as onUnexpectedError, d as isWeb, D as DisposableStore, e as Disposable, t as toDisposable, f as isString, h as isObject, l as localize, L as LinkedList, j as isLinux, k as isMacintosh, R as Range, P as Position } from "./index-B3iCzLVc.js";
+import { i as isNative, E as Emitter, c as Event, U as URI, p as posix, o as onUnexpectedError, d as isWeb, D as DisposableStore, e as Disposable, t as toDisposable, f as isString, h as isObject, l as localize, L as LinkedList, j as isLinux, k as isMacintosh, R as Range, P as Position } from "./index-DTK_ULfD.js";
 function ensureCodeWindow(targetWindow, fallbackWindowId) {
   const codeWindow = targetWindow;
   if (typeof codeWindow.vscodeWindowId !== "number") {

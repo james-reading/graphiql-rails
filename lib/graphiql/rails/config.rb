@@ -7,7 +7,22 @@ module GraphiQL
       # @return [Hash<String => Proc>] Keys are headers to include in GraphQL requests, values are `->(view_context) { ... }` procs to determin values
       attr_accessor :headers
 
-      attr_accessor :query_params, :initial_query, :csrf, :title, :logo, :header_editor_enabled, :input_value_deprecation, :should_persist_headers
+      # @example Enabling ActionCable subscriptions
+      #    config.action_cable_subscriptions = true
+      #
+      # @return [Boolean] Whether to enable ActionCable subscriptions integration for real-time GraphQL subscriptions
+      attr_accessor(
+        :query_params,
+        :initial_query,
+        :csrf,
+        :title,
+        :logo,
+        :header_editor_enabled,
+        :input_value_deprecation,
+        :should_persist_headers,
+        :action_cable_path,
+        :action_cable_channel_name
+      )
 
       DEFAULT_HEADERS = {
         'Content-Type' => ->(_) { 'application/json' },
@@ -17,7 +32,17 @@ module GraphiQL
         "X-CSRF-Token" => -> (view_context) { view_context.form_authenticity_token }
       }
 
-      def initialize(query_params: false, initial_query: nil, title: nil, logo: nil, csrf: true, headers: DEFAULT_HEADERS, input_value_deprecation: false)
+      def initialize(
+        query_params: false,
+        initial_query: nil,
+        title: nil,
+        logo: nil,
+        csrf: true,
+        headers: DEFAULT_HEADERS,
+        input_value_deprecation: false,
+        action_cable_path: nil,
+        action_cable_channel_name: 'GraphQLChannel'
+      )
         @query_params = query_params
         @headers = headers.dup
         @initial_query = initial_query
@@ -25,6 +50,8 @@ module GraphiQL
         @logo = logo
         @csrf = csrf
         @input_value_deprecation = input_value_deprecation
+        @action_cable_path = action_cable_path
+        @action_cable_channel_name = action_cable_channel_name
       end
 
       # Call defined procs, add CSRF token if specified
