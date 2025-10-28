@@ -1,6 +1,6 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/graphqlMode-CdaUMU4a.js","assets/monaco-editor-BtHzh3Ey.js","assets/index-CBciXOFF.js","assets/index-_4QeOAD2.css","assets/monaco-editor-7c3jN3Td.css"])))=>i.map(i=>d[i]);
-import { _ as __vitePreload } from "./index-CBciXOFF.js";
-import { E as Emitter, l as languages } from "./monaco-editor-BtHzh3Ey.js";
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/graphqlMode-CWDxy-rh.js","assets/monaco-editor-BkI_Yqm_.js","assets/index-B3iCzLVc.js","assets/index-_4QeOAD2.css","assets/monaco-editor-7c3jN3Td.css"])))=>i.map(i=>d[i]);
+import { _ as __vitePreload } from "./index-B3iCzLVc.js";
+import { E as Emitter, l as languages } from "./monaco-editor-BkI_Yqm_.js";
 class MonacoGraphQLAPI {
   _onDidChange = new Emitter();
   _formattingOptions;
@@ -152,7 +152,7 @@ function initializeMode(config) {
   return api;
 }
 function getMode() {
-  return __vitePreload(() => import("./graphqlMode-CdaUMU4a.js"), true ? __vite__mapDeps([0,1,2,3,4]) : void 0);
+  return __vitePreload(() => import("./graphqlMode-CWDxy-rh.js"), true ? __vite__mapDeps([0,1,2,3,4]) : void 0);
 }
 export {
   LANGUAGE_ID,

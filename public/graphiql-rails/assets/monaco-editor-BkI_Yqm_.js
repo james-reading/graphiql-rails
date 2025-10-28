@@ -1,5 +1,5 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/jsonMode-BzqpHFfD.js","assets/index-CBciXOFF.js","assets/index-_4QeOAD2.css"])))=>i.map(i=>d[i]);
-import { M as MarkerTag$1, m as MarkerSeverity$2, S as SelectionDirection$1, K as KeyCode$1, n as ShowLightbulbIconMode$1, q as PositionAffinity, I as InjectedTextCursorStops$1, W as WrappingIndent, T as TrackedRangeStickiness, r as TextEditorCursorStyle$1, s as TextEditorCursorBlinkingStyle, u as ScrollType, v as ScrollbarVisibility, w as RenderMinimap, x as RenderLineNumbersType, G as GlyphMarginLane$1, O as OverviewRulerLane$1, y as OverlayWidgetPositionPreference, z as MouseTargetType, A as MinimapPosition$1, B as EndOfLineSequence, F as EndOfLinePreference, H as EditorOption, J as EditorAutoIndentStrategy, N as DefaultEndOfLine, Q as CursorChangeReason, V as ContentWidgetPositionPreference, X as AccessibilitySupport, Y as NewSymbolNameTag$1, Z as CodeActionTriggerType, $ as InlineEditTriggerKind$1, a0 as InlineCompletionTriggerKind$1, a1 as InlayHintKind$1, a2 as SignatureHelpTriggerKind$1, a3 as CompletionTriggerKind, a4 as IndentAction$1, a5 as SymbolTag, a6 as SymbolKind, a7 as CompletionItemInsertTextRule, a8 as CompletionItemTag, a9 as CompletionItemKind, aa as DocumentHighlightKind$1, _ as __vitePreload } from "./index-CBciXOFF.js";
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/jsonMode-XvwBqj8m.js","assets/index-B3iCzLVc.js","assets/index-_4QeOAD2.css"])))=>i.map(i=>d[i]);
+import { M as MarkerTag$1, m as MarkerSeverity$2, S as SelectionDirection$1, K as KeyCode$1, n as ShowLightbulbIconMode$1, q as PositionAffinity, I as InjectedTextCursorStops$1, W as WrappingIndent, T as TrackedRangeStickiness, r as TextEditorCursorStyle$1, s as TextEditorCursorBlinkingStyle, u as ScrollType, v as ScrollbarVisibility, w as RenderMinimap, x as RenderLineNumbersType, G as GlyphMarginLane$1, O as OverviewRulerLane$1, y as OverlayWidgetPositionPreference, z as MouseTargetType, A as MinimapPosition$1, B as EndOfLineSequence, F as EndOfLinePreference, H as EditorOption, J as EditorAutoIndentStrategy, N as DefaultEndOfLine, Q as CursorChangeReason, V as ContentWidgetPositionPreference, X as AccessibilitySupport, Y as NewSymbolNameTag$1, Z as CodeActionTriggerType, $ as InlineEditTriggerKind$1, a0 as InlineCompletionTriggerKind$1, a1 as InlayHintKind$1, a2 as SignatureHelpTriggerKind$1, a3 as CompletionTriggerKind, a4 as IndentAction$1, a5 as SymbolTag, a6 as SymbolKind, a7 as CompletionItemInsertTextRule, a8 as CompletionItemTag, a9 as CompletionItemKind, aa as DocumentHighlightKind$1, _ as __vitePreload } from "./index-B3iCzLVc.js";
 function tail(array2, n = 0) {
   return array2[array2.length - (1 + n)];
 }
@@ -111719,7 +111719,7 @@ var getWorker = () => getMode().then((mode) => mode.getWorker());
 languages.json = { jsonDefaults, getWorker };
 function getMode() {
   {
-    return __vitePreload(() => import("./jsonMode-BzqpHFfD.js"), true ? __vite__mapDeps([0,1,2]) : void 0);
+    return __vitePreload(() => import("./jsonMode-XvwBqj8m.js"), true ? __vite__mapDeps([0,1,2]) : void 0);
   }
 }
 languages.register({

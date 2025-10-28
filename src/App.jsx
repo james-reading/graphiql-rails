@@ -50,7 +50,7 @@ function App() {
   const graphiqlProps = {
     fetcher,
     defaultQuery: window.APP_CONFIG?.initial_query,
-    defaultHeaders: JSON.stringify(window.APP_CONFIG?.headers),
+    defaultHeaders: JSON.stringify(window.APP_CONFIG?.headers, null, 2),
     isHeadersEditorEnabled: window.APP_CONFIG?.header_editor_enabled,
     inputValueDeprecation: window.APP_CONFIG?.input_value_deprecation,
     shouldPersistHeaders: window.APP_CONFIG?.should_persist_headers,
@@ -66,7 +66,7 @@ function App() {
 
   return <GraphiQL {...graphiqlProps}>
     <GraphiQL.Logo>
-      {window.APP_CONFIG?.logo}
+      {window.APP_CONFIG?.logo || undefined}
     </GraphiQL.Logo>
   </GraphiQL>;
 }

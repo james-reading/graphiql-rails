@@ -1,5 +1,5 @@
-import { m as monaco_editor_core_star } from "./monaco-editor-BtHzh3Ey.js";
-import "./index-CBciXOFF.js";
+import { m as monaco_editor_core_star } from "./monaco-editor-BkI_Yqm_.js";
+import "./index-B3iCzLVc.js";
 /*!-----------------------------------------------------------------------------
  * Copyright (c) Microsoft Corporation. All rights reserved.
  * Version: 0.47.0(69991d66135e4a1fc1cf0b1ac4ad25d429866a0d)

@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/monaco-editor-BtHzh3Ey.js","assets/monaco-editor-7c3jN3Td.css","assets/lite-BK8aqel5.js"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/monaco-editor-BkI_Yqm_.js","assets/monaco-editor-7c3jN3Td.css","assets/lite-Q86Qvekp.js"])))=>i.map(i=>d[i]);
 var _a, _b;
 function _mergeNamespaces(n2, m2) {
   for (var i2 = 0; i2 < m2.length; i2++) {
@@ -18940,7 +18940,7 @@ const DEFAULT_PRETTIFY_QUERY = async (query) => {
     {
       parsers
     }
-  ] = await Promise.all([__vitePreload(() => import("./standalone-4MMvPysh.js"), true ? [] : void 0), __vitePreload(() => import("./graphql-DIo4cbqa.js"), true ? [] : void 0), __vitePreload(() => import("./graphql-DHdyVdvs.js").then((n2) => n2.g), true ? [] : void 0)]);
+  ] = await Promise.all([__vitePreload(() => import("./standalone-4MMvPysh.js"), true ? [] : void 0), __vitePreload(() => import("./graphql-DIo4cbqa.js"), true ? [] : void 0), __vitePreload(() => import("./graphql-CA_Emtpu.js").then((n2) => n2.g), true ? [] : void 0)]);
   return prettier.format(query, {
     parser: "graphql",
     plugins: [
@@ -29616,7 +29616,7 @@ async function patchFirefox() {
       MouseTargetFactory: MouseTargetFactory2
     } = await import(
       // @ts-expect-error -- no types
-      "./mouseTarget-DQgfyMie.js"
+      "./mouseTarget-W7XRu5AE.js"
     );
     return {
       MouseTargetFactory: MouseTargetFactory2
@@ -29644,7 +29644,7 @@ const monacoStore = createStore((set2, get) => ({
       }
       const [monaco, {
         initializeMode
-      }] = await Promise.all([__vitePreload(() => import("./monaco-editor-BtHzh3Ey.js").then((n2) => n2.b), true ? __vite__mapDeps([0,1]) : void 0), __vitePreload(() => import("./lite-BK8aqel5.js"), true ? __vite__mapDeps([2,0,1]) : void 0)]);
+      }] = await Promise.all([__vitePreload(() => import("./monaco-editor-BkI_Yqm_.js").then((n2) => n2.b), true ? __vite__mapDeps([0,1]) : void 0), __vitePreload(() => import("./lite-Q86Qvekp.js"), true ? __vite__mapDeps([2,0,1]) : void 0)]);
       globalThis.__MONACO = monaco;
       monaco.languages.json.jsonDefaults.setDiagnosticsOptions(JSON_DIAGNOSTIC_OPTIONS);
       monaco.editor.defineTheme(MONACO_THEME_NAME.dark, MONACO_THEME_DATA.dark);
@@ -30670,7 +30670,7 @@ async function formatJSONC(content) {
     {
       parsers
     }
-  ] = await Promise.all([__vitePreload(() => import("./standalone-4MMvPysh.js"), true ? [] : void 0), __vitePreload(() => import("./estree-DC4vYpGp.js"), true ? [] : void 0), __vitePreload(() => import("./babel-B1ZJI5Rq.js").then((n2) => n2.b), true ? [] : void 0)]);
+  ] = await Promise.all([__vitePreload(() => import("./standalone-4MMvPysh.js"), true ? [] : void 0), __vitePreload(() => import("./estree-DC4vYpGp.js"), true ? [] : void 0), __vitePreload(() => import("./babel-B7ly_Xxf.js").then((n2) => n2.b), true ? [] : void 0)]);
   return prettier.format(content, {
     parser: "jsonc",
     plugins: [
@@ -63122,7 +63122,7 @@ function App() {
   const graphiqlProps = {
     fetcher,
     defaultQuery: window.APP_CONFIG?.initial_query,
-    defaultHeaders: JSON.stringify(window.APP_CONFIG?.headers),
+    defaultHeaders: JSON.stringify(window.APP_CONFIG?.headers, null, 2),
     isHeadersEditorEnabled: window.APP_CONFIG?.header_editor_enabled,
     inputValueDeprecation: window.APP_CONFIG?.input_value_deprecation,
     shouldPersistHeaders: window.APP_CONFIG?.should_persist_headers
@@ -63134,7 +63134,7 @@ function App() {
     graphiqlProps.onEditQuery = onEditQuery;
     graphiqlProps.onEditVariables = onEditVariables;
   }
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(GraphiQL, { ...graphiqlProps, children: /* @__PURE__ */ jsxRuntimeExports.jsx(GraphiQL.Logo, { children: window.APP_CONFIG?.logo }) });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GraphiQL, { ...graphiqlProps, children: /* @__PURE__ */ jsxRuntimeExports.jsx(GraphiQL.Logo, { children: window.APP_CONFIG?.logo || void 0 }) });
 }
 const root = clientExports.createRoot(document.getElementById("graphiql-container"));
 root.render(/* @__PURE__ */ jsxRuntimeExports.jsx(App, {}));
