@@ -1,6 +1,6 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/monaco-editor-DnsuBXvo.js","assets/index-DG__pMso.js","assets/index-_4QeOAD2.css","assets/monaco-editor-7c3jN3Td.css"])))=>i.map(i=>d[i]);
-import { e as editor, U as Uri, l as languages } from "./monaco-editor-DnsuBXvo.js";
-import { a as getStringSchema, b as getModelLanguageId, _ as __vitePreload, C as CompletionItemKind } from "./index-DG__pMso.js";
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/monaco-editor-BtHzh3Ey.js","assets/index-CBciXOFF.js","assets/index-_4QeOAD2.css","assets/monaco-editor-7c3jN3Td.css"])))=>i.map(i=>d[i]);
+import { e as editor, U as Uri, l as languages } from "./monaco-editor-BtHzh3Ey.js";
+import { a as getStringSchema, b as getModelLanguageId, _ as __vitePreload, C as CompletionItemKind } from "./index-CBciXOFF.js";
 const STOP_WHEN_IDLE_FOR = 2 * 60 * 1e3;
 class WorkerManager {
   _defaults;
@@ -147,7 +147,7 @@ class DiagnosticsAdapter {
     const diagnostics = await worker.doValidation(resource.toString());
     editor.setModelMarkers(editor.getModel(resource), languageId, diagnostics);
     if (variablesUris) {
-      await __vitePreload(() => import("./monaco-editor-DnsuBXvo.js").then((n) => n.a), true ? __vite__mapDeps([0,1,2,3]) : void 0);
+      await __vitePreload(() => import("./monaco-editor-BtHzh3Ey.js").then((n) => n.a), true ? __vite__mapDeps([0,1,2,3]) : void 0);
       if (!variablesUris.length) {
         throw new Error("No variables URI strings provided to validate");
       }

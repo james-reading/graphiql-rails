@@ -2,6 +2,8 @@ import { GraphiQL } from 'graphiql';
 import { createGraphiQLFetcher } from '@graphiql/toolkit'
 import 'graphiql/style.css';
 
+console.log(window.APP_CONFIG);
+
 
 const fetcher = createGraphiQLFetcher({
   url: window.APP_CONFIG?.graphql_endpoint_path
@@ -19,8 +21,17 @@ function getUrlParams() {
 function updateUrlParams(query, variables) {
   const url = new URL(window.location.href);
 
-  url.searchParams.set("query", query);
-  url.searchParams.set("variables", variables);
+  if (query && query.trim()) {
+    url.searchParams.set("query", query);
+  } else {
+    url.searchParams.delete("query");
+  }
+
+  if (variables && variables.trim()) {
+    url.searchParams.set("variables", variables);
+  } else {
+    url.searchParams.delete("variables");
+  }
 
   window.history.replaceState({}, "", url);
 }
@@ -46,8 +57,9 @@ function App() {
   };
 
   if (window.APP_CONFIG?.query_params) {
-    graphiqlProps.initialQuery = getUrlParams().query;
-    graphiqlProps.initialVariables = getUrlParams().variables;
+    const urlParams = getUrlParams();
+    graphiqlProps.initialQuery = urlParams.query;
+    graphiqlProps.initialVariables = urlParams.variables;
     graphiqlProps.onEditQuery = onEditQuery;
     graphiqlProps.onEditVariables = onEditVariables;
   }
